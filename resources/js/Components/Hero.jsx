@@ -285,7 +285,7 @@ export default function Hero() {
                                 Block fake customers early and avoid unnecessary courier costs.
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
-                                STOREMATE OMS
+
                             </div>
                         </div>
                         {/* Connecting line */}
@@ -303,7 +303,7 @@ export default function Hero() {
                                 Automate courier uploads, follow-ups, and order handling.
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
-                                STOREMATE OMS
+
                             </div>
                         </div>
                         {/* Connecting line */}
@@ -321,7 +321,7 @@ export default function Hero() {
                                 Integrated with Royal Express, Trans Express & more coming soon.
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
-                                STOREMATE OMS
+
                             </div>
                         </div>
                     </div>

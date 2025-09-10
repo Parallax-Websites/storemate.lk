@@ -42,45 +42,10 @@ export default function PrintWaybills() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Column - Dashboard Interface */}
-          <div className={`relative transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Dashboard Content */}
-            <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
-              {/* Small gradient background only at bottom center */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
-              <img
-                src="/images/hero/Delivery-Status (1)-Photoroom.png"
-                alt="Print Waybills Dashboard"
-                className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
-                style={{
-                  transition: 'transform 300ms ease-out, box-shadow 300ms ease-out, filter 300ms ease-out',
-                  transitionDelay: isVisible ? '300ms' : '0ms'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'scale(1.05)';
-                  e.target.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
-                  e.target.style.transition = 'transform 300ms ease-out, box-shadow 300ms ease-out';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = isVisible ? 'scale(1) rotate(0deg)' : 'scale(0.95) rotate(-1deg)';
-                  e.target.style.boxShadow = 'none';
-                  e.target.style.transition = 'transform 800ms ease-out, box-shadow 800ms ease-out';
-                }}
-              />
-            </div>
-
-            {/* Print waybill icon floating around */}
-            <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-1100 delay-800 ${isVisible ? 'translate-x-0 translate-y-0 rotate-0' : 'translate-x-4 translate-y-4 rotate-45'}`} style={{backgroundColor: '#013387'}}>
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zM5 9a1 1 0 011-1h8a1 1 0 011 1v6a1 1 0 01-1 1H6a1 1 0 01-1-1V9z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Right Column - Content */}
-          <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
+          {/* Right Column - Content (shown first on mobile) */}
+          <div className={`space-y-8 transition-all duration-1000 delay-300 order-1 lg:order-2 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
             {/* Brand Header */}
             <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
@@ -150,6 +115,41 @@ export default function PrintWaybills() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
+            </div>
+          </div>
+
+          {/* Left Column - Dashboard Interface (shown second on mobile) */}
+          <div className={`relative transition-all duration-1000 delay-200 order-2 lg:order-1 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
+            {/* Dashboard Content */}
+            <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
+              {/* Small gradient background only at bottom center */}
+              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
+              <img
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-new-8-Photoroom.webp"
+                alt="Print Waybills Dashboard"
+                className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
+                style={{
+                  transition: 'transform 300ms ease-out, box-shadow 300ms ease-out, filter 300ms ease-out',
+                  transitionDelay: isVisible ? '300ms' : '0ms'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'scale(1.05)';
+                  e.target.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                  e.target.style.transition = 'transform 300ms ease-out, box-shadow 300ms ease-out';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = isVisible ? 'scale(1) rotate(0deg)' : 'scale(0.95) rotate(-1deg)';
+                  e.target.style.boxShadow = 'none';
+                  e.target.style.transition = 'transform 800ms ease-out, box-shadow 800ms ease-out';
+                }}
+              />
+            </div>
+
+            {/* Print waybill icon floating around */}
+            <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-1100 delay-800 ${isVisible ? 'translate-x-0 translate-y-0 rotate-0' : 'translate-x-4 translate-y-4 rotate-45'}`} style={{backgroundColor: '#013387'}}>
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zM5 9a1 1 0 011-1h8a1 1 0 011 1v6a1 1 0 01-1 1H6a1 1 0 01-1-1V9z" clipRule="evenodd" />
+              </svg>
             </div>
           </div>
 

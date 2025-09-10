@@ -133,7 +133,7 @@ export default function EasyOrganization() {
               {/* Small gradient background only at bottom center */}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
               <img
-                src="/images/hero/design-2-2048x1612-Photoroom.png"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-2-2048x1612-Photoroom.webp"
                 alt="Easy Organization Dashboard"
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

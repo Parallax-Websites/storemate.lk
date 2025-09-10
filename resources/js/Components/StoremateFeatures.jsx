@@ -161,7 +161,7 @@ export default function StoremateFeatures() {
                                             <div className="relative h-80 rounded-2xl overflow-hidden bg-white group cursor-pointer">
                                                 {/* Video Thumbnail */}
                                                 <img
-                                                    src="https://storemate.lk/wp-content/uploads/2025/06/Thumbnail-OMS-1.jpg"
+                                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Thumbnail-OMS-1-1.webp"
                                                     alt="Storemate OMS - How it Works Video"
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     onError={(e) => {

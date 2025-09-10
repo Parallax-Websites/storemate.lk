@@ -19,8 +19,8 @@ export default function UserContactProduct({ auth }) {
             <UserContactProductHero auth={auth} />
             <UserContactProductFeatures />
             <UserManagement />
-            <ContactManagement />
             <ProductManagement />
+            <ContactManagement />
             <EasyOrganization />
             <Faq />
             <CallToAction />

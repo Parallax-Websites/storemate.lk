@@ -132,7 +132,7 @@ export default function TrackPackageStatus() {
               {/* Small gradient background only at bottom center */}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
               <img
-                src="/images/hero/packing-progress-Photoroom.png"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/packing-progress-Photoroom.webp"
                 alt="Track Package Status Dashboard"
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

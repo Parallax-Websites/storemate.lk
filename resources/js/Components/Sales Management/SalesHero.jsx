@@ -55,21 +55,33 @@ export default function SalesHero({ auth }) {
             <p className={`text-base font-medium text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               Track your orders seamlessly from confirmation to delivery, ensuring smooth sales management and timely fulfillment. Monitor order status, manage courier details, and keep customers informed every step of the way.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
+                        <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
                 href="https://welcome.oms.storemate.cloud/register"
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >
                 Start a Free Trial
-              </Link>
-              <button className="flex items-center gap-3 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-all duration-300">
+              </a>
+              <button
+                onClick={() => {
+                    const section = document.getElementById('what-is-storemate-oms');
+                    if (section) {
+                        // If the section exists on current page, scroll to it
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // If not on home page, navigate to home page with hash
+                        window.location.href = '/home#what-is-storemate-oms';
+                    }
+                }}
+                className="flex items-center gap-3 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-all duration-300"
+              >
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
                   <svg className="w-5 h-5 text-blue-600 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <span>Watch Demo</span>
+                <span>How It Works</span>
               </button>
             </div>
           </div>
@@ -92,7 +104,7 @@ export default function SalesHero({ auth }) {
               {/* Dashboard Image */}
               <div className="relative">
                 <img
-                  src="/images/hero/Highlights-1-2-Photoroom.png"
+                  src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-8-4.webp"
                   alt="Sales Management System Dashboard"
                   className="w-full h-auto group-hover:scale-105 transition-all duration-700"
                 />
