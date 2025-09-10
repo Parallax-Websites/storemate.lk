@@ -82,7 +82,7 @@ export default function WhoWereLookingFor() {
                             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                                 <img
                                     className="w-full h-auto object-cover"
-                                    src="https://storemate.lk/wp-content/uploads/2025/06/DSC08396-Large-1024x566.jpeg"
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/DSC08396-Large-1024x566-1.jpeg"
                                     alt="Partner Collaboration"
                                 />
 

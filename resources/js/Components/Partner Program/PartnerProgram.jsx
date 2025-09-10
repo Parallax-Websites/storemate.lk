@@ -35,7 +35,7 @@ export default function PartnerProgram() {
             <div className="absolute inset-0">
                 <img
                     className="w-full h-full object-cover"
-                    src="https://storemate.lk/wp-content/uploads/2025/07/cta_bg_3.jpg"
+                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/cta_bg_3-1.jpg"
                     alt="Partner Program Background"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>

@@ -137,7 +137,7 @@ export default function Hero() {
 
             {/* Main Content Section */}
             <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-8 sm:px-6 lg:px-8 lg:pt-16">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
 
                     {/* Left Column - Content */}
                     <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
@@ -243,6 +243,87 @@ export default function Hero() {
                                     alt="Storemate OMS Dashboard"
                                     className="w-full h-auto"
                                 />
+                            </div>
+                        </div>
+
+                        {/* Courier Companies Carousel */}
+                        <div className={`mt-8 transition-all duration-1200 delay-1200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
+                            <div className="relative overflow-hidden p-2">
+
+                                <div className="flex animate-scroll space-x-6 items-center">
+                                    {/* First set of logos */}
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-5.png"
+                                            alt="Courier Partner 1"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/royalelogo-1.png"
+                                            alt="Royal Express"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-1.png"
+                                            alt="Courier Partner 3"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/domex_logo.png"
+                                            alt="Domex"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/332708073_3811654199061580_3846048282845902556_n-Photoroom.png"
+                                            alt="Trans Express"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    {/* Duplicate set for seamless loop */}
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-5.png"
+                                            alt="Courier Partner 1"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/royalelogo-1.png"
+                                            alt="Royal Express"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-1.png"
+                                            alt="Courier Partner 3"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/domex_logo.png"
+                                            alt="Domex"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                    <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
+                                        <img
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/332708073_3811654199061580_3846048282845902556_n-Photoroom.png"
+                                            alt="Trans Express"
+                                            className="h-10 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
