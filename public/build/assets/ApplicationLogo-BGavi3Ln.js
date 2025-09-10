@@ -1,0 +1,1 @@
+import{j as t}from"./app-DUBupNFK.js";function s(e){return t.jsxs("div",{...e,children:[t.jsx("h1",{className:"text-2xl font-bold text-cyan-500",children:"StoreMate"}),t.jsx("p",{className:"text-xs text-gray-500",children:"Order Management"})]})}export{s as A};
