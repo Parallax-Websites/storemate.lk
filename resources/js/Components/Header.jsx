@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
+import FeaturesDropdown from '@/Components/FeaturesDropdown';
 import { useState } from 'react';
 
 export default function Header({ auth }) {
@@ -22,22 +23,7 @@ export default function Header({ auth }) {
                                 <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Home
                                 </NavLink>
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <span className="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 focus:border-gray-300 focus:text-gray-700 cursor-pointer">
-                                            Features
-                                            <svg className="ml-1 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                                            </svg>
-                                        </span>
-                                    </Dropdown.Trigger>
-                                    <Dropdown.Content>
-                                        <Dropdown.Link href="/inquiry">Inquiry</Dropdown.Link>
-                                        <Dropdown.Link href={route('sales.management')}>Sales Management</Dropdown.Link>
-                                        <Dropdown.Link href={route('shipping.packing')}>Shipping & Packing</Dropdown.Link>
-                                        <Dropdown.Link href={route('user.contact.product')}>User, Contact, Product</Dropdown.Link>
-                                    </Dropdown.Content>
-                                </Dropdown>
+                                <FeaturesDropdown />
                                 <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Pricing
                                 </NavLink>
