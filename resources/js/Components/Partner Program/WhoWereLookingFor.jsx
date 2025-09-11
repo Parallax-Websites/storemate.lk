@@ -60,7 +60,8 @@ export default function WhoWereLookingFor() {
 
                         {/* CTA Button */}
                         <div className="mt-8">
-                            <button
+                            <a
+                                href="/contact-us"
                                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                                 style={{backgroundColor: '#006daf'}}
                             >
@@ -68,7 +69,7 @@ export default function WhoWereLookingFor() {
                                 <svg className="ml-3 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
 
