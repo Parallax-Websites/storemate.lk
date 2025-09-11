@@ -54,6 +54,12 @@ export default function FeaturesDropdown() {
         </svg>
     );
 
+    const TranslationIcon = ({ className }) => (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+        </svg>
+    );
+
     const RocketIcon = ({ className }) => (
         <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -107,6 +113,19 @@ export default function FeaturesDropdown() {
                 { name: 'User Management', href: '/user-contact-product', description: 'Role-based access control' },
                 { name: 'Contact Management', href: '/user-contact-product', description: 'Customer database management' },
                 { name: 'Product Catalog', href: '/user-contact-product', description: 'Inventory and product management' }
+            ]
+        },
+        'translation': {
+            title: 'Sinhala Tamil Translation',
+            description: 'AI-powered bilingual customer communication',
+            icon: TranslationIcon,
+            mainHref: '/sinhala-tamil-translation',
+            image: 'https://cimacleaners.com.au/wp-content/uploads/2025/09/design-1.jpg',
+            items: [
+                { name: 'Auto Translation', href: '/sinhala-tamil-translation', description: 'Real-time AI translation between Sinhala & Tamil' },
+                { name: 'Manual Review', href: '/sinhala-tamil-translation', description: 'Human quality assurance for translations' },
+                { name: 'Bilingual Support', href: '/sinhala-tamil-translation', description: 'Sinhala-Tamil customer service' },
+                { name: 'Business Growth', href: '/sinhala-tamil-translation', description: 'Expand across Sri Lankan communities' }
             ]
         }
     };

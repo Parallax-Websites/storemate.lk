@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function StoremateFeatures() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [showVideoModal, setShowVideoModal] = useState(false);
 
     useEffect(() => {
         // Loading animation trigger
@@ -14,8 +15,69 @@ export default function StoremateFeatures() {
         };
     }, []);
 
+    // Handle video modal
+    const openVideoModal = (e) => {
+        e.preventDefault();
+        setShowVideoModal(true);
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeVideoModal = () => {
+        setShowVideoModal(false);
+        // Restore body scroll
+        document.body.style.overflow = 'unset';
+    };
+
+    // Close modal on escape key
+    useEffect(() => {
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') {
+                closeVideoModal();
+            }
+        };
+
+        if (showVideoModal) {
+            document.addEventListener('keydown', handleEscape);
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [showVideoModal]);
+
     return (
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <>
+            {/* Video Modal */}
+            {showVideoModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+                    <div className="relative w-full max-w-4xl mx-4">
+                        {/* Close Button */}
+                        <button
+                            onClick={closeVideoModal}
+                            className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+                        >
+                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Video Container */}
+                        <div className="relative bg-black rounded-lg overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                            <iframe
+                                className="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/-CYtv4drzyo?autoplay=1&rel=0"
+                                title="How Storemate Works - Complete guide for Sri Lankan SMEs"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -158,7 +220,7 @@ export default function StoremateFeatures() {
                                             background: 'linear-gradient(45deg, #f1f5f9 0%, #e2e8f0 100%)',
                                             padding: '3px'
                                         }}>
-                                            <div className="relative h-80 rounded-2xl overflow-hidden bg-white group cursor-pointer">
+                                            <div className="relative h-80 rounded-2xl overflow-hidden bg-white group cursor-pointer" onClick={openVideoModal}>
                                                 {/* Video Thumbnail */}
                                                 <img
                                                     src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Thumbnail-OMS-1-1.webp"
@@ -182,18 +244,16 @@ export default function StoremateFeatures() {
 
                                                 {/* Video Play Overlay */}
                                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                                                    <a
-                                                        href="https://youtu.be/-CYtv4drzyo"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="transform group-hover:scale-110 transition-all duration-300"
+                                                    <button
+                                                        onClick={openVideoModal}
+                                                        className="transform group-hover:scale-110 transition-all duration-300 focus:outline-none"
                                                     >
                                                         <div className="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center text-red-600 shadow-2xl hover:bg-white hover:scale-110 transition-all duration-300">
                                                             <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20">
                                                                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                                                             </svg>
                                                         </div>
-                                                    </a>
+                                                    </button>
                                                 </div>
 
                                                 {/* Video Duration Badge */}
@@ -290,6 +350,7 @@ export default function StoremateFeatures() {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </>
     );
 }

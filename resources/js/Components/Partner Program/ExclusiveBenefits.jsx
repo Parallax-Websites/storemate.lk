@@ -100,7 +100,7 @@ export default function ExclusiveBenefits() {
     ];
 
     return (
-        <div ref={componentRef} className="py-20 bg-white relative overflow-hidden">
+        <div id="client-benefits" ref={componentRef} className="py-20 bg-white relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute inset-0">
                 <div className="absolute top-20 left-20 w-40 h-40 bg-blue-100/20 rounded-full blur-2xl"></div>

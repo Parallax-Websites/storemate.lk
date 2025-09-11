@@ -63,16 +63,16 @@ export default function Hero() {
                 }
             }, 100);
 
-            // Counter 3: 0 to 2
+            // Counter 3: 0 to 6
             let count3 = 0;
             const interval3 = setInterval(() => {
                 count3 += 1;
                 setCounter3(count3);
-                if (count3 >= 2) {
+                if (count3 >= 6) {
                     clearInterval(interval3);
-                    setCounter3(2);
+                    setCounter3(6);
                 }
-            }, 200);
+            }, 150);
 
             return () => {
                 clearInterval(interval1);
@@ -391,15 +391,15 @@ export default function Hero() {
                         <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 transform -translate-y-1/2" style={{backgroundColor: '#006daf'}}></div>
                     </div>
 
-                    {/* Stat 3 - Courier Connected */}
+                    {/* Stat 3 - Companies Connected */}
                     <div className="relative group">
                         <div className="bg-white border-2 rounded-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105" style={{borderColor: '#013387'}}>
                             <div className="text-3xl md:text-4xl font-black mb-4" style={{color: '#013387'}}>
-                                0{counter3}
+                                {counter3}
                             </div>
-                            <div className="text-lg font-semibold text-gray-800 mb-2">Courier Connected</div>
+                            <div className="text-lg font-semibold text-gray-800 mb-2">Companies Connected</div>
                             <div className="text-sm text-gray-600 leading-relaxed">
-                                Integrated with Royal Express, Trans Express & more coming soon.
+                                Integrated with Royal Express, Trans Express, Domex & more coming soon.
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
 

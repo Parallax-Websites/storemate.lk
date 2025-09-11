@@ -5,6 +5,7 @@ const Footer = () => {
     const [email, setEmail] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showVideoModal, setShowVideoModal] = useState(false);
 
     const handleSubscribe = async (e) => {
         e.preventDefault();
@@ -110,7 +111,13 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="https://youtu.be/-CYtv4drzyo?si=8L98z7pEprcHspDY" target="_blank" rel="noopener noreferrer" title="How it Works" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">How it Works</a>
+                                <button
+                                    onClick={() => setShowVideoModal(true)}
+                                    title="How it Works"
+                                    className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600 cursor-pointer"
+                                >
+                                    How it Works
+                                </button>
                             </li>
 
                             <li>
@@ -217,6 +224,42 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
+
+                {/* Video Modal */}
+                {showVideoModal && (
+                    <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) {
+                                setShowVideoModal(false);
+                            }
+                        }}
+                    >
+                        <div className="relative w-full max-w-4xl mx-4">
+                            {/* Close button */}
+                            <button
+                                onClick={() => setShowVideoModal(false)}
+                                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200"
+                            >
+                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+
+                            {/* Video container */}
+                            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                <iframe
+                                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    src="https://www.youtube.com/embed/-CYtv4drzyo?autoplay=1&rel=0"
+                                    title="How Storemate OMS Works"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 <hr className="mt-16 mb-10 border-gray-200" />
 

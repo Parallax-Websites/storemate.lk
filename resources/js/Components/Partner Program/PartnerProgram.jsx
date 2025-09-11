@@ -64,7 +64,8 @@ export default function PartnerProgram() {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-6 mb-16">
-                        <button
+                        <a
+                            href="/contact-us"
                             className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             style={{backgroundColor: '#006daf'}}
                         >
@@ -72,9 +73,17 @@ export default function PartnerProgram() {
                             <svg className="ml-3 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
-                        </button>
+                        </a>
 
-                        <button className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-base font-medium rounded-lg text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+                        <button
+                            onClick={() => {
+                                const section = document.getElementById('client-benefits');
+                                if (section) {
+                                    section.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-base font-medium rounded-lg text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
+                        >
                             Learn More About Benefits
                         </button>
                     </div>

@@ -45,6 +45,10 @@ Route::get('/user-contact-product', function () {
     return Inertia::render('UserContactProduct');
 })->name('user.contact.product');
 
+Route::get('/sinhala-tamil-translation', function () {
+    return Inertia::render('SinhalaTranslation');
+})->name('sinhala.translation');
+
 Route::get('/free-course', function () {
     return Inertia::render('FreeCourse');
 })->name('free.course');
