@@ -395,7 +395,7 @@ export default function Hero() {
                     <div className="relative group">
                         <div className="bg-white border-2 rounded-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105" style={{borderColor: '#013387'}}>
                             <div className="text-3xl md:text-4xl font-black mb-4" style={{color: '#013387'}}>
-                                {counter3}
+                                {counter3}+
                             </div>
                             <div className="text-lg font-semibold text-gray-800 mb-2">Companies Connected</div>
                             <div className="text-sm text-gray-600 leading-relaxed">
