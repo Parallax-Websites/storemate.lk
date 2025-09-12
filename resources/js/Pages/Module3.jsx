@@ -4,8 +4,10 @@ import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import { useState, useEffect, useRef } from 'react';
 import MainLayout from '@/Layouts/MainLayout';
+import { useModule3Translation } from '@/Utils/module3Translations';
 
 export default function Module3({ auth }) {
+    const { tModule3 } = useModule3Translation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
@@ -65,36 +67,21 @@ export default function Module3({ auth }) {
     };
 
     // Module 3 video data
-    const moduleVideos = [
-        {
-            title: "How to Work with Courier Company",
-            url: "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
-            duration: "Video Length",
-            description: "Complete guide to partnering and working with courier companies"
-        },
-        {
-            title: "How to Register with Delivery Partner",
-            url: "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
-            duration: "7:03",
-            description: "Step-by-step registration process with delivery partners"
-        },
-        {
-            title: "How to Apply COD Business",
-            url: "https://youtu.be/ZNNfJWGM04E?si=sIEmiJKODaIVWoxL",
-            duration: "4:01",
-            description: "Set up and manage Cash on Delivery business operations"
-        },
-        {
-            title: "What is COD? (Cash on Delivery)",
-            url: "https://youtu.be/GsLzFLNVo68?si=4qCCVcMUHB8jpOmM",
-            duration: "3:10",
-            description: "Understanding Cash on Delivery and its benefits for your business"
-        }
-    ];
+    const moduleVideos = tModule3('module3.videos').map((video, index) => ({
+        title: video.title,
+        url: [
+            "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
+            "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
+            "https://youtu.be/ZNNfJWGM04E?si=sIEmiJKODaIVWoxL",
+            "https://youtu.be/GsLzFLNVo68?si=4qCCVcMUHB8jpOmM"
+        ][index],
+        duration: video.duration,
+        description: video.description
+    }));
 
     return (
         <MainLayout>
-            <Head title="Module 3: How to start COD Business - Free Course" />
+            <Head title={tModule3('module3.pageTitle')} />
             <Header auth={auth} />
 
             {/* Hero Section */}
@@ -117,11 +104,11 @@ export default function Module3({ auth }) {
                             <ol className="flex items-center space-x-2 text-sm">
                                 <li>
                                     <Link href="/free-course" className="text-blue-600 hover:text-blue-800 transition-colors">
-                                        Free Course
+                                        {tModule3('module3.breadcrumb.freeCourse')}
                                     </Link>
                                 </li>
                                 <li className="text-gray-400">/</li>
-                                <li className="text-gray-600">Module 3</li>
+                                <li className="text-gray-600">{tModule3('module3.breadcrumb.module3')}</li>
                             </ol>
                         </nav>
 
@@ -136,7 +123,7 @@ export default function Module3({ auth }) {
                                         <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
                                         <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"/>
                                     </svg>
-                                    MODULE 3
+                                    {tModule3('module3.hero.badge')}
                                 </span>
                             </div>
 
@@ -146,25 +133,25 @@ export default function Module3({ auth }) {
                                 letterSpacing: '-0.03em',
                                 fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                             }}>
-                                How to start COD Business
+                                {tModule3('module3.hero.title')}
                             </h1>
                             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-                                Complete guide to starting and scaling your Cash on Delivery business
+                                {tModule3('module3.hero.description')}
                             </p>
 
                             {/* Module Stats */}
                             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-purple-600 mb-2">{moduleVideos.length}</div>
-                                    <div className="text-gray-600">Video Lessons</div>
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">{tModule3('module3.hero.stats.0.number')}</div>
+                                    <div className="text-gray-600">{tModule3('module3.hero.stats.0.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-orange-600 mb-2">Advanced</div>
-                                    <div className="text-gray-600">Difficulty Level</div>
+                                    <div className="text-3xl font-bold text-orange-600 mb-2">{tModule3('module3.hero.stats.1.level')}</div>
+                                    <div className="text-gray-600">{tModule3('module3.hero.stats.1.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-green-600 mb-2">Business</div>
-                                    <div className="text-gray-600">Focus Area</div>
+                                    <div className="text-3xl font-bold text-green-600 mb-2">{tModule3('module3.hero.stats.2.type')}</div>
+                                    <div className="text-gray-600">{tModule3('module3.hero.stats.2.text')}</div>
                                 </div>
                             </div>
                         </div>
@@ -177,10 +164,9 @@ export default function Module3({ auth }) {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     {/* Module Introduction */}
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Module Overview</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-6">{tModule3('module3.moduleOverview.title')}</h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                            This advanced module covers courier integration and Cash on Delivery business setup. You'll learn how to register
-                            with delivery partners, work effectively with courier companies, and implement COD operations for your business.
+                            {tModule3('module3.moduleOverview.description')}
                         </p>
                     </div>
 
@@ -234,7 +220,7 @@ export default function Module3({ auth }) {
 
                                             {/* Lesson Number */}
                                             <div className="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                                                Lesson {index + 1}
+                                                {tModule3('module3.ui.lessonText')} {index + 1}
                                             </div>
                                         </div>
 
@@ -256,10 +242,10 @@ export default function Module3({ auth }) {
                                                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                                         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                                                     </svg>
-                                                    Watch Lesson
+                                                    {tModule3('module3.ui.watchLesson')}
                                                 </a>
                                                 <span className="text-sm text-gray-500 font-medium">
-                                                    Duration: {video.duration}
+                                                    {tModule3('module3.ui.durationText')} {video.duration}
                                                 </span>
                                             </div>
                                         </div>
@@ -278,14 +264,14 @@ export default function Module3({ auth }) {
                             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Previous Module
+                            {tModule3('module3.ui.navigation.previousModule')}
                         </Link>
 
                         <Link
                             href="/free-course"
                             className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-all duration-300"
                         >
-                            Course Complete
+                            {tModule3('module3.ui.navigation.courseComplete')}
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>

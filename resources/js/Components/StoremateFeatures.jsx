@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function StoremateFeatures() {
+    const { t } = useTranslation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [showVideoModal, setShowVideoModal] = useState(false);
 
@@ -88,7 +90,7 @@ export default function StoremateFeatures() {
                                 color: '#006daf',
                                 backgroundColor: '#ffe6daff'
                             }}>
-                                STOREMATE ORDER MANAGEMENT
+                                {t('storemateFeatures.subtitle')}
                             </span>
                         </div>
 
@@ -101,17 +103,17 @@ export default function StoremateFeatures() {
                             color: '#2D3748',
                             lineHeight: '1.1'
                         }}>
-                            What is Storemate OMS?
+                            {t('storemateFeatures.title')}
                         </h1>
 
                         {/* Description */}
                         <div className="space-y-6 mb-8">
                             <p className="text-lg leading-relaxed" style={{color: '#4A5568'}}>
-                                Storemate OMS is built for Sri Lankan E-Commerce/Online sellers who want to stay organized.
+                                {t('storemateFeatures.description1')}
                             </p>
 
                             <p className="text-lg leading-relaxed" style={{color: '#4A5568'}}>
-                                Manage all inquiries, orders, and deliveries in one place, <strong style={{color: '#2D3748'}}>avoid fake/duplicate orders</strong>, and <strong style={{color: '#2D3748'}}>auto-sync</strong> with your courier in just one click.
+                                {t('storemateFeatures.description2')}
                             </p>
                         </div>
 
@@ -123,7 +125,7 @@ export default function StoremateFeatures() {
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>No more excel uploads</span>
+                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>{t('storemateFeatures.benefits.noExcelUploads')}</span>
                             </div>
 
                             <div className="flex items-center space-x-3">
@@ -132,7 +134,7 @@ export default function StoremateFeatures() {
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>No more missed follow ups</span>
+                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>{t('storemateFeatures.benefits.noMissedFollowUps')}</span>
                             </div>
 
                             <div className="flex items-center space-x-3">
@@ -141,7 +143,7 @@ export default function StoremateFeatures() {
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>No more returns</span>
+                                <span className="text-lg font-semibold" style={{color: '#2D3748'}}>{t('storemateFeatures.benefits.noReturns')}</span>
                             </div>
                         </div>
 
@@ -154,10 +156,10 @@ export default function StoremateFeatures() {
                                     </svg>
                                 </div>
                                 <h3 className="text-lg font-bold mb-2" style={{color: '#2D3748'}}>
-                                    Fewer Duplicate Orders
+                                    {t('storemateFeatures.cards.duplicateOrders.title')}
                                 </h3>
                                 <p className="text-sm leading-relaxed" style={{color: '#4A5568'}}>
-                                    Smart detection stops double shipping before it happens.
+                                    {t('storemateFeatures.cards.duplicateOrders.description')}
                                 </p>
                             </div>
 
@@ -168,10 +170,10 @@ export default function StoremateFeatures() {
                                     </svg>
                                 </div>
                                 <h3 className="text-lg font-bold mb-2" style={{color: '#2D3748'}}>
-                                    Reduction in Return Losses
+                                    {t('storemateFeatures.cards.returnLosses.title')}
                                 </h3>
                                 <p className="text-sm leading-relaxed" style={{color: '#4A5568'}}>
-                                    Block fake customers early and avoid unnecessary courier costs.
+                                    {t('storemateFeatures.cards.returnLosses.description')}
                                 </p>
                             </div>
                         </div>
@@ -264,10 +266,10 @@ export default function StoremateFeatures() {
                                                 {/* Video Title Overlay */}
                                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
                                                     <h3 className="text-white font-bold text-lg mb-1">
-                                                        How Storemate Works
+                                                        {t('storemateFeatures.videoDemo')}
                                                     </h3>
                                                     <p className="text-white/90 text-sm">
-                                                        Complete guide for Sri Lankan SMEs 🇱🇰
+                                                        {t('storemateFeatures.videoDescription')}
                                                     </p>
                                                 </div>
 
@@ -288,10 +290,10 @@ export default function StoremateFeatures() {
                                                 color: '#2D3748',
                                                 lineHeight: '1.2'
                                             }}>
-                                                Running an Online Business In Sri Lanka?
+                                                {t('storemateFeatures.rightBox.title')}
                                             </h2>
                                             <p className="text-lg text-gray-600 mb-6">
-                                                See how Storemate OMS can transform your business operations
+                                                {t('storemateFeatures.rightBox.subtitle')}
                                             </p>
                                         </div>
                                     </div>
@@ -312,7 +314,7 @@ export default function StoremateFeatures() {
                                                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
                                                         </div>
                                                         <div className="text-sm text-gray-600 font-semibold">
-                                                            SMEs Served
+                                                            {t('storemateFeatures.stats.smesServed')}
                                                         </div>
                                                     </div>
 
@@ -324,7 +326,7 @@ export default function StoremateFeatures() {
                                                             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
                                                         </div>
                                                         <div className="text-sm text-gray-600 font-semibold">
-                                                            Active Partners
+                                                            {t('storemateFeatures.stats.activePartners')}
                                                         </div>
                                                     </div>
 
@@ -336,7 +338,7 @@ export default function StoremateFeatures() {
                                                             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
                                                         </div>
                                                         <div className="text-sm text-gray-600 font-semibold">
-                                                            Success Rate
+                                                            {t('storemateFeatures.stats.successRate')}
                                                         </div>
                                                     </div>
                                                 </div>

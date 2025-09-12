@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSalesTranslation } from '@/Utils/salesTranslations';
 
 export default function DeliveryUpdates() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
+  const { tSales } = useSalesTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -52,18 +54,19 @@ export default function DeliveryUpdates() {
                 <span className="text-white font-bold text-sm">S</span>
               </div>
               <div>
-                <div className="font-bold text-lg" style={{color: '#013387'}}>STOREMATE</div>
-                <div className="text-gray-600 text-sm font-medium">Order Management System</div>
+                <div className="font-bold text-lg" style={{color: '#013387'}}>{tSales('deliveryUpdates.brand.name')}</div>
+                <div className="text-gray-600 text-sm font-medium">{tSales('deliveryUpdates.brand.subtitle')}</div>
               </div>
             </div>
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span style={{color: '#006daf'}}>Delivery Updates</span>
+                {tSales('deliveryUpdates.title.part1')}<br />
+                <span style={{color: '#006daf'}}>{tSales('deliveryUpdates.title.part2')}</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                Track where your packages are and when they'll arrive. Keep customers happy with accurate delivery information.
+                {tSales('deliveryUpdates.description')}
               </p>
             </div>
 
@@ -77,8 +80,8 @@ export default function DeliveryUpdates() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">100%</div>
-                    <div className="text-sm text-gray-600">On-Time Delivery</div>
+                    <div className="text-2xl font-bold text-gray-900">{tSales('deliveryUpdates.stats.customerSatisfaction.value')}</div>
+                    <div className="text-sm text-gray-600">{tSales('deliveryUpdates.stats.customerSatisfaction.label')}</div>
                   </div>
                 </div>
               </div>
@@ -91,8 +94,8 @@ export default function DeliveryUpdates() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">Real-time</div>
-                    <div className="text-sm text-gray-600">Live Updates</div>
+                    <div className="text-2xl font-bold text-gray-900">{tSales('deliveryUpdates.stats.deliverySuccess.value')}</div>
+                    <div className="text-sm text-gray-600">{tSales('deliveryUpdates.stats.deliverySuccess.label')}</div>
                   </div>
                 </div>
               </div>
@@ -104,7 +107,7 @@ export default function DeliveryUpdates() {
                 style={{backgroundColor: '#013387'}}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
-                Start a Free Trial
+                {tSales('deliveryUpdates.startFreeTrial')}
                 <svg
                   className="inline-block w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
                   fill="currentColor"
@@ -117,7 +120,7 @@ export default function DeliveryUpdates() {
                 style={{color: '#006daf'}}
                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                <span>Know more</span>
+                <span>{tSales('deliveryUpdates.knowMore')}</span>
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -133,7 +136,7 @@ export default function DeliveryUpdates() {
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
               <img
                 src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-2-2048x1612-Photoroom.webp"
-                alt="Delivery Updates Dashboard"
+                alt={tSales('deliveryUpdates.imageAlt')}
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{
                   filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',

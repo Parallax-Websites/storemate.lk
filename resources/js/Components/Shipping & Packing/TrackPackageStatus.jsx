@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useShippingTranslation } from '@/Utils/shippingTranslations';
 
 export default function TrackPackageStatus() {
+  const { tShipping } = useShippingTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
@@ -52,18 +54,19 @@ export default function TrackPackageStatus() {
                 <span className="text-white font-bold text-sm">S</span>
               </div>
               <div>
-                <div className="font-bold text-lg" style={{color: '#013387'}}>STOREMATE</div>
-                <div className="text-gray-600 text-sm font-medium">Order Management System</div>
+                <div className="font-bold text-lg" style={{color: '#013387'}}>{tShipping('trackPackageStatus.brand.name')}</div>
+                <div className="text-gray-600 text-sm font-medium">{tShipping('trackPackageStatus.brand.subtitle')}</div>
               </div>
             </div>
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span style={{color: '#006daf'}}>Track Package Status</span>
+                <span style={{color: '#006daf'}}>{tShipping('trackPackageStatus.title.part1')}</span><br />
+                <span className="text-black">{tShipping('trackPackageStatus.title.part2')}</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                Monitor every order from packing to shipping. See which packages are ready to go and which ones are still being prepared.
+                {tShipping('trackPackageStatus.description')}
               </p>
             </div>
 
@@ -77,8 +80,8 @@ export default function TrackPackageStatus() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">Lightning Fast</div>
-                    <div className="text-sm text-gray-600">Speed</div>
+                    <div className="text-2xl font-bold text-gray-900">{tShipping('trackPackageStatus.stats.trackingAccuracy.value')}</div>
+                    <div className="text-sm text-gray-600">{tShipping('trackPackageStatus.stats.trackingAccuracy.label')}</div>
                   </div>
                 </div>
               </div>
@@ -91,8 +94,8 @@ export default function TrackPackageStatus() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">99.5%</div>
-                    <div className="text-sm text-gray-600">Accuracy</div>
+                    <div className="text-2xl font-bold text-gray-900">{tShipping('trackPackageStatus.stats.updateFrequency.value')}</div>
+                    <div className="text-sm text-gray-600">{tShipping('trackPackageStatus.stats.updateFrequency.label')}</div>
                   </div>
                 </div>
               </div>
@@ -104,7 +107,7 @@ export default function TrackPackageStatus() {
                 style={{backgroundColor: '#013387'}}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
-                Start a Free Trial
+                {tShipping('trackPackageStatus.startFreeTrial')}
                 <svg
                   className="inline-block w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
                   fill="currentColor"
@@ -117,7 +120,7 @@ export default function TrackPackageStatus() {
                 style={{color: '#006daf'}}
                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                <span>Know more</span>
+                <span>{tShipping('trackPackageStatus.knowMore')}</span>
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

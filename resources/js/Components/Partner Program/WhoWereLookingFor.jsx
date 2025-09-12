@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { usePartnerProgramTranslation } from '@/Utils/partnerProgramTranslations';
 
 export default function WhoWereLookingFor() {
+    const { tPartnerProgram } = usePartnerProgramTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
 
@@ -42,19 +44,19 @@ export default function WhoWereLookingFor() {
                                 backgroundColor: '#ffffff',
                                 borderColor: '#006daf'
                             }}>
-                                🎯 IDEAL PARTNERS
+                                🎯 {tPartnerProgram('partnerProgram.whoWereLookingFor.badge')}
                             </span>
                         </div>
 
                         {/* Heading */}
                         <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl mb-6">
-                            Storemate OMS
-                            <span className="block" style={{color: '#006daf'}}>Who We're Looking For</span>
+                            <span className="text-black">{tPartnerProgram('partnerProgram.whoWereLookingFor.title.part1')}</span>
+                            <span className="block" style={{color: '#006daf'}}>{tPartnerProgram('partnerProgram.whoWereLookingFor.title.part2')}</span>
                         </h2>
 
                         {/* Description */}
                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                            We are actively seeking dynamic and forward-thinking partners who possess a strong network among Sri Lankan SMEs and E-commerce businesses, and who are committed to delivering cutting-edge solutions.
+                            {tPartnerProgram('partnerProgram.whoWereLookingFor.description')}
                         </p>
 
 
@@ -65,7 +67,7 @@ export default function WhoWereLookingFor() {
                                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                                 style={{backgroundColor: '#006daf'}}
                             >
-                                Apply to Become a Partner
+                                {tPartnerProgram('partnerProgram.whoWereLookingFor.button')}
                                 <svg className="ml-3 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
@@ -95,18 +97,12 @@ export default function WhoWereLookingFor() {
                             <div className="absolute -bottom-8 left-6 right-6 z-10">
                                 <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
                                     <div className="grid grid-cols-3">
-                                        <div className="p-6 text-center border-r border-gray-200">
-                                            <div className="text-3xl font-bold mb-1" style={{color: '#006daf'}}>500+</div>
-                                            <div className="text-sm text-gray-600 font-medium">SMEs Served</div>
-                                        </div>
-                                        <div className="p-6 text-center border-r border-gray-200">
-                                            <div className="text-3xl font-bold mb-1" style={{color: '#006daf'}}>50+</div>
-                                            <div className="text-sm text-gray-600 font-medium">Active Partners</div>
-                                        </div>
-                                        <div className="p-6 text-center">
-                                            <div className="text-3xl font-bold mb-1" style={{color: '#006daf'}}>95%</div>
-                                            <div className="text-sm text-gray-600 font-medium">Success Rate</div>
-                                        </div>
+                                        {tPartnerProgram('partnerProgram.whoWereLookingFor.stats').map((stat, index) => (
+                                            <div key={index} className={`p-6 text-center ${index < 2 ? 'border-r border-gray-200' : ''}`}>
+                                                <div className="text-3xl font-bold mb-1" style={{color: '#006daf'}}>{stat.number}</div>
+                                                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

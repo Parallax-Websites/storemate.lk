@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
+import { useInquiryTranslation } from '@/Utils/inquiryTranslations';
 
 export default function InquiryHero({ auth }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { tInquiry } = useInquiryTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -33,7 +35,7 @@ export default function InquiryHero({ auth }) {
                 color: '#006daf',
                 backgroundColor: '#ffe6daff'
               }}>
-                INQUIRY MANAGEMENT
+                {tInquiry('inquiryHero.badge')}
               </span>
             </div>
           </div>
@@ -45,12 +47,11 @@ export default function InquiryHero({ auth }) {
               letterSpacing: '-0.03em',
               fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
             }}>
-              Streamline Your<br />
-              Customer Inquiries
+              {tInquiry('inquiryHero.title')}
             </h1>
             {/* Description with fade-in animation */}
             <p className={`text-base font-medium text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Transform how you handle customer inquiries with our powerful inquiry management system. Capture, organize, and convert inquiries into sales effortlessly while never missing a potential customer.
+              {tInquiry('inquiryHero.description')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -58,7 +59,7 @@ export default function InquiryHero({ auth }) {
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >
-                Start a Free Trial
+                {tInquiry('inquiryHero.startFreeTrial')}
               </a>
               <button
                 onClick={() => {
@@ -78,7 +79,7 @@ export default function InquiryHero({ auth }) {
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <span>How It Works</span>
+                <span>{tInquiry('inquiryHero.howItWorks')}</span>
               </button>
             </div>
           </div>
@@ -100,11 +101,11 @@ export default function InquiryHero({ auth }) {
 
               {/* Dashboard Image */}
               <div className="relative">
-                <img
-                  src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Highlights-1-2-Photoroom.webp"
-                  alt="Inquiry Management System Dashboard"
-                  className="w-full h-auto group-hover:scale-105 transition-all duration-700"
-                />
+                              <img
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Highlights-1-2-Photoroom.webp"
+                alt={tInquiry('inquiryHero.imageAlt')}
+                className="w-full h-auto group-hover:scale-105 transition-all duration-700"
+              />
               </div>
 
               {/* Mac-style Window Border */}

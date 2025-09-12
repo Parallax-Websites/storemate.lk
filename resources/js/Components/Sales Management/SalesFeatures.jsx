@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSalesTranslation } from '@/Utils/salesTranslations';
 
 export default function SalesFeatures() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
+  const { tSales } = useSalesTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -35,8 +37,8 @@ export default function SalesFeatures() {
           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
         </svg>
       ),
-      title: "Centralized Order Management",
-      description: "Efficiently manage all your customer orders in one place."
+      title: tSales('salesFeatures.features.centralizedOrders.title'),
+      description: tSales('salesFeatures.features.centralizedOrders.description')
     },
     {
       icon: (
@@ -44,8 +46,8 @@ export default function SalesFeatures() {
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Real-Time Courier Status Tracking",
-      description: "Track each order's courier and sync status to stay on top of deliveries."
+      title: tSales('salesFeatures.features.courierTracking.title'),
+      description: tSales('salesFeatures.features.courierTracking.description')
     },
     {
       icon: (
@@ -53,8 +55,8 @@ export default function SalesFeatures() {
           <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Streamlined Packing Process",
-      description: "Monitor packing progress and ensure timely shipping without delays."
+      title: tSales('salesFeatures.features.packingProcess.title'),
+      description: tSales('salesFeatures.features.packingProcess.description')
     },
     {
       icon: (
@@ -62,8 +64,8 @@ export default function SalesFeatures() {
           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: "Accurate Delivery Information",
-      description: "Keep customers informed with up-to-date tracking and delivery status."
+      title: tSales('salesFeatures.features.deliveryTracking.title'),
+      description: tSales('salesFeatures.features.deliveryTracking.description')
     }
   ];
 
@@ -81,14 +83,14 @@ export default function SalesFeatures() {
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className={`mb-4 transition-all duration-1000 delay-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
             <span className="text-sm font-bold tracking-widest text-gray-500 uppercase">
-              Storemate Order Management System
+              {tSales('salesFeatures.subtitle')}
             </span>
           </div>
           <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <span style={{color: '#006daf'}}
               className="transition-all duration-300"
               onMouseEnter={(e) => e.target.style.color = '#013387'}
-              onMouseLeave={(e) => e.target.style.color = '#006daf'}>Sales Management</span> Features
+              onMouseLeave={(e) => e.target.style.color = '#006daf'}>{tSales('salesFeatures.title.part1')}</span> {tSales('salesFeatures.title.part2')}
           </h2>
         </div>
 
@@ -133,7 +135,7 @@ export default function SalesFeatures() {
                   {feature.description}
                 </p>
                 <a href="#" className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors duration-300 inline-flex items-center">
-                  Learn More
+                  {tSales('salesFeatures.learnMore')}
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

@@ -4,8 +4,10 @@ import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import { useState, useEffect, useRef } from 'react';
 import MainLayout from '@/Layouts/MainLayout';
+import { useModule2Translation } from '@/Utils/module2Translations';
 
 export default function Module2({ auth }) {
+    const { tModule2 } = useModule2Translation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
@@ -65,54 +67,24 @@ export default function Module2({ auth }) {
     };
 
     // Module 2 video data
-    const moduleVideos = [
-        {
-            title: "Global Search | Online Order Management Software",
-            url: "https://youtu.be/1nWyiEuQd88?si=jn0WZdg9EBd3i7tM",
-            duration: "1:01",
-            description: "Use the powerful global search feature to find anything quickly"
-        },
-        {
-            title: "How to Add Inquiry",
-            url: "https://youtu.be/W0mCCdN9iTU?si=wV7znSlv3XiDf6vU",
-            duration: "3:11",
-            description: "Step-by-step guide to add and manage customer inquiries"
-        },
-        {
-            title: "Inquiry Table",
-            url: "https://youtu.be/YfkflwDGv-k?si=X3wmDoA3kUvsoOVk",
-            duration: "3:32",
-            description: "Navigate and manage your inquiry table effectively"
-        },
-        {
-            title: "How to Add Product",
-            url: "https://youtu.be/QarGtLOKNuA?si=3HDnljDBO7yvqwEE",
-            duration: "4:01",
-            description: "Complete guide to adding products to your inventory system"
-        },
-        {
-            title: "How to Add Customer",
-            url: "https://youtu.be/rSE2VB7Ybsc?si=1i0_e7TYTzuaifV_",
-            duration: "2:56",
-            description: "Learn how to add and manage customer information"
-        },
-        {
-            title: "How to Add User Role",
-            url: "https://youtu.be/qIy6InWyC0U?si=NIQnvKJFe_uK3pcz",
-            duration: "2:38",
-            description: "Set up user roles and permissions for your team"
-        },
-        {
-            title: "How to Add User",
-            url: "https://youtu.be/WZMhL7v0lwM?si=KpLn96zw0k5gKNFz",
-            duration: "3:13",
-            description: "Add new users to your Storemate OMS system"
-        }
-    ];
+    const moduleVideos = tModule2('module2.videos').map((video, index) => ({
+        title: video.title,
+        url: [
+            "https://youtu.be/1nWyiEuQd88?si=jn0WZdg9EBd3i7tM",
+            "https://youtu.be/W0mCCdN9iTU?si=wV7znSlv3XiDf6vU",
+            "https://youtu.be/YfkflwDGv-k?si=X3wmDoA3kUvsoOVk",
+            "https://youtu.be/QarGtLOKNuA?si=3HDnljDBO7yvqwEE",
+            "https://youtu.be/rSE2VB7Ybsc?si=1i0_e7TYTzuaifV_",
+            "https://youtu.be/qIy6InWyC0U?si=NIQnvKJFe_uK3pcz",
+            "https://youtu.be/WZMhL7v0lwM?si=KpLn96zw0k5gKNFz"
+        ][index],
+        duration: video.duration,
+        description: video.description
+    }));
 
     return (
         <MainLayout>
-            <Head title="Module 2: System Features & Management - Free Course" />
+            <Head title={tModule2('module2.pageTitle')} />
             <Header auth={auth} />
 
             {/* Hero Section */}
@@ -135,11 +107,11 @@ export default function Module2({ auth }) {
                             <ol className="flex items-center space-x-2 text-sm">
                                 <li>
                                     <Link href="/free-course" className="text-blue-600 hover:text-blue-800 transition-colors">
-                                        Free Course
+                                        {tModule2('module2.breadcrumb.freeCourse')}
                                     </Link>
                                 </li>
                                 <li className="text-gray-400">/</li>
-                                <li className="text-gray-600">Module 2</li>
+                                <li className="text-gray-600">{tModule2('module2.breadcrumb.module2')}</li>
                             </ol>
                         </nav>
 
@@ -153,7 +125,7 @@ export default function Module2({ auth }) {
                                     <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                                     </svg>
-                                    MODULE 2
+                                    {tModule2('module2.hero.badge')}
                                 </span>
                             </div>
 
@@ -163,25 +135,25 @@ export default function Module2({ auth }) {
                                 letterSpacing: '-0.03em',
                                 fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                             }}>
-                                System Features & Management
+                                {tModule2('module2.hero.title')}
                             </h1>
                             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-                                Master the core features including search, inquiries, products, customers and users
+                                {tModule2('module2.hero.description')}
                             </p>
 
                             {/* Module Stats */}
                             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-green-600 mb-2">{moduleVideos.length}</div>
-                                    <div className="text-gray-600">Video Lessons</div>
+                                    <div className="text-3xl font-bold text-green-600 mb-2">{tModule2('module2.hero.stats.0.number')}</div>
+                                    <div className="text-gray-600">{tModule2('module2.hero.stats.0.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-blue-600 mb-2">Intermediate</div>
-                                    <div className="text-gray-600">Difficulty Level</div>
+                                    <div className="text-3xl font-bold text-blue-600 mb-2">{tModule2('module2.hero.stats.1.level')}</div>
+                                    <div className="text-gray-600">{tModule2('module2.hero.stats.1.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-purple-600 mb-2">Core Skills</div>
-                                    <div className="text-gray-600">Learning Focus</div>
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">{tModule2('module2.hero.stats.2.type')}</div>
+                                    <div className="text-gray-600">{tModule2('module2.hero.stats.2.text')}</div>
                                 </div>
                             </div>
                         </div>
@@ -194,10 +166,9 @@ export default function Module2({ auth }) {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     {/* Module Introduction */}
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Module Overview</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-6">{tModule2('module2.moduleOverview.title')}</h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                            In this comprehensive module, you'll master the essential features of Storemate OMS. Learn how to use global search,
-                            manage inquiries, add products and customers, and set up user roles and permissions for your team.
+                            {tModule2('module2.moduleOverview.description')}
                         </p>
                     </div>
 
@@ -251,7 +222,7 @@ export default function Module2({ auth }) {
 
                                             {/* Lesson Number */}
                                             <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                                                Lesson {index + 1}
+                                                {tModule2('module2.ui.lessonText')} {index + 1}
                                             </div>
                                         </div>
 
@@ -273,10 +244,10 @@ export default function Module2({ auth }) {
                                                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                                         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                                                     </svg>
-                                                    Watch Lesson
+                                                    {tModule2('module2.ui.watchLesson')}
                                                 </a>
                                                 <span className="text-sm text-gray-500 font-medium">
-                                                    Duration: {video.duration}
+                                                    {tModule2('module2.ui.durationText')} {video.duration}
                                                 </span>
                                             </div>
                                         </div>
@@ -295,14 +266,14 @@ export default function Module2({ auth }) {
                             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Previous Module
+                            {tModule2('module2.ui.navigation.previousModule')}
                         </Link>
 
                         <Link
                             href="/module-3"
                             className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-all duration-300"
                         >
-                            Next Module
+                            {tModule2('module2.ui.navigation.nextModule')}
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>

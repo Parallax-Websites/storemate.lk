@@ -2,113 +2,122 @@ import { Link } from '@inertiajs/react';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import FeaturesDropdown from '@/Components/FeaturesDropdown';
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
 
 export default function Header({ auth }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const [showingMobileFeaturesDropdown, setShowingMobileFeaturesDropdown] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <nav className="shadow-sm relative z-[9999]">
-            <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-                <div className="flex h-24 items-center justify-between">
-                    <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                            <Link href="/home">
-                                <img src="/oms-v1.png" alt="Logo" className="block h-16 w-auto" />
-                            </Link>
-                        </div>
-                        <div className="hidden md:block">
-                            <div className="ml-10 flex items-baseline space-x-6">
-                                <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    Home
-                                </NavLink>
-                                <FeaturesDropdown />
-                                <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    Pricing
-                                </NavLink>
-                                <NavLink href={route('about')} active={route().current('about')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    About Us
-                                </NavLink>
-                                <NavLink href={route('free.course')} active={route().current('free.course')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    Free Course
-                                </NavLink>
-                                <NavLink href={route('contact.us')} active={route().current('contact.us')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    Contact Us
-                                </NavLink>
-                                <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                    Partner Program
-                                </NavLink>
+            <div className="relative max-w-none">
+                {/* Main content container - standard max-width */}
+                <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative">
+                    <div className="flex h-24 items-center justify-between">
+                        {/* Main Navigation Content */}
+                        <div className="flex items-center">
+                            <div className="flex-shrink-0">
+                                <Link href="/home">
+                                    <img src="/oms-v1.png" alt="Logo" className="block h-16 w-auto" />
+                                </Link>
+                            </div>
+                            <div className="hidden md:block">
+                                <div className="ml-10 flex items-baseline space-x-6">
+                                    <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.home')}
+                                    </NavLink>
+                                    <FeaturesDropdown />
+                                    <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.pricing')}
+                                    </NavLink>
+                                    <NavLink href={route('about')} active={route().current('about')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.about')}
+                                    </NavLink>
+                                    <NavLink href={route('free.course')} active={route().current('free.course')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.freeCourse')}
+                                    </NavLink>
+                                    <NavLink href={route('contact.us')} active={route().current('contact.us')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.contact')}
+                                    </NavLink>
+                                    <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                        {t('nav.partnerProgram')}
+                                    </NavLink>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="hidden sm:flex sm:items-center sm:ml-6">
-                        <Dropdown>
-                            <Dropdown.Trigger>
-                                <span className="inline-flex items-center px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none cursor-pointer">
-                                    Login
-                                </span>
-                            </Dropdown.Trigger>
-                            <Dropdown.Content>
+                        <div className="flex items-center space-x-4">
+                            <div className="hidden sm:flex sm:items-center sm:space-x-4">
+                                <Dropdown>
+                                    <Dropdown.Trigger>
+                                        <span className="inline-flex items-center px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none cursor-pointer">
+                                            {t('nav.login')}
+                                        </span>
+                                    </Dropdown.Trigger>
+                                    <Dropdown.Content>
+                                        <a
+                                            href="https://oms.storemate.cloud/login"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                        >
+                                            Login to OMS
+                                        </a>
+                                        <a
+                                            href="https://app.storemate.cloud/login"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                        >
+                                            Login to POS (Lite)
+                                        </a>
+                                        <a
+                                            href="https://app.storematepro.lk/login"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                        >
+                                            Login to POS (Pro)
+                                        </a>
+                                    </Dropdown.Content>
+                                </Dropdown>
                                 <a
-                                    href="https://oms.storemate.cloud/login"
+                                    href="https://welcome.oms.storemate.cloud/register"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                    className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3"
                                 >
-                                    Login to OMS
+                                    {t('nav.startFreeTrial')}
                                 </a>
-                                <a
-                                    href="https://app.storemate.cloud/login"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
-                                >
-                                    Login to POS (Lite)
-                                </a>
-                                <a
-                                    href="https://app.storematepro.lk/login"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
-                                >
-                                    Login to POS (Pro)
-                                </a>
-                            </Dropdown.Content>
-                        </Dropdown>
-                        <a
-                            href="https://welcome.oms.storemate.cloud/register"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3"
-                        >
-                            Start a Free Trial
-                        </a>
-                    </div>
+                            </div>
 
-                    <div className="-mr-2 flex items-center sm:hidden">
-                        <button
-                            onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-                        >
-                            <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path
-                                    className={!showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
-                                <path
-                                    className={showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </button>
+                            {/* Mobile Menu Button */}
+                            <div className="flex items-center sm:hidden">
+                                <button
+                                    onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
+                                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                                >
+                                    <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                        <path
+                                            className={!showingNavigationDropdown ? 'inline-flex' : 'hidden'}
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                        <path
+                                            className={showingNavigationDropdown ? 'inline-flex' : 'hidden'}
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,19 +125,19 @@ export default function Header({ auth }) {
             <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
                 <div className="pt-2 pb-3 space-y-1">
                     <NavLink href={route('home')} active={route().current('home')} block="true">
-                        Home
+                        {t('nav.home')}
                     </NavLink>
                     <NavLink href={route('pricing')} active={route().current('pricing')} block="true">
-                        Pricing
+                        {t('nav.pricing')}
                     </NavLink>
                     <NavLink href={route('about')} active={route().current('about')} block="true">
-                        About Us
+                        {t('nav.about')}
                     </NavLink>
                     <NavLink href={route('free.course')} active={route().current('free.course')} block="true">
-                        Free Course
+                        {t('nav.freeCourse')}
                     </NavLink>
                     <NavLink href={route('contact.us')} active={route().current('contact.us')} block="true">
-                        Contact Us
+                        {t('nav.contact')}
                     </NavLink>
 
                     {/* Mobile Features Dropdown */}
@@ -137,7 +146,7 @@ export default function Header({ auth }) {
                             onClick={() => setShowingMobileFeaturesDropdown((previousState) => !previousState)}
                             className="flex items-center justify-between w-full px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 focus:outline-none focus:text-gray-800 focus:bg-gray-50 transition duration-150 ease-in-out"
                         >
-                            <span>Features</span>
+                            <span>{t('nav.features')}</span>
                             <svg
                                 className={`h-4 w-4 transition-transform duration-200 ${showingMobileFeaturesDropdown ? 'rotate-180' : ''}`}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +175,7 @@ export default function Header({ auth }) {
                     </div>
 
                     <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true">
-                        Partner Program
+                        {t('nav.partnerProgram')}
                     </NavLink>
                 </div>
 
@@ -174,7 +183,7 @@ export default function Header({ auth }) {
                     <div className="mt-3 space-y-1">
                         {/* Mobile Login Options */}
                         <div className="px-4 py-2">
-                            <div className="font-medium text-base text-gray-800 mb-2">Login Options</div>
+                            <div className="font-medium text-base text-gray-800 mb-2">{t('nav.login')} Options</div>
                             <div className="space-y-2">
                                 <a
                                     href="https://oms.storemate.cloud/login"
@@ -209,7 +218,7 @@ export default function Header({ auth }) {
                             rel="noopener noreferrer"
                             className="block mx-4 mt-4 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md"
                         >
-                            Start a Free Trial
+                            {t('nav.startFreeTrial')}
                         </a>
                     </div>
                 </div>

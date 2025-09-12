@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from '@inertiajs/react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showVideoModal, setShowVideoModal] = useState(false);
+    const { t } = useTranslation();
 
     const handleSubscribe = async (e) => {
         e.preventDefault();
@@ -48,7 +50,7 @@ const Footer = () => {
                         <img className="w-auto h-16" src="/oms-v1.png" alt="Storemate OMS" />
 
                         <p className="text-base leading-relaxed text-gray-600 mt-7">
-                            Storemate OMS helps Sri Lankan businesses manage orders from Facebook, WhatsApp, and Instagram in one powerful dashboard. Streamline your order management today.
+                            {t('footer.description')}
                         </p>
 
                         <ul className="flex items-center space-x-3 mt-9">
@@ -99,15 +101,15 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Company</p>
+                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">{t('footer.company')}</p>
 
                         <ul className="mt-6 space-y-4">
                             <li>
-                                <Link href="/about" title="About" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">About</Link>
+                                <Link href="/about" title="About" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.aboutShort')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/contact-us" title="Contact Us" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Contact Us</Link>
+                                <Link href="/contact-us" title="Contact Us" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.contact')}</Link>
                             </li>
 
                             <li>
@@ -116,48 +118,48 @@ const Footer = () => {
                                     title="How it Works"
                                     className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600 cursor-pointer"
                                 >
-                                    How it Works
+                                    {t('nav.howItWorks')}
                                 </button>
                             </li>
 
                             <li>
-                                <Link href="/pricing" title="Pricing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Pricing</Link>
+                                <Link href="/pricing" title="Pricing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.pricing')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/free-course" title="Free Course" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Free Course</Link>
+                                <Link href="/free-course" title="Free Course" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.freeCourse')}</Link>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Quick Links</p>
+                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">{t('footer.quickLinks')}</p>
 
                         <ul className="mt-6 space-y-4">
                             <li>
-                                <Link href="/inquiry" title="Inquiry" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Inquiry Management</Link>
+                                <Link href="/inquiry" title="Inquiry" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.inquiryManagement')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/sales-management" title="Sales Management" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Sales Management</Link>
+                                <Link href="/sales-management" title="Sales Management" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.salesManagement')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/shipping-packing" title="Shipping & Packing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Shipping & Packing</Link>
+                                <Link href="/shipping-packing" title="Shipping & Packing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.shippingPacking')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/user-contact-product" title="User, Contact, Product" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">User & Contact</Link>
+                                <Link href="/user-contact-product" title="User, Contact, Product" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.userContact')}</Link>
                             </li>
 
                             <li>
-                                <Link href="/partner-program" title="Partner Program" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Partner Program</Link>
+                                <Link href="/partner-program" title="Partner Program" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.partnerProgram')}</Link>
                             </li>
                         </ul>
                     </div>
 
                     <div className="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Subscribe to newsletter</p>
+                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">{t('footer.newsletter.title')}</p>
 
                         {/* Success Message */}
                         {showSuccess && (
@@ -167,7 +169,7 @@ const Footer = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     <p className="text-sm font-medium text-green-800">
-                                        Successfully subscribed! Thank you for joining our newsletter.
+                                        {t('footer.newsletter.successMessage')}
                                     </p>
                                 </div>
                             </div>
@@ -182,7 +184,7 @@ const Footer = () => {
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter your email"
+                                    placeholder={t('footer.newsletter.placeholder')}
                                     required
                                     disabled={isSubmitting}
                                     className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -211,16 +213,16 @@ const Footer = () => {
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                         </svg>
-                                        Subscribing...
+                                        {t('footer.newsletter.subscribing')}
                                     </>
                                 ) : (
-                                    'Subscribe'
+                                    t('footer.newsletter.subscribe')
                                 )}
                             </button>
                         </form>
 
                         <p className="mt-3 text-xs text-gray-500">
-                            Get the latest updates about Storemate OMS features and tips directly to your inbox.
+                            {t('footer.newsletter.description')}
                         </p>
                     </div>
                 </div>
@@ -264,15 +266,24 @@ const Footer = () => {
                 <hr className="mt-16 mb-10 border-gray-200" />
 
                 <p className="text-sm text-center text-gray-600">
-                    © Copyright 2025, All Rights Reserved by Storemate OMS | Product by{' '}
-                    <a
-                        href="https://parallaxtec.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
-                    >
-                        Parallax Technologies
-                    </a>
+                    {t('footer.copyright').split('Parallax Technologies').map((part, index, array) => {
+                        if (index === array.length - 1) {
+                            return <span key={index}>{part}</span>;
+                        }
+                        return (
+                            <span key={index}>
+                                {part}
+                                <a
+                                    href="https://parallaxtec.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 hover:text-blue-800 underline"
+                                >
+                                    Parallax Technologies
+                                </a>
+                            </span>
+                        );
+                    })}
                 </p>
             </div>
         </section>

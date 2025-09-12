@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
+import { useUserContactProductTranslation } from '@/Utils/userContactProductTranslations';
 
 export default function UserContactProductHero({ auth }) {
+  const { tUserContactProduct } = useUserContactProductTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function UserContactProductHero({ auth }) {
                 color: '#006daf',
                 backgroundColor: '#ffe6daff'
               }}>
-                USER, CONTACT, PRODUCT
+                {tUserContactProduct('hero.badge')}
               </span>
             </div>
           </div>
@@ -45,13 +47,13 @@ export default function UserContactProductHero({ auth }) {
               letterSpacing: '-0.03em',
               fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
             }}>
-              Storemate helps you turn<br />
-              every inquiry into a<br />
-              successful sale
+              <span style={{color: '#000000ff'}}>{tUserContactProduct('hero.title.part1')}</span><br />
+              <span style={{color: '#000000ff'}}>{tUserContactProduct('hero.title.part2')}</span><br />
+              <span style={{color: '#006daf'}}>{tUserContactProduct('hero.title.part3')}</span>
             </h1>
             {/* Description with fade-in animation */}
             <p className={`text-base font-medium text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Manage products, users, and contacts all in one place for seamless operations. Streamline your business processes and convert every customer interaction into revenue.
+              {tUserContactProduct('hero.description')}
             </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -59,7 +61,7 @@ export default function UserContactProductHero({ auth }) {
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >
-                Start a Free Trial
+                {tUserContactProduct('hero.startFreeTrial')}
               </a>
               <button
                 onClick={() => {
@@ -79,7 +81,7 @@ export default function UserContactProductHero({ auth }) {
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <span>How It Works</span>
+                <span>{tUserContactProduct('hero.watchDemo')}</span>
               </button>
             </div>
           </div>
@@ -103,7 +105,7 @@ export default function UserContactProductHero({ auth }) {
               <div className="relative">
                 <img
                   src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-11.webp"
-                  alt="User, Contact, Product Management Dashboard"
+                  alt={tUserContactProduct('hero.imageAlt')}
                   className="w-full h-auto group-hover:scale-105 transition-all duration-700"
                 />
               </div>

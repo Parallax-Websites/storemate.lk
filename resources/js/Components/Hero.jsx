@@ -1,5 +1,6 @@
 import { Link } from '@inertiajs/react';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -9,6 +10,7 @@ export default function Hero() {
     const [counter2, setCounter2] = useState(0);
     const [counter3, setCounter3] = useState(0);
     const componentRef = useRef(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         setIsLoaded(true);
@@ -144,18 +146,18 @@ export default function Hero() {
                         {/* Status Label */}
                         <div className={`transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
                             <span className="inline-block text-sm font-bold tracking-widest animate-pulse" style={{color: '#006daf'}}>
-                                POWERING 1,000,000+ ORDERS
+                                {t('hero.powering')}
                             </span>
                         </div>
 
                         {/* Main Title */}
                         <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
                             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                Your Online Business.<br />
-                                <span style={{color: '#006daf'}}>Managed in One Place.</span>
+                                {t('hero.title')}<br />
+                                <span style={{color: '#006daf'}}>{t('hero.titleHighlight')}</span>
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                                Streamline your inquiries, orders, and deliveries in one place. Say goodbye to manual uploads, duplicate orders, and missed follow-ups.
+                                {t('hero.description')}
                             </p>
                         </div>
 
@@ -170,7 +172,7 @@ export default function Hero() {
                                     </div>
                                     <div>
                                         <div className="text-2xl font-bold text-gray-900">{counter1}%</div>
-                                        <div className="text-sm text-gray-600">Returns Reduced</div>
+                                        <div className="text-sm text-gray-600">{t('hero.returnsReduced')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +186,7 @@ export default function Hero() {
                                     </div>
                                     <div>
                                         <div className="text-2xl font-bold text-gray-900">{counter2}hr+</div>
-                                        <div className="text-sm text-gray-600">Time Saved</div>
+                                        <div className="text-sm text-gray-600">{t('hero.timeSaved')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +202,7 @@ export default function Hero() {
                                 style={{backgroundColor: '#013387'}}
                                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
                                 onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
-                                Start a Free Trial
+                                {t('nav.startFreeTrial')}
                                 <svg
                                     className="inline-block w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
                                     fill="currentColor"
@@ -224,7 +226,7 @@ export default function Hero() {
                                 style={{color: '#006daf'}}
                                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                                <span>How It Works</span>
+                                <span>{t('hero.howItWorks')}</span>
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -340,7 +342,7 @@ export default function Hero() {
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            TRUSTED BY 500+ BUSINESSES
+                            {t('hero.trustedBy')}
                         </span>
                     </div>
 
@@ -350,7 +352,7 @@ export default function Hero() {
                         letterSpacing: '-0.03em',
                         fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }}>
-                        Reduce Duplicate Orders 85%+
+                        {t('hero.reduceOrders')}
                     </h2>
                 </div>
 
@@ -361,9 +363,9 @@ export default function Hero() {
                             <div className="text-3xl md:text-4xl font-black mb-4" style={{color: '#013387'}}>
                                 {counter1}%
                             </div>
-                            <div className="text-lg font-semibold text-gray-800 mb-2">Returns Reduced</div>
+                            <div className="text-lg font-semibold text-gray-800 mb-2">{t('hero.statReturns.title')}</div>
                             <div className="text-sm text-gray-600 leading-relaxed">
-                                Block fake customers early and avoid unnecessary courier costs.
+                                {t('hero.statReturns.description')}
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
 
@@ -379,9 +381,9 @@ export default function Hero() {
                             <div className="text-3xl md:text-4xl font-black mb-4" style={{color: '#013387'}}>
                                 {counter2}hr+
                             </div>
-                            <div className="text-lg font-semibold text-gray-800 mb-2">Time Saved</div>
+                            <div className="text-lg font-semibold text-gray-800 mb-2">{t('hero.statTime.title')}</div>
                             <div className="text-sm text-gray-600 leading-relaxed">
-                                Automate courier uploads, follow-ups, and order handling.
+                                {t('hero.statTime.description')}
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
 
@@ -397,9 +399,9 @@ export default function Hero() {
                             <div className="text-3xl md:text-4xl font-black mb-4" style={{color: '#013387'}}>
                                 {counter3}+
                             </div>
-                            <div className="text-lg font-semibold text-gray-800 mb-2">Companies Connected</div>
+                            <div className="text-lg font-semibold text-gray-800 mb-2">{t('hero.statCourier.title')}</div>
                             <div className="text-sm text-gray-600 leading-relaxed">
-                                Integrated with Royal Express, Trans Express, Domex & more coming soon.
+                                {t('hero.statCourier.description')}
                             </div>
                             <div className="mt-4 text-xs font-medium uppercase tracking-wider" style={{color: '#006daf'}}>
 

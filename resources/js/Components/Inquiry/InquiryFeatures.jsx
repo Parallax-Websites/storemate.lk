@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { useInquiryTranslation } from '@/Utils/inquiryTranslations';
 
 export default function InquiryFeatures() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
+  const { tInquiry } = useInquiryTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -35,8 +37,8 @@ export default function InquiryFeatures() {
           <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Customer Profiles & History",
-      description: "Access detailed profiles of every customer along with their order history, so you can make informed decisions on follow-ups and future interactions."
+      title: tInquiry('inquiryFeatures.features.customerProfiles.title'),
+      description: tInquiry('inquiryFeatures.features.customerProfiles.description')
     },
     {
       icon: (
@@ -44,8 +46,8 @@ export default function InquiryFeatures() {
           <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Banned and Duplicate Customers",
-      description: "Automatically identify and block banned customers, preventing them from placing orders again. Detect duplicate orders to avoid unnecessary returns."
+      title: tInquiry('inquiryFeatures.features.bannedCustomers.title'),
+      description: tInquiry('inquiryFeatures.features.bannedCustomers.description')
     },
     {
       icon: (
@@ -53,8 +55,8 @@ export default function InquiryFeatures() {
           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
         </svg>
       ),
-      title: "All Orders & Their Statuses",
-      description: "Track every inquiry, order, and its current status in one place. Stay organized and avoid missed follow-ups with a clear overview."
+      title: tInquiry('inquiryFeatures.features.orderStatus.title'),
+      description: tInquiry('inquiryFeatures.features.orderStatus.description')
     },
     {
       icon: (
@@ -62,8 +64,8 @@ export default function InquiryFeatures() {
           <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Order Sources & Sales Channels",
-      description: "Identify where your orders are coming from. See which sales channels are bringing in the most inquiries and focus your efforts accordingly."
+      title: tInquiry('inquiryFeatures.features.orderSources.title'),
+      description: tInquiry('inquiryFeatures.features.orderSources.description')
     }
   ];
 
@@ -80,10 +82,12 @@ export default function InquiryFeatures() {
         {/* Header Section */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            Get <span style={{color: '#006daf'}}
+            {tInquiry('inquiryFeatures.title').split('360°')[0]}
+            <span style={{color: '#006daf'}}
               className="transition-all duration-300"
               onMouseEnter={(e) => e.target.style.color = '#013387'}
-              onMouseLeave={(e) => e.target.style.color = '#006daf'}>360° view</span> of your inquiries
+              onMouseLeave={(e) => e.target.style.color = '#006daf'}>360°</span>
+            {tInquiry('inquiryFeatures.title').split('360°')[1]}
           </h2>
         </div>
 
@@ -128,7 +132,7 @@ export default function InquiryFeatures() {
                   {feature.description}
                 </p>
                 <a href="#" className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors duration-300 inline-flex items-center">
-                  Know More
+                  {tInquiry('inquiryFeatures.knowMore')}
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

@@ -3,11 +3,13 @@ import Footer from '@/Components/Footer';
 import { Head } from '@inertiajs/react';
 import CallToAction from '@/Components/CallToAction';
 import MainLayout from '@/Layouts/MainLayout';
+import { useContactUsTranslation } from '@/Utils/contactUsTranslations';
 
 export default function ContactUs({ auth }) {
+    const { tContactUs } = useContactUsTranslation();
     return (
         <MainLayout>
-            <Head title="Contact Us - Storemate OMS" />
+            <Head title={tContactUs('contactUs.pageTitle')} />
             <Header auth={auth} />
 
             {/* Main Content Container with Single Background Pattern */}
@@ -74,20 +76,20 @@ export default function ContactUs({ auth }) {
                                     color: '#006daf',
                                     backgroundColor: '#ffe6daff'
                                 }}>
-                                    GET IN TOUCH WITH US
+                                    {tContactUs('contactUs.hero.badge')}
                                 </span>
                             </div>
 
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight mb-6" style={{
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6" style={{
                                 fontWeight: '750',
                                 fontStretch: 'ultra-condensed',
                                 letterSpacing: '-0.03em',
                                 fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                             }}>
-                                Contact Us
+                                <span className="text-black">{tContactUs('contactUs.hero.title')}</span>
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-600">
-                                We're here to help you grow your business. Reach out to us and let's discuss how Storemate OMS can transform your operations.
+                                {tContactUs('contactUs.hero.description')}
                             </p>
                         </div>
                     </div>
@@ -110,16 +112,16 @@ export default function ContactUs({ auth }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-custom-blue-3 transition-colors duration-300">
-                                    Email Us
+                                <h3 className="text-2xl font-bold text-center mb-4 group-hover:text-custom-blue-3 transition-colors duration-300">
+                                    <span className="text-black">{tContactUs('contactUs.emailCard.title')}</span>
                                 </h3>
                                 <div className="text-center mb-6">
                                     <p className="text-gray-600 mb-2">
-                                        Simple drop us an email at
+                                        {tContactUs('contactUs.emailCard.description')}
                                     </p>
-                                    <p className="text-lg font-bold text-custom-blue-2 mb-2">sales@storemate.lk</p>
+                                    <p className="text-lg font-bold text-custom-blue-2 mb-2">{tContactUs('contactUs.emailCard.email')}</p>
                                     <p className="text-sm text-gray-500">
-                                        and you'll receive a reply within <span className="font-semibold text-green-600">24 hours</span>
+                                        {tContactUs('contactUs.emailCard.replyTime')} <span className="font-semibold text-green-600">{tContactUs('contactUs.emailCard.timeFrame')}</span>
                                     </p>
                                 </div>
                                 <div className="text-center">
@@ -130,7 +132,7 @@ export default function ContactUs({ auth }) {
                                         <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                         </svg>
-                                        Send Email
+                                        {tContactUs('contactUs.emailCard.buttonText')}
                                         <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                         </svg>
@@ -151,17 +153,17 @@ export default function ContactUs({ auth }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-green-700 transition-colors duration-300">
-                                    Give us a call
+                                <h3 className="text-2xl font-bold text-center mb-4 group-hover:text-green-700 transition-colors duration-300">
+                                    <span className="text-black">{tContactUs('contactUs.callCard.title')}</span>
                                 </h3>
                                 <div className="text-center mb-6">
                                     <p className="text-gray-600 mb-2">
-                                        Give us a ring. Our Experts are standing by
+                                        {tContactUs('contactUs.callCard.description')}
                                     </p>
-                                    <p className="text-sm font-semibold text-gray-700 mb-2">Monday to Friday from 9am to 5pm</p>
+                                    <p className="text-sm font-semibold text-gray-700 mb-2">{tContactUs('contactUs.callCard.hours')}</p>
                                     <div className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                                         <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                                        Available Now
+                                        {tContactUs('contactUs.callCard.status')}
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -172,7 +174,7 @@ export default function ContactUs({ auth }) {
                                         <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                         </svg>
-                                        011 422 6911
+                                        {tContactUs('contactUs.callCard.phoneNumber')}
                                         <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                         </svg>

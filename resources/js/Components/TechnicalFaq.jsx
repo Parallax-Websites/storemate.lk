@@ -1,48 +1,15 @@
 import React, { useState } from 'react';
+import { usePricingTranslation } from '@/Utils/pricingTranslations';
 
 const TechnicalFaq = () => {
-    const [technicalFaq, setTechnicalFaq] = useState([
-        {
-            question: 'What is an enquiry?',
-            answer: 'An enquiry is a potential customer inquiry or lead that comes through your social media channels (Facebook, WhatsApp, Instagram) or phone calls.<br><br>In Storemate OMS, enquiries are the first step in your sales process — they help you track and follow up with potential customers before they become actual orders.',
+    const { tPricing } = usePricingTranslation();
+    const [technicalFaq, setTechnicalFaq] = useState(
+        tPricing('technicalFaq.faqs').map((faq, index) => ({
+            question: faq.question,
+            answer: faq.answer,
             open: false
-        },
-        {
-            question: 'What COD sync means?',
-            answer: 'COD (Cash on Delivery) sync means automatic synchronization of COD payment status with your courier service.<br><br>When your courier partner (like Royal Express) collects payment from customers, the payment status automatically updates in your Storemate OMS dashboard — no manual updates needed.',
-            open: false
-        },
-        {
-            question: 'What is a business location?',
-            answer: 'A business location is a physical address or warehouse where you store and dispatch your products.<br><br>You can set up multiple business locations in Storemate OMS if you have warehouses in different cities or areas, helping you manage inventory and shipping more efficiently.',
-            open: false
-        },
-        {
-            question: 'Can I choose which delivery company I need to sync with?',
-            answer: 'Yes, absolutely.<br><br>Storemate OMS currently integrates with Royal Express and Trans Express Service Lanka. You can choose which courier service to use for each order.<br><br>We can also integrate additional courier services based on your business requirements.',
-            open: false
-        },
-        {
-            question: 'What is a WhatsApp form?',
-            answer: 'A WhatsApp form is a structured message template that customers can fill out directly in WhatsApp to place orders.<br><br>It helps you collect customer details, product preferences, and delivery information in an organized way, making order processing faster and more accurate.',
-            open: false
-        },
-        {
-            question: 'Why I need a dedicated server?',
-            answer: 'A dedicated server ensures better performance, security, and customization for your business.<br><br>Benefits include:<br>• Faster loading times for your team<br>• Enhanced data security<br>• Custom features specific to your business<br>• Better uptime and reliability<br>• Dedicated support',
-            open: false
-        },
-        {
-            question: 'What are the customisations?',
-            answer: 'Storemate OMS offers various customizations including:<br><br>• Custom order forms and fields<br>• Branded invoices and waybills<br>• Integration with your existing systems<br>• Custom reporting and analytics<br>• Workflow automation specific to your business<br>• Custom courier integrations',
-            open: false
-        },
-        {
-            question: 'What if I have more than 05 business locations?',
-            answer: 'No problem at all.<br><br>Storemate OMS can handle unlimited business locations. Each additional location can be set up with its own inventory management, staff access, and shipping preferences.<br><br>Contact our team to discuss enterprise pricing for multiple locations.',
-            open: false
-        }
-    ]);
+        }))
+    );
 
     const toggleTechnicalFaq = (index) => {
         setTechnicalFaq(technicalFaq.map((item, i) => {
@@ -66,7 +33,7 @@ const TechnicalFaq = () => {
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            TECHNICAL SUPPORT
+                            {tPricing('technicalFaq.badge')}
                         </span>
                     </div>
 
@@ -76,10 +43,11 @@ const TechnicalFaq = () => {
                         letterSpacing: '-0.03em',
                         fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }}>
-                        Technical Questions & Answers
+                        <span className="text-black">{tPricing('technicalFaq.title.part1')}</span>{' '}
+                        <span style={{ color: '#006daf' }}>{tPricing('technicalFaq.title.part2')}</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Get detailed answers about Storemate OMS features and technical aspects
+                        {tPricing('technicalFaq.subtitle')}
                     </p>
                 </div>
 
@@ -103,13 +71,13 @@ const TechnicalFaq = () => {
 
                 <div className="text-center mt-12">
                     <p className="text-gray-600 text-lg">
-                        Need more technical assistance? {' '}
+                        {tPricing('technicalFaq.contactPrompt')}{' '}
                         <a
                             href="/contact-us"
                             rel="noopener noreferrer"
                             className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
                         >
-                            Contact our technical support team
+                            {tPricing('technicalFaq.contactSupport')}
                         </a>
                     </p>
                 </div>

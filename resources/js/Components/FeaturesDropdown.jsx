@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function FeaturesDropdown() {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
     const dropdownRef = useRef(null);
@@ -68,64 +70,99 @@ export default function FeaturesDropdown() {
 
     const features = {
         'inquiry': {
-            title: 'Inquiry Management',
-            description: 'Streamline customer inquiries and lead conversion',
+            title: t('features.inquiryManagement.title'),
+            description: t('features.inquiryManagement.description'),
             icon: InquiryIcon,
             mainHref: '/inquiry',
             image: '/design-1.jpg',
             items: [
-                { name: 'Inquiry Channel', href: '/inquiry', description: 'Manage multiple inquiry sources' },
-                { name: 'Duplicate Detection', href: '/inquiry', description: 'Prevent duplicate customer entries' },
-                { name: 'Lead Scoring', href: '/inquiry', description: 'Prioritize high-value prospects' }
+                {
+                    name: t('features.inquiryManagement.items.inquiryChannel.name'),
+                    href: '/inquiry',
+                    description: t('features.inquiryManagement.items.inquiryChannel.description')
+                },
+                {
+                    name: t('features.inquiryManagement.items.duplicateDetection.name'),
+                    href: '/inquiry',
+                    description: t('features.inquiryManagement.items.duplicateDetection.description')
+                },
+                {
+                    name: t('features.inquiryManagement.items.leadScoring.name'),
+                    href: '/inquiry',
+                    description: t('features.inquiryManagement.items.leadScoring.description')
+                }
             ]
         },
         'sales': {
-            title: 'Sales Management',
-            description: 'Complete order and sales workflow automation',
+            title: t('features.salesManagement.title'),
+            description: t('features.salesManagement.description'),
             icon: SalesIcon,
             mainHref: '/sales-management',
             image: 'https://cimacleaners.com.au/wp-content/uploads/2025/09/design-8-4.webp',
             items: [
-                { name: 'Order Processing', href: '/sales-management', description: 'Streamlined order management' },
-                { name: 'Confirmed Orders', href: '/sales-management', description: 'Track order confirmations' },
-                { name: 'Sales Analytics', href: '/sales-management', description: 'Detailed sales reporting' }
+                {
+                    name: t('features.salesManagement.items.orderProcessing.name'),
+                    href: '/sales-management',
+                    description: t('features.salesManagement.items.orderProcessing.description')
+                },
+                {
+                    name: t('features.salesManagement.items.confirmedOrders.name'),
+                    href: '/sales-management',
+                    description: t('features.salesManagement.items.confirmedOrders.description')
+                },
+                {
+                    name: t('features.salesManagement.items.salesAnalytics.name'),
+                    href: '/sales-management',
+                    description: t('features.salesManagement.items.salesAnalytics.description')
+                }
             ]
         },
         'shipping': {
-            title: 'Shipping & Packing',
-            description: 'Efficient logistics and delivery management',
+            title: t('features.shippingPacking.title'),
+            description: t('features.shippingPacking.description'),
             icon: ShippingIcon,
             mainHref: '/shipping-packing',
             image: 'https://cimacleaners.com.au/wp-content/uploads/2025/09/design-2-2048x1612-Photoroom-1.webp',
             items: [
-                { name: 'Packing Progress', href: '/shipping-packing', description: 'Track packing status' },
-                { name: 'Courier Sync', href: '/shipping-packing', description: 'Automated courier integration' },
-                { name: 'Delivery Tracking', href: '/shipping-packing', description: 'Real-time delivery updates' }
+                {
+                    name: t('features.shippingPacking.items.packingProgress.name'),
+                    href: '/shipping-packing',
+                    description: t('features.shippingPacking.items.packingProgress.description')
+                },
+                {
+                    name: t('features.shippingPacking.items.courierSync.name'),
+                    href: '/shipping-packing',
+                    description: t('features.shippingPacking.items.courierSync.description')
+                },
+                {
+                    name: t('features.shippingPacking.items.deliveryTracking.name'),
+                    href: '/shipping-packing',
+                    description: t('features.shippingPacking.items.deliveryTracking.description')
+                }
             ]
         },
         'management': {
-            title: 'User & Product Management',
-            description: 'Comprehensive system and user administration',
+            title: t('features.userProductManagement.title'),
+            description: t('features.userProductManagement.description'),
             icon: ManagementIcon,
             mainHref: '/user-contact-product',
             image: 'https://cimacleaners.com.au/wp-content/uploads/2025/09/design-new-5-Photoroom.webp',
             items: [
-                { name: 'User Management', href: '/user-contact-product', description: 'Role-based access control' },
-                { name: 'Contact Management', href: '/user-contact-product', description: 'Customer database management' },
-                { name: 'Product Catalog', href: '/user-contact-product', description: 'Inventory and product management' }
-            ]
-        },
-        'translation': {
-            title: 'Sinhala Tamil Translation',
-            description: 'AI-powered bilingual customer communication',
-            icon: TranslationIcon,
-            mainHref: '/sinhala-tamil-translation',
-            image: 'https://cimacleaners.com.au/wp-content/uploads/2025/09/design-1.jpg',
-            items: [
-                { name: 'Auto Translation', href: '/sinhala-tamil-translation', description: 'Real-time AI translation between Sinhala & Tamil' },
-                { name: 'Manual Review', href: '/sinhala-tamil-translation', description: 'Human quality assurance for translations' },
-                { name: 'Bilingual Support', href: '/sinhala-tamil-translation', description: 'Sinhala-Tamil customer service' },
-                { name: 'Business Growth', href: '/sinhala-tamil-translation', description: 'Expand across Sri Lankan communities' }
+                {
+                    name: t('features.userProductManagement.items.userManagement.name'),
+                    href: '/user-contact-product',
+                    description: t('features.userProductManagement.items.userManagement.description')
+                },
+                {
+                    name: t('features.userProductManagement.items.contactManagement.name'),
+                    href: '/user-contact-product',
+                    description: t('features.userProductManagement.items.contactManagement.description')
+                },
+                {
+                    name: t('features.userProductManagement.items.productCatalog.name'),
+                    href: '/user-contact-product',
+                    description: t('features.userProductManagement.items.productCatalog.description')
+                }
             ]
         }
     };
@@ -139,7 +176,7 @@ export default function FeaturesDropdown() {
         >
             {/* Trigger Button */}
             <button className="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 focus:border-gray-300 focus:text-gray-700">
-                Features
+                {t('nav.features')}
                 <svg
                     className={`ml-1 -mr-0.5 h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +195,7 @@ export default function FeaturesDropdown() {
                             {/* Left Navigation */}
                             <div className="bg-gray-50 p-6">
                                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
-                                    Features
+                                    {t('nav.features')}
                                 </h3>
                                 <nav className="space-y-1">
                                     {Object.entries(features).map(([key, section]) => (
@@ -257,7 +294,7 @@ export default function FeaturesDropdown() {
                                                 />
                                                 <div className="absolute inset-0 bg-transparent pointer-events-none"></div>
                                                 <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs text-gray-600 font-medium">
-                                                    Live Preview
+                                                    {t('common.livePreview')}
                                                 </div>
                                             </div>
                                         </div>
@@ -270,10 +307,10 @@ export default function FeaturesDropdown() {
                                                 <RocketIcon className="w-8 h-8 text-white" />
                                             </div>
                                             <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                                                Powerful Features
+                                                {t('common.powerfulFeatures')}
                                             </h4>
                                             <p className="text-gray-600 max-w-md">
-                                                Hover over any feature category to explore our comprehensive suite of tools designed to streamline your business operations.
+                                                {t('common.exploreFeatures')}
                                             </p>
                                         </div>
                                     </div>
@@ -286,10 +323,10 @@ export default function FeaturesDropdown() {
                             <div className="flex items-center justify-between">
                                 <div className="flex-1">
                                     <p className="text-sm font-semibold text-gray-900 mb-1">
-                                        Ready to get started?
+                                        {t('common.readyToStart')}
                                     </p>
                                     <p className="text-xs text-gray-600">
-                                        Try all features with our free trial - no credit card required.
+                                        {t('common.tryAllFeatures')}
                                     </p>
                                 </div>
                                 <div className="flex items-center space-x-4 ml-6">
@@ -314,7 +351,7 @@ export default function FeaturesDropdown() {
                                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                                         </svg>
-                                        View Pricing
+                                        {t('common.viewPricing')}
                                     </Link>
                                     <a
                                         href="https://welcome.oms.storemate.cloud/register"
@@ -328,7 +365,7 @@ export default function FeaturesDropdown() {
                                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
-                                        Start Free Trial
+                                        {t('common.startFreeTrial')}
                                         <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                         </svg>

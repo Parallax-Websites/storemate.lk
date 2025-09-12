@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { useUserContactProductTranslation } from '@/Utils/userContactProductTranslations';
 
 export default function EasyOrganization() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const componentRef = useRef(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const containerRef = useRef(null);
+    const { tUserContactProduct } = useUserContactProductTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -21,19 +23,19 @@ export default function EasyOrganization() {
       }
     );
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
       }
     };
   }, []);
 
   return (
-    <div ref={componentRef} className="relative py-20 overflow-hidden">
+    <div ref={containerRef} className="relative py-20 overflow-hidden">
       {/* Background Design Elements with scroll effect */}
       <div className={`absolute inset-0 opacity-30 transition-all duration-1000 ${isVisible ? 'scale-100 opacity-30' : 'scale-110 opacity-0'}`}>
         <div className={`absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full blur-xl transition-all duration-1200 delay-200 ${isVisible ? 'translate-x-0 translate-y-0' : '-translate-x-10 -translate-y-10'}`}></div>
@@ -52,19 +54,19 @@ export default function EasyOrganization() {
                 <span className="text-white font-bold text-sm">S</span>
               </div>
               <div>
-                <div className="font-bold text-lg" style={{color: '#013387'}}>STOREMATE</div>
-                <div className="text-gray-600 text-sm font-medium">Order Management System</div>
+                <div className="font-bold text-lg" style={{color: '#013387'}}>{tUserContactProduct('easyOrganization.brand')}</div>
+                <div className="text-gray-600 text-sm font-medium">{tUserContactProduct('easyOrganization.subtitle')}</div>
               </div>
             </div>
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span style={{color: '#006daf'}}>Easy Organization</span>
+                <span style={{color: '#006daf'}}>{tUserContactProduct('easyOrganization.title.part1')}</span>{' '}
+                <span style={{color: '#013387'}}>{tUserContactProduct('easyOrganization.title.part2')}</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                Search, filter, and sort through products, users, and contacts quickly.
-                Find what you need without wasting time.
+                {tUserContactProduct('easyOrganization.description')}
               </p>
             </div>
 

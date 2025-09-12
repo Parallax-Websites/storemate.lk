@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import LanguageSelector from '@/Components/LanguageSelector';
 
 export default function WhatsAppWidget() {
     const [isVisible, setIsVisible] = useState(true);
@@ -16,7 +17,12 @@ export default function WhatsAppWidget() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
+            {/* Language Selector */}
+            <div>
+                <LanguageSelector />
+            </div>
+
             {/* WhatsApp Button */}
             <div className="relative group">
                 <button
@@ -45,16 +51,16 @@ export default function WhatsAppWidget() {
                 <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-bounce">
                     !
                 </div>
-            </div>
 
-            {/* Close button (optional) */}
-            <button
-                onClick={() => setIsVisible(false)}
-                className="absolute -top-2 -left-2 bg-gray-600 hover:bg-gray-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                aria-label="Hide WhatsApp widget"
-            >
-                ×
-            </button>
+                {/* Close button (optional) */}
+                <button
+                    onClick={() => setIsVisible(false)}
+                    className="absolute -top-2 -left-2 bg-gray-600 hover:bg-gray-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    aria-label="Hide WhatsApp widget"
+                >
+                    ×
+                </button>
+            </div>
         </div>
     );
 }

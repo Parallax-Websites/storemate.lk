@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { usePricingTranslation } from '@/Utils/pricingTranslations';
 
 export default function Pricing() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const { tPricing } = usePricingTranslation();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -15,81 +17,82 @@ export default function Pricing() {
 
     const pricingPlans = [
         {
-            name: "Free",
-            subtitle: "Free Subscription",
-            price: "LKR 0",
-            period: "/month",
-            inquiries: "500 inquiries/month",
-            locations: "2 Business Locations",
-            deliveryCompanies: "1 Delivery Company",
+            name: tPricing('pricing.plans.free.name'),
+            subtitle: tPricing('pricing.plans.free.subtitle'),
+            price: `LKR ${tPricing('pricing.plans.free.price')}`,
+            period: tPricing('pricing.plans.free.period'),
+            inquiries: tPricing('pricing.plans.free.inquiries'),
+            locations: tPricing('pricing.plans.free.locations'),
+            deliveryCompanies: tPricing('pricing.plans.free.deliveryCompanies'),
             features: [
-                { name: "Inquiry Management", included: true },
-                { name: "COD Sync", included: true },
-                { name: "WhatsApp Form", included: false },
-                { name: "Dedicated Server", included: false },
-                { name: "Customizations", included: false }
+                { name: tPricing('pricing.features.inquiryManagement'), included: true },
+                { name: tPricing('pricing.features.codSync'), included: true },
+                { name: tPricing('pricing.features.whatsappForm'), included: false },
+                { name: tPricing('pricing.features.dedicatedServer'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
-            buttonText: "Try for Free",
+            buttonText: tPricing('pricing.plans.free.buttonText'),
             buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
             bgColor: "bg-orange-50",
             popular: false
         },
         {
-            name: "Starter",
-            subtitle: "Starter Subscription",
-            price: "LKR 5,000",
-            period: "/month",
-            inquiries: "500 inquiries/month",
-            locations: "2 Business Locations",
-            deliveryCompanies: "1 Delivery Company",
+            name: tPricing('pricing.plans.starter.name'),
+            subtitle: tPricing('pricing.plans.starter.subtitle'),
+            price: `LKR ${tPricing('pricing.plans.starter.price')}`,
+            period: tPricing('pricing.plans.starter.period'),
+            inquiries: tPricing('pricing.plans.starter.inquiries'),
+            locations: tPricing('pricing.plans.starter.locations'),
+            deliveryCompanies: tPricing('pricing.plans.starter.deliveryCompanies'),
             features: [
-                { name: "Inquiry Management", included: true },
-                { name: "COD Sync", included: true },
-                { name: "WhatsApp Form", included: true },
-                { name: "Dedicated Server", included: false },
-                { name: "Customizations", included: false }
+                { name: tPricing('pricing.features.inquiryManagement'), included: true },
+                { name: tPricing('pricing.features.codSync'), included: true },
+                { name: tPricing('pricing.features.whatsappForm'), included: true },
+                { name: tPricing('pricing.features.dedicatedServer'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
-            buttonText: "Get Started",
+            buttonText: tPricing('pricing.plans.starter.buttonText'),
             buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
             bgColor: "bg-blue-50",
-            popular: true
+            popular: true,
+            popularText: tPricing('pricing.plans.starter.popular')
         },
         {
-            name: "Business",
-            subtitle: "Business Subscription",
-            price: "LKR 12,000",
-            period: "/month",
-            inquiries: "5,000 inquiries/month",
-            locations: "5 Business Locations",
-            deliveryCompanies: "2 Delivery Companies",
+            name: tPricing('pricing.plans.business.name'),
+            subtitle: tPricing('pricing.plans.business.subtitle'),
+            price: `LKR ${tPricing('pricing.plans.business.price')}`,
+            period: tPricing('pricing.plans.business.period'),
+            inquiries: tPricing('pricing.plans.business.inquiries'),
+            locations: tPricing('pricing.plans.business.locations'),
+            deliveryCompanies: tPricing('pricing.plans.business.deliveryCompanies'),
             features: [
-                { name: "Inquiry Management", included: true },
-                { name: "COD Sync", included: true },
-                { name: "WhatsApp Form", included: true },
-                { name: "Dedicated Server", included: false },
-                { name: "Customizations", included: false }
+                { name: tPricing('pricing.features.inquiryManagement'), included: true },
+                { name: tPricing('pricing.features.codSync'), included: true },
+                { name: tPricing('pricing.features.whatsappForm'), included: true },
+                { name: tPricing('pricing.features.dedicatedServer'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
-            buttonText: "Get Started",
+            buttonText: tPricing('pricing.plans.business.buttonText'),
             buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
             bgColor: "bg-purple-50",
             popular: false
         },
         {
-            name: "Premium",
-            subtitle: "Premium Subscription",
-            price: "LKR 25,000",
-            period: "/month",
-            inquiries: "50,000 inquiries/month",
-            locations: "5 Business Locations",
-            deliveryCompanies: "10 Delivery Companies",
+            name: tPricing('pricing.plans.premium.name'),
+            subtitle: tPricing('pricing.plans.premium.subtitle'),
+            price: `LKR ${tPricing('pricing.plans.premium.price')}`,
+            period: tPricing('pricing.plans.premium.period'),
+            inquiries: tPricing('pricing.plans.premium.inquiries'),
+            locations: tPricing('pricing.plans.premium.locations'),
+            deliveryCompanies: tPricing('pricing.plans.premium.deliveryCompanies'),
             features: [
-                { name: "Inquiry Management", included: true },
-                { name: "COD Sync", included: true },
-                { name: "WhatsApp Form", included: true },
-                { name: "Dedicated Server", included: false },
-                { name: "Customizations", included: false }
+                { name: tPricing('pricing.features.inquiryManagement'), included: true },
+                { name: tPricing('pricing.features.codSync'), included: true },
+                { name: tPricing('pricing.features.whatsappForm'), included: true },
+                { name: tPricing('pricing.features.dedicatedServer'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
-            buttonText: "Get Started",
+            buttonText: tPricing('pricing.plans.premium.buttonText'),
             buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
             bgColor: "bg-green-50",
             popular: false
@@ -161,7 +164,7 @@ export default function Pricing() {
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            FLEXIBLE PRICING OPTIONS
+                            {tPricing('pricing.badge')}
                         </span>
                     </div>
 
@@ -171,10 +174,11 @@ export default function Pricing() {
                         letterSpacing: '-0.03em',
                         fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }}>
-                        Choose Your Plan
+                        <span className="text-black">{tPricing('pricing.title.part1')}</span>{' '}
+                        <span style={{ color: '#006daf' }}>{tPricing('pricing.title.part2')}</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Select the perfect plan for your business needs and start managing your orders efficiently
+                        {tPricing('pricing.subtitle')}
                     </p>
                 </div>
 
@@ -198,7 +202,7 @@ export default function Pricing() {
                             {plan.popular && (
                                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                                     <div className="bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded-full">
-                                        Most Popular
+                                        {plan.popularText || tPricing('pricing.plans.starter.popular')}
                                     </div>
                                 </div>
                             )}
@@ -271,16 +275,17 @@ export default function Pricing() {
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
                     <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                        Need Something More?
+                        <span className="text-black">{tPricing('pricing.bottomCta.title.part1')}</span>{' '}
+                        <span style={{ color: '#006daf' }}>{tPricing('pricing.bottomCta.title.part2')}</span>
                     </h3>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-                        Need a custom solution? We offer enterprise packages tailored to your specific requirements.
+                        {tPricing('pricing.bottomCta.description')}
                     </p>
                     <a
                         href="/contact-us"
                         className="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors"
                     >
-                        Contact Sales
+                        {tPricing('pricing.bottomCta.button')}
                     </a>
                 </div>
             </div>

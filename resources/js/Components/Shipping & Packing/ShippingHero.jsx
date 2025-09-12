@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
+import { useShippingTranslation } from '@/Utils/shippingTranslations';
 
 export default function ShippingHero({ auth }) {
+  const { tShipping } = useShippingTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function ShippingHero({ auth }) {
                 color: '#006daf',
                 backgroundColor: '#ffe6daff'
               }}>
-                SHIPPING AND PACKING
+                {tShipping('shippingHero.badge')}
               </span>
             </div>
           </div>
@@ -45,12 +47,11 @@ export default function ShippingHero({ auth }) {
               letterSpacing: '-0.03em',
               fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
             }}>
-              Seamless integrations<br />
-              from checkout to doorstep
+              {tShipping('shippingHero.title')}
             </h1>
             {/* Description with fade-in animation */}
             <p className={`text-base font-medium text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Save time and reduce errors by automatically syncing orders to your courier partner's portal. Experience zero manual entry and bulk processing capabilities for efficient shipping management.
+              {tShipping('shippingHero.description')}
             </p>
 
             {/* Feature highlights */}
@@ -61,7 +62,7 @@ export default function ShippingHero({ auth }) {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span>Zero Manual Entry</span>
+                <span>{tShipping('shippingHero.features.zeroManualEntry')}</span>
               </div>
               <div className="flex items-center space-x-2 text-sm font-semibold text-gray-700">
                 <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
@@ -69,7 +70,7 @@ export default function ShippingHero({ auth }) {
                     <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span>Bulk Processing</span>
+                <span>{tShipping('shippingHero.features.bulkProcessing')}</span>
               </div>
             </div>
 
@@ -79,7 +80,7 @@ export default function ShippingHero({ auth }) {
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >
-                Start a Free Trial
+                {tShipping('shippingHero.startFreeTrial')}
               </a>
               <button
                 onClick={() => {
@@ -99,7 +100,7 @@ export default function ShippingHero({ auth }) {
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <span>How It Works</span>
+                <span>{tShipping('shippingHero.howItWorks')}</span>
               </button>
             </div>
           </div>
@@ -123,7 +124,7 @@ export default function ShippingHero({ auth }) {
               <div className="relative">
                 <img
                   src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-10.jpg"
-                  alt="Shipping and Packing Management Dashboard"
+                  alt={tShipping('shippingHero.imageAlt')}
                   className="w-full h-auto group-hover:scale-105 transition-all duration-700"
                 />
               </div>

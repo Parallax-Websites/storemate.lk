@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useShippingTranslation } from '@/Utils/shippingTranslations';
 
 export default function OneClickCourierSync() {
+  const { tShipping } = useShippingTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
@@ -52,18 +54,19 @@ export default function OneClickCourierSync() {
                 <span className="text-white font-bold text-sm">S</span>
               </div>
               <div>
-                <div className="font-bold text-lg" style={{color: '#013387'}}>STOREMATE</div>
-                <div className="text-gray-600 text-sm font-medium">Order Management System</div>
+                <div className="font-bold text-lg" style={{color: '#013387'}}>{tShipping('oneClickCourierSync.brand.name')}</div>
+                <div className="text-gray-600 text-sm font-medium">{tShipping('oneClickCourierSync.brand.subtitle')}</div>
               </div>
             </div>
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span style={{color: '#006daf'}}>One-Click Courier Sync</span>
+                <span style={{color: '#000000ff'}}>{tShipping('oneClickCourierSync.title.part1')}</span><br />
+                <span style={{color: '#006daf'}}>{tShipping('oneClickCourierSync.title.part2')}</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                Save time by automatically syncing orders individually or in bulk to your courier partner's portal.
+                {tShipping('oneClickCourierSync.description')}
               </p>
             </div>
 
@@ -77,8 +80,8 @@ export default function OneClickCourierSync() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">99%</div>
-                    <div className="text-sm text-gray-600">Success Rate</div>
+                    <div className="text-2xl font-bold text-gray-900">{tShipping('oneClickCourierSync.stats.timeReduction.value')}</div>
+                    <div className="text-sm text-gray-600">{tShipping('oneClickCourierSync.stats.timeReduction.label')}</div>
                   </div>
                 </div>
               </div>
@@ -91,8 +94,8 @@ export default function OneClickCourierSync() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">Bulk</div>
-                    <div className="text-sm text-gray-600">Processing</div>
+                    <div className="text-2xl font-bold text-gray-900">{tShipping('oneClickCourierSync.stats.accuracyIncrease.value')}</div>
+                    <div className="text-sm text-gray-600">{tShipping('oneClickCourierSync.stats.accuracyIncrease.label')}</div>
                   </div>
                 </div>
               </div>
@@ -104,13 +107,13 @@ export default function OneClickCourierSync() {
                 style={{backgroundColor: '#013387'}}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
-                Start a Free Trial
+                {tShipping('oneClickCourierSync.startFreeTrial')}
               </a>
               <a href="/contact-us" className={`font-semibold transition-all duration-300 flex items-center space-x-2 delay-1600 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}`}
                 style={{color: '#006daf'}}
                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                <span>Know more</span>
+                <span>{tShipping('oneClickCourierSync.knowMore')}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -126,7 +129,7 @@ export default function OneClickCourierSync() {
               <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
               <img
                 src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-6-2048x1421-Photoroom-1.webp"
-                alt="One-Click Courier Sync Dashboard"
+                alt={tShipping('oneClickCourierSync.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{
                   transition: 'transform 300ms ease-out, box-shadow 300ms ease-out, filter 300ms ease-out',

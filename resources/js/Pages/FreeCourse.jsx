@@ -4,8 +4,10 @@ import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import { useState, useEffect, useRef } from 'react';
 import MainLayout from '@/Layouts/MainLayout';
+import { useFreeCourseTranslation } from '@/Utils/freeCourseTranslations';
 
 export default function FreeCourse({ auth }) {
+    const { tFreeCourse } = useFreeCourseTranslation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
@@ -187,84 +189,54 @@ export default function FreeCourse({ auth }) {
 
     return (
         <MainLayout>
-            <Head title="Free Course - Storemate OMS Training" />
+                        <Head title={tFreeCourse('freeCourse.pageTitle')} />
             <Header auth={auth} />
 
             {/* Hero Section */}
-            <div className="relative bg-white overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0">
-                    <div
-                        className="absolute inset-0 opacity-20"
-                        style={{
-                            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cg fill='none' stroke='%23006daf' stroke-width='0.5'%3e%3cpath d='M0 0h50v50H0z'/%3e%3c/g%3e%3c/svg%3e")`,
-                            backgroundSize: '50px 50px'
-                        }}
-                    ></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-white"></div>
-                </div>
-
-                <div className="relative py-16">
-                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                            {/* Hero Section */}
+                <section className="bg-gray-50 py-20">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            {/* Badge */}
-                            <div className="mb-6">
-                                <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold tracking-widest shadow-lg" style={{
-                                    color: '#006daf',
-                                    backgroundColor: '#ffe6daff'
-                                }}>
-                                    <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                                    </svg>
-                                    FREE STOREMATE OMS COURSE
-                                </span>
+                            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full text-sm font-medium text-blue-700 mb-8">
+                                <span className="mr-2">🎓</span>
+                                {tFreeCourse('freeCourse.hero.badge')}
                             </div>
-
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight mb-6" style={{
-                                fontWeight: '750',
-                                fontStretch: 'ultra-condensed',
-                                letterSpacing: '-0.03em',
-                                fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-                            }}>
-                                Master Storemate OMS
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                                <span className="text-black">{tFreeCourse('freeCourse.hero.title.part1')}</span>{' '}
+                                <span style={{color: '#006daf'}}>{tFreeCourse('freeCourse.hero.title.part2')}</span>
                             </h1>
-                            <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-                                Learn how to streamline your order management, reduce returns by 80%+, and save 3+ hours daily with our comprehensive free video course.
+                            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                                {tFreeCourse('freeCourse.hero.description')}
                             </p>
-
-                            {/* Course Stats */}
-                            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-blue-600 mb-2">16</div>
-                                    <div className="text-gray-600">Video Tutorials</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-green-600 mb-2">3</div>
-                                    <div className="text-gray-600">Learning Modules</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
-                                    <div className="text-gray-600">Free Access</div>
-                                </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                                {tFreeCourse('freeCourse.hero.stats').map((stat, index) => (
+                                    <div key={index} className="text-center">
+                                        <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                                        <div className="text-gray-600">{stat.text}</div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
 
             {/* Course Modules */}
             <div ref={componentRef} className="py-16 bg-gray-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Course Modules</h2>
+                        <h2 className="text-3xl font-bold mb-6">
+                            <span className="text-black">{tFreeCourse('freeCourse.courseModules.sectionTitle')}</span>
+                        </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Click on any module to access detailed video lessons and materials
+                            {tFreeCourse('freeCourse.courseModules.sectionDescription')}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {courseModules.map((module, moduleIndex) => (
-                            <div key={moduleIndex} className={`transition-all duration-1000 delay-${moduleIndex * 200} ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                        {courseModules.map((module, moduleIndex) => {
+                            const moduleTranslation = tFreeCourse(`freeCourse.courseModules.modules.${moduleIndex}`);
+                            return (
+                                <div key={moduleIndex} className={`transition-all duration-1000 delay-${moduleIndex * 200} ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                                 <Link
                                     href={`/module-${moduleIndex + 1}`}
                                     className="block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden group cursor-pointer"
@@ -293,11 +265,11 @@ export default function FreeCourse({ auth }) {
                                             Module {moduleIndex + 1}
                                         </div>
 
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                                            {module.title}
+                                        <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                                            <span className="text-black">{moduleTranslation.title}</span>
                                         </h3>
                                         <p className="text-gray-600 mb-6 leading-relaxed">
-                                            {module.description}
+                                            {moduleTranslation.description}
                                         </p>
 
                                         {/* Module Stats */}
@@ -310,7 +282,7 @@ export default function FreeCourse({ auth }) {
                                                 }`}>
                                                     {module.videos.length}
                                                 </div>
-                                                <div className="text-gray-500 text-sm">Video Lessons</div>
+                                                <div className="text-gray-500 text-sm">{moduleTranslation.videoText}</div>
                                             </div>
                                             <div className="text-center">
                                                 <div className={`text-2xl font-bold mb-1 ${
@@ -318,9 +290,9 @@ export default function FreeCourse({ auth }) {
                                                     moduleIndex === 1 ? 'text-green-600' :
                                                     'text-purple-600'
                                                 }`}>
-                                                    {moduleIndex === 0 ? 'Basic' : moduleIndex === 1 ? 'Core' : 'Pro'}
+                                                    {moduleTranslation.level}
                                                 </div>
-                                                <div className="text-gray-500 text-sm">Level</div>
+                                                <div className="text-gray-500 text-sm">{moduleTranslation.levelText}</div>
                                             </div>
                                         </div>
 
@@ -330,7 +302,7 @@ export default function FreeCourse({ auth }) {
                                             moduleIndex === 1 ? 'bg-green-600 hover:bg-green-700 text-white' :
                                             'bg-purple-600 hover:bg-purple-700 text-white'
                                         }`}>
-                                            Start Module
+                                            {moduleTranslation.startButton}
                                             <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                             </svg>
@@ -340,17 +312,20 @@ export default function FreeCourse({ auth }) {
                                     {/* Video Preview */}
                                     <div className="px-8 pb-8">
                                         <div className="bg-gray-100 rounded-lg p-4">
-                                            <h4 className="font-medium text-gray-900 mb-2">Featured Lessons:</h4>
+                                            <h4 className="font-medium text-gray-900 mb-2">{moduleTranslation.featuredText}</h4>
                                             <ul className="space-y-1">
-                                                {module.videos.slice(0, 3).map((video, index) => (
-                                                    <li key={index} className="text-sm text-gray-600 flex items-center">
-                                                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
-                                                        <span className="truncate">{video.title.substring(0, 50)}...</span>
-                                                    </li>
-                                                ))}
+                                                {module.videos.slice(0, 3).map((video, index) => {
+                                                    const videoTranslation = tFreeCourse(`freeCourse.videos.modules.${moduleIndex}.videos.${index}`);
+                                                    return (
+                                                        <li key={index} className="text-sm text-gray-600 flex items-center">
+                                                            <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                                                            <span className="truncate">{videoTranslation.title.substring(0, 50)}...</span>
+                                                        </li>
+                                                    );
+                                                })}
                                                 {module.videos.length > 3 && (
                                                     <li className="text-sm text-gray-500 font-medium">
-                                                        +{module.videos.length - 3} more lessons
+                                                        +{module.videos.length - 3} {moduleTranslation.moreText}
                                                     </li>
                                                 )}
                                             </ul>
@@ -358,49 +333,48 @@ export default function FreeCourse({ auth }) {
                                     </div>
                                 </Link>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
                     {/* Course Benefits */}
                     <div className="mt-16 text-center">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8">What You'll Learn</h3>
+                        <h3 className="text-2xl font-bold mb-8">
+                            <span className="text-black">{tFreeCourse('freeCourse.benefits.title')}</span>
+                        </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div className="bg-white p-6 rounded-lg shadow-md">
-                                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
+                            {tFreeCourse('freeCourse.benefits.items').map((benefit, index) => (
+                                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 ${
+                                        index === 0 ? 'bg-blue-100' :
+                                        index === 1 ? 'bg-green-100' :
+                                        index === 2 ? 'bg-purple-100' :
+                                        'bg-orange-100'
+                                    }`}>
+                                        <svg className={`w-6 h-6 ${
+                                            index === 0 ? 'text-blue-600' :
+                                            index === 1 ? 'text-green-600' :
+                                            index === 2 ? 'text-purple-600' :
+                                            'text-orange-600'
+                                        }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            {index === 0 && (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            )}
+                                            {index === 1 && (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            )}
+                                            {index === 2 && (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                            )}
+                                            {index === 3 && (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                                            )}
+                                        </svg>
+                                    </div>
+                                    <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                                    <p className="text-gray-600 text-sm">{benefit.description}</p>
                                 </div>
-                                <h4 className="font-semibold text-gray-900 mb-2">Quick Setup</h4>
-                                <p className="text-gray-600 text-sm">Get started with Storemate OMS in minutes</p>
-                            </div>
-                            <div className="bg-white p-6 rounded-lg shadow-md">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <h4 className="font-semibold text-gray-900 mb-2">Order Management</h4>
-                                <p className="text-gray-600 text-sm">Master efficient order processing workflows</p>
-                            </div>
-                            <div className="bg-white p-6 rounded-lg shadow-md">
-                                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                                    </svg>
-                                </div>
-                                <h4 className="font-semibold text-gray-900 mb-2">Courier Integration</h4>
-                                <p className="text-gray-600 text-sm">Connect with delivery partners seamlessly</p>
-                            </div>
-                            <div className="bg-white p-6 rounded-lg shadow-md">
-                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                                    </svg>
-                                </div>
-                                <h4 className="font-semibold text-gray-900 mb-2">COD Business</h4>
-                                <p className="text-gray-600 text-sm">Set up Cash on Delivery operations</p>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -4,8 +4,10 @@ import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import { useState, useEffect, useRef } from 'react';
 import MainLayout from '@/Layouts/MainLayout';
+import { useModule1Translation } from '@/Utils/module1Translations';
 
 export default function Module1({ auth }) {
+    const { tModule1 } = useModule1Translation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
@@ -65,42 +67,22 @@ export default function Module1({ auth }) {
     };
 
     // Module 1 video data
-    const moduleVideos = [
-        {
-            title: "Online Sellers ලට POS Software ගැළපෙන්නේ නැත්තේ ඇයි? | Online Order Management Software",
-            url: "https://youtu.be/EwXu1ovEBFY?si=KsMr7XC90wCi3WyM",
-            duration: "1:54",
-            description: "Why POS Software doesn't suit online sellers and what they need instead"
-        },
-        {
-            title: "The Most Trusted Sales Channel for E-commerce in Sri Lanka? | Online Order Management Software",
-            url: "https://youtu.be/BiRqNy6KkJU?si=NDSZwL-ZGxFJ3IAs",
-            duration: "2:03",
-            description: "Discover the most reliable sales channels for Sri Lankan e-commerce businesses"
-        },
-        {
-            title: "ඔයාට Leads ආවත් Sale එකක් වෙන්නේ නැද්ද? Online Order Management Software",
-            url: "https://youtu.be/NcHyxW8aglA?si=aatb_TOb3nEFwD0T",
-            duration: "3:41",
-            description: "Getting leads but no sales? Learn how to convert leads effectively"
-        },
-        {
-            title: "Order Sync with Courier Partner",
-            url: "https://youtu.be/XjxDV-ab7QU?si=1R21NMOf5PLp-Yyg",
-            duration: "1:00",
-            description: "How to synchronize orders with your courier delivery partners"
-        },
-        {
-            title: "Make Your Online Business Operations Smooth | Storemate OMS Is for Sri Lankan SMEs 🇱🇰📦",
-            url: "https://youtu.be/-CYtv4drzyo?si=yq8utB6BZVlueoC4",
-            duration: "4:51",
-            description: "Complete guide on making your online business operations smooth with Storemate OMS"
-        }
-    ];
+    const moduleVideos = tModule1('module1.videos').map((video, index) => ({
+        title: video.title,
+        url: [
+            "https://youtu.be/EwXu1ovEBFY?si=KsMr7XC90wCi3WyM",
+            "https://youtu.be/BiRqNy6KkJU?si=NDSZwL-ZGxFJ3IAs",
+            "https://youtu.be/NcHyxW8aglA?si=aatb_TOb3nEFwD0T",
+            "https://youtu.be/XjxDV-ab7QU?si=1R21NMOf5PLp-Yyg",
+            "https://youtu.be/-CYtv4drzyo?si=yq8utB6BZVlueoC4"
+        ][index],
+        duration: video.duration,
+        description: video.description
+    }));
 
     return (
         <MainLayout>
-            <Head title="Module 1: Getting Started with Storemate OMS - Free Course" />
+            <Head title={tModule1('module1.pageTitle')} />
             <Header auth={auth} />
 
             {/* Hero Section */}
@@ -123,11 +105,11 @@ export default function Module1({ auth }) {
                             <ol className="flex items-center space-x-2 text-sm">
                                 <li>
                                     <Link href="/free-course" className="text-blue-600 hover:text-blue-800 transition-colors">
-                                        Free Course
+                                        {tModule1('module1.breadcrumb.freeCourse')}
                                     </Link>
                                 </li>
                                 <li className="text-gray-400">/</li>
-                                <li className="text-gray-600">Module 1</li>
+                                <li className="text-gray-600">{tModule1('module1.breadcrumb.module1')}</li>
                             </ol>
                         </nav>
 
@@ -141,7 +123,7 @@ export default function Module1({ auth }) {
                                     <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
                                     </svg>
-                                    MODULE 1
+                                    {tModule1('module1.hero.badge')}
                                 </span>
                             </div>
 
@@ -151,25 +133,25 @@ export default function Module1({ auth }) {
                                 letterSpacing: '-0.03em',
                                 fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                             }}>
-                                Getting Started with Storemate OMS
+                                {tModule1('module1.hero.title')}
                             </h1>
                             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-                                Learn the fundamentals and understand why Storemate is perfect for online sellers
+                                {tModule1('module1.hero.description')}
                             </p>
 
                             {/* Module Stats */}
                             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-blue-600 mb-2">{moduleVideos.length}</div>
-                                    <div className="text-gray-600">Video Lessons</div>
+                                    <div className="text-3xl font-bold text-blue-600 mb-2">{tModule1('module1.hero.stats.0.number')}</div>
+                                    <div className="text-gray-600">{tModule1('module1.hero.stats.0.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-green-600 mb-2">Beginner</div>
-                                    <div className="text-gray-600">Difficulty Level</div>
+                                    <div className="text-3xl font-bold text-green-600 mb-2">{tModule1('module1.hero.stats.1.level')}</div>
+                                    <div className="text-gray-600">{tModule1('module1.hero.stats.1.text')}</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-purple-600 mb-2">Essential</div>
-                                    <div className="text-gray-600">Knowledge Base</div>
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">{tModule1('module1.hero.stats.2.type')}</div>
+                                    <div className="text-gray-600">{tModule1('module1.hero.stats.2.text')}</div>
                                 </div>
                             </div>
                         </div>
@@ -182,10 +164,9 @@ export default function Module1({ auth }) {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     {/* Module Introduction */}
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Module Overview</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-6">{tModule1('module1.moduleOverview.title')}</h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                            This foundational module introduces you to Storemate OMS and explains why traditional POS systems don't work for online sellers.
-                            You'll learn about the most trusted sales channels in Sri Lanka and discover how to convert leads into actual sales.
+                            {tModule1('module1.moduleOverview.description')}
                         </p>
                     </div>
 
@@ -239,7 +220,7 @@ export default function Module1({ auth }) {
 
                                             {/* Lesson Number */}
                                             <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                                                Lesson {index + 1}
+                                                {tModule1('module1.ui.lessonText')} {index + 1}
                                             </div>
                                         </div>
 
@@ -261,10 +242,10 @@ export default function Module1({ auth }) {
                                                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                                         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                                                     </svg>
-                                                    Watch Lesson
+                                                    {tModule1('module1.ui.watchLesson')}
                                                 </a>
                                                 <span className="text-sm text-gray-500 font-medium">
-                                                    Duration: {video.duration}
+                                                    {tModule1('module1.ui.durationText')} {video.duration}
                                                 </span>
                                             </div>
                                         </div>
@@ -283,14 +264,14 @@ export default function Module1({ auth }) {
                             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Back to Course
+                            {tModule1('module1.ui.navigation.backToCourse')}
                         </Link>
 
                         <Link
                             href="/module-2"
                             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
                         >
-                            Next Module
+                            {tModule1('module1.ui.navigation.nextModule')}
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>

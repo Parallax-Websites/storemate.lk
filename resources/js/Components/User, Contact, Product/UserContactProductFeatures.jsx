@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useUserContactProductTranslation } from '@/Utils/userContactProductTranslations';
 
 export default function UserContactProductFeatures() {
+  const { tUserContactProduct } = useUserContactProductTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
@@ -35,8 +37,8 @@ export default function UserContactProductFeatures() {
           <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
         </svg>
       ),
-      title: "User Management",
-      description: "Create and manage user accounts effortlessly. Assign roles and permissions to streamline team responsibilities."
+      title: tUserContactProduct('features.userManagement.title'),
+      description: tUserContactProduct('features.userManagement.description')
     },
     {
       icon: (
@@ -44,8 +46,8 @@ export default function UserContactProductFeatures() {
           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
         </svg>
       ),
-      title: "Product Management",
-      description: "Add items with details like categories, brands, and quantities. Stay organized with a clean and searchable product database."
+      title: tUserContactProduct('features.productManagement.title'),
+      description: tUserContactProduct('features.productManagement.description')
     },
     {
       icon: (
@@ -53,8 +55,8 @@ export default function UserContactProductFeatures() {
           <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Contact Management",
-      description: "Keep all customer and vendor information in one secure place. Access profiles quickly for smoother communication and service."
+      title: tUserContactProduct('features.contactManagement.title'),
+      description: tUserContactProduct('features.contactManagement.description')
     },
     {
       icon: (
@@ -81,15 +83,18 @@ export default function UserContactProductFeatures() {
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className={`mb-4 transition-all duration-1000 delay-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
             <span className="text-sm font-bold tracking-widest text-gray-500 uppercase">
-              Storemate Order Management System
+              {tUserContactProduct('features.subtitle')}
             </span>
           </div>
           <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <span style={{color: '#006daf'}}
               className="transition-all duration-300"
               onMouseEnter={(e) => e.target.style.color = '#013387'}
-              onMouseLeave={(e) => e.target.style.color = '#006daf'}>Smart Management</span>
+              onMouseLeave={(e) => e.target.style.color = '#006daf'}>{tUserContactProduct('features.title')}</span>
           </h2>
+          <p className={`text-lg text-gray-600 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            {tUserContactProduct('features.description')}
+          </p>
         </div>
 
         {/* Features Grid */}

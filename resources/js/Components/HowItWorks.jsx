@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function HowItWorks() {
+    const { t } = useTranslation();
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -16,62 +18,62 @@ export default function HowItWorks() {
     const steps = [
         {
             number: "1",
-            title: "RECEIVE",
-            subtitle: "Receive & Track Inquiries",
-            description: "All orders from Facebook, WhatsApp, calls, and Instagram are captured in one clean dashboard.",
+            title: t('howItWorks.steps.receive.title'),
+            subtitle: t('howItWorks.steps.receive.subtitle'),
+            description: t('howItWorks.steps.receive.description'),
             icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>,
             bgColor: "linear-gradient(135deg, #D81B60 0%, #E91E63 100%)",
             color: "#D81B60",
             details: [
-                "Facebook integration",
-                "WhatsApp management",
-                "Call tracking",
-                "Instagram orders"
+                t('howItWorks.steps.receive.details.0'),
+                t('howItWorks.steps.receive.details.1'),
+                t('howItWorks.steps.receive.details.2'),
+                t('howItWorks.steps.receive.details.3')
             ]
         },
         {
             number: "2",
-            title: "CONFIRM",
-            subtitle: "Confirm & Convert to Order",
-            description: "Detect duplicates, follow up fast, and confirm real customers before shipping.",
+            title: t('howItWorks.steps.confirm.title'),
+            subtitle: t('howItWorks.steps.confirm.subtitle'),
+            description: t('howItWorks.steps.confirm.description'),
             icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>,
             bgColor: "linear-gradient(135deg, #FF6F00 0%, #FF9800 100%)",
             color: "#FF6F00",
             details: [
-                "Duplicate detection",
-                "Fast follow-ups",
-                "Customer verification",
-                "Order confirmation"
+                t('howItWorks.steps.confirm.details.0'),
+                t('howItWorks.steps.confirm.details.1'),
+                t('howItWorks.steps.confirm.details.2'),
+                t('howItWorks.steps.confirm.details.3')
             ]
         },
         {
             number: "3",
-            title: "SYNC",
-            subtitle: "Sync with Courier & Print Waybill",
-            description: "Send orders to Royal Express or Trans Express in one click. No Excel — just print & pack.",
+            title: t('howItWorks.steps.sync.title'),
+            subtitle: t('howItWorks.steps.sync.subtitle'),
+            description: t('howItWorks.steps.sync.description'),
             icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>,
             bgColor: "linear-gradient(135deg, #FF9800 0%, #FFC107 100%)",
             color: "#FF9800",
             details: [
-                "Royal Express sync",
-                "Trans Express sync",
-                "One-click shipping",
-                "Waybill printing"
+                t('howItWorks.steps.sync.details.0'),
+                t('howItWorks.steps.sync.details.1'),
+                t('howItWorks.steps.sync.details.2'),
+                t('howItWorks.steps.sync.details.3')
             ]
         },
         {
             number: "4",
-            title: "MONITOR",
-            subtitle: "Monitor Everything Live",
-            description: "Track delivery status, order progress, and customer history — all in one place.",
+            title: t('howItWorks.steps.monitor.title'),
+            subtitle: t('howItWorks.steps.monitor.subtitle'),
+            description: t('howItWorks.steps.monitor.description'),
             icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>,
             bgColor: "linear-gradient(135deg, #00ACC1 0%, #26C6DA 100%)",
             color: "#00ACC1",
             details: [
-                "Delivery tracking",
-                "Order progress",
-                "Customer history",
-                "Live monitoring"
+                t('howItWorks.steps.monitor.details.0'),
+                t('howItWorks.steps.monitor.details.1'),
+                t('howItWorks.steps.monitor.details.2'),
+                t('howItWorks.steps.monitor.details.3')
             ]
         }
     ];
@@ -88,7 +90,7 @@ export default function HowItWorks() {
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            STOREMATE™ PROCESS
+                            {t('howItWorks.badge')}
                         </span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
@@ -97,10 +99,10 @@ export default function HowItWorks() {
                         letterSpacing: '-0.03em',
                         fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }}>
-                        How it Works?
+                        {t('howItWorks.title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-36">
-                        Follow our simple 4-step process to transform your order management from chaos to complete control
+                        {t('howItWorks.subtitle')}
                     </p>
                 </div>
 

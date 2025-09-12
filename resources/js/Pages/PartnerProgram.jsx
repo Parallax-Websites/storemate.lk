@@ -7,11 +7,13 @@ import WhoWereLookingFor from '@/Components/Partner Program/WhoWereLookingFor';
 import HowStoremateEmpowers from '@/Components/Partner Program/HowStoremateEmpowers';
 import ExclusiveBenefits from '@/Components/Partner Program/ExclusiveBenefits';
 import MainLayout from '@/Layouts/MainLayout';
+import { usePartnerProgramTranslation } from '@/Utils/partnerProgramTranslations';
 
 export default function PartnerProgramPage({ auth }) {
+    const { tPartnerProgram } = usePartnerProgramTranslation();
     return (
         <MainLayout>
-            <Head title="Partner Program - Storemate OMS" />
+            <Head title={tPartnerProgram('partnerProgram.pageTitle')} />
             <Header auth={auth} />
 
             <PartnerProgram />

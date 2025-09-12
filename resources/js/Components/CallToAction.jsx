@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const CallToAction = () => {
+    const { t } = useTranslation();
     return (
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
             {/* Background Pattern and Gradients */}
@@ -62,7 +64,7 @@ const CallToAction = () => {
                         color: '#006daf',
                         backgroundColor: '#ffe6daff'
                     }}>
-                        LET'S TRY! GET FREE SUPPORT
+                        {t('callToAction.badge')}
                     </span>
                 </div>
 
@@ -73,7 +75,7 @@ const CallToAction = () => {
                     letterSpacing: '-0.03em',
                     fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                 }}>
-                    Ready to get started?
+                    {t('callToAction.title')}
                 </h2>
 
                 {/* Features List */}
@@ -82,28 +84,28 @@ const CallToAction = () => {
                         <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">1</span>
                         </div>
-                        <span className="text-gray-700 text-base">Book a free 10-minute demo</span>
+                        <span className="text-gray-700 text-base">{t('callToAction.steps.step1')}</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">2</span>
                         </div>
-                        <span className="text-gray-700 text-base">See how Storemate fits your business</span>
+                        <span className="text-gray-700 text-base">{t('callToAction.steps.step2')}</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">3</span>
                         </div>
-                        <span className="text-gray-700 text-base">Get 30 days free trial</span>
+                        <span className="text-gray-700 text-base">{t('callToAction.steps.step3')}</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">4</span>
                         </div>
-                        <span className="text-gray-700 text-base">Scale confidently with Storemate OMS</span>
+                        <span className="text-gray-700 text-base">{t('callToAction.steps.step4')}</span>
                     </div>
                 </div>
 
@@ -121,7 +123,7 @@ const CallToAction = () => {
                         onMouseEnter={(e) => e.target.style.backgroundColor = '#001f5c'}
                         onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}
                     >
-                        Start a Free Trial
+                        {t('callToAction.startFreeTrial')}
                     </a>
 
                     <button
@@ -150,7 +152,7 @@ const CallToAction = () => {
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                         </svg>
-                        <span>How It Works</span>
+                        <span>{t('callToAction.howItWorksButton')}</span>
                     </button>
                 </div>
 
@@ -160,14 +162,14 @@ const CallToAction = () => {
                         <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-gray-700">Free 30-day trial</span>
+                        <span className="text-gray-700">{t('callToAction.features.freeTrial')}</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
                         <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-gray-700">Online Support</span>
+                        <span className="text-gray-700">{t('callToAction.features.onlineSupport')}</span>
                     </div>
                 </div>
 

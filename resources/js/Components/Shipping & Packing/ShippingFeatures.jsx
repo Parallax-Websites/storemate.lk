@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useShippingTranslation } from '@/Utils/shippingTranslations';
 
 export default function ShippingFeatures() {
+  const { tShipping } = useShippingTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
@@ -35,8 +37,8 @@ export default function ShippingFeatures() {
           <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Effortless Order Uploads",
-      description: "Save 5+ hours daily on manual order upload to courier portal"
+      title: tShipping('shippingFeatures.features.effortlessOrderUploads.title'),
+      description: tShipping('shippingFeatures.features.effortlessOrderUploads.description')
     },
     {
       icon: (
@@ -44,8 +46,8 @@ export default function ShippingFeatures() {
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Lightning-Fast Order Processing",
-      description: "Process 10x more orders in the same time"
+      title: tShipping('shippingFeatures.features.lightningFastProcessing.title'),
+      description: tShipping('shippingFeatures.features.lightningFastProcessing.description')
     },
     {
       icon: (
@@ -53,8 +55,8 @@ export default function ShippingFeatures() {
           <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Minimal Shipping Errors",
-      description: "Reduce shipping errors by 90%"
+      title: tShipping('shippingFeatures.features.minimalShippingErrors.title'),
+      description: tShipping('shippingFeatures.features.minimalShippingErrors.description')
     },
     {
       icon: (
@@ -62,8 +64,8 @@ export default function ShippingFeatures() {
           <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
         </svg>
       ),
-      title: "Scalable Order Management",
-      description: "Handle more orders without extra staff"
+      title: tShipping('shippingFeatures.features.scalableOrderManagement.title'),
+      description: tShipping('shippingFeatures.features.scalableOrderManagement.description')
     }
   ];
 
@@ -81,17 +83,17 @@ export default function ShippingFeatures() {
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className={`mb-4 transition-all duration-1000 delay-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
             <span className="text-sm font-bold tracking-widest text-gray-500 uppercase">
-              Storemate Order Management System
+              {tShipping('shippingFeatures.subtitle')}
             </span>
           </div>
           <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <span style={{color: '#006daf'}}
               className="transition-all duration-300"
               onMouseEnter={(e) => e.target.style.color = '#013387'}
-              onMouseLeave={(e) => e.target.style.color = '#006daf'}>Boost Your Shipping Efficiency</span>
+              onMouseLeave={(e) => e.target.style.color = '#006daf'}>{tShipping('shippingFeatures.title')}</span>
           </h2>
           <p className={`text-lg text-gray-600 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            Automate order processing, reduce errors, and scale effortlessly without extra staff
+            {tShipping('shippingFeatures.description')}
           </p>
         </div>
 
@@ -136,7 +138,7 @@ export default function ShippingFeatures() {
                   {feature.description}
                 </p>
                 <a href="#" className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors duration-300 inline-flex items-center">
-                  Learn More
+                  {tShipping('shippingFeatures.learnMore')}
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

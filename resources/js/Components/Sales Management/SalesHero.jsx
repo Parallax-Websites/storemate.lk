@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
+import { useSalesTranslation } from '@/Utils/salesTranslations';
 
 export default function SalesHero({ auth }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { tSales } = useSalesTranslation();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -35,7 +37,7 @@ export default function SalesHero({ auth }) {
                 color: '#006daf',
                 backgroundColor: '#ffe6daff'
               }}>
-                SALES MANAGEMENT
+                {tSales('salesHero.badge')}
               </span>
             </div>
           </div>
@@ -47,13 +49,12 @@ export default function SalesHero({ auth }) {
               letterSpacing: '-0.03em',
               fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
             }}>
-              Keep track of all your<br />
-              orders from confirmation<br />
-              to delivery
+              {tSales('salesHero.title.part1')}<br />
+              <span style={{color: '#006daf'}}>{tSales('salesHero.title.part2')}</span>
             </h1>
             {/* Description with fade-in animation */}
             <p className={`text-base font-medium text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Track your orders seamlessly from confirmation to delivery, ensuring smooth sales management and timely fulfillment. Monitor order status, manage courier details, and keep customers informed every step of the way.
+              {tSales('salesHero.description')}
             </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -61,7 +62,7 @@ export default function SalesHero({ auth }) {
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >
-                Start a Free Trial
+                {tSales('salesHero.startFreeTrial')}
               </a>
               <button
                 onClick={() => {
@@ -81,7 +82,7 @@ export default function SalesHero({ auth }) {
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <span>How It Works</span>
+                <span>{tSales('salesHero.howItWorks')}</span>
               </button>
             </div>
           </div>
@@ -105,7 +106,7 @@ export default function SalesHero({ auth }) {
               <div className="relative">
                 <img
                   src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-8-4.webp"
-                  alt="Sales Management System Dashboard"
+                  alt={tSales('salesHero.imageAlt')}
                   className="w-full h-auto group-hover:scale-105 transition-all duration-700"
                 />
               </div>

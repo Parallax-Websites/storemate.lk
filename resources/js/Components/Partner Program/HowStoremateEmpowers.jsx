@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { usePartnerProgramTranslation } from '@/Utils/partnerProgramTranslations';
 
 export default function HowStoremateEmpowers() {
+    const { tPartnerProgram } = usePartnerProgramTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
 
@@ -102,20 +104,20 @@ export default function HowStoremateEmpowers() {
                             backgroundColor: '#ffffff',
                             borderColor: '#006daf'
                         }}>
-                            💼 CLIENT BENEFITS
+                            💼 {tPartnerProgram('partnerProgram.howStoremateEmpowers.badge')}
                         </span>
                     </div>
 
                     {/* Main Title */}
                     <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl mb-6">
-                        <span style={{color: '#006daf'}}>STOREMATE OMS</span>
-                        <span className="block text-gray-900">How Storemate OMS Empowers Your</span>
-                        <span className="block text-gray-900">Clients' Businesses</span>
+                        <span style={{color: '#006daf'}}>{tPartnerProgram('partnerProgram.howStoremateEmpowers.title.part1')}</span>
+                        <span className="block text-gray-900">{tPartnerProgram('partnerProgram.howStoremateEmpowers.title.part2')}</span>
+                        <span className="block text-gray-900">{tPartnerProgram('partnerProgram.howStoremateEmpowers.title.part3')}</span>
                     </h2>
 
                     {/* Subtitle */}
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        When your clients use Storemate OMS, they gain powerful advantages that streamline their operations and boost their growth.
+                        {tPartnerProgram('partnerProgram.howStoremateEmpowers.subtitle')}
                     </p>
                 </div>
 
@@ -141,8 +143,8 @@ export default function HowStoremateEmpowers() {
                                         </div>
 
                                         <div className="pt-6">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">Effortless Order Centralization</h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed">Your clients can easily manage all their online orders from platforms like Facebook and WhatsApp in one simple place. This saves time and keeps everything organized.</p>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.0.title')}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.0.description')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -165,8 +167,8 @@ export default function HowStoremateEmpowers() {
                                         </div>
 
                                         <div className="pt-6">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">Guaranteed Profit Protection</h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed">Storemate OMS automatically finds duplicate orders and helps block fake customers. This greatly reduces costly returns and fraud, directly protecting your clients' earnings.</p>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.1.title')}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.1.description')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -189,8 +191,8 @@ export default function HowStoremateEmpowers() {
                                         </div>
 
                                         <div className="pt-6">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">Seamless Courier Automation</h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed">Your clients can say goodbye to manual data entry! Orders are automatically sent to courier systems without needing Excel sheets, leading to faster and error-free deliveries.</p>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.2.title')}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.2.description')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -218,8 +220,8 @@ export default function HowStoremateEmpowers() {
                                         </div>
 
                                         <div className="pt-6">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">Boosted Daily Efficiency</h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed">From printing waybills with one click to easily managing customer inquiries, Storemate OMS automates boring daily tasks. This allows your clients to focus more on growing their business and less on busywork.</p>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.3.title')}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.3.description')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -243,8 +245,8 @@ export default function HowStoremateEmpowers() {
                                         </div>
 
                                         <div className="pt-6">
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3">A Smart Solution Built for Sri Lanka</h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed">Storemate OMS isn't just a general tool. It's a smart Order Management System specifically designed to meet the unique needs and challenges faced by online sellers in Sri Lanka.</p>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.4.title')}</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed">{tPartnerProgram('partnerProgram.howStoremateEmpowers.benefits.4.description')}</p>
                                         </div>
                                     </div>
                                 </div>
