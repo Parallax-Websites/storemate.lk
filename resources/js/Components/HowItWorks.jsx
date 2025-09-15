@@ -82,7 +82,7 @@ export default function HowItWorks() {
         <div className="relative py-20 px-4 sm:px-6 lg:px-8 mb-20">
             <div className="relative max-w-7xl mx-auto">
                 {/* Header */}
-                <div className={`text-center mb-16 transition-all duration-1000 ${
+                <div id="what-is-storemate-oms" className={`text-center mb-16 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
                     <div className="mb-4">

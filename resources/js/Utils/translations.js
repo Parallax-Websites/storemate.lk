@@ -329,23 +329,74 @@ export const translations = {
 
     // Hero Section
     hero: {
+        // Feature Boxes
+        features: {
+            identifyFakeOrders: {
+                title: {
+                    en: 'Identify Fake Orders',
+                    si: 'ව්‍යාජ ඇණවුම් හඳුනාගන්න',
+                    ta: 'போலி ஆர்டர்களை அடையாளம் காணவும்'
+                },
+                description: {
+                    en: 'Spot suspicious or fraudulent orders before they cost you money.',
+                    si: 'මුදල් වියදම් වීමට පෙර සැක සහිත හෝ වංචනික ඇණවුම් හඳුනාගන්න.',
+                    ta: 'பணத்தை செலவழிப்பதற்கு முன் சந்தேகத்திற்கிடமான அல்லது மோசடி ஆர்டர்களைக் கண்டறியவும்.'
+                }
+            },
+            knowGenuineCustomers: {
+                title: {
+                    en: 'Know Genuine Customers',
+                    si: 'සැබෑ ගනුදෙනුකරුවන් හඳුනාගන්න',
+                    ta: 'உண்மையான வாடிக்கையாளர்களை அறியவும்'
+                },
+                description: {
+                    en: 'Access verified profiles and order history to build stronger customer trust.',
+                    si: 'තහවුරු කළ පැතිකඩ සහ ඇණවුම් ඉතිහාසය වෙත ප්‍රවේශ වී වඩා ශක්තිමත් පාරිභෝගික විශ්වාසය ගොඩනගන්න.',
+                    ta: 'சரிபார்க்கப்பட்ட சுயவிவரங்கள் மற்றும் ஆர்டர் வரலாற்றை அணுகி வலுவான வாடிக்கையாளர் நம்பிக்கையை உருவாக்கவும்.'
+                }
+            },
+            banRiskyCustomers: {
+                title: {
+                    en: 'Ban Risky Customers',
+                    si: 'අවදානම් ගනුදෙනුකරුවන් තහනම් කරන්න',
+                    ta: 'ஆபத்தான வாடிக்கையாளர்களைத் தடை செய்யவும்'
+                },
+                description: {
+                    en: 'Block banned or repeat offenders automatically, so they can\'t place new orders.',
+                    si: 'තහනම් කළ හෝ නැවත වරදකරුවන් ස්වයංක්‍රීයව අවහිර කරන්න, එවිට ඔවුන්ට නව ඇණවුම් තැබිය නොහැක.',
+                    ta: 'தடை செய்யப்பட்ட அல்லது மீண்டும் குற்றம் செய்பவர்களைத் தானாகவே தடுக்கவும், அதனால் அவர்களால் புதிய ஆர்டர்களை வைக்க முடியாது.'
+                }
+            },
+            verifyBeforeDispatch: {
+                title: {
+                    en: 'Verify Before Dispatch',
+                    si: 'යැවීමට පෙර තහවුරු කරන්න',
+                    ta: 'அனுப்புவதற்கு முன் சரிபார்க்கவும்'
+                },
+                description: {
+                    en: 'Confirm every order with smart validation to prevent returns and delivery failures.',
+                    si: 'ආපසු යැවීම් සහ බෙදාහැරීම් අසාර්ථක වීම වැළැක්වීමට දක්ෂ වලංගුකරණය සමඟ සෑම ඇණවුමක්ම තහවුරු කරන්න.',
+                    ta: 'திரும்ப அனுப்புதல் மற்றும் டெலிவரி தோல்விகளைத் தடுக்க ஸ்மார்ட் சரிபார்ப்புடன் ஒவ்வொரு ஆர்டரையும் உறுதிப்படுத்தவும்.'
+                }
+            }
+        },
         powering: {
             en: 'POWERING 1,000,000+ ORDERS',
             si: 'ඇණවුම් 1,000,000+ බල ගැන්වීම',
             ta: '1,000,000+ ஆர்டர்களுக்கு சக்தி அளித்தல்'
         },
         title: {
-            en: 'Your Online Business.',
+            en: 'Boost your Sales.',
             si: 'ඔබේ අන්තර්ජාල ව්‍යාපාරය.',
             ta: 'உங்கள் ஆன்லைன் வணிகம்.'
         },
         titleHighlight: {
-            en: 'Managed in One Place.',
+            en: 'Reduce Returns.',
             si: 'එක් ස්ථානයකින් කළමනාකරණය.',
             ta: 'ஒரே இடத்தில் நிர்வகிக்கப்படுகிறது.'
         },
         description: {
-            en: 'Streamline your inquiries, orders, and deliveries in one place. Say goodbye to manual uploads, duplicate orders, and missed follow-ups.',
+            en: 'Stop fake orders, reduce costly returns, and process deliveries faster — all from one easy courier sync.',
             si: 'ඔබේ විමසීම්, ඇණවුම්, සහ බෙදාහැරීම් එක් ස්ථානයකින් සරල කරන්න. අතින් උඩුගත කිරීම්, අනුපිටපත් ඇණවුම්, සහ මග හැරුණු පසු විපරම් වලට සමුගන්න.',
             ta: 'உங்கள் விசாரணைகள், ஆர்டர்கள் மற்றும் டெலிவரிகளை ஒரே இடத்தில் நெறிப்படுத்துங்கள். கையேடு அப்லோடுகள், நகல் ஆர்டர்கள் மற்றும் தவறவிட்ட பின்தொடர்தல்களுக்கு விடைபெறுங்கள்.'
         },

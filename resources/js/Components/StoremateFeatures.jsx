@@ -83,7 +83,7 @@ export default function StoremateFeatures() {
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
-                    <div id="what-is-storemate-oms" className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+                    <div className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
                         {/* Subtitle with same style as POWERING label */}
                         <div className="mb-4">
                             <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
@@ -185,17 +185,17 @@ export default function StoremateFeatures() {
                             {/* Creative Background Elements */}
                             <div className="absolute inset-0 z-0">
                                 {/* Large gradient circle */}
-                                <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full opacity-20" style={{
+                                <div className="absolute -bottom-20 right-0 lg:-right-10 w-64 lg:w-72 h-64 lg:h-72 rounded-full opacity-20" style={{
                                     background: 'linear-gradient(135deg, #013387 0%, #006daf 100%)'
                                 }}></div>
 
                                 {/* Medium circle */}
-                                <div className="absolute -top-10 -left-16 w-48 h-48 rounded-full opacity-15" style={{
+                                <div className="absolute -top-10 left-0 lg:-left-16 w-40 lg:w-48 h-40 lg:h-48 rounded-full opacity-15" style={{
                                     background: 'linear-gradient(45deg, #00BCE7 0%, #006daf 100%)'
                                 }}></div>
 
                                 {/* Small accent circle */}
-                                <div className="absolute top-1/2 -right-8 w-24 h-24 rounded-full opacity-25" style={{
+                                <div className="absolute top-1/2 right-0 lg:-right-8 w-20 lg:w-24 h-20 lg:h-24 rounded-full opacity-25" style={{
                                     background: 'linear-gradient(225deg, #013387 0%, #00BCE7 100%)'
                                 }}></div>
 
@@ -298,53 +298,6 @@ export default function StoremateFeatures() {
                                         </div>
                                     </div>
 
-                                    {/* Creative Stats Section */}
-                                    <div className="px-6 pb-6">
-                                        <div className="relative">
-                                            {/* Stats background with creative shape */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 rounded-2xl transform -skew-y-1"></div>
-
-                                            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
-                                                <div className="grid grid-cols-3 gap-6">
-                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                                                        <div className="relative">
-                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                                                                500+
-                                                            </div>
-                                                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
-                                                        </div>
-                                                        <div className="text-sm text-gray-600 font-semibold">
-                                                            {t('storemateFeatures.stats.smesServed')}
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                                                        <div className="relative">
-                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-indigo-600 to-blue-700 bg-clip-text text-transparent">
-                                                                50+
-                                                            </div>
-                                                            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
-                                                        </div>
-                                                        <div className="text-sm text-gray-600 font-semibold">
-                                                            {t('storemateFeatures.stats.activePartners')}
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                                                        <div className="relative">
-                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                                                                95%
-                                                            </div>
-                                                            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
-                                                        </div>
-                                                        <div className="text-sm text-gray-600 font-semibold">
-                                                            {t('storemateFeatures.stats.successRate')}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

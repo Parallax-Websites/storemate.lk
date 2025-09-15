@@ -31,8 +31,8 @@ export default function Home({ auth }) {
             <Head title="Home" />
             <Header auth={auth} />
             <Hero />
-            <StoremateFeatures />
             <HowItWorks />
+            <StoremateFeatures />
             <Faq />
             <CallToAction />
             <Footer />
