@@ -79,21 +79,11 @@ export default function StoremateFeatures() {
                 </div>
             )}
 
-            <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="relative mx-auto max-w-7xl px-4 py-0 lg:py-16 sm:px-6 lg:px-8">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-                        {/* Subtitle with same style as POWERING label */}
-                        <div className="mb-4">
-                            <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
-                                color: '#006daf',
-                                backgroundColor: '#ffe6daff'
-                            }}>
-                                {t('storemateFeatures.subtitle')}
-                            </span>
-                        </div>
-
                         {/* Main Heading */}
                         <h1 className="text-3xl md:text-4xl font-black mb-8" style={{
                             fontWeight: '750',
