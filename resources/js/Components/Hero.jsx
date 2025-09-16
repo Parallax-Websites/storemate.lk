@@ -127,7 +127,7 @@ export default function Hero() {
                                     </div>
                                     <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
                                         <img
-                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-1.webp"
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/logo-1-e1758031524438.webp"
                                             alt="Courier Partner 3"
                                             className="h-10 w-auto object-contain transition-all duration-300"
                                         />
@@ -141,7 +141,7 @@ export default function Hero() {
                                     </div>
                                     <div className="flex-shrink-0 p-4 hover:scale-105 transition-all duration-300 group">
                                         <img
-                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/332708073_3811654199061580_3846048282845902556_n-Photoroom.webp"
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/332708073_3811654199061580_3846048282845902556_n-Photoroom-e1758020748705.webp"
                                             alt="Trans Express"
                                             className="h-10 w-auto object-contain transition-all duration-300"
                                         />
@@ -199,7 +199,7 @@ export default function Hero() {
                             {/* Clean dashboard image without styling */}
                             <div className="relative overflow-hidden rounded-lg">
                                 <img
-                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Dashboards-2048x1152-1.webp"
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/mockup-Storemate-OMS-1-scaled.jpg"
                                     alt="Storemate OMS Dashboard"
                                     className="w-full h-auto"
                                 />
