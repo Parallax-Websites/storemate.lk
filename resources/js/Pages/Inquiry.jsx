@@ -9,6 +9,7 @@ import DuplicateDetection from '@/Components/Inquiry/DuplicateDetection';
 import Faq from '@/Components/Faq';
 import CallToAction from '@/Components/CallToAction';
 import MainLayout from '@/Layouts/MainLayout';
+import VerifyOrders from '@/Components/Inquiry/VerifyOrders';
 
 export default function Inquiry({ auth }) {
     return (
@@ -21,6 +22,7 @@ export default function Inquiry({ auth }) {
             <InquiryChannels />
             <ReduceReturns />
             <DuplicateDetection />
+            <VerifyOrders />
             <Faq />
             <CallToAction />
             <Footer />

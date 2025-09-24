@@ -125,10 +125,8 @@ export default function DuplicateDetection() {
           <div className={`relative transition-all duration-1000 delay-200 order-2 lg:order-1 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
-              {/* Small gradient background only at bottom center */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-new-1-Photoroom.webp"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-3_58PM-Photoroom.png"
                 alt={tInquiry('duplicateDetection.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{
@@ -148,19 +146,14 @@ export default function DuplicateDetection() {
               />
             </div>
 
-            {/* Channel icons floating around */}
-            <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-1100 delay-800 ${isVisible ? 'translate-x-0 translate-y-0 rotate-0' : 'translate-x-4 translate-y-4 rotate-45'}`} style={{backgroundColor: '#013387'}}>
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
-              </svg>
-            </div>
+
           </div>
 
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+
     </div>
   );
 }

@@ -199,7 +199,7 @@ export default function Hero() {
                             {/* Clean dashboard image without styling */}
                             <div className="relative overflow-hidden rounded-lg">
                                 <img
-                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/mockup-Storemate-OMS-1-scaled.jpg"
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-1-2.svg"
                                     alt="Storemate OMS Dashboard"
                                     className="w-full h-auto"
                                 />

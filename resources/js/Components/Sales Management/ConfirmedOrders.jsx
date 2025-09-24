@@ -125,10 +125,8 @@ export default function ConfirmedOrders() {
           <div className={`relative transition-all duration-1000 delay-200 order-2 lg:order-1 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
-              {/* Small gradient background only at bottom center */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-9-1-2048x1479-Photoroom.webp"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-6_01PM-Photoroom.webp"
                 alt={tSales('confirmedOrders.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{

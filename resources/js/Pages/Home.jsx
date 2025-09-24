@@ -11,6 +11,7 @@ import CallToAction from '@/Components/CallToAction';
 import PowerOfCurfox from '@/Components/PowerOfCurfox';
 import MainLayout from '@/Layouts/MainLayout';
 import { useEffect } from 'react';
+import HowItWorksCopy from '@/Components/HowItWorks copy';
 
 export default function Home({ auth }) {
     useEffect(() => {
@@ -32,6 +33,7 @@ export default function Home({ auth }) {
             <Header auth={auth} />
             <Hero />
             <HowItWorks />
+            <HowItWorksCopy />
             <StoremateFeatures />
             <Faq />
             <CallToAction />

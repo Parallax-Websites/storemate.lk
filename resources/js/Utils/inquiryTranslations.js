@@ -247,6 +247,97 @@ export const inquiryTranslations = {
         }
     },
 
+    // Verify Orders Section
+    verifyOrders: {
+        brand: {
+            name: {
+                en: 'STOREMATE',
+                si: 'ස්ටෝර්මේට්',
+                ta: 'ஸ்டோர்மேட்'
+            },
+            subtitle: {
+                en: 'Order Management System',
+                si: 'ඇණවුම් කළමනාකරණ පද්ධතිය',
+                ta: 'ஆர்டர் மேலாண்மை அமைப்பு'
+            }
+        },
+        title: {
+            part1: {
+                en: 'Verify Every Order',
+                si: 'සෑම ඇණවුමක්ම තහවුරු කරන්න',
+                ta: 'ஒவ்வொரு ஆர்டரையும் சரிபார்க்கவும்'
+            },
+            part2: {
+                en: 'Before It Leaves',
+                si: 'එය පිටත්වීමට පෙර',
+                ta: 'அது வெளியேறும் முன்'
+            },
+            part3: {
+                en: 'Your Store.',
+                si: 'ඔබගේ ගබඩාව.',
+                ta: 'உங்கள் கடை.'
+            }
+        },
+        description: {
+            en: 'Set smart rules to auto-check orders, follow up with customers, and pack only genuine ones — reducing costly returns.',
+            si: 'ඇණවුම් ස්වයංක්‍රීයව පරීක්ෂා කිරීමට, පාරිභෝගිකයින් සමඟ පසුවිපරම් කිරීමට සහ සැබෑ ඒවා පමණක් ඇසුරුම් කිරීමට බුද්ධිමත් නීති සකස් කරන්න - මිල අධික ආපසු භාරදීම් අඩු කිරීම.',
+            ta: 'ஆர்டர்களை தானாக சரிபார்க்க, வாடிக்கையாளர்களைத் தொடர்ந்து தொடர்பு கொள்ள மற்றும் உண்மையான ஆர்டர்களை மட்டும் பேக் செய்ய ஸ்மார்ட் விதிகளை அமைக்கவும் - விலையுயர்ந்த திருப்பங்களைக் குறைக்கும்.'
+        },
+        features: {
+            autoVerification: {
+                title: {
+                    en: 'Smart Auto-Verification',
+                    si: 'බුද්ධිමත් ස්වයං-තහවුරු කිරීම',
+                    ta: 'ஸ்மார்ட் ஆட்டோ-சரிபார்ப்பு'
+                },
+                desc: {
+                    en: 'Automatically verify orders using intelligent rules',
+                    si: 'බුද්ධිමත් නීති භාවිතයෙන් ස්වයංක්‍රීයව ඇණවුම් තහවුරු කරන්න',
+                    ta: 'புத்திசாலித்தனமான விதிகளைப் பயன்படுத்தி ஆர்டர்களை தானாகவே சரிபார்க்கவும்'
+                }
+            },
+            customerFollowups: {
+                title: {
+                    en: 'Customer Follow-ups',
+                    si: 'පාරිභෝගික පසුවිපරම්',
+                    ta: 'வாடிக்கையாளர் தொடர் நடவடிக்கைகள்'
+                },
+                desc: {
+                    en: 'Automated customer verification and confirmation',
+                    si: 'ස්වයංක්‍රීය පාරිභෝගික සත්‍යාපනය සහ තහවුරු කිරීම',
+                    ta: 'தானியங்கி வாடிக்கையாளர் சரிபார்ப்பு மற்றும் உறுதிப்படுத்தல்'
+                }
+            },
+            genuineOrders: {
+                title: {
+                    en: 'Genuine Orders Only',
+                    si: 'සැබෑ ඇණවුම් පමණයි',
+                    ta: 'உண்மையான ஆர்டர்கள் மட்டும்'
+                },
+                desc: {
+                    en: 'Pack and ship only verified legitimate orders',
+                    si: 'තහවුරු කරන ලද නීත්‍යානුකූල ඇණවුම් පමණක් ඇසුරුම් කර යවන්න',
+                    ta: 'சரிபார்க்கப்பட்ட சட்டபூர்வமான ஆர்டர்களை மட்டும் பேக் செய்து அனுப்பவும்'
+                }
+            }
+        },
+        startFreeTrial: {
+            en: 'Start Free Trial',
+            si: 'නොමිලේ අත්හදා බැලීමක් ආරම්භ කරන්න',
+            ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
+        },
+        knowMore: {
+            en: 'Learn More',
+            si: 'තව දැනගන්න',
+            ta: 'மேலும் அறிய'
+        },
+        imageAlt: {
+            en: 'Verify Every Order Before It Leaves Your Store',
+            si: 'එය ඔබගේ ගබඩාවෙන් පිටත්වීමට පෙර සෑම ඇණවුමක්ම තහවුරු කරන්න',
+            ta: 'அது உங்கள் கடையிலிருந்து வெளியேறும் முன் ஒவ்வொரு ஆர்டரையும் சரிபார்க்கவும்'
+        }
+    },
+
     // Duplicate Detection Section
     duplicateDetection: {
         brand: {
