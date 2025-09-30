@@ -43,7 +43,7 @@ export default function VerifyOrders() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Brand Header */}
+            {/* Brand Header
             <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
                 <span className="text-white font-bold text-sm">S</span>
@@ -52,7 +52,7 @@ export default function VerifyOrders() {
                 <div className="font-bold text-lg" style={{color: '#013387'}}>{tInquiry('verifyOrders.brand.name')}</div>
                 <div className="text-gray-600 text-sm font-medium">{tInquiry('verifyOrders.brand.subtitle')}</div>
               </div>
-            </div>
+            </div>*/}
 
               {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
@@ -68,36 +68,51 @@ export default function VerifyOrders() {
 
             {/* Verification Features */}
             <div className={`space-y-6 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              <div className={`transition-all duration-300 delay-1000 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
-                <div className="flex items-start space-x-3">
-                  <span className="mt-1.5 text-blue-600">•</span>
-                  <div>
+              <div className={`transform transition-all duration-300 delay-1000 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
+                <div className="flex items-center space-x-4 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="group-hover:translate-x-1 transition-transform duration-200">
                     <div className="text-lg font-bold text-gray-900">{tInquiry('verifyOrders.features.autoVerification.title')}</div>
-                    <div className="text-sm text-gray-600">{tInquiry('verifyOrders.features.autoVerification.desc')}</div>
                   </div>
                 </div>
               </div>
 
-              <div className={`transition-all duration-300 delay-1200 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 translate-x-4'}`}>
-                <div className="flex items-start space-x-3">
-                  <span className="mt-1.5 text-blue-600">•</span>
-                  <div>
+              <div className={`transform transition-all duration-300 delay-1200 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 translate-x-4'}`}>
+                <div className="flex items-center space-x-4 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="group-hover:translate-x-1 transition-transform duration-200">
                     <div className="text-lg font-bold text-gray-900">{tInquiry('verifyOrders.features.customerFollowups.title')}</div>
-                    <div className="text-sm text-gray-600">{tInquiry('verifyOrders.features.customerFollowups.desc')}</div>
                   </div>
                 </div>
               </div>
 
-              <div className={`transition-all duration-300 delay-1400 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
-                <div className="flex items-start space-x-3">
-                  <span className="mt-1.5 text-blue-600">•</span>
-                  <div>
+              <div className={`transform transition-all duration-300 delay-1400 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
+                <div className="flex items-center space-x-4 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="group-hover:translate-x-1 transition-transform duration-200">
                     <div className="text-lg font-bold text-gray-900">{tInquiry('verifyOrders.features.genuineOrders.title')}</div>
-                    <div className="text-sm text-gray-600">{tInquiry('verifyOrders.features.genuineOrders.desc')}</div>
                   </div>
                 </div>
               </div>
-            </div>            {/* CTA */}
+            </div>            {/* CTA
             <div className={`flex items-center space-x-4 transition-all duration-1000 delay-1600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <a href="https://welcome.oms.storemate.cloud/register" className="text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 group"
                 style={{backgroundColor: '#013387'}}
@@ -121,14 +136,14 @@ export default function VerifyOrders() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
-            </div>
+            </div>*/}
           </div>
 
           {/* Right Column - Dashboard Interface */}
           <div className={`relative transition-all duration-1000 delay-1000 ${isVisible ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-8 opacity-0 scale-95'}`}>
             <div className="relative">
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-4_35PM-Photoroom-1.png"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-7.svg"
                 alt={tInquiry('verifyOrders.imageAlt')}
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

@@ -48,7 +48,7 @@ export default function ConfirmedOrders() {
 
           {/* Right Column - Content (shown first on mobile) */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 order-1 lg:order-2 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Brand Header */}
+            {/* Brand Header
             <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
                 <span className="text-white font-bold text-sm">S</span>
@@ -57,7 +57,7 @@ export default function ConfirmedOrders() {
                 <div className="font-bold text-lg" style={{color: '#013387'}}>{tSales('confirmedOrders.brand.name')}</div>
                 <div className="text-gray-600 text-sm font-medium">{tSales('confirmedOrders.brand.subtitle')}</div>
               </div>
-            </div>
+            </div>*/}
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
@@ -101,7 +101,7 @@ export default function ConfirmedOrders() {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA
             <div className={`flex items-center space-x-4 transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <a href="https://welcome.oms.storemate.cloud/register" className={`text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 delay-1500 ${isVisible ? 'scale-100' : 'scale-90'}`}
                 style={{backgroundColor: '#013387'}}
@@ -118,7 +118,7 @@ export default function ConfirmedOrders() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
-            </div>
+            </div>*/}
           </div>
 
           {/* Left Column - Dashboard Interface (shown second on mobile) */}
@@ -126,7 +126,7 @@ export default function ConfirmedOrders() {
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-6_01PM-Photoroom.webp"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-10.svg"
                 alt={tSales('confirmedOrders.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{
@@ -146,12 +146,12 @@ export default function ConfirmedOrders() {
               />
             </div>
 
-            {/* Order management icon floating around */}
+            {/* Order management icon floating around
             <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-1100 delay-800 ${isVisible ? 'translate-x-0 translate-y-0 rotate-0' : 'translate-x-4 translate-y-4 rotate-45'}`} style={{backgroundColor: '#013387'}}>
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.934 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732L9.854 7.2l1.179-4.456A1 1 0 0112 2z" clipRule="evenodd" />
               </svg>
-            </div>
+            </div>*/}
           </div>
 
         </div>

@@ -48,16 +48,7 @@ export default function ReduceReturns() {
 
           {/* Left Column - Content */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Brand Header */}
-            <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg" style={{color: '#013387'}}>{tInquiry('reduceReturns.brand.name')}</div>
-                <div className="text-gray-600 text-sm font-medium">{tInquiry('reduceReturns.brand.subtitle')}</div>
-              </div>
-            </div>
+
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
@@ -102,30 +93,7 @@ export default function ReduceReturns() {
             </div>
 
             {/* CTA */}
-            <div className={`flex items-center space-x-4 transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              <a href="https://welcome.oms.storemate.cloud/register" className="text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 group"
-                style={{backgroundColor: '#013387'}}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
-                {tInquiry('reduceReturns.startFreeTrial')}
-                <svg
-                  className="inline-block w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href="/contact-us" className="font-semibold transition-colors duration-300 flex items-center space-x-2 group"
-                style={{color: '#006daf'}}
-                onMouseEnter={(e) => e.target.style.color = '#013387'}
-                onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                <span>{tInquiry('reduceReturns.knowMore')}</span>
-                <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+
           </div>
 
           {/* Right Column - Dashboard Interface */}
@@ -133,7 +101,7 @@ export default function ReduceReturns() {
             {/* Dashboard Content */}
             <div className="relative">
              <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-4_05PM-Photoroom.png"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2.svg"
                 alt={tInquiry('reduceReturns.imageAlt')}
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

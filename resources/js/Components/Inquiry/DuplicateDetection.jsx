@@ -48,7 +48,7 @@ export default function DuplicateDetection() {
 
           {/* Right Column - Content (shown first on mobile) */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 order-1 lg:order-2 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Brand Header */}
+            {/* Brand Header
             <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
                 <span className="text-white font-bold text-sm">S</span>
@@ -57,7 +57,7 @@ export default function DuplicateDetection() {
                 <div className="font-bold text-lg" style={{color: '#013387'}}>{tInquiry('duplicateDetection.brand.name')}</div>
                 <div className="text-gray-600 text-sm font-medium">{tInquiry('duplicateDetection.brand.subtitle')}</div>
               </div>
-            </div>
+            </div>*/}
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
@@ -101,7 +101,7 @@ export default function DuplicateDetection() {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA
             <div className={`flex items-center space-x-4 transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <a href="https://welcome.oms.storemate.cloud/register" className={`text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 delay-1500 ${isVisible ? 'scale-100' : 'scale-90'}`}
                 style={{backgroundColor: '#013387'}}
@@ -118,7 +118,7 @@ export default function DuplicateDetection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
-            </div>
+            </div>*/}
           </div>
 
           {/* Left Column - Dashboard Interface (shown second on mobile) */}
@@ -126,7 +126,7 @@ export default function DuplicateDetection() {
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Generated-Image-September-23-2025-3_58PM-Photoroom.png"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-8.svg"
                 alt={tInquiry('duplicateDetection.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{
