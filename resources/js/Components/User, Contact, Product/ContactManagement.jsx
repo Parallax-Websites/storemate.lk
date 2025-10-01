@@ -50,10 +50,8 @@ export default function ContactManagement() {
           <div className={`relative transition-all duration-1000 delay-200 order-2 lg:order-1 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
-              {/* Small gradient background only at bottom center */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent transition-all duration-1000 delay-600 ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}></div>
-              <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/design-new-6-Photoroom.webp"
+             <img
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-2-9.png"
                 alt={tUserContactProduct('contactManagement.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{
@@ -73,17 +71,17 @@ export default function ContactManagement() {
               />
             </div>
 
-            {/* Contact management icon floating around */}
+            {/* Contact management icon floating around
             <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-1100 delay-800 ${isVisible ? 'translate-x-0 translate-y-0 rotate-0' : 'translate-x-4 translate-y-4 rotate-45'}`} style={{backgroundColor: '#013387'}}>
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
               </svg>
-            </div>
+            </div>*/}
           </div>
 
           {/* Right Column - Content */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 order-1 lg:order-2 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-            {/* Brand Header */}
+            {/* Brand Header
             <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
                 <span className="text-white font-bold text-sm">S</span>
@@ -92,7 +90,7 @@ export default function ContactManagement() {
                 <div className="font-bold text-lg" style={{color: '#013387'}}>{tUserContactProduct('contactManagement.brand.name')}</div>
                 <div className="text-gray-600 text-sm font-medium">{tUserContactProduct('contactManagement.brand.subtitle')}</div>
               </div>
-            </div>
+            </div>*/}
 
             {/* Main Title */}
             <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
@@ -136,7 +134,7 @@ export default function ContactManagement() {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA
             <div className={`flex items-center space-x-4 transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
               <a href="https://welcome.oms.storemate.cloud/register" className={`text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 delay-1500 ${isVisible ? 'scale-100' : 'scale-90'}`}
                 style={{backgroundColor: '#013387'}}
@@ -153,7 +151,7 @@ export default function ContactManagement() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
-            </div>
+            </div>*/}
           </div>
 
         </div>

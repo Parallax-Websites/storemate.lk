@@ -142,15 +142,15 @@ export const shippingTranslations = {
                 ta: 'ஒரே கிளிக் கூரியர்'
             },
             part2: {
-                en: 'to Royal Express',
-                si: 'Royal Express වෙත සමමුහුර්තකරණය',
-                ta: 'Royal Express ஒத்திசைவு'
+                en: 'to your courier',
+                si: 'කුරියර් වෙත සමමුහුර්තකරණය',
+                ta: 'கூரியர் ஒத்திசைவு'
             }
         },
         description: {
-            en: 'Streamline your shipping process with seamless Royal Express integration. Upload orders instantly without manual data entry, generate waybills automatically, and track shipments in real-time.',
-            si: 'බාධාවකින් තොර Royal Express ඒකාග්‍රකරණය සමඟ ඔබේ නැව්ගත කිරීමේ ක්‍රියාවලිය ප්‍රවාහිත කරන්න. අතින් දත්ත ඇතුල් කිරීමකින් තොරව ඇණවුම් ක්ෂණිකව උඩුගත කරන්න, මාර්ග බිල්පත් ස්වයංක්‍රීයව ජනනය කරන්න සහ තත්ව කාලීනව නැව්ගත කිරීම් ලුහුබඳින්න.',
-            ta: 'தடையற்ற Royal Express ஒருங்கிணைப்புடன் உங்கள் ஷிப்பிங் செயல்முறையை நெறிப்படுத்துங்கள். கையேடு டேட்டா நுழைவு இல்லாமல் ஆர்டர்களை உடனடியாக அப்லோட் செய்யுங்கள், வேபில்களை தானாகவே உருவாக்குங்கள், மற்றும் ஷிப்மென்ட்களை நிகழ்நேரத்தில் கண்காணிக்கவும்.'
+            en: 'Streamline your shipping process with seamless courier integration. Upload orders instantly without manual data entry, generate waybills automatically, and track shipments in real-time.',
+            si: 'බාධාවකින් තොර කුරියර් ඒකාග්‍රකරණය සමඟ ඔබේ නැව්ගත කිරීමේ ක්‍රියාවලිය ප්‍රවාහිත කරන්න. අතින් දත්ත ඇතුල් කිරීමකින් තොරව ඇණවුම් ක්ෂණිකව උඩුගත කරන්න, මාර්ග බිල්පත් ස්වයංක්‍රීයව ජනනය කරන්න සහ තත්ව කාලීනව නැව්ගත කිරීම් ලුහුබඳින්න.',
+            ta: 'தடையற்ற கூரியர் ஒருங்கிணைப்புடன் உங்கள் ஷிப்பிங் செயல்முறையை நெறிப்படுத்துங்கள். கையேடு டேட்டா நுழைவு இல்லாமல் ஆர்டர்களை உடனடியாக அப்லோட் செய்யுங்கள், வேபில்களை தானாகவே உருவாக்குங்கள், மற்றும் ஷிப்மென்ட்களை நிகழ்நேரத்தில் கண்காணிக்கவும்.'
         },
         stats: {
             timeReduction: {
