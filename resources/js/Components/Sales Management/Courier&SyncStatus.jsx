@@ -134,7 +134,7 @@ export default function CourierSyncStatus() {
             {/* Dashboard Content */}
             <div className="relative">
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-11.svg"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-2-16.png"
                 alt={tSales('courierSyncStatus.imageAlt')}
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

@@ -29,7 +29,10 @@ export default function Home({ auth }) {
 
     return (
         <MainLayout>
-            <Head title="Home" />
+            <Head title="StoreMate OMS - Complete Order Management System for E-commerce">
+                <meta name="description" content="StreamMate OMS helps e-commerce businesses manage orders efficiently from inquiry to delivery. Automate order processing, track shipments, and grow your online store." />
+                <meta name="keywords" content="order management system, e-commerce OMS, online store management, order tracking, shipping automation, StoreMate" />
+            </Head>
             <Header auth={auth} />
             <Hero />
             <HowItWorksCopy />

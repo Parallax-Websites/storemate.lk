@@ -126,7 +126,7 @@ export default function ConfirmedOrders() {
             {/* Dashboard Content */}
             <div className={`relative transition-all duration-1100 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-70'}`}>
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-10.svg"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-2-17.png"
                 alt={tSales('confirmedOrders.imageAlt')}
                 className={`w-full h-auto relative z-10 delay-300 cursor-pointer ${isVisible ? 'scale-100 rotate-0' : 'scale-95 -rotate-1'}`}
                 style={{

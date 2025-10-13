@@ -14,7 +14,10 @@ import VerifyOrders from '@/Components/Inquiry/VerifyOrders';
 export default function Inquiry({ auth }) {
     return (
         <MainLayout>
-            <Head title="Inquiry Management - Storemate OMS" />
+            <Head title="Inquiry Management - Capture Orders from Multiple Channels | StoreMate OMS">
+                <meta name="description" content="Automatically collect and manage customer inquiries from Facebook, WhatsApp, Instagram, and phone calls. Reduce duplicates and verify orders efficiently with StoreMate OMS." />
+                <meta name="keywords" content="inquiry management, order capture, multi-channel orders, Facebook orders, WhatsApp orders, Instagram orders, duplicate detection" />
+            </Head>
             <Header auth={auth} />
 
             <InquiryHero auth={auth} />

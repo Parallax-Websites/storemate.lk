@@ -189,10 +189,11 @@ export default function FreeCourse({ auth }) {
 
     return (
         <MainLayout>
-                        <Head title={tFreeCourse('freeCourse.pageTitle')} />
-            <Header auth={auth} />
-
-            {/* Hero Section */}
+            <Head title={tFreeCourse('freeCourse.pageTitle')}>
+                <meta name="description" content="Learn e-commerce order management with our free comprehensive course. Master StoreMate OMS features, best practices, and grow your online business efficiently." />
+                <meta name="keywords" content="free e-commerce course, order management training, OMS tutorial, online store management, free business course, e-commerce learning" />
+            </Head>
+            <Header auth={auth} />            {/* Hero Section */}
                             {/* Hero Section */}
                 <section className="bg-gray-50 py-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

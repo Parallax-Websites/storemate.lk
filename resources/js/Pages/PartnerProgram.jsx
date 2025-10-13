@@ -13,7 +13,10 @@ export default function PartnerProgramPage({ auth }) {
     const { tPartnerProgram } = usePartnerProgramTranslation();
     return (
         <MainLayout>
-            <Head title={tPartnerProgram('partnerProgram.pageTitle')} />
+            <Head title={tPartnerProgram('partnerProgram.pageTitle')}>
+                <meta name="description" content="Join StoreMate OMS Partner Program. Grow your business by helping others succeed. Earn commissions, access exclusive benefits, and be part of our success story." />
+                <meta name="keywords" content="partner program, business partnership, affiliate program, reseller program, earn commissions, partner benefits" />
+            </Head>
             <Header auth={auth} />
 
             <PartnerProgram />

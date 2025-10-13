@@ -24,7 +24,10 @@ const LoadingSpinner = () => (
 export default function SalesManagement({ auth }) {
     return (
         <MainLayout>
-            <Head title="Sales Management - Storemate OMS" />
+            <Head title="Sales Management - Confirm & Track Orders Efficiently | StoreMate OMS">
+                <meta name="description" content="Streamline your sales process with automated order confirmation, real-time courier sync, packing progress tracking, and delivery updates. Manage your entire sales pipeline in one place." />
+                <meta name="keywords" content="sales management, order confirmation, courier sync, packing tracking, delivery status, order pipeline, sales automation" />
+            </Head>
             <Header auth={auth} />
             <SalesHero auth={auth} />
 

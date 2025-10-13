@@ -15,7 +15,10 @@ import MainLayout from '@/Layouts/MainLayout';
 export default function ShippingPacking({ auth }) {
     return (
         <MainLayout>
-            <Head title="Shipping & Packing - Storemate OMS" />
+            <Head title="Shipping & Packing - Sync Couriers & Print Waybills | StoreMate OMS">
+                <meta name="description" content="Connect with Royal Express, Trans Express, and other couriers. Print waybills with one click, track packages in real-time, and monitor delivery status from a single dashboard." />
+                <meta name="keywords" content="shipping management, courier integration, waybill printing, package tracking, delivery monitoring, Royal Express, Trans Express" />
+            </Head>
             <Header auth={auth} />
             <ShippingHero auth={auth} />
             <ShippingFeatures />

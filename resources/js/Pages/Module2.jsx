@@ -84,7 +84,10 @@ export default function Module2({ auth }) {
 
     return (
         <MainLayout>
-            <Head title={tModule2('module2.pageTitle')} />
+            <Head title={tModule2('module2.pageTitle')}>
+                <meta name="description" content="Advance your StoreMate OMS skills in Module 2. Learn order processing, inventory management, customer communication, and sales automation techniques." />
+                <meta name="keywords" content="OMS advanced tutorial, order processing, inventory management, sales automation, StoreMate module 2" />
+            </Head>
             <Header auth={auth} />
 
             {/* Hero Section */}

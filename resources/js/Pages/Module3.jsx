@@ -81,7 +81,10 @@ export default function Module3({ auth }) {
 
     return (
         <MainLayout>
-            <Head title={tModule3('module3.pageTitle')} />
+            <Head title={tModule3('module3.pageTitle')}>
+                <meta name="description" content="Master shipping and logistics in Module 3. Learn courier integration, waybill printing, delivery tracking, and complete order fulfillment with StoreMate OMS." />
+                <meta name="keywords" content="shipping tutorial, logistics management, courier integration, delivery tracking, StoreMate module 3, fulfillment" />
+            </Head>
             <Header auth={auth} />
 
             {/* Hero Section */}

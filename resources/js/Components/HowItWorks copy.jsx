@@ -3,22 +3,22 @@ import { useTranslation } from '@/hooks/useTranslation';
 
 const steps = [
 	{
-		img: "https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-1.svg",
+		img: "https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-4-1.png",
 		title: "Step 1",
 		desc: "Register or Login to your account."
 	},
 	{
-		img: "https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-2.svg",
+		img: "https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-3-1-1.png",
 		title: "Step 2",
 		desc: "Place your order with required details."
 	},
 	{
-		img: "https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-5.svg",
+		img: "https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-3-2.png",
 		title: "Step 3",
 		desc: "Track your order status in real time."
 	},
 	{
-		img: "https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-4.svg",
+		img: "https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-6-1.png",
 		title: "Step 4",
 		desc: "Receive your delivery and rate the service."
 	}
@@ -39,8 +39,8 @@ export default function HowItWorksImages() {
 	}, []);
 
 	return (
-		<section className="py-16 px-4 bg-white">
-                <div id="what-is-storemate-oms" className={`text-center mb-16 transition-all duration-1000 ${
+		<section className="py-16 md:px-4 bg-white">
+                <div id="what-is-storemate-oms" className={`text-center mb-8 md:mb-16 px-4 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
                     <div className="mb-4">
@@ -63,10 +63,10 @@ export default function HowItWorksImages() {
                         {t('howItWorks.subtitle')}
                     </p>
                 </div>
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-1 max-w-7xl mx-auto">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-1 md:max-w-7xl md:mx-auto">
 				{steps.map((step, idx) => (
-					<div key={idx} className="flex flex-col items-center transition-transform duration-300 hover:scale-105 h-100">
-						<img src={step.img} alt={`Step ${idx + 1}`} className="object-cover w-full h-full" loading="lazy" />
+					<div key={idx} className="flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 h-full">
+						<img src={step.img} alt={`Step ${idx + 1}`} className="object-contain w-7/10 h-auto" loading="lazy" />
 					</div>
 				))}
 			</div>

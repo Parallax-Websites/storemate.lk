@@ -143,7 +143,7 @@ export default function VerifyOrders() {
           <div className={`relative transition-all duration-1000 delay-1000 ${isVisible ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-8 opacity-0 scale-95'}`}>
             <div className="relative">
               <img
-                src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Group-2-7.svg"
+                src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-2-13.png"
                 alt={tInquiry('verifyOrders.imageAlt')}
                 className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
                 style={{

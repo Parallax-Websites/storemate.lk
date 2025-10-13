@@ -9,7 +9,10 @@ export default function ContactUs({ auth }) {
     const { tContactUs } = useContactUsTranslation();
     return (
         <MainLayout>
-            <Head title={tContactUs('contactUs.pageTitle')} />
+            <Head title={tContactUs('contactUs.pageTitle')}>
+                <meta name="description" content="Get in touch with StoreMate OMS. Our team is ready to help you streamline your order management. Contact us for demos, support, or partnership opportunities." />
+                <meta name="keywords" content="contact StoreMate, OMS support, get in touch, demo request, customer support, business inquiry" />
+            </Head>
             <Header auth={auth} />
 
             {/* Main Content Container with Single Background Pattern */}

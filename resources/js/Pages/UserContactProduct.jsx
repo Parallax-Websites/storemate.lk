@@ -14,7 +14,10 @@ import MainLayout from '@/Layouts/MainLayout';
 export default function UserContactProduct({ auth }) {
     return (
         <MainLayout>
-            <Head title="User, Contact, Product - Storemate OMS" />
+            <Head title="User, Contact & Product Management - Organize Your Store | StoreMate OMS">
+                <meta name="description" content="Efficiently manage users, contacts, and products in one place. Organize your customer database, track product inventory, and manage team access with ease." />
+                <meta name="keywords" content="user management, contact management, product management, inventory, customer database, team collaboration, store organization" />
+            </Head>
             <Header auth={auth} />
             <UserContactProductHero auth={auth} />
             <UserContactProductFeatures />
