@@ -107,7 +107,7 @@ const Faq = () => {
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            {t('faq.badge')}
+                            FAQ
                         </span>
                     </div>
 
@@ -117,10 +117,11 @@ const Faq = () => {
                         letterSpacing: '-0.03em',
                         fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }}>
-                        {t('faq.title')}
+                        Your Questions, Answered
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        {t('faq.subtitle')}
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Find quick answers to the most common<br />
+                        questions from e-commerce sellers
                     </p>
                 </div>
 
