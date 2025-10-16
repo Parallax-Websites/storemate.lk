@@ -98,12 +98,15 @@ export default function Hero() {
                     <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
                         {/* Main Title */}
                         <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
-                            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                {t('hero.title')}<br />
-                                <span style={{color: '#006daf'}}>{t('hero.titleHighlight')}</span>
+                            <h1 className="font-bold text-gray-900 mb-6 leading-tight">
+                                <div className="text-xl lg:text-2xl xl:text-3xl mb-2">All Your</div>
+                                <div className="text-3xl lg:text-4xl xl:text-5xl mb-1">Social Media</div>
+                                <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{color: '#006daf'}}>Orders <span style={{color: '#006daf'}}>& Couriers</span></div>
+                                <div className="text-xl lg:text-2xl xl:text-3xl">in One Place</div>
                             </h1>
-                            <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                                {t('hero.description')}
+                            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-8">
+                                Auto-sync your Facebook, Instagram, WhatsApp and courier orders into one
+system. No manual uploads, no confusion — just faster fulfillment.
                             </p>
                         </div>
 
@@ -199,7 +202,7 @@ export default function Hero() {
                             {/* Clean dashboard image without styling */}
                             <div className="relative overflow-hidden rounded-lg">
                                 <img
-                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Frame-1-2.svg"
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Frame-2-5.svg"
                                     alt="Storemate OMS Dashboard"
                                     className="w-full h-auto"
                                 />
@@ -214,22 +217,20 @@ export default function Hero() {
             <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
                 {/* Section Title */}
                 <div className="text-center mb-16">
-                    <div className="mb-4">
-                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
-                            color: '#006daf',
-                            backgroundColor: '#ffe6daff'
-                        }}>
-                            {t('hero.trustedBy')}
-                        </span>
+
+                    <div className="font-bold text-gray-900 mb-4 leading-tight text-center">
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">Fewer Returns, More Profits</div>
+                        <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{color: '#006daf'}}>Reduce Returns Before</div>
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">They Happen.</div>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
-                        fontWeight: '750',
-                        fontStretch: 'ultra-condensed',
-                        letterSpacing: '-0.03em',
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-                    }}>
-                        {t('hero.reduceOrders')}
-                    </h2>
+                    <div className="text-gray-900 mb-4 leading-tight text-center flex justify-center">
+                            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-center mb-8 mx-auto">
+Detect fake orders, validate genuine customers, and pack only verified deliveries.
+
+                        </p>
+                    </div>
+
+
                 </div>
                 <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     {/* Feature 1 - Identify Fake Orders */}
@@ -237,9 +238,12 @@ export default function Hero() {
                         <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
                             <div className="relative mb-8">
                                 <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
-                                    <svg className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="#006daf" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            {/* Hazard warning triangle */}
+                                            <path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col h-[calc(100%-88px)]">
@@ -254,9 +258,11 @@ export default function Hero() {
                         <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
                             <div className="relative mb-8">
                                 <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
-                                    <svg className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="#006daf" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col h-[calc(100%-88px)]">
@@ -271,9 +277,12 @@ export default function Hero() {
                         <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
                             <div className="relative mb-8">
                                 <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
-                                    <svg className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="#006daf" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                                    </svg>
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col h-[calc(100%-88px)]">
@@ -288,9 +297,11 @@ export default function Hero() {
                         <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
                             <div className="relative mb-8">
                                 <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
-                                    <svg className="w-8 h-8 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="#006daf" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col h-[calc(100%-88px)]">
