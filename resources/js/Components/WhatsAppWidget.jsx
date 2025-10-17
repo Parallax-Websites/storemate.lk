@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LanguageSelector from '@/Components/LanguageSelector';
+
 
 export default function WhatsAppWidget() {
     const [isVisible, setIsVisible] = useState(true);
@@ -18,10 +18,6 @@ export default function WhatsAppWidget() {
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
-            {/* Language Selector */}
-            <div>
-                <LanguageSelector />
-            </div>
 
             {/* WhatsApp Button */}
             <div className="relative group">

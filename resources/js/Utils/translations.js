@@ -27,22 +27,22 @@ export const translations = {
         about: {
             en: 'About Us',
             si: 'අප ගැන',
-            ta: 'எங்களைப் பற்றி'
+            ta: 'பற்றி'
         },
         freeCourse: {
             en: 'Free Course',
             si: 'පාඨමාලා',
-            ta: 'இலவச பாடம்'
+            ta: 'படிப்புகள்'
         },
         contact: {
             en: 'Contact Us',
             si: 'අප අමතන්න',
-            ta: 'எங்களை தொடர்பு கொள்ளுங்கள்'
+            ta: 'தொடர்பு'
         },
         partnerProgram: {
             en: 'Partner Program',
             si: 'හවුල්කරු වැඩසටහන',
-            ta: 'கூட்டாளர் திட்டம்'
+            ta: 'கூட்டாளர்'
         },
         login: {
             en: 'Login',
@@ -52,7 +52,7 @@ export const translations = {
         startFreeTrial: {
             en: 'Start a Free Trial',
             si: 'නොමිලේ අත්හදා බලන්න',
-            ta: 'இলவச சোதनையைত் তোডാঙ্গুঙ্গাল্'
+            ta: 'விசாரணை'
         },
         // Footer Navigation Keys
         howItWorks: {
