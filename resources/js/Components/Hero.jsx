@@ -23,7 +23,7 @@ export default function Hero() {
             alt: "Courier Partner 3"
         },
         {
-            src: "https://cimacleaners.com.au/wp-content/uploads/2025/09/domex_logo.webp",
+            src: "https://cimacleaners.com.au/wp-content/uploads/2025/10/images-2-1.webp",
             alt: "Domex"
         },
         {
