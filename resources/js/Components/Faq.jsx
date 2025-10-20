@@ -101,27 +101,20 @@ const Faq = () => {
         <section className="relative py-16 px-4 sm:px-6 lg:px-8">
             <div className="relative max-w-7xl mx-auto">
                 <div className="max-w-2xl mx-auto text-center">
-                    {/* Subtitle with same style as other sections */}
-                    <div className="mb-4">
-                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
-                            color: '#006daf',
-                            backgroundColor: '#ffe6daff'
-                        }}>
-                            FAQ
-                        </span>
+
+
+                    {/* Two-line emphasized title matching design */}
+                    <div className="font-bold text-gray-900 mb-4 leading-tight text-center">
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">
+                            {t('faq.title.line1', 'FAQ')}
+                        </div>
+                        <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{ color: '#006daf' }}>
+                            {t('faq.title.line2', 'Your Questions, Answered')}
+                        </div>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
-                        fontWeight: '750',
-                        fontStretch: 'ultra-condensed',
-                        letterSpacing: '-0.03em',
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-                    }}>
-                        Your Questions, Answered
-                    </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Find quick answers to the most common<br />
-                        questions from e-commerce sellers
+                        {t('faq.paragraph', 'Find quick answers to the most common questions from e-commerce sellers')}
                     </p>
                 </div>
 

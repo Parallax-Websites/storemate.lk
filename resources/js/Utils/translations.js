@@ -473,7 +473,20 @@ export const translations = {
         title: {
             en: 'Frequently Asked Questions',
             si: 'නිතර අසන ප්‍රශ්න',
-            ta: 'அடிக்கடி கேட்கப்படும் கேள்விகள்'
+            ta: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
+            // Multi-line headline pieces for redesigned FAQ header
+            line1: {
+                en: 'FAQ'
+            },
+            line2: {
+                en: 'Your Questions, Answered'
+            }
+        },
+        // Paragraph under the title
+        paragraph: {
+            en: 'Find quick answers to the most common questions from e-commerce sellers',
+            si: 'E-commerce විකුණුම්කරුවන්ගෙන් එන සාමාන්‍යම ප්‍රශ්න සඳහා වේගවත් පිළිතුරු සොයා ගන්න',
+            ta: 'மின் வணிக விற்பனையாளர்களிடமிருந்து பொதுவான கேள்விகளுக்கு விரைவு பதில்களை காணுங்கள்'
         },
         subtitle: {
             en: 'Get answers to the most common questions about Storemate OMS',
@@ -731,7 +744,17 @@ export const translations = {
         title: {
             en: 'From Inquiry to Delivery in 4 Simple Steps',
             si: 'විමසීමේ සිට බෙදාහැරීම දක්වා සරල පියවර 4කින්',
-            ta: 'விசாரணையிலிருந்து டெலிவரி வரை 4 எளிய படிகளில்'
+            ta: 'விசாரணையிலிருந்து டெலிவரி வரை 4 எளிய படிகளில்',
+            // Split lines for the redesigned heading. English provided; other languages will fall back to English when missing.
+            line1: {
+                en: 'From Inquiry to Delivery'
+            },
+            line2: {
+                en: '4 Simple Steps'
+            },
+            line3: {
+                en: 'Our streamlined process ensures every order is captured, confirmed, and delivered efficiently.'
+            }
         },
         subtitle: {
             en: 'Our streamlined process ensures every order is captured, confirmed, and delivered efficiently.',

@@ -40,29 +40,26 @@ export default function HowItWorksImages() {
 
 	return (
 		<section className="py-16 md:px-4 bg-white">
-                <div id="what-is-storemate-oms" className={`text-center mb-8 md:mb-16 px-4 transition-all duration-1000 ${
-                    isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                }`}>
-                    <div className="mb-4">
-                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
-                            color: '#006daf',
-                            backgroundColor: '#ffe6daff'
-                        }}>
-                            {t('howItWorks.badge')}
-                        </span>
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
-                        fontWeight: '750',
-                        fontStretch: 'ultra-condensed',
-                        letterSpacing: '-0.03em',
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-                    }}>
-                        {t('howItWorks.title')}
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-                        {t('howItWorks.subtitle')}
-                    </p>
-                </div>
+				<div id="what-is-storemate-oms" className={`text-center mb-8 md:mb-16 px-4 transition-all duration-1000 ${
+					isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+				}`}>
+
+					{/* Redesigned multi-line title (matches sample) */}
+					<div className="font-bold text-gray-900 mb-4 leading-tight text-center">
+						<div className="text-xl lg:text-2xl xl:text-3xl mb-2">
+							{t('howItWorks.title.line1', 'From Inquiry to Delivery - howItWorks.title.line1')}
+						</div>
+						<div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{ color: '#006daf' }}>
+							{t('howItWorks.title.line2', '4 Simple Steps - howItWorks.title.line2')}
+						</div>
+					</div>
+
+					<div className="text-gray-900 mb-4 leading-tight text-center flex justify-center">
+						<p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-center mb-8 mx-auto">
+							{t('howItWorks.subtitle', 'Detect fake orders, validate genuine customers, and pack only verified deliveries.')}
+						</p>
+					</div>
+				</div>
 			<div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-1 md:max-w-7xl md:mx-auto">
 				{steps.map((step, idx) => (
 					<div key={idx} className="flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 h-full">

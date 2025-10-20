@@ -12,6 +12,7 @@ import PowerOfCurfox from '@/Components/PowerOfCurfox';
 import MainLayout from '@/Layouts/MainLayout';
 import { useEffect } from 'react';
 import HowItWorksCopy from '@/Components/HowItWorks copy';
+import Hero2 from '@/Components/Hero copy 2';
 
 export default function Home({ auth }) {
     useEffect(() => {
@@ -37,6 +38,8 @@ export default function Home({ auth }) {
             <Hero />
             <HowItWorksCopy />
             <StoremateFeatures />
+            <Hero2 />
+
             <Faq />
             <CallToAction />
             <Footer />
