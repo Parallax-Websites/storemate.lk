@@ -136,7 +136,7 @@ export default function Hero() {
                         </h1>
 
                         <p className={`mb-12 text-xl md:text-1xl text-gray-600 max-w-2xl leading-relaxed transform transition-all duration-700 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            Manage your Facebook, Instagram, WhatsApp and courier orders into one
+                            Auto-sync your Facebook, Instagram, WhatsApp and courier orders into one
                             system. No manual uploads, no confusion — just faster fulfillment.
                         </p>
 
@@ -250,6 +250,106 @@ export default function Hero() {
                     </div>
                 </div>
             </main>
+
+            {/* Security Features Section */}
+            <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+                {/* Section Title */}
+                <div className="text-center mb-16">
+
+                    <div className="font-bold text-gray-900 mb-4 leading-tight text-center">
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">Fewer Returns, More Profits</div>
+                        <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{color: '#006daf'}}>Reduce Returns Before</div>
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">They Happen.</div>
+                    </div>
+                    <div className="text-gray-900 mb-4 leading-tight text-center flex justify-center">
+                            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-center mb-8 mx-auto">
+Detect fake orders, validate genuine customers, and pack only verified deliveries.
+
+                        </p>
+                    </div>
+
+
+                </div>
+                <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 transition-all duration-1000 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    {/* Feature 1 - Identify Fake Orders */}
+                    <div className="relative group md:h-full">
+                        <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            {/* Hazard warning triangle */}
+                                            <path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col h-[calc(100%-88px)]">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{color: '#013387'}}>{t('hero.features.identifyFakeOrders.title')}</h3>
+                                <p className="text-gray-600 leading-relaxed flex-grow">{t('hero.features.identifyFakeOrders.description')}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Feature 2 - Know Genuine Customers */}
+                    <div className="relative group md:h-full">
+                        <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col h-[calc(100%-88px)]">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{color: '#013387'}}>{t('hero.features.knowGenuineCustomers.title')}</h3>
+                                <p className="text-gray-600 leading-relaxed flex-grow">{t('hero.features.knowGenuineCustomers.description')}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Feature 3 - Ban Risky Customers */}
+                    <div className="relative group md:h-full">
+                        <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col h-[calc(100%-88px)]">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{color: '#013387'}}>{t('hero.features.banRiskyCustomers.title')}</h3>
+                                <p className="text-gray-600 leading-relaxed flex-grow">{t('hero.features.banRiskyCustomers.description')}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Feature 4 - Verify Before Dispatch */}
+                    <div className="relative group md:h-full">
+                        <div className="relative md:h-full p-8 transition-all duration-300 transform hover:scale-105 rounded-xl border-2 border-[#006daf]/20">
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
+                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                                        <svg className="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col h-[calc(100%-88px)]">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{color: '#013387'}}>{t('hero.features.verifyBeforeDispatch.title')}</h3>
+                                <p className="text-gray-600 leading-relaxed flex-grow">{t('hero.features.verifyBeforeDispatch.description')}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {/* Decorative Elements */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
