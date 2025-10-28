@@ -158,7 +158,7 @@ export default function Hero() {
                                     {/* Main content container */}
                                     <div className="relative p-[20px] rounded-3xl ">
                                         <img
-                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Frame-2-1-1-scaled.webp"
+                                            src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-7-1.png"
                                             alt="Storemate OMS Dashboard"
                                             className="relative w-full transform transition-all duration-700 hover:scale-[1.03]"
                                         />
