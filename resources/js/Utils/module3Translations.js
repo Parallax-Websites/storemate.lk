@@ -15,7 +15,7 @@ const module3Translations = {
                 description: "Complete guide to starting and scaling your Cash on Delivery business",
                 stats: [
                     {
-                        number: "4",
+                        number: "5",
                         text: "Video Lessons"
                     },
                     {
@@ -34,14 +34,9 @@ const module3Translations = {
             },
             videos: [
                 {
-                    title: "How to Work with Courier Company",
-                    description: "Complete guide to partnering and working with courier companies",
-                    duration: "Video Length"
-                },
-                {
-                    title: "How to Register with Delivery Partner",
-                    description: "Step-by-step registration process with delivery partners",
-                    duration: "7:03"
+                    title: "What is COD? (Cash on Delivery)",
+                    description: "Understanding Cash on Delivery and its benefits for your business",
+                    duration: "3:10"
                 },
                 {
                     title: "How to Apply COD Business",
@@ -49,9 +44,19 @@ const module3Translations = {
                     duration: "4:01"
                 },
                 {
-                    title: "What is COD? (Cash on Delivery)",
-                    description: "Understanding Cash on Delivery and its benefits for your business",
-                    duration: "3:10"
+                    title: "How to Register with Delivery Partner",
+                    description: "Step-by-step registration process with delivery partners",
+                    duration: "7:03"
+                },
+                {
+                    title: "How to Work with Courier Company",
+                    description: "Complete guide to partnering and working with courier companies",
+                    duration: "Video Length"
+                },
+                {
+                    title: "How a Courier Company Works",
+                    description: "Overview of how courier companies operate and what to expect",
+                    duration: "Video Length"
                 }
             ],
             ui: {
@@ -78,7 +83,7 @@ const module3Translations = {
                 description: "ඔබේ මුදල් ලබා ගැනීමේ ව්‍යාපාරය ආරම්භ කර පරිමාණය වැඩි කිරීමේ සම්පූර්ණ මාර්ගෝපදේශය",
                 stats: [
                     {
-                        number: "4",
+                        number: "5",
                         text: "වීඩියෝ පාඩම්"
                     },
                     {
@@ -97,14 +102,9 @@ const module3Translations = {
             },
             videos: [
                 {
-                    title: "How to Work with Courier Company",
-                    description: "කුරියර් සමාගම් සමඟ හවුල්කාරිත්වය සහ වැඩ කිරීමේ සම්පූර්ණ මාර්ගෝපදේශය",
-                    duration: "වීඩියෝ දිග"
-                },
-                {
-                    title: "How to Register with Delivery Partner",
-                    description: "බෙදාහැරීමේ සහකරුවන් සමඟ පියවරෙන් පියවර ලියාපදිංචි කිරීමේ ක්‍රියාවලිය",
-                    duration: "7:03"
+                    title: "What is COD? (Cash on Delivery)",
+                    description: "මුදල් ලබා ගැනීම සහ ඔබේ ව්‍යාපාරයට එහි ප්‍රතිලාභ තේරුම් ගැනීම",
+                    duration: "3:10"
                 },
                 {
                     title: "How to Apply COD Business",
@@ -112,9 +112,19 @@ const module3Translations = {
                     duration: "4:01"
                 },
                 {
-                    title: "What is COD? (Cash on Delivery)",
-                    description: "මුදල් ලබා ගැනීම සහ ඔබේ ව්‍යාපාරයට එහි ප්‍රතිලාභ තේරුම් ගැනීම",
-                    duration: "3:10"
+                    title: "How to Register with Delivery Partner",
+                    description: "බෙදාහැරීමේ සහකරුවන් සමඟ පියවරෙන් පියවර ලියාපදිංචි කිරීමේ ක්‍රියාවලිය",
+                    duration: "7:03"
+                },
+                {
+                    title: "How to Work with Courier Company",
+                    description: "කුරියර් සමාගම් සමඟ හවුල්කාරිත්වය සහ වැඩ කිරීමේ සම්පූර්ණ මාර්ගෝපදේශය",
+                    duration: "වීඩියෝ දිග"
+                },
+                {
+                    title: "How a Courier Company Works",
+                    description: "Overview of how courier companies operate and what to expect",
+                    duration: "Video Length"
                 }
             ],
             ui: {
@@ -141,7 +151,7 @@ const module3Translations = {
                 description: "உங்கள் பணம் வசூலிப்பு வணிகத்தைத் தொடங்கி அளவிடுவதற்கான முழுமையான வழிகாட்டி",
                 stats: [
                     {
-                        number: "4",
+                        number: "5",
                         text: "வீடியோ பாடங்கள்"
                     },
                     {
@@ -160,14 +170,9 @@ const module3Translations = {
             },
             videos: [
                 {
-                    title: "How to Work with Courier Company",
-                    description: "கொரியர் நிறுவனங்களுடன் கூட்டாண்மை மற்றும் வேலை செய்வதற்கான முழுமையான வழிகாட்டி",
-                    duration: "வீடியோ நேரம்"
-                },
-                {
-                    title: "How to Register with Delivery Partner",
-                    description: "டெலிவரி பார்ட்னர்களுடன் படிப்படியான பதிவு செயல்முறை",
-                    duration: "7:03"
+                    title: "What is COD? (Cash on Delivery)",
+                    description: "பணம் வசூலிப்பு மற்றும் உங்கள் வணிகத்திற்கான அதன் நன்மைகளைப் புரிந்துகொள்ளுதல்",
+                    duration: "3:10"
                 },
                 {
                     title: "How to Apply COD Business",
@@ -175,9 +180,19 @@ const module3Translations = {
                     duration: "4:01"
                 },
                 {
-                    title: "What is COD? (Cash on Delivery)",
-                    description: "பணம் வசூலிப்பு மற்றும் உங்கள் வணிகத்திற்கான அதன் நன்மைகளைப் புரிந்துகொள்ளுதல்",
-                    duration: "3:10"
+                    title: "How to Register with Delivery Partner",
+                    description: "டெலிவரி பார்ட்னர்களுடன் படிப்படியான பதிவு செயல்முறை",
+                    duration: "7:03"
+                },
+                {
+                    title: "How to Work with Courier Company",
+                    description: "கொரியர் நிறுவனங்களுடன் கூட்டாண்மை மற்றும் வேலை செய்வதற்கான முழுமையான வழிகாட்டி",
+                    duration: "வீடியோ நேரம்"
+                },
+                {
+                    title: "How a Courier Company Works",
+                    description: "Overview of how courier companies operate and what to expect",
+                    duration: "Video Length"
                 }
             ],
             ui: {

@@ -5,8 +5,14 @@ import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { LanguageProvider } from '@/Contexts/LanguageContext';
+import Clarity from '@microsoft/clarity';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
+// Initialize Microsoft Clarity
+if (typeof window !== 'undefined') {
+    Clarity.init('s7fumshjhl');
+}
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

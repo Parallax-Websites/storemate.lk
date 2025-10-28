@@ -70,10 +70,11 @@ export default function Module3({ auth }) {
     const moduleVideos = tModule3('module3.videos').map((video, index) => ({
         title: video.title,
         url: [
-            "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
-            "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
+            "https://youtu.be/GsLzFLNVo68?si=4qCCVcMUHB8jpOmM",
             "https://youtu.be/ZNNfJWGM04E?si=sIEmiJKODaIVWoxL",
-            "https://youtu.be/GsLzFLNVo68?si=4qCCVcMUHB8jpOmM"
+            "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
+            "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
+            "https://youtu.be/cYr-Dpu0pLY?si=ygzTDlSMiZ1-NDoe"
         ][index],
         duration: video.duration,
         description: video.description
