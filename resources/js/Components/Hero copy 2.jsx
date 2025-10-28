@@ -129,14 +129,13 @@ export default function Hero() {
                 <div className="text-center mb-16">
 
                     <div className="font-bold text-gray-900 mb-4 leading-tight text-center">
-                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">Fewer Returns, More Profits</div>
-                        <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{color: '#006daf'}}>Reduce Returns Before</div>
-                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">They Happen.</div>
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">{t('hero.fewerReturns.line1')}</div>
+                        <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{color: '#006daf'}}>{t('hero.fewerReturns.line2')}</div>
+                        <div className="text-xl lg:text-2xl xl:text-3xl mb-2">{t('hero.fewerReturns.line3')}</div>
                     </div>
                     <div className="text-gray-900 mb-4 leading-tight text-center flex justify-center">
                             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-center mb-8 mx-auto">
-Detect fake orders, validate genuine customers, and pack only verified deliveries.
-
+                                {t('hero.fewerReturns.description')}
                         </p>
                     </div>
 

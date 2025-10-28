@@ -129,15 +129,14 @@ export default function Hero() {
                     <div className="flex flex-col items-center text-center">
 
                         <h1 className={`flex flex-col items-center space-y-2 text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transform transition-all duration-700 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>All Your</span>
-                            <span className="text-gray-900" style={{ fontFamily: 'var(--font-sans)' }}>Social Media Orders</span>
-                            <span className="text-gray-900">& Couriers</span>
-                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>in One Place</span>
+                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>{t('hero.allYour')}</span>
+                            <span className="text-gray-900" style={{ fontFamily: 'var(--font-sans)' }}>{t('hero.socialMediaOrders')}</span>
+                            <span className="text-gray-900">{t('hero.couriers')}</span>
+                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>{t('hero.inOnePlace')}</span>
                         </h1>
 
                         <p className={`mb-12 text-xl md:text-1xl text-gray-600 max-w-2xl leading-relaxed transform transition-all duration-700 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            Manage your Facebook, Instagram, WhatsApp and courier orders into one
-                            system. No manual uploads, no confusion — just faster fulfillment.
+                            {t('hero.description')}
                         </p>
 
                         {/* Image Section */}

@@ -75,12 +75,12 @@ const CallToAction = () => {
                     letterSpacing: '-0.03em',
                     fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                 }}>
-                    Ready to Simplify Your Order Management?
+                    {t('callToAction.heading')}
                 </h2>
 
                 {/* Description */}
                 <p className="text-lg text-gray-600 leading-relaxed mb-12 max-w-5xl mx-auto">
-                    Start automating your sales, reduce returns, and sync couriers — all in one platform
+                    {t('callToAction.subheading')}
                 </p>
 
                 {/* Features List */}
@@ -116,7 +116,7 @@ const CallToAction = () => {
 
                 {/* Buttons Title */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    Try Storemate Free
+                    {t('callToAction.tryFree')}
                 </h3>
 
                 {/* Action Buttons */}
@@ -172,14 +172,14 @@ const CallToAction = () => {
                         <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-gray-600 text-lg">100% Free Trial for 30 days</span>
+                        <span className="text-gray-600 text-lg">{t('callToAction.freeTrial')}</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
                         <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-gray-600 text-lg">No Credit Card required</span>
+                        <span className="text-gray-600 text-lg">{t('callToAction.noCreditCard')}</span>
                     </div>
                 </div>
 

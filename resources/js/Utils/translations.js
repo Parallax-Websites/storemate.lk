@@ -329,6 +329,53 @@ export const translations = {
 
     // Hero Section
     hero: {
+        allYour: {
+            en: 'All Your',
+            si: 'ඔබේ සියලුම',
+            ta: 'உங்கள் அனைத்து'
+        },
+        socialMediaOrders: {
+            en: 'Social Media Orders',
+            si: 'සමාජ මාධ්‍ය ඇණවුම්',
+            ta: 'சமூக ஊடக ஆர்டர்கள்'
+        },
+        couriers: {
+            en: '& Couriers',
+            si: '& කුරියර්',
+            ta: '& கூரியர்கள்'
+        },
+        inOnePlace: {
+            en: 'in One Place',
+            si: 'එක තැනක',
+            ta: 'ஒரே இடத்தில்'
+        },
+        description: {
+            en: 'Manage your Facebook, Instagram, WhatsApp and courier orders into one system. No manual uploads, no confusion — just faster fulfillment.',
+            si: 'ඔබේ Facebook, Instagram, WhatsApp සහ කුරියර් ඇණවුම් එක් පද්ධතියකට කළමනාකරණය කරන්න. අතින් උඩුගත කිරීම් නැත, ව්‍යාකූලත්වයක් නැත — වේගවත් සම්පූර්ණ කිරීම පමණි.',
+            ta: 'உங்கள் Facebook, Instagram, WhatsApp மற்றும் கூரியர் ஆர்டர்களை ஒரே அமைப்பில் நிர்வகிக்கவும். கையேடு பதிவேற்றங்கள் இல்லை, குழப்பம் இல்லை — விரைவாக நிறைவேற்றம் மட்டுமே.'
+        },
+        fewerReturns: {
+            line1: {
+                en: 'Fewer Returns, More Profits',
+                si: 'අඩු ආපසු හරවා යැවීම්, වැඩි ලාභ',
+                ta: 'குறைவான திரும்பல்கள், அதிக லாபம்'
+            },
+            line2: {
+                en: 'Reduce Returns Before',
+                si: 'ආපසු හරවා යැවීම් අඩු කරන්න',
+                ta: 'முன்பே திரும்பல்களை குறைக்கவும்'
+            },
+            line3: {
+                en: 'They Happen.',
+                si: 'ඒවා සිදු වීමට පෙර.',
+                ta: 'அவை நடக்கும் முன்.'
+            },
+            description: {
+                en: 'Detect fake orders, validate genuine customers, and pack only verified deliveries.',
+                si: 'ව්‍යාජ ඇණවුම් හඳුනාගන්න, සැබෑ ගනුදෙනුකරුවන් සත්‍යාපනය කරන්න, සහ සත්‍යාපිත බෙදාහැරීම් පමණක් ඇසුරුම් කරන්න.',
+                ta: 'போலி ஆர்டர்களைக் கண்டறியவும், உண்மையான வாடிக்கையாளர்களைச் சரிபார்க்கவும், மற்றும் சரிபார்க்கப்பட்ட டெலிவரிகளை மட்டும் பேக் செய்யவும்.'
+            }
+        },
         // Feature Boxes
         features: {
             identifyFakeOrders: {
@@ -476,10 +523,14 @@ export const translations = {
             ta: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
             // Multi-line headline pieces for redesigned FAQ header
             line1: {
-                en: 'FAQ'
+                en: 'FAQ',
+                si: 'නිතර අසන ප්‍රශ්න',
+                ta: 'கேள்விகள்'
             },
             line2: {
-                en: 'Your Questions, Answered'
+                en: 'Your Questions, Answered',
+                si: 'ඔබේ ප්‍රශ්න, පිළිතුරු',
+                ta: 'உங்கள் கேள்விகள், பதில்கள்'
             }
         },
         // Paragraph under the title
@@ -688,6 +739,31 @@ export const translations = {
             si: 'ආරම්භ කිරීමට සූදානම්ද?',
             ta: 'தொடங்க தயாரா?'
         },
+        heading: {
+            en: 'Ready to Simplify Your Order Management?',
+            si: 'ඔබේ ඇණවුම් කළමනාකරණය සරල කිරීමට සූදානම්ද?',
+            ta: 'உங்கள் ஆர்டர் மேலாண்மையை எளிதாக்க தயாரா?'
+        },
+        subheading: {
+            en: 'Start automating your sales, reduce returns, and sync couriers — all in one platform',
+            si: 'ඔබේ විකුණුම් ස්වයංක්‍රීය කිරීම ආරම්භ කරන්න, ආපසු අඩු කරන්න, සහ කුරියර් සමමුහුර්ත කරන්න — සියල්ල එක වේදිකාවක',
+            ta: 'உங்கள் விற்பனையை தானியங்குபடுத்தத் தொடங்குங்கள், திரும்பல்களைக் குறைக்கவும், கூரியர்களை ஒத்திசைக்கவும் — அனைத்தும் ஒரே தளத்தில்'
+        },
+        tryFree: {
+            en: 'Try Storemate Free',
+            si: 'Storemate නොමිලේ උත්සාහ කරන්න',
+            ta: 'Storemate இலவசமாக முயற்சிக்கவும்'
+        },
+        freeTrial: {
+            en: '100% Free Trial for 30 days',
+            si: 'දින 30ක් සඳහා 100% නොමිලේ අත්හදා බැලීම',
+            ta: '30 நாட்களுக்கு 100% இலவச சோதனை'
+        },
+        noCreditCard: {
+            en: 'No Credit Card required',
+            si: 'ක්‍රෙඩිට් කාඩ්පතක් අවශ්‍ය නැත',
+            ta: 'கிரெடிட் கார்டு தேவையில்லை'
+        },
         steps: {
             step1: {
                 en: 'Book a free 10-minute demo',
@@ -805,7 +881,7 @@ export const translations = {
             step4: {
                 title: {
                     en: 'Monitor',
-                    si: 'නිරීක්ෂණය කරන்න',
+                    si: 'නිරීක්ෂණය කරන්න',
                     ta: 'கண்காணிக்கவும்'
                 },
                 description: {
