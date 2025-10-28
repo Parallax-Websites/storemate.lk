@@ -127,7 +127,7 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <Link href="/free-course" title="Free Course" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('nav.freeCourse')}</Link>
+                                <Link href="/privacy-policy" title="Privacy & Policy" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">{t('Privacy & Policy')}</Link>
                             </li>
                         </ul>
                     </div>

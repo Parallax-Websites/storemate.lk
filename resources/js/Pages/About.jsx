@@ -114,14 +114,14 @@ export default function About({ auth }) {
                             <div className="relative overflow-hidden rounded-xl shadow-xl">
                                 <img
                                     className="w-full h-64 object-cover hover:scale-105 transition-all duration-300"
-                                    src="https://storemate.lk/wp-content/uploads/2025/06/DSC08396-Large-1024x566.jpeg"
+                                    src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/DSC08396-Large-1024x566.jpeg"
                                     alt={tAbout('about.story.imageAlts.team')}
                                 />
                             </div>
                             <div className="relative overflow-hidden rounded-xl shadow-xl">
                                 <img
                                     className="w-full h-64 object-cover hover:scale-105 transition-all duration-300"
-                                    src="https://storemate.lk/wp-content/uploads/2025/05/432624349_921192850012866_2265390938881499857_n-scaled-1-1024x442.jpg"
+                                    src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/05/432624349_921192850012866_2265390938881499857_n-scaled-1-1024x442.jpg"
                                     alt={tAbout('about.story.imageAlts.office')}
                                 />
                             </div>
@@ -155,42 +155,42 @@ export default function About({ auth }) {
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/3-post-1536x1024-1-1024x683.jpg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/3-post-1536x1024-1-1024x683.jpg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.collaboration')}
                             />
                         </div>
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/2-post-1536x1024-1-1024x683.jpg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/2-post-1536x1024-1-1024x683.jpg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.meeting')}
                             />
                         </div>
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/398445227_828030132662472_4340385669822882599_n-1536x1024-1-1024x683.jpg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/398445227_828030132662472_4340385669822882599_n-1536x1024-1-1024x683.jpg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.achievement')}
                             />
                         </div>
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/1-post-1536x1024-1-1024x683.jpg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/1-post-1536x1024-1-1024x683.jpg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.event')}
                             />
                         </div>
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/313184887_551366230328865_6684626160421224402_n-1-1536x1024-1-1024x683.jpg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/313184887_551366230328865_6684626160421224402_n-1-1536x1024-1-1024x683.jpg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.celebration')}
                             />
                         </div>
                         <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <img
                                 className="w-full h-64 object-cover"
-                                src="https://storemate.lk/wp-content/uploads/2025/06/APICTA-Photo-1536x1024-1-1024x683.jpeg"
+                                src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/APICTA-Photo-1536x1024-1-1024x683.jpeg"
                                 alt={tAbout('about.friendlyTeam.imageAlts.apicta')}
                             />
                         </div>
@@ -231,7 +231,7 @@ export default function About({ auth }) {
                                 <div className="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-[1.02] max-w-5xl">
                                     <img
                                         className="w-full h-auto object-cover"
-                                        src="https://storemate.lk/wp-content/uploads/2025/06/canva-awards-1-1024x576.jpg"
+                                        src="https://magenta-dotterel-745114.hostingersite.com/wp-content/uploads/2025/06/canva-awards-1-1024x576.jpg"
                                         alt={tAbout('about.awards.imageAlt')}
                                     />
                                     {/* Gradient overlay */}

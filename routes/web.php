@@ -65,6 +65,10 @@ Route::get('/module-3', function () {
     return Inertia::render('Module3');
 })->name('module.3');
 
+Route::get('/privacy-policy', function () {
+    return Inertia::render('PrivacyPolicy');
+})->name('privacy.policy');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
