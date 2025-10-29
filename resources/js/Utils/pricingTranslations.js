@@ -82,8 +82,8 @@ const pricingTranslations = {
                     answer: "An enquiry is a potential customer inquiry or lead that comes through your social media channels (Facebook, WhatsApp, Instagram) or phone calls.<br><br>In Storemate OMS, enquiries are the first step in your sales process — they help you track and follow up with potential customers before they become actual orders."
                 },
                 {
-                    question: "What COD sync means?",
-                    answer: "COD (Cash on Delivery) sync means automatic synchronization of COD payment status with your courier service.<br><br>When your courier partner (like Royal Express) collects payment from customers, the payment status automatically updates in your Storemate OMS dashboard — no manual updates needed."
+                    question: "What does COD Sync mean?",
+                    answer: "COD (Cash on Delivery) Sync means that when you add orders into Storemate OMS, the system will automatically sync and update those orders details with your delivery partner’s system — without any manual work required.<br><br>No more exporting, uploading, or typing order details again. Everything is synced in real time for faster and more accurate processing."
                 },
                 {
                     question: "What is a business location?",

@@ -15,7 +15,7 @@ const module3Translations = {
                 description: "Complete guide to starting and scaling your Cash on Delivery business",
                 stats: [
                     {
-                        number: "5",
+                        number: "6",
                         text: "Video Lessons"
                     },
                     {
@@ -51,12 +51,17 @@ const module3Translations = {
                 {
                     title: "How to Work with Courier Company",
                     description: "Complete guide to partnering and working with courier companies",
-                    duration: "Video Length"
+                    duration: "2.50"
+                },
+                {
+                    title: "What is Waybill?",
+                    description: "Understanding waybills and their role in delivery tracking",
+                    duration: "3:22"
                 },
                 {
                     title: "How a Courier Company Works",
                     description: "Overview of how courier companies operate and what to expect",
-                    duration: "Video Length"
+                    duration: "4:21"
                 }
             ],
             ui: {
@@ -83,7 +88,7 @@ const module3Translations = {
                 description: "ඔබේ මුදල් ලබා ගැනීමේ ව්‍යාපාරය ආරම්භ කර පරිමාණය වැඩි කිරීමේ සම්පූර්ණ මාර්ගෝපදේශය",
                 stats: [
                     {
-                        number: "5",
+                        number: "6",
                         text: "වීඩියෝ පාඩම්"
                     },
                     {
@@ -122,9 +127,14 @@ const module3Translations = {
                     duration: "වීඩියෝ දිග"
                 },
                 {
+                    title: "What is Waybill?",
+                    description: "Waybill යනු කුමක්ද සහ බෙදාහැරීම් ලුහුබැඳීමේදී එහි භූමිකාව තේරුම් ගැනීම",
+                    duration: "3:22"
+                },
+                {
                     title: "How a Courier Company Works",
-                    description: "Overview of how courier companies operate and what to expect",
-                    duration: "Video Length"
+                    description: "කුරියර් සමාගම් ක්‍රියාත්මක වන ආකාරය සහ අපේක්ෂා කළ යුතු දේ පිළිබඳ දළ විශ්ලේෂණය",
+                    duration: "4:21"
                 }
             ],
             ui: {
@@ -151,7 +161,7 @@ const module3Translations = {
                 description: "உங்கள் பணம் வசூலிப்பு வணிகத்தைத் தொடங்கி அளவிடுவதற்கான முழுமையான வழிகாட்டி",
                 stats: [
                     {
-                        number: "5",
+                        number: "6",
                         text: "வீடியோ பாடங்கள்"
                     },
                     {
@@ -190,9 +200,14 @@ const module3Translations = {
                     duration: "வீடியோ நேரம்"
                 },
                 {
+                    title: "What is Waybill?",
+                    description: "Waybill என்றால் என்ன மற்றும் டெலிவரி கண்காணிப்பில் அதன் பங்கு",
+                    duration: "3:22"
+                },
+                {
                     title: "How a Courier Company Works",
-                    description: "Overview of how courier companies operate and what to expect",
-                    duration: "Video Length"
+                    description: "கொரியர் நிறுவனங்கள் எவ்வாறு செயல்படுகின்றன மற்றும் என்ன எதிர்பார்க்கலாம் என்பதற்கான கண்ணோட்டம்",
+                    duration: "4:21"
                 }
             ],
             ui: {

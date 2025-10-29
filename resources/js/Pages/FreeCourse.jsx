@@ -160,28 +160,34 @@ export default function FreeCourse({ auth }) {
             description: "Complete guide to starting and scaling your Cash on Delivery business",
             videos: [
                 {
-                    title: "How to Work with Courier Company",
-                    url: "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
-                    duration: "Video Length",
-                    description: "Complete guide to partnering and working with courier companies"
-                },
-                {
-                    title: "How to Register with Delivery Partner",
-                    url: "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
-                    duration: "7:03",
-                    description: "Step-by-step registration process with delivery partners"
+                    title: "What is COD? (Cash on Delivery)",
+                    description: "Understanding Cash on Delivery and its benefits for your business",
+                    duration: "3:10"
                 },
                 {
                     title: "How to Apply COD Business",
-                    url: "https://youtu.be/ZNNfJWGM04E?si=sIEmiJKODaIVWoxL",
-                    duration: "4:01",
-                    description: "Set up and manage Cash on Delivery business operations"
+                    description: "Set up and manage Cash on Delivery business operations",
+                    duration: "4:01"
                 },
                 {
-                    title: "What is COD? (Cash on Delivery)",
-                    url: "https://youtu.be/GsLzFLNVo68?si=4qCCVcMUHB8jpOmM",
-                    duration: "3:10",
-                    description: "Understanding Cash on Delivery and its benefits for your business"
+                    title: "How to Register with Delivery Partner",
+                    description: "Step-by-step registration process with delivery partners",
+                    duration: "7:03"
+                },
+                {
+                    title: "How to Work with Courier Company",
+                    description: "Complete guide to partnering and working with courier companies",
+                    duration: "2.50"
+                },
+                {
+                    title: "What is Waybill?",
+                    description: "Understanding waybills and their role in delivery tracking",
+                    duration: "3:22"
+                },
+                {
+                    title: "How a Courier Company Works",
+                    description: "Overview of how courier companies operate and what to expect",
+                    duration: "4:21"
                 }
             ]
         }

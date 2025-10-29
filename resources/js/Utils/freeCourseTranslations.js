@@ -42,7 +42,7 @@ const freeCourseTranslations = {
                         moreText: "more lessons"
                     },
                     {
-                        title: "Courier Integration & COD Business",
+                        title: "System Features & Management",
                         description: "Learn how to start and manage a successful COD business with courier integrations",
                         level: "Core",
                         levelText: "Level",

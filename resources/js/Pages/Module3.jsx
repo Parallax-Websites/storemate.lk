@@ -74,6 +74,7 @@ export default function Module3({ auth }) {
             "https://youtu.be/ZNNfJWGM04E?si=sIEmiJKODaIVWoxL",
             "https://youtu.be/Int_5tFzjvM?si=aKBDJUDokBNmZ-44",
             "https://youtu.be/vyJsy8sW4_o?si=it1jUtg6TvvFqy_W",
+            "https://youtu.be/AIM_41-S6cU?si=re2pnrgqG0S8Lxoe",
             "https://youtu.be/cYr-Dpu0pLY?si=ygzTDlSMiZ1-NDoe"
         ][index],
         duration: video.duration,

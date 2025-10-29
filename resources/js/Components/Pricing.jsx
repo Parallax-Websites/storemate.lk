@@ -16,7 +16,7 @@ export default function Pricing() {
     }, []);
 
     const pricingPlans = [
-        {
+/*         {
             name: tPricing('pricing.plans.free.name'),
             subtitle: tPricing('pricing.plans.free.subtitle'),
             price: `LKR ${tPricing('pricing.plans.free.price')}`,
@@ -35,7 +35,7 @@ export default function Pricing() {
             buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
             bgColor: "bg-orange-50",
             popular: false
-        },
+        }, */
         {
             name: tPricing('pricing.plans.starter.name'),
             subtitle: tPricing('pricing.plans.starter.subtitle'),
@@ -54,8 +54,7 @@ export default function Pricing() {
             buttonText: tPricing('pricing.plans.starter.buttonText'),
             buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
             bgColor: "bg-blue-50",
-            popular: true,
-            popularText: tPricing('pricing.plans.starter.popular')
+            popular: false
         },
         {
             name: tPricing('pricing.plans.business.name'),
@@ -75,7 +74,8 @@ export default function Pricing() {
             buttonText: tPricing('pricing.plans.business.buttonText'),
             buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
             bgColor: "bg-purple-50",
-            popular: false
+            popular: true,
+            popularText: tPricing('pricing.plans.starter.popular')
         },
         {
             name: tPricing('pricing.plans.premium.name'),
@@ -183,7 +183,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.name}
