@@ -13,7 +13,7 @@ export default function PrivacyPolicy({ auth }) {
 
             <div className="py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto  rounded-lg  p-8 md:p-12">
-                    <h1 className="text-xl font-medium text-custom-blue-3 mb-2">StoreMate POS System</h1>
+                    <h1 className="text-xl font-medium text-custom-blue-3 mb-2">StoreMate Order Management System</h1>
                     <h2 className="text-5xl font-bold text-gray-900 mb-8">Privacy Policy</h2>
 
                     <div className="prose prose-lg max-w-none">
