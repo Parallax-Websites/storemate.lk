@@ -25,19 +25,19 @@ const Faq = () => {
                 ta: 'கொரியர் சிஸ்டத்திற்கு Excel கோப்புகளை அப்லோட் செய்ய வேண்டுமா?'
             },
             answer: {
-                en: 'No need.<br><br>Storemate OMS is integrated with Royal Express and can send order info directly with one click. No Excel uploads. No manual entry. You can generate waybills instantly.',
+                en: 'No need. <br><br>Storemate OMS is integrated with courier companies and can send order info directly with one click. No Excel uploads. No manual entry. You can generate waybills instantly.',
                 si: 'අවශ්‍ය නැත.<br><br>Storemate OMS Royal Express සමඟ ඒකාබද්ධ වී ඇති අතර එක් ක්ලික් කිරීමකින් ඇණවුම් තොරතුරු සෘජුව යවිය හැකිය. Excel උඩුගත කිරීම් නැත. අතින් ඇතුල් කිරීම් නැත. ඔබට වේබිල් ක්ෂණිකව ජනනය කළ හැකිය.',
                 ta: 'தேவையில்லை.<br><br>Storemate OMS Royal Express உடன் ஒருங்கிணைக்கப்பட்டுள்ளது மற்றும் ஒரே கிளிக்கில் ஆர்டர் தகவலை நேரடியாக அனுப்ப முடியும். Excel அப்லோடுகள் இல்லை. கையேடு நுழைவு இல்லை. நீங்கள் உடனடியாக வேபில்களை உருவாக்க முடியும்.'
             }
         },
         {
             question: {
-                en: 'Can I connect any delivery company with Storemate OMS?',
+                en: 'Can I connect any delivery company with StoreMate OMS?',
                 si: 'Storemate OMS සමඟ ඕනෑම බෙදාහැරීම් සමාගමක් සම්බන්ධ කළ හැකිද?',
                 ta: 'Storemate OMS உடன் எந்த டெலிவரி நிறுவனத்தையும் இணைக்க முடியுமா?'
             },
             answer: {
-                en: 'Yes, we can.<br><br>Storemate OMS currently supports direct integrations with Royal Express and Trans Express Service Lanka.<br><br>If you use a different courier, we can integrate them into the system based on your request, as long as they support API or file-based sync.',
+                en: 'Absolutely — yes. <br><br>StoreMate OMS already supports direct integrations with leading courier partners in Sri Lanka. <br><br>If you are using a different courier, we can easily integrate it into the system on request, as long as the courier provides an API or file-based sync method. <br><br>Our goal is to ensure your operations stay fully automated and hassle-free, no matter which delivery partner you choose.',
                 si: 'ඔව්, අපට පුළුවන්.<br><br>Storemate OMS දැනට Royal Express සහ Trans Express Service Lanka සමඟ සෘජු ඒකාබද්ධතා සඳහා සහාය දක්වයි.<br><br>ඔබ වෙනස් කුරියරයක් භාවිතා කරන්නේ නම්, ඔවුන් API හෝ ගොනු-පාදක සමමුහුර්තකරණයට සහාය දක්වන තාක් කල්, අපට ඔබේ ඉල්ලීම මත ඔවුන් පද්ධතියට ඒකාබද්ධ කළ හැකිය.',
                 ta: 'ஆம், எங்களால் முடியும்.<br><br>Storemate OMS தற்போது Royal Express மற்றும் Trans Express Service Lanka உடன் நேரடி ஒருங்கிணைப்புகளை ஆதரிக்கிறது.<br><br>நீங்கள் வேறு கொரியரைப் பயன்படுத்தினால், அவர்கள் API அல்லது கோப்பு அடிப்படையிலான ஒத்திசைவை ஆதரிக்கும் வரை, உங்கள் கோரிக்கையின் அடிப்படையில் அவர்களை அமைப்பில் ஒருங்கிணைக்க முடியும்.'
             }
