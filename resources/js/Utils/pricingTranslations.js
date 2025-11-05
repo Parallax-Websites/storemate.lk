@@ -91,7 +91,7 @@ const pricingTranslations = {
                 },
                 {
                     question: "Can I choose which delivery company I need to sync with?",
-                    answer: "Yes, absolutely.<br><br>Storemate OMS currently integrates with Royal Express and Trans Express Service Lanka. You can choose which courier service to use for each order.<br><br>We can also integrate additional courier services based on your business requirements."
+                    answer: "Yes, absolutely.<br><br>Storemate OMS currently integrates with many courier services. You can choose which courier service to use for each order.<br><br>We can also integrate additional courier services based on your business requirements."
                 },
                 {
                     question: "What is a WhatsApp form?",
@@ -203,7 +203,7 @@ const pricingTranslations = {
                 },
                 {
                     question: "මට සමමුහුර්ත කිරීමට අවශ්‍ය බෙදාහැරීම් සමාගම තෝරා ගත හැකිද?",
-                    answer: "ඔව්, නිසැකවම.<br><br>Storemate OMS දැනට Royal Express සහ Trans Express Service Lanka සමඟ ඒකාබද්ධ වේ. ඔබට සෑම ඇණවුමක් සඳහාම භාවිතා කිරීමට කුරියර් සේවාව තෝරා ගත හැකිය.<br><br>ඔබේ ව්‍යාපාරික අවශ්‍යතා මත පදනම්ව අපට අමතර කුරියර් සේවා ද ඒකාබද්ධ කළ හැකිය."
+                    answer: "ඔව්, නියත වශයෙන්ම.<br><br>Storemate OMS දැනට බොහෝ කුරියර් සේවා සමඟ ඒකාබද්ධ වේ. ඔබට සෑම ඇණවුමක් සඳහාම භාවිතා කිරීමට කුරියර් සේවාව තෝරා ගත හැකිය.<br><br>ඔබේ ව්‍යාපාරික අවශ්‍යතා මත පදනම්ව අපට අමතර කුරියර් සේවා ද ඒකාබද්ධ කළ හැකිය."
                 },
                 {
                     question: "WhatsApp පෝරමයක් කියන්නේ මොකද්ද?",
@@ -315,7 +315,7 @@ const pricingTranslations = {
                 },
                 {
                     question: "எந்த டெலிவரி நிறுவனத்துடன் ஒத்திசைக்க வேண்டும் என்பதை என்னால் தேர்வு செய்ய முடியுமா?",
-                    answer: "ஆம், நிச்சயமாக.<br><br>Storemate OMS தற்போது Royal Express மற்றும் Trans Express Service Lanka உடன் நேரடி ஒருங்கிணைப்புகளை ஆதரிக்கிறது. ஒவ்வொரு ஆர்டருக்கும் பயன்படுத்த வேண்டிய கொரியர் சேவையை நீங்கள் தேர்வு செய்யலாம்.<br><br>உங்கள் வணிகத் தேவைகளின் அடிப்படையில் கூடுதல் கொரியர் சேவைகளையும் ஒருங்கிணைக்க முடியும்."
+                    answer: "ஆம், நிச்சயமாக.<br><br>ஸ்டோர்மேட் OMS தற்போது பல கூரியர் சேவைகளுடன் ஒருங்கிணைக்கிறது. ஒவ்வொரு ஆர்டருக்கும் பயன்படுத்த வேண்டிய கொரியர் சேவையை நீங்கள் தேர்வு செய்யலாம்.<br><br>உங்கள் வணிகத் தேவைகளின் அடிப்படையில் கூடுதல் கொரியர் சேவைகளையும் ஒருங்கிணைக்க முடியும்."
                 },
                 {
                     question: "WhatsApp படிவம் என்றால் என்ன?",
