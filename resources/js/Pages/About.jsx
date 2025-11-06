@@ -58,7 +58,7 @@ export default function About({ auth }) {
                         </p>
                         <div className={`mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-400 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                             <a
-                                href="https://welcome.oms.storemate.cloud/register"
+                                href="https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=about_page&utm_content=btn_get_started_hero"
                                 className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:shadow-lg transition-all duration-300 hover:scale-105"
                                 style={{backgroundColor: '#013387'}}
                                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}

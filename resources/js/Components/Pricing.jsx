@@ -259,7 +259,7 @@ export default function Pricing() {
 
                             {/* CTA Button */}
                             <a
-                                href="https://welcome.oms.storemate.cloud/register"
+                                href="https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=pricing_page&utm_content=btn_get_started_cards"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}

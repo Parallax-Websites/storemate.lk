@@ -55,7 +55,7 @@ export default function InquiryHero({ auth }) {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="https://welcome.oms.storemate.cloud/register"
+                href="https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=inquiry_page&utm_content=btn_start_a_free_trial_hero"
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}
               >

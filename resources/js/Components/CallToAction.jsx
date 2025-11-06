@@ -3,6 +3,36 @@ import { useTranslation } from '../hooks/useTranslation';
 
 const CallToAction = () => {
     const { t } = useTranslation();
+
+    const getRegisterUrl = () => {
+        const currentPath = route().current();
+
+        // Check for module routes (handles both module.1 and module-1 formats)
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.')
+                ? currentPath.split('.')[1]
+                : currentPath.split('-')[1];
+            return `https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=module${moduleNumber}_page&utm_content=btn_start_a_free_trial_cta`;
+        }
+
+        const campaignMap = {
+            'home': 'home_page',
+            'pricing': 'pricing_page',
+            'inquiry': 'inquiry_page',
+            'sales.management': 'sales_page',
+            'shipping.packing': 'shipping&packing_page',
+            'user.contact.product': 'user&product_page',
+            'about': 'about_page',
+            'free.course': 'courses_page',
+            'contact.us': 'contact_page',
+            'partner.program': 'partner_page',
+            'privacy.policy': 'privacy&policy_page'
+        };
+
+        const campaign = campaignMap[currentPath] || 'home_page';
+        return `https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=${campaign}&utm_content=btn_start_a_free_trial_cta`;
+    };
+
     return (
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
             {/* Background Pattern and Gradients */}
@@ -122,7 +152,7 @@ const CallToAction = () => {
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                     <a
-                        href="https://welcome.oms.storemate.cloud/register"
+                        href={getRegisterUrl()}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"

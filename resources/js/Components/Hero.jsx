@@ -173,7 +173,7 @@ export default function Hero() {
                         {/* CTA Buttons */}
                         <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
                             <a
-                                href="https://welcome.oms.storemate.cloud/register"
+                                href="https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=home_page&utm_content=btn_start_a_free_trial_hero"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white hover:scale-105 hover:shadow-lg transition-all duration-300"
