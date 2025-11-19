@@ -9,7 +9,156 @@ import { useState } from 'react';
 export default function Header({ auth }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const [showingMobileFeaturesDropdown, setShowingMobileFeaturesDropdown] = useState(false);
+    const [showingMobileMoreDropdown, setShowingMobileMoreDropdown] = useState(false);
+    const [showDemoModal, setShowDemoModal] = useState(false);
+    const [showTrialModal, setShowTrialModal] = useState(false);
+    const [formData, setFormData] = useState({
+        courierCompanies: '',
+        ordersPerDay: '',
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        companyName: ''
+    });
+    const [trialFormData, setTrialFormData] = useState({
+        courierCompanies: '',
+        ordersPerDay: '',
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        companyName: ''
+    });
     const { t } = useTranslation();
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleTrialInputChange = (e) => {
+        const { name, value } = e.target;
+        setTrialFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleDemoSubmit = (e) => {
+        e.preventDefault();
+
+        // Create URL with form data as query parameters
+        const params = new URLSearchParams({
+            courierCompanies: formData.courierCompanies,
+            ordersPerDay: formData.ordersPerDay,
+            fullName: formData.fullName,
+            phoneNumber: formData.phoneNumber,
+            email: formData.email,
+            companyName: formData.companyName
+        });
+
+        const loginUrl = `https://oms.storemate.cloud/login?${params.toString()}`;
+
+        // Prepare data to send to n8n - include the parameterized URL
+        const demoData = {
+            courierCompanies: formData.courierCompanies,
+            ordersPerDay: formData.ordersPerDay,
+            fullName: formData.fullName,
+            phoneNumber: formData.phoneNumber,
+            email: formData.email,
+            companyName: formData.companyName,
+            timestamp: new Date().toISOString(),
+            loginUrl: loginUrl  // Add the fully parameterized URL
+        };
+
+        console.log('Sending demo data to n8n:', demoData);
+        console.log('Login URL:', loginUrl);
+
+        // Send data to n8n webhook - WAIT for response before redirecting
+        fetch('https://storemateoms.app.n8n.cloud/webhook/f8df809e-732a-420d-824d-8ca58f8ed85f', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(demoData)
+        })
+        .then(response => {
+            console.log('n8n Response status:', response.status);
+            if (response.ok) {
+                console.log('✅ Demo signup data sent successfully to n8n');
+            } else {
+                console.error('❌ n8n Error:', response.statusText);
+            }
+
+            // Now redirect regardless of response
+            redirectToDemoLogin(formData);
+        })
+        .catch(error => {
+            console.error('❌ Error sending to n8n:', error);
+
+            // Still redirect even if n8n fails
+            redirectToDemoLogin(formData);
+        });
+    };
+
+    const redirectToDemoLogin = (formData) => {
+        // Create URL with form data as query parameters
+        const params = new URLSearchParams({
+            courierCompanies: formData.courierCompanies,
+            ordersPerDay: formData.ordersPerDay,
+            fullName: formData.fullName,
+            phoneNumber: formData.phoneNumber,
+            email: formData.email,
+            companyName: formData.companyName
+        });
+
+        console.log('Redirecting to login with params:', params.toString());
+        window.open(`https://oms.storemate.cloud/login?${params.toString()}`, '_blank');
+        setShowDemoModal(false);
+
+        // Reset form
+        setFormData({
+            courierCompanies: '',
+            ordersPerDay: '',
+            fullName: '',
+            phoneNumber: '',
+            email: '',
+            companyName: ''
+        });
+    };
+
+    const handleTrialSubmit = (e) => {
+        e.preventDefault();
+
+        // Create URL with form data as query parameters
+        const params = new URLSearchParams({
+            courierCompanies: trialFormData.courierCompanies,
+            ordersPerDay: trialFormData.ordersPerDay,
+            fullName: trialFormData.fullName,
+            phoneNumber: trialFormData.phoneNumber,
+            email: trialFormData.email,
+            companyName: trialFormData.companyName
+        });
+
+        console.log('Redirecting to registration with params:', params.toString());
+
+        // Redirect to registration page with parameters
+        window.open(`https://welcome.oms.storemate.cloud/register?${params.toString()}`, '_blank');
+
+        setShowTrialModal(false);
+
+        // Reset form
+        setTrialFormData({
+            courierCompanies: '',
+            ordersPerDay: '',
+            fullName: '',
+            phoneNumber: '',
+            email: '',
+            companyName: ''
+        });
+    };
 
     const getRegisterUrl = () => {
         const currentPath = route().current();
@@ -41,7 +190,7 @@ export default function Header({ auth }) {
     };
 
     return (
-        <nav className="shadow-sm relative z-[9999]">
+        <nav className="sticky top-0 shadow-sm bg-white z-[9999]">
             <div className="relative max-w-none">
                 {/* Main content container - standard max-width */}
                 <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative">
@@ -62,18 +211,42 @@ export default function Header({ auth }) {
                                     <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                         {t('nav.pricing')}
                                     </NavLink>
-                                    <NavLink href={route('about')} active={route().current('about')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                        {t('nav.about')}
-                                    </NavLink>
-                                    <NavLink href={route('free.course')} active={route().current('free.course')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                        {t('nav.freeCourse')}
-                                    </NavLink>
-                                    <NavLink href={route('contact.us')} active={route().current('contact.us')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                        {t('nav.contact')}
-                                    </NavLink>
-                                    <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
-                                        {t('nav.partnerProgram')}
-                                    </NavLink>
+                                    <Dropdown>
+                                        <Dropdown.Trigger>
+                                            <span className="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-700 cursor-pointer">
+                                                {t('nav.more')}
+                                                <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </Dropdown.Trigger>
+                                        <Dropdown.Content>
+                                            <a
+                                                href={route('about')}
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.about')}
+                                            </a>
+                                            <a
+                                                href={route('free.course')}
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.freeCourse')}
+                                            </a>
+                                            <a
+                                                href={route('contact.us')}
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.contact')}
+                                            </a>
+                                            <a
+                                                href={route('partner.program')}
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.partnerProgram')}
+                                            </a>
+                                        </Dropdown.Content>
+                                    </Dropdown>
                                 </div>
                             </div>
                         </div>
@@ -115,12 +288,16 @@ export default function Header({ auth }) {
                                     </Dropdown.Content>
                                 </Dropdown>
                                 <a
-                                    href={getRegisterUrl()}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3"
+                                    onClick={() => setShowTrialModal(true)}
+                                    className="inline-flex items-center justify-center rounded-md border border-custom-blue-2 px-4 py-2 text-base font-bold text-custom-blue-2 hover:bg-gray-50 cursor-pointer"
                                 >
                                     {t('nav.startFreeTrial')}
+                                </a>
+                                <a
+                                    onClick={() => setShowDemoModal(true)}
+                                    className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
+                                >
+                                    Try Live Demo
                                 </a>
                             </div>
 
@@ -162,15 +339,6 @@ export default function Header({ auth }) {
                     <NavLink href={route('pricing')} active={route().current('pricing')} block="true">
                         {t('nav.pricing')}
                     </NavLink>
-                    <NavLink href={route('about')} active={route().current('about')} block="true">
-                        {t('nav.about')}
-                    </NavLink>
-                    <NavLink href={route('free.course')} active={route().current('free.course')} block="true">
-                        {t('nav.freeCourse')}
-                    </NavLink>
-                    <NavLink href={route('contact.us')} active={route().current('contact.us')} block="true">
-                        {t('nav.contact')}
-                    </NavLink>
 
                     {/* Mobile Features Dropdown */}
                     <div>
@@ -206,9 +374,39 @@ export default function Header({ auth }) {
                         )}
                     </div>
 
-                    <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true">
-                        {t('nav.partnerProgram')}
-                    </NavLink>
+                    {/* Mobile More Dropdown */}
+                    <div>
+                        <button
+                            onClick={() => setShowingMobileMoreDropdown((previousState) => !previousState)}
+                            className="flex items-center justify-between w-full px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 focus:outline-none focus:text-gray-800 focus:bg-gray-50 transition duration-150 ease-in-out"
+                        >
+                            <span>{t('nav.more')}</span>
+                            <svg
+                                className={`h-4 w-4 transition-transform duration-200 ${showingMobileMoreDropdown ? 'rotate-180' : ''}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
+                        {showingMobileMoreDropdown && (
+                            <div className="pl-8 pb-2 space-y-1">
+                                <NavLink href={route('about')} active={route().current('about')} block="true" className="text-sm">
+                                    {t('nav.about')}
+                                </NavLink>
+                                <NavLink href={route('free.course')} active={route().current('free.course')} block="true" className="text-sm">
+                                    {t('nav.freeCourse')}
+                                </NavLink>
+                                <NavLink href={route('contact.us')} active={route().current('contact.us')} block="true" className="text-sm">
+                                    {t('nav.contact')}
+                                </NavLink>
+                                <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true" className="text-sm">
+                                    {t('nav.partnerProgram')}
+                                </NavLink>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <div className="pt-4 pb-1 border-t border-gray-200">
@@ -245,16 +443,278 @@ export default function Header({ auth }) {
                         </div>
 
                         <a
-                            href={getRegisterUrl()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block mx-4 mt-4 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md"
+                            onClick={() => setShowTrialModal(true)}
+                            className="block mx-4 mt-4 px-4 py-2 text-center font-bold text-custom-blue-2 border-2 border-custom-blue-2 hover:bg-gray-50 rounded-md cursor-pointer"
                         >
                             {t('nav.startFreeTrial')}
+                        </a>
+                        <a
+                            onClick={() => setShowDemoModal(true)}
+                            className="block mx-4 mt-3 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md cursor-pointer"
+                        >
+                            Try Live Demo
                         </a>
                     </div>
                 </div>
             </div>
+
+            {/* Demo Modal */}
+            {showDemoModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+                        <div className="p-6">
+                            <div className="mb-6">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Try Live Demo</h2>
+                                <p className="text-sm text-gray-600">Please provide your details to access the demo</p>
+                            </div>
+
+                            <form onSubmit={handleDemoSubmit} className="space-y-4">
+                                {/* Courier Companies */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        ඔබගේ orders යවන courier companies වල නම් <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="courierCompanies"
+                                        value={formData.courierCompanies}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter courier company names"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Orders Per Day */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        කොපමණ orders ගණනක් දිනකට යවනවද <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="ordersPerDay"
+                                        value={formData.ordersPerDay}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter number of orders per day"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Full Name */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Full name <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter your full name"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Phone Number */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Phone number <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        name="phoneNumber"
+                                        value={formData.phoneNumber}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter your phone number"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Email <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter your email"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Company Name */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Company name <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="companyName"
+                                        value={formData.companyName}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter your company name"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Buttons */}
+                                <div className="flex gap-3 pt-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowDemoModal(false)}
+                                        className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="flex-1 px-4 py-2 text-sm font-medium text-white bg-custom-blue-2 rounded-md hover:bg-custom-blue-3 transition-colors"
+                                    >
+                                        Continue to Demo
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Free Trial Modal */}
+            {showTrialModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+                        <div className="p-6">
+                            <div className="mb-6">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Start Your Free Trial</h2>
+                                <p className="text-sm text-gray-600">Please provide your details to create your account</p>
+                            </div>
+
+                            <form onSubmit={handleTrialSubmit} className="space-y-4">
+                                {/* Courier Companies */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        ඔබගේ orders යවන courier companies වල නම් <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="courierCompanies"
+                                        value={trialFormData.courierCompanies}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter courier company names"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Orders Per Day */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        කොපමණ orders ගණනක් දිනකට යවනවද <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="ordersPerDay"
+                                        value={trialFormData.ordersPerDay}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter number of orders per day"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Full Name */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Full name <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        value={trialFormData.fullName}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter your full name"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Phone Number */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Phone number <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        name="phoneNumber"
+                                        value={trialFormData.phoneNumber}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter your phone number"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Email <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={trialFormData.email}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter your email"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Company Name */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                                        Company name <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="companyName"
+                                        value={trialFormData.companyName}
+                                        onChange={handleTrialInputChange}
+                                        placeholder="Enter your company name"
+                                        required
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                    />
+                                </div>
+
+                                {/* Buttons */}
+                                <div className="flex gap-3 pt-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowTrialModal(false)}
+                                        className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="flex-1 px-4 py-2 text-sm font-medium text-white bg-custom-blue-2 rounded-md hover:bg-custom-blue-3 transition-colors"
+                                    >
+                                        Start Free Trial
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }

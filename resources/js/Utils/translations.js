@@ -44,6 +44,11 @@ export const translations = {
             si: 'හවුල්කරු වැඩසටහන',
             ta: 'கூட்டாளர்'
         },
+        more: {
+            en: 'More',
+            si: 'තවත්',
+            ta: 'மேலும்'
+        },
         login: {
             en: 'Login',
             si: 'පිවිසෙන්න',
@@ -331,22 +336,22 @@ export const translations = {
     hero: {
         allYour: {
             en: 'All Your',
-            si: 'ඔබේ සියලුම',
+            si: 'ඔයාගේ සියලුම',
             ta: 'உங்கள் அனைத்து'
         },
         socialMediaOrders: {
             en: 'Social Media Orders',
-            si: 'සමාජ මාධ්‍ය ඇණවුම්',
+            si: ' Social Media Orders',
             ta: 'சமூக ஊடக ஆர்டர்கள்'
         },
         couriers: {
             en: '& Couriers',
-            si: '& කුරියර්',
+            si: ' සහ Courier කළමනාකරණ කටයුතු',
             ta: '& கூரியர்கள்'
         },
         inOnePlace: {
             en: 'in One Place',
-            si: 'එක තැනක',
+            si: ' එකම තැනකින්',
             ta: 'ஒரே இடத்தில்'
         },
         description: {
@@ -357,22 +362,22 @@ export const translations = {
         fewerReturns: {
             line1: {
                 en: 'Fewer Returns, More Profits',
-                si: 'අඩු ආපසු හරවා යැවීම්, වැඩි ලාභ',
+                si: 'Returns අඩු කරලා',
                 ta: 'குறைவான திரும்பல்கள், அதிக லாபம்'
             },
             line2: {
                 en: 'Reduce Returns Before',
-                si: 'ආපසු හරවා යැවීම් අඩු කරන්න',
+                si: 'profits වැඩි කරගන්න!',
                 ta: 'முன்பே திரும்பல்களை குறைக்கவும்'
             },
             line3: {
                 en: 'They Happen.',
-                si: 'ඒවා සිදු වීමට පෙර.',
+                si: 'Returns වෙන්නත් කලින්ම අඩු කර ගන්න.',
                 ta: 'அவை நடக்கும் முன்.'
             },
             description: {
                 en: 'Detect fake orders, validate genuine customers, and pack only verified deliveries.',
-                si: 'ව්‍යාජ ඇණවුම් හඳුනාගන්න, සැබෑ ගනුදෙනුකරුවන් සත්‍යාපනය කරන්න, සහ සත්‍යාපිත බෙදාහැරීම් පමණක් ඇසුරුම් කරන්න.',
+                si: 'Fake orders හඳුනාගෙන, real customersලා තහවුරු කරලා, තහවුරු කර ගත් deliveries පමණක් පැක් කරන්න.',
                 ta: 'போலி ஆர்டர்களைக் கண்டறியவும், உண்மையான வாடிக்கையாளர்களைச் சரிபார்க்கவும், மற்றும் சரிபார்க்கப்பட்ட டெலிவரிகளை மட்டும் பேக் செய்யவும்.'
             }
         },
@@ -381,48 +386,48 @@ export const translations = {
             identifyFakeOrders: {
                 title: {
                     en: 'Identify Fake Orders',
-                    si: 'ව්‍යාජ ඇණවුම් හඳුනාගන්න',
+                    si: 'Fake Orders හඳුනාගන්න',
                     ta: 'போலி ஆர்டர்களை அடையாளம் காணவும்'
                 },
                 description: {
                     en: 'Spot suspicious or fraudulent orders before they cost you money.',
-                    si: 'මුදල් වියදම් වීමට පෙර සැක සහිත හෝ වංචනික ඇණවුම් හඳුනාගන්න.',
+                    si: 'සැක කටයුතු හෝ වංචනික Orders මගින් ඔබට පාඩු වීමට පෙර ඒවා හඳුනාගන්න.',
                     ta: 'பணத்தை செலவழிப்பதற்கு முன் சந்தேகத்திற்கிடமான அல்லது மோசடி ஆர்டர்களைக் கண்டறியவும்.'
                 }
             },
             knowGenuineCustomers: {
                 title: {
-                    en: 'Know Genuine Customers',
-                    si: 'සැබෑ ගනුදෙනුකරුවන් හඳුනාගන්න',
+                    en: 'Know Repeated Customers',
+                    si: 'Repeated Customers ලා හඳුනාගන්න',
                     ta: 'உண்மையான வாடிக்கையாளர்களை அறியவும்'
                 },
                 description: {
-                    en: 'Access verified profiles and order history to build stronger customer trust.',
-                    si: 'තහවුරු කළ පැතිකඩ සහ ඇණවුම් ඉතිහාසය වෙත ප්‍රවේශ වී වඩා ශක්තිමත් පාරිභෝගික විශ්වාසය ගොඩනගන්න.',
+                    en: 'Identify your repeated customers using their Order history and provide them with premium service.',
+                    si: 'Order History හරහා ඔබේ Repeated Customers ලා හඳුනාගෙන, ඔවුන්ට උසස්ම සේවාවක් ලබා දෙන්න.',
                     ta: 'சரிபார்க்கப்பட்ட சுயவிவரங்கள் மற்றும் ஆர்டர் வரலாற்றை அணுகி வலுவான வாடிக்கையாளர் நம்பிக்கையை உருவாக்கவும்.'
                 }
             },
             banRiskyCustomers: {
                 title: {
                     en: 'Ban Risky Customers',
-                    si: 'අවදානම් ගනුදෙනුකරුවන් තහනම් කරන්න',
+                    si: 'අවදානම් සහිත Customers ලා Ban කරන්න',
                     ta: 'ஆபத்தான வாடிக்கையாளர்களைத் தடை செய்யவும்'
                 },
                 description: {
-                    en: 'Block banned or repeat offenders automatically, so they can\'t place new orders.',
-                    si: 'තහනම් කළ හෝ නැවත වරදකරුවන් ස්වයංක්‍රීයව අවහිර කරන්න, එවිට ඔවුන්ට නව ඇණවුම් තැබිය නොහැක.',
+                    en: 'You can ban fraudulent customers to prevent them from placing future fake orders. This also helps other sellers identify previously banned customers in the network.',
+                    si: 'ඔබේ ව්‍යාජ (Fake) Customers ලා Ban කිරීමෙන්, ඊළඟ වතාවේ ඔවුන් Order කිරීම වළක්වා ගන්න. තවද, මින් අනෙකුත් Sellers ලාට ද කලින් ban කළ Customer ලා හඳුනා ගැනීමට සහය ලැබේ.',
                     ta: 'தடை செய்யப்பட்ட அல்லது மீண்டும் குற்றம் செய்பவர்களைத் தானாகவே தடுக்கவும், அதனால் அவர்களால் புதிய ஆர்டர்களை வைக்க முடியாது.'
                 }
             },
             verifyBeforeDispatch: {
                 title: {
                     en: 'Verify Before Dispatch',
-                    si: 'යැවීමට පෙර තහවුරු කරන්න',
+                    si: 'Dispatch කිරීමට පෙර Verify කරන්න',
                     ta: 'அனுப்புவதற்கு முன் சரிபார்க்கவும்'
                 },
                 description: {
                     en: 'Confirm every order with smart validation to prevent returns and delivery failures.',
-                    si: 'ආපසු යැවීම් සහ බෙදාහැරීම් අසාර්ථක වීම වැළැක්වීමට දක්ෂ වලංගුකරණය සමඟ සෑම ඇණවුමක්ම තහවුරු කරන්න.',
+                    si: 'Returns සහ Delivery Failures අවම කිරීමට Smart Validation එකක් Use කරලා සෑම Order එකක්ම Confirm කරන්න.',
                     ta: 'திரும்ப அனுப்புதல் மற்றும் டெலிவரி தோல்விகளைத் தடுக்க ஸ்மார்ட் சரிபார்ப்புடன் ஒவ்வொரு ஆர்டரையும் உறுதிப்படுத்தவும்.'
                 }
             }
@@ -444,7 +449,7 @@ export const translations = {
         },
         description: {
             en: 'Stop fake orders, reduce costly returns, and process deliveries faster — all from one easy courier sync.',
-            si: 'ව්‍යාජ ඇණවුම් නවත්වන්න, මිල අධික ප්‍රතිලාභ අඩු කරන්න, සහ බෙදාහැරීම් වේගයෙන් සකසන්න - සියල්ල එක් පහසු කුරියර් සමමුහුර්තකරණයකින්.',
+            si: 'Returns අඩු කරන්න, Fake Orders නවත්වන්න, සහ Delivery Sync Delays නැතිව Business එක කරන්න දැන් පුළුවන්!',
             ta: 'போலி ஆர்டர்களை நிறுத்துங்கள், விலையுயர்ந்த வருமானத்தைக் குறைக்கவும், டெலிவரிகளை விரைவாகச் செயல்படுத்தவும் - அனைத்தும் ஒரே எளிதான கூரியர் ஒத்திசைவுடன்.'
         },
         howItWorks: {
@@ -536,7 +541,7 @@ export const translations = {
         // Paragraph under the title
         paragraph: {
             en: 'Find quick answers to the most common questions from e-commerce sellers',
-            si: 'E-commerce විකුණුම්කරුවන්ගෙන් එන සාමාන්‍යම ප්‍රශ්න සඳහා වේගවත් පිළිතුරු සොයා ගන්න',
+            si: 'E-commerce ව්‍යාපාරිකයන් බහුලවම අසන ප්‍රශ්න සදහා පිළිතුරු මෙතනින් බලන්න.',
             ta: 'மின் வணிக விற்பனையாளர்களிடமிருந்து பொதுவான கேள்விகளுக்கு விரைவு பதில்களை காணுங்கள்'
         },
         subtitle: {
@@ -548,12 +553,12 @@ export const translations = {
             {
                 question: {
                     en: 'Can I use Storemate OMS if I don\'t have a website?',
-                    si: 'මගේ වෙබ් අඩවියක් නොමැති නම් මට Storemate OMS භාවිතා කළ හැකිද?',
+                    si: 'මට website එකක් නැති වුණාත් Storemate OMS පාවිච්චි කරන්න පුලුවන්ද?',
                     ta: 'எனக்கு வேப்சைட் இல்லாவிட்டால் Storemate OMS ஐ பயன்படுத்த முடியுமா?'
                 },
                 answer: {
                     en: 'Yes, absolutely.<br><br>Storemate OMS is designed for sellers who take orders through Facebook, WhatsApp, Instagram, or even phone calls. You don\'t need a website to use the system — it helps you organize and manage all your orders from one dashboard.',
-                    si: 'ඔව්, නිසැකවම.<br><br>Storemate OMS Facebook, WhatsApp, Instagram, හෝ ඇමතුම් හරහා ඇණවුම් ගන්නා විකුණුම්කරුවන් සඳහා නිර්මාණය කර ඇත. පද්ධතිය භාවිතා කිරීමට ඔබට වෙබ් අඩවියක් අවශ්‍ය නොවේ — එය එක් ඩෑෂ්බෝඩ්හි සිට ඔබේ සියලුම ඇණවුම් සංවිධානය කිරීමට සහ කළමනාකරණය කිරීමට උපකාරී වේ.',
+                    si: 'ඔව්, අනිවාර්යයෙන්ම පුළුවන්. <br><br>Storemate OMS නිර්මාණය කර ඇත්තේ Facebook, WhatsApp, Instagram, හෝ phone calls හරහා orders ලබා ගන්නා ව්‍යාපාරිකයන් සඳහායි. මෙම system එක භාවිත කිරීමට ඔබට website එකක් අවශ්‍ය නැත—Storemate ඔබගේ සියලුම order details එකම dashboard එකකින් පෙන්වන නිසා කළමනාකරණය කිරීමට පහසු වේ.',
                     ta: 'ஆம், முற்றிலும்.<br><br>Storemate OMS Facebook, WhatsApp, Instagram அல்லது தொலைபேசி அழைப்புகள் மூலம் ஆர்டர்களை எடுக்கும் விற்பனையாளர்களுக்காக வடிவமைக்கப்பட்டுள்ளது. சிஸ்டத்தைப் பயன்படுத்த உங்களுக்கு வேப்சைட் தேவையில்லை — இது ஒரே டாஷ்போர்டில் இருந்து உங்கள் அனைத்து ஆர்டர்களையும் ஒழுங்கமைக்கவும் நிர்வகிக்கவும் உதவுகிறது.'
                 }
             },
@@ -741,12 +746,12 @@ export const translations = {
         },
         heading: {
             en: 'Ready to Simplify Your Order Management?',
-            si: 'ඔබේ ඇණවුම් කළමනාකරණය සරල කිරීමට සූදානම්ද?',
+            si: 'ඔබේ Order Management එක Simplify කරගන්න Ready ද?',
             ta: 'உங்கள் ஆர்டர் மேலாண்மையை எளிதாக்க தயாரா?'
         },
         subheading: {
             en: 'Start automating your sales, reduce returns, and sync couriers — all in one platform',
-            si: 'ඔබේ විකුණුම් ස්වයංක්‍රීය කිරීම ආරම්භ කරන්න, ආපසු අඩු කරන්න, සහ කුරියර් සමමුහුර්ත කරන්න — සියල්ල එක වේදිකාවක',
+            si: 'ඔබේ Sales Automate කරන්න, Returns අඩු කරන්න, සහ Courier එක Sync කරගන්න — මේ හැමදේම One Platform එකකින්!',
             ta: 'உங்கள் விற்பனையை தானியங்குபடுத்தத் தொடங்குங்கள், திரும்பல்களைக் குறைக்கவும், கூரியர்களை ஒத்திசைக்கவும் — அனைத்தும் ஒரே தளத்தில்'
         },
         tryFree: {
@@ -756,39 +761,39 @@ export const translations = {
         },
         freeTrial: {
             en: '100% Free Trial for 30 days',
-            si: 'දින 30ක් සඳහා 100% නොමිලේ අත්හදා බැලීම',
+            si: 'දවස් 30 සඳහා 100% Free Trial',
             ta: '30 நாட்களுக்கு 100% இலவச சோதனை'
         },
         noCreditCard: {
             en: 'No Credit Card required',
-            si: 'ක්‍රෙඩිට් කාඩ්පතක් අවශ්‍ය නැත',
+            si: 'Credit Card එකක් අවශ්‍ය නැහැ (required නැහැ)',
             ta: 'கிரெடிட் கார்டு தேவையில்லை'
         },
         steps: {
             step1: {
                 en: 'Book a free 10-minute demo',
-                si: 'නොමිලේ මිනිත්තු 10ක ප්‍රදර්ශනයක් වෙන්කරවා ගන්න',
+                si: 'විනාඩි 10ක free demo එකක් book කරගන්න',
                 ta: '10 நிமிட இலவச டெமோவை பதிவு செய்யுங்கள்'
             },
             step2: {
                 en: 'See how Storemate fits your business',
-                si: 'Storemate ඔබේ ව්‍යාපාරයට කෙසේ ගැලපෙන්නේදැයි බලන්න',
+                si: 'Storemate ඔබේ business එකට ගැලපෙන්නෙ කොහොමද කියලා බලන්න',
                 ta: 'Storemate உங்கள் வணிகத்திற்கு எவ்வாறு பொருந்துகிறது என்பதைப் பார்க்கவும்'
             },
             step3: {
                 en: 'Get 30 days free trial',
-                si: 'දින 30ක නොමිලේ අත්හදා බැලීමක් ලබා ගන්න',
+                si: 'දවස් 30ක free trial එකක් ගන්න',
                 ta: '30 நாள் இலவச சோதனையைப் பெறுங்கள்'
             },
             step4: {
                 en: 'Scale confidently with Storemate OMS',
-                si: 'Storemate OMS සමඟ විශ්වාසයෙන් පරිමාණය කරන්න',
+                si: 'StoreMate OMS සමඟ විශ්වාසයෙන් ව්‍යාපාරය වර්ධනය කරගන්න',
                 ta: 'Storemate OMS உடன் நம்பிக்கையுடன் அளவிடுங்கள்'
             }
         },
         startFreeTrial: {
             en: 'Start a Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීමක් ආරම්භ කරන්න',
+            si: 'Free Trial එකක් Start කරන්න',
             ta: 'இலவச சோதனையைத் தொடங்குங்கள්'
         },
         howItWorksButton: {
@@ -799,7 +804,7 @@ export const translations = {
         features: {
             freeTrial: {
                 en: 'Free 30-day trial',
-                si: 'නොමිලේ දින 30ක අත්හදා බැලීම',
+                si: 'දවස් 30 සඳහා 100% Free Trial',
                 ta: 'இலவச 30 நாள் சோதனை'
             },
             onlineSupport: {
@@ -819,17 +824,17 @@ export const translations = {
         },
         title: {
             en: 'From Inquiry to Delivery in 4 Simple Steps',
-            si: 'විමසීමේ සිට බෙදාහැරීම දක්වා සරල පියවර 4කින්',
+            si: 'Order එකේ සිට Delivery එකට පියවර 4යි!',
             ta: 'விசாரணையிலிருந்து டெலிவரி வரை 4 எளிய படிகளில்',
             // Split lines for the redesigned heading. English provided; other languages will fall back to English when missing.
             line1: {
                 en: 'From Inquiry to Delivery',
-                si: 'විමසීමේ සිට බෙදාහැරීම දක්වා',
+                si: 'Order එකේ සිට Delivery එකට',
                 ta: 'விசாரணையிலிருந்து விநியோகம் வரை'
             },
             line2: {
                 en: '4 Simple Steps',
-                si: 'සරල පියවර 4',
+                si: 'පියවර 4යි!',
                 ta: '4 எளிய படிகள்'
             },
             line3: {
@@ -838,55 +843,55 @@ export const translations = {
         },
         subtitle: {
             en: 'Streamline your order management from collection to delivery',
-            si: 'එකතු කිරීමේ සිට බෙදාහැරීම දක්වා ඔබේ ඇණවුම් කළමනාකරණය ක්‍රමවත් කරන්න',
+            si: 'Orders ගන්නා මොහොතේ ඉඳන් Delivery කරන මොහොත දක්වා ඔබේ සියලුම Order Management කටයුතු සරල කරගන්න.',
             ta: 'சேகரிப்பு முதல் விநியோகம் வரை உங்கள் ஆர்டர் மேலாண்மையை நெறிப்படுத்துங்கள்'
         },
         steps: {
             step1: {
                 title: {
                     en: 'Collect',
-                    si: 'එකතු කරන்න',
+                    si: 'එකතු කරන්න',
                     ta: 'சேகரி'
                 },
                 description: {
                     en: 'Collect Orders From Facebook, WhatsApp, Instagram, & Phone Calls',
-                    si: 'Facebook, WhatsApp, Instagram සහ දුරකථන ඇමතුම් වලින් ඇණවුම් එකතු කරන්න',
+                    si: 'WhatsApp, Instagram, සහ Phone Calls වැනි සියලුම මාර්ග ඔස්සේ ලැබෙන Orders Collect කරගන්න',
                     ta: 'Facebook, WhatsApp, Instagram மற்றும் தொலைபேசி அழைப்புகளிலிருந்து ஆர்டர்களைச் சேகரிக்கவும்'
                 }
             },
             step2: {
                 title: {
                     en: 'Confirm',
-                    si: 'තහවුරු කරන්න',
+                    si: 'Confirm කරන්න',
                     ta: 'உறுதிப்படுத்து'
                 },
                 description: {
                     en: 'Reduce Duplicate Orders & Confirm Orders Quickly With Automated Follow-Ups',
-                    si: 'අනුපිටපත් ඇණවුම් අඩු කරන්න සහ ස්වයංක්‍රීය පසු විපරම් සමඟ ඇණවුම් ඉක්මනින් තහවුරු කරන්න',
+                    si: 'Duplicate Orders අඩු කරගෙන, Automated Follow-Ups මගින් Orders ඉක්මනින් Confirm කරගන්න',
                     ta: 'நகல் ஆர்டர்களைக் குறைக்கவும் மற்றும் தானியங்கு பின்தொடர்தல்களுடன் ஆர்டர்களை விரைவாக உறுதிப்படுத்தவும்'
                 }
             },
             step3: {
                 title: {
                     en: 'Sync',
-                    si: 'සමමුහුර්ත කරන්න',
+                    si: 'Sync කරන්න',
                     ta: 'ஒத்திசைக்கவும்'
                 },
                 description: {
                     en: 'Connect With Any Courier Partner And Print Waybill With One Click',
-                    si: 'ඕනෑම කුරියර් හවුල්කරුවෙකු සමඟ සම්බන්ධ වී එක් ක්ලික් එකකින් මාර්ග බිල්පත මුද්‍රණය කරන්න',
+                    si: 'ඕනෑම Courier partner කෙනෙක් එක්ක connect වෙලා, එක click එකකින්  order එක sync කරලා waybill එකත් print කරගන්න',
                     ta: 'எந்த கூரியர் பார்ட்னருடனும் இணைக்கவும் மற்றும் ஒரே கிளிக்கில் வேபில்லை அச்சிடவும்'
                 }
             },
             step4: {
                 title: {
                     en: 'Monitor',
-                    si: 'නිරීක්ෂණය කරන්න',
+                    si: 'Monitor කරන්න',
                     ta: 'கண்காணிக்கவும்'
                 },
                 description: {
                     en: 'Track Delivery Status, Order Progress, & Customer History All In One Place',
-                    si: 'බෙදාහැරීමේ තත්වය, ඇණවුම් ප්‍රගතිය සහ පාරිභෝගික ඉතිහාසය සියල්ල එක තැනකින් නිරීක්ෂණය කරන්න',
+                    si: 'Delivery Status, Order Progress, සහ Customer History එකම තැනකින් පහසුවෙන් සහ වේගවත්ව Track කරන්න',
                     ta: 'விநியோக நிலை, ஆர்டர் முன்னேற்றம் மற்றும் வாடிக்கையாளர் வரலாறு அனைத்தையும் ஒரே இடத்தில் கண்காணிக்கவும்'
                 }
             },

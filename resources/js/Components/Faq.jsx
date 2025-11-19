@@ -9,60 +9,60 @@ const Faq = () => {
         {
             question: {
                 en: 'Can I use Storemate OMS if I don\'t have a website?',
-                si: 'මගේ වෙබ් අඩවියක් නොමැති නම් මට Storemate OMS භාවිතා කළ හැකිද?',
+                si: 'මට website එකක් නැති වුණාත් Storemate OMS පාවිච්චි කරන්න පුලුවන්ද?',
                 ta: 'எனக்கு வேப்சைட் இல்லாவிட்டால் Storemate OMS ஐ பயன்படுத்த முடியுமா?'
             },
             answer: {
                 en: 'Yes, absolutely.<br><br>Storemate OMS is designed for sellers who take orders through Facebook, WhatsApp, Instagram, or even phone calls. You don\'t need a website to use the system — it helps you organize and manage all your orders from one dashboard.',
-                si: 'ඔව්, නිසැකවම.<br><br>Storemate OMS Facebook, WhatsApp, Instagram, හෝ ඇමතුම් හරහා ඇණවුම් ගන්නා විකුණුම්කරුවන් සඳහා නිර්මාණය කර ඇත. පද්ධතිය භාවිතා කිරීමට ඔබට වෙබ් අඩවියක් අවශ්‍ය නොවේ — එය එක් ඩෑෂ්බෝඩ්හි සිට ඔබේ සියලුම ඇණවුම් සංවිධානය කිරීමට සහ කළමනාකරණය කිරීමට උපකාරී වේ.',
+                si: 'ඔව්, අනිවාර්යයෙන්ම පුළුවන්.<br><br>Storemate OMS නිර්මාණය කර ඇත්තේ Facebook, WhatsApp, Instagram, හෝ phone calls හරහා orders ලබා ගන්නා ව්‍යාපාරිකයන් සඳහායි. මෙම system එක භාවිත කිරීමට ඔබට website එකක් අවශ්‍ය නැත—Storemate ඔබගේ සියලුම order details එකම dashboard එකකින් පෙන්වන නිසා කළමනාකරණය කිරීමට පහසු වේ.',
                 ta: 'ஆம், முற்றிலும்.<br><br>Storemate OMS Facebook, WhatsApp, Instagram அல்லது தொலைபேசி அழைப்புகள் மூலம் ஆர்டர்களை எடுக்கும் விற்பனையாளர்களுக்காக வடிவமைக்கப்பட்டுள்ளது. சிஸ்டத்தைப் பயன்படுத்த உங்களுக்கு வேப்சைட் தேவையில்லை — இது ஒரே டாஷ்போர்டில் இருந்து உங்கள் அனைத்து ஆர்டர்களையும் ஒழுங்கமைக்கவும் நிர்வகிக்கவும் உதவுகிறது.'
             }
         },
         {
             question: {
                 en: 'Will I need to upload Excel files to the courier system?',
-                si: 'කුරියර් පද්ධතියට Excel ගොනු උඩුගත කිරීමට මට අවශ්‍ය වේද?',
+                si: 'මට Excel files courier system එකට upload කරන්න වෙනවද?',
                 ta: 'கொரியர் சிஸ்டத்திற்கு Excel கோப்புகளை அப்லோட் செய்ய வேண்டுமா?'
             },
             answer: {
                 en: 'No need. <br><br>Storemate OMS is integrated with courier companies and can send order info directly with one click. No Excel uploads. No manual entry. You can generate waybills instantly.',
-                si: 'අවශ්‍ය නැත. <br><br>Storemate OMS කුරියර් සමාගම් සමඟ ඒකාබද්ධ වී ඇති අතර එක් ක්ලික් කිරීමකින් ඇණවුම් තොරතුරු සෘජුව යැවිය හැකිය. Excel උඩුගත කිරීම් නැත. අතින් ඇතුල් කිරීම් නැත. ඔබට වේබිල් ක්ෂණිකව ජනනය කළ හැකිය.',
+                si: 'අවශ්‍ය නැත. <br><br>StoreMate OMS, Courier Company සමග connect කර ඇති අතර, Order තොරතුරු එක click එකකින් සෘජුවම Courier company එකේ software එකට යැවිය හැකියි. Excel Uploads අනවශ්‍යයි. Manual Data Entry අවශ්‍යම නැත. ඔබට Waybills එකත් ක්ෂණිකව Generate කරගත හැකියි.',
                 ta: 'தேவையில்லை. <br><br>Storemate OMS கொரியர் நிறுவனங்களுடன் ஒருங்கிணைக்கப்பட்டுள்ளது மற்றும் ஒரே கிளிக்கில் ஆர்டர் தகவலை நேரடியாக அனுப்ப முடியும். Excel அப்லோடுகள் இல்லை. கையேடு நுழைவு இல்லை. நீங்கள் உடனடியாக வேபில்களை உருவாக்க முடியும்.'
             }
         },
         {
             question: {
                 en: 'Can I connect any delivery company with StoreMate OMS?',
-                si: 'Storemate OMS සමඟ ඕනෑම බෙදාහැරීම් සමාගමක් සම්බන්ධ කළ හැකිද?',
+                si: 'මට ඕනෑම delivery company එකක් Storemate OMS එක්ක connect කරන්න පුළුවන්ද?',
                 ta: 'Storemate OMS உடன் எந்த டெலிவரி நிறுவனத்தையும் இணைக்க முடியுமா?'
             },
             answer: {
                 en: 'Absolutely — yes. <br><br>StoreMate OMS already supports direct integrations with leading courier partners in Sri Lanka. <br><br>If you are using a different courier, we can easily integrate it into the system on request, as long as the courier provides an API or file-based sync method. <br><br>Our goal is to ensure your operations stay fully automated and hassle-free, no matter which delivery partner you choose.',
-                si: 'ඇත්තෙන්ම — ඔව්. <br><br>StoreMate OMS දැනටමත් ශ්‍රී ලංකාවේ ප්‍රමුඛ කුරියර් හවුල්කරුවන් සමඟ සෘජු ඒකාබද්ධතා සඳහා සහාය දක්වයි. <br><br>ඔබ වෙනත් කුරියර් සමාගමක් භාවිතා කරන්නේ නම්, කුරියර් සමාගම API හෝ ගොනු-පාදක සමමුහුර්ත ක්‍රමයක් සපයන තාක් කල්, ඔබේ ඉල්ලීම මත අපට පහසුවෙන් එය පද්ධතියට ඒකාබද්ධ කළ හැකිය. <br><br>ඔබ තෝරා ගන්නා බෙදාහැරීමේ හවුල්කරු කවුරුන් වුවත්, ඔබේ මෙහෙයුම් සම්පූර්ණයෙන්ම ස්වයංක්‍රීය සහ කරදරයකින් තොරව පවත්වා ගැනීම සහතික කිරීම අපගේ ඉලක්කයයි.',
+                si: 'ඔව්, පුළුවන්. <br><br>StoreMate OMS දැනටමත් ශ්‍රී ලංකාවේ ප්‍රමුඛතම Courier සමාගම් සමඟ Direct Integrations සඳහා පහසුකම් සකසා ඇත. <br>ඔබ වෙනත් Courier සේවාවක් භාවිතා කරන්නේ නම්, ඔවුන් API හෝ File-Based Sync ක්‍රමයක් සපයන ආයතනයක් නම්, ඔබගේ ඉල්ලීම මත අපට එය පහසුවෙන් අපගේ StoreMate Software එකට ඒකාබද්ධ කළ හැකියි. <br>ඔබ කුමන Delivery සහකරු කෙනෙක් තෝරා ගත්තද, ඔබේ මෙහෙයුම් සම්පූර්ණයෙන්ම ස්වයංක්‍රීයව සහ කරදරයකින් තොරව පවත්වා ගැනීම අපගේ අරමුණයි. ',
                 ta: 'நிச்சயமாக — ஆம். <br><br>StoreMate OMS ஏற்கனவே இலங்கையில் முன்னணி கொரியர் பார்ட்னர்களுடன் நேரடி ஒருங்கிணைப்புகளை ஆதரிக்கிறது. <br><br>நீங்கள் வேறு கொரியரைப் பயன்படுத்தினால், கொரியர் ஒரு API அல்லது கோப்பு அடிப்படையிலான ஒத்திசைவு முறையை வழங்கும் வரை, உங்கள் கோரிக்கையின் பேரில் அதை சிஸ்டத்தில் எளிதாக ஒருங்கிணைக்க முடியும். <br><br>நீங்கள் எந்த டெலிவரி பார்ட்னரைத் தேர்ந்தெடுத்தாலும், உங்கள் செயல்பாடுகள் முழுமையாக தானியங்கு மற்றும் தொந்தரவு இல்லாமல் இருப்பதை உறுதி செய்வதே எங்கள் குறிக்கோள்.'
             }
         },
         {
             question: {
                 en: 'How does Storemate OMS reduce return orders?',
-                si: 'Storemate OMS ආපසු ඇණවුම් අඩු කරන්නේ කෙසේද?',
+                si: 'Storemate OMS return orders අඩු කරන්නේ කොහොමද?',
                 ta: 'Storemate OMS திரும்ப ஆர்டர்களை எப்படி குறைக்கிறது?'
             },
             answer: {
-                en: 'By stopping problems before dispatch.<br><br>Storemate OMS helps you avoid most return orders by:<br><br>• Detecting duplicate orders from the same customer (e.g., Facebook + WhatsApp)<br>• Flagging fake or suspicious customers using order patterns<br>• Helping you follow up properly before sending out the order<br><br>Less confusion = fewer returns = more profit in your pocket.',
-                si: 'යැවීමට පෙර ගැටළු නවත්වා.<br><br>Storemate OMS බොහෝ ආපසු ඇණවුම් වළක්වා ගැනීමට ඔබට උපකාරී වේ:<br><br>• එකම ගනුදෙනුකරුගෙන් අනුපිටපත් ඇණවුම් හඳුනාගැනීම (උදා: Facebook + WhatsApp)<br>• ඇණවුම් රටා භාවිතා කරමින් ව්‍යාජ හෝ සැක සහිත ගනුදෙනුකරුවන් සලකුණු කිරීම<br>• ඇණවුම යැවීමට පෙර නිසි ලෙස පසු විපරම් කිරීමට උපකාරී වීම<br><br>අඩු ව්‍යාකූලත්වය = අඩු ආපසු = ඔබේ සාක්කුවේ වැඩි ලාභය.',
+                en: 'By stopping problems before dispatch.<br><br>Storemate OMS helps you avoid most return orders by:<br><br>• Detecting duplicate orders from the same customer (e.g., Facebook + WhatsApp)<br>• (Facebook + WhatsApp) Flagging fake or suspicious customers based on situation <br>• Helping you follow up properly before sending out the order<br><br>Less confusion = fewer returns = more profit in your pocket.',
+                si: 'Dispatch කරන්න කලින්ම ගැටලු හදුනාගෙන. <br><br>Storemate OMS මඟින් return orders අඩු කර ගැනීමට ඔබට උදව් කරන්නේ මෙහෙමයි:<br><br><ul class="list-disc pl-6"><li>එකම customer කෙනාගෙන් ආපු duplicate orders (e.g., Facebook + WhatsApp) හදුනා ගැනීම.</li><li>Fake හෝ සැක සහිත customers වෙන් කර හදුනා ගැනීම.</li><li>Order එක send කරන්න කලින් follow up කිරීමට ඔබට උදව් කිරීම.</li></ul><br><br>Confusion අඩුයි = returns අඩුයි = ඔබේ pocket එකට profit වැඩියි.',
                 ta: 'அனுப்புவதற்கு முன் பிரச்சனைகளை நிறுத்துவதன் மூலம்.<br><br>Storemate OMS பெரும்பாலான திரும்ப ஆர்டர்களைத் தவிர்க்க உங்களுக்கு உதவுகிறது:<br><br>• அதே வாடிக்கையாளரிடமிருந்து நகல் ஆர்டர்களைக் கண்டறிதல் (எ.கா: Facebook + WhatsApp)<br>• ஆர்டர் முறைகளைப் பயன்படுத்தி போலி அல்லது சந்தேகத்திற்குரிய வாடிக்கையாளர்களைக் கொடியிடுதல்<br>• ஆர்டரை அனுப்புவதற்கு முன் சரியாக பின்தொடர உங்களுக்கு உதவுதல்<br><br>குறைவான குழப்பம் = குறைவான திரும்பல்கள் = உங்கள் பாக்கெட்டில் அதிக லாபம்.'
             }
         },
         {
             question: {
                 en: 'Can I try Storemate OMS before I pay?',
-                si: 'මම ගෙවීමට පෙර Storemate OMS උත්සාහ කළ හැකිද?',
+                si: 'මට Pay කරන්න කලින් Storemate OMS Try කරලා බලන්න පුළුවන්ද?',
                 ta: 'நான் பணம் செலுத்துவதற்கு முன் Storemate OMS ஐ முயற்சி செய்ய முடியுமா?'
             },
             answer: {
                 en: 'Yes!<br><br>You get a 30-day free trial with full access — no limitations.<br>And if you\'ve already filled out our server feedback form, your setup fee is 100% waived. (Limited-time offer)<br><br>No risk. No pressure. Just a smarter way to manage your orders.',
-                si: 'ඔව්!<br><br>ඔබට සම්පූර්ණ ප්‍රවේශය සහිත දින 30ක නොමිලේ අත්හදා බැලීමක් ලැබේ — සීමාවන් නැත.<br>ඔබ දැනටමත් අපගේ සේවාදායක ප්‍රතිපෝෂණ පෝරමය පුරවා ඇත්නම්, ඔබේ පිහිටුවීම් ගාස්තුව 100% අත්හැර දමනු ලැබේ. (සීමිත කාල පිරිනැමීම)<br><br>අවදානමක් නැත. පීඩනයක් නැත. ඔබේ ඇණවුම් කළමනාකරණය කිරීමට වඩා ස්මාර්ට් ක්‍රමයක් පමණි.',
+                si: 'ඔව්, පුලුවන්. <br><br>ඔබට කිසිම limitation එකක් නැතුව, full access සහිත දවස් 30 free trial එකක් ලැබෙනවා.<br> තව, ඔබේ setup fee එක 100% ක්ම ඉවත් වෙනවා. (Limited-time offer එකක්) <br><br>Risk එකක් නැහැ. Pressure එකක් නැහැ. ඔබේ orders manage කරන්න තියෙන smarter ක්‍රමය.',
                 ta: 'ஆம்!<br><br>உங்களுக்கு முழு அணுகலுடன் 30 நாள் இலவச சோதனை கிடைக்கும் — எந்த வரம்புகளும் இல்லை.<br>நீங்கள் ஏற்கனவே எங்கள் சர்வர் கருத்து படிவத்தை நிரப்பியிருந்தால், உங்கள் அமைப்பு கட்டணம் 100% தள்ளுபடி செய்யப்படும். (வரையறுக்கப்பட்ட கால சலுகை)<br><br>எந்த அபாயமும் இல்லை. எந்த அழுத்தமும் இல்லை. உங்கள் ஆர்டர்களை நிர்வகிக்க ஒரு ஸ்மார்ட் வழி மட்டுமே.'
             }
         }
