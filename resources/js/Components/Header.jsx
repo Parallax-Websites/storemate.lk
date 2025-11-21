@@ -61,7 +61,7 @@ export default function Header({ auth }) {
 
         const loginUrl = `https://oms.storemate.cloud/login?${params.toString()}`;
 
-        // Prepare data to send to n8n - include the parameterized URL
+        // Prepare data to send to webhooks - include the parameterized URL
         const demoData = {
             courierCompanies: formData.courierCompanies,
             ordersPerDay: formData.ordersPerDay,
@@ -73,11 +73,11 @@ export default function Header({ auth }) {
             loginUrl: loginUrl  // Add the fully parameterized URL
         };
 
-        console.log('Sending demo data to n8n:', demoData);
+        console.log('Sending demo data to webhooks:', demoData);
         console.log('Login URL:', loginUrl);
 
-        // Send data to n8n webhook - WAIT for response before redirecting
-        fetch('https://storemateoms.app.n8n.cloud/webhook/f8df809e-732a-420d-824d-8ca58f8ed85f', {
+        // Send data to both n8n and Zapier webhooks in parallel
+        const n8nWebhook = fetch('https://storemateoms.app.n8n.cloud/webhook/f8df809e-732a-420d-824d-8ca58f8ed85f', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -91,14 +91,32 @@ export default function Header({ auth }) {
             } else {
                 console.error('❌ n8n Error:', response.statusText);
             }
-
-            // Now redirect regardless of response
-            redirectToDemoLogin(formData);
+            return response;
         })
         .catch(error => {
             console.error('❌ Error sending to n8n:', error);
+        });
 
-            // Still redirect even if n8n fails
+        const zapierWebhook = fetch('https://hooks.zapier.com/hooks/catch/11465938/uz82iuk/', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(demoData)
+        })
+        .then(response => {
+            console.log('✅ Demo signup data sent to Zapier (no-cors mode)');
+            return response;
+        })
+        .catch(error => {
+            console.error('❌ Error sending to Zapier:', error);
+        });
+
+        // Wait for both webhooks to complete, then redirect
+        Promise.allSettled([n8nWebhook, zapierWebhook])
+        .then(() => {
+            console.log('✅ All webhooks processed');
             redirectToDemoLogin(formData);
         });
     };
