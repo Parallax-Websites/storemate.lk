@@ -2,41 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/useTranslation';
 
-export default function FeaturesDropdown() {
+export default function FeaturesDropdown({ onOpenTrialModal }) {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
     const dropdownRef = useRef(null);
     const timeoutRef = useRef(null);
-
-    const getRegisterUrl = () => {
-        const currentPath = route().current();
-
-        // Check for module routes (handles both module.1 and module-1 formats)
-        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
-            const moduleNumber = currentPath.includes('.')
-                ? currentPath.split('.')[1]
-                : currentPath.split('-')[1];
-            return `https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=module${moduleNumber}_page&utm_content=btn_start_free_trial_drop_menu`;
-        }
-
-        const campaignMap = {
-            'home': 'home_page',
-            'pricing': 'pricing_page',
-            'inquiry': 'inquiry_page',
-            'sales.management': 'sales_page',
-            'shipping.packing': 'shipping&packing_page',
-            'user.contact.product': 'user&product_page',
-            'about': 'about_page',
-            'free.course': 'courses_page',
-            'contact.us': 'contact_page',
-            'partner.program': 'partner_page',
-            'privacy.policy': 'privacy&policy_page'
-        };
-
-        const campaign = campaignMap[currentPath] || 'home_page';
-        return `https://welcome.oms.storemate.cloud/register?utm_source=storemate_lk&utm_medium=web&utm_campaign=${campaign}&utm_content=btn_start_free_trial_drop_menu`;
-    };
 
     const handleMouseEnter = () => {
         if (timeoutRef.current) {
@@ -382,10 +353,8 @@ export default function FeaturesDropdown() {
                                         </svg>
                                         {t('common.viewPricing')}
                                     </Link>
-                                    <a
-                                        href={getRegisterUrl()}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <button
+                                        onClick={() => onOpenTrialModal?.('dropdown')}
                                         className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                                         style={{backgroundColor: '#013387'}}
                                         onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
@@ -398,7 +367,7 @@ export default function FeaturesDropdown() {
                                         <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

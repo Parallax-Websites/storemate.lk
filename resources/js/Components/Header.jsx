@@ -365,7 +365,10 @@ const Header = forwardRef(({ auth }, ref) => {
                                     <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                         {t('nav.home')}
                                     </NavLink>
-                                    <FeaturesDropdown />
+                                    <FeaturesDropdown onOpenTrialModal={(source) => {
+                                        setTrialButtonSource(source);
+                                        setShowTrialModal(true);
+                                    }} />
                                     <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                         {t('nav.pricing')}
                                     </NavLink>
