@@ -23,7 +23,6 @@ const LoadingSpinner = () => (
 
 export default function SalesManagement({ auth }) {
     const headerRef = useRef(null);
-
     return (
         <MainLayout>
             <Head title="Sales Management - Confirm & Track Orders Efficiently | StoreMate OMS">
