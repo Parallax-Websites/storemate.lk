@@ -4,6 +4,27 @@ import { useShippingTranslation } from '@/Utils/shippingTranslations';
 
 export default function ShippingHero({ auth, onOpenTrialModal }) {
   const { tShipping } = useShippingTranslation();
+
+  const computePageKey = () => {
+    const currentPath = route().current();
+    if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+      const moduleNumber = currentPath.includes('.') ? currentPath.split('.')[1] : currentPath.split('-')[1];
+      return `module${moduleNumber}`;
+    }
+    const map = {
+      'home': 'home',
+      'pricing': 'pricing',
+      'inquiry': 'inquiry',
+      'sales.management': 'sales',
+      'shipping.packing': 'shipping',
+      'user.contact.product': 'user',
+      'about': 'about',
+      'free.course': 'courses',
+      'contact.us': 'contactus',
+      'partner.program': 'partner'
+    };
+    return map[currentPath] || 'home';
+  };
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -76,6 +97,7 @@ export default function ShippingHero({ auth, onOpenTrialModal }) {
 
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <button
+                id={`btn_start_a_free_trial_hero_${computePageKey()}`}
                 onClick={() => onOpenTrialModal?.('hero')}
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                 style={{backgroundColor: '#006daf'}}

@@ -4,6 +4,27 @@ import { useTranslation } from '../hooks/useTranslation';
 const CallToAction = ({ onOpenTrialModal }) => {
     const { t } = useTranslation();
 
+    const computePageKey = () => {
+        const currentPath = route().current();
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.') ? currentPath.split('.')[1] : currentPath.split('-')[1];
+            return `module${moduleNumber}`;
+        }
+        const map = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner'
+        };
+        return map[currentPath] || 'home';
+    };
+
     return (
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
             {/* Background Pattern and Gradients */}
@@ -123,6 +144,7 @@ const CallToAction = ({ onOpenTrialModal }) => {
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                     <button
+                        id={`btn_start_a_free_trial_cta_${computePageKey()}`}
                         onClick={onOpenTrialModal}
                         className="text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center cursor-pointer"
                         style={{

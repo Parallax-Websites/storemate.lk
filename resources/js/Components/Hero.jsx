@@ -8,6 +8,27 @@ export default function Hero({ onOpenTrialModal }) {
     const componentRef = useRef(null);
     const { t } = useTranslation();
 
+    const computePageKey = () => {
+        const currentPath = route().current();
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.') ? currentPath.split('.')[1] : currentPath.split('-')[1];
+            return `module${moduleNumber}`;
+        }
+        const map = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner'
+        };
+        return map[currentPath] || 'home';
+    };
+
     // Duplicate logos for infinite scroll
     const originalLogos = [
         {
@@ -173,6 +194,7 @@ export default function Hero({ onOpenTrialModal }) {
                         {/* CTA Buttons */}
                         <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
                             <button
+                                id={`btn_start_a_free_trial_hero_${computePageKey()}`}
                                 onClick={onOpenTrialModal}
                                 className="inline-flex items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
                                 style={{backgroundColor: '#006daf'}}

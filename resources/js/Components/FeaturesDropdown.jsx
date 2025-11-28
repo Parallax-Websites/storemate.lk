@@ -9,6 +9,27 @@ export default function FeaturesDropdown({ onOpenTrialModal }) {
     const dropdownRef = useRef(null);
     const timeoutRef = useRef(null);
 
+    const computePageKey = () => {
+        const currentPath = route().current();
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.') ? currentPath.split('.')[1] : currentPath.split('-')[1];
+            return `module${moduleNumber}`;
+        }
+        const map = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner'
+        };
+        return map[currentPath] || 'home';
+    };
+
     const handleMouseEnter = () => {
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
@@ -354,6 +375,7 @@ export default function FeaturesDropdown({ onOpenTrialModal }) {
                                         {t('common.viewPricing')}
                                     </Link>
                                     <button
+                                        id={`btn_start_a_free_trial_header_dropdown_${computePageKey()}`}
                                         onClick={() => onOpenTrialModal?.('dropdown')}
                                         className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                                         style={{backgroundColor: '#013387'}}

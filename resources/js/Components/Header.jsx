@@ -318,6 +318,36 @@ const Header = forwardRef(({ auth }, ref) => {
         });
     };
 
+    // Helper to compute a page-specific id for Start Free Trial buttons
+    const getStartTrialId = (buttonType = 'header') => {
+        const currentPath = route().current();
+
+        // Module routes
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.')
+                ? currentPath.split('.')[1]
+                : currentPath.split('-')[1];
+            return `btn_start_a_free_trial_${buttonType}_module${moduleNumber}`;
+        }
+
+        const idMap = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner',
+            'privacy.policy': 'privacy_policy'
+        };
+
+        const pageKey = idMap[currentPath] || 'home';
+        return `btn_start_a_free_trial_${buttonType}_${pageKey}`;
+    };
+
     const getRegisterUrl = () => {
         const currentPath = route().current();
 
@@ -449,6 +479,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                     </Dropdown.Content>
                                 </Dropdown>
                                 <a
+                                    id={getStartTrialId('header')}
                                     onClick={() => {
                                         setTrialButtonSource('header');
                                         setShowTrialModal(true);
@@ -607,6 +638,7 @@ const Header = forwardRef(({ auth }, ref) => {
                         </div>
 
                         <a
+                            id={getStartTrialId('header')}
                             onClick={() => {
                                 setTrialButtonSource('header');
                                 setShowTrialModal(true);

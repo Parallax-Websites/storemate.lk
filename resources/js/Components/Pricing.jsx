@@ -5,6 +5,27 @@ export default function Pricing({ onOpenTrialModal }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const { tPricing } = usePricingTranslation();
 
+    const computePageKey = () => {
+        const currentPath = route().current();
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.') ? currentPath.split('.')[1] : currentPath.split('-')[1];
+            return `module${moduleNumber}`;
+        }
+        const map = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner'
+        };
+        return map[currentPath] || 'home';
+    };
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoaded(true);
@@ -259,6 +280,7 @@ export default function Pricing({ onOpenTrialModal }) {
 
                             {/* CTA Button */}
                             <button
+                                id={`btn_start_a_free_trial_card_${computePageKey()}`}
                                 onClick={() => onOpenTrialModal?.('card')}
                                 className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                             >
