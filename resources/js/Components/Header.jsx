@@ -174,8 +174,28 @@ const Header = forwardRef(({ auth }, ref) => {
             console.error('❌ Error sending to Zapier:', error);
         });
 
-        // Wait for both webhooks to complete, then redirect
-        Promise.allSettled([n8nWebhook, zapierWebhook])
+        const makeWebhook = fetch('https://hook.eu1.make.com/sypxt3t1jmfhljjpcf5mnp3aoofeyoln', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(demoData)
+        })
+        .then(response => {
+            console.log('Make.com Response status:', response.status);
+            if (response.ok) {
+                console.log('✅ Demo signup data sent successfully to Make.com');
+            } else {
+                console.error('❌ Make.com Error:', response.statusText);
+            }
+            return response;
+        })
+        .catch(error => {
+            console.error('❌ Error sending to Make.com:', error);
+        });
+
+        // Wait for all webhooks to complete, then redirect
+        Promise.allSettled([n8nWebhook, zapierWebhook, makeWebhook])
         .then(() => {
             console.log('✅ All webhooks processed');
 
@@ -294,8 +314,28 @@ const Header = forwardRef(({ auth }, ref) => {
             console.error('❌ Error sending to Zapier:', error);
         });
 
-        // Wait for both webhooks to complete, then redirect
-        Promise.allSettled([n8nWebhook, zapierWebhook])
+        const makeWebhook = fetch('https://hook.eu1.make.com/sypxt3t1jmfhljjpcf5mnp3aoofeyoln', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(trialData)
+        })
+        .then(response => {
+            console.log('Make.com Response status:', response.status);
+            if (response.ok) {
+                console.log('✅ Trial signup data sent successfully to Make.com');
+            } else {
+                console.error('❌ Make.com Error:', response.statusText);
+            }
+            return response;
+        })
+        .catch(error => {
+            console.error('❌ Error sending to Make.com:', error);
+        });
+
+        // Wait for all webhooks to complete, then redirect
+        Promise.allSettled([n8nWebhook, zapierWebhook, makeWebhook])
         .then(() => {
             console.log('✅ All webhooks processed');
             console.log('Redirecting to registration with params:', params.toString());
@@ -346,6 +386,36 @@ const Header = forwardRef(({ auth }, ref) => {
 
         const pageKey = idMap[currentPath] || 'home';
         return `btn_start_a_free_trial_${buttonType}_${pageKey}`;
+    };
+
+    // Helper to compute a page-specific id for Try Live Demo buttons
+    const getTryDemoId = (buttonType = 'header') => {
+        const currentPath = route().current();
+
+        // Module routes
+        if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
+            const moduleNumber = currentPath.includes('.')
+                ? currentPath.split('.')[1]
+                : currentPath.split('-')[1];
+            return `btn_try_live_demo_${buttonType}_module${moduleNumber}`;
+        }
+
+        const idMap = {
+            'home': 'home',
+            'pricing': 'pricing',
+            'inquiry': 'inquiry',
+            'sales.management': 'sales',
+            'shipping.packing': 'shipping',
+            'user.contact.product': 'user',
+            'about': 'about',
+            'free.course': 'courses',
+            'contact.us': 'contactus',
+            'partner.program': 'partner',
+            'privacy.policy': 'privacy_policy'
+        };
+
+        const pageKey = idMap[currentPath] || 'home';
+        return `btn_try_live_demo_${buttonType}_${pageKey}`;
     };
 
     const getRegisterUrl = () => {
@@ -489,6 +559,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                     {t('nav.startFreeTrial')}
                                 </a>
                                 <a
+                                    id={getTryDemoId('header')}
                                     onClick={() => setShowDemoModal(true)}
                                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
                                 >
@@ -648,6 +719,7 @@ const Header = forwardRef(({ auth }, ref) => {
                             {t('nav.startFreeTrial')}
                         </a>
                         <a
+                            id={getTryDemoId('header')}
                             onClick={() => setShowDemoModal(true)}
                             className="block mx-4 mt-3 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md cursor-pointer"
                         >
