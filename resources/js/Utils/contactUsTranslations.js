@@ -29,24 +29,24 @@ const contactUsTranslations = {
     },
     si: {
         contactUs: {
-            pageTitle: "අප හා සම්බන්ධ වන්න - Storemate OMS",
+            pageTitle: "අප සමඟ සම්බන්ධ වන්න - Storemate OMS",
             hero: {
                 badge: "අප සමඟ සම්බන්ධ වන්න",
-                title: "අප හා සම්බන්ධ වන්න",
-                description: "ඔබේ ව්‍යාපාරය වර්ධනය කිරීමට අපි මෙහි සිටිමු. අප හා සම්බන්ධ වී Storemate OMS ඔබේ මෙහෙයුම් පරිවර්තනය කරන ආකාරය ගැන සාකච්ඡා කරමු."
+                title: "අප සමඟ සම්බන්ධ වන්න",
+                description: "ඔබේ ව්‍යාපාරය වර්ධනය කිරීමට Storemate OMS සමග ව්‍යාපාරික මෙහෙයුම් (operations) පරිවර්තනය කරන ආකාරය ගැන සාකච්ඡා කරමු."
             },
             emailCard: {
                 title: "ඊමේල් කරන්න",
                 description: "අපට ඊමේල් එකක් එවන්න",
                 email: "sales@storemate.lk",
-                replyTime: "ඔබට පිළිතුරක් ලැබෙනු ඇත",
-                timeFrame: "පැය 24 ක් ඇතුළත",
+                replyTime: "පැය 24 ක් ඇතුළත",
+                timeFrame: "ඔබට පිළිතුරක් ලැබෙනු ඇත",
                 buttonText: "ඊමේල් එවන්න"
             },
             callCard: {
-                title: "අපට ඇමතුමක් දෙන්න",
-                description: "අපට දුරකථන ඇමතුමක් දෙන්න. අපගේ විශේෂඥයින් සුදානම්ව සිටිති",
-                hours: "සඳුදා සිට සිකුරාදා දක්වා පෙරවරු 9 සිට සන්ධ්‍යා 5 දක්වා",
+                title: "දැන්ම Call කරන්න",
+                description: "අපගේ විශේෂඥයින් ඔබට සහය වීමට සුදානම්ව සිටිති",
+                hours: "සඳුදා සිට සිකුරාදා දක්වා පෙරවරු 9 සිට සවස 5 දක්වා",
                 status: "දැන් ලබා ගත හැකිය",
                 phoneNumber: "011 422 6911"
             }

@@ -111,8 +111,15 @@ const Header = forwardRef(({ auth }, ref) => {
     const handleDemoSubmit = (e) => {
         e.preventDefault();
 
-        // Track Demo Requested
-        leadScoring.trackAction('Demo Requested');
+        // TRIGGER GTM EVENT (GTM handles all scoring)
+        if (window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('lead_action_trigger', {
+                detail: {
+                    action: 'Demo Requested',
+                    metadata: { formType: 'demo' }
+                }
+            }));
+        }
 
         // Calculate normalized score (totalScore / 39.4, rounded to nearest integer)
         const totalScore = leadScoring.totalScore;
@@ -210,8 +217,12 @@ const Header = forwardRef(({ auth }, ref) => {
         .then(() => {
             console.log('✅ All webhooks processed');
 
-            // Set the redirect URL and show thank you modal
-            const loginUrl = 'https://oms.storemate.cloud/login?businessName=storemateoms&loginEmail=smdemo@gmail.com&password=PSP2F*uPCIxl&utm_source=storemate_lk&utm_medium=email&utm_campaign=demo_account_details_email';
+            // Build redirect URL with name and phone parameters
+            const baseUrl = 'https://oms.storemate.cloud/login?businessName=storemateoms&loginEmail=smdemo@gmail.com&password=PSP2F*uPCIxl&utm_source=storemate_lk&utm_medium=email&utm_campaign=demo_account_details_email';
+            const encodedName = encodeURIComponent(formData.fullName).replace(/%20/g, '+');
+            const encodedPhone = encodeURIComponent(formData.phoneNumber);
+            const loginUrl = `${baseUrl}&name=${encodedName}&phone=${encodedPhone}`;
+
             setDemoRedirectUrl(loginUrl);
             setShowDemoModal(false);
             setShowDemoThankYou(true);
@@ -232,8 +243,18 @@ const Header = forwardRef(({ auth }, ref) => {
     const handleTrialSubmit = (e) => {
         e.preventDefault();
 
-        // Track Trial Started
-        leadScoring.trackAction('Trial Started');
+        // TRIGGER GTM EVENT (GTM handles all scoring)
+        if (window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('lead_action_trigger', {
+                detail: {
+                    action: 'Trial Started',
+                    metadata: {
+                        formType: 'trial',
+                        source: trialButtonSource
+                    }
+                }
+            }));
+        }
 
         // Get current page for UTM source
         const currentPath = route().current();
@@ -770,7 +791,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <p className="text-sm text-gray-600">Please provide your details to access the demo</p>
                             </div>
 
-                            <form onSubmit={handleDemoSubmit} className="space-y-4">
+                            <form id="demo-form" onSubmit={handleDemoSubmit} className="space-y-4 demo-request-form">
                                 {/* Courier Companies */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -899,7 +920,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <p className="text-sm text-gray-600">Please provide your details to create your account</p>
                             </div>
 
-                            <form onSubmit={handleTrialSubmit} className="space-y-4">
+                            <form id="trial-form" onSubmit={handleTrialSubmit} className="space-y-4 trial-signup-form">
                                 {/* Courier Companies */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">

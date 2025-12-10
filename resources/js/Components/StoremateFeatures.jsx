@@ -24,7 +24,29 @@ export default function StoremateFeatures() {
         // 0 = ended
         if (event.data === 0 && !videoCompleted) {
             setVideoCompleted(true);
-            leadScoring.trackAction('Video Completed');
+
+            // Push to dataLayer for GTM
+            if (typeof window !== 'undefined' && window.dataLayer) {
+                window.dataLayer.push({
+                    event: 'lead_action',
+                    leadAction: 'Video Completed',
+                    videoTitle: 'How Storemate Works - Complete guide for Sri Lankan SMEs',
+                    videoId: '-CYtv4drzyo',
+                    videoUrl: window.location.href
+                });
+            }
+
+            // Also dispatch custom event for GTM
+            window.dispatchEvent(new CustomEvent('lead_action_trigger', {
+                detail: {
+                    action: 'Video Completed',
+                    metadata: {
+                        videoTitle: 'How Storemate Works - Complete guide for Sri Lankan SMEs',
+                        videoId: '-CYtv4drzyo',
+                        videoUrl: window.location.href
+                    }
+                }
+            }));
         }
     };
 

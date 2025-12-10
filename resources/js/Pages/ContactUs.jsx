@@ -4,11 +4,37 @@ import { Head } from '@inertiajs/react';
 import CallToAction from '@/Components/CallToAction';
 import MainLayout from '@/Layouts/MainLayout';
 import { useContactUsTranslation } from '@/Utils/contactUsTranslations';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function ContactUs({ auth }) {
     const { tContactUs } = useContactUsTranslation();
     const headerRef = useRef(null);
+    const [isAvailable, setIsAvailable] = useState(false);
+
+    // Check if current time is within business hours (Mon-Fri, 9am-5pm Sri Lanka time)
+    useEffect(() => {
+        const checkAvailability = () => {
+            const now = new Date();
+
+            // Get Sri Lanka time (UTC+5:30)
+            const sriLankaTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
+
+            const day = sriLankaTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const hours = sriLankaTime.getHours();
+
+            // Check if it's Monday to Friday (1-5) and between 9am and 5pm
+            const isWeekday = day >= 1 && day <= 5;
+            const isBusinessHours = hours >= 9 && hours < 17;
+
+            setIsAvailable(isWeekday && isBusinessHours);
+        };
+
+        checkAvailability();
+        // Check every minute
+        const interval = setInterval(checkAvailability, 60000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <MainLayout>
@@ -148,18 +174,18 @@ export default function ContactUs({ auth }) {
                         </div>
 
                         {/* Call Us Card */}
-                        <div className="group relative bg-gradient-to-br from-white via-green-50 to-white border-2 border-green-100 rounded-3xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                        <div className={`group relative bg-gradient-to-br ${isAvailable ? 'from-white via-green-50 to-white border-2 border-green-100' : 'from-white via-red-50 to-white border-2 border-red-100'} rounded-3xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-500 overflow-hidden`}>
                             {/* Background decoration */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-100 to-transparent rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-500"></div>
-                            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-50 to-transparent rounded-full transform -translate-x-12 translate-y-12 group-hover:scale-125 transition-transform duration-500"></div>
+                            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${isAvailable ? 'from-green-100' : 'from-red-100'} to-transparent rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-500`}></div>
+                            <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${isAvailable ? 'from-green-50' : 'from-red-50'} to-transparent rounded-full transform -translate-x-12 translate-y-12 group-hover:scale-125 transition-transform duration-500`}></div>
 
                             <div className="relative z-10">
-                                <div className="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                                <div className={`flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-r ${isAvailable ? 'from-green-500 to-emerald-500' : 'from-red-500 to-rose-500'} rounded-2xl mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                                     <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-center mb-4 group-hover:text-green-700 transition-colors duration-300">
+                                <h3 className={`text-2xl font-bold text-center mb-4 transition-colors duration-300 ${isAvailable ? 'group-hover:text-green-700' : 'group-hover:text-red-700'}`}>
                                     <span className="text-black">{tContactUs('contactUs.callCard.title')}</span>
                                 </h3>
                                 <div className="text-center mb-6">
@@ -167,15 +193,15 @@ export default function ContactUs({ auth }) {
                                         {tContactUs('contactUs.callCard.description')}
                                     </p>
                                     <p className="text-sm font-semibold text-gray-700 mb-2">{tContactUs('contactUs.callCard.hours')}</p>
-                                    <div className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                                        {tContactUs('contactUs.callCard.status')}
+                                    <div className={`inline-flex items-center px-3 py-1 ${isAvailable ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'} rounded-full text-sm font-medium`}>
+                                        <div className={`w-2 h-2 ${isAvailable ? 'bg-green-500 animate-pulse' : 'bg-red-500'} rounded-full mr-2`}></div>
+                                        {isAvailable ? 'Available Now' : 'Not Available'}
                                     </div>
                                 </div>
                                 <div className="text-center">
                                     <a
                                         href="tel:0114226911"
-                                        className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group-hover:from-emerald-600 group-hover:to-green-500"
+                                        className={`inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r ${isAvailable ? 'from-green-500 to-emerald-600 group-hover:from-emerald-600 group-hover:to-green-500' : 'from-red-500 to-rose-600 group-hover:from-rose-600 group-hover:to-red-500'} text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300`}
                                     >
                                         <svg className="mr-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
