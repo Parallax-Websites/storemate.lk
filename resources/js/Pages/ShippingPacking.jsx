@@ -1,0 +1,38 @@
+import { Head } from '@inertiajs/react';
+import Header from '@/Components/Header';
+import Footer from '@/Components/Footer';
+import ShippingHero from '@/Components/Shipping & Packing/ShippingHero';
+import Faq from '@/Components/Faq';
+import CallToAction from '@/Components/CallToAction';
+import OneClickCourierSync from '@/Components/Shipping & Packing/OneClickCourierSync';
+import ViewSyncStatus from '@/Components/Shipping & Packing/ViewSyncStatus';
+import PrintWaybills from '@/Components/Shipping & Packing/PrintWaybills';
+import TrackPackageStatus from '@/Components/Shipping & Packing/TrackPackageStatus';
+import MonitorDeliveryStatus from '@/Components/Shipping & Packing/MonitorDeliveryStatus';
+import ShippingFeatures from '@/Components/Shipping & Packing/ShippingFeatures';
+import MainLayout from '@/Layouts/MainLayout';
+import { useRef } from 'react';
+
+export default function ShippingPacking({ auth }) {
+    const headerRef = useRef(null);
+
+    return (
+        <MainLayout>
+            <Head title="Shipping & Packing - Sync Couriers & Print Waybills | StoreMate OMS">
+                <meta name="description" content="Connect with Royal Express, Trans Express, and other couriers. Print waybills with one click, track packages in real-time, and monitor delivery status from a single dashboard." />
+                <meta name="keywords" content="shipping management, courier integration, waybill printing, package tracking, delivery monitoring, Royal Express, Trans Express" />
+            </Head>
+            <Header ref={headerRef} auth={auth} />
+            <ShippingHero auth={auth} onOpenTrialModal={() => headerRef.current?.openTrialModal('hero')} />
+            <ShippingFeatures />
+            <OneClickCourierSync />
+            <ViewSyncStatus />
+            <PrintWaybills />
+            <TrackPackageStatus />
+            <MonitorDeliveryStatus />
+            <Faq />
+            <CallToAction onOpenTrialModal={() => headerRef.current?.openTrialModal('cta')} />
+            <Footer />
+        </MainLayout>
+    );
+}
