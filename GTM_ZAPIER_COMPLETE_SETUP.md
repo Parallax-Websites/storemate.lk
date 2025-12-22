@@ -514,15 +514,24 @@ These tags send complete data (form + scores) to Zapier.
 (function() {
   var leadScoring = {{DL - Lead Scoring Object}} || {};
   var formData = {{DL - Form Data}} || {};
-  var registrationUrl = {{DL - Registration URL}} || '';
   
-  // Only send for Trial forms (check both action and presence of registrationUrl)
-  var isTrialForm = (leadScoring.action === 'Trial Started') || (registrationUrl && !formData.businessName);
-  
-  if (!isTrialForm) {
-    console.log('⏭️ Skipping non-trial event. Action:', leadScoring.action || 'none');
+  // Only send for Trial Started action
+  if (leadScoring.action !== 'Trial Started') {
+    console.log('⏭️ Skipping - not a Trial Started action. Action:', leadScoring.action || 'none');
     return;
   }
+  
+  // Prevent duplicate sends within 2 seconds
+  var lastSentKey = 'zapier_trial_last_sent';
+  var lastSent = sessionStorage.getItem(lastSentKey);
+  var now = Date.now();
+  
+  if (lastSent && (now - parseInt(lastSent)) < 2000) {
+    console.log('⏭️ Duplicate send blocked - already sent within 2 seconds');
+    return;
+  }
+  
+  sessionStorage.setItem(lastSentKey, now.toString());
   
   var scoring = window.LeadScoreManager;
   
@@ -568,13 +577,12 @@ These tags send complete data (form + scores) to Zapier.
 </script>
 ```
 
-5. **Triggering:** Add TWO triggers (click "Add" for second one):
-   - Trigger 1: `Custom Event - Trial Form Submit`
-   - Trigger 2: `Custom Event - Lead Score Calculated`
+5. **Triggering:** Select trigger:
+   - Trigger: `Custom Event - Lead Score Calculated`
    
 6. Click **Save**
 
-**Why two triggers?** This ensures data is sent even if scoring is skipped due to duplicate actions. The tag filters internally to only process Trial forms.
+**⚠️ IMPORTANT:** Use ONLY `lead_score_calculated` trigger. The tag has built-in duplicate prevention to avoid sending data twice.
 
 ---
 
@@ -591,15 +599,24 @@ These tags send complete data (form + scores) to Zapier.
 (function() {
   var leadScoring = {{DL - Lead Scoring Object}} || {};
   var formData = {{DL - Form Data}} || {};
-  var loginUrl = {{DL - Login URL}} || '';
   
-  // Only send for Demo forms (check both action and presence of loginUrl)
-  var isDemoForm = (leadScoring.action === 'Demo Requested') || (loginUrl && formData.businessName);
-  
-  if (!isDemoForm) {
-    console.log('⏭️ Skipping non-demo event. Action:', leadScoring.action || 'none');
+  // Only send for Demo Requested action
+  if (leadScoring.action !== 'Demo Requested') {
+    console.log('⏭️ Skipping - not a Demo Requested action. Action:', leadScoring.action || 'none');
     return;
   }
+  
+  // Prevent duplicate sends within 2 seconds
+  var lastSentKey = 'zapier_demo_last_sent';
+  var lastSent = sessionStorage.getItem(lastSentKey);
+  var now = Date.now();
+  
+  if (lastSent && (now - parseInt(lastSent)) < 2000) {
+    console.log('⏭️ Duplicate send blocked - already sent within 2 seconds');
+    return;
+  }
+  
+  sessionStorage.setItem(lastSentKey, now.toString());
   
   var scoring = window.LeadScoreManager;
   
@@ -645,13 +662,12 @@ These tags send complete data (form + scores) to Zapier.
 </script>
 ```
 
-5. **Triggering:** Add TWO triggers (click "Add" for second one):
-   - Trigger 1: `Custom Event - Demo Form Submit`
-   - Trigger 2: `Custom Event - Lead Score Calculated`
+5. **Triggering:** Select trigger:
+   - Trigger: `Custom Event - Lead Score Calculated`
    
 6. Click **Save**
 
-**Why two triggers?** This ensures data is sent even if scoring is skipped due to duplicate actions. The tag filters internally to only process Demo forms.
+**⚠️ IMPORTANT:** Use ONLY `lead_score_calculated` trigger. The tag has built-in duplicate prevention to avoid sending data twice.
 
 ---
 
@@ -1198,8 +1214,8 @@ return {
 | Lead Score - Auto Tracking | Custom HTML | All Pages (Window Loaded) | Session/page tracking |
 | Lead Score - Trial Form Handler | Custom HTML | trial_form_submit | Triggers scoring |
 | Lead Score - Demo Form Handler | Custom HTML | demo_form_submit | Triggers scoring |
-| Zapier - Trial Form Complete | Custom HTML | **trial_form_submit + lead_score_calculated** | Sends data to Zapier |
-| Zapier - Demo Form Complete | Custom HTML | **demo_form_submit + lead_score_calculated** | Sends data to Zapier |
+| Zapier - Trial Form Complete | Custom HTML | **lead_score_calculated** | Sends data to Zapier (with duplicate prevention) |
+| Zapier - Demo Form Complete | Custom HTML | **lead_score_calculated** | Sends data to Zapier (with duplicate prevention) |
 | Zapier - High Value Actions | Custom HTML | lead_score_calculated | Real-time updates |
 
 ---

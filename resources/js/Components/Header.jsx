@@ -637,20 +637,29 @@ const Header = forwardRef(({ auth }, ref) => {
                                     />
                                 </div>
 
-                                {/* Orders Per Day */}
+                                {/* Orders Per Month */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        කොපමණ orders ගණනක් දිනකට යවනවද <span className="text-red-500">*</span>
+                                        කොපමණ orders ගණනක් මාසයකට යවනවද <span className="text-red-500">*</span>
                                     </label>
-                                    <input
-                                        type="text"
+                                    <select
                                         name="ordersPerDay"
                                         value={formData.ordersPerDay}
                                         onChange={handleInputChange}
-                                        placeholder="Enter number of orders per day"
                                         required
                                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
-                                    />
+                                    >
+                                        <option value="">Select monthly orders</option>
+                                        <option value="0-100">0-100</option>
+                                        <option value="100-250">100-250</option>
+                                        <option value="250-500">250-500</option>
+                                        <option value="500-1,000">500-1,000</option>
+                                        <option value="1,000-2,000">1,000-2,000</option>
+                                        <option value="2,000-5,000">2,000-5,000</option>
+                                        <option value="5,000-10,000">5,000-10,000</option>
+                                        <option value="10,000-50,000">10,000-50,000</option>
+                                        <option value="50,000+">50,000+</option>
+                                    </select>
                                 </div>
 
                                 {/* Full Name */}
@@ -766,20 +775,29 @@ const Header = forwardRef(({ auth }, ref) => {
                                     />
                                 </div>
 
-                                {/* Orders Per Day */}
+                                {/* Orders Per Month */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        කොපමණ orders ගණනක් දිනකට යවනවද <span className="text-red-500">*</span>
+                                        කොපමණ orders ගණනක් මාසයකට යවනවද <span className="text-red-500">*</span>
                                     </label>
-                                    <input
-                                        type="text"
+                                    <select
                                         name="ordersPerDay"
                                         value={trialFormData.ordersPerDay}
                                         onChange={handleTrialInputChange}
-                                        placeholder="Enter number of orders per day"
                                         required
                                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
-                                    />
+                                    >
+                                        <option value="">Select monthly orders</option>
+                                        <option value="0-100">0-100</option>
+                                        <option value="100-250">100-250</option>
+                                        <option value="250-500">250-500</option>
+                                        <option value="500-1,000">500-1,000</option>
+                                        <option value="1,000-2,000">1,000-2,000</option>
+                                        <option value="2,000-5,000">2,000-5,000</option>
+                                        <option value="5,000-10,000">5,000-10,000</option>
+                                        <option value="10,000-50,000">10,000-50,000</option>
+                                        <option value="50,000+">50,000+</option>
+                                    </select>
                                 </div>
 
                                 {/* Full Name */}
