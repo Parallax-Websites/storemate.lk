@@ -5,6 +5,7 @@ const pricingTranslations = {
     en: {
         pricing: {
             badge: "FLEXIBLE PRICING OPTIONS",
+            costPerOrderLabel: "PER ORDER",
             title: {
                 part1: "Choose Your",
                 part2: "Plan"
@@ -16,20 +17,22 @@ const pricingTranslations = {
                     subtitle: "Free Subscription",
                     price: "0",
                     period: "/month",
-                    inquiries: "500 inquiries/month",
+                    inquiries: "500 Orders/month",
                     locations: "2 Business Locations",
                     deliveryCompanies: "1 Delivery Company",
-                    buttonText: "Try for Free"
+                    buttonText: "Try Demo Account - 30 Days"
                 },
                 starter: {
                     name: "Starter",
                     subtitle: "Starter Subscription",
                     price: "5,000",
                     period: "/month",
-                    inquiries: "500 inquiries/month",
-                    locations: "2 Business Locations",
+                    inquiries: "500 Orders/month",
+                    locations: "2 Business Accounts",
                     deliveryCompanies: "1 Delivery Company",
-                    buttonText: "Get Started",
+                    costPerOrder: "Rs 10",
+                    buttonText: "Try Demo Account",
+                    trialPeriod: "Free for 30 Days",
                     popular: "Most Popular"
                 },
                 business: {
@@ -37,24 +40,40 @@ const pricingTranslations = {
                     subtitle: "Business Subscription",
                     price: "12,000",
                     period: "/month",
-                    inquiries: "5,000 inquiries/month",
-                    locations: "5 Business Locations",
+                    inquiries: "5,000 Orders/month",
+                    locations: "5 Business Accounts",
                     deliveryCompanies: "2 Delivery Companies",
-                    buttonText: "Get Started"
+                    costPerOrder: "Rs 2.4",
+                    buttonText: "Try Demo Account",
+                    trialPeriod: "Free for 30 Days"
                 },
                 premium: {
                     name: "Premium",
                     subtitle: "Premium Subscription",
-                    price: "25,000",
+                    price: "24,000",
                     period: "/month",
-                    inquiries: "50,000 inquiries/month",
-                    locations: "5 Business Locations",
+                    inquiries: "50,000 Orders/month",
+                    locations: "5 Business Accounts",
                     deliveryCompanies: "10 Delivery Companies",
-                    buttonText: "Get Started"
+                    costPerOrder: "Rs 0.48",
+                    buttonText: "Try Demo Account",
+                    trialPeriod: "Free for 30 Days"
+                },
+                enterprise: {
+                    name: "Enterprise",
+                    subtitle: "Enterprise Solution",
+                    price: "Custom",
+                    period: "",
+                    inquiries: "Unlimited Orders",
+                    locations: "Unlimited Business Accounts",
+                    deliveryCompanies: "Unlimited Delivery Companies",
+                    costPerOrder: "Custom",
+                    buttonText: "Contact Sales",
+                    trialPeriod: "For Enterprise Solution"
                 }
             },
             features: {
-                inquiryManagement: "Inquiry Management",
+                inquiryManagement: "Order Management",
                 codSync: "COD Sync",
                 whatsappForm: "WhatsApp Form",
                 dedicatedServer: "Dedicated Server",
@@ -117,6 +136,7 @@ const pricingTranslations = {
     si: {
         pricing: {
             badge: "නම්‍යශීලී මිල ගණන් විකල්ප",
+            costPerOrderLabel: "ඇණවුමකට",
             title: {
                 part1: "ඔබේ",
                 part2: "සැලැස්ම තෝරන්න"
@@ -128,20 +148,22 @@ const pricingTranslations = {
                     subtitle: "නොමිලේ දායකත්වය",
                     price: "0",
                     period: "/මාසිකව",
-                    inquiries: "මාසිකව විමසීම් 500",
-                    locations: "ව්‍යාපාරික ස්ථාන 2",
+                    inquiries: "මාසිකව ඇණවුම් 500",
+                    locations: "ව්‍යාපාරික ගිණුම් 2",
                     deliveryCompanies: "බෙදාහැරීම් සමාගම 1",
-                    buttonText: "නොමිලේ උත්සාහ කරන්න"
+                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න - දින 30"
                 },
                 starter: {
                     name: "ආරම්භක",
                     subtitle: "ආරම්භක දායකත්වය",
                     price: "5,000",
                     period: "/මාසිකව",
-                    inquiries: "මාසිකව විමසීම් 500",
-                    locations: "ව්‍යාපාරික ස්ථාන 2",
+                    inquiries: "මාසිකව ඇණවුම් 500",
+                    locations: "ව්‍යාපාරික ගිණුම් 2",
                     deliveryCompanies: "බෙදාහැරීම් සමාගම 1",
-                    buttonText: "ආරම්භ කරන්න",
+                    costPerOrder: "රු. 10",
+                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම",
                     popular: "වඩාත් ජනප්‍රිය"
                 },
                 business: {
@@ -149,24 +171,40 @@ const pricingTranslations = {
                     subtitle: "ව්‍යාපාරික දායකත්වය",
                     price: "12,000",
                     period: "/මාසිකව",
-                    inquiries: "මාසිකව විමසීම් 5,000",
-                    locations: "ව්‍යාපාරික ස්ථාන 5",
+                    inquiries: "මාසිකව ඇණවුම් 5,000",
+                    locations: "ව්‍යාපාරික ගිණුම් 5",
                     deliveryCompanies: "බෙදාහැරීම් සමාගම් 2",
-                    buttonText: "ආරම්භ කරන්න"
+                    costPerOrder: "රු. 2.4",
+                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
                 premium: {
                     name: "ප්‍රිමියම්",
                     subtitle: "ප්‍රිමියම් දායකත්වය",
                     price: "25,000",
                     period: "/මාසිකව",
-                    inquiries: "මාසිකව විමසීම් 50,000",
-                    locations: "ව්‍යාපාරික ස්ථාන 5",
+                    inquiries: "මාසිකව ඇණවුම් 50,000",
+                    locations: "ව්‍යාපාරික ගිණුම් 5",
                     deliveryCompanies: "බෙදාහැරීම් සමාගම් 10",
-                    buttonText: "ආරම්භ කරන්න"
+                    costPerOrder: "රු. 0.48",
+                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
+                },
+                enterprise: {
+                    name: "ව්‍යවසායික",
+                    subtitle: "ව්‍යවසායික විසඳුම",
+                    price: "අභිරුචි",
+                    period: "",
+                    inquiries: "අසීමිත ඇණවුම්",
+                    locations: "අසීමිත ව්‍යාපාරික ගිණුම්",
+                    deliveryCompanies: "අසීමිත බෙදාහැරීම් සමාගම්",
+                    costPerOrder: "අභිරුචි",
+                    buttonText: "විකුණුම් අමතන්න",
+                    trialPeriod: "ව්‍යවසායික විසඳුම සඳහා"
                 }
             },
             features: {
-                inquiryManagement: "විමසුම් කළමනාකරණය",
+                inquiryManagement: "ඇණවුම් කළමනාකරණය",
                 codSync: "COD සමමුහුර්තකරණය",
                 whatsappForm: "WhatsApp පෝරමය",
                 dedicatedServer: "කැප වූ සේවාදායකය",
@@ -228,8 +266,7 @@ const pricingTranslations = {
     },
     ta: {
         pricing: {
-            badge: "நெகிழ்வான விலை நிர்ধாரண விருப்பங்கள்",
-            title: {
+            badge: "நெகிழ்வான விலை நிர்ধாரண விருப்பங்கள்",            costPerOrderLabel: "ஒரு ஆர்டருக்கு",            title: {
                 part1: "உங்கள்",
                 part2: "திட்டத்தைத் தேர்ந்தெடுங்கள்"
             },
@@ -243,7 +280,7 @@ const pricingTranslations = {
                     inquiries: "மாதத்திற்கு 500 விசாரணைகள்",
                     locations: "2 வணிக இடங்கள்",
                     deliveryCompanies: "1 டெலிவரி நிறுவனம்",
-                    buttonText: "இலவசமாக முயற்சிக்கவும்"
+                    buttonText: "இலவசமாக முயற்சிக்கவும் - 30 நாட்கள்"
                 },
                 starter: {
                     name: "தொடக்கம்",
@@ -253,7 +290,9 @@ const pricingTranslations = {
                     inquiries: "மாதத்திற்கு 500 விசாரணைகள்",
                     locations: "2 வணிக இடங்கள்",
                     deliveryCompanies: "1 டெலிவரி நிறுவனம்",
+                    costPerOrder: "Rs 10",
                     buttonText: "தொடங்குங்கள்",
+                    trialPeriod: "30 நாட்கள் இலவச சோதனை",
                     popular: "மிகவும் பிரபலமான"
                 },
                 business: {
@@ -264,7 +303,9 @@ const pricingTranslations = {
                     inquiries: "மாதத்திற்கு 5,000 விசாரணைகள்",
                     locations: "5 வணிக இடங்கள்",
                     deliveryCompanies: "2 டெலிவரி நிறுவனங்கள்",
-                    buttonText: "தொடங்குங்கள்"
+                    costPerOrder: "Rs 2.4",
+                    buttonText: "தொடங்குங்கள்",
+                    trialPeriod: "30 நாட்கள் இலவச சோதனை"
                 },
                 premium: {
                     name: "பிரீமியம்",
@@ -274,8 +315,20 @@ const pricingTranslations = {
                     inquiries: "மாதத்திற்கு 50,000 விசாரணைகள்",
                     locations: "5 வணிக இடங்கள்",
                     deliveryCompanies: "10 டெலிவரி நிறுவனங்கள்",
-                    buttonText: "தொடங்குங்கள்"
-                }
+                    costPerOrder: "Rs 0.48",
+                    buttonText: "தொடங்குங்கள்",
+                    trialPeriod: "30 நாட்கள் இலவச சோதனை"                },
+                enterprise: {
+                    name: "நிறுவன",
+                    subtitle: "நிறுவன தீர்வு",
+                    price: "தனிப்பயன்",
+                    period: "",
+                    inquiries: "வரம்பற்ற விசாரணைகள்",
+                    locations: "வரம்பற்ற வணிக இடங்கள்",
+                    deliveryCompanies: "வரம்பற்ற டெலிவரி நிறுவனங்கள்",
+                    costPerOrder: "தனிப்பயன்",
+                    buttonText: "விற்பனையை தொடர்பு கொள்ளுங்கள்",
+                    trialPeriod: "தனிப்பயன் விலை கிடைக்கும்"                }
             },
             features: {
                 inquiryManagement: "விசாரணை நிர்வாகம்",

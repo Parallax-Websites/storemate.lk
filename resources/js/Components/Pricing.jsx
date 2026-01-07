@@ -65,6 +65,7 @@ export default function Pricing({ onOpenTrialModal }) {
             inquiries: tPricing('pricing.plans.starter.inquiries'),
             locations: tPricing('pricing.plans.starter.locations'),
             deliveryCompanies: tPricing('pricing.plans.starter.deliveryCompanies'),
+            costPerOrder: tPricing('pricing.plans.starter.costPerOrder'),
             features: [
                 { name: tPricing('pricing.features.inquiryManagement'), included: true },
                 { name: tPricing('pricing.features.codSync'), included: true },
@@ -73,8 +74,9 @@ export default function Pricing({ onOpenTrialModal }) {
                 { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.starter.buttonText'),
-            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
-            bgColor: "bg-blue-50",
+            trialPeriod: tPricing('pricing.plans.starter.trialPeriod'),
+            buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
+            bgColor: "bg-white",
             popular: false
         },
         {
@@ -85,6 +87,7 @@ export default function Pricing({ onOpenTrialModal }) {
             inquiries: tPricing('pricing.plans.business.inquiries'),
             locations: tPricing('pricing.plans.business.locations'),
             deliveryCompanies: tPricing('pricing.plans.business.deliveryCompanies'),
+            costPerOrder: tPricing('pricing.plans.business.costPerOrder'),
             features: [
                 { name: tPricing('pricing.features.inquiryManagement'), included: true },
                 { name: tPricing('pricing.features.codSync'), included: true },
@@ -93,8 +96,9 @@ export default function Pricing({ onOpenTrialModal }) {
                 { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.business.buttonText'),
-            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
-            bgColor: "bg-purple-50",
+            trialPeriod: tPricing('pricing.plans.business.trialPeriod'),
+            buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
+            bgColor: "bg-white",
             popular: true,
             popularText: tPricing('pricing.plans.starter.popular')
         },
@@ -106,6 +110,7 @@ export default function Pricing({ onOpenTrialModal }) {
             inquiries: tPricing('pricing.plans.premium.inquiries'),
             locations: tPricing('pricing.plans.premium.locations'),
             deliveryCompanies: tPricing('pricing.plans.premium.deliveryCompanies'),
+            costPerOrder: tPricing('pricing.plans.premium.costPerOrder'),
             features: [
                 { name: tPricing('pricing.features.inquiryManagement'), included: true },
                 { name: tPricing('pricing.features.codSync'), included: true },
@@ -114,8 +119,31 @@ export default function Pricing({ onOpenTrialModal }) {
                 { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.premium.buttonText'),
-            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
-            bgColor: "bg-green-50",
+            trialPeriod: tPricing('pricing.plans.premium.trialPeriod'),
+            buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
+            bgColor: "bg-white",
+            popular: false
+        },
+        {
+            name: tPricing('pricing.plans.enterprise.name'),
+            subtitle: tPricing('pricing.plans.enterprise.subtitle'),
+            price: tPricing('pricing.plans.enterprise.price'),
+            period: '',
+            inquiries: tPricing('pricing.plans.enterprise.inquiries'),
+            locations: tPricing('pricing.plans.enterprise.locations'),
+            deliveryCompanies: tPricing('pricing.plans.enterprise.deliveryCompanies'),
+            costPerOrder: tPricing('pricing.plans.enterprise.costPerOrder'),
+            features: [
+                { name: tPricing('pricing.features.inquiryManagement'), included: true },
+                { name: tPricing('pricing.features.codSync'), included: true },
+                { name: tPricing('pricing.features.whatsappForm'), included: true },
+                { name: tPricing('pricing.features.dedicatedServer'), included: true },
+                { name: tPricing('pricing.features.customizations'), included: true }
+            ],
+            buttonText: tPricing('pricing.plans.enterprise.buttonText'),
+            trialPeriod: tPricing('pricing.plans.enterprise.trialPeriod'),
+            buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
+            bgColor: "bg-white",
             popular: false
         }
     ];
@@ -189,6 +217,16 @@ export default function Pricing({ onOpenTrialModal }) {
                         </span>
                     </div>
 
+                    {/* Cost for Order Badge */}
+                    <div className="mb-4">
+                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
+                            color: '#006daf',
+                            backgroundColor: '#e6f3ff'
+                        }}>
+                            COST FOR ORDER
+                        </span>
+                    </div>
+
                     <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
                         fontWeight: '750',
                         fontStretch: 'ultra-condensed',
@@ -204,7 +242,7 @@ export default function Pricing({ onOpenTrialModal }) {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.name}
@@ -235,10 +273,22 @@ export default function Pricing({ onOpenTrialModal }) {
 
                                 {/* Price */}
                                 <div className="mb-2">
-                                    <span className="text-sm text-gray-600 font-medium">LKR </span>
+                                    {plan.price.includes('LKR') && <span className="text-sm text-gray-600 font-medium">LKR </span>}
                                     <span className="text-4xl font-bold text-gray-900">{plan.price.replace('LKR ', '')}</span>
-                                    <span className="text-lg text-gray-600">{plan.period}</span>
+                                    {plan.period && <span className="text-lg text-gray-600">{plan.period}</span>}
                                 </div>
+
+                                {/* Cost per Order Badge */}
+                                {plan.costPerOrder && (
+                                    <div className="mt-3">
+                                        <span className="inline-block text-xs font-bold tracking-widest px-3 py-1.5 rounded-full" style={{
+                                            color: '#006daf',
+                                            backgroundColor: '#e6f3ff'
+                                        }}>
+                                            {plan.costPerOrder} {tPricing('pricing.costPerOrderLabel')}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Plan Details */}
@@ -252,6 +302,7 @@ export default function Pricing({ onOpenTrialModal }) {
                                 <div className="text-sm text-gray-700">
                                     <div className="font-medium">{plan.deliveryCompanies}</div>
                                 </div>
+
                             </div>
 
                             {/* Features List */}
@@ -259,14 +310,14 @@ export default function Pricing({ onOpenTrialModal }) {
                                 {plan.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center">
                                         {feature.included ? (
-                                            <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                                                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-green-500">
+                                                <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
                                         ) : (
-                                            <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                                                <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-red-600">
+                                                <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
@@ -279,13 +330,29 @@ export default function Pricing({ onOpenTrialModal }) {
                             </div>
 
                             {/* CTA Button */}
-                            <button
-                                id={`btn_start_a_free_trial_card_${computePageKey()}`}
-                                onClick={() => onOpenTrialModal?.('card')}
-                                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
-                            >
-                                {plan.buttonText}
-                            </button>
+                            {plan.name === tPricing('pricing.plans.enterprise.name') ? (
+                                <a
+                                    href="/contact-us"
+                                    className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
+                                >
+                                    {plan.buttonText}
+                                </a>
+                            ) : (
+                                <button
+                                    id={`btn_start_a_free_trial_card_${computePageKey()}`}
+                                    onClick={() => onOpenTrialModal?.('card')}
+                                    className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
+                                >
+                                    {plan.buttonText}
+                                </button>
+                            )}
+                            {plan.trialPeriod && (
+                                <div className="text-center mt-3">
+                                    <span className="text-xs font-semibold text-gray-600">
+                                        {plan.trialPeriod}
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

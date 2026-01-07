@@ -707,7 +707,7 @@ This tag sends real-time updates when users take high-value actions (not just fo
   console.log('📤 Sending high-value action to Zapier:', payload);
   
   // Send to Zapier (use same webhook as trial or create a dedicated one)
-  fetch('https://hooks.zapier.com/hooks/catch/11465938/uz82iuk/', {
+  fetch('https://hooks.zapier.com/hooks/catch/11465938/ufjmokc/', {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
@@ -1484,3 +1484,10 @@ return {
   actionHistory: inputData.actionHistory || []
 };
 
+
+
+utm_source=Facebook&utm_medium=Website&utm_campaign=10_Cold_Website_Dec&utm_content=Without_WebSite
+utm_source=Facebook&utm_medium=website&utm_campaign=10_Cold_Website_Dec&utm_content=Return_Headache
+utm_source=Facebook&utm_medium=Website&utm_campaign=10_Cold_Website_Decutm_content=Order_Management
+utm_source=Facebook&utm_medium=Website&utm_campaign=10_Cold_Website_Dec&utm_content=Excel_Upload
+utm_source=Facebook&utm_medium=Website&utm_campaign=10_Cold_Website_Dec&utm_content=Courier_Sync_2

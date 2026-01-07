@@ -754,7 +754,7 @@ const Header = forwardRef(({ auth }, ref) => {
                     <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
                         <div className="p-6">
                             <div className="mb-6">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Start Your Free Trial</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Start Your Free Trial (30 Days)</h2>
                                 <p className="text-sm text-gray-600">Please provide your details to create your account</p>
                             </div>
 
@@ -974,3 +974,4 @@ const Header = forwardRef(({ auth }, ref) => {
 });
 
 export default Header;
+

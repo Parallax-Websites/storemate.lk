@@ -3,24 +3,11 @@ import { usePricingTranslation } from '@/Utils/pricingTranslations';
 
 const TechnicalFaq = () => {
     const { tPricing } = usePricingTranslation();
-    const [technicalFaq, setTechnicalFaq] = useState(
-        tPricing('technicalFaq.faqs').map((faq, index) => ({
-            question: faq.question,
-            answer: faq.answer,
-            open: false
-        }))
-    );
+    const faqs = tPricing('technicalFaq.faqs');
+    const [openIndex, setOpenIndex] = useState(null);
 
     const toggleTechnicalFaq = (index) => {
-        setTechnicalFaq(technicalFaq.map((item, i) => {
-            if (i === index) {
-                item.open = !item.open;
-            } else {
-                item.open = false;
-            }
-
-            return item;
-        }));
+        setOpenIndex(openIndex === index ? null : index);
     }
 
     return (
@@ -52,17 +39,17 @@ const TechnicalFaq = () => {
                 </div>
 
                 <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
-                    {technicalFaq.map((item, index) => (
+                    {faqs.map((item, index) => (
                         <div key={index} className="transition-all duration-200 bg-white border-2 border-gray-200 rounded-2xl cursor-pointer hover:border-blue-200 hover:shadow-lg">
                             <button type="button" className="flex items-center justify-between w-full px-6 py-6 sm:p-8" onClick={() => toggleTechnicalFaq(index)}>
                                 <span className="flex text-lg font-semibold text-gray-900 text-left"> {item.question} </span>
 
-                                <svg className={`w-6 h-6 text-gray-400 transition-transform duration-200 flex-shrink-0 ml-4 ${item.open ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className={`w-6 h-6 text-gray-400 transition-transform duration-200 flex-shrink-0 ml-4 ${openIndex === index ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
 
-                            <div className={`${item.open ? 'block' : 'hidden'} px-6 pb-6 sm:px-8 sm:pb-8`}>
+                            <div className={`${openIndex === index ? 'block' : 'hidden'} px-6 pb-6 sm:px-8 sm:pb-8`}>
                                 <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.answer }}></div>
                             </div>
                         </div>
