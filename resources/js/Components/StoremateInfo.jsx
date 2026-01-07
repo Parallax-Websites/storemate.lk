@@ -42,7 +42,7 @@ export default function StoremateInfo() {
                         </Link>
                     </div>
 
-                    {/* Right Content - Partner Program Card */}
+                    {/* Right Content -Partner Program Card */}
                     <div className={`relative transition-all duration-1200 delay-600 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
                         <div className="rounded-2xl p-6 text-white hover:scale-110 hover:shadow-2xl hover:-translate-y-2 hover:rotate-1 transition-all duration-700 group/card cursor-pointer" style={{backgroundColor: '#ff7535ff'}}>
                             <div className="flex items-start justify-between mb-4">
