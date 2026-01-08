@@ -10,12 +10,12 @@ export const shippingTranslations = {
         },
         title: {
             en: 'Seamless integrations from checkout to doorstep',
-            si: 'ගෙවීමේ සිට දොරකඩ දක්වා බාධාවකින් තොර ඒකාබද්ධතා',
+            si: 'Checkout එකේ සිට Doorstep එක දක්වා සියලුම පියවර එකිනෙකට සම්බන්ධ කරගන්න.',
             ta: 'செக்அவுட்டிலிருந்து வீட்டு வாசல் வரை தடையற்ற ஒருங்கிணைப்புகள்'
         },
         description: {
             en: 'Save time and reduce errors by automatically syncing orders to your courier partner\'s portal. Experience zero manual entry and bulk processing capabilities for efficient shipping management.',
-            si: 'ඔබේ කුරියර් හවුල්කරුගේ ද්වාරයට ඇණවුම් ස්වයංක්‍රීයව සමමුහුර්ත කිරීමෙන් කාලය ඉතිරි කර දෝෂ අඩු කරන්න. කාර්යක්ෂම නැව්ගත කිරීම් කළමනාකරණය සඳහා ශුන්‍ය අතින් ඇතුල් කිරීම සහ තොග සැකසුම් හැකියාවන් අත්විඳින්න.',
+            si: 'Orders ස්වයංක්‍රීයව ඔබේ Courier Portal එකට Sync කර කාලය ඉතිරි කරගන්න. කිසිදු manual entry එකක් නොමැතිව, ඉතා වේගයෙන් Bulk processing හරහා ඔබේ සියලුම Deliveries පහසුවෙන් කළමනාකරණය කරන්න.',
             ta: 'உங்கள் கூரியர் பங்காளியின் போர்ட்டலுடன் ஆர்டர்களை தானாகவே ஒத்திசைப்பதன் மூலம் நேரத்தை மிச்சப்படுத்தி பிழைகளைக் குறைக்கவும். திறமையான ஷிப்பிங் மேலாண்மைக்காக பூஜ்ஜிய கையேடு நுழைவு மற்றும் மொத்த செயலாக்க திறன்களை அனுபவிக்கவும்.'
         },
         features: {
@@ -32,7 +32,7 @@ export const shippingTranslations = {
         },
         startFreeTrial: {
             en: 'Start a Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීමක් ආරම්භ කරන්න',
+            si: 'නොමිලේ අත්හදා බලන්න',
             ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
         },
         howItWorks: {
@@ -56,36 +56,36 @@ export const shippingTranslations = {
         },
         title: {
             en: 'Boost Your Shipping Efficiency',
-            si: 'ඔබේ නැව්ගත කිරීමේ කාර්යක්ෂමතාව වැඩි දියුණු කරන්න',
+            si: 'ඔබේ Shipping කටයුතු වඩාත් කාර්යක්ෂම කරගන්න',
             ta: 'உங்கள் ஷிப்பிங் திறனை அதிகரிக்கவும்'
         },
         description: {
             en: 'Automate order processing, reduce errors, and scale effortlessly without extra staff',
-            si: 'ඇණවුම් සැකසුම ස්වයංක්‍රීය කරන්න, දෝෂ අඩු කරන්න සහ අමතර කාර්ය මණ්ඩලයකින් තොරව ප්‍රයත්නයකින් තොරව පරිමාණය කරන්න',
+            si: 'Order processing ස්වයංක්‍රීය කර, වැරදි අවම කරගන්න. අමතර සේවකයන් අවශ්‍ය නොවී ඔබේ ව්‍යාපාරය ඉතා පහසුවෙන් වර්ධනය (Scale) කරගන්න.',
             ta: 'ஆர்டர் செயலாக்கத்தை தானியங்கமாக்கவும், பிழைகளைக் குறைக்கவும், கூடுதல் ஊழியர்கள் இல்லாமல் சாவகாசமாக அளவிடவும்'
         },
         features: {
             effortlessOrderUploads: {
                 title: {
                     en: 'Effortless Order Uploads',
-                    si: 'ප්‍රයත්නයකින් තොර ඇණවුම් උඩුගත කිරීම්',
+                    si: 'පහසුවෙන් orders Upload කරන්න',
                     ta: 'எளிதான ஆர்டர் அப்லோடுகள்'
                 },
                 description: {
                     en: 'Save 5+ hours daily on manual order upload to courier portal',
-                    si: 'කුරියර් ද්වාරයට අතින් ඇණවුම් උඩුගත කිරීම සඳහා දිනකට පැය 5+ ඉතිරි කරන්න',
+                    si: 'Courier portal එකට manual order upload කිරීම සඳහා දිනකට වැය වන පැය 5කට වඩා වැඩි කාලයක් ඉතුරු කරගන්න.',
                     ta: 'கூரியர் போர்ட்டலுக்கு கையேடு ஆர்டர் அப்லோடில் தினசரி 5+ மணிநேரங்களை சேமிக்கவும்'
                 }
             },
             lightningFastProcessing: {
                 title: {
                     en: 'Lightning-Fast Order Processing',
-                    si: 'අකුණු වේගයේ ඇණවුම් සැකසුම',
+                    si: 'ගවත්ව orders process කරන්න',
                     ta: 'மின்னல் வேகமான ஆர்டர் செயலாக்கம்'
                 },
                 description: {
                     en: 'Process 10x more orders in the same time',
-                    si: 'එකම කාලය තුළ ගුණයකින් 10 වැඩි ඇණවුම් සකසන්න',
+                    si: 'Storemate OMS මගින් එකම වේලාවේදි සාමාන්‍යයෙන් කරනවාට වඩා 10x  ගුණයකින් වැඩියෙන් Orders Process කරන්න.',
                     ta: 'அதே நேரத்தில் 10 மடங்கு அதிகமான ஆர்டர்களைச் செயலாக்கவும்'
                 }
             },
@@ -97,19 +97,19 @@ export const shippingTranslations = {
                 },
                 description: {
                     en: 'Reduce shipping errors by 90%',
-                    si: 'නැව්ගත කිරීමේ දෝෂ 90%කින් අඩු කරන්න',
+                    si: 'Storemate OMS මගින් Shipping දෝෂ 90%කටත් වඩා අඩු කරමින්, ඔබේ කාලයත් මුදලුත් ඉතිරි කරගන්න.',
                     ta: 'ஷிப்பிங் பிழைகளை 90% குறைக்கவும்'
                 }
             },
             scalableOrderManagement: {
                 title: {
                     en: 'Scalable Order Management',
-                    si: 'පරිමාණ කළ හැකි ඇණවුම් කළමනාකරණය',
+                    si: 'Orders පහසුවෙන් Manage කරන්න',
                     ta: 'அளவிடக்கூடிய ஆர்டர் மேலாண்மை'
                 },
                 description: {
                     en: 'Handle more orders without extra staff',
-                    si: 'අමතර කාර්ය මණ්ඩලයකින් තොරව වැඩි ඇණවුම් හසුරුවන්න',
+                    si: 'දැන් Storemate OMS සමග අමතර සේවකයන් නැතිවම වැඩි Orders ප්‍රමාණයක් හසුරුවන්න ඔබටත් පුලුවන්.',
                     ta: 'கூடுதல் ஊழியர்கள் இல்லாமல் அதிக ஆர்டர்களைக் கையாளவும்'
                 }
             }
@@ -138,18 +138,18 @@ export const shippingTranslations = {
         title: {
             part1: {
                 en: 'One-click courier sync',
-                si: 'එක ක්ලික් එකෙන්',
+                si: 'ඔබේ Courier Company',
                 ta: 'ஒரே கிளிக் கூரியர்'
             },
             part2: {
                 en: 'to your courier',
-                si: 'කුරියර් වෙත සමමුහුර්තකරණය',
+                si: 'එක සමඟ One-Click Sync වන්න',
                 ta: 'கூரியர் ஒத்திசைவு'
             }
         },
         description: {
             en: 'Streamline your shipping process with seamless courier integration. Upload orders instantly without manual data entry, generate waybills automatically, and track shipments in real-time.',
-            si: 'බාධාවකින් තොර කුරියර් ඒකාග්‍රකරණය සමඟ ඔබේ නැව්ගත කිරීමේ ක්‍රියාවලිය ප්‍රවාහිත කරන්න. අතින් දත්ත ඇතුල් කිරීමකින් තොරව ඇණවුම් ක්ෂණිකව උඩුගත කරන්න, මාර්ග බිල්පත් ස්වයංක්‍රීයව ජනනය කරන්න සහ තත්ව කාලීනව නැව්ගත කිරීම් ලුහුබඳින්න.',
+            si: 'Courier integration හරහා ඔබේ Shipping කටයුතු වඩාත් සරල කරගන්න. Manual data entry රහිතව Orders එසැණින් Upload කර, Waybills ස්වයංක්‍රීයව සකසා ගන්න. එමෙන්ම Shipments සියල්ල එසැණින් (Real-time) Track කරන්න.',
             ta: 'தடையற்ற கூரியர் ஒருங்கிணைப்புடன் உங்கள் ஷிப்பிங் செயல்முறையை நெறிப்படுத்துங்கள். கையேடு டேட்டா நுழைவு இல்லாமல் ஆர்டர்களை உடனடியாக அப்லோட் செய்யுங்கள், வேபில்களை தானாகவே உருவாக்குங்கள், மற்றும் ஷிப்மென்ட்களை நிகழ்நேரத்தில் கண்காணிக்கவும்.'
         },
         stats: {
@@ -212,18 +212,18 @@ export const shippingTranslations = {
         title: {
             part1: {
                 en: 'View real-time',
-                si: 'තත්ව කාලීන',
+                si: 'Real-Time Sync',
                 ta: 'நிகழ்நேர'
             },
             part2: {
                 en: 'sync status',
-                si: 'සමමුහුර්ත තත්ත්වය බලන්න',
+                si: 'status නිරික්ෂණය කරන්න',
                 ta: 'ஒத்திசைவு நிலையைப் பார்க்கவும்'
             }
         },
         description: {
             en: 'Monitor synchronization status between your orders and courier systems. Get instant notifications about successful syncs, failed uploads, and shipping updates to maintain complete visibility over your logistics operations.',
-            si: 'ඔබේ ඇණවුම් සහ කුරියර් පද්ධති අතර සමමුහුර්තකරණ තත්ත්වය නිරීක්ෂණය කරන්න. ඔබේ සැපයුම් මෙහෙයුම් මත සම්පූර්ණ දෘශ්‍යතාව පවත්වා ගැනීම සඳහා සාර්ථක සමමුහුර්තකරණයන්, අසාර්ථක උඩුගත කිරීම් සහ නැව්ගත කිරීමේ යාවත්කාලීන පිළිබඳ ක්ෂණික දැනුම්දීම් ලබා ගන්න.',
+            si: 'ඔබේ Orders සහ Courier පද්ධති අතර සම්බන්ධතාවය (Sync status) නිරීක්ෂණය කරන්න. සාර්ථක වූ Syncs, වැරදුණු Uploads සහ Shipping updates පිළිබඳව එසැණින් දැනුම්දීම් ලබාගෙන, ඔබේ Logistics කටයුතු පිළිබඳ පූර්ණ අවබෝධයක් පවත්වා ගන්න.',
             ta: 'உங்கள் ஆர்டர்கள் மற்றும் கூரியர் அமைப்புகளுக்கு இடையில் ஒத்திசைவு நிலையைக் கண்காணிக்கவும். உங்கள் லாஜிஸ்டிக்ஸ் செயல்பாடுகளில் முழுமையான தெரிவுநிலையைப் பராமரிக்க வெற்றிகரமான ஒத்திசைவுகள், தோல்வியுற்ற அப்லோடுகள் மற்றும் ஷிப்பிங் புதுப்பிப்புகள் பற்றிய உடனடி அறிவிப்புகளைப் பெறுங்கள்.'
         },
         stats: {
@@ -286,18 +286,18 @@ export const shippingTranslations = {
         title: {
             part1: {
                 en: 'Print waybills',
-                si: 'මාර්ග බිල්පත්',
+                si: 'ක්ෂණිකව Waybills',
                 ta: 'வேபில்களை'
             },
             part2: {
                 en: 'instantly',
-                si: 'ක්ෂණිකව මුද්‍රණය කරන්න',
+                si: 'Print කරන්න',
                 ta: 'உடனடியாக அச்சிடுங்கள்'
             }
         },
         description: {
             en: 'Generate and print professional waybills instantly with automated order information. Support for multiple courier formats, batch printing capabilities, and customizable templates to streamline your shipping workflow.',
-            si: 'ස්වයංක්‍රීය ඇණවුම් තොරතුරු සමඟ වෘත්තීය මාර්ග බිල්පත් ක්ෂණිකව ජනනය කර මුද්‍රණය කරන්න. ඔබේ නැව්ගත කිරීමේ කාර්ය ප්‍රවාහය ප්‍රවාහිත කිරීම සඳහා බහු කුරියර් ආකෘති, තොග මුද්‍රණ හැකියාවන් සහ අභිරුචිකරණය කළ හැකි සැකිලි සඳහා සහාය.',
+            si: 'ඇණවුම් විස්තර ඇසුරින් Professional Waybills එකක් එසැණින් සකසා Print කරගන්න. විවිධ Courier ආකෘතීන් (Formats), Batch printing පහසුකම සහ ඔබේ අවශ්‍යතාවයට අනුව වෙනස් කළ හැකි Templates හරහා Shipping කටයුතු වඩාත් විධිමත් කරගන්න.',
             ta: 'தானியங்கு ஆர்டர் தகவலுடன் தொழில்முறை வேபில்களை உடனடியாக உருவாக்கி அச்சிடுங்கள். பல கூரியர் வடிவங்கள், தொகுப்பு அச்சிடும் திறன்கள் மற்றும் உங்கள் ஷிப்பிங் பணிப்பாய்வை நெறிப்படுத்த தனிப்பயனாக்கக்கூடிய டெம்ப்ளேட்களுக்கான ஆதரவு.'
         },
         stats: {
@@ -360,18 +360,18 @@ export const shippingTranslations = {
         title: {
             part1: {
                 en: 'Track package status',
-                si: 'පැකේජ තත්ත්වය',
+                si: 'Package එකේ සෑම',
                 ta: 'பேக்கேஜ் நிலையை'
             },
             part2: {
                 en: 'at every step',
-                si: 'සෑම පියවරකදීම ලුහුබඳින්න',
+                si: 'පියවරක්ම Track කරන්න',
                 ta: 'ஒவ்வொரு படியிலும் கண்காணிக்கவும்'
             }
         },
         description: {
             en: 'Comprehensive package tracking with detailed status updates at every milestone. Monitor pickup, transit, out for delivery, and completion status with automated customer notifications and delivery confirmations.',
-            si: 'සෑම සන්ධිස්ථානයකදීම විස්තරාත්මක තත්ත්ව යාවත්කාලීන කිරීම් සමඟ විස්තීර්ණ පැකේජ ලුහුබැඳීම. ස්වයංක්‍රීය පාරිභෝගික දැනුම්දීම් සහ බෙදා හැරීමේ තහවුරු කිරීම් සමඟ ගන්නා ලද, සංක්‍රමණ, බෙදා හැරීම සඳහා පිටවීම සහ සම්පූර්ණ කිරීමේ තත්ත්වය නිරීක්ෂණය කරන්න.',
+            si: 'සෑම වැදගත් පියවරකදීම විස්තරාත්මක Status Updates සමඟින් පැකේජය Track කරන්න. Pickup, Transit සහ Delivery පියවරයන් නිරීක්ෂණය කරන අතරම, Automated Notifications හරහා පාරිභෝගිකයා දැනුවත් කිරීම සහ Delivery Confirmations ලබා ගැනීම සිදු කළ හැකිය.',
             ta: 'ஒவ்வொரு மைல்கல்லிலும் விரிவான நிலை புதுப்பிப்புகளுடன் விரிவான பேக்கேஜ் கண்காணிப்பு. தானியங்கு வாடிக்கையாளர் அறிவிப்புகள் மற்றும் டெலிவரி உறுதிப்படுத்தல்களுடன் பிக்அப், டிரான்சிட், டெலிவரிக்காக வெளியே மற்றும் நிறைவு நிலையைக் கண்காணிக்கவும்.'
         },
         stats: {
@@ -434,18 +434,18 @@ export const shippingTranslations = {
         title: {
             part1: {
                 en: 'Monitor delivery status',
-                si: 'බෙදා හැරීමේ තත්ත්වය',
+                si: 'Delivery status සහ ',
                 ta: 'டெலிவரி நிலையை'
             },
             part2: {
                 en: 'and performance',
-                si: 'සහ කාර්ය සාධනය නිරීක්ෂණය කරන්න',
+                si: 'ක්‍රියාකාරීත්වය නිරීක්ෂණය කරන්න',
                 ta: 'மற்றும் செயல்திறனைக் கண்காணிக்கவும்'
             }
         },
         description: {
             en: 'Advanced delivery monitoring with comprehensive analytics and performance metrics. Track delivery success rates, identify bottlenecks, and optimize your shipping operations with data-driven insights.',
-            si: 'විස්තීර්ණ විශ්ලේෂණ සහ කාර්ය සාධන මිනුම් සමඟ උසස් බෙදා හැරීම් නිරීක්ෂණය. බෙදා හැරීමේ සාර්ථකත්ව අනුපාත ලුහුබඳින්න, බාධක හඳුනා ගන්න සහ දත්ත-ප්‍රේරිත තීක්ෂ්ණ බුද්ධි සමඟ ඔබේ නැව්ගත කිරීමේ මෙහෙයුම් ප්‍රශස්ත කරන්න.',
+            si: 'විස්තරාත්මක දත්ත (Analytics) සහ Performance මිනුම් දඬු සමඟින් උසස් Delivery නිරීක්ෂණ පහසුකම් ලබාගන්න. Delivery සාර්ථකත්ව අනුපාතයන් හඳුනාගෙන, දත්ත පදනම් කරගත් තොරතුරු (Data-driven insights) හරහා ඔබේ Shipping කටයුතු තවදුරටත් දියුණු කරන්න.',
             ta: 'விரிவான பகுப்பாய்வு மற்றும் செயல்திறன் அளவீடுகளுடன் மேம்பட்ட டெலிவரி கண்காணிப்பு. டெலிவரி வெற்றி விகிதங்களைக் கண்காணிக்கவும், தடைகளைக் கண்டறியவும், தரவு-உந்துதல் நுண்ணறிவுகளுடன் உங்கள் ஷிப்பிங் செயல்பாடுகளை மேம்படுத்தவும்.'
         },
         stats: {

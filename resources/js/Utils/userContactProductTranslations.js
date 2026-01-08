@@ -11,28 +11,28 @@ export const userContactProductTranslations = {
         title: {
             part1: {
                 en: 'Storemate helps you turn',
-                si: 'ස්ටෝර්මේට් ඔබට',
+                si: 'සෑම Order එකක්ම',
                 ta: 'ஸ்டோர்மேட் உங்களுக்கு'
             },
             part2: {
                 en: 'every inquiry into a',
-                si: 'සෑම විමසුමක්ම',
+                si: 'සාර්ථක විකිණීමක් බවට ',
                 ta: 'ஒவ்வொரு விசாரணையையும்'
             },
             part3: {
                 en: 'successful sale',
-                si: 'සාර්ථක විකිණීමකට හරවන්න උදව් කරයි',
+                si: 'පත් කරගැනීමට Storemate ඔබට උදවු වෙයි',
                 ta: 'வெற்றிகரமான விற்பனையாக மாற்ற உதவுகிறது'
             }
         },
         description: {
             en: 'Manage customers, products, and inquiries effortlessly with our comprehensive system designed to boost your sales performance.',
-            si: 'ඔබේ විකිණුම් කාර්ය සාධනය වර්ධනය කිරීම සඳහා නිර්මාණය කර ඇති අපගේ විස්තීර්ණ පද්ධතිය සමඟ පාරිභෝගිකයින්, නිෂ්පාදන සහ විමසුම් පහසුවෙන් කළමනාකරණය කරන්න.',
+            si: 'ඔබේ විකුණුම් ඉලක්ක සපුරා ගැනීම සඳහාම සැකසූ අපගේ පද්ධතිය හරහා පාරිභෝගිකයන්, නිෂ්පාදන සහ Orders ඉතා පහසුවෙන් කළමනාකරණය කරන්න.',
             ta: 'உங்கள் விற்பனை செயல்திறனை மேம்படுத்த வடிவமைக்கப்பட்ட எங்கள் விரிவான அமைப்புடன் வாடிக்கையாளர்கள், தயාரிப்புகள் மற்றும் விசாரணைகளை எளிதாக நிர்வகிக்கவும்.'
         },
         startFreeTrial: {
             en: 'Start Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීම ආරම්භ කරන්න',
+            si: 'නොමිලේ අත්හදා බලන්න',
             ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
         },
         watchDemo: {
@@ -56,12 +56,12 @@ export const userContactProductTranslations = {
         },
         title: {
             en: 'All-in-One Management Solution',
-            si: 'සියල්ලම-එකම තැනක කළමනාකරණය',
+            si: 'සියල්ලම-එකම තැනක Manage කරන්න',
             ta: 'அனைத்தும் ஒரே இடத்தில் மேலாண்மை தீர்வு'
         },
         description: {
             en: 'Streamline your business operations with integrated user, contact, and product management tools',
-            si: 'ඒකාගත පරිශීලක, සම්බන්ධතා සහ නිෂ්පාදන කළමනාකරණ මෙවලම් සමඟ ඔබේ ව්‍යාපාරික මෙහෙයුම් ප්‍රවාහිත කරන්න',
+            si: 'පරිශීලකයින් (Users), සම්බන්ධතා (Contacts) සහ නිෂ්පාදන කළමනාකරණ මෙවලම් එකම පද්ධතියකට සම්බන්ධ කිරීමෙන් ඔබේ ව්‍යාපාරික කටයුතු වඩාත් විධිමත් කරගන්න.',
             ta: 'ஒருங்கிணைந்த பயனர், தொடர்பு மற்றும் தயாரிப்பு மேலாண்மை கருவிகளுடன் உங்கள் வணிக செயல்பாடுகளை நெறிப்படுத்துங்கள்'
         },
         userManagement: {
@@ -72,8 +72,8 @@ export const userContactProductTranslations = {
             },
             description: {
                 en: 'Create and manage user accounts effortlessly. Assign roles and permissions to streamline team responsibilities.',
-                si: 'පරිශීලක ගිණුම් පහසුවෙන් සාදන්න සහ කළමනාකරණය කරන්න. කණ්ඩායම් වගකීම් ප්‍රවාහිත කිරීම සඳහා භූමිකාවන් සහ අවසර පවරන්න.',
-                ta: 'பயனர் கணக்குகளை எளிதாக உருவாக்கி நிர්வகிக்கவும். குழு பொறுப்புகளை நெறிப்படுத்த பாத்திரங்கள் மற்றும் அனுமதிகளை ஒதுக்குங்கள்.'
+                si: 'User accounts ඉතා පහසුවෙන් සකසා කළමනාකරණය කරන්න. Team Responsibilities බෙදා දීම සඳහා විවිධ මට්ටමේ Roles and permissions ලබා දෙන්න',
+                ta: 'பயனர் கணக்குகளை எளிதாக உருவாக்கி நிர்வகிக்கவும். குழு பொறுப்புகளை நெறிப்படுத்த பாத்திரங்கள் மற்றும் அனுமதிகளை ஒதுக்குங்கள்.'
             }
         },
         productManagement: {
@@ -84,7 +84,7 @@ export const userContactProductTranslations = {
             },
             description: {
                 en: 'Add items with details like categories, brands, and quantities. Stay organized with a clean and searchable product database.',
-                si: 'කාණ්ඩ, නිෂ්පාදන සහ ප්‍රමාණ වැනි විස්තර සමඟ අයිතම එකතු කරන්න. පිරිසිදු සහ සෙවිය හැකි නිෂ්පාදන දත්ත සමුදායක් සමඟ සංවිධානයෙන් සිටින්න.',
+                si: 'Categories, Brands සහ Quantities වැනි විස්තර සහිතව භාණ්ඩ ඇතුළත් කරන්න. ඕනෑම දෙයක් ඉක්මනින් සෙවිය හැකි (Searchable) පිරිසිදු Product database එකක්.',
                 ta: 'வகைகள், பிராண்டுகள் மற்றும் அளவுகள் போன்ற விவரங்களுடன் பொருட்களை சேர்க்கவும். சுத்தமான மற்றும் தேடக்கூடிய தயாரிப்பு தரவுத்தளத்துடன் ஒழுங்கமைக்கப்பட்டிருங்கள்.'
             }
         },
@@ -96,9 +96,25 @@ export const userContactProductTranslations = {
             },
             description: {
                 en: 'Store customer details, track interactions, and maintain a comprehensive contact database for better relationship management.',
-                si: 'පාරිභෝගික විස්තර ගබඩා කරන්න, අන්තර්ක්‍රියා ලුහුබඳින්න සහ වඩා හොඳ සම්බන්ධතා කළමනාකරණය සඳහා විස්තීර්ණ සම්බන්ධතා දත්ත සමුදායක් පවත්වා ගන්න.',
+                si: 'පාරිභෝගික විස්තර Save කරගන්න, එක් එක් පාරිභෝගිකයාගේ ගණුදෙනු Save කිරීමට සහ නිරීක්ෂණය කිරීම සදහා Contact database එකක් පවත්වාගෙන යන්න.',
                 ta: 'வாடிக்கையாளர் விவரங்களை சேமிக்கவும், இடைவினைகளை கண்காணிக்கவும், சிறந்த உறவு மேலாண்மைக்காக விரිவான தொடர்பு தரவுத்தளத்தை பராமரிக்கவும்.'
+            }        },
+        easyOrganization: {
+            title: {
+                en: 'Easy Organization',
+                si: 'පහසු සංවිධානය',
+                ta: 'எளிய அமைப்பு'
+            },
+            description: {
+                en: 'Navigate your data with smart sorting and filtering tools. Locate users, products, or contacts instantly with precision.',
+                si: 'Smart sorting සහ filtering tools මගින් ඔබේ data search කිරීම. Users, products, හෝ contacts නිවරදිව ක්ෂණිකව සොයා ගන්න.',
+                ta: 'ஸ்மார்ட் வரிசைப்படுத்தல் மற்றும் வடிகட்டுதல் கருவிகளுடன் உங்கள் தரவை வழிநடத்துங்கள். பயனர்கள், தயாரிப்புகள் அல்லது தொடர்புகளை துல்லியமாக உடனடியாக கண்டறியுங்கள்.'
             }
+        },
+        knowMore: {
+            en: 'Know More',
+            si: 'වැඩිදුර දැනගන්න',
+            ta: 'மேலும் அறிய'
         }
     },
 
@@ -119,7 +135,7 @@ export const userContactProductTranslations = {
         title: {
             part1: {
                 en: 'Streamlined',
-                si: 'ප්‍රවාහිත',
+                si: 'විධිමත්',
                 ta: 'நெறிப்படுத்தப்பட்ட'
             },
             part2: {
@@ -130,7 +146,7 @@ export const userContactProductTranslations = {
         },
         description: {
             en: 'Create and manage user accounts with role-based permissions. Assign team responsibilities and track user activities with comprehensive user management tools.',
-            si: 'භූමිකා-පාදක අවසර සමඟ පරිශීලක ගිණුම් සාදන්න සහ කළමනාකරණය කරන්න. කණ්ඩායම් වගකීම් පවරන්න සහ විස්තීර්ණ පරිශීලක කළමනාකරණ මෙවලම් සමඟ පරිශීලක ක්‍රියාකාරකම් ලුහුබඳින්න.',
+            si: 'විවිධ අවසරයන් (Permissions) සහිතව පරිශීලක ගිණුම් සකසා කළමනාකරණය කරන්න. කණ්ඩායමේ වගකීම් පවරන්න, සහ පරිශීලක ක්‍රියාකාරකම් (User activities) නිරීක්ෂණය කිරීම සඳහා පූර්ණ කළමනාකරණ මෙවලම් භාවිතා කරන්න.',
             ta: 'பாத்திர அடிப்படையிலான அனுமதிகளுடன் பயனர் கணக்குகளை உருவாக்கி நிர்வகிக்கவும். குழு பொறுப்புகளை ஒதுக்கி, விரிவான பயனர் மேலாண்மை கருவிகளுடன் பயனர் செயல்பாடுகளை கண்காணிக்கவும்.'
         },
         stats: {
@@ -193,18 +209,18 @@ export const userContactProductTranslations = {
         title: {
             part1: {
                 en: 'Advanced product',
-                si: 'උසස් නිෂ්පාදන',
+                si: 'ක්ෂණිකව නිෂ්පාදන ',
                 ta: 'மேம்பட்ட தயாරிப்பு'
             },
             part2: {
                 en: 'catalog management',
-                si: 'නාමාවලි කළමනාකරණය',
+                si: 'නාමාවලි (Catalog) කළමනාකරණය',
                 ta: 'பட்டியல் மேலாண்மை'
             }
         },
         description: {
             en: 'Organize your inventory with detailed product information, categories, brands, and stock levels. Maintain a comprehensive product database with search and filter capabilities.',
-            si: 'විස්තරාත්මක නිෂ්පාදන තොරතුරු, කාණ්ඩ, නිෂ්පාදන සහ තොග මට්ටම් සමඟ ඔබේ ඉන්වෙන්ටරිය සංවිධානය කරන්න. සෙවුම් සහ පෙරහන් හැකියාවන් සමඟ විස්තීර්ණ නිෂ්පාදන දත්ත සමුදායක් පවත්වා ගන්න.',
+            si: 'නිෂ්පාදන විස්තර, Categories, Brands සහ තොග මට්ටම් (Stock levels) සමඟින් ඔබේ ඉන්වෙන්ටරිය විධිමත්ව පවත්වා ගන්න. සෙවීමේ සහ පෙරීමේ (Search and filter) පහසුකම් සහිත පූර්ණ නිෂ්පාදන දත්ත ගබඩාවක් පවත්වාගෙන යන්න.',
             ta: 'விரிவான தயாரிப்பு தகவல், வகைகள், பிராண்டுகள் மற்றும் பங்கு நிலைகளுடன் உங்கள் சரக்குகளை ஒழுங்கமைக்கவும். தேடல் மற்றும் வடிகட்டி திறன்களுடன் விரிவான தயாரிப்பு தரவுத்தளத்தை பராமரிக்கவும்.'
         },
         stats: {
@@ -267,18 +283,18 @@ export const userContactProductTranslations = {
         title: {
             part1: {
                 en: 'Smart contact',
-                si: 'ස්මාර්ට් සම්බන්ධතා',
+                si: 'Smart පාරිභෝගික',
                 ta: 'ஸ்மார்ட் தொடர்பு'
             },
             part2: {
                 en: 'relationship management',
-                si: 'සම්බන්ධතා කළමනාකරණය',
+                si: 'සම්බන්ධතා කළමනාකරණ පහසුකම්',
                 ta: 'உறவு மேலாண்மை'
             }
         },
         description: {
             en: 'Build stronger customer relationships with comprehensive contact management. Track interactions, manage communications, and maintain detailed customer profiles for personalized service.',
-            si: 'විස්තීර්ණ සම්බන්ධතා කළමනාකරණය සමඟ ශක්තිමත් පාරිභෝගික සම්බන්ධතා ගොඩනගන්න. අන්තර්ක්‍රියා ලුහුබඳින්න, සන්නිවේදනයන් කළමනාකරණය කරන්න සහ පුද්ගලීකරණය කළ සේවාව සඳහා විස්තරාත්මක පාරිභෝගික පැතිකඩ පවත්වා ගන්න.',
+            si: 'විස්තරාත්මක Customer Management පහසුකම් හරහා වඩාත් ශක්තිමත් සබඳතා ගොඩනගා ගන්න. පාරිභෝගික ගනුදෙනු (Interactions) නිරීක්ෂණය කරමින් සහ සන්නිවේදන කටයුතු හසුරුවමින්, වඩාත් පෞද්ගලික මට්ටමේ සේවාවක් (Personalized service) ලබා ගන්න.',
             ta: 'விரிவான தொடர்பு மேலாண்மையுடன் வலுவான வாடிக்கையாளர் உறவுகளை உருவாக்குங்கள். இடைவினைகளை கண்காணித்து, தகவல்தொடர்புகளை நிர்வகித்து, தனிப்பயனாக்கப்பட்ட சேவைக்காக விரிவான வாடிக்கையாளர் சுயவிவரங்களை பராமரிக்கவும்.'
         },
         stats: {
@@ -346,14 +362,14 @@ export const userContactProductTranslations = {
             },
             part2: {
                 en: 'powerful results',
-                si: 'ශක්තිමත් ප්‍රතිඵල',
+                si: '- ප්‍රබල ප්‍රතිඵල',
                 ta: 'சக்திவாய்ந்த முடிவுகள்'
             }
         },
         description: {
-            en: 'Simplify your business operations with intuitive tools that deliver powerful results. From user management to product catalogs, everything works together seamlessly.',
-            si: 'ශක්තිමත් ප්‍රතිඵල ලබා දෙන බුද්ධිමත් මෙවලම් සමඟ ඔබේ ව්‍යාපාරික මෙහෙයුම් සරල කරන්න. පරිශීලක කළමනාකරණයේ සිට නිෂ්පාදන නාමාවලි දක්වා, සියල්ල බාධාවකින් තොරව එකට ක්‍රියා කරයි.',
-            ta: 'சக்திவாய்ந்த முடிவுகளை வழங்கும் உள்ளுணர்வு கருவிகளுடன் உங்கள் வணிக செயல்பாடுகளை எளிமையாக்குங்கள். பயனர் மேலாண்மையிலிருந்து தயாரிப்பு பட்டியல்கள் வரை, எல்லாம் தடையின்றி ஒன்றாக வேலை செய்கிறது.'
+            en: 'Navigate your data with smart sorting and filtering tools. Locate users, products, or contacts instantly with precision.',
+            si: 'ප්‍රබල ප්‍රතිඵල ලබා දෙන Simple Tools භාවිතයෙන් ඔබේ ව්‍යාපාරික කටයුතු පහසු කරගන්න. Customer Management සිට Products, Brands (Product catalogs) දක්වා සියල්ල එකිනෙක හා ක්ෂණිකව සම්බන්ධ වී ක්‍රියා කරයි.',
+            ta: 'ஸ்மார்ட் வரிசைப்படுத்தல் மற்றும் வடிகட்டுதல் கருவிகளுடன் உங்கள் தரவை வழிநடத்துங்கள். பயனர்கள், தயாரிப்புகள் அல்லது தொடர்புகளை துல்லியமாக உடனடியாக கண்டறியுங்கள்.'
         },
         stats: {
             efficiency: {

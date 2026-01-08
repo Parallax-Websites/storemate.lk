@@ -10,17 +10,17 @@ export const inquiryTranslations = {
         },
         title: {
             en: 'Streamline Your Customer Inquiries',
-            si: 'ඔබේ Customer Inquiries පහසු කරන්න',
+            si: 'ඔබේ Customer Inquiries පහසුවෙන් කළමනාකරණය කරන්න',
             ta: 'உங்கள் வாடிக்கையாளர் விசாரணைகளை நெறிப்படுத்துங்கள்'
         },
         description: {
             en: 'Transform how you handle customer inquiries with our powerful inquiry management system. Capture, organize, and convert inquiries into sales effortlessly while never missing a potential customer.',
-            si: 'අපේ Powerful Inquiry Management System එකෙන් ඔබ Customer Inquiries handle කරන විදිය වෙනස් කරන්න. Inquiries සටහන් කරලා, සංවිධානය  කරලා, කිසිම Customer කෙනෙක් Miss නොවී, ඒවා පහසුවෙන් Sales බවට Convert කරන්න පුළුවන්.',
+            si: 'අපගේ Inquiry Management System එක හරහා Customer Inquiries හසුරුවන ආකාරය සම්පූර්ණයෙන්ම වෙනස් කරගන්න. කිසිම පාරිභෝගිකයෙකු හෝ Miss නොකර, ලැබෙන සෑම Inquiry එකක්ම ඉතා පහසුවෙන් Sales බවට පත් කරගන්න.',
             ta: 'எங்கள் சக்திவாய்ந்த விசாரணை மேலாண்மை அமைப்புடன் வாடிக்கையாளர் விசாரணைகளை நீங்கள் கையாளும் விதத்தை மாற்றுங்கள். சாத்தியமான வாடிக்கையாளரை ஒருபோதும் தவறவிடாமல் விசாரணைகளைப் பிடிக்கவும், ஒழுங்கமைக்கவும், விற்பனையாக மாற்றவும்.'
         },
         startFreeTrial: {
             en: 'Start a Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීමක් ආරම්භ කරන්න',
+            si: 'නොමිලේ අත්හදා බැලන්න',
             ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
         },
         howItWorks: {

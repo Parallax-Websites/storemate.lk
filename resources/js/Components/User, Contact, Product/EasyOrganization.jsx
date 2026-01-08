@@ -120,7 +120,7 @@ export default function EasyOrganization() {
                 style={{color: '#006daf'}}
                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                <span>Know more</span>
+                <span>{tUserContactProduct('easyOrganization.knowMore')}</span>
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

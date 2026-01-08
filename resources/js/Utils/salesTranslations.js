@@ -11,23 +11,23 @@ export const salesTranslations = {
         title: {
             part1: {
                 en: 'Keep track of all your orders from',
-                si: 'ඔබේ සියලුම ඇණවුම් තහවුරු කිරීමේ සිට',
+                si: 'Order එක Confirm කළ මොහොතේ සිට',
                 ta: 'உங்கள் அனைத்து ஆர்டர்களையும் உறுதிப்படுத்தல் முதல்'
             },
             part2: {
                 en: 'confirmation to delivery',
-                si: 'බෙදා හැරීම දක්වා ලුහුබඳින්න',
+                si: 'Delivery කරන තුරුම සියලුම විස්තර පහසුවෙන් Track කරන්න',
                 ta: 'டெலிவரி வரை கண்காணிக்கவும்'
             }
         },
         description: {
             en: 'Track your orders seamlessly from confirmation to delivery, ensuring smooth sales management and timely fulfillment. Monitor order status, manage courier details, and keep customers informed every step of the way.',
-            si: 'තහවුරු කිරීමේ සිට බෙදා හැරීම දක්වා ඔබේ ඇණවුම් බාධාවකින් තොරව ලුහුබඳින්න, සුමට විකුණුම් කළමනාකරණය සහ කාලානුකූල සම්පූර්ණ කිරීම සහතික කරන්න. ඇණවුම් තත්ත්වය නිරීක්ෂණය කරන්න, කුරියර් විස්තර කළමනාකරණය කරන්න සහ සෑම පියවරකදීම පාරිභෝගිකයින්ට දැනුම් දෙන්න.',
+            si: 'Order Confirmation සිට Delivery දක්වා සියලුම අවස්ථා පහසුවෙන් Track කරන්න. Order Status සහ Courier විස්තර පහසුවෙන් Monitor කරමින්, පාරිභෝගිකයාටත් නියමිත වේලාවට Update ලබා දෙන්න.',
             ta: 'உறுதிப்படுத்தல் முதல் டெலிவரி வரை உங்கள் ஆர்டர்களை தடையின்றி கண்காணிக்கவும், மென்மையான விற்பனை மேலாண்மை மற்றும் சரியான நேரத்தில் நிறைவேற்றுவதை உறுதிசெய்யவும். ஆர்டர் நிலையைக் கண்காணிக்கவும், கூரியர் விவரங்களை நிர்வகிக்கவும், ஒவ்வொரு படியிலும் வாடிக்கையாளர்களுக்குத் தெரியப்படுத்துங்கள்.'
         },
         startFreeTrial: {
             en: 'Start a Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීමක් ආරම්භ කරන්න',
+            si: 'නොමිලේ අත්හදා බලන්න',
             ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
         },
         howItWorks: {
@@ -70,31 +70,31 @@ export const salesTranslations = {
                 },
                 description: {
                     en: 'Efficiently manage all your customer orders in one place.',
-                    si: 'ඔබේ සියලුම පාරිභෝගික ඇණවුම් එක ස්ථානයකින් කාර්යක්ෂමව කළමනාකරණය කරන්න.',
+                    si: 'Storemate OMS මගින් ඔබේ සියලුම Customer Orders එකම තැනකින් ඉතා කාර්යක්ෂමව කළමනාකරණය කරන්න.',
                     ta: 'உங்கள் அனைத்து வாடிக்கையாளர் ஆர்டர்களையும் ஒரே இடத்தில் திறம்பட நிர்வகிக்கவும்.'
                 }
             },
             courierTracking: {
                 title: {
                     en: 'Real-Time Courier Status Tracking',
-                    si: 'තත්ව කාලීන කුරියර් තත්ත්ව ලුහුබැඳීම',
+                    si: 'කුරියර් Status Track කරන්න',
                     ta: 'நிகழ்நேர கூரியர் நிலை கண்காணிப்பு'
                 },
                 description: {
                     en: 'Track each order\'s courier and sync status to stay on top of deliveries.',
-                    si: 'බෙදා හැරීම් පිළිබඳව නවතම තොරතුරු ලබා ගැනීම සඳහා සෑම ඇණවුමකම කුරියර් සහ සමමුහුර්ත තත්ත්වය ලුහුබඳින්න.',
+                    si: 'සෑම Order එකකම Courier Status එසැණින් Track කර, Deliveries ගැන නිරන්තරයෙන් දැනුවත් වෙන්න.',
                     ta: 'டெலிவரிகளில் முன்னணியில் இருக்க ஒவ்வொரு ஆர்டரின் கூரியர் மற்றும் ஒத்திசைவு நிலையைக் கண்காணிக்கவும்.'
                 }
             },
             packingProcess: {
                 title: {
                     en: 'Streamlined Packing Process',
-                    si: 'ප්‍රවාහිත ඇසුරුම් ක්‍රියාවලිය',
+                    si: 'විධිමත් Packing Process එකක්',
                     ta: 'நெறிப்படுத்தப்பட்ட பேக்கிங் செயல்முறை'
                 },
                 description: {
                     en: 'Monitor packing progress and ensure timely shipping without delays.',
-                    si: 'ඇසුරුම් ප්‍රගතිය නිරීක්ෂණය කරන්න සහ ප්‍රමාදයකින් තොරව කාලානුකූල නැව්ගත කිරීම සහතික කරන්න.',
+                    si: 'Packing Progress Monitor කරමින්, ප්‍රමාදයකින් තොරව නියමිත වේලාවට Shipping කටයුතු කරන්න.',
                     ta: 'பேக்கிங் முன்னேற்றத்தைக் கண்காணித்து தாமதமின்றி சரியான நேரத்தில் ஷிப்பிங்கை உறுதிசெய்யவும்.'
                 }
             },
@@ -106,7 +106,7 @@ export const salesTranslations = {
                 },
                 description: {
                     en: 'Keep customers informed with up-to-date tracking and delivery status.',
-                    si: 'නවතම ලුහුබැඳීම් සහ බෙදා හැරීමේ තත්ත්වය සමඟ පාරිභෝගිකයින්ට දැනුම් දෙන්න.',
+                    si: 'Tracking සහ Delivery Status පිළිබඳ අලුත්ම විස්තර පාරිභෝගිකයාට ලබා දී Update එකේ තියාගන්න.',
                     ta: 'புதுப்பித்த கண்காணிப்பு மற்றும் டெலிவரி நிலையுடன் வாடிக்கையாளர்களுக்குத் தெரியப்படுத்துங்கள்.'
                 }
             }
@@ -135,18 +135,18 @@ export const salesTranslations = {
         title: {
             part1: {
                 en: 'Manage confirmed orders',
-                si: 'තහවුරු කළ ඇණවුම්',
+                si: 'Confirm කළ Orders',
                 ta: 'உறுதிப்படுத்தப்பட்ட ஆர்டர்களை'
             },
             part2: {
                 en: 'efficiently',
-                si: 'කාර්යක්ෂමව කළමනාකරණය කරන්න',
+                si: ' කාර්යක්ෂමව manage කරන්න',
                 ta: 'திறம்பட நிர්வகிக்கவும்'
             }
         },
         description: {
             en: 'Streamline your order processing workflow with automated confirmation tracking, inventory updates, and seamless coordination between sales and fulfillment teams.',
-            si: 'ස්වයංක්‍රීය තහවුරු කිරීම් ලුහුබැඳීම, ඉන්වෙන්ටරි යාවත්කාලීන කිරීම් සහ විකුණුම් සහ සම්පූර්ණ කිරීමේ කණ්ඩායම් අතර බාධාවකින් තොර සම්බන්ධීකරණය සමඟ ඔබේ ඇණවුම් සැකසුම් කාර්ය ප්‍රවාහය ප්‍රවාහිත කරන්න.',
+            si: 'Confirmation tracking, inventory updates සහ sales/fulfillment කණ්ඩායම් අතර සම්බන්ධීකරණය automate කරමින්, ඔබේ Order Processing කටයුතු වඩාත් සරල සහ වේගවත් කරගන්න.',
             ta: 'தானியங்கு உறுதிப்படுத்தல் கண்காணிப்பு, சரக்கு புதுப்பிப்புகள் மற்றும் விற்பனை மற்றும் நிறைவேற்று குழுக்களுக்கு இடையே தடையற்ற ஒருங்கிணைப்புடன் உங்கள் ஆர்டர் செயலாக்க பணிப்பாய்வை நெறிப்படுத்துங்கள்.'
         },
         stats: {
@@ -209,18 +209,18 @@ export const salesTranslations = {
         title: {
             part1: {
                 en: 'Real-time courier',
-                si: 'තත්ව කාලීන කුරියර්',
+                si: 'Courier sync status',
                 ta: 'நிகழ்நேர கூரியர்'
             },
             part2: {
                 en: 'sync status',
-                si: 'සමමුහුර්ත තත්ත්වය',
+                si: ' එක එසැණින්',
                 ta: 'ஒத்திசைவு நிலை'
             }
         },
         description: {
             en: 'Stay updated with real-time courier integration and sync status. Monitor shipping progress, track delivery updates, and maintain seamless communication with logistics partners.',
-            si: 'තත්ව කාලීන කුරියර් ඒකාග්‍රකරණය සහ සමමුහුර්ත තත්ත්වය සමඟ යාවත්කාලීන වන්න. නැව්ගත කිරීමේ ප්‍රගතිය නිරීක්ෂණය කරන්න, බෙදා හැරීමේ යාවත්කාලීන කිරීම් ලුහුබඳින්න සහ සැපයුම් හවුල්කරුවන් සමඟ බාධාවකින් තොර සන්නිවේදනය පවත්වන්න.',
+            si: 'Real-time courier integration සහ sync status හරහා නිරතුරුවම Update වෙන්න. Shipping progress සහ Delivery updates track කරමින්, ඔබගේ logistics partners සමඟ ඉතා පහසුවෙන් සම්බන්ධතාවය පවත්වා ගන්න.',
             ta: 'நிகழ்நேர கூரியர் ஒருங்கிணைப்பு மற்றும் ஒத்திசைவு நிலையுடன் புதுப்பிக்கப்பட்டிருங்கள். ஷிப்பிங் முன்னேற்றத்தைக் கண்காணிக்கவும், டெலிவரி புதுப்பிப்புகளைக் கண்காணிக்கவும், லாஜிஸ்டிக்ஸ் பங்காளர்களுடன் தடையற்ற தொடர்பைப் பராமரிக்கவும்.'
         },
         stats: {
@@ -283,18 +283,18 @@ export const salesTranslations = {
         title: {
             part1: {
                 en: 'Track packing progress',
-                si: 'ඇසුරුම් ප්‍රගතිය',
+                si: 'Packing progress එසැණින්',
                 ta: 'பேக்கிங் முன்னேற்றத்தை'
             },
             part2: {
                 en: 'in real-time',
-                si: 'තත්ව කාලීනව ලුහුබඳින්න',
+                si: 'Track කරන්න',
                 ta: 'நிகழ்நேரத்தில் கண்காணிக்கவும்'
             }
         },
         description: {
             en: 'Monitor every step of your packing process with detailed progress tracking, quality control checkpoints, and automated notifications to ensure orders are packed correctly and shipped on time.',
-            si: 'විස්තරාත්මක ප්‍රගති ලුහුබැඳීම්, ගුණාත්මක පාලන පරීක්ෂණ ස්ථාන සහ ඇණවුම් නිවැරදිව ඇසුරුම් කර කාලානුකූලව නැව්ගත කිරීම සහතික කිරීම සඳහා ස්වයංක්‍රීය දැනුම්දීම් සමඟ ඔබේ ඇසුරුම් ක්‍රියාවලියේ සෑම පියවරක්ම නිරීක්ෂණය කරන්න.',
+            si: 'Packing progress එක සෑම පියවරක්ම Monitor කරමින්, Quality control සහ automated notifications හරහා orders නිවැරදිව පැක් කර නියමිත වේලාවට Ship කිරීම තහවුරු කරන්න.',
             ta: 'விரிவான முன்னேற்ற கண்காணிப்பு, தர கட்டுப்பாட்டு சோதனைச் சாவடிகள் மற்றும் ஆர்டர்கள் சரியாக பேக் செய்யப்பட்டு சரியான நேரத்தில் அனுப்பப்படுவதை உறுதிசெய்ய தானியங்கு அறிவிப்புகளுடன் உங்கள் பேக்கிங் செயல்முறையின் ஒவ்வொரு படியையும் கண்காணிக்கவும்.'
         },
         stats: {
@@ -357,18 +357,18 @@ export const salesTranslations = {
         title: {
             part1: {
                 en: 'Keep customers informed',
-                si: 'පාරිභෝගිකයින්ට',
+                si: 'Delivery updates මගින්',
                 ta: 'வாடிக்கையாளர்களுக்கு'
             },
             part2: {
                 en: 'with delivery updates',
-                si: 'බෙදා හැරීමේ යාවත්කාලීන කිරීම් දැනුම් දෙන්න',
+                si: 'පාරිභෝගිකයා නිරතුරුවම දැනුවත් කරන්න',
                 ta: 'டெலிவரி புதுப்பிப்புகளுடன் தெரியப்படுத்துங்கள்'
             }
         },
         description: {
             en: 'Provide exceptional customer service with automated delivery notifications, real-time tracking updates, and proactive communication about any shipping changes or delays.',
-            si: 'ස්වයංක්‍රීය බෙදා හැරීමේ දැනුම්දීම්, තත්ව කාලීන ලුහුබැඳීමේ යාවත්කාලීන කිරීම් සහ ඕනෑම නැව්ගත කිරීමේ වෙනස්කම් හෝ ප්‍රමාදයන් පිළිබඳ ක්‍රියාකාරී සන්නිවේදනය සමඟ විශිෂ්ට පාරිභෝගික සේවාවක් ලබා දෙන්න.',
+            si: 'Automated delivery notifications සහ real-time tracking හරහා පාරිභෝගිකයාට ඉහළම සේවාවක් ලබා දෙන්න. Shipping වල යම් වෙනසක් හෝ ප්‍රමාදයක් වුවහොත් කල්තියාම ඔවුන්ව දැනුවත් කරන්න.',
             ta: 'தானியங்கு டெலிவரி அறிவிப்புகள், நிகழ்நேர கண்காணிப்பு புதுப்பிப்புகள் மற்றும் ஷிப்பிங் மாற்றங்கள் அல்லது தாமதங்கள் பற்றிய செயலூக்கமான தகவல்தொடர்புகளுடன் சிறந்த வாடிக்கையாளர் சேவையை வழங்கவும்.'
         },
         stats: {
