@@ -105,7 +105,7 @@ const pricingTranslations = {
                     answer: "COD (Cash on Delivery) Sync means that when you add orders into Storemate OMS, the system will automatically sync and update those orders details with your delivery partner’s system — without any manual work required.<br><br>No more exporting, uploading, or typing order details again. Everything is synced in real time for faster and more accurate processing."
                 },
                 {
-                    question: "What is a business location?",
+                    question: "What is a business account?",
                     answer: "A business location is a physical address or warehouse where you store and dispatch your products.<br><br>You can set up multiple business locations in Storemate OMS if you have warehouses in different cities or areas, helping you manage inventory and shipping more efficiently."
                 },
                 {
@@ -135,17 +135,17 @@ const pricingTranslations = {
     },
     si: {
         pricing: {
-            badge: "නම්‍යශීලී මිල ගණන් විකල්ප",
+            badge: "නම්‍යශීලී මිල ගණන්",
             costPerOrderLabel: "ඇණවුමකට",
             title: {
-                part1: "ඔබේ",
-                part2: "සැලැස්ම තෝරන්න"
+                part1: "ඔබට ගැළපෙන",
+                part2: "පැකේජ (Package) තෝරාගන්න"
             },
-            subtitle: "ඔබේ ව්‍යාපාරික අවශ්‍යතා සඳහා පරිපූර්ණ සැලැස්ම තෝරන්න සහ කාර්යක්ෂමව ඔබේ ඇණවුම් කළමනාකරණය කිරීම ආරම්භ කරන්න",
+            subtitle: "ඔබේ Package එක තොරගන්න  - ඔබේ Business  හොදින් ගැලපෙන Package එක Select කරලා Orders පහසුවෙන් Manage කරන්න පටන් ගන්න.",
             plans: {
                 free: {
                     name: "නොමිලේ",
-                    subtitle: "නොමිලේ දායකත්වය",
+                    subtitle: "නොමිලේ පැකේජය",
                     price: "0",
                     period: "/මාසිකව",
                     inquiries: "මාසිකව ඇණවුම් 500",
@@ -155,12 +155,12 @@ const pricingTranslations = {
                 },
                 starter: {
                     name: "ආරම්භක",
-                    subtitle: "ආරම්භක දායකත්වය",
+                    subtitle: "ආරම්භක පැකේජය",
                     price: "5,000",
                     period: "/මාසිකව",
                     inquiries: "මාසිකව ඇණවුම් 500",
                     locations: "ව්‍යාපාරික ගිණුම් 2",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම 1",
+                    deliveryCompanies: "කුරියර් සමාගම 1",
                     costPerOrder: "රු. 10",
                     buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම",
@@ -168,24 +168,24 @@ const pricingTranslations = {
                 },
                 business: {
                     name: "ව්‍යාපාරික",
-                    subtitle: "ව්‍යාපාරික දායකත්වය",
+                    subtitle: "ව්‍යාපාරික පැකේජය",
                     price: "12,000",
                     period: "/මාසිකව",
                     inquiries: "මාසිකව ඇණවුම් 5,000",
                     locations: "ව්‍යාපාරික ගිණුම් 5",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 2",
+                    deliveryCompanies: "කුරියර් සමාගම් 2",
                     costPerOrder: "රු. 2.4",
                     buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
                 premium: {
                     name: "ප්‍රිමියම්",
-                    subtitle: "ප්‍රිමියම් දායකත්වය",
+                    subtitle: "ප්‍රිමියම් පැකේජය",
                     price: "25,000",
                     period: "/මාසිකව",
                     inquiries: "මාසිකව ඇණවුම් 50,000",
                     locations: "ව්‍යාපාරික ගිණුම් 5",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 10",
+                    deliveryCompanies: "කුරියර් සමාගම් 10",
                     costPerOrder: "රු. 0.48",
                     buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
@@ -197,26 +197,26 @@ const pricingTranslations = {
                     period: "",
                     inquiries: "අසීමිත ඇණවුම්",
                     locations: "අසීමිත ව්‍යාපාරික ගිණුම්",
-                    deliveryCompanies: "අසීමිත බෙදාහැරීම් සමාගම්",
+                    deliveryCompanies: "අසීමිත කුරියර් සමාගම්",
                     costPerOrder: "අභිරුචි",
-                    buttonText: "විකුණුම් අමතන්න",
+                    buttonText: "විකුණුම් අංශය අමතන්න",
                     trialPeriod: "ව්‍යවසායික විසඳුම සඳහා"
                 }
             },
             features: {
                 inquiryManagement: "ඇණවුම් කළමනාකරණය",
-                codSync: "COD සමමුහුර්තකරණය",
+                codSync: "COD සමගාමී කිරීම",
                 whatsappForm: "WhatsApp පෝරමය",
-                dedicatedServer: "කැප වූ සේවාදායකය",
-                customizations: "අභිරුචිකරණ"
+                dedicatedServer: "වෙන්වූ සේවාදායකයක්",
+                customizations: "අවශ්‍ය පරිදි සකසා ගැනීම්"
             },
             bottomCta: {
                 title: {
-                    part1: "තව යමක්",
-                    part2: "අවශ්‍යද?"
+                    part1: "මේ Packages",
+                    part2: "ප්‍රමාණවත් නැද්ද?"
                 },
-                description: "අභිරුචි විසඳුමක් අවශ්‍යද? අපි ඔබේ විශේෂිත අවශ්‍යතා සඳහා සකස් කරන ලද ව්‍යවසායික පැකේජ පිරිනමන්නෙමු.",
-                button: "විකුණුම් අමතන්න"
+                description: "ඔයාගේ Business එකට Custom Solution එකක් අවශ්‍යද? ඔබගේ Business අවශ්‍යතා වලට අනුවම Software එක සකස් කර ගැනීමට අවශ්‍ය නම්, ඔබට Enterprise Packages එකක් වෙත යා හැකියි.",
+                button: "විකුණුම් අංශය අමතන්න"
             }
         },
         technicalFaq: {
@@ -225,39 +225,39 @@ const pricingTranslations = {
                 part1: "තාක්ෂණික ප්‍රශ්න",
                 part2: "සහ පිළිතුරු"
             },
-            subtitle: "Storemate OMS විශේෂාංග සහ තාක්ෂණික කරුණු පිළිබඳ විස්තරාත්මක පිළිතුරු ලබා ගන්න",
+            subtitle: "Storemate OMS Features සහ Technical Aspects ගැන විස්තර සහිතව පිළිතුරු ලබා ගන්න",
             faqs: [
                 {
-                    question: "විමසුමක් කියන්නේ මොකද්ද?",
-                    answer: "විමසුමක් යනු ඔබේ සමාජ මාධ්‍ය නාලිකා (Facebook, WhatsApp, Instagram) හෝ දුරකථන ඇමතුම් හරහා පැමිණෙන විභව ගනුදෙනුකරුවෙකුගේ විමසීමක් හෝ මඟපෙන්වීමකි.<br><br>Storemate OMS හි, විමසීම් යනු ඔබේ විකුණුම් ක්‍රියාවලියේ පළමු පියවර — ඔවුන් සැබෑ ඇණවුම් බවට පත්වීමට පෙර විභව ගනුදෙනුකරුවන් සමඟ ලුහුබදින්න සහ පසු විපරම් කිරීමට ඔබට උපකාරී වේ."
+                    question: "Order එකක් කියන්නේ මොකක්ද?",
+                    answer: "Order එකක් කියන්නේ ඔයාගේ Business එකට එන Customer විමසීමක් හෝ Lead එකක්. මේවා Facebook Messages, WhatsApp Chats, Instagram DMs, හෝ Phone Calls හරහා එන්න පුළුවන්. "
                 },
                 {
-                    question: "COD සමමුහුර්තකරණය කියන්නේ මොකද්ද?",
-                    answer: "COD (Cash on Delivery) සමමුහුර්තකරණය යනු ඔබේ කුරියර් සේවාව සමඟ COD ගෙවීම් තත්ත්වයේ ස්වයංක්‍රිය සමමුහුර්තකරණයයි.<br><br>ඔබේ කුරියර් සහකරු (Royal Express වැනි) ගනුදෙනුකරුවන්ගෙන් ගෙවීම් එකතු කරන විට, ගෙවීම් තත්ත්වය ඔබේ Storemate OMS ඩෑෂ්බෝඩ්හි ස්වයංක්‍රීයව යාවත්කාලීන වේ — අතින් යාවත්කාලීන කිරීම් අවශ්‍ය නැත."
+                    question: "COD Sync කියන්නේ මොකක්ද?",
+                    answer: "COD (Cash on Delivery) Sync කියන්නේ ඔබ Storemate OMS එකට Orders Add කරන විට, System එක Automatically ඒ Order විස්තර ඔබේ Delivery Partner ගේ System එක සමඟ Sync කර Update කරනවා. කිසිදු Manual වැඩක් අවශ්‍ය නැතිව."
                 },
                 {
-                    question: "ව්‍යාපාරික ස්ථානයක් කියන්නේ මොකද්ද?",
-                    answer: "ව්‍යාපාරික ස්ථානයක් යනු ඔබ ඔබේ නිෂ්පාදන ගබඩා කර යවන භෞතික ලිපිනයක් හෝ ගබඩාවකි.<br><br>ඔබට විවිධ නගරවල හෝ ප්‍රදේශවල ගබඩා තිබේ නම්, Storemate OMS හි ඔබට බහු ව්‍යාපාරික ස්ථාන පිහිටුවිය හැකි අතර, එය ඔබට ඉන්වෙන්ටරි සහ නාවික කටයුතු වඩාත් කාර්යක්ෂමව කළමනාකරණය කිරීමට උපකාරී වේ."
+                    question: "Business Location එකක් මඟින් අදහස් වන්නේ කුමක්ද?",
+                    answer: "Business Location එකක් කියන්නෙ ඔබේ Products ගබඩා කරන (Store) සහ පිටත් කරන (Dispatch) Physical Address එකක් හෝ Warehouse එකක් වේ. ඔබට විවිධ Cities හෝ Areas වල Warehouses තිබේ නම්, Storemate OMS තුළ Multiple Business Accounts Set Up කිරීමට හැකියාව ඇත. එමඟින් ඔබේ Inventory සහ Shipping කටයුතු වඩාත් පහසුවෙන් Manage කර ගැනිමට උදව් වේ."
                 },
                 {
-                    question: "මට සමමුහුර්ත කිරීමට අවශ්‍ය බෙදාහැරීම් සමාගම තෝරා ගත හැකිද?",
-                    answer: "ඔව්, නියත වශයෙන්ම.<br><br>Storemate OMS දැනට බොහෝ කුරියර් සේවා සමඟ ඒකාබද්ධ වේ. ඔබට සෑම ඇණවුමක් සඳහාම භාවිතා කිරීමට කුරියර් සේවාව තෝරා ගත හැකිය.<br><br>ඔබේ ව්‍යාපාරික අවශ්‍යතා මත පදනම්ව අපට අමතර කුරියර් සේවා ද ඒකාබද්ධ කළ හැකිය."
+                    question: "මම Sync කරන Delivery Company එක මට තෝරා ගැනීමට හැකිද? ",
+                    answer: "ඔව්, අනිවාර්යයෙන්ම! <br/><br/> දැනට ලංකාවේ Major Courier Services ගණනාවක් එක්ක Storemate OMS Integrate වෙලා තියෙනවා. සෑම Order එකක් සඳහාම භාවිතා කළ යුතු Courier Service එක ඔබට තෝරා ගත හැක.<br/><br/> ඔයා use කරන Specific Courier Service එකක් අපේ List එකේ නැත්නම්, කිසිම ප්‍රශ්නයක් නෑ! ඔයාගේ Business Requirements අනුව අමතර Courier Services Integrate කරන්න අපිට පුළුවන්"
                 },
                 {
-                    question: "WhatsApp පෝරමයක් කියන්නේ මොකද්ද?",
-                    answer: "WhatsApp පෝරමයක් යනු ගනුදෙනුකරුවන්ට ඇණවුම් ලබා දීමට WhatsApp හි සෘජුව පුරවා ගත හැකි ව්‍යුහගත පණිවිඩ ආකෘතියකි.<br><br>එය ගනුදෙනුකරුවන්ගේ විස්තර, නිෂ්පාදන මනාපයන් සහ බෙදාහැරීම් තොරතුරු සංවිධානාත්මක ආකාරයකින් එකතු කිරීමට ඔබට උපකාරී වන අතර, ඇණවුම් සැකසීම වේගවත් සහ වඩාත් නිවැරදි කරයි."
+                    question: "WhatsApp Form එකක් යනු කුමක්ද?",
+                    answer: "WhatsApp පෝරමයක් (WhatsApp Form) යනු පාරිභෝගිකයන්ට ඇණවුම් ලබා දීම සඳහා WhatsApp හරහාම පිරවිය හැකි කලින් සකස් කළ Message Templete එකක්. <br/><br/>මෙමගින් Customer Information, Products සහ Delivery Information ඉතා විධිමත්ව රැස් කරගත හැකි අතර, එමගින් Order සැකසීමේ කටයුතු වඩාත් වේගවත් හා නිවැරදිව සිදු කිරීමට ඔබට ඉඩ සැලසේ."
                 },
                 {
-                    question: "මට කැප වූ සේවාදායකයක් අවශ්‍ය ඇයි?",
-                    answer: "කැප වූ සේවාදායකයක් ඔබේ ව්‍යාපාරය සඳහා වඩා හොඳ කාර්ය සාධනය, ආරක්ෂාව සහ අභිරුචිකරණය සහතික කරයි.<br><br>ප්‍රතිලාභ ඇතුළත්:<br>• ඔබේ කණ්ඩායම සඳහා වේගවත් පැටවීම් කාලය<br>• වැඩි දියුණු කළ දත්ත ආරක්ෂාව<br>• ඔබේ ව්‍යාපාරයට විශේෂිත අභිරුචි විශේෂාංග<br>• වඩා හොඳ අපටයිම් සහ විශ්වසනීයත්වය<br>• කැප වූ සහාය"
+                    question: "මට Dedicated Server එකක් අවශ්‍ය ඇයි?",
+                    answer: "ඔබේ ව්‍යාපාරය සඳහා Dedicated Server එකක් අවශ්‍ය වන්නේ, <br>• වේගවත් ක්‍රියාකාරිත්වයක් (Performance).<br>• ඉහළ ආරක්ෂාවක් (Security).<br>• ඔබට අවශ්‍ය පරිදි Software එක සකස් කරවා ගැනීමේ (Customization) පහසුකම ලබා ගැනීමටයි.<br><br> එහි ප්‍රතිලාභ පහත දැක්වේ. <br>• ඔබගේ Team එක සඳහා වඩා වේගවත් Loading Time එකක් ලැබීම. <br>• වැඩි දියුණු කළ Data Security පද්ධතියක්. <br>• ඔබේ Business එක සඳහාම වූ Specific Custom Features. <br>• වඩා හොඳ Uptime සහ Reliability එකක් ලැබීම. <br>• Dedicated Support පහසුකම් ලබාගැනීමට."
                 },
                 {
-                    question: "අභිරුචිකරණ මොනවාද?",
-                    answer: "Storemate OMS විවිධ අභිරුචිකරණ පිරිනමයි:<br><br>• අභිරුචි ඇණවුම් පෝරම සහ ක්ෂේත්‍ර<br>• සන්නාමගත ඉන්වොයිසි සහ වේබිල්<br>• ඔබේ පවත්නා පද්ධති සමඟ ඒකාබද්ධීකරණය<br>• අභිරුචි වාර්තාකරණය සහ විශ්ලේෂණ<br>• ඔබේ ව්‍යාපාරයට විශේෂිත කාර්යප්‍රවාහ ස්වයංක්‍රීයකරණය<br>• අභිරුචි කුරියර් ඒකාබද්ධීකරණ"
+                    question: "Customizations යනු කුමක්ද?",
+                    answer: "Storemate OMS මඟින් පහත දක්වා ඇති විවිධ Customizations අවස්ථා ලබා දේ, <br>• ඔබට අවශ්‍ය පරිදි සකස් කළ Order Forms සහ Fields. <br>• ඔබේ Brand එක සඳහාම සකස් කළ Invoices සහ Waybills. <br>• ඔබේ දැනට තිබෙන Systems සමඟ Integrate වීමේ හැකියාව. <br>• ඔබේ ව්‍යාපාරයටම ගැළපෙන Custom Reporting සහ Analytics සැකසීම. <br>• ඔබේ Business එක සඳහාම සැකසූ Workflow Automation පද්ධති. <br>• ඔබට අවශ්‍ය අමතර Courier Services සමඟ Custom Integrations සැකසීම."
                 },
                 {
-                    question: "මට ව්‍යාපාරික ස්ථාන 05කට වඩා තිබේ නම් කුමක් කළ යුතුද?",
-                    answer: "කිසිම ගැටලුවක් නැත.<br><br>Storemate OMS සීමා රහිත ව්‍යාපාරික ස්ථාන හැසිරවිය හැකිය. සෑම අමතර ස්ථානයක්ම එහිම ඉන්වෙන්ටරි කළමනාකරණය, කාර්ය මණ්ඩල ප්‍රවේශය සහ නාවික මනාපයන් සමඟ පිහිටුවිය හැකිය.<br><br>බහු ස්ථාන සඳහා ව්‍යවසායික මිල ගණන් කරන්න ගැන සාකච්ඡා කිරීමට අපගේ කණ්ඩායම අමතන්න."
+                    question: "මට Business Locations 05කට වඩා තිබුණොත් මොකද කරන්නෙ?",
+                    answer: "කිසිම ගැටලුවක් නැත.<br><br>Storemate OMS වලට Unlimited Business Locations Manage කිරීමට හැකියාව ඇත. එහිදී, සෑම Additional Location එක සඳහා, වෙනම Inventory Management, Staff Access, සහ Shipping Preferences Set Up කිරීමට පුළුවන්. <br><br>Locations කිහිපයක් සඳහා Enterprise Pricing ගැන සාකච්ඡා කිරීමට අපේ Team එක සම්බන්ධ කර ගන්න. "
                 }
             ],
             contactPrompt: "තවත් තාක්ෂණික සහාය අවශ්‍යද?",

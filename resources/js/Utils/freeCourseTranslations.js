@@ -175,7 +175,7 @@ const freeCourseTranslations = {
                     part1: "Storemate OMS",
                     part2: "ප්‍රගුණ කරන්න"
                 },
-                description: "ඔබේ ඇණවුම් කළමනාකරණය සුලභ කිරීම, ආපසු යැවීම් 80%+ කින් අඩු කිරීම සහ අපගේ පුළුල් නොමිලේ වීඩියෝ පාඨමාලාව සමඟ දිනකට පැය 3+ ක් ඉතිරි කර ගන්නා ආකාරය ඉගෙන ගන්න.",
+                description: "අපේ Free Video Course එකෙන් ඔබේ Order Management පහසු කරගන්නේ කොහොමද, Returns 80%+ කින් අඩු කරගන්නේ කොහොමද, වගේම දවසට 3+ Hours ඉතුරු කර කරගන්නේ කොහොමද කියලා ඉගන ගන්න.",
                 stats: [
                     {
                         number: "16",
@@ -193,11 +193,11 @@ const freeCourseTranslations = {
             },
             courseModules: {
                 sectionTitle: "පාඨමාලා මොඩියුල",
-                sectionDescription: "විස්තරාත්මක වීඩියෝ පාඩම් සහ ද්‍රව්‍ය ලබා ගැනීමට ඕනෑම මොඩියුලයක් මත ක්ලික් කරන්න",
+                sectionDescription: "Detailed video lessons සහ materials access කරන්න ඕනෑම module එකක් උඩ Click කරන්න.",
                 modules: [
                     {
-                        title: "Storemate OMS සමඟ ආරම්භ කිරීම",
-                        description: "මූලික කරුණු ඉගෙන ගන්න සහ Storemate මාර්ගගත විකුණුම්කරුවන් සඳහා ඇයි පරිපූර්ණද යන්න තේරුම් ගන්න",
+                        title: "Storemate OMS එක්ක පටන් ගමු",
+                        description: "ලික දේවල් ඉගන ගෙන, Storemate ඇයි Online Sellers ලාට ගැලපෙන්නෙ කියලා තේරුම් ගමු.",
                         level: "මූලික",
                         levelText: "මට්ටම",
                         videoText: "වීඩියෝ පාඩම්",
@@ -207,7 +207,7 @@ const freeCourseTranslations = {
                     },
                     {
                         title: "කුරියර් ඒකාබද්ධීකරණය සහ COD ව්‍යාපාරය",
-                        description: "කුරියර් ඒකාබද්ධීකරණ සමඟ සාර්ථක COD ව්‍යාපාරයක් ආරම්භ කර කළමනාකරණය කරන ආකාරය ඉගෙන ගන්න",
+                        description: "Courier Integrations එක්ක සාර්ථක COD business එකක් Start කරන්නේ කොහොමද?",
                         level: "මධ්‍යම",
                         levelText: "මට්ටම",
                         videoText: "වීඩියෝ පාඩම්",
@@ -216,8 +216,8 @@ const freeCourseTranslations = {
                         moreText: "තවත් පාඩම්"
                     },
                     {
-                        title: "ශ්‍රී ලංකාවේ COD ව්‍යාපාරයක් ආරම්භ කරන්නේ කෙසේද",
-                        description: "ඔබේ මුදල් ලබා ගැනීමේ ව්‍යාපාරය ආරම්භ කර පරිමාණය වැඩි කිරීමේ සම්පූර්ණ මාර්ගෝපදේශය",
+                        title: "ශ්‍රී ලංකාව COD Business එකක් Start කරන්නේ කොහොමද?",
+                        description: "ඔබේ COD Business එක Start කරලා වර්ධනය කර ගන්නා ආකාරය ගැන සම්පුර්ණ Guide එක.",
                         level: "ප්‍රවීණ",
                         levelText: "මට්ටම",
                         videoText: "වීඩියෝ පාඩම්",

@@ -217,16 +217,6 @@ export default function Pricing({ onOpenTrialModal }) {
                         </span>
                     </div>
 
-                    {/* Cost for Order Badge */}
-                    <div className="mb-4">
-                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
-                            color: '#006daf',
-                            backgroundColor: '#e6f3ff'
-                        }}>
-                            COST FOR ORDER
-                        </span>
-                    </div>
-
                     <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
                         fontWeight: '750',
                         fontStretch: 'ultra-condensed',

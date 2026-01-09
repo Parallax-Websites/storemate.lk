@@ -96,11 +96,11 @@ const aboutTranslations = {
             story: {
                 badge: "අපගේ කතාව",
                 title: "Storemate OMS",
-                description1: "Parallax Technologies (Pvt) Ltd විසින් සංවර්ධනය කර නඩත්තු කරනු ලබන Storemate OMS, 2019 වසරේ ආරම්භයේ සිට සේවා ලැයිස්තුවට දිගුවකි.",
-                description2: "පිරිනමනු ලබන ලෝක මට්ටමේ සේවාවන් අතර මෘදුකාංග සංවර්ධන විසඳුම්, අභිරුචි මෘදුකාංග සංවර්ධන, නිෂ්පාදන මෘදුකාංග සංවර්ධන සහ මෘදුකාංග බාහිරින් ලබා ගැනීම ඇතුළත් වේ.",
+                description1: "Storemate OMS, Parallax Technologies (Pvt) Ltd විසින් Developed කරලා Maintained කරන Storemate OMS එක, 2019 පටන් අපේ Service List එකේ Extension එකක්. ",
+                description2: "අපේ World-Class Services වලට Software Development Solutions, Custom Software Developments, Product Software Developments සහ Software Outsourcing ඇතුළත් වේ.",
                 teamStats: {
                     title: "සේවකයින් 50+",
-                    description: "අපගේ වසර 2+ කාර්මික අත්දැකීම්වල විවිධ අවස්ථා වලදී අප හා එක් වූ අය."
+                    description: "අපගේ වසර 2+ තාක්ෂණික අත්දැකීම්වල විවිධ අවස්ථා වලදී අප හා එක් වූ අය."
                 },
                 imageAlts: {
                     team: "Parallax Technologies කණ්ඩායම",
@@ -109,8 +109,8 @@ const aboutTranslations = {
             },
             friendlyTeam: {
                 badge: "අපගේ කතාව",
-                title: "මහත් කතාවක් ආරම්භ වන්නේ මිත්‍රශීලී කණ්ඩායමකින්",
-                description: "ගතික ගුණාත්මක වෙක්ටර් හරස් මාධ්‍ය ද්‍රව්‍ය කලින් සක්‍රීය බාහිරින් ලබා ගැනීමේ පත්‍රිකාවට පෙර ගතික ගුණාත්මක වෙක්ටර් හරස් මාධ්‍ය ද්‍රව්‍ය කලින් ගෝලීය ඊ-සක්‍රීය කරන්න.",
+                title: "සාර්ථක කතාවක් ආරම්භ වන්නේ සුහදශීලී කණ්ඩායමක් සමඟයි",
+                description: "ගෝලීය වශයෙන් ඔබේ e-business දියුණු කරන්න. අලුත් තාක්ෂණය සහ බාහිර සහය (Outsourcing) හරහා ව්‍යාපාරික කටයුතු වඩාත් කාර්යක්ෂම කරගන්න.",
                 imageAlts: {
                     collaboration: "කණ්ඩායම් සහයෝගීතාව",
                     meeting: "කණ්ඩායම් රැස්වීම",
@@ -124,9 +124,9 @@ const aboutTranslations = {
                 badge: "🏆 පිළිගැනීම",
                 title: {
                     part1: "අපට",
-                    part2: "සම්මාන ලැබී ඇත"
+                    part2: "ලැබී ඇති සම්මාන"
                 },
-                description: "මෘදුකාංග සංවර්ධනයේ විශිෂ්ටත්වය සහ නවෝත්පාදනය සඳහා අපගේ කැපවීම් සඳහා පිළිගැනීම",
+                description: "Software Development හි විශිෂ්ටත්වය සහ නවෝත්පාදනය සඳහා වූ අපගේ කැපවීම වෙනුවෙන් ලැබුණු ඇගයීම්.",
                 imageAlt: "සම්මාන සහ පිළිගැනීම්",
                 certified: "සහතික කර ඇත"
             },
@@ -134,23 +134,23 @@ const aboutTranslations = {
                 badge: "අපගේ සේවාවන්",
                 subtitle: "අප කරන්නේ කුමක්ද",
                 title: "ලෝක මට්ටමේ මෘදුකාංග විසඳුම්",
-                description: "අභිරුචි සංවර්ධනයේ සිට ව්‍යවසායික විසඳුම් දක්වා, අපි විශිෂ්ට මෘදුකාංග සේවා සපයන්නෙමු.",
+                description: "Custom Development එකේ සිට Enterprise Solutions දක්වා, අපි විශිෂ්ට Software Services ලබා දෙනවා.",
                 serviceList: [
                     {
-                        title: "මෘදුකාංග සංවර්ධන විසඳුම්",
-                        description: "ඔබේ ව්‍යාපාරික අවශ්‍යතා සහ අවශ්‍යතා සඳහා සකස් කරන ලද පුළුල් මෘදුකාංග සංවර්ධන සේවා."
+                        title: "Software Development විසඳුම්",
+                        description: "ඔබේ ව්‍යාපාර අවශ්‍යතා සහ ඉල්ලීම් සඳහා විශේෂයෙන් සකස් කළ  පුළුල්  Software Development Services."
                     },
                     {
-                        title: "අභිරුචි මෘදුකාංග සංවර්ධනය",
-                        description: "ඔබේ අද්විතීය ව්‍යාපාරික ක්‍රියාවලි සඳහා විශේෂයෙන් නිර්මාණය කර ගොඩනගා ඇති බිම්මත් මෘදුකාංග විසඳුම්."
+                        title: "Custom Software සංවර්ධනය",
+                        description: "ඔබේ ව්‍යාපාර ක්‍රියාවලීන් සඳහාම විශේෂයෙන්  නිර්මාණය කර නිම කරන ලද Software Solutions."
                     },
                     {
-                        title: "නිෂ්පාදන මෘදුකාංග සංවර්ධනය",
-                        description: "Storemate OMS ඇතුළුව සංකල්පයේ සිට යෙදවීම දක්වා අන්ත සිට අන්ත නිෂ්පාදන සංවර්ධනය."
+                        title: "Product Software සංවර්ධනය",
+                        description: "Storemate OMS ඇතුළුව, Concept එකේ සිට Deployment දක්වා සම්පූර්ණ (End-to-End) Product Development සේවා."
                     },
                     {
-                        title: "මෘදුකාංග බාහිරින් ලබා ගැනීම සහ අක්‍රමිකරණය",
-                        description: "ගෝලීය ව්‍යාප්තිය සහ දේශීය ප්‍රවීණත්වය සහිත පිරිවැය-ඵලදායී මෘදුකාංග සංවර්ධන සේවා."
+                        title: "Software Outsourcing සහ Offshoring",
+                        description: "ලීය සහ දේශීය Expertise සහිත, පිරිවැය-කාර්යක්ෂම (Cost-effective) Software Development Services."
                     }
                 ]
             }
