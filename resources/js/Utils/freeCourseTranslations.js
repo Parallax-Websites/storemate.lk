@@ -197,7 +197,7 @@ const freeCourseTranslations = {
                 modules: [
                     {
                         title: "Storemate OMS එක්ක පටන් ගමු",
-                        description: "ලික දේවල් ඉගන ගෙන, Storemate ඇයි Online Sellers ලාට ගැලපෙන්නෙ කියලා තේරුම් ගමු.",
+                        description: "මූලික දේවල් ඉගන ගෙන, Storemate ඇයි Online Sellers ලාට ගැලපෙන්නෙ කියලා තේරුම් ගමු.",
                         level: "මූලික",
                         levelText: "මට්ටම",
                         videoText: "වීඩියෝ පාඩම්",

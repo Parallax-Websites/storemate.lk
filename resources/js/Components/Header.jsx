@@ -12,6 +12,29 @@ const Header = forwardRef(({ auth }, ref) => {
     const [showingMobileFeaturesDropdown, setShowingMobileFeaturesDropdown] = useState(false);
     const [showingMobileMoreDropdown, setShowingMobileMoreDropdown] = useState(false);
     const [showDemoModal, setShowDemoModal] = useState(false);
+
+    // GTM Tracking Helper Functions
+    const trackCTAClick = (ctaText, ctaLocation, ctaType = 'primary') => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'cta_click',
+            ctaLocation: ctaLocation,
+            ctaText: ctaText,
+            ctaType: ctaType
+        });
+        console.log(`🎯 GTM: CTA clicked - ${ctaText} (${ctaLocation})`);
+    };
+
+    const trackNavigationClick = (linkText, linkUrl, linkType = 'header') => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'navigation_click',
+            linkText: linkText,
+            linkUrl: linkUrl,
+            linkType: linkType
+        });
+        console.log(`🎯 GTM: Navigation clicked - ${linkText} (${linkType})`);
+    };
     const [showTrialModal, setShowTrialModal] = useState(false);
     const [showTrialThankYou, setShowTrialThankYou] = useState(false);
     const [showDemoThankYou, setShowDemoThankYou] = useState(false);
@@ -36,7 +59,55 @@ const Header = forwardRef(({ auth }, ref) => {
         email: '',
         companyName: ''
     });
+    const [phoneError, setPhoneError] = useState('');
+    const [trialPhoneError, setTrialPhoneError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [trialEmailError, setTrialEmailError] = useState('');
     const { t } = useTranslation();
+
+    // Email validation function
+    const validateEmail = (email) => {
+        if (!email) {
+            return 'Email is required';
+        }
+
+        // Basic email regex pattern
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            return 'Please enter a valid email address';
+        }
+
+        return '';
+    };
+
+    // Phone number validation function
+    const validatePhoneNumber = (phone) => {
+        // Remove spaces and special characters
+        const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+
+        // Valid area codes
+        const validAreaCodes = [
+            '011', '036', '031', '033', '038', '034', '054', '081',
+            '051', '052', '066', '091', '041', '047', '032', '037',
+            '021', '023', '024', '063', '067', '065', '026', '025',
+            '027', '055', '057', '045', '035', '070', '071', '072',
+            '074', '075', '077', '078'
+        ];
+
+        // Check if exactly 10 digits
+        if (!/^\d{10}$/.test(cleanPhone)) {
+            return 'Phone number must be exactly 10 digits';
+        }
+
+        // Check if starts with valid area code
+        const areaCode = cleanPhone.substring(0, 3);
+        if (!validAreaCodes.includes(areaCode)) {
+            return 'Phone number must start with a valid Sri Lankan area code';
+        }
+
+        return '';
+    };
 
     // Expose openTrialModal method to parent components
     useImperativeHandle(ref, () => ({
@@ -94,22 +165,82 @@ const Header = forwardRef(({ auth }, ref) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+
+        // Restrict phone number to 10 digits only
+        if (name === 'phoneNumber') {
+            const digitsOnly = value.replace(/\D/g, '');
+            if (digitsOnly.length > 10) return;
+
+            setFormData(prev => ({
+                ...prev,
+                [name]: digitsOnly
+            }));
+
+            const error = validatePhoneNumber(digitsOnly);
+            setPhoneError(error);
+        } else if (name === 'email') {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+
+            const error = validateEmail(value);
+            setEmailError(error);
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
     };
 
     const handleTrialInputChange = (e) => {
         const { name, value } = e.target;
-        setTrialFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+
+        // Restrict phone number to 10 digits only
+        if (name === 'phoneNumber') {
+            const digitsOnly = value.replace(/\D/g, '');
+            if (digitsOnly.length > 10) return;
+
+            setTrialFormData(prev => ({
+                ...prev,
+                [name]: digitsOnly
+            }));
+
+            const error = validatePhoneNumber(digitsOnly);
+            setTrialPhoneError(error);
+        } else if (name === 'email') {
+            setTrialFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+
+            const error = validateEmail(value);
+            setTrialEmailError(error);
+        } else {
+            setTrialFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
     };
 
     const handleDemoSubmit = (e) => {
         e.preventDefault();
+
+        // Validate phone number before submitting
+        const phoneValidationError = validatePhoneNumber(formData.phoneNumber);
+        if (phoneValidationError) {
+            setPhoneError(phoneValidationError);
+            return;
+        }
+
+        // Validate email before submitting
+        const emailValidationError = validateEmail(formData.email);
+        if (emailValidationError) {
+            setEmailError(emailValidationError);
+            return;
+        }
 
         // Fixed demo login URL
         const loginUrl = 'https://oms.storemate.cloud/login?businessName=storemateoms&loginEmail=smdemo@gmail.com&password=PSP2F*uPCIxl';
@@ -159,6 +290,20 @@ const Header = forwardRef(({ auth }, ref) => {
 
     const handleTrialSubmit = (e) => {
         e.preventDefault();
+
+        // Validate phone number before submitting
+        const phoneValidationError = validatePhoneNumber(trialFormData.phoneNumber);
+        if (phoneValidationError) {
+            setTrialPhoneError(phoneValidationError);
+            return;
+        }
+
+        // Validate email before submitting
+        const emailValidationError = validateEmail(trialFormData.email);
+        if (emailValidationError) {
+            setTrialEmailError(emailValidationError);
+            return;
+        }
 
         // Get current page for UTM source
         const currentPath = route().current();
@@ -343,14 +488,24 @@ const Header = forwardRef(({ auth }, ref) => {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-6">
-                                    <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    <NavLink 
+                                        href={route('home')} 
+                                        active={route().current('home')} 
+                                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
+                                        onClick={() => trackNavigationClick(t('nav.home'), '/home', 'header')}
+                                    >
                                         {t('nav.home')}
                                     </NavLink>
                                     <FeaturesDropdown onOpenTrialModal={(source) => {
                                         setTrialButtonSource(source);
                                         setShowTrialModal(true);
                                     }} />
-                                    <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    <NavLink 
+                                        href={route('pricing')} 
+                                        active={route().current('pricing')} 
+                                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
+                                        onClick={() => trackNavigationClick(t('nav.pricing'), '/pricing', 'header')}
+                                    >
                                         {t('nav.pricing')}
                                     </NavLink>
                                     <Dropdown>
@@ -432,6 +587,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <a
                                     id={getStartTrialId('header')}
                                     onClick={() => {
+                                        trackCTAClick(t('nav.startFreeTrial'), 'header', 'secondary');
                                         setTrialButtonSource('header');
                                         setShowTrialModal(true);
                                     }}
@@ -441,7 +597,10 @@ const Header = forwardRef(({ auth }, ref) => {
                                 </a>
                                 <a
                                     id={getTryDemoId('header')}
-                                    onClick={() => setShowDemoModal(true)}
+                                    onClick={() => {
+                                        trackCTAClick('Try Live Demo', 'header', 'primary');
+                                        setShowDemoModal(true);
+                                    }}
                                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
                                 >
                                     Try Live Demo
@@ -688,10 +847,17 @@ const Header = forwardRef(({ auth }, ref) => {
                                         name="phoneNumber"
                                         value={formData.phoneNumber}
                                         onChange={handleInputChange}
-                                        placeholder="Enter your phone number"
+                                        placeholder="0771234567"
                                         required
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                                            phoneError
+                                                ? 'border-red-500 focus:ring-red-500'
+                                                : 'border-gray-300 focus:ring-custom-blue-2'
+                                        }`}
                                     />
+                                    {phoneError && (
+                                        <p className="mt-1 text-sm text-red-500">{phoneError}</p>
+                                    )}
                                 </div>
 
                                 {/* Email */}
@@ -704,10 +870,17 @@ const Header = forwardRef(({ auth }, ref) => {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleInputChange}
-                                        placeholder="Enter your email"
+                                        placeholder="example@email.com"
                                         required
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                                            emailError
+                                                ? 'border-red-500 focus:ring-red-500'
+                                                : 'border-gray-300 focus:ring-custom-blue-2'
+                                        }`}
                                     />
+                                    {emailError && (
+                                        <p className="mt-1 text-sm text-red-500">{emailError}</p>
+                                    )}
                                 </div>
 
                                 {/* Company Name */}
@@ -737,7 +910,28 @@ const Header = forwardRef(({ auth }, ref) => {
                                     </button>
                                     <button
                                         type="submit"
-                                        className="flex-1 px-4 py-2 text-sm font-medium text-white bg-custom-blue-2 rounded-md hover:bg-custom-blue-3 transition-colors"
+                                        disabled={
+                                            !formData.courierCompanies ||
+                                            !formData.ordersPerDay ||
+                                            !formData.fullName ||
+                                            !formData.phoneNumber ||
+                                            !formData.email ||
+                                            !formData.companyName ||
+                                            phoneError !== '' ||
+                                            emailError !== ''
+                                        }
+                                        className={`flex-1 px-4 py-2 text-sm font-medium text-white rounded-md transition-colors ${
+                                            !formData.courierCompanies ||
+                                            !formData.ordersPerDay ||
+                                            !formData.fullName ||
+                                            !formData.phoneNumber ||
+                                            !formData.email ||
+                                            !formData.companyName ||
+                                            phoneError !== '' ||
+                                            emailError !== ''
+                                                ? 'bg-gray-400 cursor-not-allowed'
+                                                : 'bg-custom-blue-2 hover:bg-custom-blue-3'
+                                        }`}
                                     >
                                         Continue to Demo
                                     </button>
@@ -826,10 +1020,17 @@ const Header = forwardRef(({ auth }, ref) => {
                                         name="phoneNumber"
                                         value={trialFormData.phoneNumber}
                                         onChange={handleTrialInputChange}
-                                        placeholder="Enter your phone number"
+                                        placeholder="0771234567"
                                         required
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                                            trialPhoneError
+                                                ? 'border-red-500 focus:ring-red-500'
+                                                : 'border-gray-300 focus:ring-custom-blue-2'
+                                        }`}
                                     />
+                                    {trialPhoneError && (
+                                        <p className="mt-1 text-sm text-red-500">{trialPhoneError}</p>
+                                    )}
                                 </div>
 
                                 {/* Email */}
@@ -842,10 +1043,17 @@ const Header = forwardRef(({ auth }, ref) => {
                                         name="email"
                                         value={trialFormData.email}
                                         onChange={handleTrialInputChange}
-                                        placeholder="Enter your email"
+                                        placeholder="example@email.com"
                                         required
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-blue-2"
+                                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                                            trialEmailError
+                                                ? 'border-red-500 focus:ring-red-500'
+                                                : 'border-gray-300 focus:ring-custom-blue-2'
+                                        }`}
                                     />
+                                    {trialEmailError && (
+                                        <p className="mt-1 text-sm text-red-500">{trialEmailError}</p>
+                                    )}
                                 </div>
 
                                 {/* Company Name */}
@@ -875,7 +1083,28 @@ const Header = forwardRef(({ auth }, ref) => {
                                     </button>
                                     <button
                                         type="submit"
-                                        className="flex-1 px-4 py-2 text-sm font-medium text-white bg-custom-blue-2 rounded-md hover:bg-custom-blue-3 transition-colors"
+                                        disabled={
+                                            !trialFormData.courierCompanies ||
+                                            !trialFormData.ordersPerDay ||
+                                            !trialFormData.fullName ||
+                                            !trialFormData.phoneNumber ||
+                                            !trialFormData.email ||
+                                            !trialFormData.companyName ||
+                                            trialPhoneError !== '' ||
+                                            trialEmailError !== ''
+                                        }
+                                        className={`flex-1 px-4 py-2 text-sm font-medium text-white rounded-md transition-colors ${
+                                            !trialFormData.courierCompanies ||
+                                            !trialFormData.ordersPerDay ||
+                                            !trialFormData.fullName ||
+                                            !trialFormData.phoneNumber ||
+                                            !trialFormData.email ||
+                                            !trialFormData.companyName ||
+                                            trialPhoneError !== '' ||
+                                            trialEmailError !== ''
+                                                ? 'bg-gray-400 cursor-not-allowed'
+                                                : 'bg-custom-blue-2 hover:bg-custom-blue-3'
+                                        }`}
                                     >
                                         Start Free Trial
                                     </button>
