@@ -115,33 +115,33 @@ const CallToAction = ({ onOpenTrialModal }) => {
 
                 {/* Features List */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
-                    <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
-                            <span className="text-white text-sm font-bold">1</span>
+                        <div className="flex items-start gap-3 text-left">
+                            <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#013387' }}>
+                                <span className="text-white text-sm font-bold">1</span>
+                            </div>
+                            <span className="text-gray-700 text-base leading-snug">{t('callToAction.steps.step1')}</span>
                         </div>
-                        <span className="text-gray-700 text-base">{t('callToAction.steps.step1')}</span>
-                    </div>
 
-                    <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
-                            <span className="text-white text-sm font-bold">2</span>
+                        <div className="flex items-start gap-3 text-left">
+                            <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#013387' }}>
+                                <span className="text-white text-sm font-bold">2</span>
+                            </div>
+                            <span className="text-gray-700 text-base leading-snug">{t('callToAction.steps.step2')}</span>
                         </div>
-                        <span className="text-gray-700 text-base">{t('callToAction.steps.step2')}</span>
-                    </div>
 
-                    <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
-                            <span className="text-white text-sm font-bold">3</span>
+                        <div className="flex items-start gap-3 text-left">
+                            <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#013387' }}>
+                                <span className="text-white text-sm font-bold">3</span>
+                            </div>
+                            <span className="text-gray-700 text-base leading-snug">{t('callToAction.steps.step3')}</span>
                         </div>
-                        <span className="text-gray-700 text-base">{t('callToAction.steps.step3')}</span>
-                    </div>
 
-                    <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
-                            <span className="text-white text-sm font-bold">4</span>
+                        <div className="flex items-start gap-3 text-left">
+                            <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#013387' }}>
+                                <span className="text-white text-sm font-bold">4</span>
+                            </div>
+                            <span className="text-gray-700 text-base leading-snug">{t('callToAction.steps.step4')}</span>
                         </div>
-                        <span className="text-gray-700 text-base">{t('callToAction.steps.step4')}</span>
-                    </div>
                 </div>
 
                 {/* Buttons Title */}
@@ -151,48 +151,16 @@ const CallToAction = ({ onOpenTrialModal }) => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                    <button
+                    <a
                         id={`btn_start_a_free_trial_cta_${computePageKey()}`}
-                        onClick={handleCTAClick}
+                        href="https://welcome.oms.storemate.cloud/register"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center cursor-pointer"
-                        style={{
-                            backgroundColor: '#013387',
-                            ':hover': { backgroundColor: '#001f5c' }
-                        }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#001f5c'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}
+                        style={{ backgroundColor: '#013387', display: 'inline-block' }}
                     >
-                        {t('callToAction.startFreeTrial')}
-                    </button>
-
-                    <button
-                        onClick={() => {
-                            const section = document.getElementById('what-is-storemate-oms');
-                            if (section) {
-                                // If the section exists on current page, scroll to it
-                                section.scrollIntoView({ behavior: 'smooth' });
-                            } else {
-                                // If not on home page, navigate to home page with hash
-                                window.location.href = '/home#what-is-storemate-oms';
-                            }
-                        }}
-                        className="border-2 px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-flex items-center space-x-2"
-                        style={{
-                            borderColor: '#013387',
-                            color: '#013387'
-                        }}
-                        onMouseEnter={(e) => {
-                            e.target.style.backgroundColor = '#f0f4ff';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.target.style.backgroundColor = 'transparent';
-                        }}
-                    >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                        </svg>
-                        <span>{t('callToAction.howItWorksButton')}</span>
-                    </button>
+                        {t('nav.getFreeAccount')}
+                    </a>
                 </div>
 
                 {/* Bottom Features */}

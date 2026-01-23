@@ -75,34 +75,15 @@ export default function InquiryHero({ auth, onOpenTrialModal }) {
               {tInquiry('inquiryHero.description')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <button
+              <a
                 id={`btn_start_a_free_trial_hero_${computePageKey()}`}
-                onClick={() => onOpenTrialModal?.('hero')}
+                href="https://welcome.oms.storemate.cloud/register"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
-                style={{backgroundColor: '#006daf'}}
-              >
-                {tInquiry('inquiryHero.startFreeTrial')}
-              </button>
-              <button
-                onClick={() => {
-                    const section = document.getElementById('what-is-storemate-oms');
-                    if (section) {
-                        // If the section exists on current page, scroll to it
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        // If not on home page, navigate to home page with hash
-                        window.location.href = '/home#what-is-storemate-oms';
-                    }
-                }}
-                className="flex items-center gap-3 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-all duration-300"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
-                  <svg className="w-5 h-5 text-blue-600 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-                <span>{tInquiry('inquiryHero.howItWorks')}</span>
-              </button>
+                style={{backgroundColor: '#006daf', display: 'inline-block'}}>
+                {tInquiry('getFreeAccount')}
+              </a>
             </div>
           </div>
         </div>

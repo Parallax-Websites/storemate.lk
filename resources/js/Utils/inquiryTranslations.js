@@ -1,22 +1,28 @@
 import { useLanguage } from '@/Contexts/LanguageContext';
 
 export const inquiryTranslations = {
+
+    getFreeAccount: {
+        en: 'Get Your Free Account',
+        si: 'නොමිලේ ලියාපදිංචි වන්න',
+        ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
+    },
     // Inquiry Hero Section
     inquiryHero: {
         badge: {
-            en: 'INQUIRY MANAGEMENT',
+            en: 'ORDERS MANAGEMENT',
             si: 'විමසුම් කළමනාකරණය',
             ta: 'விசாரணை மேலாண்மை'
         },
         title: {
-            en: 'Streamline Your Customer Inquiries',
-            si: 'ඔබේ Customer Inquiries පහසුවෙන් කළමනාකරණය කරන්න',
-            ta: 'உங்கள் வாடிக்கையாளர் விசாரணைகளை நெறிப்படுத்துங்கள்'
+            en: 'Streamline Your Customer Orders',
+            si: 'ඔබේ Customer Orders පහසුවෙන් කළමනාකරණය කරන්න',
+            ta: 'உங்கள் வாடிக்கையாளர் ஆர்டர்களை நெறிப்படுத்துங்கள்'
         },
         description: {
-            en: 'Transform how you handle customer inquiries with our powerful inquiry management system. Capture, organize, and convert inquiries into sales effortlessly while never missing a potential customer.',
-            si: 'අපගේ Inquiry Management System එක හරහා Customer Inquiries හසුරුවන ආකාරය සම්පූර්ණයෙන්ම වෙනස් කරගන්න. කිසිම පාරිභෝගිකයෙකු හෝ Miss නොකර, ලැබෙන සෑම Inquiry එකක්ම ඉතා පහසුවෙන් Sales බවට පත් කරගන්න.',
-            ta: 'எங்கள் சக்திவாய்ந்த விசாரணை மேலாண்மை அமைப்புடன் வாடிக்கையாளர் விசாரணைகளை நீங்கள் கையாளும் விதத்தை மாற்றுங்கள். சாத்தியமான வாடிக்கையாளரை ஒருபோதும் தவறவிடாமல் விசாரணைகளைப் பிடிக்கவும், ஒழுங்கமைக்கவும், விற்பனையாக மாற்றவும்.'
+            en: 'Transform how you handle customer orders with our powerful order management system. Capture, organize, and convert orders into sales effortlessly while never missing a potential customer.',
+            si: 'අපගේ Order Management System එක හරහා Customer Orders හසුරුවන ආකාරය සම්පූර්ණයෙන්ම වෙනස් කරගන්න. කිසිම පාරිභෝගිකයෙකු හෝ Miss නොකර, ලැබෙන සෑම Order එකක්ම ඉතා පහසුවෙන් Sales බවට පත් කරගන්න.',
+            ta: 'எங்கள் சக்திவாய்ந்த ஆர்டர் மேலாண்மை அமைப்புடன் வாடிக்கையாளர் ஆர்டர்களை நீங்கள் கையாளும் விதத்தை மாற்றுங்கள். சாத்தியமான வாடிக்கையாளரை ஒருபோதும் தவறவிடாமல் ஆர்டர்களைப் பிடிக்கவும், ஒழுங்கமைக்கவும், விற்பனையாக மாற்றவும்.'
         },
         startFreeTrial: {
             en: 'Start a Free Trial',
@@ -38,9 +44,9 @@ export const inquiryTranslations = {
     // Inquiry Features Section
     inquiryFeatures: {
         title: {
-            en: 'Get 360° view of your inquiries',
-            si: 'ඔබේ Inquiries ගැන 360° View එකක් ගන්න',
-            ta: 'உங்கள் விசாரணைகளின் 360° பார்வையைப் பெறுங்கள்'
+            en: 'Get 360° view of your orders',
+            si: 'ඔබේ Orders ගැන 360° View එකක් ගන්න',
+            ta: 'உங்கள் ஆர்டர்களின் 360° பார்வையைப் பெறுங்கள்'
         },
         features: {
             customerProfiles: {
@@ -74,9 +80,9 @@ export const inquiryTranslations = {
                     ta: 'அனைத்து ஆர்டர்கள் மற்றும் அவற்றின் நிலைகள்'
                 },
                 description: {
-                    en: 'Track every inquiry, order, and its current status in one place. Stay organized and avoid missed follow-ups with a clear overview.',
-                    si: 'හැම Inquiry එකක්ම, Order එකක්ම, ඒකේ Current Status එකත් එක්ක එක තැනකින් Track කරන්න. Clear Overview එකක් එක්ක Missed Follow-ups Avoid කරන්න.',
-                    ta: 'ஒவ்வொரு விசாரணை, ஆர்டர் மற்றும் அதன் தற்போதைய நிலையை ஒரே இடத்தில் கண்காணிக்கவும். ஒழுங்கமைக்கப்பட்ட நிலையில் இருங்கள் மற்றும் தெளிவான கண்ணோட்டத்துடன் தவறவிட்ட பின்தொடர்தல்களைத் தவிர்க்கவும்.'
+                    en: 'Track every order, and its current status in one place. Stay organized and avoid missed follow-ups with a clear overview.',
+                    si: 'හැම Order එකක්ම, ඒකේ Current Status එකත් එක්ක එක තැනකින් Track කරන්න. Clear Overview එකක් එක්ක Missed Follow-ups Avoid කරන්න.',
+                    ta: 'ஒவ்வொரு ஆர்டர் மற்றும் அதன் தற்போதைய நிலையை ஒரே இடத்தில் கண்காணிக்கவும். ஒழுங்கமைக்கப்பட்ட நிலையில் இருங்கள் மற்றும் தெளிவான கண்ணோட்டத்துடன் தவறவிட்ட பின்தொடர்தல்களைத் தவிர்க்கவும்.'
                 }
             },
             orderSources: {
@@ -86,7 +92,7 @@ export const inquiryTranslations = {
                     ta: 'ஆர்டர் ஆதாரங்கள் மற்றும் விற்பனை சேனல்கள்'
                 },
                 description: {
-                    en: 'Identify where your orders are coming from. See which sales channels are bringing in the most inquiries and focus your efforts accordingly.',
+                    en: 'Identify where your orders are coming from. See which sales channels are bringing in the most orders and focus your efforts accordingly.',
                     si: 'ඔබේ Orders එන්නේ කොහෙන්ද කියලා හදුනාගන්න. වැඩිම Inquiries ගේන Sales Channels මොනවද කියලා බලලා, ඒ අනුව ඔබට ඒ සදහා වැඩියෙන් අවදානය දෙන්න. ',
                     ta: 'உங்கள் ஆர்டர்கள் எங்கிருந்து வருகின்றன என்பதைக் கண்டறியவும். எந்த விற்பனை சேனல்கள் அதிக விசாரணைகளைக் கொண்டு வருகின்றன என்பதைப் பார்த்து அதற்கேற்ப உங்கள் முயற்சிகளைக் கவனம் செலுத்துங்கள்.'
                 }
@@ -120,15 +126,15 @@ export const inquiryTranslations = {
                 ta: 'உங்கள் சிறந்த'
             },
             part2: {
-                en: 'inquiry channels',
-                si: 'Inquiry Channels සොයා ගන්න',
-                ta: 'விசாரணை சேனல்களைக் கண்டறியவும்'
+                en: 'orders channels',
+                si: 'Orders Channels සොයා ගන්න',
+                ta: 'ஆர்டர் சேனல்களைக் கண்டறியவும்'
             }
         },
         description: {
-            en: 'Identify which sales channels bring in the most inquiries and focus your efforts where they work best.',
-            si: 'වැඩිම Inquiries ගේන Sales Channels මොනවද කියලා හදුනා ගන්න, හොඳම Results ලැබෙන තැනට වැඩි අවදානයක් ලබා දෙන්න.',
-            ta: 'எந்த விற்பனை சேனல்கள் அதிக விசாரணைகளைக் கொண்டு வருகின்றன என்பதைக் கண்டறிந்து அவை சிறப்பாக செயல்படும் இடத்தில் உங்கள் முயற்சிகளைக் கவனம் செலுத்துங்கள்.'
+            en: 'Identify which sales channels bring in the most orders and focus your efforts where they work best.',
+            si: 'වැඩිම Orders ගේන Sales Channels මොනවද කියලා හදුනා ගන්න, හොඳම Results ලැබෙන තැනට වැඩි අවදානයක් ලබා දෙන්න.',
+            ta: 'எந்த விற்பனை சேனல்கள் அதிக ஆர்டர்களைக் கொண்டு வருகின்றன என்பதைக் கண்டறிந்து அவை சிறப்பாக செயல்படும் இடத்தில் உங்கள் முயற்சிகளைக் கவனம் செலுத்துங்கள்.'
         },
         stats: {
             dataAccuracy: {

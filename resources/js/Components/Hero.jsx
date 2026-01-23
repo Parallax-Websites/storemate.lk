@@ -149,11 +149,11 @@ export default function Hero({ onOpenTrialModal }) {
                 <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
                     <div className="flex flex-col items-center text-center">
 
-                        <h1 className={`flex flex-col items-center space-y-2 text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transform transition-all duration-700 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>{t('hero.allYour')}</span>
+                        <h1 className={`flex flex-col items-center space-y-2 text-3xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight transform transition-all duration-700 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+                            <span className="text-xl md:text-2xl lg:text-4xl" style={{color: '#006daf'}}>{t('hero.allYour')}</span>
                             <span className="text-gray-900" style={{ fontFamily: 'var(--font-sans)' }}>{t('hero.socialMediaOrders')}</span>
                             <span className="text-gray-900">{t('hero.couriers')}</span>
-                            <span className="text-2xl md:text-3xl lg:text-5xl" style={{color: '#006daf'}}>{t('hero.inOnePlace')}</span>
+                            <span className="text-xl md:text-2xl lg:text-4xl" style={{color: '#006daf'}}>{t('hero.inOnePlace')}</span>
                         </h1>
 
                         <p className={`mb-12 text-xl md:text-1xl text-gray-600 max-w-2xl leading-relaxed transform transition-all duration-700 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
@@ -192,19 +192,21 @@ export default function Hero({ onOpenTrialModal }) {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            <button
+                        <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-8 md:mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+                            <a
                                 id={`btn_start_a_free_trial_hero_${computePageKey()}`}
-                                onClick={onOpenTrialModal}
+                                href="https://welcome.oms.storemate.cloud/register"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
                                 style={{backgroundColor: '#006daf'}}
                             >
-                                {t('nav.startFreeTrial')}
+                                {t('nav.getFreeAccount')}
                                 <svg className="ml-2 -mr-1 h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
-                            </button>
-                            <button
+                            </a>
+                            {/* <button
                                 onClick={() => {
                                     const section = document.getElementById('what-is-storemate-oms');
                                     section?.scrollIntoView({ behavior: 'smooth' });
@@ -219,7 +221,7 @@ export default function Hero({ onOpenTrialModal }) {
                                     </svg>
                                 </span>
                                 {t('hero.howItWorks')}
-                            </button>
+                            </button> */}
                         </div>
                         {/* Partner Logos Carousel */}
                         <div className="relative w-full max-w-4xl mt-8 mb-12 overflow-hidden">

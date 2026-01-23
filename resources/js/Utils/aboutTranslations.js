@@ -3,6 +3,7 @@ import { LanguageContext } from '@/Contexts/LanguageContext';
 
 const aboutTranslations = {
     en: {
+        getFreeAccount: "Get Your Free Account",
         about: {
             pageTitle: "About Us - Storemate OMS",
             hero: {
@@ -80,6 +81,7 @@ const aboutTranslations = {
         }
     },
     si: {
+        getFreeAccount: "නොමිලේ ලියාපදිංචි වන්න",
         about: {
             pageTitle: "අප ගැන - Storemate OMS",
             hero: {
@@ -157,6 +159,7 @@ const aboutTranslations = {
         }
     },
     ta: {
+        getFreeAccount: "உங்கள் இலவச கணக்கை பெறுங்கள்",
         about: {
             pageTitle: "எங்களைப் பற்றி - Storemate OMS",
             hero: {

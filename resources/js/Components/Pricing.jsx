@@ -328,13 +328,14 @@ export default function Pricing({ onOpenTrialModal }) {
                                     {plan.buttonText}
                                 </a>
                             ) : (
-                                <button
-                                    id={`btn_start_a_free_trial_card_${computePageKey()}`}
-                                    onClick={() => onOpenTrialModal?.('card')}
+                                <a
+                                    href="https://welcome.oms.storemate.cloud/register"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                                 >
                                     {plan.buttonText}
-                                </button>
+                                </a>
                             )}
                             {plan.trialPeriod && (
                                 <div className="text-center mt-3">

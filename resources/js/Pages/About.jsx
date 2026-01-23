@@ -68,7 +68,7 @@ export default function About({ auth }) {
                                 onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
                                 onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}
                             >
-                                {tAbout('about.hero.buttons.getStarted')}
+                                {tAbout('getFreeAccount')}
                             </button>
                             <a
                                 href="/contact-us"

@@ -374,9 +374,10 @@ export default function FeaturesDropdown({ onOpenTrialModal }) {
                                         </svg>
                                         {t('common.viewPricing')}
                                     </Link>
-                                    <button
-                                        id={`btn_start_a_free_trial_header_dropdown_${computePageKey()}`}
-                                        onClick={() => onOpenTrialModal?.('dropdown')}
+                                    <a
+                                        href="https://welcome.oms.storemate.cloud/register"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                                         style={{backgroundColor: '#013387'}}
                                         onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'}
@@ -389,7 +390,7 @@ export default function FeaturesDropdown({ onOpenTrialModal }) {
                                         <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                         </svg>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

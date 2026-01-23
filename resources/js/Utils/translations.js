@@ -55,9 +55,14 @@ export const translations = {
             ta: 'உள்நுழைய'
         },
         startFreeTrial: {
-            en: 'Start a Free Trial',
-            si: 'නොමිලේ අත්හදා බලන්න',
-            ta: 'விசாரணை'
+            en: 'Get Your Free Account',
+            si: 'නොමිලේ ලියාපදිංචි වන්න',
+            ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
+        },
+        getFreeAccount: {
+            en: 'Get Your Free Account',
+            si: 'නොමිලේ ලියාපදිංචි වන්න',
+            ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
         },
         // Footer Navigation Keys
         howItWorks: {
@@ -96,13 +101,13 @@ export const translations = {
     features: {
         inquiryManagement: {
             title: {
-                en: 'Inquiry Management',
-                si: 'විමසීම් කළමනාකරණය',
+                en: 'Orders Management',
+                si: 'ඇණවුම් කළමනාකරණය',
                 ta: 'விசாரணை மேலாண்மை'
             },
             description: {
                 en: 'Streamline customer inquiries and lead conversion',
-                si: 'පාරිභෝගික විමසීම් සහ ලීඩ් පරිවර්තනය සරල කරන්න',
+                si: 'පාරිභෝගික ඇණවුම් සහ ලීඩ් පරිවර්තනය සරල කරන්න',
                 ta: 'வாடிக்கையாளர் விசாரணைகள் மற்றும் லீட் மாற்றத்தை நெறிப்படுத்துங்கள்'
             }
         },
@@ -1082,9 +1087,9 @@ export const translations = {
             ta: 'விலையைப் பார்க்கவும்'
         },
         startFreeTrial: {
-            en: 'Start Free Trial',
-            si: 'නොමිලේ අත්හදා බැලීම ආරම්භ කරන්න',
-            ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
+            en: 'Get Your Free Account',
+            si: 'නොමිලේ ලියාපදිංචි වන්න',
+            ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
         },
         readyToStart: {
             en: 'Ready to get started?',

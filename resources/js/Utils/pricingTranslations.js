@@ -31,7 +31,7 @@ const pricingTranslations = {
                     locations: "2 Business Accounts",
                     deliveryCompanies: "1 Delivery Company",
                     costPerOrder: "Rs 10",
-                    buttonText: "Try Demo Account",
+                    buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days",
                     popular: "Most Popular"
                 },
@@ -44,7 +44,7 @@ const pricingTranslations = {
                     locations: "5 Business Accounts",
                     deliveryCompanies: "2 Delivery Companies",
                     costPerOrder: "Rs 2.4",
-                    buttonText: "Try Demo Account",
+                    buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days"
                 },
                 premium: {
@@ -56,7 +56,7 @@ const pricingTranslations = {
                     locations: "5 Business Accounts",
                     deliveryCompanies: "10 Delivery Companies",
                     costPerOrder: "Rs 0.48",
-                    buttonText: "Try Demo Account",
+                    buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days"
                 },
                 enterprise: {
@@ -162,7 +162,7 @@ const pricingTranslations = {
                     locations: "ව්‍යාපාරික ගිණුම් 2",
                     deliveryCompanies: "කුරියර් සමාගම 1",
                     costPerOrder: "රු. 10",
-                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම",
                     popular: "වඩාත් ජනප්‍රිය"
                 },
@@ -175,7 +175,7 @@ const pricingTranslations = {
                     locations: "ව්‍යාපාරික ගිණුම් 5",
                     deliveryCompanies: "කුරියර් සමාගම් 2",
                     costPerOrder: "රු. 2.4",
-                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
                 premium: {
@@ -187,7 +187,7 @@ const pricingTranslations = {
                     locations: "ව්‍යාපාරික ගිණුම් 5",
                     deliveryCompanies: "කුරියර් සමාගම් 10",
                     costPerOrder: "රු. 0.48",
-                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න",
+                    buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
                 enterprise: {
@@ -291,7 +291,7 @@ const pricingTranslations = {
                     locations: "2 வணிக இடங்கள்",
                     deliveryCompanies: "1 டெலிவரி நிறுவனம்",
                     costPerOrder: "Rs 10",
-                    buttonText: "தொடங்குங்கள்",
+                    buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை",
                     popular: "மிகவும் பிரபலமான"
                 },
@@ -304,7 +304,7 @@ const pricingTranslations = {
                     locations: "5 வணிக இடங்கள்",
                     deliveryCompanies: "2 டெலிவரி நிறுவனங்கள்",
                     costPerOrder: "Rs 2.4",
-                    buttonText: "தொடங்குங்கள்",
+                    buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை"
                 },
                 premium: {
@@ -316,7 +316,7 @@ const pricingTranslations = {
                     locations: "5 வணிக இடங்கள்",
                     deliveryCompanies: "10 டெலிவரி நிறுவனங்கள்",
                     costPerOrder: "Rs 0.48",
-                    buttonText: "தொடங்குங்கள்",
+                    buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை"                },
                 enterprise: {
                     name: "நிறுவன",

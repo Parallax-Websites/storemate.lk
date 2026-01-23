@@ -12,29 +12,6 @@ const Header = forwardRef(({ auth }, ref) => {
     const [showingMobileFeaturesDropdown, setShowingMobileFeaturesDropdown] = useState(false);
     const [showingMobileMoreDropdown, setShowingMobileMoreDropdown] = useState(false);
     const [showDemoModal, setShowDemoModal] = useState(false);
-
-    // GTM Tracking Helper Functions
-    const trackCTAClick = (ctaText, ctaLocation, ctaType = 'primary') => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'cta_click',
-            ctaLocation: ctaLocation,
-            ctaText: ctaText,
-            ctaType: ctaType
-        });
-        console.log(`🎯 GTM: CTA clicked - ${ctaText} (${ctaLocation})`);
-    };
-
-    const trackNavigationClick = (linkText, linkUrl, linkType = 'header') => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'navigation_click',
-            linkText: linkText,
-            linkUrl: linkUrl,
-            linkType: linkType
-        });
-        console.log(`🎯 GTM: Navigation clicked - ${linkText} (${linkType})`);
-    };
     const [showTrialModal, setShowTrialModal] = useState(false);
     const [showTrialThankYou, setShowTrialThankYou] = useState(false);
     const [showDemoThankYou, setShowDemoThankYou] = useState(false);
@@ -242,6 +219,7 @@ const Header = forwardRef(({ auth }, ref) => {
             return;
         }
 
+        /* COMMENTED OUT - ALL FORM SUBMISSION CODE
         // Fixed demo login URL
         const loginUrl = 'https://oms.storemate.cloud/login?businessName=storemateoms&loginEmail=smdemo@gmail.com&password=PSP2F*uPCIxl';
 
@@ -276,6 +254,7 @@ const Header = forwardRef(({ auth }, ref) => {
         setShowDemoModal(false);
         setShowDemoThankYou(true);
         setDemoCountdown(5);
+        */
 
         // Reset form
         setFormData({
@@ -305,6 +284,7 @@ const Header = forwardRef(({ auth }, ref) => {
             return;
         }
 
+        /* COMMENTED OUT - ALL FORM SUBMISSION CODE
         // Get current page for UTM source
         const currentPath = route().current();
         let utmSource = '';
@@ -372,6 +352,7 @@ const Header = forwardRef(({ auth }, ref) => {
         setShowTrialModal(false);
         setShowTrialThankYou(true);
         setCountdown(5);
+        */
 
         // Reset form
         setTrialFormData({
@@ -488,24 +469,14 @@ const Header = forwardRef(({ auth }, ref) => {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-6">
-                                    <NavLink 
-                                        href={route('home')} 
-                                        active={route().current('home')} 
-                                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
-                                        onClick={() => trackNavigationClick(t('nav.home'), '/home', 'header')}
-                                    >
+                                    <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                         {t('nav.home')}
                                     </NavLink>
                                     <FeaturesDropdown onOpenTrialModal={(source) => {
                                         setTrialButtonSource(source);
                                         setShowTrialModal(true);
                                     }} />
-                                    <NavLink 
-                                        href={route('pricing')} 
-                                        active={route().current('pricing')} 
-                                        className="text-sm font-medium text-gray-500 hover:text-gray-700"
-                                        onClick={() => trackNavigationClick(t('nav.pricing'), '/pricing', 'header')}
-                                    >
+                                    <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                         {t('nav.pricing')}
                                     </NavLink>
                                     <Dropdown>
@@ -585,25 +556,13 @@ const Header = forwardRef(({ auth }, ref) => {
                                     </Dropdown.Content>
                                 </Dropdown>
                                 <a
-                                    id={getStartTrialId('header')}
-                                    onClick={() => {
-                                        trackCTAClick(t('nav.startFreeTrial'), 'header', 'secondary');
-                                        setTrialButtonSource('header');
-                                        setShowTrialModal(true);
-                                    }}
-                                    className="inline-flex items-center justify-center rounded-md border border-custom-blue-2 px-4 py-2 text-base font-bold text-custom-blue-2 hover:bg-gray-50 cursor-pointer"
-                                >
-                                    {t('nav.startFreeTrial')}
-                                </a>
-                                <a
                                     id={getTryDemoId('header')}
-                                    onClick={() => {
-                                        trackCTAClick('Try Live Demo', 'header', 'primary');
-                                        setShowDemoModal(true);
-                                    }}
+                                    href="https://welcome.oms.storemate.cloud/register"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
                                 >
-                                    Try Live Demo
+                                    {t('nav.getFreeAccount')}
                                 </a>
                             </div>
 
@@ -749,21 +708,13 @@ const Header = forwardRef(({ auth }, ref) => {
                         </div>
 
                         <a
-                            id={getStartTrialId('header')}
-                            onClick={() => {
-                                setTrialButtonSource('header');
-                                setShowTrialModal(true);
-                            }}
-                            className="block mx-4 mt-4 px-4 py-2 text-center font-bold text-custom-blue-2 border-2 border-custom-blue-2 hover:bg-gray-50 rounded-md cursor-pointer"
-                        >
-                            {t('nav.startFreeTrial')}
-                        </a>
-                        <a
                             id={getTryDemoId('header')}
-                            onClick={() => setShowDemoModal(true)}
+                            href="https://welcome.oms.storemate.cloud/register"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="block mx-4 mt-3 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md cursor-pointer"
                         >
-                            Try Live Demo
+                            {t('nav.getFreeAccount')}
                         </a>
                     </div>
                 </div>
@@ -775,7 +726,7 @@ const Header = forwardRef(({ auth }, ref) => {
                     <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
                         <div className="p-6">
                             <div className="mb-6">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Try Live Demo</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Your Free account</h2>
                                 <p className="text-sm text-gray-600">Please provide your details to access the demo</p>
                             </div>
 

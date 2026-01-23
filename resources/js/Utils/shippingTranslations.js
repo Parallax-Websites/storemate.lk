@@ -1,6 +1,11 @@
 import { useLanguage } from '@/Contexts/LanguageContext';
 
 export const shippingTranslations = {
+    getFreeAccount: {
+        en: 'Get Your Free Account',
+        si: 'නොමිලේ ලියාපදිංචි වන්න',
+        ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
+    },
     // Shipping Hero Section
     shippingHero: {
         badge: {

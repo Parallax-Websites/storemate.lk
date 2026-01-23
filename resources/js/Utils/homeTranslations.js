@@ -1,6 +1,13 @@
 import { useLanguage } from '@/Contexts/LanguageContext';
 
 export const homeTranslations = {
+
+
+            getFreeAccount: {
+            en: 'Get Your Free Account',
+            si: 'නොමිලේ ලියාපදිංචි වන්න',
+            ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
+        },
     // How It Works Section
     howItWorks: {
         title: {
