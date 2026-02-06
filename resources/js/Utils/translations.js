@@ -1224,7 +1224,7 @@ export const translations = {
             },
             trust2: {
                 en: 'No commitment required',
-                si: 'කිසිදු බැඳීමක් නැත',
+                si: 'කිසිදු අය කිරීමක් නැත',
                 ta: 'எந்த உறுதிமொழியும் தேவையில்லை'
             },
             step1Label: {
