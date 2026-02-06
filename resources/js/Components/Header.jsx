@@ -513,6 +513,14 @@ const Header = forwardRef(({ auth }, ref) => {
                                             >
                                                 {t('nav.partnerProgram')}
                                             </a>
+                                            <a
+                                                href="https://storemate.lk/blogs/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.blogs')}
+                                            </a>
                                         </Dropdown.Content>
                                     </Dropdown>
                                 </div>
@@ -669,6 +677,9 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true" className="text-sm">
                                     {t('nav.partnerProgram')}
                                 </NavLink>
+                                <a href="https://storemate.lk/blogs/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition duration-150 ease-in-out">
+                                    {t('nav.blogs')}
+                                </a>
                             </div>
                         )}
                     </div>

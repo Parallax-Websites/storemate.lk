@@ -54,6 +54,11 @@ export const translations = {
             si: 'හවුල්කරු වැඩසටහන',
             ta: 'கூட்டாளர்'
         },
+        blogs: {
+            en: 'Blogs',
+            si: 'බ්ලොග්',
+            ta: 'வலைப்பதிவுகள்'
+        },
         more: {
             en: 'More',
             si: 'තවත්',
