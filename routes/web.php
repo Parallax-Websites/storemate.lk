@@ -69,6 +69,10 @@ Route::get('/privacy-policy', function () {
     return Inertia::render('PrivacyPolicy');
 })->name('privacy.policy');
 
+Route::get('/call-campaign', function () {
+    return Inertia::render('CallCampaign');
+})->name('call.campaign');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

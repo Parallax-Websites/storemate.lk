@@ -9,6 +9,16 @@ export const translations = {
 
     // Navigation
     nav: {
+        callCampaign: {
+            en: 'Talk to our expert for FREE today!',
+            si: 'අදම අපගේ විශේෂඥයෙකු සමඟ නොමිලේ කතා කරන්න!',
+            ta: 'இன்றே எங்கள் நிபுணரிடம் இலவசமாக பேசுங்கள்!'
+        },
+        callNow: {
+            en: 'Call Now — 011 422 6902',
+            si: 'දැන්ම අමතන්න — 011 422 6902',
+            ta: 'இப்போது அழைக்கவும் — 011 422 6902'
+        },
         home: {
             en: 'Home',
             si: 'මුල් පිටුව',
@@ -340,7 +350,7 @@ export const translations = {
     // Hero Section
     hero: {
         allYour: {
-            en: 'All Your',
+            en: 'Manage All Your',
             si: 'ඔයාගේ සියලුම',
             ta: 'உங்கள் அனைத்து'
         },
@@ -350,19 +360,19 @@ export const translations = {
             ta: 'சமூக ஊடக ஆர்டர்கள்'
         },
         couriers: {
-            en: '& Couriers',
-            si: ' සහ Courier කළමනාකරණ කටයුතු',
-            ta: '& கூரியர்கள்'
+            en: '& Increase Your',
+            si: 'කළමනාකරණය කරමින් ',
+            ta: 'மேலாண்மை செய்து'
         },
         inOnePlace: {
-            en: 'in One Place',
-            si: ' එකම තැනකින්',
-            ta: 'ஒரே இடத்தில்'
+            en: 'Sales by 2X!',
+            si: 'විකුණුම් 2X කින් වැඩි කරගන්න!',
+            ta: 'விற்பனையை 2X ஆக அதிகரிக்கவும்!'
         },
         description: {
-            en: 'Manage your Facebook, Instagram, WhatsApp and courier orders into one system. No manual uploads, no confusion — just faster fulfillment.',
-            si: 'ඔබේ Facebook, Instagram, WhatsApp සහ කුරියර් ඇණවුම් එක් පද්ධතියකට කළමනාකරණය කරන්න. අතින් උඩුගත කිරීම් නැත, ව්‍යාකූලත්වයක් නැත — වේගවත් සම්පූර්ණ කිරීම පමණි.',
-            ta: 'உங்கள் Facebook, Instagram, WhatsApp மற்றும் கூரியர் ஆர்டர்களை ஒரே அமைப்பில் நிர்வகிக்கவும். கையேடு பதிவேற்றங்கள் இல்லை, குழப்பம் இல்லை — விரைவாக நிறைவேற்றம் மட்டுமே.'
+            en: 'Reduce Returns, Identify Fake Orders and Sync Couriers easily. Try all of this with Storemate. Call our expert for FREE today.',
+            si: 'Returns අඩු කරගන්න, Fake Orders හඳුනාගන්න සහ Courier පහසුවෙන් Sync කරන්න. මේ ඔක්කොම Storemate සමඟ උත්සාහ කරන්න. අදම අපගේ Expert කෙනෙක්ට Call කරන්න.',
+            ta: 'Returns குறைக்கவும், Fake Orders கண்டறியவும், Courier எளிதாக Sync செய்யவும். இவை அனைத்தையும் Storemate உடன் முயற்சிக்கவும். இன்றே எங்கள் நிபுணரை இலவசமாக அழைக்கவும்.'
         },
         fewerReturns: {
             line1: {
@@ -452,7 +462,7 @@ export const translations = {
             si: 'ආපසු ලැබීම් අඩු කරන්න',
             ta: 'வருமானத்தைக் குறைக்கவும்.'
         },
-        description: {
+        description2: {
             en: 'Stop fake orders, reduce costly returns, and process deliveries faster — all from one easy courier sync.',
             si: 'Returns අඩු කරන්න, Fake Orders නවත්වන්න, සහ Delivery Sync Delays නැතිව Business එක කරන්න දැන් පුළුවන්!',
             ta: 'போலி ஆர்டர்களை நிறுத்துங்கள், விலையுயர்ந்த வருமானத்தைக் குறைக்கவும், டெலிவரிகளை விரைவாகச் செயல்படுத்தவும் - அனைத்தும் ஒரே எளிதான கூரியர் ஒத்திசைவுடன்.'
@@ -1171,6 +1181,84 @@ export const translations = {
             en: '© Copyright 2025, All Rights Reserved by Storemate OMS | Product by Parallax Technologies',
             si: '© ප්‍රකාශන හිමිකම 2025, සියලුම හිමිකම් Storemate OMS විසින් ඇවිරිණි | Parallax Technologies විසින් නිෂ්පාදනය කරන ලදී.',
             ta: '© பதிப்புரிமை 2025, Storemate OMS அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை | தயாரிப்பு: Parallax Technologies'
+        }
+    },
+
+    // Call Campaign specific translations
+    campaign: {
+        cta: {
+            badge: {
+                en: 'FREE EXPERT CONSULTATION',
+                si: 'නොමිලේ විශේෂඥ උපදේශනය',
+                ta: 'இலவச நிபுணர் ஆலோசனை'
+            },
+            heading: {
+                en: 'Ready to Simplify Your Order Management?',
+                si: 'ඔබේ Order Management එක Simplify කරගන්න Ready ද?',
+                ta: 'உங்கள் ஆர்டர் மேலாண்மையை எளிதாக்க தயாரா?'
+            },
+            subheading: {
+                en: 'Our experts will help you reduce returns, stop fake orders, and sync couriers — all in one call.',
+                si: 'Returns අඩු කරන්න, Fake Orders නවත්වන්න, සහ Courier Sync කරගන්න — එක Call එකකින් අපේ Expert ලා ඔබට උදව් කරයි.',
+                ta: 'Returns குறைக்கவும், Fake Orders நிறுத்தவும், Courier Sync செய்யவும் — ஒரே அழைப்பில் எங்கள் நிபுணர்கள் உங்களுக்கு உதவுவார்கள்.'
+            },
+            callTitle: {
+                en: 'Call Now — It\'s FREE!',
+                si: 'දැන්ම Call කරන්න — නොමිලේ!',
+                ta: 'இப்போது அழைக்கவும் — இலவசம்!'
+            },
+            callSubtext: {
+                en: 'No commitment required. Just a quick chat with our expert to see how Storemate can help your business.',
+                si: 'කිසිදු බැඳීමක් නැත. Storemate ඔබේ business එකට උදව් කරන්නෙ කොහොමද කියලා බලන්න අපේ expert කෙනෙක්ට කතා කරන්න.',
+                ta: 'எந்த உறுதிமொழியும் தேவையில்லை. Storemate உங்கள் வணிகத்திற்கு எவ்வாறு உதவும் என்பதை பார்க்க எங்கள் நிபுணருடன் விரைவாக பேசுங்கள்.'
+            },
+            trust1: {
+                en: '100% Free Consultation',
+                si: '100% නොමිලේ උපදේශනය',
+                ta: '100% இலவச ஆலோசனை'
+            },
+            trust2: {
+                en: 'No commitment required',
+                si: 'කිසිදු බැඳීමක් නැත',
+                ta: 'எந்த உறுதிமொழியும் தேவையில்லை'
+            },
+            step1Label: {
+                en: 'STEP 1',
+                si: 'පියවර 1',
+                ta: 'படி 1'
+            },
+            step1: {
+                en: 'Call our expert for FREE',
+                si: 'අපේ Expert කෙනෙක්ට නොමිලේ Call කරන්න',
+                ta: 'எங்கள் நிபுணரை இலவசமாக அழைக்கவும்'
+            },
+            step2Label: {
+                en: 'STEP 2',
+                si: 'පියවර 2',
+                ta: 'படி 2'
+            },
+            step2: {
+                en: 'Get a personalized demo of Storemate',
+                si: 'Storemate ගැන ඔබට ගැළපෙන Demo එකක් ලබාගන්න',
+                ta: 'Storemate இன் தனிப்பயனாக்கப்பட்ட டெமோவைப் பெறுங்கள்'
+            },
+            step3Label: {
+                en: 'STEP 3',
+                si: 'පියවර 3',
+                ta: 'படி 3'
+            },
+            step3: {
+                en: 'Start your 30-day free trial',
+                si: 'දවස් 30ක නොමිලේ trial එක ආරම්භ කරන්න',
+                ta: 'உங்கள் 30 நாள் இலவச சோதனையைத் தொடங்குங்கள்'
+            }
+        },
+        footer: {
+            callUs: {
+                en: 'Talk to our expert for FREE',
+                si: 'අපගේ Expert කෙනෙක්ට නොමිලේ කතා කරන්න',
+                ta: 'எங்கள் நிபுணரிடம் இலவசமாக பேசுங்கள்'
+            }
         }
     }
 };

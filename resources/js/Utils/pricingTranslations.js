@@ -97,8 +97,8 @@ const pricingTranslations = {
             subtitle: "Get detailed answers about Storemate OMS features and technical aspects",
             faqs: [
                 {
-                    question: "What is an enquiry?",
-                    answer: "An enquiry is a potential customer inquiry or lead that comes through your social media channels (Facebook, WhatsApp, Instagram) or phone calls.<br><br>In Storemate OMS, enquiries are the first step in your sales process — they help you track and follow up with potential customers before they become actual orders."
+                    question: "What is an order?",
+                    answer: "An order is a customer purchase request that comes through your social media channels (Facebook, WhatsApp, Instagram) or phone calls.<br><br>In Storemate OMS, orders are the first step in your sales process — they help you track and follow up with customers from placement to delivery."
                 },
                 {
                     question: "What does COD Sync mean?",
@@ -229,7 +229,7 @@ const pricingTranslations = {
             faqs: [
                 {
                     question: "Order එකක් කියන්නේ මොකක්ද?",
-                    answer: "Order එකක් කියන්නේ ඔයාගේ Business එකට එන Customer විමසීමක් හෝ Lead එකක්. මේවා Facebook Messages, WhatsApp Chats, Instagram DMs, හෝ Phone Calls හරහා එන්න පුළුවන්. "
+                    answer: "Order එකක් කියන්නේ ඔයාගේ Business එකට Facebook Messages, WhatsApp Chats, Instagram DMs, හෝ Phone Calls හරහා එන Customer Purchase Request එකක්.<br><br>Storemate OMS තුළ, Orders යනු ඔබේ Sales Process එකේ පළමු පියවරයි — Order එක Place කරන තැන සිට Delivery එක දක්වා Customers ලා Track කරන්න සහ Follow Up කරන්න මේවා උදව් වෙනවා."
                 },
                 {
                     question: "COD Sync කියන්නේ මොකක්ද?",
@@ -355,8 +355,8 @@ const pricingTranslations = {
             subtitle: "Storemate OMS அம்சங்கள் மற்றும் தொழில்நுட்ப அம்சங்கள் பற்றிய விரிவான பதில்களைப் பெறுங்கள்",
             faqs: [
                 {
-                    question: "விசாரணை என்றால் என்ன?",
-                    answer: "விசாரணை என்பது உங்கள் சமூக ஊடக சேனல்கள் (Facebook, WhatsApp, Instagram) அல்லது தொலைபேசி அழைப்புகள் மூலம் வரும் சாத்தியமான வாடிக்கையாளர் விசாரணை அல்லது முன்னணியாகும்.<br><br>Storemate OMS இல், விசாரணைகள் உங்கள் விற்பனை செயல்முறையின் முதல் படியாகும் — அவை உண்மையான ஆர்டர்களாக மாறுவதற்கு முன்பு சாத்தியமான வாடிக்கையாளர்களை கண்காணிக்கவும் பின்தொடரவும் உதவுகின்றன."
+                    question: "ஆர்டர் என்றால் என்ன?",
+                    answer: "ஆர்டர் என்பது உங்கள் சமூக ஊடக சேனல்கள் (Facebook, WhatsApp, Instagram) அல்லது தொலைபேசி அழைப்புகள் மூலம் வரும் வாடிக்கையாளர் கொள்முதல் கோரிக்கையாகும்.<br><br>Storemate OMS இல், ஆர்டர்கள் உங்கள் விற்பனை செயல்முறையின் முதல் படியாகும் — ஆர்டர் வைப்பது முதல் டெலிவரி வரை வாடிக்கையாளர்களை கண்காணிக்கவும் பின்தொடரவும் உதவுகின்றன."
                 },
                 {
                     question: "COD ஒத்திசைவு என்றால் என்ன?",
