@@ -1214,7 +1214,7 @@ export const translations = {
             },
             callSubtext: {
                 en: 'No commitment required. Just a quick chat with our expert to see how Storemate can help your business.',
-                si: 'කිසිදු බැඳීමක් නැත. Storemate ඔබේ business එකට උදව් කරන්නෙ කොහොමද කියලා බලන්න අපේ expert කෙනෙක්ට කතා කරන්න.',
+                si: 'කිසිදු අයකිරීමක් නැත. Storemate ඔබේ business එකට උදව් කරන්නෙ කොහොමද කියලා බලන්න අපේ expert කෙනෙක්ට කතා කරන්න.',
                 ta: 'எந்த உறுதிமொழியும் தேவையில்லை. Storemate உங்கள் வணிகத்திற்கு எவ்வாறு உதவும் என்பதை பார்க்க எங்கள் நிபுணருடன் விரைவாக பேசுங்கள்.'
             },
             trust1: {
