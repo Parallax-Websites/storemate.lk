@@ -12,9 +12,9 @@ import MainLayout from '@/Layouts/MainLayout';
 export default function CampaignHome() {
     return (
         <MainLayout>
-            <Head title="StoreMate OMS - Call Our Expert for FREE | 011 422 6902">
-                <meta name="description" content="Talk to our expert for FREE. Reduce returns, stop fake orders, and sync couriers — all with Storemate OMS. Call 011 422 6902 today!" />
-                <meta name="keywords" content="order management system, e-commerce OMS, Storemate, call campaign, free consultation, 011 422 6902" />
+            <Head title="StoreMate OMS - Call Our Expert for FREE | 077 699 3472">
+                <meta name="description" content="Talk to our expert for FREE. Reduce returns, stop fake orders, and sync couriers — all with Storemate OMS. Call 077 699 3472 today!" />
+                <meta name="keywords" content="order management system, e-commerce OMS, Storemate, call campaign, free consultation, 077 699 3472" />
             </Head>
             <CampaignHeader />
             <CampaignHero />

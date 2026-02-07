@@ -17,13 +17,13 @@ const CampaignHeader = () => {
                         </span>
                         <span className="hidden sm:inline font-medium">{t('nav.callCampaign')}</span>
                         <a
-                            href="tel:0114226902"
+                            href="tel:0776993472"
                             className="inline-flex items-center gap-1.5 bg-white text-custom-blue-3 font-bold px-4 py-1 rounded-full text-sm hover:bg-gray-100 transition-colors"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                             </svg>
-                            011 422 6902
+                            077 699 3472
                         </a>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ const CampaignHeader = () => {
                         <div className="flex items-center space-x-3">
                             <LanguageSelector />
                             <a
-                                href="tel:0114226902"
+                                href="tel:0776993472"
                                 className="inline-flex items-center gap-2 bg-custom-blue-2 hover:bg-custom-blue-3 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
