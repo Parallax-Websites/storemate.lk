@@ -89,7 +89,7 @@ export default function CampaignHero() {
                             </div>
                         </div>
 
-                        {/* CTA — Call Button */}
+                        {/* CTA — Call & WhatsApp Buttons */}
                         <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-8 md:mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
                             <a
                                 href="tel:0779436364"

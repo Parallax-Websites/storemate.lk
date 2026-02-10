@@ -15,7 +15,7 @@ const CampaignFooter = () => {
                         {t('footer.description')}
                     </p>
 
-                    {/* Call CTA in footer */}
+                    {/* Call & WhatsApp CTA in footer */}
                     <div className="flex flex-col items-center gap-3 mb-8">
                         <p className="text-sm font-semibold text-gray-800">{t('campaign.footer.callUs')}</p>
                         <a
