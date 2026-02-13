@@ -71,7 +71,7 @@ export default function LeadCampaignHero() {
                 <div className="text-center max-w-4xl mx-auto">
                     {/* Headline */}
                     <h1
-                        className={`text-4xl sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold text-[#1a1a2e] leading-[1.15] tracking-tight transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+                        className={`text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-[1.15] tracking-tight transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
                     >
                         {t.headline}
                     </h1>

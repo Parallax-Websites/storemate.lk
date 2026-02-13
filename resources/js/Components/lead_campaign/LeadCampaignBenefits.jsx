@@ -110,9 +110,9 @@ export default function LeadCampaignBenefits() {
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
-                <div className={`text-center max-w-3xl mx-auto mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div className={`text-center max-w-4xl mx-auto mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">{t.badge}</p>
-                    <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-tight tracking-tight">
+                    <h2 className="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-tight tracking-tight">
                         {t.heading}
                     </h2>
                 </div>

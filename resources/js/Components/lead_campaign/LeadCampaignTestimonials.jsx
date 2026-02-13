@@ -73,7 +73,7 @@ export default function LeadCampaignTestimonials() {
                     {/* Left Column — Headline, Stats & CTA */}
                     <div className={`lg:col-span-5 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">{t.badge}</p>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a2e] leading-[1.15] tracking-tight">
+                        <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-bold text-[#1a1a2e] leading-snug sm:leading-[1.15] tracking-tight">
                             {t.heading}
                         </h2>
                         <p className="mt-6 text-base sm:text-lg text-gray-500 leading-relaxed">

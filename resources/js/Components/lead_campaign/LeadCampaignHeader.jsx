@@ -5,6 +5,7 @@ import { useLanguage } from '@/Contexts/LanguageContext';
 const LeadCampaignHeader = () => {
     const [scrolled, setScrolled] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
     const langRef = useRef(null);
     const { currentLanguage, changeLanguage } = useLanguage();
 
@@ -44,8 +45,8 @@ const LeadCampaignHeader = () => {
                         </Link>
                     </div>
 
-                    {/* Right side — CTA Buttons */}
-                    <div className="flex items-center gap-2 sm:gap-3">
+                    {/* Right side — Desktop CTA Buttons */}
+                    <div className="hidden sm:flex items-center gap-3">
                         {/* Language Dropdown */}
                         <div className="relative" ref={langRef}>
                             <button
@@ -90,6 +91,57 @@ const LeadCampaignHeader = () => {
                             Get Your Free Account
                         </a>
                     </div>
+
+                    {/* Mobile — Hamburger Button */}
+                    <button
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                        className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                    >
+                        {mobileOpen ? (
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`px-4 pb-5 pt-2 border-t ${scrolled ? 'border-gray-200 bg-white' : 'border-blue-100 bg-[#F2F8FB]'}`}>
+                    {/* Language Switcher */}
+                    <div className="flex items-center gap-2 mb-4">
+                        {languages.map((lang) => (
+                            <button
+                                key={lang.code}
+                                onClick={() => { changeLanguage(lang.code); }}
+                                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${
+                                    currentLanguage === lang.code
+                                        ? 'bg-[#006daf] text-white'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                }`}
+                            >
+                                {lang.full}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <a
+                        href="https://welcome.oms.storemate.cloud/register"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full bg-[#006daf] hover:bg-[#005a91] text-white font-semibold px-5 py-3 rounded-lg text-sm transition-colors"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                        </svg>
+                        Get Your Free Account
+                    </a>
                 </div>
             </div>
         </header>

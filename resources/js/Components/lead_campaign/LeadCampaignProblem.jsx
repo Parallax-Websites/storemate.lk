@@ -117,8 +117,8 @@ export default function LeadCampaignProblem() {
         <section ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Section Header — Full Width */}
-                <div className={`max-w-3xl mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-tight tracking-tight">
+                <div className={`max-w-4xl mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <h2 className="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-tight tracking-tight">
                         {t.heading}
                     </h2>
                     <p className="mt-6 text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl">
