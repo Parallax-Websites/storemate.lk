@@ -4,7 +4,7 @@ import { useLanguage } from '@/Contexts/LanguageContext';
 const heroTranslations = {
     en: {
         headline: 'Handling 500+ Lead Form Orders?',
-        subheadline: 'Stop wasting hours on messy Excel sheets and manual data entry. Automate your order workflow with StoreMate and scale your business with zero friction.',
+        subheadline: 'Stop wasting hours on messy Excel sheets and manual data entry. Automate your order workflow with StoreMate OMS and scale your business with zero friction.',
         cta: 'Get Your Free Account',
         trust1: '30,000+ Sri Lankan Businesses Trust Us',
         trust2: '50M+ orders handled',
@@ -13,7 +13,7 @@ const heroTranslations = {
     },
     si: {
         headline: 'Lead Form වලින් Orders 500+ වඩා එනවද?',
-        subheadline: 'Excel sheets සහ manual වැඩ වලට කාලය නාස්ති නොකර, StoreMate හරහා ඔබේ orders automate කරලා කිසිම කරදරයක් නැතිව business එක scale කරන්න.',
+        subheadline: 'Excel sheets සහ manual වැඩ වලට කාලය නාස්ති නොකර, StoreMate OMS හරහා ඔබේ orders automate කරලා කිසිම කරදරයක් නැතිව business එක scale කරන්න.',
         cta: 'නොමිලේ ගිණුම ලබාගන්න',
         trust1: 'ශ්‍රී ලංකාවේ ව්‍යාපාර 30,000+ ක විශ්වාසය',
         trust2: 'Orders 50M+ සාර්ථකව හසුරුවා ඇත',
