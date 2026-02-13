@@ -33,7 +33,7 @@ const LeadCampaignFooter = () => {
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[#006daf] hover:bg-[#005a91] text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors"
+                            className="inline-flex items-center gap-2 bg-[#1a1a2e] hover:bg-[#16162a] text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors"
                         >
                             {t.cta}
                         </a>

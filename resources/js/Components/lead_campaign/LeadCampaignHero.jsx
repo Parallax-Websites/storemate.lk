@@ -91,7 +91,7 @@ export default function LeadCampaignHero() {
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#006daf] text-white font-semibold text-base hover:bg-[#005a91] transition-all duration-300 hover:shadow-lg hover:shadow-[#006daf]/30 hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#1a1a2e] text-white font-semibold text-base hover:bg-[#16162a] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
                         >
                             {t.cta}
                         </a>
