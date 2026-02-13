@@ -14,6 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                jakarta: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'custom-blue-1': '#00BCE7',

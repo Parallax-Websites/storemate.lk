@@ -73,6 +73,10 @@ Route::get('/call-campaign', function () {
     return Inertia::render('CallCampaign');
 })->name('call.campaign');
 
+Route::get('/lead-campaign', function () {
+    return Inertia::render('LeadCampaign');
+})->name('lead.campaign');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
