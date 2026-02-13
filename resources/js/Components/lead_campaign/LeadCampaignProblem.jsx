@@ -141,7 +141,7 @@ export default function LeadCampaignProblem() {
                     {problems.map((problem, index) => (
                         <div
                             key={index}
-                            className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                            className={`bg-white rounded-2xl border border-gray-300 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                             style={{ transitionDelay: `${200 + index * 150}ms` }}
                         >
                             <div className="flex items-center gap-4 mb-4">
