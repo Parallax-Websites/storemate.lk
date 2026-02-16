@@ -677,7 +677,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true" className="text-sm">
                                     {t('nav.partnerProgram')}
                                 </NavLink>
-                                <a href="https://storemate.lk/blogs/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition duration-150 ease-in-out">
+                                <a href="https://storemate.lk/blog/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition duration-150 ease-in-out">
                                     {t('nav.blogs')}
                                 </a>
                             </div>
