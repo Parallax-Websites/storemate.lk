@@ -37,41 +37,43 @@ export default function Pricing({ onOpenTrialModal }) {
     }, []);
 
     const pricingPlans = [
-/*         {
+        {
             name: tPricing('pricing.plans.free.name'),
             subtitle: tPricing('pricing.plans.free.subtitle'),
-            price: `LKR ${tPricing('pricing.plans.free.price')}`,
+            price: `${tPricing('pricing.plans.free.price')}`,
             period: tPricing('pricing.plans.free.period'),
-            inquiries: tPricing('pricing.plans.free.inquiries'),
-            locations: tPricing('pricing.plans.free.locations'),
-            deliveryCompanies: tPricing('pricing.plans.free.deliveryCompanies'),
+            inquiries: '100 Orders/month',
+            users: '1 Users',
+            products: 'Unlimited Products',
+            deliveryCompanies: '1 Delivery Partners',
             features: [
-                { name: tPricing('pricing.features.inquiryManagement'), included: true },
-                { name: tPricing('pricing.features.codSync'), included: true },
-                { name: tPricing('pricing.features.whatsappForm'), included: false },
-                { name: tPricing('pricing.features.dedicatedServer'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: 'Knowledge base access', included: true },
+                { name: 'Community forum', included: true },
+                { name: 'Video tutorials', included: true },
+                { name: 'Email support', included: false },
+                { name: 'Customizations', included: false }
             ],
             buttonText: tPricing('pricing.plans.free.buttonText'),
             buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
             bgColor: "bg-orange-50",
             popular: false
-        }, */
+        },
         {
             name: tPricing('pricing.plans.starter.name'),
             subtitle: tPricing('pricing.plans.starter.subtitle'),
             price: `LKR ${tPricing('pricing.plans.starter.price')}`,
             period: tPricing('pricing.plans.starter.period'),
-            inquiries: tPricing('pricing.plans.starter.inquiries'),
-            locations: tPricing('pricing.plans.starter.locations'),
-            deliveryCompanies: tPricing('pricing.plans.starter.deliveryCompanies'),
-            costPerOrder: tPricing('pricing.plans.starter.costPerOrder'),
+            inquiries: '500 Orders/month',
+            users: '2 Users',
+            products: 'Unlimited Products',
+            deliveryCompanies: '1 Delivery Partners',
+            costPerOrder: '10',
             features: [
-                { name: tPricing('pricing.features.inquiryManagement'), included: true },
-                { name: tPricing('pricing.features.codSync'), included: true },
-                { name: tPricing('pricing.features.whatsappForm'), included: true },
-                { name: tPricing('pricing.features.dedicatedServer'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: 'Email support (48h)', included: true },
+                { name: 'Setup guide call', included: true },
+                { name: 'Extended knowledge base', included: true },
+                { name: 'Priority support', included: false },
+                { name: 'Customizations', included: false }
             ],
             buttonText: tPricing('pricing.plans.starter.buttonText'),
             trialPeriod: tPricing('pricing.plans.starter.trialPeriod'),
@@ -84,16 +86,17 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.business.subtitle'),
             price: `LKR ${tPricing('pricing.plans.business.price')}`,
             period: tPricing('pricing.plans.business.period'),
-            inquiries: tPricing('pricing.plans.business.inquiries'),
-            locations: tPricing('pricing.plans.business.locations'),
-            deliveryCompanies: tPricing('pricing.plans.business.deliveryCompanies'),
-            costPerOrder: tPricing('pricing.plans.business.costPerOrder'),
+            inquiries: '2000 Orders/month',
+            users: '5 Users',
+            products: 'Unlimited Products',
+            deliveryCompanies: '2 Delivery Partners',
+            costPerOrder: '6',
             features: [
-                { name: tPricing('pricing.features.inquiryManagement'), included: true },
-                { name: tPricing('pricing.features.codSync'), included: true },
-                { name: tPricing('pricing.features.whatsappForm'), included: true },
-                { name: tPricing('pricing.features.dedicatedServer'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: 'Priority email & chat (12h)', included: true },
+                { name: 'Phone callback support', included: true },
+                { name: 'Dedicated onboarding', included: true },
+                { name: 'Customer Success Manager', included: false },
+                { name: 'Customizations', included: false }
             ],
             buttonText: tPricing('pricing.plans.business.buttonText'),
             trialPeriod: tPricing('pricing.plans.business.trialPeriod'),
@@ -107,16 +110,17 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.premium.subtitle'),
             price: `LKR ${tPricing('pricing.plans.premium.price')}`,
             period: tPricing('pricing.plans.premium.period'),
-            inquiries: tPricing('pricing.plans.premium.inquiries'),
-            locations: tPricing('pricing.plans.premium.locations'),
-            deliveryCompanies: tPricing('pricing.plans.premium.deliveryCompanies'),
-            costPerOrder: tPricing('pricing.plans.premium.costPerOrder'),
+            inquiries: '5000 Orders/month',
+            users: '10 Users',
+            products: 'Unlimited Products',
+            deliveryCompanies: '3 Delivery Partners',
+            costPerOrder: '3',
             features: [
-                { name: tPricing('pricing.features.inquiryManagement'), included: true },
-                { name: tPricing('pricing.features.codSync'), included: true },
-                { name: tPricing('pricing.features.whatsappForm'), included: true },
-                { name: tPricing('pricing.features.dedicatedServer'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: 'Priority support (4h)', included: true },
+                { name: 'Customer Success Manager', included: true },
+                { name: 'WhatsApp support', included: true },
+                { name: 'Integration setup assistance', included: true },
+                { name: 'Customizations', included: true }
             ],
             buttonText: tPricing('pricing.plans.premium.buttonText'),
             trialPeriod: tPricing('pricing.plans.premium.trialPeriod'),
@@ -129,16 +133,18 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.enterprise.subtitle'),
             price: tPricing('pricing.plans.enterprise.price'),
             period: '',
-            inquiries: tPricing('pricing.plans.enterprise.inquiries'),
-            locations: tPricing('pricing.plans.enterprise.locations'),
-            deliveryCompanies: tPricing('pricing.plans.enterprise.deliveryCompanies'),
-            costPerOrder: tPricing('pricing.plans.enterprise.costPerOrder'),
+            inquiries: 'Unlimited Orders',
+            users: 'Unlimited Users',
+            products: 'Unlimited Products',
+            deliveryCompanies: 'Unlimited Delivery Partners',
             features: [
-                { name: tPricing('pricing.features.inquiryManagement'), included: true },
-                { name: tPricing('pricing.features.codSync'), included: true },
-                { name: tPricing('pricing.features.whatsappForm'), included: true },
-                { name: tPricing('pricing.features.dedicatedServer'), included: true },
-                { name: tPricing('pricing.features.customizations'), included: true }
+                { name: 'Dedicated Account Manager', included: true },
+                { name: '24/7 critical support (2h SLA)', included: true },
+                { name: 'Implementation team', included: true },
+                { name: 'Custom training sessions', included: true },
+                { name: 'Direct technical escalation', included: true },
+                { name: 'Strategic planning calls', included: true },
+                { name: 'Customizations', included: true }
             ],
             buttonText: tPricing('pricing.plans.enterprise.buttonText'),
             trialPeriod: tPricing('pricing.plans.enterprise.trialPeriod'),
@@ -232,11 +238,11 @@ export default function Pricing({ onOpenTrialModal }) {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                     {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.name}
-                            className={`relative rounded-2xl p-8 transition-all duration-700 hover:scale-105 hover:shadow-xl border-2 ${
+                            className={`relative rounded-2xl p-5 transition-all duration-700 hover:scale-105 hover:shadow-xl border-2 ${
                                 plan.popular
                                     ? 'border-blue-300 shadow-blue-100'
                                     : 'border-gray-200 hover:border-blue-200'
@@ -257,62 +263,55 @@ export default function Pricing({ onOpenTrialModal }) {
                             )}
 
                             {/* Plan Header */}
-                            <div className="text-center mb-6">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{plan.subtitle}</p>
+                            <div className="text-center mb-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                                <p className="text-xs text-gray-600 mb-3">{plan.subtitle}</p>
 
                                 {/* Price */}
                                 <div className="mb-2">
-                                    {plan.price.includes('LKR') && <span className="text-sm text-gray-600 font-medium">LKR </span>}
-                                    <span className="text-4xl font-bold text-gray-900">{plan.price.replace('LKR ', '')}</span>
-                                    {plan.period && <span className="text-lg text-gray-600">{plan.period}</span>}
+                                    {plan.price.includes('LKR') && <span className="text-xs text-gray-600 font-medium">LKR </span>}
+                                    <span className="text-3xl font-bold text-gray-900">{plan.price.replace('LKR ', '')}</span>
+                                    {plan.period && <span className="text-sm text-gray-600">{plan.period}</span>}
                                 </div>
-
-                                {/* Cost per Order Badge */}
-                                {plan.costPerOrder && (
-                                    <div className="mt-3">
-                                        <span className="inline-block text-xs font-bold tracking-widest px-3 py-1.5 rounded-full" style={{
-                                            color: '#006daf',
-                                            backgroundColor: '#e6f3ff'
-                                        }}>
-                                            {plan.costPerOrder} {tPricing('pricing.costPerOrderLabel')}
-                                        </span>
-                                    </div>
-                                )}
                             </div>
 
                             {/* Plan Details */}
-                            <div className="space-y-3 mb-6">
-                                <div className="text-sm text-gray-700">
-                                    <div className="font-medium">{plan.inquiries}</div>
-                                </div>
-                                <div className="text-sm text-gray-700">
-                                    <div className="font-medium">{plan.locations}</div>
-                                </div>
-                                <div className="text-sm text-gray-700">
-                                    <div className="font-medium">{plan.deliveryCompanies}</div>
-                                </div>
+                            <div className="space-y-1.5 mb-4 text-xs text-center">
+                                <div className="text-gray-700 font-medium">{plan.inquiries}</div>
+                                {plan.costPerOrder && (
+                                    <div className="text-gray-700 font-medium">Rs.{plan.costPerOrder}/order</div>
+                                )}
+                                <div className="text-gray-700 font-medium">{plan.users}</div>
+                                <div className="text-gray-700 font-medium">{plan.products}</div>
+                                <div className="text-gray-700 font-medium">{plan.deliveryCompanies}</div>
+                            </div>
 
+                            {/* Divider */}
+                            <div className="border-t border-gray-200 my-3"></div>
+
+                            {/* Support Features Header */}
+                            <div className="mb-2">
+                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">Support & Features</h4>
                             </div>
 
                             {/* Features List */}
-                            <div className="space-y-3 mb-8">
+                            <div className="space-y-2 mb-6">
                                 {plan.features.map((feature, featureIndex) => (
-                                    <div key={featureIndex} className="flex items-center">
+                                    <div key={featureIndex} className="flex items-start">
                                         {feature.included ? (
-                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-green-500">
-                                                <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-green-500 mt-0.5">
+                                                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
                                         ) : (
-                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-red-600">
-                                                <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center rounded-full bg-gray-300 mt-0.5">
+                                                <svg className="w-3 h-3 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
                                         )}
-                                        <span className="ml-3 text-sm text-gray-700 font-medium">
+                                        <span className="ml-3 text-xs text-gray-700 leading-tight">
                                             {feature.name}
                                         </span>
                                     </div>
@@ -323,7 +322,7 @@ export default function Pricing({ onOpenTrialModal }) {
                             {plan.name === tPricing('pricing.plans.enterprise.name') ? (
                                 <a
                                     href="/contact-us"
-                                    className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
+                                    className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                                 >
                                     {plan.buttonText}
                                 </a>
@@ -332,13 +331,13 @@ export default function Pricing({ onOpenTrialModal }) {
                                     href="https://welcome.oms.storemate.cloud/register"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
+                                    className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                                 >
                                     {plan.buttonText}
                                 </a>
                             )}
                             {plan.trialPeriod && (
-                                <div className="text-center mt-3">
+                                <div className="text-center mt-2">
                                     <span className="text-xs font-semibold text-gray-600">
                                         {plan.trialPeriod}
                                     </span>
