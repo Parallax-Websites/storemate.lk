@@ -77,6 +77,10 @@ Route::get('/lead-campaign', function () {
     return Inertia::render('LeadCampaign');
 })->name('lead.campaign');
 
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+})->name('blog');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

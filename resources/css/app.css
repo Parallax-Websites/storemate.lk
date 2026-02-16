@@ -19,3 +19,15 @@
 .animate-scroll:hover {
     animation-play-state: paused;
 }
+
+/* Blog Page Styles */
+.blog-container {
+    width: 100%;
+    background: #ffffff;
+}
+
+.blog-container iframe {
+    overflow: hidden !important;
+    display: block;
+}
+
