@@ -84,49 +84,41 @@ export default function LeadCampaignFaq() {
                 </div>
 
                 {/* FAQ Accordion */}
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {faqData.map((item, index) => (
-                        <div
-                            key={index}
-                            className={`bg-white border-2 rounded-2xl cursor-pointer transition-all duration-300 transform ${
-                                openIndex === index ? 'border-blue-200 shadow-lg' : 'border-gray-200 hover:border-blue-200 hover:shadow-lg'
-                            } ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
-                            style={{ transitionDelay: `${200 + index * 100}ms` }}
-                        >
-                            <button
-                                type="button"
-                                className="flex items-center justify-between w-full px-6 py-6 sm:p-8 text-left"
-                                onClick={() => toggleFaq(index)}
-                            >
-                                <span className="text-lg font-semibold text-[#1a1a2e] pr-4">
-                                    {item.question[currentLanguage] || item.question.en}
-                                </span>
-                                <svg
-                                    className={`w-6 h-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
-                                        openIndex === index ? 'rotate-180' : ''
-                                    }`}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-
+                <div className="max-w-3xl mx-auto">
+                    <div className="border-t border-gray-200">
+                        {faqData.map((item, index) => (
                             <div
-                                className={`overflow-hidden transition-all duration-300 ${
-                                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                }`}
+                                key={index}
+                                className={`border-b border-gray-200 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                                style={{ transitionDelay: `${200 + index * 100}ms` }}
                             >
-                                <div className="px-6 pb-6 sm:px-8 sm:pb-8">
-                                    <p className="text-gray-600 leading-relaxed text-base">
-                                        {item.answer[currentLanguage] || item.answer.en}
-                                    </p>
+                                <button
+                                    type="button"
+                                    className="flex items-center justify-between w-full py-6 text-left cursor-pointer"
+                                    onClick={() => toggleFaq(index)}
+                                >
+                                    <span className="text-base sm:text-lg font-medium text-[#1a1a2e] pr-8">
+                                        {item.question[currentLanguage] || item.question.en}
+                                    </span>
+                                    <span className="text-2xl font-light text-gray-400 flex-shrink-0 leading-none select-none w-6 text-center">
+                                        {openIndex === index ? '−' : '+'}
+                                    </span>
+                                </button>
+
+                                <div
+                                    className={`overflow-hidden transition-all duration-300 ${
+                                        openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                    }`}
+                                >
+                                    <div className="pb-6">
+                                        <p className="text-gray-500 leading-relaxed text-base">
+                                            {item.answer[currentLanguage] || item.answer.en}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

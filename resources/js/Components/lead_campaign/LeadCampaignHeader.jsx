@@ -83,7 +83,7 @@ const LeadCampaignHeader = () => {
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[#1a1a2e] hover:bg-[#16162a] text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors"
+                            className="inline-flex items-center gap-2 bg-[#E07817] hover:bg-[#e67a1f] text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
@@ -135,7 +135,7 @@ const LeadCampaignHeader = () => {
                         href="https://welcome.oms.storemate.cloud/register"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full bg-[#1a1a2e] hover:bg-[#16162a] text-white font-semibold px-5 py-3 rounded-lg text-sm transition-colors"
+                        className="flex items-center justify-center gap-2 w-full bg-[#ff9937] hover:bg-[#e67a1f] text-white font-semibold px-5 py-3 rounded-lg text-sm transition-colors"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />

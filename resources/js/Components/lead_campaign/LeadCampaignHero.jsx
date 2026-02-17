@@ -3,7 +3,8 @@ import { useLanguage } from '@/Contexts/LanguageContext';
 
 const heroTranslations = {
     en: {
-        headline: 'Handling 500+ Lead Form Orders?',
+        headlineLine1: 'Handling 500+',
+        headlineLine2: 'Lead Form Orders?',
         subheadline: 'Stop wasting hours on messy Excel sheets and manual data entry. Automate your order workflow with StoreMate OMS and scale your business with zero friction.',
         cta: 'Get Your Free Account',
         trust1: '30,000+ Sri Lankan Businesses Trust Us',
@@ -12,7 +13,8 @@ const heroTranslations = {
         trust4: '30-Day Free Trial',
     },
     si: {
-        headline: 'Lead Form වලින් Orders 500+ වඩා එනවද?',
+        headlineLine1: 'Lead Form වලින් Orders',
+        headlineLine2: '500+ වඩා එනවද?',
         subheadline: 'Excel sheets සහ manual වැඩ වලට කාලය නාස්ති නොකර, StoreMate OMS හරහා ඔබේ orders automate කරලා කිසිම කරදරයක් නැතිව business එක scale කරන්න.',
         cta: 'නොමිලේ ගිණුම ලබාගන්න',
         trust1: 'ශ්‍රී ලංකාවේ ව්‍යාපාර 30,000+ ක විශ්වාසය',
@@ -71,9 +73,10 @@ export default function LeadCampaignHero() {
                 <div className="text-center max-w-4xl mx-auto">
                     {/* Headline */}
                     <h1
-                        className={`text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-[1.15] tracking-tight transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+                        className={`text-[1.85rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] font-bold text-[#1a1a2e] leading-none md:leading-snug lg:leading-snug tracking-tight transform transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
                     >
-                        {t.headline}
+                        <span className="block" lang={currentLanguage}>{t.headlineLine1 || t.headline}</span>
+                        <span className="block mt-3 lg:mt-6 text-[0.95em] sm:text-base md:text-lg lg:text-[1.05em] text-gray-700" lang={currentLanguage}>{t.headlineLine2 || ''}</span>
                     </h1>
 
                     {/* Sub-headline */}
@@ -91,7 +94,7 @@ export default function LeadCampaignHero() {
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#1a1a2e] text-white font-semibold text-base hover:bg-[#16162a] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#E07817] text-white font-semibold text-base hover:bg-[#e67a1f] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
                         >
                             {t.cta}
                         </a>
@@ -134,29 +137,29 @@ export default function LeadCampaignHero() {
             <div
                 className={`relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 transform transition-all duration-1000 delay-900 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
             >
-                <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200">
-                    {/* Browser Chrome */}
+                <div className="relative rounded-xl overflow-hidden">
+                    {/* Browser Chrome
                     <div className="bg-[#f5f5f7] border-b border-gray-200 px-4 py-3 flex items-center gap-3">
-                        {/* Traffic lights */}
+
                         <div className="flex items-center gap-1.5">
                             <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
                             <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                             <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
                         </div>
-                        {/* URL Bar */}
+
                         <div className="flex-1 max-w-lg mx-auto">
                             <div className="bg-white rounded-md px-4 py-1.5 text-center text-sm text-gray-400 border border-gray-200 select-none">
                                 https://oms.storemate.cloud/dashboard
                             </div>
                         </div>
-                        {/* Spacer for symmetry */}
+
                         <div className="w-[52px]"></div>
-                    </div>
+                    </div> */}
 
                     {/* Dashboard Image */}
-                    <div className="relative bg-black">
+                    <div className="relative bg-transparent">
                         <img
-                            src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Dashboards-2048x1152-1.webp"
+                            src="https://cimacleaners.com.au/wp-content/uploads/2025/10/Group-7-1-1.png"
                             alt="StoreMate OMS Dashboard — bulk orders being processed"
                             className="w-full h-auto block"
                             loading="eager"

@@ -47,11 +47,11 @@ export default function Pricing({ onOpenTrialModal }) {
             products: 'Unlimited Products',
             deliveryCompanies: '1 Delivery Partners',
             features: [
-                { name: 'Knowledge base access', included: true },
-                { name: 'Community forum', included: true },
-                { name: 'Video tutorials', included: true },
-                { name: 'Email support', included: false },
-                { name: 'Customizations', included: false }
+                { name: tPricing('pricing.features.knowledgeBaseAccess'), included: true },
+                { name: tPricing('pricing.features.communityForum'), included: true },
+                { name: tPricing('pricing.features.videoTutorials'), included: true },
+                { name: tPricing('pricing.features.emailSupport'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.free.buttonText'),
             buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
@@ -69,11 +69,11 @@ export default function Pricing({ onOpenTrialModal }) {
             deliveryCompanies: '1 Delivery Partners',
             costPerOrder: '10',
             features: [
-                { name: 'Email support (48h)', included: true },
-                { name: 'Setup guide call', included: true },
-                { name: 'Extended knowledge base', included: true },
-                { name: 'Priority support', included: false },
-                { name: 'Customizations', included: false }
+                { name: tPricing('pricing.features.emailSupport48h'), included: true },
+                { name: tPricing('pricing.features.setupGuideCall'), included: true },
+                { name: tPricing('pricing.features.extendedKnowledgeBase'), included: true },
+                { name: tPricing('pricing.features.prioritySupport'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.starter.buttonText'),
             trialPeriod: tPricing('pricing.plans.starter.trialPeriod'),
@@ -92,11 +92,11 @@ export default function Pricing({ onOpenTrialModal }) {
             deliveryCompanies: '2 Delivery Partners',
             costPerOrder: '6',
             features: [
-                { name: 'Priority email & chat (12h)', included: true },
-                { name: 'Phone callback support', included: true },
-                { name: 'Dedicated onboarding', included: true },
-                { name: 'Customer Success Manager', included: false },
-                { name: 'Customizations', included: false }
+                { name: tPricing('pricing.features.priorityEmailChat12h'), included: true },
+                { name: tPricing('pricing.features.phoneCallbackSupport'), included: true },
+                { name: tPricing('pricing.features.dedicatedOnboarding'), included: true },
+                { name: tPricing('pricing.features.customerSuccessManager'), included: false },
+                { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.business.buttonText'),
             trialPeriod: tPricing('pricing.plans.business.trialPeriod'),
@@ -116,11 +116,11 @@ export default function Pricing({ onOpenTrialModal }) {
             deliveryCompanies: '3 Delivery Partners',
             costPerOrder: '3',
             features: [
-                { name: 'Priority support (4h)', included: true },
-                { name: 'Customer Success Manager', included: true },
-                { name: 'WhatsApp support', included: true },
-                { name: 'Integration setup assistance', included: true },
-                { name: 'Customizations', included: true }
+                { name: tPricing('pricing.features.prioritySupport4h'), included: true },
+                { name: tPricing('pricing.features.customerSuccessManager'), included: true },
+                { name: tPricing('pricing.features.whatsappSupport'), included: true },
+                { name: tPricing('pricing.features.integrationSetupAssistance'), included: true },
+                { name: tPricing('pricing.features.customizations'), included: true }
             ],
             buttonText: tPricing('pricing.plans.premium.buttonText'),
             trialPeriod: tPricing('pricing.plans.premium.trialPeriod'),
@@ -138,13 +138,13 @@ export default function Pricing({ onOpenTrialModal }) {
             products: 'Unlimited Products',
             deliveryCompanies: 'Unlimited Delivery Partners',
             features: [
-                { name: 'Dedicated Account Manager', included: true },
-                { name: '24/7 critical support (2h SLA)', included: true },
-                { name: 'Implementation team', included: true },
-                { name: 'Custom training sessions', included: true },
-                { name: 'Direct technical escalation', included: true },
-                { name: 'Strategic planning calls', included: true },
-                { name: 'Customizations', included: true }
+                { name: tPricing('pricing.features.dedicatedAccountManager'), included: true },
+                { name: tPricing('pricing.features.criticalSupport247'), included: true },
+                { name: tPricing('pricing.features.implementationTeam'), included: true },
+                { name: tPricing('pricing.features.customTrainingSessions'), included: true },
+                { name: tPricing('pricing.features.directTechnicalEscalation'), included: true },
+                { name: tPricing('pricing.features.strategicPlanningCalls'), included: true },
+                { name: tPricing('pricing.features.customizations'), included: true }
             ],
             buttonText: tPricing('pricing.plans.enterprise.buttonText'),
             trialPeriod: tPricing('pricing.plans.enterprise.trialPeriod'),
@@ -291,7 +291,7 @@ export default function Pricing({ onOpenTrialModal }) {
 
                             {/* Support Features Header */}
                             <div className="mb-2">
-                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">Support & Features</h4>
+                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">{tPricing('pricing.supportFeaturesLabel')}</h4>
                             </div>
 
                             {/* Features List */}

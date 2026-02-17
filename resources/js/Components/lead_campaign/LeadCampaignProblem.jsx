@@ -17,7 +17,7 @@ const problemTranslations = {
 const problems = [
     {
         emoji: '😰',
-        title: { en: 'Losing Valuable Customers', si: 'වටිනා Customersලා අහිමි වීම' },
+        title: { en: 'Convert Every Lead into a Sale', si: 'හැම Lead එකක්ම Sale එකක් කරගන්න' },
         description: { en: 'When managing 500+ orders manually, missing even a single follow-up means losing a customer to your competitor forever.', si: 'Orders 500ක් 1000ක් එද්දී Manual විදියට Follow-up කරන්න ගිහින් එක Lead එකක් හරි මඟ හැරුණොත්, ඒ Customer ව ඔයාට අහිමි වෙනවා.' },
         iconBg: 'bg-red-50',
         iconColor: 'text-red-500',
@@ -29,7 +29,7 @@ const problems = [
     },
     {
         emoji: '⏰',
-        title: { en: 'The Manual Work Trap', si: 'Manual වැඩ වල හිරවීම' },
+        title: { en: 'Break Free from Manual Work Overload', si: 'Manual වැඩවලින් නිදහස් වෙන්න' },
         description: { en: 'Checking for duplicates, copying to Excel, and re-uploading to courier sites kills half your day. Your growth is stalled by slow manual processes.', si: 'Duplicate Orders චෙක් කරලා, Excel වලට Copy කරලා, ආයෙත් Courier Site එකට Upload කරන්න ගියාම දවසෙන් භාගයක්ම ඉවරයි. වැඩේ වෙන්නෙත් හරිම හෙමින්.' },
         iconBg: 'bg-amber-50',
         iconColor: 'text-amber-500',
@@ -41,7 +41,7 @@ const problems = [
     },
     {
         emoji: '📊',
-        title: { en: 'Data Chaos', si: 'Data පටලැවිල්ල' },
+        title: { en: 'End the Spreadsheet & Data Chaos', si: 'Data පටලැවිල්ලට තිත තියන්න' },
         description: { en: 'Managing orders, payments, and returns on spreadsheets leads to messy data and total system failure as your business scales.', si: 'Orders, Payments වගේම Returns හැමදේම Excel එකේ Track කරන්න ගියාම, Business එක වැඩි වෙද්දී Data පටලැවිලා මුළු System එකම අවුල් වෙනවා.' },
         iconBg: 'bg-blue-50',
         iconColor: 'text-blue-500',
@@ -53,7 +53,7 @@ const problems = [
     },
     {
         emoji: '❌',
-        title: { en: 'Wasting Money on Returns', si: 'Returns නිසා සල්ලි අපතේ යාම' },
+        title: { en: 'Cut Returns and Secure Your Profits', si: 'Returns අඩු කරගෙන ලාභය වැඩි කරගන්න' },
         description: { en: "Duplicate orders from the same number drive up your return rates. You're burning profits on courier charges for orders that should never have been sent.", si: 'එකම Phone Number එකෙන් තැන් දෙක තුනකින් Orders දාන නිසා Returns වැඩි වෙනවා. මේ නිසා කිසිම තේරුමක් නැතුව Courier Charges වලට සල්ලි නාස්ති වෙනවා.' },
         iconBg: 'bg-rose-50',
         iconColor: 'text-rose-500',
@@ -65,7 +65,7 @@ const problems = [
     },
     {
         emoji: '👥',
-        title: { en: 'Team Confusion', si: 'ටීම් එක ඇතුළේ අවුල් සහගත බව' },
+        title: { en: 'Eliminate Delays and Build Customer Trust', si: 'පමාවන් නවත්වා පාරිභෝගික විශ්වාසය දිනාගන්න' },
         description: { en: 'Who is following up? Who is dispatching? Without a clear system, roles get blurred, mistakes happen, and orders get delayed.', si: 'කවුද මේ Order එක Follow කරන්න ඕනේ? කවුද Courier දාන්න ඕනේ? මේ Confusion එක නිසා වැඩ බෙදාගන්න බැරි වෙලා Orders Delay වෙනවා.' },
         iconBg: 'bg-purple-50',
         iconColor: 'text-purple-500',
@@ -77,7 +77,7 @@ const problems = [
     },
     {
         emoji: '📈',
-        title: { en: 'Risk of Burnout & Failure', si: 'ව්‍යාපාරය කඩා වැටීමේ අවදානම' },
+        title: { en: 'Don\'t Let Your Business Scale Out of Control', si: 'බිස්නස් එක ඔබේ පාලනයෙන් ගිලිහෙන්න දෙපා' },
         description: { en: 'Scaling to 2,000+ orders without automation is a recipe for disaster. Without a system, your business remains a "job" that controls you, rather than a scalable asset.', si: 'හරියට System එකක් නැතුව Orders 1000ක් 2000ක් Handle කරන්න ගියොත් දවසක ඔයාගේ Business එක ලොකු කඩා වැටීමකට ලක් වෙන්න පුළුවන්.' },
         iconBg: 'bg-green-50',
         iconColor: 'text-green-500',
@@ -129,7 +129,7 @@ export default function LeadCampaignProblem() {
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#1a1a2e] text-white font-semibold text-base hover:bg-[#16162a] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#E07817] text-white font-semibold text-base hover:bg-[#c06514] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
                         >
                             {t.cta}
                         </a>

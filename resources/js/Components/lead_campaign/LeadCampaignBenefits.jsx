@@ -5,11 +5,13 @@ const benefitTranslations = {
     en: {
         badge: 'Key Benefits',
         heading: 'Built for Sri Lankan Online Sellers',
+        description: 'Everything you need to manage orders, track deliveries, and grow your online business — all in one powerful platform.',
         cta: 'Get Your Free Account',
     },
     si: {
         badge: 'Key Benefits',
         heading: 'ශ්‍රී ලංකාවේ Online ව්‍යාපාරිකයින් සඳහාම විශේෂයෙන් සකසා ඇත',
+        description: 'Orders manage කරන්න, deliveries track කරන්න, සහ ඔයාගේ online business එක grow කරන්න අවශ්‍ය සියල්ල එකම platform එකක.',
         cta: 'නොමිලේ ගිණුම ලබාගන්න',
     },
 };
@@ -73,6 +75,7 @@ const benefits = [
 
 export default function LeadCampaignBenefits() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const sectionRef = useRef(null);
     const { currentLanguage } = useLanguage();
     const t = benefitTranslations[currentLanguage] || benefitTranslations.en;
@@ -109,13 +112,56 @@ export default function LeadCampaignBenefits() {
             </div>
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section Header */}
-                <div className={`text-center max-w-4xl mx-auto mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">{t.badge}</p>
-                    <h2 className="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-tight tracking-tight">
-                        {t.heading}
-                    </h2>
+                {/* Section Header - Two Column */}
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    {/* Left Column - Title & Description */}
+                    <div>
+                        <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">{t.badge}</p>
+                        <h2 className="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-tight tracking-tight mb-4">
+                            {t.heading}
+                        </h2>
+                        <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
+                            {t.description}
+                        </p>
+                    </div>
+
+                    {/* Right Column - Video Box */}
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10 aspect-video bg-gray-900 group">
+                        {!isVideoPlaying ? (
+                            <>
+                                <img
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2025/09/Thumbnail-OMS-1-1.webp"
+                                    alt="StoreMate OMS Demo"
+                                    className="w-full h-full object-cover"
+                                />
+                                {/* Play Button Overlay */}
+                                <button
+                                    onClick={() => setIsVideoPlaying(true)}
+                                    className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300 cursor-pointer"
+                                    aria-label="Play video"
+                                >
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110">
+                                        <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#E07817] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </>
+                        ) : (
+                            <iframe
+                                src="https://www.youtube.com/embed/-CYtv4drzyo?autoplay=1&rel=0"
+                                title="StoreMate OMS Demo"
+                                className="absolute inset-0 w-full h-full"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        )}
+                    </div>
                 </div>
+
+                {/* Divider */}
+                <div className="border-t border-gray-200 mb-16"></div>
 
                 {/* Benefits Grid - 2 columns */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
@@ -148,7 +194,7 @@ export default function LeadCampaignBenefits() {
                         href="https://welcome.oms.storemate.cloud/register"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#1a1a2e] text-white font-semibold text-base hover:bg-[#16162a] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
+                        className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#E07817] text-white font-semibold text-base hover:bg-[#c06514] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
                     >
                         {t.cta}
                     </a>

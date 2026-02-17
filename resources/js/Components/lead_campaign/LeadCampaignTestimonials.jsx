@@ -3,14 +3,18 @@ import { useLanguage } from '@/Contexts/LanguageContext';
 
 const testimonialTranslations = {
     en: {
-        badge: 'Social Proof',
+        badge: 'Customer Reviews',
         heading: 'Trusted by 2,000+ Sri Lankan Businesses Scaling Effortlessly',
+        headingLine1: 'Trusted by 2,000+ Sri Lankan Businesses',
+        headingLine2: 'Scaling Effortlessly',
         subheading: 'Thousands of Sri Lankan online sellers trust StoreMate to manage their orders, reduce returns, and scale faster.',
         cta: 'Get Your Free Account',
     },
     si: {
-        badge: 'Social Proof',
+        badge: 'Customer Reviews',
         heading: 'ශ්‍රී ලංකාවේ ව්‍යාපාර 2,000කට අධික ප්‍රමාණයක විශ්වාසය',
+        headingLine1: 'ශ්‍රී ලංකාවේ ව්‍යාපාර 2,000කට අධික ප්‍රමාණයක විශ්වාසය',
+        headingLine2: 'සහජීවීව වර්ධනය වෙමින්',
         subheading: 'Orders කළමනාකරණය කිරීමට, Returns අඩු කරගැනීමට සහ ව්‍යාපාරය වේගයෙන් දියුණු කිරීමට ශ්‍රී ලංකාවේ දහස් ගණනක් Online ව්‍යාපාරිකයින් StoreMate විශ්වාස කරති.',
         cta: 'නොමිලේ ගිණුම ලබාගන්න',
     },
@@ -73,7 +77,7 @@ export default function LeadCampaignTestimonials() {
                     {/* Left Column — Headline, Stats & CTA */}
                     <div className={`lg:col-span-5 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">{t.badge}</p>
-                        <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-bold text-[#1a1a2e] leading-snug sm:leading-[1.15] tracking-tight">
+                        <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-bold text-[#1a1a2e] leading-snug tracking-tight">
                             {t.heading}
                         </h2>
                         <p className="mt-6 text-base sm:text-lg text-gray-500 leading-relaxed">
@@ -85,7 +89,7 @@ export default function LeadCampaignTestimonials() {
                                 href="https://welcome.oms.storemate.cloud/register"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#1a1a2e] text-white font-semibold text-base hover:bg-[#16162a] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
+                                className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#E07817] text-white font-semibold text-base hover:bg-[#c06514] transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/20 hover:-translate-y-0.5"
                             >
                                 {t.cta}
                             </a>
