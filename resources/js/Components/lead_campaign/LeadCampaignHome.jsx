@@ -6,6 +6,7 @@ import LeadCampaignBenefits from '@/Components/lead_campaign/LeadCampaignBenefit
 import LeadCampaignTestimonials from '@/Components/lead_campaign/LeadCampaignTestimonials';
 import LeadCampaignFaq from '@/Components/lead_campaign/LeadCampaignFaq';
 import LeadCampaignFooter from '@/Components/lead_campaign/LeadCampaignFooter';
+import Pricing from '@/Components/Pricing';
 import { Head } from '@inertiajs/react';
 import MainLayout from '@/Layouts/MainLayout';
 
@@ -23,6 +24,7 @@ export default function LeadCampaignHome() {
                 <LeadCampaignHowItWorks />
                 <LeadCampaignBenefits />
                 <LeadCampaignTestimonials />
+                <Pricing compact />
                 <LeadCampaignFaq />
                 <LeadCampaignFooter />
             </div>

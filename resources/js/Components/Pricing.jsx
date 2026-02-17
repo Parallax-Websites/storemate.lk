@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { usePricingTranslation } from '@/Utils/pricingTranslations';
 
-export default function Pricing({ onOpenTrialModal }) {
+export default function Pricing({ onOpenTrialModal, compact = false }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const { tPricing } = usePricingTranslation();
 
@@ -42,10 +42,12 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.free.subtitle'),
             price: `${tPricing('pricing.plans.free.price')}`,
             period: tPricing('pricing.plans.free.period'),
-            inquiries: '100 Orders/month',
-            users: '1 Users',
-            products: 'Unlimited Products',
-            deliveryCompanies: '1 Delivery Partners',
+            inquiries: tPricing('pricing.plans.free.inquiries'),
+            users: tPricing('pricing.plans.free.users'),
+            products: tPricing('pricing.plans.free.products'),
+            deliveryAccounts: tPricing('pricing.plans.free.deliveryAccounts'),
+            businesses: tPricing('pricing.plans.free.businesses'),
+            supportLabel: tPricing('pricing.communitySupportLabel'),
             features: [
                 { name: tPricing('pricing.features.knowledgeBaseAccess'), included: true },
                 { name: tPricing('pricing.features.communityForum'), included: true },
@@ -54,7 +56,8 @@ export default function Pricing({ onOpenTrialModal }) {
                 { name: tPricing('pricing.features.customizations'), included: false }
             ],
             buttonText: tPricing('pricing.plans.free.buttonText'),
-            buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
+            trialPeriod: tPricing('pricing.plans.free.trialPeriod'),
+            buttonStyle: "bg-gray-900 text-white hover:bg-gray-800",
             bgColor: "bg-orange-50",
             popular: false
         },
@@ -63,11 +66,13 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.starter.subtitle'),
             price: `LKR ${tPricing('pricing.plans.starter.price')}`,
             period: tPricing('pricing.plans.starter.period'),
-            inquiries: '500 Orders/month',
-            users: '2 Users',
-            products: 'Unlimited Products',
-            deliveryCompanies: '1 Delivery Partners',
-            costPerOrder: '10',
+            inquiries: tPricing('pricing.plans.starter.inquiries'),
+            users: tPricing('pricing.plans.starter.users'),
+            products: tPricing('pricing.plans.starter.products'),
+            deliveryAccounts: tPricing('pricing.plans.starter.deliveryAccounts'),
+            costPerOrder: tPricing('pricing.plans.starter.costPerOrder'),
+            businesses: tPricing('pricing.plans.starter.businesses'),
+            supportLabel: tPricing('pricing.emailSupportLabel'),
             features: [
                 { name: tPricing('pricing.features.emailSupport48h'), included: true },
                 { name: tPricing('pricing.features.setupGuideCall'), included: true },
@@ -86,11 +91,13 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.business.subtitle'),
             price: `LKR ${tPricing('pricing.plans.business.price')}`,
             period: tPricing('pricing.plans.business.period'),
-            inquiries: '2000 Orders/month',
-            users: '5 Users',
-            products: 'Unlimited Products',
-            deliveryCompanies: '2 Delivery Partners',
-            costPerOrder: '6',
+            inquiries: tPricing('pricing.plans.business.inquiries'),
+            users: tPricing('pricing.plans.business.users'),
+            products: tPricing('pricing.plans.business.products'),
+            deliveryAccounts: tPricing('pricing.plans.business.deliveryAccounts'),
+            costPerOrder: tPricing('pricing.plans.business.costPerOrder'),
+            businesses: tPricing('pricing.plans.business.businesses'),
+            supportLabel: tPricing('pricing.prioritySupportLabel'),
             features: [
                 { name: tPricing('pricing.features.priorityEmailChat12h'), included: true },
                 { name: tPricing('pricing.features.phoneCallbackSupport'), included: true },
@@ -110,11 +117,13 @@ export default function Pricing({ onOpenTrialModal }) {
             subtitle: tPricing('pricing.plans.premium.subtitle'),
             price: `LKR ${tPricing('pricing.plans.premium.price')}`,
             period: tPricing('pricing.plans.premium.period'),
-            inquiries: '5000 Orders/month',
-            users: '10 Users',
-            products: 'Unlimited Products',
-            deliveryCompanies: '3 Delivery Partners',
-            costPerOrder: '3',
+            inquiries: tPricing('pricing.plans.premium.inquiries'),
+            users: tPricing('pricing.plans.premium.users'),
+            products: tPricing('pricing.plans.premium.products'),
+            deliveryAccounts: tPricing('pricing.plans.premium.deliveryAccounts'),
+            costPerOrder: tPricing('pricing.plans.premium.costPerOrder'),
+            businesses: tPricing('pricing.plans.premium.businesses'),
+            supportLabel: tPricing('pricing.successSupportLabel'),
             features: [
                 { name: tPricing('pricing.features.prioritySupport4h'), included: true },
                 { name: tPricing('pricing.features.customerSuccessManager'), included: true },
@@ -131,12 +140,15 @@ export default function Pricing({ onOpenTrialModal }) {
         {
             name: tPricing('pricing.plans.enterprise.name'),
             subtitle: tPricing('pricing.plans.enterprise.subtitle'),
-            price: tPricing('pricing.plans.enterprise.price'),
-            period: '',
-            inquiries: 'Unlimited Orders',
-            users: 'Unlimited Users',
-            products: 'Unlimited Products',
-            deliveryCompanies: 'Unlimited Delivery Partners',
+            price: `LKR ${tPricing('pricing.plans.enterprise.price')}`,
+            period: tPricing('pricing.plans.enterprise.period'),
+            inquiries: tPricing('pricing.plans.enterprise.inquiries'),
+            users: tPricing('pricing.plans.enterprise.users'),
+            products: tPricing('pricing.plans.enterprise.products'),
+            deliveryAccounts: tPricing('pricing.plans.enterprise.deliveryAccounts'),
+            costPerOrder: tPricing('pricing.plans.enterprise.costPerOrder'),
+            businesses: tPricing('pricing.plans.enterprise.businesses'),
+            supportLabel: tPricing('pricing.dedicatedSupportLabel'),
             features: [
                 { name: tPricing('pricing.features.dedicatedAccountManager'), included: true },
                 { name: tPricing('pricing.features.criticalSupport247'), included: true },
@@ -148,7 +160,7 @@ export default function Pricing({ onOpenTrialModal }) {
             ],
             buttonText: tPricing('pricing.plans.enterprise.buttonText'),
             trialPeriod: tPricing('pricing.plans.enterprise.trialPeriod'),
-            buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
+            buttonStyle: "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700",
             bgColor: "bg-white",
             popular: false
         }
@@ -157,6 +169,7 @@ export default function Pricing({ onOpenTrialModal }) {
     return (
         <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
             {/* Background Pattern and Gradients */}
+            {!compact && (
             <div className="absolute inset-0">
                 {/* Simple Grid Pattern */}
                 <div
@@ -207,9 +220,11 @@ export default function Pricing({ onOpenTrialModal }) {
                     }}
                 ></div>
             </div>
+            )}
 
             <div className="relative max-w-7xl mx-auto">
                 {/* Header */}
+                {!compact && (
                 <div className={`text-center mb-12 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
@@ -236,13 +251,28 @@ export default function Pricing({ onOpenTrialModal }) {
                         {tPricing('pricing.subtitle')}
                     </p>
                 </div>
+                )}
+
+                {/* Compact Header (Lead Campaign style) */}
+                {compact && (
+                <div className={`text-center mb-12 transition-all duration-1000 ${
+                    isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}>
+                    <h2 className="text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-bold text-[#1a1a2e] leading-snug sm:leading-tight tracking-tight mb-4">
+                        {tPricing('pricing.title.part1')}{' '}{tPricing('pricing.title.part2')}
+                    </h2>
+                    <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
+                        {tPricing('pricing.subtitle')}
+                    </p>
+                </div>
+                )}
 
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                     {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.name}
-                            className={`relative rounded-2xl p-5 transition-all duration-700 hover:scale-105 hover:shadow-xl border-2 ${
+                            className={`relative rounded-2xl ${plan.popular ? 'pt-10 pb-5 px-5' : 'p-5'} transition-all duration-700 hover:scale-105 hover:shadow-xl border-2 flex flex-col ${
                                 plan.popular
                                     ? 'border-blue-300 shadow-blue-100'
                                     : 'border-gray-200 hover:border-blue-200'
@@ -255,8 +285,8 @@ export default function Pricing({ onOpenTrialModal }) {
                         >
                             {/* Popular Badge */}
                             {plan.popular && (
-                                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                    <div className="bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded-full">
+                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                                    <div className="bg-blue-600 text-white text-sm font-medium px-4 py-1.5 rounded-full whitespace-nowrap">
                                         {plan.popularText || tPricing('pricing.plans.starter.popular')}
                                     </div>
                                 </div>
@@ -279,11 +309,12 @@ export default function Pricing({ onOpenTrialModal }) {
                             <div className="space-y-1.5 mb-4 text-xs text-center">
                                 <div className="text-gray-700 font-medium">{plan.inquiries}</div>
                                 {plan.costPerOrder && (
-                                    <div className="text-gray-700 font-medium">Rs.{plan.costPerOrder}/order</div>
+                                    <div className="text-gray-700 font-medium">Rs.{plan.costPerOrder}/{tPricing('pricing.costPerOrderLabel').toLowerCase()}</div>
                                 )}
                                 <div className="text-gray-700 font-medium">{plan.users}</div>
                                 <div className="text-gray-700 font-medium">{plan.products}</div>
-                                <div className="text-gray-700 font-medium">{plan.deliveryCompanies}</div>
+                                <div className="text-gray-700 font-medium">{plan.deliveryAccounts}</div>
+                                <div className="text-gray-700 font-medium">{tPricing('pricing.businessesLabel')}: {plan.businesses}</div>
                             </div>
 
                             {/* Divider */}
@@ -291,11 +322,11 @@ export default function Pricing({ onOpenTrialModal }) {
 
                             {/* Support Features Header */}
                             <div className="mb-2">
-                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">{tPricing('pricing.supportFeaturesLabel')}</h4>
+                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">{plan.supportLabel || tPricing('pricing.supportFeaturesLabel')}</h4>
                             </div>
 
                             {/* Features List */}
-                            <div className="space-y-2 mb-6">
+                            <div className="space-y-2 mb-6 flex-grow">
                                 {plan.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-start">
                                         {feature.included ? (
@@ -319,6 +350,7 @@ export default function Pricing({ onOpenTrialModal }) {
                             </div>
 
                             {/* CTA Button */}
+                            <div className="mt-auto">
                             {plan.name === tPricing('pricing.plans.enterprise.name') ? (
                                 <a
                                     href="/contact-us"
@@ -343,11 +375,13 @@ export default function Pricing({ onOpenTrialModal }) {
                                     </span>
                                 </div>
                             )}
+                            </div>
                         </div>
                     ))}
                 </div>
 
                 {/* Bottom CTA */}
+                {!compact && (
                 <div className={`text-center mt-12 transition-all duration-1000 delay-500 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
@@ -365,6 +399,7 @@ export default function Pricing({ onOpenTrialModal }) {
                         {tPricing('pricing.bottomCta.button')}
                     </a>
                 </div>
+                )}
             </div>
         </div>
     );

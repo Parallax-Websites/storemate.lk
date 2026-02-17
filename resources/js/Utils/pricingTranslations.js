@@ -6,7 +6,15 @@ const pricingTranslations = {
         pricing: {
             badge: "FLEXIBLE PRICING OPTIONS",
             costPerOrderLabel: "PER ORDER",
+            addonPriceLabel: "Addon price per order",
+            businessesLabel: "Businesses (Brands)",
+            deliveryAccountsLabel: "Delivery Accounts",
             supportFeaturesLabel: "SUPPORT & FEATURES",
+            communitySupportLabel: "Community Support",
+            emailSupportLabel: "Email Support",
+            prioritySupportLabel: "Priority Support",
+            successSupportLabel: "Success Support",
+            dedicatedSupportLabel: "Dedicated Support",
             title: {
                 part1: "Choose Your",
                 part2: "Plan"
@@ -21,8 +29,10 @@ const pricingTranslations = {
                     inquiries: "100 Orders/month",
                     users: "1 Users",
                     products: "Unlimited Products",
-                    deliveryCompanies: "1 Delivery Partners",
-                    buttonText: "Try Demo Account - 30 Days"
+                    deliveryAccounts: "1 Delivery Account",
+                    businesses: "1",
+                    buttonText: "Get Started",
+                    trialPeriod: "Try for Free"
                 },
                 starter: {
                     name: "Starter",
@@ -32,8 +42,9 @@ const pricingTranslations = {
                     inquiries: "500 Orders/month",
                     users: "2 Users",
                     products: "Unlimited Products",
-                    deliveryCompanies: "1 Delivery Partners",
+                    deliveryAccounts: "1 Delivery Account",
                     costPerOrder: "10",
+                    businesses: "1",
                     buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days",
                     popular: "Most Popular"
@@ -46,8 +57,9 @@ const pricingTranslations = {
                     inquiries: "2000 Orders/month",
                     users: "5 Users",
                     products: "Unlimited Products",
-                    deliveryCompanies: "2 Delivery Partners",
+                    deliveryAccounts: "2 Delivery Accounts",
                     costPerOrder: "6",
+                    businesses: "2",
                     buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days"
                 },
@@ -59,8 +71,9 @@ const pricingTranslations = {
                     inquiries: "5000 Orders/month",
                     users: "10 Users",
                     products: "Unlimited Products",
-                    deliveryCompanies: "3 Delivery Partners",
+                    deliveryAccounts: "3 Delivery Accounts",
                     costPerOrder: "3",
+                    businesses: "3",
                     buttonText: "Get Your Free Account",
                     trialPeriod: "Free for 30 Days"
                 },
@@ -69,10 +82,12 @@ const pricingTranslations = {
                     subtitle: "Enterprise Solution",
                     price: "24,000",
                     period: "/month",
-                    inquiries: "Unlimited Orders",
-                    users: "Unlimited Users",
+                    inquiries: "25000 Orders/month",
+                    users: "25 Users",
                     products: "Unlimited Products",
-                    deliveryCompanies: "Unlimited Delivery Partners",
+                    deliveryAccounts: "Unlimited Delivery Accounts",
+                    costPerOrder: "0.96",
+                    businesses: "Unlimited",
                     buttonText: "Contact Sales",
                     trialPeriod: "For Enterprise Solution"
                 }
@@ -159,7 +174,15 @@ const pricingTranslations = {
         pricing: {
             badge: "නම්‍යශීලී මිල ගණන්",
             costPerOrderLabel: "ඇණවුමකට",
+            addonPriceLabel: "ඇණවුමකට අමතර මිල",
+            businessesLabel: "ව්‍යාපාර (බ්‍රෑන්ඩ්)",
+            deliveryAccountsLabel: "බෙදාහැරීම් ගිණුම්",
             supportFeaturesLabel: "සහාය සහ විශේෂාංග",
+            communitySupportLabel: "ප්‍රජා සහාය",
+            emailSupportLabel: "විද්‍යුත් තැපැල් සහාය",
+            prioritySupportLabel: "ප්‍රමුඛතා සහාය",
+            successSupportLabel: "සාර්ථකත්ව සහාය",
+            dedicatedSupportLabel: "වෙන්වූ සහාය",
             title: {
                 part1: "ඔබට ගැළපෙන",
                 part2: "පැකේජ (Package) තෝරාගන්න"
@@ -174,8 +197,10 @@ const pricingTranslations = {
                     inquiries: "මාසික ඇණවුම් 100",
                     users: "පරිශීලකයින් 1",
                     products: "අසීමිත නිෂ්පාදන",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 1",
-                    buttonText: "Demo ගිණුමකින් උත්සාහ කරන්න - දින 30"
+                    deliveryAccounts: "බෙදාහැරීම් ගිණුම් 1",
+                    businesses: "1",
+                    buttonText: "ආරම්භ කරන්න",
+                    trialPeriod: "නොමිලේ උත්සාහ කරන්න"
                 },
                 starter: {
                     name: "ආරම්භක",
@@ -185,8 +210,9 @@ const pricingTranslations = {
                     inquiries: "මාසික ඇණවුම් 500",
                     users: "පරිශීලකයින් 2",
                     products: "අසීමිත නිෂ්පාදන",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 1",
+                    deliveryAccounts: "බෙදාහැරීම් ගිණුම් 1",
                     costPerOrder: "10",
+                    businesses: "1",
                     buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම",
                     popular: "වඩාත් ජනප්‍රිය"
@@ -199,8 +225,9 @@ const pricingTranslations = {
                     inquiries: "මාසික ඇණවුම් 2000",
                     users: "පරිශීලකයින් 5",
                     products: "අසීමිත නිෂ්පාදන",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 2",
+                    deliveryAccounts: "බෙදාහැරීම් ගිණුම් 2",
                     costPerOrder: "6",
+                    businesses: "2",
                     buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
@@ -212,8 +239,9 @@ const pricingTranslations = {
                     inquiries: "මාසික ඇණවුම් 5000",
                     users: "පරිශීලකයින් 10",
                     products: "අසීමිත නිෂ්පාදන",
-                    deliveryCompanies: "බෙදාහැරීම් සමාගම් 3",
+                    deliveryAccounts: "බෙදාහැරීම් ගිණුම් 3",
                     costPerOrder: "3",
+                    businesses: "3",
                     buttonText: "නොමිලේ ලියාපදිංචි වන්න",
                     trialPeriod: "දින 30 නොමිලේ අත්හදා බැලීම"
                 },
@@ -222,10 +250,12 @@ const pricingTranslations = {
                     subtitle: "ව්‍යවසායික විසඳුම",
                     price: "24,000",
                     period: "/මාසිකව",
-                    inquiries: "අසීමිත ඇණවුම්",
-                    users: "අසීමිත පරිශීලකයින්",
+                    inquiries: "මාසික ඇණවුම් 25000",
+                    users: "පරිශීලකයින් 25",
                     products: "අසීමිත නිෂ්පාදන",
-                    deliveryCompanies: "අසීමිත බෙදාහැරීම් සමාගම්",
+                    deliveryAccounts: "අසීමිත බෙදාහැරීම් ගිණුම්",
+                    costPerOrder: "0.96",
+                    businesses: "අසීමිත",
                     buttonText: "විකුණුම් අංශය අමතන්න",
                     trialPeriod: "ව්‍යවසායික විසඳුම සඳහා"
                 }
@@ -311,7 +341,15 @@ const pricingTranslations = {
     ta: {
         pricing: {
             badge: "நெகிழ்வான விலை நிர்ணாரண விருப்பங்கள்",            costPerOrderLabel: "ஒரு ஆர்டருக்கு",
+            addonPriceLabel: "ஒரு ஆர்டருக்கான கூடுதல் விலை",
+            businessesLabel: "வணிகங்கள் (பிராண்டுகள்)",
+            deliveryAccountsLabel: "டெலிவரி கணக்குகள்",
             supportFeaturesLabel: "ஆதரவு மற்றும் அம்சங்கள்",
+            communitySupportLabel: "சமூக ஆதரவு",
+            emailSupportLabel: "மின்னஞ்சல் ஆதரவு",
+            prioritySupportLabel: "முன்னுரிமை ஆதரவு",
+            successSupportLabel: "வெற்றி ஆதரவு",
+            dedicatedSupportLabel: "அர்ப்பணிக்கப்பட்ட ஆதரவு",
             title: {
                 part1: "உங்கள்",
                 part2: "திட்டத்தைத் தேர்ந்தெடுங்கள்"
@@ -326,8 +364,10 @@ const pricingTranslations = {
                     inquiries: "மாத ஆர்டர்கள் 100",
                     users: "பயனர்கள் 1",
                     products: "வரம்பற்ற தயாரிப்புகள்",
-                    deliveryCompanies: "டெலிவரி பார்ட்னர்கள் 1",
-                    buttonText: "இலவசமாக முயற்சிக்கவும் - 30 நாட்கள்"
+                    deliveryAccounts: "1 டெலிவரி கணக்கு",
+                    businesses: "1",
+                    buttonText: "தொடங்குங்கள்",
+                    trialPeriod: "இலவசமாக முயற்சிக்கவும்"
                 },
                 starter: {
                     name: "தொடக்கம்",
@@ -337,8 +377,9 @@ const pricingTranslations = {
                     inquiries: "மாத ஆர்டர்கள் 500",
                     users: "பயனர்கள் 2",
                     products: "வரம்பற்ற தயாரிப்புகள்",
-                    deliveryCompanies: "டெலிவரி பார்ட்னர்கள் 1",
+                    deliveryAccounts: "1 டெலிவரி கணக்கு",
                     costPerOrder: "10",
+                    businesses: "1",
                     buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை",
                     popular: "மிகவும் பிரபலமான"
@@ -351,8 +392,9 @@ const pricingTranslations = {
                     inquiries: "மாத ஆர்டர்கள் 2000",
                     users: "பயனர்கள் 5",
                     products: "வரம்பற்ற தயாரிப்புகள்",
-                    deliveryCompanies: "டெலிவரி பார்ட்னர்கள் 2",
+                    deliveryAccounts: "2 டெலிவரி கணக்குகள்",
                     costPerOrder: "6",
+                    businesses: "2",
                     buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை"
                 },
@@ -364,8 +406,9 @@ const pricingTranslations = {
                     inquiries: "மாத ஆர்டர்கள் 5000",
                     users: "பயனர்கள் 10",
                     products: "வரம்பற்ற தயாரிப்புகள்",
-                    deliveryCompanies: "டெலிவரி பார்ட்னர்கள் 3",
+                    deliveryAccounts: "3 டெலிவரி கணக்குகள்",
                     costPerOrder: "3",
+                    businesses: "3",
                     buttonText: "உங்கள் இலவச கணக்கை பெறுங்கள்",
                     trialPeriod: "30 நாட்கள் இலவச சோதனை"
                 },
@@ -374,12 +417,14 @@ const pricingTranslations = {
                     subtitle: "நிறுவன தீர்வு",
                     price: "24,000",
                     period: "/மாதம்",
-                    inquiries: "வரம்பற்ற ஆர்டர்கள்",
-                    users: "வரம்பற்ற பயனர்கள்",
+                    inquiries: "மாத ஆர்டர்கள் 25000",
+                    users: "பயனர்கள் 25",
                     products: "வரம்பற்ற தயாரிப்புகள்",
-                    deliveryCompanies: "வரம்பற்ற டெலிவரி பார்ட்னர்கள்",
+                    deliveryAccounts: "வரம்பற்ற டெலிவரி கணக்குகள்",
+                    costPerOrder: "0.96",
+                    businesses: "வரம்பற்ற",
                     buttonText: "விற்பனையை தொடர்பு கொள்ளுங்கள்",
-                    trialPeriod: "தனிப்பயன் விலை கிடைக்கும்"
+                    trialPeriod: "நிறுவன தீர்வுக்கு"
                 }
             },
             features: {
@@ -463,7 +508,8 @@ const pricingTranslations = {
 };
 
 export const usePricingTranslation = () => {
-    const { currentLanguage } = useContext(LanguageContext);
+    const context = useContext(LanguageContext);
+    const currentLanguage = context?.currentLanguage || 'en';
 
     const tPricing = (key) => {
         const keys = key.split('.');
