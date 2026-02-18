@@ -16,28 +16,24 @@ const faqTranslations = {
 
 const faqData = [
     {
-        question: { en: 'Do I need to change how I collect orders?', si: 'මම ඕඩර් ලබාගන්නා ක්‍රමය වෙනස් කළ යුතුද?' },
-        answer: { en: 'No! Keep using lead forms, DMs, or whatever works for you. Just upload your orders to StoreMate instead of keeping them scattered in Excel files.', si: 'නැත! කලින් වගේම Lead forms, DMs හෝ ඔබට පහසු ක්‍රමයක් දිගටම පාවිච්චි කරන්න. කළ යුත්තේ එම ඕඩර්ස් විසිරී ඇති Excel ෆයිල් වල තබාගන්නේ නැතිව StoreMate එකට ඇතුළත් කිරීම පමණි.' },
+        question: { en: 'Do I need to change how I collect orders?', si: 'මම Orders ලබාගන්නා ක්‍රමය වෙනස් කළ යුතුද?' },
+        answer: { en: 'No! Keep using lead forms, DMs, or whatever works for you. Just upload your orders to StoreMate instead of keeping them scattered in Excel files.', si: 'නැහැ! කලින් වගේම Lead forms, WhatsApp chat හෝ ඔබට පහසු ක්‍රමයක් දිගටම පාවිච්චි කරන්න. ඔබ මොන ක්‍රමය භාවිතා කලත් වෙන වෙනම Excel file වල තබාගන්නේ නැතිව StoreMate එකට ඇතුළත් කල හැකියි.' },
     },
     {
-        question: { en: 'How hard is it to upload orders?', si: 'ඕඩර්ස් අප්ලෝඩ් කිරීම කොතරම් අපහසුද?' },
-        answer: { en: 'Just download your Excel template, map your columns once, and upload. Bulk upload 1000+ orders in under a minute.', si: 'ඉතාම පහසුයි! අපේ Excel ටෙම්ප්ලේට් එක ඩවුන්ලෝඩ් කර, ඔබේ තොරතුරු එකතු කර අප්ලෝඩ් කරන්න. ඕඩර්ස් 1000ක් වුවත් විනාඩියකට අඩු කාලයකින් අප්ලෝඩ් කළ හැකියි.' },
-    },
-    {
-        question: { en: 'How much does it cost?', si: 'මෙහි පිරිවැය කොපමණද?' },
-        answer: { en: 'Free account available. Paid plans start at ___. All plans include courier integration and bulk upload.', si: 'නොමිලේ ගිණුමක් (Free account) ලබාගත හැකියි. ගෙවන පැකේජ (Paid plans) රු. ___ සිට ආරම්භ වේ. සියලුම පැකේජ සඳහා Courier Integration සහ Bulk Upload පහසුකම ඇතුළත් වේ.' },
+        question: { en: 'How hard is it to upload orders?', si: 'Storemate හරහා Orders upload කිරීම කොතරම් පහසුද?' },
+        answer: { en: 'Just download your Excel template, map your columns once, and upload. Bulk upload 1000+ orders in under a minute.', si: 'ඉතාම පහසුයි! ඔබ download කර ගන්නා Google Excel sheet එක (Leads), storemate එකට upload කරන්න පුළුවන්. Orders 1000ක් වුවත් විනාඩියකට අඩු කාලයකින් upload කළ හැකියි.' },
     },
     {
         question: { en: 'Do you integrate with my courier service?', si: 'මම පාවිච්චි කරන Courier සේවාව සමඟ මෙය සම්බන්ධ කළ හැකිද?' },
-        answer: { en: 'Yes, we integrate with Pronto, Wow Express, and other major Sri Lankan couriers.', si: 'ඔව්, Pronto, Wow Express ඇතුළු ශ්‍රී ලංකාවේ ප්‍රධාන සියලුම Courier සේවාවන් සමඟ අපගේ පද්ධතිය සම්බන්ධ කළ හැකියි.' },
+        answer: { en: 'Yes, we integrate with Pronto, Wow Express, and other major Sri Lankan couriers.', si: 'ඔව්, Trans Express, Royal Express, Koombiyo, Domex සහ ලංකාවේ ප්‍රධාන Courier services එක්ක අපි link වෙලා ඉන්නේ. ඕනෑම courier එකක් අපි විනාඩි කිහිපයක් ඇතුලත conect කරලා දෙනවා.' },
     },
     {
-        question: { en: "I'm already comfortable with Excel. Why switch?", si: 'මට Excel පුරුදුයි, ඇයි මම StoreMate වලට මාරු වෙන්නේ?' },
-        answer: { en: "You can keep using Excel for collection! StoreMate just eliminates the chaos after download—tracking follow-ups, syncing with couriers, spotting duplicates, and managing everything from one place instead of switching between spreadsheets and courier websites.", si: 'ඔබට ඕඩර්ස් ලබාගැනීමට Excel දිගටම පාවිච්චි කළ හැකියි! නමුත් ඕඩර්ස් ඩවුන්ලෝඩ් කිරීමෙන් පසු ඇතිවන අවුල් සහගත බව—Follow-ups ට්‍රැක් කිරීම, Courier සමඟ Sync කිරීම, Duplicate හඳුනාගැනීම වැනි වැඩ සියල්ල එකම තැනකින් පහසුවෙන් කරගැනීමට StoreMate උදවු වේ.' },
+        question: { en: "I'm already comfortable with Excel. Why switch?", si: 'ඇයි මම Excel වලින් StoreMate වලට මාරු වෙන්නේ?' },
+        answer: { en: "You can keep using Excel for collection! StoreMate just eliminates the chaos after download—tracking follow-ups, syncing with couriers, spotting duplicates, and managing everything from one place instead of switching between spreadsheets and courier websites.", si: 'ඔයාට කලින් වගේම Excel දිගටම පාවිච්චි කරන්න පුළුවන්. හැබැයි Excel එකෙන් ඕඩර්ස් ගත්තට පස්සේ වෙන පටලැවිල්ල StoreMate එකෙන් ලේසි කරනවා. orders මඟ හැරෙන්නේ නැතුව Follow-up කරන්නත්, එකින් එක type කරන්නේ නැතුව courier site එකට orders යවන්නත් (Sync) මේකෙන් පුළුවන්. ඒ වගේම එකම කෙනා කිහිප සැරයක් orders දාලා නම් ඒකත් ලේසියෙන්ම පෙන්නවා.' },
     },
     {
-        question: { en: 'Can my team use it?', si: 'මගේ ටීම් එකට මෙය පාවිච්චි කළ හැකිද?' },
-        answer: { en: 'Yes! Add team members, assign orders, and track who\'s handling what. No more "did you call this customer?" confusion.', si: 'ඔව්! ඔබේ කණ්ඩායමේ සාමාජිකයින් ඇතුළත් කර, ඔවුන්ට වැඩ බෙදා දී, එක් එක් සාමාජිකයා කරන්නේ කුමක්ද කියා ඔබට අධීක්ෂණය කළ හැකියි.' },
+        question: { en: 'Can my team use it?', si: 'මගේ team එකට මෙය පාවිච්චි කළ හැකිද?' },
+        answer: { en: 'Yes! Add team members, assign orders, and track who\'s handling what. No more "did you call this customer?" confusion.', si: 'ඔව්! ඔබේ team එකට user account ලබා දී, ඔවුන්ට වැඩ බෙදා දිය හැකිය, එක් එක් user ගේ profomance ඔබට වෙන වෙනම බැලිය හැකිය.' },
     },
 ];
 
