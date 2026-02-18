@@ -17,7 +17,7 @@ const problemTranslations = {
 const problems = [
     {
         emoji: '😰',
-        title: { en: 'Convert Every Lead into a Sale', si: 'හැම Lead එකක්ම Sale එකක් කරගන්න' },
+        title: { en: 'Losing Sales Due to Manual Follow-ups', si: 'Manual Follow-up නිසා Orders මග හැරෙනවා' },
         description: { en: 'When managing 500+ orders manually, missing even a single follow-up means losing a customer to your competitor forever.', si: 'Orders 500ක් 1000ක් එද්දී Manual විදියට Follow-up කරන්න ගිහින් එක Lead එකක් හරි මඟ හැරුණොත්, ඒ Customer ව ඔයාට අහිමි වෙනවා.' },
         iconBg: 'bg-red-50',
         iconColor: 'text-red-500',
@@ -29,7 +29,7 @@ const problems = [
     },
     {
         emoji: '⏰',
-        title: { en: 'Break Free from Manual Work Overload', si: 'Manual වැඩවලින් නිදහස් වෙන්න' },
+        title: { en: 'Wasting Hours on Manual Data Entry', si: 'Duplicate check කරලා orders upload කරන්න දවසම ඉවරයි' },
         description: { en: 'Checking for duplicates, copying to Excel, and re-uploading to courier sites kills half your day. Your growth is stalled by slow manual processes.', si: 'Duplicate Orders චෙක් කරලා, Excel වලට Copy කරලා, ආයෙත් Courier Site එකට Upload කරන්න ගියාම දවසෙන් භාගයක්ම ඉවරයි. වැඩේ වෙන්නෙත් හරිම හෙමින්.' },
         iconBg: 'bg-amber-50',
         iconColor: 'text-amber-500',
@@ -41,7 +41,7 @@ const problems = [
     },
     {
         emoji: '📊',
-        title: { en: 'End the Spreadsheet & Data Chaos', si: 'Data පටලැවිල්ලට තිත තියන්න' },
+        title: { en: 'Data Mess in Excel Sheets', si: 'Excel  manage කරද්දී ඔක්කොම data  පැටලෙනවා' },
         description: { en: 'Managing orders, payments, and returns on spreadsheets leads to messy data and total system failure as your business scales.', si: 'Orders, Payments වගේම Returns හැමදේම Excel එකේ Track කරන්න ගියාම, Business එක වැඩි වෙද්දී Data පටලැවිලා මුළු System එකම අවුල් වෙනවා.' },
         iconBg: 'bg-blue-50',
         iconColor: 'text-blue-500',
@@ -53,7 +53,7 @@ const problems = [
     },
     {
         emoji: '❌',
-        title: { en: 'Cut Returns and Secure Your Profits', si: 'Returns අඩු කරගෙන ලාභය වැඩි කරගන්න' },
+        title: { en: 'High Returns Killing Your Profit', si: 'Returns වැඩි වෙලා Profit එක අඩුවෙනවා' },
         description: { en: "Duplicate orders from the same number drive up your return rates. You're burning profits on courier charges for orders that should never have been sent.", si: 'එකම Phone Number එකෙන් තැන් දෙක තුනකින් Orders දාන නිසා Returns වැඩි වෙනවා. මේ නිසා කිසිම තේරුමක් නැතුව Courier Charges වලට සල්ලි නාස්ති වෙනවා.' },
         iconBg: 'bg-rose-50',
         iconColor: 'text-rose-500',
@@ -65,7 +65,7 @@ const problems = [
     },
     {
         emoji: '👥',
-        title: { en: 'Eliminate Delays and Build Customer Trust', si: 'පමාවන් නවත්වා පාරිභෝගික විශ්වාසය දිනාගන්න' },
+        title: { en: 'Team Confusion and Order Delays', si: 'වැඩ බෙදාගන්න බැරුව Orders Delay වෙනවා' },
         description: { en: 'Who is following up? Who is dispatching? Without a clear system, roles get blurred, mistakes happen, and orders get delayed.', si: 'කවුද මේ Order එක Follow කරන්න ඕනේ? කවුද Courier දාන්න ඕනේ? මේ Confusion එක නිසා වැඩ බෙදාගන්න බැරි වෙලා Orders Delay වෙනවා.' },
         iconBg: 'bg-purple-50',
         iconColor: 'text-purple-500',
@@ -77,7 +77,7 @@ const problems = [
     },
     {
         emoji: '📈',
-        title: { en: 'Don\'t Let Your Business Scale Out of Control', si: 'බිස්නස් එක ඔබේ පාලනයෙන් ගිලිහෙන්න දෙපා' },
+        title: { en: 'Pausing Ads Because You Can\'t Keep Up', si: 'Orders manage කර ගන්න බැරි නිසා Ads නතර කරනවා' },
         description: { en: 'Scaling to 2,000+ orders without automation is a recipe for disaster. Without a system, your business remains a "job" that controls you, rather than a scalable asset.', si: 'හරියට System එකක් නැතුව Orders 1000ක් 2000ක් Handle කරන්න ගියොත් දවසක ඔයාගේ Business එක ලොකු කඩා වැටීමකට ලක් වෙන්න පුළුවන්.' },
         iconBg: 'bg-green-50',
         iconColor: 'text-green-500',

@@ -187,7 +187,7 @@ const pricingTranslations = {
                 part1: "ඔබට ගැළපෙන",
                 part2: "පැකේජ (Package) තෝරාගන්න"
             },
-            subtitle: "ඔබේ Package එක තොරගන්න  - ඔබේ Business  හොදින් ගැලපෙන Package එක Select කරලා Orders පහසුවෙන් Manage කරන්න පටන් ගන්න.",
+            subtitle: "ඔබේ Package එක තොරගන්න  - ඔබේ Business එකට හොදින් ගැලපෙන Package එක Select කරලා Orders පහසුවෙන් Manage කරන්න පටන් ගන්න.",
             plans: {
                 free: {
                     name: "නොමිලේ",

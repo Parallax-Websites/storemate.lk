@@ -17,7 +17,7 @@ const sectionTranslations = {
 const steps = [
     {
         number: '01',
-        title: { en: 'Receive', si: 'ලබාගැනීම' },
+        title: { en: 'Receive', si: 'Receive (ලබාගැනීම)' },
         description: { en: 'All orders from Facebook, WhatsApp, Instagram, TikTok and phone calls captured in one place.', si: 'Facebook, WhatsApp, Instagram, TikTok විතරක් නෙවෙයි phone calls වලින් එන ඔක්කොම Orders දැන් එකම තැනකට ගන්න පුළුවන්.' },
         color: 'bg-blue-500',
         lightBg: 'bg-blue-50',
@@ -30,7 +30,7 @@ const steps = [
     },
     {
         number: '02',
-        title: { en: 'Verify', si: 'තහවුරු කිරීම' },
+        title: { en: 'Verify', si: 'Verify (තහවුරු කිරීම)' },
         description: { en: 'Automatically detect fake orders and duplicate orders, follow up instantly, and confirm real customers before you spend on shipping.', si: 'Fake Orders ලේසියෙන්ම හදුනා ගන්න. Orders යවන්න කලින් ඇත්තම Customer කවුද කියලා ඉක්මනින් Confirm කරගන්න.' },
         color: 'bg-amber-500',
         lightBg: 'bg-amber-50',
@@ -43,7 +43,7 @@ const steps = [
     },
     {
         number: '03',
-        title: { en: 'Ship', si: 'යැවීම' },
+        title: { en: 'Ship', si: 'Ship (යැවීම)' },
         description: { en: 'Skip the manual work with Auto-Sync. Send order details to local couriers in one click. No Excel uploads—just print your waybill and pack.', si: 'කුරියර් සර්විස් එකත් එක්ක Auto Sync වෙන්න. Excel වලට Data දදා ඉන්න ඕනේ නැහැ, එක Click එකෙන් වේබිල් (Waybill) ප්‍රින්ට් කරලා පැක් කරන්න විතරයි තියෙන්නේ.' },
         color: 'bg-emerald-500',
         lightBg: 'bg-emerald-50',
@@ -56,7 +56,7 @@ const steps = [
     },
     {
         number: '04',
-        title: { en: 'Track', si: 'ලුහුබැඳීම' },
+        title: { en: 'Track', si: 'Track (ලුහුබැඳීම)' },
         description: { en: 'Monitor everything in one place. Track delivery status, order progress, and customer history automatically.', si: 'Order එක කොහේද තියෙන්නේ, Customerට ලැබුණද කියලා හැමදේම එකම තැනකින් බලාගන්න. Customer ගේ කලින් විස්තරත් Auto Save වෙනවා.' },
         color: 'bg-purple-500',
         lightBg: 'bg-purple-50',

@@ -19,7 +19,7 @@ const benefitTranslations = {
 const benefits = [
     {
         title: { en: 'Direct Courier Integration', si: 'Courier Service සමග සෘජුවම සම්බන්ධයි' },
-        description: { en: 'Upload your orders once, sync with Trans Express, Royal Express, Koombiyo, Domex and other local couriers. No more retyping data into courier websites.', si: 'ඔයාගේ Orders ටික එකපාර අපේ සිස්ටම් එකට දාන්න. Trans Express, Royal Express, Koombiyo, Domex සහ ලංකාවේ ප්‍රධාන කුරියර් සර්විස් එක්ක අපි ලින්ක් වෙලා ඉන්නේ. ආයෙත් Courier Website වලට ඩේටා ටයිප් කර කර කාලය නාස්ති කරන්න ඕනේ නැහැ.' },
+        description: { en: 'Upload your orders once, sync with Trans Express, Royal Express, Koombiyo, Domex and other local couriers. No more retyping data into courier websites.', si: 'ඔයාගේ Orders ටික එකපාර අපේ System එකට දාන්න. Trans Express, Royal Express, Koombiyo, Domex සහ ලංකාවේ ප්‍රධාන Courier Services එක්ක අපි Link වෙලා ඉන්නේ. ආයෙත් Courier Website වලට Data Type කර කර කාලය නාස්ති කරන්න ඕනේ නැහැ.' },
         iconColor: 'text-blue-600',
         icon: (
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -40,7 +40,7 @@ const benefits = [
     },
     {
         title: { en: 'Manage from Your Phone', si: 'Phone එකෙන්ම Manage කර ගන්න' },
-        description: { en: 'Full mobile app. Check order status, update customers, and manage deliveries from anywhere.', si: 'අපේ මොබයිල් ඇප් එක හරහා ඕනෑම තැනක ඉඳන් වැඩ ටික කරගන්න. ඕඩර් ස්ටේටස් බලන්න, කස්ටමර්ස්ලට විස්තර යවන්න සහ ඩිලිවරි පාලනය කරන්න මේ ඇප් එකෙන්ම පුළුවන්.' },
+        description: { en: 'Full mobile app. Check order status, update customers, and manage deliveries from anywhere.', si: 'අපේ Mobile App එක හරහා ඕනෑම තැනක ඉඳන් වැඩ ටික කරගන්න. Order Status බලන්න, Customer ට විස්තර යවන්න සහ Delivery පාලනය කරන්න මේ App එකෙන්ම පුළුවන්.' },
         iconBg: 'bg-emerald-50',
         iconColor: 'text-emerald-600',
         icon: (
@@ -51,7 +51,7 @@ const benefits = [
     },
     {
         title: { en: 'Built for High Volume', si: 'Orders ඕන ප්‍රමාණයකට' },
-        description: { en: 'Upload 500, 1000, or more orders at once. Built to handle the volume that Facebook advertisers generate.', si: 'ඔයා දවසට Orders 500ක්, 1000ක් හෝ ඊට වඩා වැඩි ප්‍රමාණයක් කරන කෙනෙක් වුණත් ප්‍රශ්නයක් නැහැ. Facebook Ads හරහා එන විශාල Orders ප්‍රමාණයක් වුණත් එකපාර සිස්ටම් එකට අප්ලෝඩ් කරන්න පුළුවන්.' },
+        description: { en: 'Upload 500, 1000, or more orders at once. Built to handle the volume that Facebook advertisers generate.', si: 'ඔයා දවසට Orders 500ක්, 1000ක් හෝ ඊට වඩා වැඩි ප්‍රමාණයක් කරන කෙනෙක් වුණත් ප්‍රශ්නයක් නැහැ. Facebook Ads හරහා එන විශාල Orders ප්‍රමාණයක් වුණත් එකපාර System එකට Upload කරන්න පුළුවන්.' },
         iconBg: 'bg-amber-50',
         iconColor: 'text-amber-600',
         icon: (
@@ -62,7 +62,7 @@ const benefits = [
     },
     {
         title: { en: 'Reduce Fake Orders', si: 'Fake Orders අඩු කරගන්න' },
-        description: { en: 'Duplicate detection spots repeat customers. Verification tools flag suspicious addresses and phone numbers before you ship.', si: 'එකම කෙනා කිහිප සැරයක් ඕඩර් කරලා නම් ඒක ලේසියෙන්ම හඳුනා ගන්න පුළුවන් (Duplicate detection).' },
+        description: { en: 'Duplicate detection spots repeat customers. Verification tools flag suspicious addresses and phone numbers before you ship.', si: 'එකම කෙනා කිහිප සැරයක් Order කරලා නම් ඒක ලේසියෙන්ම හඳුනා ගන්න පුළුවන් (Duplicate detection).' },
         iconBg: 'bg-green-50',
         iconColor: 'text-green-600',
         icon: (
