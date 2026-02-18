@@ -71,10 +71,12 @@ export default function WhatsAppWidget() {
                     {/* Header */}
                     <div className="flex items-center justify-between px-4 py-3 bg-[#075e54]">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
+                            <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                                <img
+                                    src="https://cimacleaners.com.au/wp-content/uploads/2026/02/499229865_1183317163809967_3276925672574001051_n.jpg"
+                                    alt={businessName}
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                             <div>
                                 <p className="text-white font-semibold text-sm">{businessName}</p>
