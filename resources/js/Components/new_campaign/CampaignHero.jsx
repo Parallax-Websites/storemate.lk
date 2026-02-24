@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 
-export default function CampaignHero() {
+export default function CampaignHero({ onOpenTrialForm }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
     const componentRef = useRef(null);
@@ -89,18 +89,18 @@ export default function CampaignHero() {
                             </div>
                         </div>
 
-                        {/* CTA — Call & WhatsApp Buttons */}
+                        {/* CTA — Get Free Account & WhatsApp Buttons */}
                         <div className={`flex flex-wrap justify-center gap-4 mb-32 mt-8 md:mt-16 transform transition-all duration-700 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            <a
-                                href="tel:0779436364"
+                            <button
+                                onClick={onOpenTrialForm}
                                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg font-bold text-white hover:scale-105 transition-all duration-300"
                                 style={{backgroundColor: '#006daf'}}
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                 </svg>
-                                {t('nav.callNow')}
-                            </a>
+                                {t('nav.startFreeTrial')}
+                            </button>
                             <a
                                 href="https://wa.me/94777672155"
                                 target="_blank"

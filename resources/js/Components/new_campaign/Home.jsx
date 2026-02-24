@@ -7,23 +7,34 @@ import Hero2 from '@/Components/Hero copy 2';
 import Faq from '@/Components/Faq';
 import CampaignCallToAction from '@/Components/new_campaign/CampaignCallToAction';
 import CampaignFooter from '@/Components/new_campaign/CampaignFooter';
+import CampaignTrialModal from '@/Components/new_campaign/CampaignTrialModal';
 import MainLayout from '@/Layouts/MainLayout';
+import { useState } from 'react';
+import Pricing from '../Pricing';
 
 export default function CampaignHome() {
+    const [showTrialModal, setShowTrialModal] = useState(false);
+    const openTrialForm = () => setShowTrialModal(true);
+
     return (
         <MainLayout>
-            <Head title="StoreMate OMS - Call Our Expert for FREE | 077 943 6364">
-                <meta name="description" content="Talk to our expert for FREE. Reduce returns, stop fake orders, and sync couriers — all with Storemate OMS. Call 077 943 6364 today!" />
-                <meta name="keywords" content="order management system, e-commerce OMS, Storemate, call campaign, free consultation, 077 943 6364" />
+            <Head title="StoreMate OMS - Contact Us | Start Your Free Trial">
+                <meta name="description" content="Contact us today. Reduce returns, stop fake orders, and sync couriers — all with Storemate OMS. Start your free trial now!" />
+                <meta name="keywords" content="order management system, e-commerce OMS, Storemate, contact us, free trial, free consultation" />
             </Head>
-            <CampaignHeader />
-            <CampaignHero />
+            <CampaignHeader onOpenTrialForm={openTrialForm} />
+            <CampaignHero onOpenTrialForm={openTrialForm} />
             <HowItWorksCopy />
             <StoremateFeatures />
             <Hero2 />
+            <Pricing onOpenTrialModal={openTrialForm} />
             <Faq />
-            <CampaignCallToAction />
-            <CampaignFooter />
+            <CampaignCallToAction onOpenTrialForm={openTrialForm} />
+            <CampaignFooter onOpenTrialForm={openTrialForm} />
+            <CampaignTrialModal
+                isOpen={showTrialModal}
+                onClose={() => setShowTrialModal(false)}
+            />
         </MainLayout>
     );
 }

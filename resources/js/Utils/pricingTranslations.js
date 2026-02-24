@@ -116,6 +116,7 @@ const pricingTranslations = {
                 strategicPlanningCalls: "Strategic planning calls",
                 customizations: "Customizations"
             },
+            startFreeTrial: "Start Free Trial",
             bottomCta: {
                 title: {
                     part1: "Need Something",
@@ -284,6 +285,7 @@ const pricingTranslations = {
                 strategicPlanningCalls: "උපාය මාර්ගික සැලසුම් ඇමතුම්",
                 customizations: "අභිරුචිකරණ"
             },
+            startFreeTrial: "නොමිලේ අත්හදා බලන්න",
             bottomCta: {
                 title: {
                     part1: "මේ Packages",
@@ -451,6 +453,7 @@ const pricingTranslations = {
                 strategicPlanningCalls: "மூலோபாய திட்டமிடல் அழைப்புகள்",
                 customizations: "தனிப்பயனாக்கங்கள்"
             },
+            startFreeTrial: "இலவச சோதனையைத் தொடங்குங்கள்",
             bottomCta: {
                 title: {
                     part1: "மேலும் ஏதாவது",

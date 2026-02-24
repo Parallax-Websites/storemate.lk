@@ -351,7 +351,14 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
 
                             {/* CTA Button */}
                             <div className="mt-auto">
-                            {plan.name === tPricing('pricing.plans.enterprise.name') ? (
+                            {onOpenTrialModal ? (
+                                <button
+                                    onClick={onOpenTrialModal}
+                                    className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
+                                >
+                                    {tPricing('pricing.startFreeTrial')}
+                                </button>
+                            ) : plan.name === tPricing('pricing.plans.enterprise.name') ? (
                                 <a
                                     href="/contact-us"
                                     className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
@@ -381,7 +388,7 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
                 </div>
 
                 {/* Bottom CTA */}
-                {!compact && (
+                {!compact && !onOpenTrialModal && (
                 <div className={`text-center mt-12 transition-all duration-1000 delay-500 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>

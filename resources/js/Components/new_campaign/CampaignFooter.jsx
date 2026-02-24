@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 
-const CampaignFooter = () => {
+const CampaignFooter = ({ onOpenTrialForm }) => {
     const { t } = useTranslation();
 
     return (
@@ -15,19 +15,19 @@ const CampaignFooter = () => {
                         {t('footer.description')}
                     </p>
 
-                    {/* Call & WhatsApp CTA in footer */}
+                    {/* Get Free Account & WhatsApp CTA in footer */}
                     <div className="flex flex-col items-center gap-3 mb-8">
                         <p className="text-sm font-semibold text-gray-800">{t('campaign.footer.callUs')}</p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <a
-                                href="tel:0779436364"
+                            <button
+                                onClick={onOpenTrialForm}
                                 className="inline-flex items-center gap-2 bg-custom-blue-2 hover:bg-custom-blue-3 text-white font-bold px-6 py-3 rounded-lg transition-colors"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                 </svg>
-                                077 943 6364
-                            </a>
+                                {t('nav.startFreeTrial')}
+                            </button>
                             <a
                                 href="https://wa.me/94777672155"
                                 target="_blank"

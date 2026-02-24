@@ -10,14 +10,14 @@ export const translations = {
     // Navigation
     nav: {
         callCampaign: {
-            en: 'Talk to our expert for FREE today!',
-            si: 'අදම අපගේ විශේෂඥයෙකු සමඟ නොමිලේ කතා කරන්න!',
-            ta: 'இன்றே எங்கள் நிபுணரிடம் இலவசமாக பேசுங்கள்!'
+            en: 'Contact Us Today — Start Your Free Trial!',
+            si: 'අදම අප හා සම්බන්ධ වන්න — නොමිලේ අත්හදා බලන්න!',
+            ta: 'இன்றே எங்களைத் தொடர்பு கொள்ளுங்கள் — இலவச சோதனையைத் தொடங்குங்கள்!'
         },
         callNow: {
-            en: 'Call Now — 077 943 6364',
-            si: 'දැන්ම අමතන්න — 077 943 6364',
-            ta: 'இப்போது அழைக்கவும் — 077 943 6364'
+            en: 'Contact Us',
+            si: 'අප අමතන්න',
+            ta: 'எங்களைத் தொடர்பு கொள்ளுங்கள்'
         },
         home: {
             en: 'Home',
@@ -70,9 +70,9 @@ export const translations = {
             ta: 'உள்நுழைய'
         },
         startFreeTrial: {
-            en: 'Get Your Free Account',
-            si: 'නොමිලේ ලියාපදිංචි වන්න',
-            ta: 'உங்கள் இலவச கணக்கை பெறுங்கள்'
+            en: 'Start Free Trial',
+            si: 'නොමිලේ අත්හදා බලන්න',
+            ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
         },
         getFreeAccount: {
             en: 'Get Your Free Account',
@@ -375,9 +375,9 @@ export const translations = {
             ta: 'விற்பனையை 2X ஆக அதிகரிக்கவும்!'
         },
         description: {
-            en: 'Reduce Returns, Identify Fake Orders and Sync Couriers easily. Try all of this with Storemate. Call our expert for FREE today.',
-            si: 'Returns අඩු කරගන්න, Fake Orders හඳුනාගන්න සහ Courier පහසුවෙන් Sync කරන්න. මේ ඔක්කොම Storemate සමඟ උත්සාහ කරන්න. අදම අපගේ Expert කෙනෙක්ට Call කරන්න.',
-            ta: 'Returns குறைக்கவும், Fake Orders கண்டறியவும், Courier எளிதாக Sync செய்யவும். இவை அனைத்தையும் Storemate உடன் முயற்சிக்கவும். இன்றே எங்கள் நிபுணரை இலவசமாக அழைக்கவும்.'
+            en: 'Reduce Returns, Identify Fake Orders and Sync Couriers easily. Try all of this with Storemate. Contact us today to get started!',
+            si: 'Returns අඩු කරගන්න, Fake Orders හඳුනාගන්න සහ Courier පහසුවෙන් Sync කරන්න. මේ ඔක්කොම Storemate සමඟ උත්සාහ කරන්න. අදම අප හා සම්බන්ධ වන්න!',
+            ta: 'Returns குறைக்கவும், Fake Orders கண்டறியவும், Courier எளிதாக Sync செய்யவும். இவை அனைத்தையும் Storemate உடன் முயற்சிக்கவும். இன்றே எங்களைத் தொடர்பு கொள்ளுங்கள்!'
         },
         fewerReturns: {
             line1: {
@@ -1203,19 +1203,19 @@ export const translations = {
                 ta: 'உங்கள் ஆர்டர் மேலாண்மையை எளிதாக்க தயாரா?'
             },
             subheading: {
-                en: 'Our experts will help you reduce returns, stop fake orders, and sync couriers — all in one call.',
-                si: 'Returns අඩු කරන්න, Fake Orders නවත්වන්න, සහ Courier Sync කරගන්න — එක Call එකකින් අපේ Expert ලා ඔබට උදව් කරයි.',
-                ta: 'Returns குறைக்கவும், Fake Orders நிறுத்தவும், Courier Sync செய்யவும் — ஒரே அழைப்பில் எங்கள் நிபுணர்கள் உங்களுக்கு உதவுவார்கள்.'
+                en: 'Our team will help you reduce returns, stop fake orders, and sync couriers — contact us today.',
+                si: 'Returns අඩු කරන්න, Fake Orders නවත්වන්න, සහ Courier Sync කරගන්න — අදම අප හා සම්බන්ධ වන්න.',
+                ta: 'Returns குறைக்கவும், Fake Orders நிறுத்தவும், Courier Sync செய்யவும் — இன்றே எங்களைத் தொடர்பு கொள்ளுங்கள்.'
             },
             callTitle: {
-                en: 'Call Now — It\'s FREE!',
-                si: 'දැන්ම Call කරන්න — නොමිලේ!',
-                ta: 'இப்போது அழைக்கவும் — இலவசம்!'
+                en: 'Contact Us — It\'s FREE!',
+                si: 'අප අමතන්න — නොමිලේ!',
+                ta: 'எங்களைத் தொடர்பு கொள்ளுங்கள் — இலவசம்!'
             },
             callSubtext: {
-                en: 'No commitment required. Just a quick chat with our expert to see how Storemate can help your business.',
-                si: 'කිසිදු අයකිරීමක් නැත. Storemate ඔබේ business එකට උදව් කරන්නෙ කොහොමද කියලා බලන්න අපේ expert කෙනෙක්ට කතා කරන්න.',
-                ta: 'எந்த உறுதிமொழியும் தேவையில்லை. Storemate உங்கள் வணிகத்திற்கு எவ்வாறு உதவும் என்பதை பார்க்க எங்கள் நிபுணருடன் விரைவாக பேசுங்கள்.'
+                en: 'No commitment required. Get in touch with us to see how Storemate can help your business.',
+                si: 'කිසිදු අයකිරීමක් නැත. Storemate ඔබේ business එකට උදව් කරන්නෙ කොහොමද කියලා බලන්න අප හා සම්බන්ධ වන්න.',
+                ta: 'எந்த உறுதிமொழியும் தேவையில்லை. Storemate உங்கள் வணிகத்திற்கு எவ்வாறு உதவும் என்பதை பார்க்க எங்களைத் தொடர்பு கொள்ளுங்கள்.'
             },
             trust1: {
                 en: '100% Free Consultation',
@@ -1233,9 +1233,9 @@ export const translations = {
                 ta: 'படி 1'
             },
             step1: {
-                en: 'Call our expert for FREE',
-                si: 'අපේ Expert කෙනෙක්ට නොමිලේ Call කරන්න',
-                ta: 'எங்கள் நிபுணரை இலவசமாக அழைக்கவும்'
+                en: 'Contact us for FREE',
+                si: 'නොමිලේ අප අමතන්න',
+                ta: 'இலவசமாக எங்களைத் தொடர்பு கொள்ளுங்கள்'
             },
             step2Label: {
                 en: 'STEP 2',
@@ -1260,9 +1260,106 @@ export const translations = {
         },
         footer: {
             callUs: {
-                en: 'Talk to our expert for FREE',
-                si: 'අපගේ Expert කෙනෙක්ට නොමිලේ කතා කරන්න',
-                ta: 'எங்கள் நிபுணரிடம் இலவசமாக பேசுங்கள்'
+                en: 'Contact Us Today',
+                si: 'අදම අප අමතන්න',
+                ta: 'இன்றே எங்களைத் தொடர்பு கொள்ளுங்கள்'
+            }
+        },
+        trialModal: {
+            title: {
+                en: 'Start Your Free Trial (30 Days)',
+                si: 'ඔබේ නොමිලේ Trial එක ආරම්භ කරන්න (දින 30)',
+                ta: 'உங்கள் இலவச சோதனையைத் தொடங்குங்கள் (30 நாட்கள்)'
+            },
+            subtitle: {
+                en: 'Please provide your details to create your account',
+                si: 'ඔබේ ගිණුම සෑදීමට ඔබේ විස්තර ලබා දෙන්න',
+                ta: 'உங்கள் கணக்கை உருவாக்க உங்கள் விவரங்களை வழங்கவும்'
+            },
+            courierLabel: {
+                en: 'Names of courier companies you send orders with',
+                si: 'ඔබගේ orders යවන courier companies වල නම්',
+                ta: 'நீங்கள் ஆர்டர்களை அனுப்பும் கூரியர் நிறுவனங்களின் பெயர்கள்'
+            },
+            courierPlaceholder: {
+                en: 'Enter courier company names',
+                si: 'Courier company නම් ඇතුළත් කරන්න',
+                ta: 'கூரியர் நிறுவன பெயர்களை உள்ளிடவும்'
+            },
+            ordersLabel: {
+                en: 'How many orders do you send per month?',
+                si: 'කොපමණ orders ගණනක් මාසයකට යවනවද?',
+                ta: 'மாதத்திற்கு எத்தனை ஆர்டர்கள் அனுப்புகிறீர்கள்?'
+            },
+            ordersPlaceholder: {
+                en: 'Select monthly orders',
+                si: 'මාසික orders ගණන තෝරන්න',
+                ta: 'மாதாந்திர ஆர்டர்களைத் தேர்ந்தெடுக்கவும்'
+            },
+            fullNameLabel: {
+                en: 'Full name',
+                si: 'සම්පූර්ණ නම',
+                ta: 'முழு பெயர்'
+            },
+            fullNamePlaceholder: {
+                en: 'Enter your full name',
+                si: 'ඔබේ සම්පූර්ණ නම ඇතුළත් කරන්න',
+                ta: 'உங்கள் முழு பெயரை உள்ளிடவும்'
+            },
+            phoneLabel: {
+                en: 'Phone number',
+                si: 'දුරකථන අංකය',
+                ta: 'தொலைபேசி எண்'
+            },
+            emailLabel: {
+                en: 'Email',
+                si: 'ඊමේල්',
+                ta: 'மின்னஞ்சல்'
+            },
+            companyLabel: {
+                en: 'Company name',
+                si: 'සමාගමේ නම',
+                ta: 'நிறுவனத்தின் பெயர்'
+            },
+            companyPlaceholder: {
+                en: 'Enter your company name',
+                si: 'ඔබේ සමාගමේ නම ඇතුළත් කරන්න',
+                ta: 'உங்கள் நிறுவனத்தின் பெயரை உள்ளிடவும்'
+            },
+            cancel: {
+                en: 'Cancel',
+                si: 'අවලංගු කරන්න',
+                ta: 'ரத்து செய்'
+            },
+            submit: {
+                en: 'Start Free Trial',
+                si: 'නොමිලේ අත්හදා බලන්න',
+                ta: 'இலவச சோதனையைத் தொடங்குங்கள்'
+            },
+            thankYouTitle: {
+                en: 'Thank You!',
+                si: 'ස්තූතියි!',
+                ta: 'நன்றி!'
+            },
+            thankYouMessage: {
+                en: 'Your request has been submitted successfully.',
+                si: 'ඔබේ ඉල්ලීම සාර්ථකව ඉදිරිපත් කරන ලදී.',
+                ta: 'உங்கள் கோரிக்கை வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது.'
+            },
+            thankYouContact: {
+                en: 'Our support team will contact you shortly. Please stay tuned!',
+                si: 'අපගේ සහාය කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත. රැඳී සිටින්න!',
+                ta: 'எங்கள் ஆதரவுக் குழு விரைவில் உங்களைத் தொடர்பு கொள்ளும். தயவுசெய்து காத்திருங்கள்!'
+            },
+            thankYouReachOut: {
+                en: "We'll reach out to you soon",
+                si: 'අපි ඉක්මනින් ඔබව සම්බන්ධ කර ගන්නෙමු',
+                ta: 'நாங்கள் விரைவில் உங்களைத் தொடர்பு கொள்வோம்'
+            },
+            close: {
+                en: 'Close',
+                si: 'ඉවත් වෙන්න',
+                ta: 'மூடு'
             }
         }
     }
@@ -1280,5 +1377,3 @@ export const t = (key, language = 'en') => {
 
     return value[language] || value.en || key; // Fallback to English or key
 };
-
-

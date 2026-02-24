@@ -35,6 +35,8 @@ export default function WhatsAppWidget() {
 
     const [isOpen, setIsOpen] = useState(() => {
         try {
+            const isMobile = window.innerWidth < 640;
+            if (isMobile) return false;
             return sessionStorage.getItem('whatsapp_widget_closed') !== 'true';
         } catch {
             return true;
