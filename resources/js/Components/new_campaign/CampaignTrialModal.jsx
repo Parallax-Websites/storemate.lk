@@ -125,6 +125,9 @@ export default function CampaignTrialModal({ isOpen, onClose }) {
             fetch('https://n8n.parallaxtec.dev/webhook/b3c967c3-2216-4566-9c73-5ba2c14aeec7', webhookOptions);
             fetch('https://n8n.parallaxtec.dev/webhook/d3588f6a-61c4-41e4-8913-8b3e988f63cb', webhookOptions);
             fetch('https://n8n.parallaxtec.dev/webhook/24718213-f012-4286-91c2-784190cf8c7f', webhookOptions);
+            fetch('https://n8n.parallaxtec.dev/webhook/7675195b-6b4b-4b6c-a9c4-bc656b9cf7fb', webhookOptions);
+            fetch('https://n8n.parallaxtec.dev/webhook/f5a416d9-e786-4b99-b944-bf4db994cc36', webhookOptions);
+            fetch('https://n8n.parallaxtec.dev/webhook/8fce2cd8-768c-4411-b196-63f7883afc9c', webhookOptions);
         } catch (err) {
             console.error('Webhook error:', err);
         }
@@ -355,3 +358,49 @@ export default function CampaignTrialModal({ isOpen, onClose }) {
         </div>
     );
 }
+
+
+
+
+[
+  {
+    "id": "409ad889-3723-4bca-a3c5-8f83b4b4b934",
+    "value": "{{ $('Webhook').item.json.body.email }}"
+  },
+
+  {
+    "id": "45042fdf-a459-411b-8972-e3fc8b2a5b79",
+    "value": "{{ $('Webhook').item.json.body.companyName }}"
+  },
+
+  {
+    "id": "1f23b48b-57fa-4b55-83ac-0c9ab784d012",
+    "value": "{{ $('Code in JavaScript1').item.json.formattedPhone }}"
+  },
+
+  {
+    "id": "831f2bca-099f-40e2-b119-e6590f7f2f8d",
+    "value": "https://welcome.oms.storemate.cloud/register?utm_source=tiktok&utm_medium=ads&utm_campaign01_test_sale_home_page_web&utm_content=strat_free_trial"
+  },
+
+
+  {
+    "id": "6eaa625f-d217-402d-8019-c2b01971dfff",
+    "value": "https://wa.me/{{ $('Webhook').item.json.body.phoneNumber }}"
+  },
+
+  {
+    "id": "e7d0d116-5e9a-477d-b121-e7a166ee3971",
+    "value": "22555ecb-f7c1-4df2-87b5-b4d63d4a2bf9"
+  },
+
+  {
+    "id": "5715bf89-b46a-4fd6-9986-ece92455e861",
+    "value": "e4a31b5a-472d-4971-907e-5333ec0fcc2a"
+  },
+
+  {
+    "id": "272285b5-454a-435b-9344-3cbe869409e7",
+    "value": "Web Form Submission"
+  }
+]
