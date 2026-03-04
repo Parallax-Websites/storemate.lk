@@ -570,7 +570,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
                                 >
-                                    {t('nav.getFreeAccount')}
+                                    {t('nav.startFreeTrial')}
                                 </a>
                             </div>
 
@@ -725,7 +725,7 @@ const Header = forwardRef(({ auth }, ref) => {
                             rel="noopener noreferrer"
                             className="block mx-4 mt-3 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md cursor-pointer"
                         >
-                            {t('nav.getFreeAccount')}
+                            {t('nav.startFreeTrial')}
                         </a>
                     </div>
                 </div>
