@@ -115,6 +115,11 @@
             si: 'Demo',
             ta: 'Demo'
         },
+        benefits: {
+            en: 'Benefits',
+            si: 'ප්‍රතිලාභ',
+            ta: 'நன்மைகள்'
+        },
         faq: {
             en: 'FAQ',
             si: 'FAQ',

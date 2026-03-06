@@ -68,7 +68,7 @@ export default function StoremateFeatures() {
         <>
             {/* Video Modal — portrait (9:16) for Shorts */}
             {activeVideo && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" role="dialog" aria-modal="true" onClick={closeVideoModal}>
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80" role="dialog" aria-modal="true" onClick={closeVideoModal}>
                     <div className="relative w-full max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
                         <button
                             onClick={closeVideoModal}
@@ -94,38 +94,29 @@ export default function StoremateFeatures() {
             )}
 
             {/* Two-Column Section */}
-            <section ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
+            <section ref={sectionRef} className="relative bg-white py-16 sm:py-20 overflow-hidden">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                         {/* Left Column — Title & Description */}
                         <div className={`lg:col-span-5 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: '#2780D3' }}>
-                                {t('storemateFeatures.subtitle')}
-                            </p>
-                            <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug tracking-tight">
-                                {t('storemateFeatures.videoDemo')}
-                            </h2>
-                            <p className="mt-6 text-base sm:text-lg text-gray-500 leading-relaxed">
-                                {t('storemateFeatures.videoDescription')}
-                            </p>
-                            <p className="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+                            <div className="font-bold text-gray-900 mb-4 leading-tight">
+                                <div className="text-xl lg:text-2xl xl:text-3xl mb-2">
+                                    {t('storemateFeatures.subtitle')}
+                                </div>
+                                <div className="text-3xl lg:text-4xl xl:text-5xl mb-2" style={{ color: '#2780D3' }}>
+                                    {t('storemateFeatures.videoDemo')}
+                                </div>
+                            </div>
+                            <p className="text-lg text-gray-600 leading-relaxed">
                                 {t('storemateFeatures.description1')}
                             </p>
-
-                            <div className="mt-10">
-                                <a
-                                    href="https://welcome.oms.storemate.cloud/register"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-[#E07817] text-white font-semibold text-base hover:bg-[#c06514] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                                >
-                                    {t('storemateFeatures.rightBox.cta')}
-                                </a>
-                            </div>
+                            <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+                                {t('storemateFeatures.description2')}
+                            </p>
                         </div>
 
-                        {/* Right Column — Video Grid */}
+                        {/* Right Column — Video Grid (3x2) */}
                         <div className="lg:col-span-7">
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 {videos.map((video, index) => (
@@ -151,8 +142,8 @@ export default function StoremateFeatures() {
                                             />
 
                                             {/* Hover overlay */}
-                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                                                <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-red-600 shadow-xl opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
+                                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                                                <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-red-600 shadow-xl group-hover:scale-110 transition-all duration-300">
                                                     <svg className="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
                                                         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                                                     </svg>

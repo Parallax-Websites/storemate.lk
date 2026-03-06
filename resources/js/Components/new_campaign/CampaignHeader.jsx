@@ -12,7 +12,7 @@ const CampaignHeader = ({ onOpenTrialForm }) => {
         { id: 'hero', label: t('nav.home') },
         { id: 'how-it-works', label: t('nav.howItWorks') },
         { id: 'features', label: t('nav.features') },
-        { id: 'demo', label: t('nav.demo') },
+        { id: 'benefits', label: t('nav.benefits') },
         { id: 'pricing', label: t('nav.pricing') },
         { id: 'faq', label: t('nav.faq') },
         { id: 'contact', label: t('nav.contact') },

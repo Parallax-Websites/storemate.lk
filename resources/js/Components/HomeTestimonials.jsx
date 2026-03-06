@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 
+const TRUNCATE_LENGTH = 150;
+
 const testimonials = [
     {
         quote: "I was managing 5 different Excel sheets for different campaigns. Now everything's in StoreMate. I can actually see which orders need follow-ups.",
@@ -15,7 +17,7 @@ const testimonials = [
         color: 'bg-teal-500',
     },
     {
-        quote: 'We truly appreciate the service support of Amalka who handled our technical matters. Her commitment, expertise, and responsiveness made the entire process smooth and stress-free. Highly recommended!',
+        quote: "We truly appreciate the service support of Amalka who handled our technical matters. Her commitment, expertise, and responsiveness made the entire process smooth and stress-free. It's rare to find such responsible and customer-focused professionals. Highly recommended!",
         name: 'Diluk Fernando',
         role: 'Business Owner',
         color: 'bg-indigo-500',
@@ -27,7 +29,7 @@ const testimonials = [
         color: 'bg-purple-500',
     },
     {
-        quote: 'StoreMate OMS system එක online business කරන්න ගොඩක් පහසු system එකක්. Products manage කරන්න, orders track කරන්න, catalog maintain කරන්න ඉතාමත් easy. Highly recommended!',
+        quote: 'StoreMate OMS system එක online business කරන්න ගොඩක් පහසු system එකක්. Products manage කරන්න, orders track කරන්න, catalog maintain කරන්න ඉතාමත් easy. User-friendly interface එකක් තියෙන නිසා ඕනම කෙනෙකුට ලේසියෙන් use කරන්න පුළුවන්. Customer service සහ support team එකත් ඉක්මනින් help කරනවා. Online business කරන අයට මේ system එක ගොඩක් useful. Highly recommended!',
         name: 'Nishanta Kumra',
         role: 'Online Seller',
         color: 'bg-emerald-500',
@@ -39,6 +41,56 @@ const testimonials = [
         color: 'bg-amber-500',
     },
 ];
+
+function TestimonialCard({ testimonial, index, isVisible }) {
+    const [expanded, setExpanded] = useState(false);
+    const isLong = testimonial.quote.length > TRUNCATE_LENGTH;
+    const displayText = !expanded && isLong
+        ? testimonial.quote.slice(0, TRUNCATE_LENGTH) + '...'
+        : testimonial.quote;
+
+    return (
+        <div
+            className={`bg-white rounded-2xl p-7 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+            style={{ transitionDelay: `${200 + index * 100}ms` }}
+        >
+            {/* Stars */}
+            <div className="flex items-center gap-0.5 mb-4">
+                {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                ))}
+            </div>
+
+            {/* Quote Text */}
+            <p className="text-base text-gray-700 leading-relaxed mb-2">
+                "{displayText}"
+            </p>
+            {isLong && (
+                <button
+                    onClick={() => setExpanded(!expanded)}
+                    className="text-sm font-semibold mb-4 transition-colors"
+                    style={{ color: '#2780D3' }}
+                >
+                    {expanded ? 'Read less' : 'Read more'}
+                </button>
+            )}
+            {!isLong && <div className="mb-4" />}
+
+            {/* Author */}
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                <div className={`w-10 h-10 rounded-full ${testimonial.color} flex items-center justify-center text-white font-bold text-sm`}>
+                    {testimonial.name.charAt(0)}
+                </div>
+                <div>
+                    <p className="text-sm font-bold text-gray-900">{testimonial.name}</p>
+                    <p className="text-xs text-gray-500">{testimonial.role}</p>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function HomeTestimonials() {
     const [isVisible, setIsVisible] = useState(false);
@@ -76,36 +128,12 @@ export default function HomeTestimonials() {
                 {/* Testimonials Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {testimonials.map((testimonial, index) => (
-                        <div
+                        <TestimonialCard
                             key={index}
-                            className={`bg-white rounded-2xl p-7 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
-                            style={{ transitionDelay: `${200 + index * 100}ms` }}
-                        >
-                            {/* Stars */}
-                            <div className="flex items-center gap-0.5 mb-4">
-                                {[...Array(5)].map((_, i) => (
-                                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                    </svg>
-                                ))}
-                            </div>
-
-                            {/* Quote Text */}
-                            <p className="text-base text-gray-700 leading-relaxed mb-6">
-                                "{testimonial.quote}"
-                            </p>
-
-                            {/* Author */}
-                            <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                                <div className={`w-10 h-10 rounded-full ${testimonial.color} flex items-center justify-center text-white font-bold text-sm`}>
-                                    {testimonial.name.charAt(0)}
-                                </div>
-                                <div>
-                                    <p className="text-sm font-bold text-gray-900">{testimonial.name}</p>
-                                    <p className="text-xs text-gray-500">{testimonial.role}</p>
-                                </div>
-                            </div>
-                        </div>
+                            testimonial={testimonial}
+                            index={index}
+                            isVisible={isVisible}
+                        />
                     ))}
                 </div>
 

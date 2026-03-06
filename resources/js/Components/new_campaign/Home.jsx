@@ -11,6 +11,9 @@ import CampaignTrialModal from '@/Components/new_campaign/CampaignTrialModal';
 import MainLayout from '@/Layouts/MainLayout';
 import { useState } from 'react';
 import Pricing from '../Pricing';
+import HomeTestimonials from '../HomeTestimonials';
+import CustomerLogos from '../CustomerLogos';
+
 
 export default function CampaignHome() {
     const [showTrialModal, setShowTrialModal] = useState(false);
@@ -32,9 +35,11 @@ export default function CampaignHome() {
             <div id="features">
                 <StoremateFeatures />
             </div>
-            <div id="demo">
+            <div id="benefits">
                 <Hero2 />
             </div>
+            <CustomerLogos />
+            <HomeTestimonials />
             <div id="pricing">
                 <Pricing onOpenTrialModal={openTrialForm} />
             </div>

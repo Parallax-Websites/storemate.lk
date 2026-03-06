@@ -3,7 +3,7 @@ import { usePricingTranslation } from '@/Utils/pricingTranslations';
 
 export default function Pricing({ onOpenTrialModal, compact = false }) {
     const [isLoaded, setIsLoaded] = useState(false);
-    const { tPricing } = usePricingTranslation();
+    const { tPricing, tCard } = usePricingTranslation();
 
     const computePageKey = () => {
         const currentPath = route().current();
@@ -38,128 +38,128 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
 
     const pricingPlans = [
         {
-            name: tPricing('pricing.plans.free.name'),
-            subtitle: tPricing('pricing.plans.free.subtitle'),
-            price: `${tPricing('pricing.plans.free.price')}`,
-            period: tPricing('pricing.plans.free.period'),
-            inquiries: tPricing('pricing.plans.free.inquiries'),
-            users: tPricing('pricing.plans.free.users'),
-            products: tPricing('pricing.plans.free.products'),
-            deliveryAccounts: tPricing('pricing.plans.free.deliveryAccounts'),
-            businesses: tPricing('pricing.plans.free.businesses'),
-            supportLabel: tPricing('pricing.communitySupportLabel'),
+            name: tCard('pricing.plans.free.name'),
+            subtitle: tCard('pricing.plans.free.subtitle'),
+            price: `${tCard('pricing.plans.free.price')}`,
+            period: tCard('pricing.plans.free.period'),
+            inquiries: tCard('pricing.plans.free.inquiries'),
+            users: tCard('pricing.plans.free.users'),
+            products: tCard('pricing.plans.free.products'),
+            deliveryAccounts: tCard('pricing.plans.free.deliveryAccounts'),
+            businesses: tCard('pricing.plans.free.businesses'),
+            supportLabel: tCard('pricing.communitySupportLabel'),
             features: [
-                { name: tPricing('pricing.features.knowledgeBaseAccess'), included: true },
-                { name: tPricing('pricing.features.communityForum'), included: true },
-                { name: tPricing('pricing.features.videoTutorials'), included: true },
-                { name: tPricing('pricing.features.emailSupport'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: tCard('pricing.features.knowledgeBaseAccess'), included: true },
+                { name: tCard('pricing.features.communityForum'), included: true },
+                { name: tCard('pricing.features.videoTutorials'), included: true },
+                { name: tCard('pricing.features.emailSupport'), included: false },
+                { name: tCard('pricing.features.customizations'), included: false }
             ],
-            buttonText: tPricing('pricing.plans.free.buttonText'),
-            trialPeriod: tPricing('pricing.plans.free.trialPeriod'),
+            buttonText: tCard('pricing.plans.free.buttonText'),
+            trialPeriod: tCard('pricing.plans.free.trialPeriod'),
             buttonStyle: "bg-gray-900 text-white hover:bg-gray-800",
             bgColor: "bg-orange-50",
             popular: false
         },
         {
-            name: tPricing('pricing.plans.starter.name'),
-            subtitle: tPricing('pricing.plans.starter.subtitle'),
-            price: `LKR ${tPricing('pricing.plans.starter.price')}`,
-            period: tPricing('pricing.plans.starter.period'),
-            inquiries: tPricing('pricing.plans.starter.inquiries'),
-            users: tPricing('pricing.plans.starter.users'),
-            products: tPricing('pricing.plans.starter.products'),
-            deliveryAccounts: tPricing('pricing.plans.starter.deliveryAccounts'),
-            costPerOrder: tPricing('pricing.plans.starter.costPerOrder'),
-            businesses: tPricing('pricing.plans.starter.businesses'),
-            supportLabel: tPricing('pricing.emailSupportLabel'),
+            name: tCard('pricing.plans.starter.name'),
+            subtitle: tCard('pricing.plans.starter.subtitle'),
+            price: `LKR ${tCard('pricing.plans.starter.price')}`,
+            period: tCard('pricing.plans.starter.period'),
+            inquiries: tCard('pricing.plans.starter.inquiries'),
+            users: tCard('pricing.plans.starter.users'),
+            products: tCard('pricing.plans.starter.products'),
+            deliveryAccounts: tCard('pricing.plans.starter.deliveryAccounts'),
+            costPerOrder: tCard('pricing.plans.starter.costPerOrder'),
+            businesses: tCard('pricing.plans.starter.businesses'),
+            supportLabel: tCard('pricing.emailSupportLabel'),
             features: [
-                { name: tPricing('pricing.features.emailSupport48h'), included: true },
-                { name: tPricing('pricing.features.setupGuideCall'), included: true },
-                { name: tPricing('pricing.features.extendedKnowledgeBase'), included: true },
-                { name: tPricing('pricing.features.prioritySupport'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: tCard('pricing.features.emailSupport48h'), included: true },
+                { name: tCard('pricing.features.setupGuideCall'), included: true },
+                { name: tCard('pricing.features.extendedKnowledgeBase'), included: true },
+                { name: tCard('pricing.features.prioritySupport'), included: false },
+                { name: tCard('pricing.features.customizations'), included: false }
             ],
-            buttonText: tPricing('pricing.plans.starter.buttonText'),
-            trialPeriod: tPricing('pricing.plans.starter.trialPeriod'),
+            buttonText: tCard('pricing.plans.starter.buttonText'),
+            trialPeriod: tCard('pricing.plans.starter.trialPeriod'),
             buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
             bgColor: "bg-white",
             popular: false
         },
         {
-            name: tPricing('pricing.plans.business.name'),
-            subtitle: tPricing('pricing.plans.business.subtitle'),
-            price: `LKR ${tPricing('pricing.plans.business.price')}`,
-            period: tPricing('pricing.plans.business.period'),
-            inquiries: tPricing('pricing.plans.business.inquiries'),
-            users: tPricing('pricing.plans.business.users'),
-            products: tPricing('pricing.plans.business.products'),
-            deliveryAccounts: tPricing('pricing.plans.business.deliveryAccounts'),
-            costPerOrder: tPricing('pricing.plans.business.costPerOrder'),
-            businesses: tPricing('pricing.plans.business.businesses'),
-            supportLabel: tPricing('pricing.prioritySupportLabel'),
+            name: tCard('pricing.plans.business.name'),
+            subtitle: tCard('pricing.plans.business.subtitle'),
+            price: `LKR ${tCard('pricing.plans.business.price')}`,
+            period: tCard('pricing.plans.business.period'),
+            inquiries: tCard('pricing.plans.business.inquiries'),
+            users: tCard('pricing.plans.business.users'),
+            products: tCard('pricing.plans.business.products'),
+            deliveryAccounts: tCard('pricing.plans.business.deliveryAccounts'),
+            costPerOrder: tCard('pricing.plans.business.costPerOrder'),
+            businesses: tCard('pricing.plans.business.businesses'),
+            supportLabel: tCard('pricing.prioritySupportLabel'),
             features: [
-                { name: tPricing('pricing.features.priorityEmailChat12h'), included: true },
-                { name: tPricing('pricing.features.phoneCallbackSupport'), included: true },
-                { name: tPricing('pricing.features.dedicatedOnboarding'), included: true },
-                { name: tPricing('pricing.features.customerSuccessManager'), included: false },
-                { name: tPricing('pricing.features.customizations'), included: false }
+                { name: tCard('pricing.features.priorityEmailChat12h'), included: true },
+                { name: tCard('pricing.features.phoneCallbackSupport'), included: true },
+                { name: tCard('pricing.features.dedicatedOnboarding'), included: true },
+                { name: tCard('pricing.features.customerSuccessManager'), included: false },
+                { name: tCard('pricing.features.customizations'), included: false }
             ],
-            buttonText: tPricing('pricing.plans.business.buttonText'),
-            trialPeriod: tPricing('pricing.plans.business.trialPeriod'),
+            buttonText: tCard('pricing.plans.business.buttonText'),
+            trialPeriod: tCard('pricing.plans.business.trialPeriod'),
             buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
             bgColor: "bg-white",
             popular: true,
-            popularText: tPricing('pricing.plans.starter.popular')
+            popularText: tCard('pricing.plans.starter.popular')
         },
         {
-            name: tPricing('pricing.plans.premium.name'),
-            subtitle: tPricing('pricing.plans.premium.subtitle'),
-            price: `LKR ${tPricing('pricing.plans.premium.price')}`,
-            period: tPricing('pricing.plans.premium.period'),
-            inquiries: tPricing('pricing.plans.premium.inquiries'),
-            users: tPricing('pricing.plans.premium.users'),
-            products: tPricing('pricing.plans.premium.products'),
-            deliveryAccounts: tPricing('pricing.plans.premium.deliveryAccounts'),
-            costPerOrder: tPricing('pricing.plans.premium.costPerOrder'),
-            businesses: tPricing('pricing.plans.premium.businesses'),
-            supportLabel: tPricing('pricing.successSupportLabel'),
+            name: tCard('pricing.plans.premium.name'),
+            subtitle: tCard('pricing.plans.premium.subtitle'),
+            price: `LKR ${tCard('pricing.plans.premium.price')}`,
+            period: tCard('pricing.plans.premium.period'),
+            inquiries: tCard('pricing.plans.premium.inquiries'),
+            users: tCard('pricing.plans.premium.users'),
+            products: tCard('pricing.plans.premium.products'),
+            deliveryAccounts: tCard('pricing.plans.premium.deliveryAccounts'),
+            costPerOrder: tCard('pricing.plans.premium.costPerOrder'),
+            businesses: tCard('pricing.plans.premium.businesses'),
+            supportLabel: tCard('pricing.successSupportLabel'),
             features: [
-                { name: tPricing('pricing.features.prioritySupport4h'), included: true },
-                { name: tPricing('pricing.features.customerSuccessManager'), included: true },
-                { name: tPricing('pricing.features.whatsappSupport'), included: true },
-                { name: tPricing('pricing.features.integrationSetupAssistance'), included: true },
-                { name: tPricing('pricing.features.customizations'), included: true }
+                { name: tCard('pricing.features.prioritySupport4h'), included: true },
+                { name: tCard('pricing.features.customerSuccessManager'), included: true },
+                { name: tCard('pricing.features.whatsappSupport'), included: true },
+                { name: tCard('pricing.features.integrationSetupAssistance'), included: true },
+                { name: tCard('pricing.features.customizations'), included: true }
             ],
-            buttonText: tPricing('pricing.plans.premium.buttonText'),
-            trialPeriod: tPricing('pricing.plans.premium.trialPeriod'),
+            buttonText: tCard('pricing.plans.premium.buttonText'),
+            trialPeriod: tCard('pricing.plans.premium.trialPeriod'),
             buttonStyle: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
             bgColor: "bg-white",
             popular: false
         },
         {
-            name: tPricing('pricing.plans.enterprise.name'),
-            subtitle: tPricing('pricing.plans.enterprise.subtitle'),
-            price: `LKR ${tPricing('pricing.plans.enterprise.price')}`,
-            period: tPricing('pricing.plans.enterprise.period'),
-            inquiries: tPricing('pricing.plans.enterprise.inquiries'),
-            users: tPricing('pricing.plans.enterprise.users'),
-            products: tPricing('pricing.plans.enterprise.products'),
-            deliveryAccounts: tPricing('pricing.plans.enterprise.deliveryAccounts'),
-            costPerOrder: tPricing('pricing.plans.enterprise.costPerOrder'),
-            businesses: tPricing('pricing.plans.enterprise.businesses'),
-            supportLabel: tPricing('pricing.dedicatedSupportLabel'),
+            name: tCard('pricing.plans.enterprise.name'),
+            subtitle: tCard('pricing.plans.enterprise.subtitle'),
+            price: `LKR ${tCard('pricing.plans.enterprise.price')}`,
+            period: tCard('pricing.plans.enterprise.period'),
+            inquiries: tCard('pricing.plans.enterprise.inquiries'),
+            users: tCard('pricing.plans.enterprise.users'),
+            products: tCard('pricing.plans.enterprise.products'),
+            deliveryAccounts: tCard('pricing.plans.enterprise.deliveryAccounts'),
+            costPerOrder: tCard('pricing.plans.enterprise.costPerOrder'),
+            businesses: tCard('pricing.plans.enterprise.businesses'),
+            supportLabel: tCard('pricing.dedicatedSupportLabel'),
             features: [
-                { name: tPricing('pricing.features.dedicatedAccountManager'), included: true },
-                { name: tPricing('pricing.features.criticalSupport247'), included: true },
-                { name: tPricing('pricing.features.implementationTeam'), included: true },
-                { name: tPricing('pricing.features.customTrainingSessions'), included: true },
-                { name: tPricing('pricing.features.directTechnicalEscalation'), included: true },
-                { name: tPricing('pricing.features.strategicPlanningCalls'), included: true },
-                { name: tPricing('pricing.features.customizations'), included: true }
+                { name: tCard('pricing.features.dedicatedAccountManager'), included: true },
+                { name: tCard('pricing.features.criticalSupport247'), included: true },
+                { name: tCard('pricing.features.implementationTeam'), included: true },
+                { name: tCard('pricing.features.customTrainingSessions'), included: true },
+                { name: tCard('pricing.features.directTechnicalEscalation'), included: true },
+                { name: tCard('pricing.features.strategicPlanningCalls'), included: true },
+                { name: tCard('pricing.features.customizations'), included: true }
             ],
-            buttonText: tPricing('pricing.plans.enterprise.buttonText'),
-            trialPeriod: tPricing('pricing.plans.enterprise.trialPeriod'),
+            buttonText: tCard('pricing.plans.enterprise.buttonText'),
+            trialPeriod: tCard('pricing.plans.enterprise.trialPeriod'),
             buttonStyle: "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700",
             bgColor: "bg-white",
             popular: false
@@ -287,7 +287,7 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
                             {plan.popular && (
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                                     <div className="bg-blue-600 text-white text-sm font-medium px-4 py-1.5 rounded-full whitespace-nowrap">
-                                        {plan.popularText || tPricing('pricing.plans.starter.popular')}
+                                        {plan.popularText || tCard('pricing.plans.starter.popular')}
                                     </div>
                                 </div>
                             )}
@@ -309,12 +309,12 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
                             <div className="space-y-1.5 mb-4 text-xs text-center">
                                 <div className="text-gray-700 font-medium">{plan.inquiries}</div>
                                 {plan.costPerOrder && (
-                                    <div className="text-gray-700 font-medium">Rs.{plan.costPerOrder}/{tPricing('pricing.costPerOrderLabel').toLowerCase()}</div>
+                                    <div className="text-gray-700 font-medium">Rs.{plan.costPerOrder}/{tCard('pricing.costPerOrderLabel').toLowerCase()}</div>
                                 )}
                                 <div className="text-gray-700 font-medium">{plan.users}</div>
                                 <div className="text-gray-700 font-medium">{plan.products}</div>
                                 <div className="text-gray-700 font-medium">{plan.deliveryAccounts}</div>
-                                <div className="text-gray-700 font-medium">{tPricing('pricing.businessesLabel')}: {plan.businesses}</div>
+                                <div className="text-gray-700 font-medium">{tCard('pricing.businessesLabel')}: {plan.businesses}</div>
                             </div>
 
                             {/* Divider */}
@@ -322,7 +322,7 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
 
                             {/* Support Features Header */}
                             <div className="mb-2">
-                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">{plan.supportLabel || tPricing('pricing.supportFeaturesLabel')}</h4>
+                                <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider">{plan.supportLabel || tCard('pricing.supportFeaturesLabel')}</h4>
                             </div>
 
                             {/* Features List */}
@@ -356,9 +356,9 @@ export default function Pricing({ onOpenTrialModal, compact = false }) {
                                     onClick={onOpenTrialModal}
                                     className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                                 >
-                                    {tPricing('pricing.startFreeTrial')}
+                                    {tCard('pricing.startFreeTrial')}
                                 </button>
-                            ) : plan.name === tPricing('pricing.plans.enterprise.name') ? (
+                            ) : plan.name === tCard('pricing.plans.enterprise.name') ? (
                                 <a
                                     href="/contact-us"
                                     className={`block w-full py-2.5 px-3 rounded-lg font-medium text-xs transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}

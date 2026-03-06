@@ -514,29 +514,27 @@ export const usePricingTranslation = () => {
     const context = useContext(LanguageContext);
     const currentLanguage = context?.currentLanguage || 'en';
 
-    const tPricing = (key) => {
+    const resolveKey = (key, lang) => {
         const keys = key.split('.');
-        let value = pricingTranslations[currentLanguage];
-
+        let value = pricingTranslations[lang];
         for (const k of keys) {
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
-                // Fallback to English if key not found
-                value = pricingTranslations.en;
-                for (const fallbackKey of keys) {
-                    if (value && typeof value === 'object' && fallbackKey in value) {
-                        value = value[fallbackKey];
-                    } else {
-                        return key; // Return key if not found
-                    }
-                }
-                break;
+                return null;
             }
         }
-
-        return value || key;
+        return value || null;
     };
 
-    return { tPricing };
+    const tPricing = (key) => {
+        return resolveKey(key, currentLanguage) || resolveKey(key, 'en') || key;
+    };
+
+    // Always English for card-level content (plans, features, labels)
+    const tCard = (key) => {
+        return resolveKey(key, 'en') || key;
+    };
+
+    return { tPricing, tCard };
 };
