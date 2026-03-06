@@ -52,11 +52,11 @@ export default function CustomerLogos() {
 
                 {/* Logo Grid */}
                 <div className={`transform transition-all duration-700 delay-150 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4 sm:gap-5 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-5 sm:gap-6 max-w-6xl mx-auto">
                         {customers.map((customer) => (
                             <div
                                 key={customer.name}
-                                className="flex items-center justify-center bg-white border border-gray-100 rounded-xl p-4 aspect-square hover:shadow-md hover:border-gray-200 transition-all duration-300"
+                                className="flex items-center justify-center bg-white border border-gray-100 rounded-xl p-5 aspect-square hover:shadow-md hover:border-gray-200 transition-all duration-300"
                             >
                                 <img
                                     src={customer.src}
