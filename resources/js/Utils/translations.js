@@ -1,11 +1,36 @@
-export const translations = {
+﻿export const translations = {
 
+    // Home Testimonials Section
+    homeTestimonials: {
+        line1: {
+            en: 'What Our Customers Say',
+            si: 'අපේ පාරිභෝගිකයින් කියන දේ',
+        },
+        line2: {
+            en: 'Real Results, Real Stories',
+            si: 'සැබෑ ප්‍රතිඵල, සැබෑ කතා',
+        },
+        subtitle: {
+            en: 'Hear from real business owners who transformed their operations with StoreMate OMS.',
+            si: 'StoreMate OMS සමඟ ව්‍යාපාර මෙහෙයුම් පරිවර්තනය කළ සැබෑ ව්‍යාපාරිකයින්ගෙන් අසන්න.',
+        },
+    },
 
-
-
-
-
-
+    // Customer Logos Section
+    customerLogos: {
+        badge: {
+            en: 'Trusted Partners',
+            si: 'විශ්වාසනීය හවුල්කරුවන්',
+        },
+        title: {
+            en: 'Trusted by Growing Sri Lankan Brands',
+            si: 'වර්ධනය වන ශ්‍රී ලාංකික සන්නාම වල විශ්වාසය',
+        },
+        subtitle: {
+            en: 'Join hundreds of businesses already using StoreMate OMS to scale their operations.',
+            si: 'දැනටමත් StoreMate OMS භාවිතා කරන සිය ගණන් ව්‍යාපාර සමඟ එක්වන්න.',
+        },
+    },
 
     // Navigation
     nav: {
@@ -84,6 +109,16 @@ export const translations = {
             en: 'How it Works',
             si: 'එය ක්‍රියා කරන ආකාරය',
             ta: 'இது எவ্வাறு செยল்পাডুকிরতু'
+        },
+        demo: {
+            en: 'Demo',
+            si: 'Demo',
+            ta: 'Demo'
+        },
+        faq: {
+            en: 'FAQ',
+            si: 'FAQ',
+            ta: 'FAQ'
         },
         aboutShort: {
             en: 'About',

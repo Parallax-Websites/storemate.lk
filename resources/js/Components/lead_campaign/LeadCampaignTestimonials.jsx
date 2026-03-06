@@ -71,7 +71,7 @@ export default function LeadCampaignTestimonials() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
+        <section id="testimonials" ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                     {/* Left Column — Headline, Stats & CTA */}

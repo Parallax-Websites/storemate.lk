@@ -114,7 +114,7 @@ export default function LeadCampaignProblem() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
+        <section id="problem" ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Section Header — Full Width */}
                 <div className={`max-w-4xl mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>

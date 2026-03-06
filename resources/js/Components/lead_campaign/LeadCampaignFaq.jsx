@@ -66,7 +66,7 @@ export default function LeadCampaignFaq() {
     };
 
     return (
-        <section ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
+        <section id="faq" ref={sectionRef} className="relative bg-white py-20 sm:py-28 overflow-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className={`max-w-4xl mx-auto text-center mb-12 sm:mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>

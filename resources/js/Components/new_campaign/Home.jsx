@@ -23,13 +23,27 @@ export default function CampaignHome() {
                 <meta name="keywords" content="order management system, e-commerce OMS, Storemate, contact us, free trial, free consultation" />
             </Head>
             <CampaignHeader onOpenTrialForm={openTrialForm} />
-            <CampaignHero onOpenTrialForm={openTrialForm} />
-            <HowItWorksCopy />
-            <StoremateFeatures />
-            <Hero2 />
-            <Pricing onOpenTrialModal={openTrialForm} />
-            <Faq />
-            <CampaignCallToAction onOpenTrialForm={openTrialForm} />
+            <div id="hero">
+                <CampaignHero onOpenTrialForm={openTrialForm} />
+            </div>
+            <div id="how-it-works">
+                <HowItWorksCopy />
+            </div>
+            <div id="features">
+                <StoremateFeatures />
+            </div>
+            <div id="demo">
+                <Hero2 />
+            </div>
+            <div id="pricing">
+                <Pricing onOpenTrialModal={openTrialForm} />
+            </div>
+            <div id="faq">
+                <Faq />
+            </div>
+            <div id="contact">
+                <CampaignCallToAction onOpenTrialForm={openTrialForm} />
+            </div>
             <CampaignFooter onOpenTrialForm={openTrialForm} />
             <CampaignTrialModal
                 isOpen={showTrialModal}

@@ -67,7 +67,7 @@ export default function LeadCampaignHero() {
     }, []);
 
     return (
-        <section className="relative bg-[#F2F8FB] overflow-hidden">
+        <section id="hero" className="relative bg-[#F2F8FB] overflow-hidden">
             {/* Hero Content */}
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-28 pb-8">
                 <div className="text-center max-w-4xl mx-auto">

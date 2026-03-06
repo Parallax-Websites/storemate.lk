@@ -98,7 +98,7 @@ export default function LeadCampaignBenefits() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative bg-[#F2F8FB] py-20 sm:py-28 overflow-hidden">
+        <section id="benefits" ref={sectionRef} className="relative bg-[#F2F8FB] py-20 sm:py-28 overflow-hidden">
             {/* Decorative dot patterns */}
             <div className="absolute top-8 left-8 hidden lg:grid grid-cols-4 gap-2">
                 {[...Array(20)].map((_, i) => (

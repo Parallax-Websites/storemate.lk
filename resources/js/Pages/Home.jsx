@@ -9,11 +9,13 @@ import Faq from '@/Components/Faq';
 import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import PowerOfCurfox from '@/Components/PowerOfCurfox';
+import CustomerLogos from '@/Components/CustomerLogos';
 import MainLayout from '@/Layouts/MainLayout';
 import { useEffect, useRef } from 'react';
 import HowItWorksCopy from '@/Components/HowItWorks copy';
 import Hero2 from '@/Components/Hero copy 2';
 import leadScoring from '@/Utils/leadScoring';
+import HomeTestimonials from '@/Components/HomeTestimonials';
 
 export default function Home({ auth }) {
     const headerRef = useRef(null);
@@ -42,9 +44,12 @@ export default function Home({ auth }) {
             </Head>
             <Header ref={headerRef} auth={auth} />
             <Hero onOpenTrialModal={() => headerRef.current?.openTrialModal()} />
+            
             <HowItWorksCopy />
             <StoremateFeatures />
             <Hero2 />
+<CustomerLogos />
+            <HomeTestimonials />
 
             <Faq />
             <CallToAction onOpenTrialModal={() => headerRef.current?.openTrialModal('cta')} />

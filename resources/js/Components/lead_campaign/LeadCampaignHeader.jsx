@@ -1,17 +1,48 @@
 import { Link } from '@inertiajs/react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '@/Contexts/LanguageContext';
 
 const LeadCampaignHeader = () => {
     const [scrolled, setScrolled] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('hero');
     const langRef = useRef(null);
     const { currentLanguage, changeLanguage } = useLanguage();
 
+    const navLinks = [
+        { id: 'hero', en: 'Home', si: 'මුල් පිටුව' },
+        { id: 'problem', en: 'Problem', si: 'ගැටලුව' },
+        { id: 'how-it-works', en: 'How It Works', si: 'ක්‍රියාකාරිත්වය' },
+        { id: 'benefits', en: 'Benefits', si: 'ප්‍රතිලාභ' },
+        { id: 'testimonials', en: 'Reviews', si: 'සමාලෝචන' },
+        { id: 'pricing', en: 'Pricing', si: 'මිල ගණන්' },
+        { id: 'faq', en: 'FAQ', si: 'FAQ' },
+    ];
+
+    const scrollToSection = useCallback((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            const headerOffset = 80;
+            const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: elementPosition - headerOffset, behavior: 'smooth' });
+        }
+        setMobileOpen(false);
+    }, []);
+
     useEffect(() => {
+        const sectionIds = navLinks.map(l => l.id);
         const handleScroll = () => {
             setScrolled(window.scrollY > 10);
+            const scrollPos = window.scrollY + 120;
+            let current = sectionIds[0];
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollPos) {
+                    current = id;
+                }
+            }
+            setActiveSection(current);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -35,15 +66,32 @@ const LeadCampaignHeader = () => {
     const currentLang = languages.find(l => l.code === currentLanguage) || languages[0];
 
     return (
-        <header className={`sticky top-0 z-[9999] border-b transition-colors duration-300 ${scrolled ? 'bg-white border-gray-200 shadow-sm' : 'bg-[#F2F8FB] border-blue-100'}`}>
+        <header className={`sticky top-0 z-[9999] transition-colors duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-[#F2F8FB]'}`}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 sm:h-20 items-center justify-between">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/lead-campaign">
+                        <Link href="/home">
                             <img src="/oms-v1.png" alt="StoreMate" className="block h-10 sm:h-12 w-auto" />
                         </Link>
                     </div>
+
+                    {/* Desktop Navigation Links */}
+                    <nav className="hidden lg:flex items-center gap-1">
+                        {navLinks.map((link) => (
+                            <button
+                                key={link.id}
+                                onClick={() => scrollToSection(link.id)}
+                                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
+                                    activeSection === link.id
+                                        ? 'bg-[#006daf] text-white shadow-sm'
+                                        : 'text-gray-600 hover:text-[#006daf] hover:bg-blue-50'
+                                }`}
+                            >
+                                {currentLanguage === 'si' ? link.si : link.en}
+                            </button>
+                        ))}
+                    </nav>
 
                     {/* Right side — Desktop CTA Buttons */}
                     <div className="hidden sm:flex items-center gap-3">
@@ -95,7 +143,7 @@ const LeadCampaignHeader = () => {
                     {/* Mobile — Hamburger Button */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                        className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
                     >
                         {mobileOpen ? (
                             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -111,8 +159,25 @@ const LeadCampaignHeader = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className={`px-4 pb-5 pt-2 border-t ${scrolled ? 'border-gray-200 bg-white' : 'border-blue-100 bg-[#F2F8FB]'}`}>
+                    {/* Section Navigation */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {navLinks.map((link) => (
+                            <button
+                                key={link.id}
+                                onClick={() => scrollToSection(link.id)}
+                                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+                                    activeSection === link.id
+                                        ? 'bg-[#006daf] text-white'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                }`}
+                            >
+                                {currentLanguage === 'si' ? link.si : link.en}
+                            </button>
+                        ))}
+                    </div>
+
                     {/* Language Switcher */}
                     <div className="flex items-center gap-2 mb-4">
                         {languages.map((lang) => (

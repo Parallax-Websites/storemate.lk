@@ -24,7 +24,9 @@ export default function LeadCampaignHome() {
                 <LeadCampaignHowItWorks />
                 <LeadCampaignBenefits />
                 <LeadCampaignTestimonials />
-                <Pricing compact />
+                <div id="pricing">
+                    <Pricing compact />
+                </div>
                 <LeadCampaignFaq />
                 <LeadCampaignFooter />
             </div>
