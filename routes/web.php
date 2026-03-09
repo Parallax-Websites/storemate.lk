@@ -82,6 +82,11 @@ Route::get('/blog', function () {
     return Inertia::render('Blog');
 })->name('blog');
 
+// Redirect /blog/ with trailing slash to /blog
+Route::get('/blog/', function () {
+    return redirect('/blog', 301);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
