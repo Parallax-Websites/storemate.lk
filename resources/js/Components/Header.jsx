@@ -685,6 +685,8 @@ const Header = forwardRef(({ auth }, ref) => {
                     </div>
                 </div>
 
+
+
                 <div className="pt-4 pb-1 border-t border-gray-200">
                     <div className="mt-3 space-y-1">
                         {/* Mobile Login Options */}
