@@ -18,9 +18,9 @@ export const LanguageProvider = ({ children }) => {
         const utmSource = urlParams.get('utm_source');
         const utmMedium = urlParams.get('utm_medium');
 
-        // Set English as default for the commercial video campaign
+        // Set English as default for the commercial video campaign (case-insensitive)
         if (utmCampaign === 'storemate_commercial_video' &&
-            utmSource === 'Youtube' &&
+            utmSource?.toLowerCase() === 'youtube' &&
             utmMedium === 'ads') {
             return 'en';
         }
