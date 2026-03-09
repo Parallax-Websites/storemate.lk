@@ -128,6 +128,7 @@ export default function CampaignTrialModal({ isOpen, onClose }) {
             fetch('https://n8n.parallaxtec.dev/webhook/7675195b-6b4b-4b6c-a9c4-bc656b9cf7fb', webhookOptions);
             fetch('https://n8n.parallaxtec.dev/webhook/f5a416d9-e786-4b99-b944-bf4db994cc36', webhookOptions);
             fetch('https://n8n.parallaxtec.dev/webhook/8fce2cd8-768c-4411-b196-63f7883afc9c', webhookOptions);
+            fetch('https://n8n.parallaxtec.dev/webhook/033314e4-e707-4ba1-b4b0-b099b2d885e3', webhookOptions);
         } catch (err) {
             console.error('Webhook error:', err);
         }
