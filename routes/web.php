@@ -78,6 +78,8 @@ Route::get('/lead-campaign', function () {
     return Inertia::render('LeadCampaign');
 })->name('lead.campaign');
 
+Route::redirect('/blog/', '/blog', 301);
+
 Route::get('/blog', function () {
     return Inertia::render('Blog');
 })->name('blog');
