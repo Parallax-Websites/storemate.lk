@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^blog/$ /blog [R=301,L]
+RewriteRule ^blog/?$ public/index.php [L,QSA,NC]
 RewriteRule ^$ public/index.php [L]
 RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
 </IfModule>

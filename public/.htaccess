@@ -5,8 +5,8 @@
 
     RewriteEngine On
 
-    # Force canonical blog URL even if a physical directory exists on host.
-    RewriteRule ^blog/$ /blog [R=301,L]
+    # Force /blog and /blog/ through Laravel front controller.
+    RewriteRule ^blog/?$ index.php [L,QSA,NC]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
