@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Courier Logo Carousel Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 15s linear infinite;
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Blog Page Styles */
+.blog-container {
+    width: 100%;
+    background: #ffffff;
+}
+
+.blog-container iframe {
+    overflow: hidden !important;
+    display: block;
+}
+
+/* Chatbot Widget Slide-in Animation */
+@keyframes chatbot-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.chatbot-slide-in {
+    animation: chatbot-slide-in 0.3s ease-out;
+}
