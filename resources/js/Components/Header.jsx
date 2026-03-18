@@ -42,6 +42,36 @@ const Header = forwardRef(({ auth }, ref) => {
     const [trialEmailError, setTrialEmailError] = useState('');
     const { t } = useTranslation();
 
+    const shouldUseCampaignTrialForm = (() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmCampaign = (urlParams.get('utm_campaign') || '').toLowerCase();
+        const utmContent = (urlParams.get('utm_content') || '').toLowerCase();
+        const utmMedium = (urlParams.get('utm_medium') || '').toLowerCase();
+        const utmSource = (urlParams.get('utm_source') || '').toLowerCase();
+
+        const isCommercialVideoSearchCampaign =
+            utmCampaign === 'storemate_commercial_video' &&
+            utmContent === 'keyword_campaign' &&
+            utmMedium === 'searchads' &&
+            utmSource === 'youtube';
+
+        const isKeywordSearchGoogleCampaign =
+            utmCampaign === 'storemate_keyword_search' &&
+            utmContent === 'keyword_campaign' &&
+            utmMedium === 'searchads' &&
+            utmSource === 'google';
+
+        return isCommercialVideoSearchCampaign || isKeywordSearchGoogleCampaign;
+    })();
+
+    const handleHeaderTrialClick = (e) => {
+        if (shouldUseCampaignTrialForm) {
+            e.preventDefault();
+            setTrialButtonSource('header');
+            setShowTrialModal(true);
+        }
+    };
+
     // Email validation function
     const validateEmail = (email) => {
         if (!email) {
@@ -564,8 +594,9 @@ const Header = forwardRef(({ auth }, ref) => {
                                 <a
                                     id={getTryDemoId('header')}
                                     href="https://welcome.oms.storemate.cloud/register"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    target={shouldUseCampaignTrialForm ? undefined : '_blank'}
+                                    rel={shouldUseCampaignTrialForm ? undefined : 'noopener noreferrer'}
+                                    onClick={handleHeaderTrialClick}
                                     className="inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3 cursor-pointer"
                                 >
                                     {t('nav.startFreeTrial')}
@@ -721,8 +752,9 @@ const Header = forwardRef(({ auth }, ref) => {
                         <a
                             id={getTryDemoId('header')}
                             href="https://welcome.oms.storemate.cloud/register"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            target={shouldUseCampaignTrialForm ? undefined : '_blank'}
+                            rel={shouldUseCampaignTrialForm ? undefined : 'noopener noreferrer'}
+                            onClick={handleHeaderTrialClick}
                             className="block mx-4 mt-3 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md cursor-pointer"
                         >
                             {t('nav.startFreeTrial')}
