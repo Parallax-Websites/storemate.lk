@@ -12,7 +12,8 @@ const getCampaignLanguageOverride = () => {
     const isCommercialVideoCampaign =
         utmCampaign === 'storemate_commercial_video' &&
         utmSource === 'youtube' &&
-        utmMedium === 'ads';
+        (utmMedium === 'ads' ||
+            (utmMedium === 'searchads' && utmContent === 'keyword_campaign'));
 
     const isKeywordSearchCampaign =
         utmCampaign === 'storemate_keyword_search' &&
