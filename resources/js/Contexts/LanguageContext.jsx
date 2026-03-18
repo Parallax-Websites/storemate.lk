@@ -16,7 +16,7 @@ const getCampaignLanguageOverride = () => {
 
     const isKeywordSearchCampaign =
         utmCampaign === 'storemate_keyword_search' &&
-        utmSource === 'google' &&
+        (utmSource === 'google' || utmSource === 'youtube') &&
         utmMedium === 'searchads' &&
         utmContent === 'keyword_campaign';
 
