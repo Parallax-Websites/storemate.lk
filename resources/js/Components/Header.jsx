@@ -3,6 +3,7 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import FeaturesDropdown from '@/Components/FeaturesDropdown';
 import LanguageSelector from '@/Components/LanguageSelector';
+import CampaignTrialModal from '@/Components/new_campaign/CampaignTrialModal';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import leadScoring from '@/Utils/leadScoring';
@@ -13,6 +14,7 @@ const Header = forwardRef(({ auth }, ref) => {
     const [showingMobileMoreDropdown, setShowingMobileMoreDropdown] = useState(false);
     const [showDemoModal, setShowDemoModal] = useState(false);
     const [showTrialModal, setShowTrialModal] = useState(false);
+    const [showCampaignTrialModal, setShowCampaignTrialModal] = useState(false);
     const [showTrialThankYou, setShowTrialThankYou] = useState(false);
     const [showDemoThankYou, setShowDemoThankYou] = useState(false);
     const [trialRedirectUrl, setTrialRedirectUrl] = useState('');
@@ -68,7 +70,7 @@ const Header = forwardRef(({ auth }, ref) => {
         if (shouldUseCampaignTrialForm) {
             e.preventDefault();
             setTrialButtonSource('header');
-            setShowTrialModal(true);
+            setShowCampaignTrialModal(true);
         }
     };
 
@@ -314,20 +316,17 @@ const Header = forwardRef(({ auth }, ref) => {
             return;
         }
 
-        /* COMMENTED OUT - ALL FORM SUBMISSION CODE
         // Get current page for UTM source
         const currentPath = route().current();
-        let utmSource = '';
         const buttonType = trialButtonSource; // 'header' or 'hero'
+        let utmSource = '';
 
-        // Check for module routes
         if (currentPath && (currentPath.startsWith('module.') || currentPath.startsWith('module-'))) {
             const moduleNumber = currentPath.includes('.')
                 ? currentPath.split('.')[1]
                 : currentPath.split('-')[1];
             utmSource = `btn_start_a_free_trial_${buttonType}_module${moduleNumber}`;
         } else {
-            // Map other routes
             const utmSourceMap = {
                 'home': `btn_start_a_free_trial_${buttonType}_home`,
                 'pricing': `btn_start_a_free_trial_${buttonType}_pricing`,
@@ -352,10 +351,9 @@ const Header = forwardRef(({ auth }, ref) => {
             companyName: trialFormData.companyName,
             utm_source: utmSource
         });
-
         const registrationUrl = `https://welcome.oms.storemate.cloud/register?${params.toString()}`;
 
-        // PUSH ALL DATA TO GTM dataLayer - GTM handles everything
+        // Push trial form payload to GTM dataLayer
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'trial_form_submit',
@@ -369,20 +367,16 @@ const Header = forwardRef(({ auth }, ref) => {
                 email: trialFormData.email,
                 companyName: trialFormData.companyName
             },
-            registrationUrl: registrationUrl,
-            utmSource: utmSource,
+            registrationUrl,
+            utmSource,
             timestamp: new Date().toISOString()
         });
 
-        console.log('✅ Trial form data pushed to GTM dataLayer');
-        console.log('Registration URL:', registrationUrl);
-
-        // Store the redirect URL and show thank you page
+        // Show thank-you popup and start redirect countdown.
         setTrialRedirectUrl(registrationUrl);
         setShowTrialModal(false);
         setShowTrialThankYou(true);
         setCountdown(5);
-        */
 
         // Reset form
         setTrialFormData({
@@ -1108,6 +1102,11 @@ const Header = forwardRef(({ auth }, ref) => {
                     </div>
                 </div>
             )}
+
+            <CampaignTrialModal
+                isOpen={showCampaignTrialModal}
+                onClose={() => setShowCampaignTrialModal(false)}
+            />
 
             {/* Free Trial Thank You Modal */}
             {showTrialThankYou && (
