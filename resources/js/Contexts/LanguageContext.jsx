@@ -2,6 +2,31 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const LanguageContext = createContext();
 
+const getCampaignLanguageOverride = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmCampaign = (urlParams.get('utm_campaign') || '').toLowerCase();
+    const utmSource = (urlParams.get('utm_source') || '').toLowerCase();
+    const utmMedium = (urlParams.get('utm_medium') || '').toLowerCase();
+    const utmContent = (urlParams.get('utm_content') || '').toLowerCase();
+
+    const isCommercialVideoCampaign =
+        utmCampaign === 'storemate_commercial_video' &&
+        utmSource === 'youtube' &&
+        utmMedium === 'ads';
+
+    const isKeywordSearchCampaign =
+        utmCampaign === 'storemate_keyword_search' &&
+        utmSource === 'google' &&
+        utmMedium === 'searchads' &&
+        utmContent === 'keyword_campaign';
+
+    if (isCommercialVideoCampaign || isKeywordSearchCampaign) {
+        return 'en';
+    }
+
+    return null;
+};
+
 export const useLanguage = () => {
     const context = useContext(LanguageContext);
     if (!context) {
@@ -11,18 +36,12 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-    const [currentLanguage, setCurrentLanguage] = useState(() => {
-        // Check URL parameters for specific campaign
-        const urlParams = new URLSearchParams(window.location.search);
-        const utmCampaign = urlParams.get('utm_campaign');
-        const utmSource = urlParams.get('utm_source');
-        const utmMedium = urlParams.get('utm_medium');
+    const campaignLanguageOverride = getCampaignLanguageOverride();
 
-        // Set English as default for the commercial video campaign (case-insensitive)
-        if (utmCampaign === 'storemate_commercial_video' &&
-            utmSource?.toLowerCase() === 'youtube' &&
-            utmMedium === 'ads') {
-            return 'en';
+    const [currentLanguage, setCurrentLanguage] = useState(() => {
+        // Force campaign language regardless of saved preference.
+        if (campaignLanguageOverride) {
+            return campaignLanguageOverride;
         }
 
         // Get saved language from localStorage or default to Sinhala
@@ -30,6 +49,11 @@ export const LanguageProvider = ({ children }) => {
     });
 
     const changeLanguage = (language) => {
+        if (campaignLanguageOverride && language !== campaignLanguageOverride) {
+            setCurrentLanguage(campaignLanguageOverride);
+            return;
+        }
+
         setCurrentLanguage(language);
         localStorage.setItem('selectedLanguage', language);
     };
