@@ -395,29 +395,29 @@
     // Hero Section
     hero: {
         allYour: {
-            en: 'Manage All Your',
-            si: 'ඔයාගේ සියලුම',
-            ta: 'உங்கள் அனைத்து'
+            en: 'The All-in-One',
+            si: 'ශ්‍රී ලංකාවේ ව්‍යාපාර සඳහා',
+            ta: 'இலங்கைக்காக உருவாக்கப்பட்ட'
         },
         socialMediaOrders: {
-            en: 'Social Media Orders',
-            si: ' Social Media Orders',
-            ta: 'சமூக ஊடக ஆர்டர்கள்'
+            en: 'Order Management System',
+            si: 'නිර්මාණය කළ',
+            ta: 'அனைத்தும் ஒரே இடத்தில் உள்ள'
         },
         couriers: {
-            en: '& Increase Your',
-            si: 'කළමනාකරණය කරමින් ',
-            ta: 'மேலாண்மை செய்து'
+            en: 'Built for',
+            si: 'සම්පූර්ණ Order Management',
+            ta: 'ஆர்டர் மேலாண்மை அமைப்பு'
         },
         inOnePlace: {
-            en: 'Sales by 2X!',
-            si: 'විකුණුම් 2X කින් වැඩි කරගන්න!',
-            ta: 'விற்பனையை 2X ஆக அதிகரிக்கவும்!'
+            en: 'for Sri Lanka',
+            si: 'පද්ධතියක්',
+            ta: 'இலங்கைக்காக'
         },
         description: {
-            en: 'Reduce Returns, Identify Fake Orders and Sync Couriers easily. Try all of this with Storemate. Contact us today to get started!',
-            si: 'Returns අඩු කරගන්න, Fake Orders හඳුනාගන්න සහ Courier පහසුවෙන් Sync කරන්න. මේ ඔක්කොම Storemate සමඟ උත්සාහ කරන්න. අදම අප හා සම්බන්ධ වන්න!',
-            ta: 'Returns குறைக்கவும், Fake Orders கண்டறியவும், Courier எளிதாக Sync செய்யவும். இவை அனைத்தையும் Storemate உடன் முயற்சிக்கவும். இன்றே எங்களைத் தொடர்பு கொள்ளுங்கள்!'
+            en: 'Stop manual WhatsApp tracking. Automate your inventory, sync local couriers, and print waybills in seconds. The #1 OMS designed for online businesses in Sri Lanka.',
+            si: 'WhatsApp හරහා අතින් tracking කිරීම නවත්වන්න. ඔබගේ inventory ස්වයංක්‍රීය කරන්න, දේශීය couriers sync කරන්න, සහ තත්පර කිහිපයකින් waybill print කරන්න. ශ්‍රී ලංකාවේ online ව්‍යාපාර සඳහා නිර්මාණය කළ #1 OMS.',
+            ta: 'கைமுறை WhatsApp ட்ராக்கிங்கை நிறுத்துங்கள். உங்கள் இன்வென்டரியை தானியக்கப்படுத்தி, உள்ளூர் கூரியர்களை ஒத்திசைத்து, சில வினாடிகளில் வேபில் அச்சிடுங்கள். இலங்கையின் ஆன்லைன் வணிகங்களுக்காக உருவாக்கப்பட்ட #1 OMS.'
         },
         fewerReturns: {
             line1: {
