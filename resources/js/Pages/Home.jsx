@@ -38,13 +38,13 @@ export default function Home({ auth }) {
 
     return (
         <MainLayout>
-            <Head title="StoreMate OMS - Complete Order Management System for E-commerce">
-                <meta name="description" content="StreamMate OMS helps e-commerce businesses manage orders efficiently from inquiry to delivery. Automate order processing, track shipments, and grow your online store." />
+            <Head title="Best Order Management System in Sri Lanka | StoreMate OMS">
+                <meta name="description" content="Streamline your online business with StoreMate, the #1 Order Management System in Sri Lanka. Automate courier waybills, sync Facebook/WhatsApp orders, and detect duplicate customers." />
                 <meta name="keywords" content="order management system, e-commerce OMS, online store management, order tracking, shipping automation, StoreMate" />
             </Head>
             <Header ref={headerRef} auth={auth} />
             <Hero onOpenTrialModal={() => headerRef.current?.openTrialModal()} />
-            
+
             <HowItWorksCopy />
             <StoremateFeatures />
             <Hero2 />

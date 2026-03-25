@@ -394,6 +394,16 @@
 
     // Hero Section
     hero: {
+        mainTitle: {
+            en: 'The All-in-One Order Management System Built for Sri Lanka',
+            si: 'ශ්‍රී ලංකාව සඳහා නිර්මාණය කළ All-in-One Order Management පද්ධතිය',
+            ta: 'இலங்கைக்காக உருவாக்கப்பட்ட அனைத்தும் ஒரே இடத்தில் உள்ள ஆர்டர் மேலாண்மை அமைப்பு'
+        },
+        mainSubtitle: {
+            en: 'The #1 OMS designed for online businesses in Sri Lanka.',
+            si: 'ශ්‍රී ලංකාවේ online ව්‍යාපාර සඳහා නිර්මාණය කළ #1 OMS.',
+            ta: 'இலங்கையின் ஆன்லைன் வணிகங்களுக்காக வடிவமைக்கப்பட்ட #1 OMS.'
+        },
         allYour: {
             en: 'The All-in-One',
             si: 'ශ්‍රී ලංකාවේ ව්‍යාපාර සඳහා',
@@ -415,9 +425,14 @@
             ta: 'இலங்கைக்காக'
         },
         description: {
-            en: 'Stop manual WhatsApp tracking. Automate your inventory, sync local couriers, and print waybills in seconds. The #1 OMS designed for online businesses in Sri Lanka.',
-            si: 'WhatsApp හරහා අතින් tracking කිරීම නවත්වන්න. ඔබගේ inventory ස්වයංක්‍රීය කරන්න, දේශීය couriers sync කරන්න, සහ තත්පර කිහිපයකින් waybill print කරන්න. ශ්‍රී ලංකාවේ online ව්‍යාපාර සඳහා නිර්මාණය කළ #1 OMS.',
-            ta: 'கைமுறை WhatsApp ட்ராக்கிங்கை நிறுத்துங்கள். உங்கள் இன்வென்டரியை தானியக்கப்படுத்தி, உள்ளூர் கூரியர்களை ஒத்திசைத்து, சில வினாடிகளில் வேபில் அச்சிடுங்கள். இலங்கையின் ஆன்லைன் வணிகங்களுக்காக உருவாக்கப்பட்ட #1 OMS.'
+            en: 'Automate courier waybills, sync Facebook/WhatsApp orders, Bulk order sync to couriers and detect duplicate/fake orders.',
+            si: 'Courier waybills ස්වයංක්‍රීය කරන්න, Facebook/WhatsApp orders sync කරන්න, bulk orders couriers වෙත sync කරන්න, සහ duplicate/fake orders හඳුනාගන්න.',
+            ta: 'கூரியர் வேபில்களை தானியக்கப்படுத்தி, Facebook/WhatsApp ஆர்டர்களை ஒத்திசைத்து, bulk ஆர்டர்களை கூரியர்களுக்கு sync செய்து, duplicate/fake ஆர்டர்களை கண்டறியுங்கள்.'
+        },
+        trustedBy: {
+            en: 'Trusted by growing businesses',
+            si: 'වේගයෙන් වර්ධනය වන ව්‍යාපාරවල විශ්වාසය',
+            ta: 'வேகமாக வளர்ந்து வரும் வணிகங்கள் நம்புகின்றன'
         },
         fewerReturns: {
             line1: {
