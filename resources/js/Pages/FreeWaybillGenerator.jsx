@@ -18,6 +18,7 @@ export default function FreeWaybillGenerator({ auth }) {
 
     return (
         <MainLayout>
+            <div className="min-h-screen bg-slate-50">
             <Head title={tFreeWaybill('pageTitle')}>
                 <meta
                     name="description"
@@ -215,6 +216,7 @@ export default function FreeWaybillGenerator({ auth }) {
             </section>
 
             <Footer />
+            </div>
         </MainLayout>
     );
 }
