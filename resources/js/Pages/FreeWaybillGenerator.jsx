@@ -137,14 +137,6 @@ export default function FreeWaybillGenerator({ auth }) {
                     </div>
                 </div>
             </section>
-                        <div className="mt-10 text-center">
-                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700">{tFreeWaybill('upgrade.badge')}</p>
-                            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">{tFreeWaybill('upgrade.title')}</h2>
-                            <p className="mt-4 max-w-3xl mx-auto text-base leading-7 text-slate-600 sm:text-lg">{tFreeWaybill('upgrade.description')}</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <section className="py-20 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
