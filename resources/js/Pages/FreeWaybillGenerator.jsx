@@ -98,51 +98,45 @@ export default function FreeWaybillGenerator({ auth }) {
                 </div>
             </section>
 
-            <section className="py-20 sm:py-24">
+            <section className="py-20 sm:py-24 bg-slate-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-sky-50 to-orange-50">
-                        <div className="flex flex-col md:flex-row gap-8 items-start justify-center">
-                            {/* Guest User Card */}
-                            <div className="flex-1 bg-white rounded-2xl p-6 mb-6 md:mb-0 flex flex-col justify-start">
-                                <div className="flex items-center mb-4">
-                                    <svg className="w-7 h-7 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 1114 0H3z" /></svg>
-                                    <span className="font-bold text-lg text-slate-800">Guest User</span>
-                                </div>
-                                <ul className="space-y-4 text-base">
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V3zm0 4h14v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7zm2 2v6h2V9H5zm4 0v6h2V9H9zm4 0v6h2V9h-2z" /></svg> <span className="font-semibold">Excel Upload:</span> 20 Rows</li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 8V5a1 1 0 10-2 0v5a1 1 0 00.293.707l3 3a1 1 0 101.414-1.414l-2.707-2.707z" /></svg> <span className="font-semibold">Data History:</span> Valid for 5 Hours</li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0l-1.172 1.172-9.192 9.192a2 2 0 000 2.828l3.172 3.172a2 2 0 002.828 0l9.192-9.192a2 2 0 000-2.828l-3.172-3.172zM7.05 16.95a1 1 0 01-1.414 0l-3.172-3.172a1 1 0 010-1.414l9.192-9.192a1 1 0 011.414 0l3.172 3.172a1 1 0 010 1.414l-9.192 9.192z" /></svg> <span className="font-semibold">Logo & Branding:</span> Basic</li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17 8V6a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2zm-7-2a3 3 0 016 0v2H6V6zm8 7a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1h10a1 1 0 011 1v5z" /></svg> <span className="font-semibold">Courier Sync:</span> Manual</li>
-                                </ul>
+                    <div className="flex flex-col md:flex-row justify-center gap-8">
+                        {/* Guest Card */}
+                        <div className="w-full max-w-sm rounded-2xl bg-white border border-slate-200 pt-8 pb-6 px-8">
+                            <div className="text-left">
+                                <p className="text-sm font-medium uppercase tracking-widest text-slate-500">Guest</p>
+                                <p className="text-xl font-bold text-slate-900">For freelancers</p>
+                                <p className="mt-6 text-4xl font-bold text-slate-900">90<span className="text-base">€</span></p>
                             </div>
-
-                            {/* Arrow/Divider for large screens */}
-                            <div className="hidden md:flex flex-col items-center justify-center mx-4 mt-12 md:mt-0">
-                                <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#e0e7ff"/><path d="M16 24h16m0 0l-6-6m6 6l-6 6" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                            </div>
-
-                            {/* Logged-in User Card */}
-                            <div className="flex-1 bg-white rounded-2xl p-6 border-2 border-emerald-200 flex flex-col justify-start">
-                                <div className="flex items-center mb-4">
-                                    <svg className="w-7 h-7 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 6.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7a1 1 0 000-1.414z" /></svg>
-                                    <span className="font-bold text-lg text-blue-700">Free StoreMate Account <span className="font-normal">(Unlocks Forever!)</span></span>
-                                </div>
-                                <ul className="space-y-4 text-base">
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V3zm0 4h14v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7zm2 2v6h2V9H5zm4 0v6h2V9H9zm4 0v6h2V9h-2z" /></svg> <span className="font-semibold">Excel Upload:</span> <span className="text-blue-700">Bulk Processing (No Limits)</span></li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 8V5a1 1 0 10-2 0v5a1 1 0 00.293.707l3 3a1 1 0 101.414-1.414l-2.707-2.707z" /></svg> <span className="font-semibold">Data History:</span> <span className="text-blue-700">Cloud Storage & Order History</span></li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0l-1.172 1.172-9.192 9.192a2 2 0 000 2.828l3.172 3.172a2 2 0 002.828 0l9.192-9.192a2 2 0 000-2.828l-3.172-3.172zM7.05 16.95a1 1 0 01-1.414 0l-3.172-3.172a1 1 0 010-1.414l9.192-9.192a1 1 0 011.414 0l3.172 3.172a1 1 0 010 1.414l-9.192 9.192z" /></svg> <span className="font-semibold">Logo & Branding:</span> <span className="text-blue-700">Fully Customizable Brand Kit</span></li>
-                                    <li className="flex items-center gap-2"><svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17 8V6a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2zm-7-2a3 3 0 016 0v2H6V6zm8 7a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1h10a1 1 0 011 1v5z" /></svg> <span className="font-semibold">Courier Sync:</span> <span className="text-blue-700">Automated Fulfillment</span></li>
-                                </ul>
-                                <a
-                                    href="https://oms.storemate.cloud/register"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-8 inline-block w-full rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 px-6 py-4 text-center text-lg font-bold text-white hover:from-sky-700 hover:to-blue-700 transition-all duration-200"
-                                >
-                                    Create Your Free Account Now →
-                                </a>
-                            </div>
+                            <ul className="mt-8 space-y-4 text-slate-700">
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">📦</span>1 users</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">📥</span>Personal use</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">✅</span>Use in a free end product</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🛡️</span>6 months technical support</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🧩</span>All modules included</li>
+                            </ul>
+                            <button className="mt-8 w-full rounded-full bg-slate-900 py-3 text-white font-semibold hover:bg-slate-800 transition">Subscribe</button>
                         </div>
+
+                        {/* Pro Card */}
+                        <div className="w-full max-w-sm rounded-2xl bg-slate-900 text-white pt-8 pb-6 px-8">
+                            <div className="text-left">
+                                <p className="text-sm font-medium uppercase tracking-widest text-blue-300">Pro</p>
+                                <p className="text-xl font-bold text-white">For agencies</p>
+                                <p className="mt-6 text-4xl font-bold text-white">190<span className="text-base">€</span></p>
+                            </div>
+                            <ul className="mt-8 space-y-4 text-blue-100">
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Unlimited users</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Personal or Commercial use</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Use in a free or paid end product</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>6 months of technical support</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>All modules included</li>
+                            </ul>
+                            <button className="mt-8 w-full rounded-full bg-blue-500 py-3 text-white font-semibold hover:bg-blue-400 transition">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
                         <div className="mt-10 text-center">
                             <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700">{tFreeWaybill('upgrade.badge')}</p>
                             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">{tFreeWaybill('upgrade.title')}</h2>
