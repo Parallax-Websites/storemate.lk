@@ -99,42 +99,53 @@ export default function FreeWaybillGenerator({ auth }) {
 
             <section className="py-20 sm:py-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-10">
-                        <div>
-                            <div>
-                                <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700">
-                                    {tFreeWaybill('upgrade.badge')}
-                                </p>
-                                <h2 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-                                    {tFreeWaybill('upgrade.title')}
-                                </h2>
-                                <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
-                                    {tFreeWaybill('upgrade.description')}
-                                </p>
+                    <div className="rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-sky-50 to-orange-50">
+                        <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+                            {/* Guest User Card */}
+                            <div className="flex-1 bg-white rounded-2xl shadow-md p-6 mb-6 md:mb-0">
+                                <div className="flex items-center mb-4">
+                                    <span className="text-3xl mr-2">👤</span>
+                                    <span className="font-bold text-lg text-slate-800">Guest User</span>
+                                </div>
+                                <ul className="space-y-4 text-base">
+                                    <li className="flex items-center gap-2"><span className="text-xl">⬆️</span> <span className="font-semibold">Excel Upload:</span> 20 Rows</li>
+                                    <li className="flex items-center gap-2"><span className="text-xl">⏳</span> <span className="font-semibold">Data History:</span> Valid for 5 Hours</li>
+                                    <li className="flex items-center gap-2"><span className="text-xl">🏷️</span> <span className="font-semibold">Logo & Branding:</span> Basic</li>
+                                    <li className="flex items-center gap-2"><span className="text-xl">🔄</span> <span className="font-semibold">Courier Sync:</span> Manual</li>
+                                </ul>
+                            </div>
+
+                            {/* Arrow/Divider for large screens */}
+                            <div className="hidden md:flex flex-col items-center justify-center mx-4">
+                                <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#e0e7ff"/><path d="M16 24h16m0 0l-6-6m6 6l-6 6" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                            </div>
+
+                            {/* Logged-in User Card */}
+                            <div className="flex-1 bg-white rounded-2xl shadow-md p-6 border-2 border-emerald-200">
+                                <div className="flex items-center mb-4">
+                                    <span className="text-3xl mr-2">✅</span>
+                                    <span className="font-bold text-lg text-emerald-700">Free StoreMate Account <span className="font-normal">(Unlocks Forever!)</span></span>
+                                </div>
+                                <ul className="space-y-4 text-base">
+                                    <li className="flex items-center gap-2"><span className="text-xl text-emerald-600">⬆️</span> <span className="font-semibold">Excel Upload:</span> <span className="text-emerald-700">Bulk Processing (No Limits)</span></li>
+                                    <li className="flex items-center gap-2"><span className="text-xl text-emerald-600">☁️</span> <span className="font-semibold">Data History:</span> <span className="text-emerald-700">Cloud Storage & Order History</span></li>
+                                    <li className="flex items-center gap-2"><span className="text-xl text-emerald-600">🏷️</span> <span className="font-semibold">Logo & Branding:</span> <span className="text-emerald-700">Fully Customizable Brand Kit</span></li>
+                                    <li className="flex items-center gap-2"><span className="text-xl text-emerald-600">🔄</span> <span className="font-semibold">Courier Sync:</span> <span className="text-emerald-700">Automated Fulfillment</span></li>
+                                </ul>
+                                <a
+                                    href="https://oms.storemate.cloud/register"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-8 inline-block w-full rounded-xl bg-gradient-to-r from-sky-600 to-emerald-500 px-6 py-4 text-center text-lg font-bold text-white shadow-lg hover:from-sky-700 hover:to-emerald-600 transition-all duration-200"
+                                >
+                                    Create Your Free Account Now →
+                                </a>
                             </div>
                         </div>
-
-                        <div className="mt-8 overflow-x-auto">
-                            <table className="min-w-full border-collapse border border-slate-300 text-left text-sm sm:text-base">
-                                <thead>
-                                    <tr>
-                                        <th className="border border-slate-300 px-4 py-4 font-bold text-slate-900">{tFreeWaybill('upgrade.table.headers.feature')}</th>
-                                        <th className="border border-slate-300 px-4 py-4 font-bold text-slate-900">{tFreeWaybill('upgrade.table.headers.guest')}</th>
-                                        <th className="border border-slate-300 px-4 py-4 font-bold text-slate-900">{tFreeWaybill('upgrade.table.headers.loggedIn')}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {upgradeRows.map((row, index) => (
-                                        <tr key={index}>
-                                            <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-800">{row.feature}</td>
-                                            <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-700">{row.guest}</td>
-                                            <td className="border border-slate-300 px-4 py-4 font-semibold text-slate-900">
-                                                <span className="inline-flex rounded-full border border-emerald-200 px-3 py-1 text-emerald-700">{row.loggedIn}</span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                        <div className="mt-10 text-center">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700">{tFreeWaybill('upgrade.badge')}</p>
+                            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">{tFreeWaybill('upgrade.title')}</h2>
+                            <p className="mt-4 max-w-3xl mx-auto text-base leading-7 text-slate-600 sm:text-lg">{tFreeWaybill('upgrade.description')}</p>
                         </div>
                     </div>
                 </div>

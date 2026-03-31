@@ -509,6 +509,26 @@ const Header = forwardRef(({ auth }, ref) => {
                                     <Dropdown>
                                         <Dropdown.Trigger>
                                             <span className="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-700 cursor-pointer">
+                                                {t('nav.freeTools')}
+                                                <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </Dropdown.Trigger>
+                                        <Dropdown.Content>
+                                            <a
+                                                href="https://storemate.lk/free-waybill-generator"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                            >
+                                                {t('nav.freeWaybillGenerator')}
+                                            </a>
+                                        </Dropdown.Content>
+                                    </Dropdown>
+                                    <Dropdown>
+                                        <Dropdown.Trigger>
+                                            <span className="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-700 cursor-pointer">
                                                 {t('nav.more')}
                                                 <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -638,6 +658,34 @@ const Header = forwardRef(({ auth }, ref) => {
                     <NavLink href={route('pricing')} active={route().current('pricing')} block="true">
                         {t('nav.pricing')}
                     </NavLink>
+                    <div>
+                        <button
+                            onClick={() => setShowingMobileMoreDropdown((previousState) => !previousState)}
+                            className="flex items-center justify-between w-full px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 focus:outline-none focus:text-gray-800 focus:bg-gray-50 transition duration-150 ease-in-out"
+                        >
+                            <span>{t('nav.freeTools')}</span>
+                            <svg
+                                className={`h-4 w-4 transition-transform duration-200 ${showingMobileMoreDropdown ? 'rotate-180' : ''}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
+                        {showingMobileMoreDropdown && (
+                            <div className="pl-8 pb-2 space-y-1">
+                                <a
+                                    href="https://storemate.lk/free-waybill-generator"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition duration-150 ease-in-out"
+                                >
+                                    {t('nav.freeWaybillGenerator')}
+                                </a>
+                            </div>
+                        )}
+                    </div>
 
                     {/* Mobile Features Dropdown */}
                     <div>

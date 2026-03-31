@@ -59,6 +59,16 @@
             si: 'මිල ගණන්',
             ta: 'விலை'
         },
+        freeTools: {
+            en: 'Free Tools',
+            si: 'නොමිලේ මෙවලම්',
+            ta: 'இலவச கருவிகள்'
+        },
+        freeWaybillGenerator: {
+            en: 'Free Waybill Generator',
+            si: 'නොමිලේ Waybill ජනකය',
+            ta: 'இலவச Waybill உருவாக்கி'
+        },
         about: {
             en: 'About Us',
             si: 'අප ගැන',
