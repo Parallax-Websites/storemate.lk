@@ -191,16 +191,16 @@ const freeWaybillGeneratorTranslations = {
             title: 'නිතර අසන ප්‍රශ්න',
             items: [
                 {
-                    question: 'Q: මේ tool එක භාවිතා කිරීමට ගෙවන්න ඕනෙද?',
-                    answer: 'A: නැහැ. Basic bulk generator එක 100% නොමිලේ. ශ්‍රී ලංකාවේ online ව්‍යාපාරිකයින් වර්ධනය වීමට උදව් කිරීම සඳහා මෙය ලබා දී ඇත.'
+                    question: 'මේ tool එක භාවිතා කිරීමට ගෙවන්න ඕනෙද?',
+                    answer: 'නැහැ. Basic bulk generator එක 100% නොමිලේ. ශ්‍රී ලංකාවේ online ව්‍යාපාරිකයින් වර්ධනය වීමට උදව් කිරීම සඳහා මෙය ලබා දී ඇත.'
                 },
                 {
-                    question: 'Q: Thermal printer සඳහා මෙය භාවිතා කළ හැකිද?',
-                    answer: 'A: ඔව්! Login වූ පසු standard A4 paper හෝ professional 4x6 thermal stickers වලට ගැලපෙන පරිදි layout එක සම්පූර්ණයෙන් customize කළ හැක.'
+                    question: 'Thermal printer සඳහා මෙය භාවිතා කළ හැකිද?',
+                    answer: 'ඔව්! Login වූ පසු standard A4 paper හෝ professional 4x6 thermal stickers වලට ගැලපෙන පරිදි layout එක සම්පූර්ණයෙන් customize කළ හැක.'
                 },
                 {
-                    question: 'Q: කුමන couriers support කරන්නේද?',
-                    answer: 'A: Koombiyo, Pronto, Domex ඇතුළු ප්‍රමුඛ ශ්‍රී ලාංකීය courier සේවා සියල්ලම පිළිගන්නා ආකාරයට templates සකසා ඇත.'
+                    question: 'කුමන couriers support කරන්නේද?',
+                    answer: 'Koombiyo, Pronto, Domex ඇතුළු ප්‍රමුඛ ශ්‍රී ලාංකීය courier සේවා සියල්ලම පිළිගන්නා ආකාරයට templates සකසා ඇත.'
                 }
             ]
         }
