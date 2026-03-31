@@ -101,36 +101,32 @@ export default function FreeWaybillGenerator({ auth }) {
             <section className="py-20 sm:py-24 bg-slate-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row justify-center gap-8">
-                        {/* Guest Card */}
+                        {/* Guest User Card */}
                         <div className="w-full max-w-sm rounded-2xl bg-white border border-slate-200 pt-8 pb-6 px-8">
                             <div className="text-left">
-                                <p className="text-sm font-medium uppercase tracking-widest text-slate-500">Guest</p>
-                                <p className="text-xl font-bold text-slate-900">For freelancers</p>
-                                <p className="mt-6 text-4xl font-bold text-slate-900">90<span className="text-base">€</span></p>
+                                <p className="text-sm font-medium uppercase tracking-widest text-slate-500">Guest User</p>
+                                <p className="text-xl font-bold text-slate-900">Table-based plan</p>
                             </div>
                             <ul className="mt-8 space-y-4 text-slate-700">
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">📦</span>1 users</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">📥</span>Personal use</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">✅</span>Use in a free end product</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🛡️</span>6 months technical support</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🧩</span>All modules included</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🔢</span>Excel Upload Limit: 20 Rows</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">⏳</span>Data History: Valid for 5 Hours</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🖼️</span>Logo & Branding: Basic</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">🚚</span>Courier Sync: Manual</li>
                             </ul>
                             <button className="mt-8 w-full rounded-full bg-slate-900 py-3 text-white font-semibold hover:bg-slate-800 transition">Subscribe</button>
                         </div>
 
-                        {/* Pro Card */}
+                        {/* Logged-in User Card */}
                         <div className="w-full max-w-sm rounded-2xl bg-slate-900 text-white pt-8 pb-6 px-8">
                             <div className="text-left">
-                                <p className="text-sm font-medium uppercase tracking-widest text-blue-300">Pro</p>
-                                <p className="text-xl font-bold text-white">For agencies</p>
-                                <p className="mt-6 text-4xl font-bold text-white">190<span className="text-base">€</span></p>
+                                <p className="text-sm font-medium uppercase tracking-widest text-blue-300">Logged-in User</p>
+                                <p className="text-xl font-bold text-white">Premium plan</p>
                             </div>
                             <ul className="mt-8 space-y-4 text-blue-100">
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Unlimited users</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Personal or Commercial use</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>Use in a free or paid end product</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>6 months of technical support</li>
-                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">✔️</span>All modules included</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">🔢</span>Excel Upload Limit: Unlimited Rows</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">☁️</span>Data History: Saved Forever</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">🖼️</span>Logo & Branding: Fully Customizable</li>
+                                <li className="flex items-center gap-3"><span className="h-6 w-6 rounded-full bg-blue-800 text-white flex items-center justify-center">⚡</span>Courier Sync: 1-Click Auto Booking</li>
                             </ul>
                             <button className="mt-8 w-full rounded-full bg-blue-500 py-3 text-white font-semibold hover:bg-blue-400 transition">Subscribe</button>
                         </div>
