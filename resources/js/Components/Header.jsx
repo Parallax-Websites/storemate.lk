@@ -104,7 +104,10 @@ const Header = forwardRef(({ auth }, ref) => {
             '074', '075', '077', '078'
         ];
 
-        // Check if exactly 10 digits
+
+
+        
+        // Check if exactly 10 
         if (!/^\d{10}$/.test(cleanPhone)) {
             return 'Phone number must be exactly 10 digits';
         }
