@@ -85,9 +85,9 @@ Route::get('/lead-campaign', function () {
 Route::redirect('/storemate-blog', '/blog', 301);
 Route::redirect('/storemate-blog/', '/blog', 301);
 
-Route::get('/blog', function () {
+Route::get('/blog/{path?}', function (string $path = null) {
     return Inertia::render('Blog');
-})->name('blog');
+})->where('path', '.*')->name('blog');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
