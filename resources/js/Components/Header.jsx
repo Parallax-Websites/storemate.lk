@@ -106,8 +106,8 @@ const Header = forwardRef(({ auth }, ref) => {
 
 
 
-        
-        // Check if exactly 10 
+
+        // Check if exactly 10
         if (!/^\d{10}$/.test(cleanPhone)) {
             return 'Phone number must be exactly 10 digits';
         }
@@ -517,7 +517,7 @@ const Header = forwardRef(({ auth }, ref) => {
                                         </Dropdown.Trigger>
                                         <Dropdown.Content>
                                             <a
-                                                href="https://storemate.lk/free-waybill-generator"
+                                                href="/free-waybill-generator"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
@@ -676,7 +676,7 @@ const Header = forwardRef(({ auth }, ref) => {
                         {showingMobileMoreDropdown && (
                             <div className="pl-8 pb-2 space-y-1">
                                 <a
-                                    href="https://storemate.lk/free-waybill-generator"
+                                    href="https://public-waybill-print.oms.storemate.cloud/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition duration-150 ease-in-out"

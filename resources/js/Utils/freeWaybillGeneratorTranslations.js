@@ -4,11 +4,12 @@ const freeWaybillGeneratorTranslations = {
     en: {
         pageTitle: 'Free Bulk Waybill Generator | StoreMate OMS',
         metaDescription: 'Free Bulk Waybill Generator for Sri Lankan sellers. Convert your Excel sheets into professional, courier-ready labels in seconds.',
-        metaKeywords: 'free waybill generator, bulk waybill generator sri lanka, courier labels, excel to waybill',
+        metaKeywords: 'free waybill generator, bulk waybill generator sri lanka, waybill, waybill number, waybill tracking code, tracking, parcel tracking, courier waybill, COD, cash on delivery, RTS, return to sender, waybill sheet, physical waybill document, excel to waybill',
         hero: {
             badge: 'FREE TOOL FOR E-COMMERCE SELLERS',
             title: 'Free Bulk Waybill Generator for Sri Lankan Sellers',
             description: 'Convert your Excel sheets into professional, courier-ready labels in seconds. No more handwriting, no more errors.',
+            imageAlt: 'Free bulk waybill generator preview with waybill number, tracking code, and courier-ready label',
             ctaPrompt: 'Ready to professionalize your shipping?',
             ctaDescription: 'Click the button below to access our free generator. Upload your order list, customize your layout, and print in bulk.',
             ctaButton: 'Go to Free Waybill Generator'
@@ -35,6 +36,10 @@ const freeWaybillGeneratorTranslations = {
             badge: 'Upgrade Benefits',
             title: '🔓 Unlock Unlimited Power (Sign Up for Free!)',
             description: 'Is your business growing beyond 20 orders a day? Create a free StoreMate account to remove all guest limits.',
+            guestTitle: 'Free Waybill Generator',
+            loggedInTitle: 'Storemate OMS (Free)',
+            tryNowButton: 'Try Now',
+            registerButton: 'Register',
             table: {
                 headers: {
                     feature: 'Feature',
@@ -89,16 +94,16 @@ const freeWaybillGeneratorTranslations = {
             title: 'Frequently Asked Questions',
             items: [
                 {
-                    question: 'Q: Do I need to pay to use this tool?',
-                    answer: 'A: No. The basic bulk generator is 100% free. We offer this to help Sri Lankan entrepreneurs grow their online businesses.'
+                    question: 'Do I need to pay to use this tool?',
+                    answer: 'No. The basic bulk generator is 100% free. We offer this to help Sri Lankan entrepreneurs grow their online businesses.'
                 },
                 {
-                    question: 'Q: Can I use this for thermal printers?',
-                    answer: 'A: Yes! Once you log in, you can fully customize the layout to fit standard A4 paper or professional 4x6 thermal stickers.'
+                    question: 'Can I use this for thermal printers?',
+                    answer: 'Yes! Once you log in, you can fully customize the layout to fit standard A4 paper or professional 4x6 thermal stickers.'
                 },
                 {
-                    question: 'Q: Which couriers are supported?',
-                    answer: 'A: Our templates are designed to be accepted by all major Sri Lankan couriers, including Koombiyo, Pronto, and Domex.'
+                    question: 'Which couriers are supported?',
+                    answer: 'Our templates are designed to be accepted by all major Sri Lankan couriers, including Koombiyo, Pronto, and Domex.'
                 }
             ]
         }
@@ -106,11 +111,12 @@ const freeWaybillGeneratorTranslations = {
     si: {
         pageTitle: 'නොමිලේ Bulk Waybill Generator | StoreMate OMS',
         metaDescription: 'ශ්‍රී ලංකාවේ විකුණුම්කරුවන් සඳහා නොමිලේ Bulk Waybill Generator එකක්. Excel sheet ඔබගේ වෘත්තීය courier-ready labels වලට තත්පර කිහිපයකින් පරිවර්තනය කරන්න.',
-        metaKeywords: 'free waybill generator, bulk waybill sri lanka, courier labels, excel to waybill',
+        metaKeywords: 'free waybill generator, bulk waybill sri lanka, waybill, waybill eka, waybill number, waybill tracking code, tracking, tracking eka, parcel, parcel eka, courier, courier eka, COD, cash on delivery, RT, return to sender, waybill sheet, physical waybill document, courier labels, excel to waybill',
         hero: {
             badge: 'E-COMMERCE SELLERS සඳහා නොමිලේ TOOL එකක්',
             title: 'ශ්‍රී ලංකාවේ විකුණුම්කරුවන් සඳහා Free Bulk Waybill Generator',
             description: 'ඔබේ Excel sheets තත්පර කිහිපයකින් professional, courier-ready labels වලට පරිවර්තනය කරන්න. අතින් ලිවීමක් නැහැ, වැරදි නැහැ.',
+            imageAlt: 'Waybill අංකය, tracking code සහ courier-ready label සහිත free waybill generator preview',
             ctaPrompt: 'ඔබේ shipping ක්‍රියාවලිය වෘත්තීය මට්ටමට ගෙන යන්න සූදානම්ද?',
             ctaDescription: 'අපගේ free generator එකට පිවිසෙන්න පහත button එක click කරන්න. ඔබේ order list upload කර, layout එක customize කර, bulk ලෙස print කරන්න.',
             ctaButton: 'Free Waybill Generator වෙත යන්න'
@@ -137,6 +143,10 @@ const freeWaybillGeneratorTranslations = {
             badge: 'Upgrade වාසි',
             title: '🔓 අසීමිත බලය Unlock කරන්න (නොමිලේ ලියාපදිංචි වන්න!)',
             description: 'ඔබේ business එක දිනකට orders 20 ඉක්මවා යනවාද? Guest limits ඉවත් කරගැනීමට free StoreMate account එකක් සාදන්න.',
+            guestTitle: 'Free Waybill Generator',
+            loggedInTitle: 'Storemate OMS (නොමිලේ)',
+            tryNowButton: 'දැන් උත්සාහ කරන්න',
+            registerButton: 'ලියාපදිංචි වන්න',
             table: {
                 headers: {
                     feature: 'Feature',
@@ -199,7 +209,7 @@ const freeWaybillGeneratorTranslations = {
                     answer: 'ඔව්! Login වූ පසු standard A4 paper හෝ professional 4x6 thermal stickers වලට ගැලපෙන පරිදි layout එක සම්පූර්ණයෙන් customize කළ හැක.'
                 },
                 {
-                    question: 'කුමන couriers support කරන්නේද?',
+                    question: 'මොනවද support කරන couriers services?',
                     answer: 'Koombiyo, Pronto, Domex ඇතුළු ප්‍රමුඛ ශ්‍රී ලාංකීය courier සේවා සියල්ලම පිළිගන්නා ආකාරයට templates සකසා ඇත.'
                 }
             ]
@@ -208,11 +218,12 @@ const freeWaybillGeneratorTranslations = {
     ta: {
         pageTitle: 'இலவச Bulk Waybill Generator | StoreMate OMS',
         metaDescription: 'இலங்கை விற்பனையாளர்களுக்கான இலவச Bulk Waybill Generator. உங்கள் Excel sheet-ஐ சில விநாடிகளில் தொழில்முறை courier-ready labels ஆக மாற்றுங்கள்.',
-        metaKeywords: 'free waybill generator, bulk waybill sri lanka, courier labels, excel to waybill',
+        metaKeywords: 'free waybill generator, bulk waybill sri lanka, waybill, waybill number, waybill tracking code, tracking, parcel tracking, courier waybill, COD, cash on delivery, RT, return to sender, waybill sheet, physical waybill document, courier labels, excel to waybill',
         hero: {
             badge: 'E-COMMERCE SELLERS க்கான இலவச TOOL',
             title: 'இலங்கை விற்பனையாளர்களுக்கான Free Bulk Waybill Generator',
             description: 'உங்கள் Excel sheets ஐ சில விநாடிகளில் professional, courier-ready labels ஆக மாற்றுங்கள். கையால் எழுதுவது வேண்டாம், பிழைகள் வேண்டாம்.',
+            imageAlt: 'Waybill number, tracking code, மற்றும் courier-ready label உடன் free waybill generator preview',
             ctaPrompt: 'உங்கள் shipping செயல்முறையை professional ஆக்க தயாரா?',
             ctaDescription: 'எங்கள் free generator ஐ அணுக கீழே உள்ள button ஐ அழுத்துங்கள். உங்கள் order list ஐ upload செய்து, layout ஐ customize செய்து, bulk ஆக print செய்யுங்கள்.',
             ctaButton: 'Free Waybill Generator க்கு செல்லுங்கள்'
@@ -239,6 +250,10 @@ const freeWaybillGeneratorTranslations = {
             badge: 'Upgrade நன்மைகள்',
             title: '🔓 Unlimited Power ஐ Unlock செய்யுங்கள் (இலவசமாக பதிவு செய்யுங்கள்!)',
             description: 'உங்கள் business தினமும் 20 orders ஐ தாண்டுகிறதா? Guest limits ஐ நீக்க free StoreMate account ஒன்றை உருவாக்குங்கள்.',
+            guestTitle: 'இலவச Waybill Generator',
+            loggedInTitle: 'Storemate OMS (இலவசம்)',
+            tryNowButton: 'இப்போது முயற்சி செய்க',
+            registerButton: 'பதிவு செய்யுங்கள்',
             table: {
                 headers: {
                     feature: 'Feature',
@@ -293,16 +308,16 @@ const freeWaybillGeneratorTranslations = {
             title: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
             items: [
                 {
-                    question: 'Q: இந்த tool ஐ பயன்படுத்த பணம் செலுத்த வேண்டுமா?',
-                    answer: 'A: வேண்டாம். Basic bulk generator 100% இலவசம். இலங்கை தொழில்முனைவோர்கள் தங்கள் online business ஐ வளர்க்க உதவ இதை வழங்குகிறோம்.'
+                    question: 'இந்த tool ஐ பயன்படுத்த பணம் செலுத்த வேண்டுமா?',
+                    answer: 'வேண்டாம். Basic bulk generator 100% இலவசம். இலங்கை தொழில்முனைவோர்கள் தங்கள் online business ஐ வளர்க்க உதவ இதை வழங்குகிறோம்.'
                 },
                 {
-                    question: 'Q: இதை thermal printers க்கு பயன்படுத்தலாமா?',
-                    answer: 'A: ஆம்! Login செய்த பிறகு standard A4 paper அல்லது professional 4x6 thermal stickers க்கு layout ஐ முழுமையாக customize செய்யலாம்.'
+                    question: 'இதை thermal printers க்கு பயன்படுத்தலாமா?',
+                    answer: 'ஆம்! Login செய்த பிறகு standard A4 paper அல்லது professional 4x6 thermal stickers க்கு layout ஐ முழுமையாக customize செய்யலாம்.'
                 },
                 {
-                    question: 'Q: எந்த couriers support செய்யப்படுகிறது?',
-                    answer: 'A: Koombiyo, Pronto, Domex உள்ளிட்ட முக்கிய இலங்கை courier சேவைகள் அனைத்தும் ஏற்றுக்கொள்ளும் வகையில் templates வடிவமைக்கப்பட்டுள்ளன.'
+                    question: 'எந்த couriers support செய்யப்படுகிறது?',
+                    answer: 'Koombiyo, Pronto, Domex உள்ளிட்ட முக்கிய இலங்கை courier சேவைகள் அனைத்தும் ஏற்றுக்கொள்ளும் வகையில் templates வடிவமைக்கப்பட்டுள்ளன.'
                 }
             ]
         }
