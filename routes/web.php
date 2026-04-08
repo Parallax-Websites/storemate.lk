@@ -58,6 +58,10 @@ Route::get('/free-waybill-generator', function () {
     return Inertia::render('FreeWaybillGenerator');
 })->name('free.waybill.generator');
 
+Route::get('/waybill-print', function () {
+    return Inertia::render('WaybillPrint');
+})->name('waybill.print');
+
 Route::get('/module-1', function () {
     return Inertia::render('Module1');
 })->name('module.1');
