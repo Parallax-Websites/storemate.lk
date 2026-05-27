@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reduce Returns by 20% | Storemate OMS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .rr-hero {
+      padding: 100px 0 80px;
+      background: linear-gradient(135deg, #07112b 0%, #0d1f3c 60%, #112248 100%);
+      color: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+    .rr-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(231,76,60,0.15), transparent 45%),
+                  radial-gradient(circle at bottom left, rgba(0,62,122,0.35), transparent 55%);
+      pointer-events: none;
+    }
+    .rr-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .rr-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(231,76,60,0.12);
+      border: 1px solid rgba(231,76,60,0.3);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ff7b6b;
+      margin-bottom: 24px;
+    }
+    .rr-hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .rr-hero h1 strong { font-weight: 800; }
+    .rr-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .rr-hero-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 14px;
+    }
+    .rr-hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .rr-stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .rr-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e74c3c, #ff7b6b);
+    }
+    .rr-stat-big {
+      font-size: 4.5rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: #e74c3c;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .rr-stat-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .rr-stat-sub {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .rr-mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .rr-mini-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+    .rr-mini-stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #00b4d8;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .rr-mini-stat-lbl {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── PAIN STRIP ───────────────────────────────────────── */
+    .rr-pain-strip {
+      padding: 18px 0;
+      background: #0c1117;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      overflow: hidden;
+      border-top: 1px solid rgba(231,76,60,0.15);
+      border-bottom: 1px solid rgba(231,76,60,0.15);
+    }
+    .rr-pain-track {
+      display: flex;
+      gap: 48px;
+      width: max-content;
+      animation: marquee-left 28s linear infinite;
+    }
+    .rr-pain-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .rr-pain-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #e74c3c;
+      flex-shrink: 0;
+    }
+
+    /* ── SHARED SECTION ───────────────────────────────────── */
+    .rr-section {
+      padding: 88px 0;
+    }
+    .rr-section--dark {
+      background: #0c1117;
+      padding: 88px 0;
+    }
+    .rr-section--light { background: #f3f5f9; }
+    .rr-section--white { background: #ffffff; }
+
+    .rr-section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+    .rr-section-label--red { color: #e74c3c; }
+    .rr-section-label--blue { color: var(--color-blue-dark); }
+    .rr-section-h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .rr-section-h2 strong { font-weight: 800; }
+    .rr-section-h2--white { color: #ffffff; }
+    .rr-section-sub {
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 560px;
+    }
+    .rr-section-sub--muted { color: rgba(255,255,255,0.55); }
+    .rr-section-sub--dark { color: var(--color-gray-700); }
+
+    /* ── PROBLEM STAT BOX ─────────────────────────────────── */
+    .rr-problem-stat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin: 52px 0;
+      padding: 32px 48px;
+      background: rgba(231,76,60,0.07);
+      border: 1px solid rgba(231,76,60,0.18);
+      border-radius: 20px;
+    }
+    .rr-problem-stat-num {
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: #e74c3c;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .rr-problem-stat-text {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+      max-width: 380px;
+    }
+    .rr-problem-stat-text strong { color: #ffffff; }
+
+    /* ── PROBLEM GRID ─────────────────────────────────────── */
+    .rr-problems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0;
+    }
+    .rr-problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      padding: 36px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-right: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.2s;
+    }
+    .rr-problem-item:hover { background: rgba(255,255,255,0.025); }
+    .rr-problem-item:nth-child(even) { border-right: none; }
+    .rr-problem-item:nth-last-child(-n+2) { border-bottom: none; }
+    .rr-problem-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(231,76,60,0.1);
+      border: 1px solid rgba(231,76,60,0.2);
+      color: #e74c3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rr-problem-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .rr-problem-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+
+    /* ── FLOW BAR ─────────────────────────────────────────── */
+    .rr-flow-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 52px 0 72px;
+      padding: 0 24px;
+    }
+    .rr-flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      position: relative;
+    }
+    .rr-flow-step::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(50% + 24px);
+      right: calc(-50% + 24px);
+      height: 2px;
+      background: linear-gradient(90deg, rgba(0,62,122,0.2), rgba(0,180,216,0.2));
+    }
+    .rr-flow-step:last-child::after { display: none; }
+    .rr-flow-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+    .rr-flow-dot--gray {
+      background: #e8ecf2;
+      color: #8898aa;
+    }
+    .rr-flow-dot--blue {
+      background: var(--color-blue-dark);
+      color: #ffffff;
+      box-shadow: 0 0 0 6px rgba(0,62,122,0.1);
+    }
+    .rr-flow-dot--cyan {
+      background: var(--color-cyan);
+      color: #ffffff;
+      box-shadow: 0 0 0 6px rgba(0,180,216,0.12);
+    }
+    .rr-flow-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      color: #8898aa;
+      max-width: 80px;
+      line-height: 1.3;
+    }
+    .rr-flow-label--blue { color: var(--color-blue-dark); }
+    .rr-flow-label--cyan { color: var(--color-cyan); }
+
+    /* ── PHASE BADGE ──────────────────────────────────────── */
+    .rr-phase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-blue-dark);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 10px 20px;
+      margin-bottom: 48px;
+    }
+    .rr-phase-badge-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rr-phase-badge-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .rr-phase-badge-text span {
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    /* ── PHASE 2 BAND ─────────────────────────────────────── */
+    .rr-phase2-band {
+      background: var(--color-charcoal);
+      padding: 52px 0 0;
+    }
+    .rr-phase-badge--cyan {
+      background: var(--color-cyan);
+    }
+
+    /* ── ALTERNATING SOLUTION ITEMS (Phase 1) ─────────────── */
+    .rr-sol-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .rr-sol-item:last-child { margin-bottom: 0; }
+    .rr-sol-item--reverse { direction: rtl; }
+    .rr-sol-item--reverse > * { direction: ltr; }
+
+    .rr-sol-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(0,62,122,0.07);
+      border: 1px solid rgba(0,62,122,0.15);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-blue-dark);
+      margin-bottom: 18px;
+    }
+    .rr-sol-h {
+      font-size: clamp(1.55rem, 2.3vw, 2rem);
+      font-weight: 300;
+      color: var(--color-charcoal);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .rr-sol-h strong { font-weight: 800; }
+    .rr-sol-desc {
+      font-size: 0.97rem;
+      color: var(--color-gray-700);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .rr-sol-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .rr-sol-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--color-gray-700);
+      line-height: 1.6;
+    }
+    .rr-sol-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0,62,122,0.07);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23003e7a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 2px;
+    }
+
+    /* Impact visual card (right/left side) */
+    .rr-sol-visual {
+      background: linear-gradient(135deg, var(--color-blue-dark) 0%, #006daf 100%);
+      border-radius: 24px;
+      padding: 40px 36px;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .rr-sol-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 55%);
+    }
+    .rr-sol-visual > * { position: relative; }
+    .rr-sol-visual-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .rr-sol-visual-result {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .rr-sol-visual-label {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .rr-sol-visual-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+    }
+    .rr-sol-visual-outcomes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .rr-sol-visual-outcome {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .rr-sol-visual-outcome::before {
+      content: '✓';
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* ── PHASE 2 FEATURE GRID ─────────────────────────────── */
+    .rr-feat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 2px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .rr-feat-card {
+      background: rgba(255,255,255,0.04);
+      padding: 36px 32px;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .rr-feat-card:hover { background: rgba(255,255,255,0.07); }
+    .rr-feat-num {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: rgba(0,180,216,0.3);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 56px;
+      padding-top: 4px;
+    }
+    .rr-feat-body { flex: 1; }
+    .rr-feat-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .rr-feat-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .rr-feat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .rr-feat-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+    }
+    .rr-feat-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(0,180,216,0.12);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300b4d8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 8px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 1px;
+    }
+    .rr-feat-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 4px 12px;
+      background: rgba(0,180,216,0.1);
+      border: 1px solid rgba(0,180,216,0.2);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-cyan);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── COMPARISON TABLE ─────────────────────────────────── */
+    .rr-compare-table {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      margin-top: 56px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+    }
+    .rr-compare-row { display: contents; }
+    .rr-compare-cell {
+      padding: 20px 28px;
+      font-size: 0.93rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .rr-compare-cell:nth-child(3n+1) {
+      background: #141e2e;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .rr-compare-cell:nth-child(3n+2) {
+      background: #1a0d0d;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      border-bottom-color: rgba(231,76,60,0.08);
+    }
+    .rr-compare-cell:nth-child(3n+3) {
+      background: linear-gradient(135deg, #003e7a, #006daf);
+      color: #ffffff;
+      font-weight: 600;
+      line-height: 1.55;
+      border-bottom-color: rgba(255,255,255,0.07);
+    }
+    .rr-compare-row--head .rr-compare-cell:nth-child(3n+1) {
+      background: #0c1117;
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+    }
+    .rr-compare-row--head .rr-compare-cell:nth-child(3n+2) {
+      background: #e74c3c;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 26px 28px;
+      border-bottom: none;
+    }
+    .rr-compare-row--head .rr-compare-cell:nth-child(3n+3) {
+      background: linear-gradient(135deg, #00bce7, #2153c0);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 26px 28px;
+      border-bottom: none;
+    }
+    .rr-compare-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .rr-compare-icon--bad { background: rgba(231,76,60,0.2); color: #ff7b6b; }
+    .rr-compare-icon--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+
+    /* ── FINAL CTA ────────────────────────────────────────── */
+    .rr-cta {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #003e7a 0%, #006daf 60%, #00bce7 100%);
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .rr-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at bottom right, rgba(255,255,255,0.1), transparent 45%);
+    }
+    .rr-cta > .container { position: relative; }
+    .rr-cta h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .rr-cta h2 strong { font-weight: 800; }
+    .rr-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+    .rr-cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .rr-cta-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 20px;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: #ffffff;
+      color: var(--color-blue-dark);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .btn-outline-white-rr {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline-white-rr:hover {
+      border-color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+    }
+
+    @keyframes marquee-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .rr-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .rr-problems-grid { grid-template-columns: 1fr; }
+      .rr-problem-item { border-right: none !important; }
+      .rr-problem-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+      }
+      .rr-problem-item:last-child { border-bottom: none !important; }
+      .rr-problem-stat { flex-direction: column; text-align: center; gap: 12px; }
+      .rr-sol-item { grid-template-columns: 1fr; gap: 32px; }
+      .rr-sol-item--reverse { direction: ltr; }
+      .rr-feat-grid { grid-template-columns: 1fr; }
+      .rr-flow-bar { gap: 0; padding: 0 8px; }
+      .rr-flow-label { display: none; }
+      .rr-compare-table { grid-template-columns: 1fr 1fr; }
+      .rr-compare-cell:nth-child(3n+1) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .rr-mini-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <nav class="site-nav">
+        <a href="index.html#features">Product</a>
+        <a href="why-storemate.html">Why Storemate</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger">
+            Features
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="whatsapp-landing.html">WhatsApp Tracking</a>
+            <a href="returns-landing.html">Reduce Returns</a>
+            <a href="courier-sync.html">Courier Sync</a>
+            <a href="waybill-landing.html">Waybill Printing</a>
+            <a href="storemate-vs-excel.html">Storemate vs Excel</a>
+          </div>
+        </div>
+        <a href="implementation.html">Implementation</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <a href="#rr-cta" class="nav-cta-btn">Start free today</a>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section class="rr-hero">
+    <div class="container">
+      <div class="rr-hero-inner">
+
+        <div>
+          <div class="rr-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Returns Reduction
+          </div>
+          <h1>Stop losing revenue<br>to <strong>preventable returns</strong></h1>
+          <p class="rr-hero-sub">
+            Duplicate orders, fake customers, wrong items shipped, pending orders missed.
+            Storemate detects every problem automatically — before it becomes a return.
+          </p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="#rr-cta" class="btn btn-primary">Start free — 3 months</a>
+            <a href="#rr-problems" class="btn btn-secondary">See how it works</a>
+          </div>
+          <p class="rr-hero-note">No card needed. Full setup handled. First order processed together.</p>
+        </div>
+
+        <div class="rr-hero-visual">
+          <div class="rr-stat-card">
+            <div class="rr-stat-big">20%</div>
+            <div class="rr-stat-label">Average return rate for Sri Lankan sellers</div>
+            <div class="rr-stat-sub">Mostly from preventable causes — duplicates, fakes, wrong items, missed orders.</div>
+          </div>
+          <div class="rr-mini-stats">
+            <div class="rr-mini-stat">
+              <div class="rr-mini-stat-num">5%</div>
+              <div class="rr-mini-stat-lbl">Return rate with Storemate</div>
+            </div>
+            <div class="rr-mini-stat">
+              <div class="rr-mini-stat-num">15%</div>
+              <div class="rr-mini-stat-lbl">Revenue protected per month</div>
+            </div>
+            <div class="rr-mini-stat">
+              <div class="rr-mini-stat-num">10</div>
+              <div class="rr-mini-stat-lbl">Detection checkpoints built in</div>
+            </div>
+            <div class="rr-mini-stat">
+              <div class="rr-mini-stat-num">30K+</div>
+              <div class="rr-mini-stat-lbl">Sellers already protected</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAIN STRIP ──────────────────────────────────────── -->
+  <div class="rr-pain-strip">
+    <div class="rr-pain-track">
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Duplicate orders shipped twice</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Fake customer placed an order</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Wrong item picked from warehouse</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Pending order went unnoticed</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Courier sync failed silently</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Customer returns all three packages</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>20% of revenue wasted on processing returns</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Reputation damaged on Daraz and Kapruka</div>
+      <!-- duplicate set for seamless loop -->
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Duplicate orders shipped twice</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Fake customer placed an order</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Wrong item picked from warehouse</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Pending order went unnoticed</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Courier sync failed silently</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Customer returns all three packages</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>20% of revenue wasted on processing returns</div>
+      <div class="rr-pain-item"><span class="rr-pain-dot"></span>Reputation damaged on Daraz and Kapruka</div>
+    </div>
+  </div>
+
+  <!-- ── PROBLEM SECTION ───────────────────────────────────── -->
+  <section class="rr-section--dark" id="rr-problems">
+    <div class="container">
+      <div class="rr-section-label rr-section-label--red">The Return Problem</div>
+      <h2 class="rr-section-h2 rr-section-h2--white">What costs you <strong>20% of your revenue</strong></h2>
+      <p class="rr-section-sub rr-section-sub--muted">
+        Returns don't happen randomly. They happen for specific, identifiable reasons — and most can be stopped before the order ever ships.
+      </p>
+
+      <div class="rr-problem-stat">
+        <div class="rr-problem-stat-num">20%</div>
+        <div class="rr-problem-stat-text">
+          <strong>1 in 5 orders returns.</strong> Most aren't quality issues — they're operational failures. Duplicates. Fakes. Missed pending orders. Wrong picks. Every one is preventable.
+        </div>
+      </div>
+
+      <div class="rr-problems-grid">
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Duplicate Orders</h3>
+            <p>Customer orders the same item from Facebook, Instagram, and Daraz simultaneously. You ship three times. They return two. Margin destroyed.</p>
+          </div>
+        </div>
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="8" x2="23" y2="14"/><line x1="23" y1="8" x2="17" y2="14"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Fake Customers</h3>
+            <p>Problem buyers place orders, receive products, and immediately request returns. Or claim non-delivery. Your return rate spirals from the same few people.</p>
+          </div>
+        </div>
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><line x1="12" y1="22" x2="12" y2="12"/><line x1="3.27" y1="6.96" x2="12" y2="12.01"/><line x1="20.73" y1="6.96" x2="12" y2="12.01"/><line x1="12" y1="12" x2="12.01" y2="21.99"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Wrong Items Shipped</h3>
+            <p>Staff misread orders. Wrong size. Wrong colour. Wrong product entirely. Customer receives the wrong item. Automatic return. Lost margin. Lost time.</p>
+          </div>
+        </div>
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Pending Orders Missed</h3>
+            <p>Customer places a new order while their previous shipment is still in transit. You don't notice. You ship again. Now they have duplicates — and return one.</p>
+          </div>
+        </div>
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Return Processing Costs</h3>
+            <p>Each return costs time, shipping, restocking, quality check. A 20% return rate means 20% of your revenue spent processing returns instead of generating profit.</p>
+          </div>
+        </div>
+        <div class="rr-problem-item">
+          <div class="rr-problem-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/><line x1="12" y1="2" x2="12" y2="2.01"/></svg>
+          </div>
+          <div class="rr-problem-body">
+            <h3>Reputation Damage</h3>
+            <p>High returns signal poor quality to marketplace algorithms. Your listing drops. Customers buy from competitors. One bad reputation is very hard to reverse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOLUTIONS ────────────────────────────────────────── -->
+  <section class="rr-section rr-section--white">
+    <div class="container">
+      <div class="rr-section-label rr-section-label--blue">The Storemate Solution</div>
+      <h2 class="rr-section-h2"><strong>Smart detection</strong> at every stage</h2>
+      <p class="rr-section-sub rr-section-sub--dark">
+        Two detection phases: when an order is placed, and when it syncs to your courier. Problems caught before they become returns.
+      </p>
+
+      <!-- Order journey flow bar -->
+      <div class="rr-flow-bar">
+        <div class="rr-flow-step">
+          <div class="rr-flow-dot rr-flow-dot--gray">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
+          <div class="rr-flow-label">Order<br>Received</div>
+        </div>
+        <div class="rr-flow-step">
+          <div class="rr-flow-dot rr-flow-dot--blue">1</div>
+          <div class="rr-flow-label rr-flow-label--blue">Detection<br>Phase 1</div>
+        </div>
+        <div class="rr-flow-step">
+          <div class="rr-flow-dot rr-flow-dot--gray">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <div class="rr-flow-label">Processing<br>& Packing</div>
+        </div>
+        <div class="rr-flow-step">
+          <div class="rr-flow-dot rr-flow-dot--cyan">2</div>
+          <div class="rr-flow-label rr-flow-label--cyan">Detection<br>Phase 2</div>
+        </div>
+        <div class="rr-flow-step">
+          <div class="rr-flow-dot rr-flow-dot--gray">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="rr-flow-label">Delivered<br>Safely</div>
+        </div>
+      </div>
+
+      <!-- Phase 1 badge -->
+      <div class="rr-phase-badge">
+        <div class="rr-phase-badge-num">1</div>
+        <div class="rr-phase-badge-text">When the Order Is Placed <span>— 4 detection checks</span></div>
+      </div>
+
+      <!-- Solution 1: Duplicate detection -->
+      <div class="rr-sol-item">
+        <div>
+          <div class="rr-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Duplicate Detection
+          </div>
+          <h3 class="rr-sol-h"><strong>Same order, multiple channels</strong> — detected instantly</h3>
+          <p class="rr-sol-desc">Customer orders the same item from Facebook, Instagram, and Daraz simultaneously. Storemate detects the duplicate in real time and flags it before you process either order.</p>
+          <ul class="rr-sol-list">
+            <li>Detects duplicates across all connected sales channels</li>
+            <li>Flag appears before you process either order</li>
+            <li>Contact customer to confirm which order to ship</li>
+            <li>Ship once — no double shipments, no returns</li>
+          </ul>
+        </div>
+        <div class="rr-sol-visual">
+          <div>
+            <div class="rr-sol-visual-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </div>
+            <div class="rr-sol-visual-result">0×</div>
+            <div class="rr-sol-visual-label">Duplicate shipments</div>
+            <div class="rr-sol-visual-sub">Duplicates caught before processing. You ship once. Every time.</div>
+          </div>
+          <div class="rr-sol-visual-outcomes">
+            <div class="rr-sol-visual-outcome">Duplicate returns eliminated</div>
+            <div class="rr-sol-visual-outcome">Multi-channel orders unified in one view</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution 2: Fake customers (reversed) -->
+      <div class="rr-sol-item rr-sol-item--reverse">
+        <div>
+          <div class="rr-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Customer Blacklist
+          </div>
+          <h3 class="rr-sol-h"><strong>Problem buyers blocked</strong> before they can order again</h3>
+          <p class="rr-sol-desc">You identify a chronic returner. Block them in Storemate. If they order again under the same contact, the system flags it instantly for manual review before any processing happens.</p>
+          <ul class="rr-sol-list">
+            <li>Block problematic customers after first bad experience</li>
+            <li>Any new order from blocked contact triggers an alert</li>
+            <li>Manual review required before the order ships</li>
+            <li>No more repeat losses from the same customers</li>
+          </ul>
+        </div>
+        <div class="rr-sol-visual">
+          <div>
+            <div class="rr-sol-visual-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="8" x2="23" y2="14"/><line x1="23" y1="8" x2="17" y2="14"/></svg>
+            </div>
+            <div class="rr-sol-visual-result">0</div>
+            <div class="rr-sol-visual-label">Fake orders processed</div>
+            <div class="rr-sol-visual-sub">Blocked customers never slip through unnoticed again.</div>
+          </div>
+          <div class="rr-sol-visual-outcomes">
+            <div class="rr-sol-visual-outcome">Problem customers permanently blocked</div>
+            <div class="rr-sol-visual-outcome">Returns from repeat offenders eliminated</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution 3: Pending order duplicates -->
+      <div class="rr-sol-item">
+        <div>
+          <div class="rr-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Pending Order Alerts
+          </div>
+          <h3 class="rr-sol-h"><strong>New order while pending</strong> — you're alerted before it ships</h3>
+          <p class="rr-sol-desc">Customer forgets they already ordered and places a second order while their first shipment is still in transit. Storemate alerts you instantly so you can confirm before processing the duplicate.</p>
+          <ul class="rr-sol-list">
+            <li>Monitors all pending deliveries in real time</li>
+            <li>Instant alert when same customer orders again</li>
+            <li>Reach out to customer — most duplicates are accidents</li>
+            <li>No duplicate shipments ever leave your warehouse by mistake</li>
+          </ul>
+        </div>
+        <div class="rr-sol-visual">
+          <div>
+            <div class="rr-sol-visual-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="rr-sol-visual-result">100%</div>
+            <div class="rr-sol-visual-label">Pending duplicates caught</div>
+            <div class="rr-sol-visual-sub">Every order checked against active deliveries. Nothing slips through.</div>
+          </div>
+          <div class="rr-sol-visual-outcomes">
+            <div class="rr-sol-visual-outcome">Accidental duplicates prevented</div>
+            <div class="rr-sol-visual-outcome">Customer contacted before double shipment</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution 4: Customer history (reversed) -->
+      <div class="rr-sol-item rr-sol-item--reverse" style="margin-bottom:0;">
+        <div>
+          <div class="rr-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Full Order History
+          </div>
+          <h3 class="rr-sol-h"><strong>Every customer's history</strong> visible before you decide</h3>
+          <p class="rr-sol-desc">Every order surfaces the customer's complete history: previous purchases, return rate, complaint history. You process every order with full context — never blind.</p>
+          <ul class="rr-sol-list">
+            <li>Complete order history for every customer on one screen</li>
+            <li>Return rate visible before you commit to shipping</li>
+            <li>Previous complaints and issues surfaced automatically</li>
+            <li>Make informed decisions — not guesses</li>
+          </ul>
+        </div>
+        <div class="rr-sol-visual">
+          <div>
+            <div class="rr-sol-visual-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="rr-sol-visual-result">Full</div>
+            <div class="rr-sol-visual-label">Customer context before every order</div>
+            <div class="rr-sol-visual-sub">History, returns, complaints — all visible in one place.</div>
+          </div>
+          <div class="rr-sol-visual-outcomes">
+            <div class="rr-sol-visual-outcome">Informed decisions — no surprises</div>
+            <div class="rr-sol-visual-outcome">High-risk orders identified before shipping</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PHASE 2 ─────────────────────────────────────────────── -->
+  <section class="rr-phase2-band">
+    <div class="container">
+      <div class="rr-phase-badge rr-phase-badge--cyan">
+        <div class="rr-phase-badge-num">2</div>
+        <div class="rr-phase-badge-text">When the Order Syncs to Delivery <span>— 6 detection checks</span></div>
+      </div>
+
+      <div class="rr-feat-grid">
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">01</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Zero Manual Entry, Zero Mistakes</div>
+            <p class="rr-feat-desc">Orders sync directly from Storemate to your courier — no retyping, no upload, no copy-paste errors.</p>
+            <ul class="rr-feat-list">
+              <li>No wrong addresses from manual typing</li>
+              <li>No wrong item codes entered by hand</li>
+              <li>Courier receives complete, accurate data first time</li>
+            </ul>
+            <div class="rr-feat-result">Zero data entry errors</div>
+          </div>
+        </div>
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">02</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Real-Time Sync Dashboard</div>
+            <p class="rr-feat-desc">See every order syncing live — what completed, what failed, what needs attention. No mysteries.</p>
+            <ul class="rr-feat-list">
+              <li>Live view of all syncing orders</li>
+              <li>Successful syncs confirmed in real time</li>
+              <li>Nothing disappears into a black hole</li>
+            </ul>
+            <div class="rr-feat-result">Perfect courier transparency</div>
+          </div>
+        </div>
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">03</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Smart Data Mapping</div>
+            <p class="rr-feat-desc">Product descriptions, special instructions, branding and packaging notes all sync automatically — nothing retyped, nothing lost.</p>
+            <ul class="rr-feat-list">
+              <li>Special instructions reach courier intact</li>
+              <li>Branding and packaging notes transfer perfectly</li>
+              <li>Zero information loss in the handoff</li>
+            </ul>
+            <div class="rr-feat-result">Correct items packed every time</div>
+          </div>
+        </div>
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">04</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Multi-Courier in One Click</div>
+            <p class="rr-feat-desc">Send the same order to multiple courier companies simultaneously. Compare and choose the best option before committing.</p>
+            <ul class="rr-feat-list">
+              <li>Sync to multiple couriers simultaneously</li>
+              <li>Compare delivery speed and cost in real time</li>
+              <li>Switch carriers without re-entering any data</li>
+            </ul>
+            <div class="rr-feat-result">Faster deliveries, fewer delays</div>
+          </div>
+        </div>
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">05</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Instant Failure Alerts</div>
+            <p class="rr-feat-desc">Sync fails? You see it the moment it happens. System shows exactly what failed. One-click resync. Problem fixed before the customer knows.</p>
+            <ul class="rr-feat-list">
+              <li>Alert fires the moment any sync fails</li>
+              <li>Detailed breakdown of the failure</li>
+              <li>One-click resync to fix immediately</li>
+            </ul>
+            <div class="rr-feat-result">Zero failed deliveries</div>
+          </div>
+        </div>
+
+        <div class="rr-feat-card">
+          <div class="rr-feat-num">06</div>
+          <div class="rr-feat-body">
+            <div class="rr-feat-title">Last-Minute Courier Changes</div>
+            <p class="rr-feat-desc">Courier delayed? Switch providers at the last moment. System transfers all data instantly — no re-entry, order ships on time.</p>
+            <ul class="rr-feat-list">
+              <li>Switch couriers at last minute, no re-upload</li>
+              <li>Full data transferred to new courier automatically</li>
+              <li>Orders arrive on time — happy customers</li>
+            </ul>
+            <div class="rr-feat-result">On-time deliveries every time</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON ─────────────────────────────────────────── -->
+  <section class="rr-section--dark">
+    <div class="container">
+      <div class="rr-section-label rr-section-label--red">The Impact</div>
+      <h2 class="rr-section-h2 rr-section-h2--white">Without detection<strong> vs </strong>with Storemate</h2>
+      <p class="rr-section-sub rr-section-sub--muted">Every preventable return is a direct loss. Here is exactly what changes.</p>
+
+      <div class="rr-compare-table">
+
+        <!-- Header -->
+        <div class="rr-compare-row rr-compare-row--head">
+          <div class="rr-compare-cell"></div>
+          <div class="rr-compare-cell">
+            <span style="display:flex;align-items:center;gap:10px;">
+              <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;">✕</span>
+              Without Detection
+            </span>
+          </div>
+          <div class="rr-compare-cell">
+            <span style="display:flex;align-items:center;gap:10px;">
+              <span style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;">✓</span>
+              With Storemate
+            </span>
+          </div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Duplicate Orders</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>Ship multiple times. Customer returns extras. Margin destroyed.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>Detected instantly. Ship once. No returns from duplicates.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Fake Customers</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>Processed normally. High return rate from the same repeat offenders.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>Blocked. Never processed again. Returns from fakes eliminated.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Data Entry Errors</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>Manual entry creates mistakes. Wrong address shipped. Customer returns it.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>Automatic sync. Zero manual errors. Correct delivery every time.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Courier Visibility</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>No idea what the courier received. Orders disappear. Customer confused.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>Real-time dashboard. You see every order synced correctly.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Pending Duplicates</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>Customer forgets they ordered. Orders again. Duplicate ships. One returned.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>System alerts you. You confirm with customer. Duplicate prevented.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Courier Failures</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>Sync fails silently. Customer never receives order. Automatic return.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>Failure alert instant. Problem fixed immediately. Order ships on time.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Return Rate</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>15–20% returns — mostly preventable operational failures.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>~5% returns — only genuine quality issues remain.</div>
+        </div>
+
+        <div class="rr-compare-row">
+          <div class="rr-compare-cell">Margin Impact</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--bad">✕</span>20% of revenue spent processing returns instead of building profit.</div>
+          <div class="rr-compare-cell"><span class="rr-compare-icon rr-compare-icon--good">✓</span>5% cost. Revenue protected. Reinvest in growth instead of returns.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ───────────────────────────────────────────── -->
+  <section class="rr-cta" id="rr-cta">
+    <div class="container">
+      <h2>Ready to reduce returns<br><strong>by 20%?</strong></h2>
+      <p>3 months free. Full setup handled by our team. Your first order processed together with us. No card needed.</p>
+      <div class="rr-cta-actions">
+        <a href="#" class="btn-white">Start your free setup</a>
+        <a href="why-storemate.html" class="btn-outline-white-rr">Why Storemate →</a>
+      </div>
+      <p class="rr-cta-note">Already used by 30,000+ Sri Lankan sellers across Daraz, Facebook, Instagram, Kapruka and more.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">Storemate</p>
+          <p class="footer-tagline">Sri Lanka's #1 Seller Order Management System</p>
+          <p class="footer-mission">Built from 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Product</p>
+          <ul class="footer-list">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="why-storemate.html">Why Storemate</a></li>
+            <li><a href="whatsapp-landing.html">WhatsApp Tracking</a></li>
+            <li><a href="returns-landing.html">Reduce Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Company</p>
+          <ul class="footer-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Data Security</a></li>
+            <li><a href="#">ISO 27001</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>&copy; 2024 Storemate. All rights reserved.</p>
+        <div class="footer-badges">
+          <img src="nbqsa-2022.png" alt="NBQSA 2022 Award" class="badge" />
+          <img src="apicta-2023.png" alt="APICTA 2023 Award" class="badge" />
+          <img src="nbqsa-2024.png" alt="NBQSA 2024 Award" class="badge" />
+          <img src="iso-27001.png" alt="ISO 27001 In Progress" class="badge" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Tracking Orders in WhatsApp - Storemate OMS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtext {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Problems Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .solution-item {
+            margin-bottom: 80px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solution-header {
+            margin-bottom: 40px;
+        }
+
+        .solution-hook {
+            font-size: 28px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .solution-description {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Solution Features */
+        .solution-features {
+            background: #f0f9f4;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .solution-features h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Impact Box */
+        .impact-box {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .impact-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .impact-box p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Comparison */
+        .comparison-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-cell {
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+
+        .comparison-cell:last-child {
+            border-right: none;
+        }
+
+        .comparison-header {
+            background: #1a1a1a;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-bad {
+            color: #e74c3c;
+        }
+
+        .comparison-good {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #c49a27 100%);
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 60px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+                border-right: none;
+            }
+
+            .comparison-cell {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .comparison-cell:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Still tracking orders in WhatsApp?</h1>
+            <p>Stop managing chaos. Start managing growth.</p>
+            <div class="hero-subtext">
+                Copy. Paste. Retype. Lose data. Confuse orders. Waste time.
+                <br><br>
+                There is a better way.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The WhatsApp Problem</h2>
+                <p>Sound familiar?</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📱</div>
+                    <h3>Manual Copy & Paste</h3>
+                    <p>Customer sends order in WhatsApp. You copy it. Paste it. Type it again. Every single order. Every single day.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💥</div>
+                    <h3>Data Loss Risk</h3>
+                    <p>Orders disappear. Messages get buried. Important details get missed. By the time you realize it, the customer is already frustrated.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">👥</div>
+                    <h3>Team Chaos</h3>
+                    <p>Three people managing WhatsApp. Same order sent three times. Nobody knows what is already processed. Duplicate shipments happen.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Time Disappears</h3>
+                    <p>Hours spent reorganizing messages. Staff stuck in WhatsApp instead of packing orders. Your business cannot scale this way.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">😤</div>
+                    <h3>No Professional Look</h3>
+                    <p>Customers think you run on WhatsApp because you do. No invoices. No tracking. No professionalism. Just chaos.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>Zero Visibility</h3>
+                    <p>You have no idea how many orders came today. Which are pending. Which have shipped. No data. No decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Storemate Solution</h2>
+                <p>Real solutions for real problems</p>
+            </div>
+
+            <!-- Solution 1 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Orders sync automatically</div>
+                    <div class="solution-title">Self-Order Form — Orders Flow Automatically</div>
+                </div>
+
+                <div class="solution-description">
+                    Customers place orders through your own branded form. Orders appear in Storemate instantly. No copy. No paste. No manual entry. No waiting for messages.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What you get:</h4>
+                    <ul class="feature-list">
+                        <li>Orders sync in real time from WhatsApp to Storemate</li>
+                        <li>No manual data entry ever again</li>
+                        <li>Complete order details captured automatically</li>
+                        <li>Customer information safe and organized</li>
+                        <li>Your team sees orders the moment they arrive</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: 4-6 hours saved daily</h3>
+                    <p>Your staff stops doing data entry and starts doing real work</p>
+                </div>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Zero risk of data loss</div>
+                    <div class="solution-title">Real-Time Sync — Orders Never Get Lost</div>
+                </div>
+
+                <div class="solution-description">
+                    Orders sync in real time between WhatsApp and Storemate. No waiting. No lost messages. No orders hiding in chat threads. Every order is captured, backed up, and organized.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What this means:</h4>
+                    <ul class="feature-list">
+                        <li>Orders synced instantly to secure system</li>
+                        <li>Never lose an order to a lost message</li>
+                        <li>Automatic backup of all order data</li>
+                        <li>Complete order history always available</li>
+                        <li>No data disappears between updates</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: 100% order accuracy</h3>
+                    <p>Every order processed. Every customer served. Every sale captured.</p>
+                </div>
+            </div>
+
+            <!-- Solution 3 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Customers order themselves</div>
+                    <div class="solution-title">Product Catalog — Shopping Made Easy</div>
+                </div>
+
+                <div class="solution-description">
+                    Your customers can browse your complete product catalog and place orders themselves. No need to manually send product lists. No need to answer "What do you have?" 100 times a day. They see everything. They choose. They buy.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What customers experience:</h4>
+                    <ul class="feature-list">
+                        <li>Access your complete product catalog anytime</li>
+                        <li>Place orders directly without back-and-forth messages</li>
+                        <li>See prices, descriptions, availability instantly</li>
+                        <li>Order whenever they want, not when you are online</li>
+                        <li>Professional shopping experience builds trust</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: 2x more orders</h3>
+                    <p>When customers can order anytime, they order more. No friction. Just sales.</p>
+                </div>
+            </div>
+
+            <!-- Solution 4 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Your staff manages orders, not data</div>
+                    <div class="solution-title">Zero Manual Data Work — Focus on Business</div>
+                </div>
+
+                <div class="solution-description">
+                    Your staff no longer needs to copy orders, type customer details, or reorganize messages. They process orders. They pack orders. They ship orders. That is their job. Not data entry.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What changes:</h4>
+                    <ul class="feature-list">
+                        <li>Staff focus on operations, not WhatsApp</li>
+                        <li>Orders arrive ready to process</li>
+                        <li>No duplicate entry between people</li>
+                        <li>Everyone on same page, same system</li>
+                        <li>Hiring decisions based on operations skill, not data entry</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: Better use of human time</h3>
+                    <p>Your most valuable resource stops doing computers' work and starts doing business work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Difference</h2>
+                <p>WhatsApp orders vs Storemate orders</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-row comparison-header">
+                    <div class="comparison-cell">Factor</div>
+                    <div class="comparison-cell">Managing in WhatsApp</div>
+                    <div class="comparison-cell">With Storemate</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Data Entry</strong></div>
+                    <div class="comparison-cell comparison-bad">Manual. Every order. Every time.</div>
+                    <div class="comparison-cell comparison-good">Automatic. Zero manual work.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Risk of Loss</strong></div>
+                    <div class="comparison-cell comparison-bad">High. Messages get buried.</div>
+                    <div class="comparison-cell comparison-good">Zero. Everything backed up.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Customer Experience</strong></div>
+                    <div class="comparison-cell comparison-bad">Feels informal. Chaotic.</div>
+                    <div class="comparison-cell comparison-good">Professional. Organized. Trustworthy.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Order Visibility</strong></div>
+                    <div class="comparison-cell comparison-bad">No overview. No data.</div>
+                    <div class="comparison-cell comparison-good">Complete dashboard. Real-time tracking.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Team Coordination</strong></div>
+                    <div class="comparison-cell comparison-bad">Confusion. Duplicates. Chaos.</div>
+                    <div class="comparison-cell comparison-good">Perfect clarity. One source of truth.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Scaling Ability</strong></div>
+                    <div class="comparison-cell comparison-bad">Impossible. Manual work scales linearly.</div>
+                    <div class="comparison-cell comparison-good">Easy. System handles growth.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Time Spent</strong></div>
+                    <div class="comparison-cell comparison-bad">4-6 hours daily on data work</div>
+                    <div class="comparison-cell comparison-good">Hours freed for real business</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Stop Tracking Orders in WhatsApp?</h2>
+            <p>3 months free. Full setup handled. Your first order processed together with our team. No card needed.</p>
+            <button class="cta-button">Start Your Free Setup</button>
+        </div>
+    </section>
+
+</body>
+</html>

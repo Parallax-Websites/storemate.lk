@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Branded Waybill Printing - Storemate OMS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtext {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Problems Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .solution-item {
+            margin-bottom: 80px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solution-header {
+            margin-bottom: 40px;
+        }
+
+        .solution-hook {
+            font-size: 28px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .solution-description {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Solution Features */
+        .solution-features {
+            background: #f0f9f4;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .solution-features h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Impact Box */
+        .impact-box {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .impact-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .impact-box p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature-grid-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 3px solid #d4af37;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-grid-item h5 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .feature-grid-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-cell {
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid #eee;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .comparison-cell:last-child {
+            border-right: none;
+        }
+
+        .comparison-header {
+            background: #1a1a1a;
+            color: white;
+            font-weight: 600;
+            padding: 25px 20px;
+        }
+
+        .comparison-bad {
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
+        .comparison-good {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #c49a27 100%);
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 60px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-cell {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .comparison-cell:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Branded Waybill Printing</h1>
+            <p>Your brand on every package. Professional appearance. Customer trust.</p>
+            <div class="hero-subtext">
+                Tired of generic courier waybills? Handwritten labels that look unprofessional?
+                <br><br>
+                Print waybills that reinforce your brand and build customer confidence.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Waybill Problem</h2>
+                <p>What's happening right now</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">✍️</div>
+                    <h3>Manual Handwritten Waybills</h3>
+                    <p>Order arrives. Staff member handwrites waybill. Messy. Unprofessional. Customer sees it and loses confidence.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📋</div>
+                    <h3>Generic Courier Branding</h3>
+                    <p>You print default courier waybills. Customer sees courier logo, not yours. Your business becomes invisible.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Time Wasting</h3>
+                    <p>Manual handwriting takes 5-10 minutes per waybill. Generic printing requires manual selection. Hours lost daily.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Duplicate Printing</h3>
+                    <p>No tracking of what has been printed. Staff prints same order twice. Wasted paper. Confusion.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎨</div>
+                    <h3>Zero Customization</h3>
+                    <p>Can't customize waybills for different brands or couriers. Same boring format for everything.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3>Wrong Data On Waybills</h3>
+                    <p>Manual handwriting leads to wrong details. Wrong address. Wrong item code. Courier confused. Wrong shipment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Storemate Solution</h2>
+                <p>Branded waybills that build your brand</p>
+            </div>
+
+            <!-- Solution 1 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Your brand on every waybill</div>
+                    <div class="solution-title">Customize Waybills for Your Branding</div>
+                </div>
+
+                <div class="solution-description">
+                    Every waybill printed with your logo, your colors, your messaging. Not the courier's branding. YOUR branding. Customers open the package and see professionalism.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What this delivers:</h4>
+                    <ul class="feature-list">
+                        <li>Your logo prominently displayed on every waybill</li>
+                        <li>Your company colors and branding applied</li>
+                        <li>Custom messaging that reflects your brand</li>
+                        <li>Professional appearance that builds trust</li>
+                        <li>Customers remember YOUR brand, not courier</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: Brand reinforcement</h3>
+                    <p>Every delivery reinforces who you are. Customer opens box. Sees your brand. Trusts your professionalism.</p>
+                </div>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Multiple layouts for different needs</div>
+                    <div class="solution-title">Manage Different Waybill Formats</div>
+                </div>
+
+                <div class="solution-description">
+                    Create different waybill designs for different situations. Holiday packaging. Seasonal promotions. Brand variants. Corporate vs casual.
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-grid-item">
+                        <h5>Brand-Wise Layouts</h5>
+                        <p>Run multiple brands? Each gets their own waybill template. Different logos. Different colors. Complete brand separation.</p>
+                    </div>
+                    <div class="feature-grid-item">
+                        <h5>Courier-Wise Formats</h5>
+                        <p>Different couriers need different waybill formats. Storemate auto-adjusts per courier. Right format for right carrier.</p>
+                    </div>
+                    <div class="feature-grid-item">
+                        <h5>Seasonal Designs</h5>
+                        <p>Create holiday waybills. Seasonal promotions. Special occasions. Stand out from competition.</p>
+                    </div>
+                    <div class="feature-grid-item">
+                        <h5>Order-Specific Options</h5>
+                        <p>Special packaging instructions? Fragile items? Gift orders? All reflected in custom waybill automatically.</p>
+                    </div>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: Professional flexibility</h3>
+                    <p>Right waybill for right situation. Always looking professional. Always on brand.</p>
+                </div>
+            </div>
+
+            <!-- Solution 3 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Auto-print with tracking</div>
+                    <div class="solution-title">Print Tracking & Duplicate Prevention</div>
+                </div>
+
+                <div class="solution-description">
+                    Waybill automatically records print date and user who printed it. System prevents accidental duplicate printing. Saves paper. Saves time. Saves money.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What this prevents:</h4>
+                    <ul class="feature-list">
+                        <li>Duplicate printing automatically prevented</li>
+                        <li>Print date and user tracked for audit trail</li>
+                        <li>No accidental reprints wasting paper</li>
+                        <li>Zero confusion about what has been printed</li>
+                        <li>Complete transparency and accountability</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: Zero waste. Perfect tracking.</h3>
+                    <p>Every waybill printed once. No duplicates. No confusion. Complete audit trail.</p>
+                </div>
+            </div>
+
+            <!-- Solution 4 -->
+            <div class="solution-item">
+                <div class="solution-header">
+                    <div class="solution-hook">✓ Sync order-specific waybill options</div>
+                    <div class="solution-title">Smart Data Mapping — Accurate Waybills Every Time</div>
+                </div>
+
+                <div class="solution-description">
+                    Order details automatically sync to waybill. No manual entry. No handwriting. No mistakes. Customer address. Item details. Special instructions. All on the waybill perfectly.
+                </div>
+
+                <div class="solution-features">
+                    <h4>What gets auto-synced:</h4>
+                    <ul class="feature-list">
+                        <li>Customer address synced perfectly</li>
+                        <li>Item details and quantities correct</li>
+                        <li>Special handling instructions included</li>
+                        <li>Fragile item flags visible</li>
+                        <li>Gift order notes included automatically</li>
+                    </ul>
+                </div>
+
+                <div class="impact-box">
+                    <h3>Result: 100% accuracy</h3>
+                    <p>No handwriting errors. No wrong data. Every waybill accurate first time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Difference — Top Comparison</h2>
+                <p>Manual Handwritten vs Courier Default vs Storemate Branded Waybills</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-row comparison-header">
+                    <div class="comparison-cell"><strong>Factor</strong></div>
+                    <div class="comparison-cell"><strong>Manual Handwritten</strong></div>
+                    <div class="comparison-cell"><strong>Courier Default</strong></div>
+                    <div class="comparison-cell"><strong>Storemate Branded</strong></div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Appearance</strong></div>
+                    <div class="comparison-cell comparison-bad">Messy. Unprofessional. Loses trust.</div>
+                    <div class="comparison-cell comparison-bad">Generic. You're invisible.</div>
+                    <div class="comparison-cell comparison-good">Your brand. Professional. Builds trust.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Time Per Waybill</strong></div>
+                    <div class="comparison-cell comparison-bad">5-10 minutes handwriting</div>
+                    <div class="comparison-cell comparison-bad">2-3 minutes selection & print</div>
+                    <div class="comparison-cell comparison-good">30 seconds auto-print</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Brand Visibility</strong></div>
+                    <div class="comparison-cell comparison-bad">Zero. No branding.</div>
+                    <div class="comparison-cell comparison-bad">Courier branded. You invisible.</div>
+                    <div class="comparison-cell comparison-good">100% Your brand visible.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Customization</strong></div>
+                    <div class="comparison-cell comparison-bad">Limited. Same style.</div>
+                    <div class="comparison-cell comparison-bad">None. Fixed template.</div>
+                    <div class="comparison-cell comparison-good">Unlimited layouts possible.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Duplicate Printing</strong></div>
+                    <div class="comparison-cell comparison-bad">Happens often. No tracking.</div>
+                    <div class="comparison-cell comparison-bad">Common. No prevention.</div>
+                    <div class="comparison-cell comparison-good">Auto-prevented. Tracked.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Data Accuracy</strong></div>
+                    <div class="comparison-cell comparison-bad">High error rate. Handwriting mistakes.</div>
+                    <div class="comparison-cell comparison-bad">Medium error rate. Manual selection.</div>
+                    <div class="comparison-cell comparison-good">Zero errors. Auto-populated.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Customer Experience</strong></div>
+                    <div class="comparison-cell comparison-bad">Unprofessional. Sketchy.</div>
+                    <div class="comparison-cell comparison-bad">Generic. Impersonal.</div>
+                    <div class="comparison-cell comparison-good">Premium. Professional. Memorable.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Repeat Orders</strong></div>
+                    <div class="comparison-cell comparison-bad">Low. Unprofessional turns customers away.</div>
+                    <div class="comparison-cell comparison-bad">Medium. Generic experience.</div>
+                    <div class="comparison-cell comparison-good">High. Professional builds loyalty.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Print Professional Branded Waybills?</h2>
+            <p>3 months free. Full setup handled. Your first waybill printed together with our team. No card needed.</p>
+            <button class="cta-button">Start Your Free Setup</button>
+        </div>
+    </section>
+
+</body>
+</html>

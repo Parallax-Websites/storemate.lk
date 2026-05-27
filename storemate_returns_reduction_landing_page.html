@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Returns by 20% - Storemate OMS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtext {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Problems Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .solution-phase {
+            margin-bottom: 100px;
+        }
+
+        .phase-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .solution-item {
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solution-header {
+            margin-bottom: 40px;
+        }
+
+        .solution-hook {
+            font-size: 28px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .solution-description {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Solution Features */
+        .solution-features {
+            background: #f0f9f4;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .solution-features h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Impact Box */
+        .impact-box {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .impact-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .impact-box p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Comparison */
+        .comparison-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-cell {
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+
+        .comparison-cell:last-child {
+            border-right: none;
+        }
+
+        .comparison-header {
+            background: #1a1a1a;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-bad {
+            color: #e74c3c;
+        }
+
+        .comparison-good {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #c49a27 100%);
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 60px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+                border-right: none;
+            }
+
+            .comparison-cell {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .comparison-cell:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reduce Returns by 20%</h1>
+            <p>Smart detection catches problems before they ship.</p>
+            <div class="hero-subtext">
+                Duplicate orders. Fake customers. Wrong items shipped. Pending orders missed.
+                <br><br>
+                Every problem has a solution.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Return Problem</h2>
+                <p>What costs you 20% of revenue</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Duplicate Orders</h3>
+                    <p>Customer orders the same item from Facebook, Instagram, and Daraz simultaneously. You ship three times. They return two. Margin destroyed.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>Fake Customers</h3>
+                    <p>Problem buyers place orders. They receive products and immediately request returns. Or they claim non-delivery. Your return rate spirals.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📦</div>
+                    <h3>Wrong Items Shipped</h3>
+                    <p>Staff misread orders. Wrong size. Wrong color. Wrong product entirely. Customer receives wrong item. Automatic return. Lost margin.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⏳</div>
+                    <h3>Pending Orders Missed</h3>
+                    <p>Customer places new order while previous shipment is still in transit. You don't realize. You ship again. They now have duplicates and return one.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <h3>Return Processing Costs</h3>
+                    <p>Each return costs time, shipping, restocking, quality check. 20% return rate means 20% of revenue spent on processing returns instead of profit.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⭐</div>
+                    <h3>Reputation Damage</h3>
+                    <p>High returns signal poor quality. Customers see your return rate. They buy from competitors. One bad reputation is hard to recover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Storemate Solution</h2>
+                <p>Smart detection at every stage</p>
+            </div>
+
+            <!-- PHASE 1: WHEN ORDER PLACED -->
+            <div class="solution-phase">
+                <div class="phase-title">🎯 When Order Is Placed</div>
+
+                <!-- Solution 1 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Duplicate orders detected automatically</div>
+                        <div class="solution-title">Identify Duplicate Orders — Smart Multi-Channel Detection</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Customer places same item across Facebook, Instagram, and Daraz simultaneously. Storemate detects it instantly. System flags the duplicate. You see it before processing.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this prevents:</h4>
+                        <ul class="feature-list">
+                            <li>Customer orders same item from multiple channels at same time</li>
+                            <li>System automatically detects duplicate across all channels</li>
+                            <li>You see the flag before processing either order</li>
+                            <li>Contact customer to confirm which order is real</li>
+                            <li>Ship once. No duplicate shipments. No returns.</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Duplicate returns eliminated</h3>
+                        <p>Same order never ships twice. Customer confusion gone. Margin protected.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Fake customers blocked instantly</div>
+                        <div class="solution-title">Identify Banned Customers — Problem Buyers Stopped Before They Order</div>
+                    </div>
+
+                    <div class="solution-description">
+                        You identify a fake customer. A chronic returner. Someone with a negative history. You block them in Storemate. If they order again, system detects it instantly and flags it.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this prevents:</h4>
+                        <ul class="feature-list">
+                            <li>Block problematic customers after first bad experience</li>
+                            <li>System prevents them from placing new orders</li>
+                            <li>If they somehow place order, system flags it immediately</li>
+                            <li>You manually review before processing</li>
+                            <li>No more repeat returns from same customers</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Problem customers eliminated</h3>
+                        <p>Chronic returners caught before they damage your return rate. No repeat offenders.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Repeat orders while pending detected</div>
+                        <div class="solution-title">Identify Repeat Orders — Catch Duplicate Orders Before They Happen</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Customer places new order while their previous shipment is still pending delivery. Storemate notifies you instantly. You contact customer to confirm. Duplicate orders prevented.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this prevents:</h4>
+                        <ul class="feature-list">
+                            <li>System monitors all pending deliveries in real time</li>
+                            <li>If same customer orders while previous is pending, system alerts</li>
+                            <li>You reach out to confirm (maybe they forgot they ordered)</li>
+                            <li>Customer confirms or cancels the new order</li>
+                            <li>No accidental duplicate shipments</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Accidental duplicates prevented</h3>
+                        <p>Most duplicate orders are accidents. This catches them before they become returns.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Complete customer history visible</div>
+                        <div class="solution-title">Previous Order Details — Know Your Customer Before Processing</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Every order comes with complete customer history on one page. Previous purchases. Return history. Complaint history. You process every order with full context.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this enables:</h4>
+                        <ul class="feature-list">
+                            <li>See complete order history for every customer</li>
+                            <li>Know if this customer returns frequently</li>
+                            <li>Understand what items they buy</li>
+                            <li>See any previous complaints or issues</li>
+                            <li>Process order with full context, not blind</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Informed order processing</h3>
+                        <p>You know who the customer is before you process. Red flags visible. Smart decisions made.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE 2: WHEN ORDER SYNCS -->
+            <div class="solution-phase">
+                <div class="phase-title">📤 When Order Syncs to Delivery</div>
+
+                <!-- Solution 5 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Orders sync automatically to couriers</div>
+                        <div class="solution-title">Automatic Synchronization — Zero Manual Entry, Zero Mistakes</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Order is processed in Storemate. It automatically syncs to courier company. No manual entry. No retyping details. No data entry mistakes. Clean, accurate information reaches the courier.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this prevents:</h4>
+                        <ul class="feature-list">
+                            <li>Orders sync directly to courier company automatically</li>
+                            <li>No manual data entry that causes mistakes</li>
+                            <li>No wrong addresses due to typing errors</li>
+                            <li>No wrong item codes entered by hand</li>
+                            <li>Courier receives accurate information first time</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Zero data entry errors</h3>
+                        <p>Wrong address. Wrong item. Wrong quantity. All prevented by automatic sync.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 6 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Real-time sync progress visible</div>
+                        <div class="solution-title">Real-Time Progress Dashboard — See Everything Syncing</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Dashboard shows exactly what is syncing right now. What is complete. What failed. You have complete visibility into delivery system integration. No mysteries.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What you see:</h4>
+                        <ul class="feature-list">
+                            <li>Real-time progress of all syncing orders</li>
+                            <li>See which orders are successfully synced</li>
+                            <li>Know immediately if sync fails</li>
+                            <li>Complete visibility into courier integration</li>
+                            <li>No orders disappearing into black hole</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Perfect transparency</h3>
+                        <p>You know exactly what the courier received. No lost orders. No surprises.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 7 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Smart data mapping syncs everything</div>
+                        <div class="solution-title">Smart Data Mapping — Product Details Sync Automatically</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Product descriptions, special instructions, branding, and packaging notes all sync automatically to courier system. Nothing gets lost. Nothing gets retyped wrong.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What syncs automatically:</h4>
+                        <ul class="feature-list">
+                            <li>Product descriptions sync automatically</li>
+                            <li>Special instructions reach courier intact</li>
+                            <li>Your branding information syncs correctly</li>
+                            <li>Packaging notes transfer perfectly</li>
+                            <li>Zero information loss in the transfer</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Information integrity</h3>
+                        <p>Courier gets complete, accurate information. Correct items packed. Special instructions followed.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 8 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Send to multiple couriers at once</div>
+                        <div class="solution-title">Multi-Courier Capability — Maximum Flexibility, Zero Hassle</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Send same order to multiple delivery companies simultaneously. Compare carriers. Choose best option. Change at last second without re-uploading.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this enables:</h4>
+                        <ul class="feature-list">
+                            <li>Send order to multiple couriers simultaneously</li>
+                            <li>Compare delivery speeds and costs in real time</li>
+                            <li>Pick best courier before committing</li>
+                            <li>Change courier at the last moment if needed</li>
+                            <li>No re-uploading or re-entering data</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Optimized deliveries</h3>
+                        <p>Every order sent with the best courier. Faster deliveries. Fewer returns due to delays.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 9 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Sync failures caught immediately</div>
+                        <div class="solution-title">Smart Failure Alerts — Problems Fixed Before They Become Returns</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Sync fails? You see it immediately. System tells you exactly what failed. One-click resync. Problem solved before customer is affected.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this prevents:</h4>
+                        <ul class="feature-list">
+                            <li>Sync fails and you are alerted instantly</li>
+                            <li>System shows exactly what failed</li>
+                            <li>One-click resync fixes the problem</li>
+                            <li>No lost orders sitting unprocessed</li>
+                            <li>No customer complaints about missing deliveries</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: Zero failed deliveries</h3>
+                        <p>Problems caught and fixed before customer is affected. No failed deliveries leading to returns.</p>
+                    </div>
+                </div>
+
+                <!-- Solution 10 -->
+                <div class="solution-item">
+                    <div class="solution-header">
+                        <div class="solution-hook">✓ Last-minute courier changes</div>
+                        <div class="solution-title">Last-Minute Flexibility — Change Couriers Without Re-Uploading</div>
+                    </div>
+
+                    <div class="solution-description">
+                        Courier is delayed? Change to different provider at the last moment. No need to re-upload. No need to re-enter data. System handles it instantly.
+                    </div>
+
+                    <div class="solution-features">
+                        <h4>What this enables:</h4>
+                        <ul class="feature-list">
+                            <li>Switch couriers at the last moment if needed</li>
+                            <li>No re-uploading or re-entering required</li>
+                            <li>System transfers all data to new courier</li>
+                            <li>Faster response to courier delays</li>
+                            <li>Orders ship on time, no delays</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-box">
+                        <h3>Result: On-time deliveries</h3>
+                        <p>No delays due to courier problems. Orders arrive on time. Happy customers. No returns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Impact</h2>
+                <p>Without Storemate vs With Storemate</p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-row comparison-header">
+                    <div class="comparison-cell">Factor</div>
+                    <div class="comparison-cell">Without Detection</div>
+                    <div class="comparison-cell">With Storemate</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Duplicate Orders</strong></div>
+                    <div class="comparison-cell comparison-bad">Ship multiple times. Customer returns extras.</div>
+                    <div class="comparison-cell comparison-good">Detected instantly. Ship once. No returns.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Fake Customers</strong></div>
+                    <div class="comparison-cell comparison-bad">Process normally. High return rate from this customer.</div>
+                    <div class="comparison-cell comparison-good">Blocked. Never process again. Returns eliminated.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Data Entry Errors</strong></div>
+                    <div class="comparison-cell comparison-bad">Manual entry creates mistakes. Wrong address shipped.</div>
+                    <div class="comparison-cell comparison-good">Automatic sync. Zero manual errors. Correct delivery.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Courier Visibility</strong></div>
+                    <div class="comparison-cell comparison-bad">No idea what courier received. Orders disappear.</div>
+                    <div class="comparison-cell comparison-good">Real-time dashboard. Know everything synced correctly.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Pending Order Duplicates</strong></div>
+                    <div class="comparison-cell comparison-bad">Customer forgets they ordered. Orders same item again. Duplicate ships.</div>
+                    <div class="comparison-cell comparison-good">System alerts you. You confirm with customer. Duplicates prevented.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Courier Problems</strong></div>
+                    <div class="comparison-cell comparison-bad">Sync fails silently. Customer never receives order. Automatic return.</div>
+                    <div class="comparison-cell comparison-good">Failure alerts instantly. Problem fixed immediately. Order ships on time.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Return Rate</strong></div>
+                    <div class="comparison-cell comparison-bad">15-20% returns due to preventable issues</div>
+                    <div class="comparison-cell comparison-good">5% returns. Most are legitimate quality issues.</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Margin Impact</strong></div>
+                    <div class="comparison-cell comparison-bad">20% of revenue spent on return processing</div>
+                    <div class="comparison-cell comparison-good">5% of revenue. More profit. More growth.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Reduce Returns by 20%?</h2>
+            <p>3 months free. Full setup handled. Your first order processed together with our team. No card needed.</p>
+            <button class="cta-button">Start Your Free Setup</button>
+        </div>
+    </section>
+
+</body>
+</html>
