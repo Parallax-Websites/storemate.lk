@@ -1,0 +1,334 @@
+**THE PREMIUM HERO — HOW TO MAKE IT FELT**
+
+The feeling of becoming a professional Entrepreneur cannot be stated. It has to be **experienced in the first 3 seconds of landing on the page.**
+
+Here is how every dimension of the hero must work together to create that feeling.
+
+---
+
+## The Core Principle
+
+> **The hero must make the seller feel they have already arrived — before they read a single word.**
+
+The visual, the typography, the animation, the language — all of it must say: *"This is what serious looks like. And you are here."*
+
+---
+
+## 01 — The Visual Identity of the Hero
+
+**Background — do not use a flat gradient.**
+
+A flat gradient reads as standard SaaS. Premium reads as depth and atmosphere.
+
+```
+LAYER 01    Deep navy #013387 — full canvas
+LAYER 02    A soft radial glow in #006DAF
+            positioned centre-right — like a
+            light source behind the content
+LAYER 03    Very subtle grain texture — 4% opacity
+            This is the detail nobody notices
+            consciously but everybody feels
+LAYER 04    A faint horizontal line grid or
+            topographic pattern — 3% opacity
+            Adds depth without decoration
+LAYER 05    A 3px cyan line at the very top —
+            the brand signature in every dark section
+```
+
+This combination feels like a stage was set for the seller. Not a landing page. An arrival point.
+
+---
+
+## 02 — The Typography — Weight Contrast Is Everything
+
+The tagline pairing must feel like a statement and a destination simultaneously.
+
+```
+LINE 01     "From seller to"
+            Forefront BookSH · Weight 300 · Light
+            Large · White · Generous letter-spacing
+            This line is the before.
+            It acknowledges where they are now.
+
+LINE 02     "Entrepreneur."
+            Forefront BookSH · Weight 900 · Bold
+            Larger than line 01 by 4 to 8px
+            White or very subtle cyan tint
+            This line is the after.
+            It names where they are going.
+```
+
+The size difference between the two lines is critical. Line 02 must feel heavier and more significant. The visual weight of "Entrepreneur." must land like a statement — not just a word.
+
+```
+LETTER SPACING      -1px to -2px on both lines
+                    Tight tracking signals premium
+                    Loose tracking signals startup
+
+LINE HEIGHT         1.1 to 1.15
+                    Tight. Confident. Not airy.
+
+MARGIN BETWEEN      8px only
+                    The two lines belong together.
+                    They are one thought.
+```
+
+---
+
+## 03 — The Supporting Line — Proof Before Promise
+
+Most hero supporting lines describe the product. This one must validate the decision the seller is about to make.
+
+```
+CURRENT
+"Built from the experience of 25M orders
+and 30,000+ Sri Lankan sellers."
+
+THIS IS CORRECT.
+
+It tells the seller:
+"The people behind this platform have
+already walked the path you are on.
+They know it. They built for it."
+
+That feeling — of being in experienced hands —
+is the foundation of the premium feeling.
+```
+
+**Typography for the supporting line:**
+
+```
+Font        Forefront BookSH · Weight 300
+Size        17px to 18px
+Color       White at 60% opacity
+            Not full white — that competes with
+            the headline. Softer. Secondary.
+Max-width   520px centred
+Line-height 1.7 — more generous than the headline
+```
+
+---
+
+## 04 — The Eyebrow — Small Detail. Big Signal.
+
+The tiny line above the headline is doing important psychological work.
+
+```
+TEXT        THE STANDARD FOR SRI LANKAN E-COMMERCE
+
+OR          STOREMATE · WAVE DESIGN SYSTEM
+
+Font        Weight 700
+Size        10px to 11px
+Color       Cyan #00BCE7 — 70% opacity
+Spacing     Letter-spacing 0.2em — wide
+Transform   UPPERCASE
+Margin      20px below eyebrow · 0px above headline
+```
+
+This line tells the seller before the headline: *"You are about to interact with something that has been recognised as the standard."* It frames the headline with authority before it is read.
+
+---
+
+## 05 — The CTA — Premium Buttons Do Not Beg
+
+Most CTAs shout. Premium CTAs state.
+
+```
+PRIMARY BUTTON
+Text        "Start free for 3 months"
+            Not "Sign up now" — that sounds transactional
+            Not "Get started" — that sounds generic
+            "Start free for 3 months" — specific,
+            low-risk, confidence-signalling
+
+Background  Cyan #00BCE7
+Text color  Navy #013387 — dark on light
+Font        Weight 800 — the boldest element below
+            the headline
+Size        15px
+Padding     14px top/bottom · 32px left/right
+Radius      8px — not pill, not sharp
+Hover       Slight lift — translateY(-2px)
+            Opacity 0.92
+            Transition — 280ms
+
+SECONDARY BUTTON
+Text        "See how it works"
+Style       Ghost — transparent background
+            White border at 35% opacity
+            White text at 90% opacity
+Hover       Border opacity increases to 70%
+```
+
+**Rule:** Two buttons maximum. Primary is cyan. Secondary is ghost. No other options. Choice beyond two signals uncertainty.
+
+---
+
+## 06 — The Reassurance Line — Remove the Last Fear
+
+Directly below the buttons. Small. Essential.
+
+```
+TEXT        No card needed · Full setup by our team · Cancel anytime
+
+Font        12px · Weight 400
+Color       White at 35% opacity
+Spacing     14px margin top from buttons
+
+PURPOSE     This line removes the three biggest fears
+            a Sri Lankan seller has before signing up.
+
+            "No card needed"     — I will not be charged
+            "Full setup by our team" — I will not struggle alone
+            "Cancel anytime"     — I am not locked in
+```
+
+These three phrases are worth more than three paragraphs of feature description.
+
+---
+
+## 07 — The Animation — Premium Moves Differently
+
+Generic hero animations fade everything in at once. Premium animations have rhythm and intention.
+
+```
+SEQUENCE — staggered reveals
+
+0.0s    Nothing visible except the background
+        The stage is set before the performer arrives
+
+0.1s    Background glow pulses in softly
+        The atmosphere establishes itself
+
+0.3s    Eyebrow fades up — 0.4s duration
+        The authority line arrives first
+
+0.5s    Line 01 "From seller to" slides up — 0.5s
+        The acknowledgment of where they are
+
+0.7s    Line 02 "Entrepreneur." slides up — 0.5s
+        Slightly faster than line 01
+        More weight means more decisiveness
+
+0.9s    Supporting line fades in — 0.4s
+        The proof settles beneath the promise
+
+1.1s    CTA buttons appear — 0.3s
+        The action is the last thing to arrive
+        Because the trust must be built first
+
+1.3s    Reassurance line fades in — 0.3s
+        The final comfort, at the very end
+```
+
+This sequence takes 1.6 seconds total. The seller reads while it plays. By the time the CTA appears — the emotional journey is complete.
+
+---
+
+## 08 — The Composition — Where Things Live
+
+The composition itself signals premium or standard.
+
+```
+CENTRED LAYOUT — for maximum impact
+
+All content centred on the canvas.
+Maximum width 640px for text content.
+Generous vertical spacing between elements.
+
+TOP         3px cyan accent line — the brand signature
+            Eyebrow — 28px below the line
+HEADLINE    32px below the eyebrow
+SUPPORTING  20px below the headline
+BUTTONS     36px below the supporting line
+            Centred · Inline · Gap 12px between
+REASSURANCE 14px below the buttons
+```
+
+**The white space rule:** The hero should feel like there is too much space. That discomfort you feel looking at a premium hero — that is the premium signal working correctly. Fill the space and it becomes a startup page immediately.
+
+---
+
+## 09 — The One Visual Element That Elevates Everything
+
+Add one element behind the text that is not part of the navigation, headline, or CTA:
+
+```
+OPTION A — The subtle wave pattern
+A very faint representation of the wave mark
+from the logo — expanded as a background
+texture. 3% opacity. The brand mark becomes
+the atmosphere.
+
+OPTION B — The particle field
+Tiny dots of white at random positions.
+0 to 1 opacity. Very slow drift.
+Like stars — or the millions of orders
+the platform was built from.
+Subtle. Never distracting.
+
+OPTION C — The light beam
+A single wide gradient column from top-centre
+to bottom — like a spotlight on the content.
+Navy edges. Slightly lighter centre.
+Focuses the eye without announcing itself.
+```
+
+**Recommendation: Option B** — The particle field. It connects subconsciously to the brand story. 25 million orders. Thousands of sellers. Countless moments. All represented as a quiet, breathing background that makes the hero feel alive without moving anything the eye catches directly.
+
+---
+
+## 10 — The Language — Last and Most Important
+
+Everything above is form. This is substance.
+
+The headline already works. The supporting line already works. The one addition that elevates the premium feeling further:
+
+**Add a line between the eyebrow and headline that names the arrival:**
+
+```
+EYEBROW     THE STANDARD FOR SRI LANKAN E-COMMERCE
+
+NEW LINE    You are in the right place.
+
+HEADLINE    From seller to
+            Entrepreneur.
+```
+
+This three-word addition — *"You are in the right place."* — does something no visual treatment can do. It speaks directly to the seller's state of mind when they land. They arrived uncertain. These four words resolve that uncertainty before the headline even lands.
+
+That resolution — that feeling of having found what you were looking for — is the premium feeling you are building toward.
+
+---
+
+## The Complete Premium Hero — All Elements Together
+
+```
+TOP ACCENT LINE     3px · Cyan · Full width
+
+BACKGROUND          Deep navy + radial glow +
+                    grain texture + particle field
+
+CONTENT BLOCK       Max 640px · Centred
+
+Eyebrow             THE STANDARD FOR SRI LANKAN E-COMMERCE
+Arrival line        You are in the right place.
+Headline L1         From seller to              ← weight 300
+Headline L2         Entrepreneur.               ← weight 900 · larger
+Supporting          Built from the experience of 25M orders
+                    and 30,000+ Sri Lankan sellers.
+CTA primary         Start free for 3 months
+CTA secondary       See how it works
+Reassurance         No card needed · Full setup · Cancel anytime
+
+ANIMATION           Staggered 1.6s reveal sequence
+TRANSITION          280ms cubic-bezier(0.4, 0, 0.2, 1)
+```
+
+---
+
+## The Test
+
+Before publishing the hero — ask one person who has never seen Storemate to land on the page. Give them 5 seconds. Then ask:
+

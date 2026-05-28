@@ -33,7 +33,7 @@
       z-index: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 72px;
       align-items: center;
     }
     .wb-hero-eyebrow {
@@ -70,67 +70,76 @@
       color: rgba(255,255,255,0.5);
       margin-top: 14px;
     }
-    .wb-hero-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .wb-stat-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 32px 36px;
+
+    /* ── HERO WAYBILL SHOWCASE ────────────────────────────── */
+    .wb-hero-waybill {
       position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .wb-stat-card::before {
+    .wb-waybill-frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .wb-waybill-frame img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow:
+        0 0 0 1px rgba(212,175,55,0.2),
+        0 24px 64px rgba(0,0,0,0.6),
+        0 8px 24px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
+    }
+    .wb-waybill-frame::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--wb-gold), var(--wb-gold-light));
+      inset: -12px;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.15), transparent 70%);
+      border-radius: 28px;
+      z-index: 1;
     }
-    .wb-stat-big {
-      font-size: 4.5rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      color: var(--wb-gold);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .wb-stat-label {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-    .wb-stat-sub {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-    .wb-mini-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .wb-mini-stat {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 20px 22px;
-    }
-    .wb-mini-stat-num {
-      font-size: 1.8rem;
+    .wb-waybill-tag {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      background: linear-gradient(135deg, var(--wb-gold), var(--wb-gold-dark));
+      color: #1a1a1a;
+      font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 999px;
+      z-index: 3;
+      box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+    }
+    .wb-waybill-stat {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 16px 20px;
+      z-index: 3;
+    }
+    .wb-waybill-stat-num {
+      font-size: 1.6rem;
+      font-weight: 900;
       color: var(--wb-gold);
+      letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 4px;
     }
-    .wb-mini-stat-lbl {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
+    .wb-waybill-stat-lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
     }
 
     /* ── PAIN STRIP ───────────────────────────────────────── */
@@ -163,6 +172,126 @@
       border-radius: 50%;
       background: var(--wb-gold);
       flex-shrink: 0;
+    }
+
+    /* ── BEFORE / AFTER SECTION ───────────────────────────── */
+    .wb-transform {
+      padding: 96px 0;
+      background: #0c1117;
+    }
+    .wb-transform-head {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .wb-ba-split {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .wb-ba-panel {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .wb-ba-panel--before {
+      border: 1px solid rgba(231,76,60,0.2);
+      background: #130909;
+    }
+    .wb-ba-panel--after {
+      border: 1px solid rgba(212,175,55,0.25);
+      background: #0f1218;
+      box-shadow: 0 0 60px rgba(212,175,55,0.08);
+    }
+    .wb-ba-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 24px;
+    }
+    .wb-ba-header--before { background: rgba(231,76,60,0.08); border-bottom: 1px solid rgba(231,76,60,0.12); }
+    .wb-ba-header--after  { background: rgba(212,175,55,0.06); border-bottom: 1px solid rgba(212,175,55,0.12); }
+    .wb-ba-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .wb-ba-dot--bad  { background: #e74c3c; }
+    .wb-ba-dot--good { background: var(--wb-gold); }
+    .wb-ba-header-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .wb-ba-header-label--bad  { color: #ff6b6b; }
+    .wb-ba-header-label--good { color: var(--wb-gold); }
+    .wb-ba-img-wrap {
+      position: relative;
+      padding: 24px;
+    }
+    .wb-ba-img-wrap img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+    .wb-ba-panel--before .wb-ba-img-wrap img {
+      filter: brightness(0.85);
+    }
+    .wb-ba-footer {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .wb-ba-issue {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+    .wb-ba-issue-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+    .wb-ba-issue-dot--bad  { background: rgba(231,76,60,0.2); color: #ff6b6b; }
+    .wb-ba-issue-dot--good { background: rgba(212,175,55,0.15); color: var(--wb-gold); }
+    .wb-ba-arrow-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .wb-ba-arrow-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--wb-gold), var(--wb-gold-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(212,175,55,0.35);
+      flex-shrink: 0;
+    }
+    .wb-ba-arrow-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
     }
 
     /* ── SHARED SECTION STYLES ────────────────────────────── */
@@ -198,87 +327,142 @@
     .wb-section-sub--muted { color: rgba(255,255,255,0.55); }
     .wb-section-sub--dark { color: var(--color-gray-700); }
 
-    /* ── PROBLEM STAT BOX ─────────────────────────────────── */
-    .wb-problem-stat {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      margin: 52px 0;
-      padding: 32px 48px;
-      background: rgba(212,175,55,0.07);
-      border: 1px solid rgba(212,175,55,0.18);
-      border-radius: 20px;
-    }
-    .wb-problem-stat-num {
-      font-size: 3.8rem;
-      font-weight: 900;
-      color: var(--wb-gold);
-      letter-spacing: -0.04em;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .wb-problem-stat-text {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.65;
-      max-width: 380px;
-    }
-    .wb-problem-stat-text strong { color: #ffffff; }
-
-    /* ── PROBLEM GRID ─────────────────────────────────────── */
-    .wb-problems-grid {
+    /* ── PROBLEM SECTION ──────────────────────────────────── */
+    .wb-problem-layout {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 56px;
+    }
+    .wb-problem-photo-wrap {
+      position: relative;
+    }
+    .wb-problem-photo-wrap img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(231,76,60,0.15);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .wb-problem-photo-label {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(231,76,60,0.85);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 8px;
+    }
+    .wb-problem-photo-stat {
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+      background: rgba(231,76,60,0.9);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .wb-problem-photo-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .wb-problem-photo-stat-lbl {
+      font-size: 0.7rem;
+      opacity: 0.85;
+      line-height: 1.4;
+    }
+    .wb-problems-list {
+      display: flex;
+      flex-direction: column;
       gap: 0;
     }
     .wb-problem-item {
       display: flex;
       align-items: flex-start;
-      gap: 22px;
-      padding: 36px 32px;
+      gap: 20px;
+      padding: 28px 0;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      border-right: 1px solid rgba(255,255,255,0.05);
-      transition: background 0.2s;
     }
-    .wb-problem-item:hover { background: rgba(255,255,255,0.025); }
-    .wb-problem-item:nth-child(even) { border-right: none; }
-    .wb-problem-item:nth-last-child(-n+2) { border-bottom: none; }
+    .wb-problem-item:last-child { border-bottom: none; }
     .wb-problem-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(212,175,55,0.1);
-      border: 1px solid rgba(212,175,55,0.2);
-      color: var(--wb-gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(231,76,60,0.1);
+      border: 1px solid rgba(231,76,60,0.15);
+      color: #ff6b6b;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
     .wb-problem-body h3 {
-      font-size: 1rem;
+      font-size: 0.97rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .wb-problem-body p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: rgba(255,255,255,0.5);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
-    /* ── SOLUTION ITEMS ───────────────────────────────────── */
-    .wb-sol-item {
+    /* ── SOLUTION SECTION ─────────────────────────────────── */
+    .wb-solution-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      gap: 72px;
       align-items: center;
-      margin-bottom: 80px;
+      margin-top: 56px;
     }
-    .wb-sol-item:last-child { margin-bottom: 0; }
-    .wb-sol-item--reverse { direction: rtl; }
-    .wb-sol-item--reverse > * { direction: ltr; }
+    .wb-solution-layout--reverse {
+      direction: rtl;
+    }
+    .wb-solution-layout--reverse > * {
+      direction: ltr;
+    }
+    .wb-sol-waybill-wrap {
+      position: relative;
+    }
+    .wb-sol-waybill-wrap img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(212,175,55,0.15);
+      box-shadow:
+        0 4px 16px rgba(0,0,0,0.3),
+        0 20px 60px rgba(0,0,0,0.2);
+    }
+    .wb-sol-callout {
+      position: absolute;
+      background: rgba(212,175,55,0.9);
+      backdrop-filter: blur(8px);
+      color: #1a1a1a;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .wb-sol-callout::before {
+      content: '✓ ';
+    }
+    .wb-sol-callout--1 { top: 8%; right: -10%; }
+    .wb-sol-callout--2 { top: 30%; left: -8%; }
+    .wb-sol-callout--3 { bottom: 25%; right: -12%; }
+    .wb-sol-callout--4 { bottom: 8%; left: -5%; }
 
     .wb-sol-tag {
       display: inline-flex;
@@ -335,84 +519,6 @@
       background-repeat: no-repeat;
       background-position: center;
       margin-top: 2px;
-    }
-    .wb-sol-visual {
-      background: linear-gradient(135deg, #1a1a2e 0%, #0f141f 100%);
-      border-radius: 24px;
-      padding: 40px 36px;
-      color: #ffffff;
-      position: relative;
-      overflow: hidden;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(212,175,55,0.12);
-    }
-    .wb-sol-visual::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(212,175,55,0.1), transparent 55%);
-    }
-    .wb-sol-visual > * { position: relative; }
-    .wb-sol-visual-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: rgba(212,175,55,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      color: var(--wb-gold);
-    }
-    .wb-sol-visual-result {
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-bottom: 8px;
-      color: var(--wb-gold);
-    }
-    .wb-sol-visual-label {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .wb-sol-visual-sub {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.65;
-    }
-    .wb-sol-visual-outcomes {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-    }
-    .wb-sol-visual-outcome {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.85);
-    }
-    .wb-sol-visual-outcome::before {
-      content: '✓';
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: rgba(212,175,55,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 800;
-      flex-shrink: 0;
-      color: var(--wb-gold);
     }
 
     /* ── FEATURE GRID ─────────────────────────────────────── */
@@ -671,23 +777,23 @@
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 900px) {
-      .wb-hero-inner { grid-template-columns: 1fr; gap: 48px; }
-      .wb-problems-grid { grid-template-columns: 1fr; }
-      .wb-problem-item { border-right: none !important; }
-      .wb-problem-item:nth-last-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-      }
-      .wb-problem-item:last-child { border-bottom: none !important; }
-      .wb-problem-stat { flex-direction: column; text-align: center; gap: 12px; }
-      .wb-sol-item { grid-template-columns: 1fr; gap: 32px; }
-      .wb-sol-item--reverse { direction: ltr; }
+      .wb-hero-inner { grid-template-columns: 1fr; gap: 56px; }
+      .wb-waybill-frame { max-width: 320px; }
+      .wb-sol-callout { display: none; }
+      .wb-ba-split { grid-template-columns: 1fr; gap: 20px; }
+      .wb-ba-arrow-col { flex-direction: row; justify-content: center; }
+      .wb-ba-arrow-wrap { transform: rotate(90deg); }
+      .wb-problem-layout { grid-template-columns: 1fr; gap: 48px; }
+      .wb-solution-layout { grid-template-columns: 1fr; gap: 40px; }
+      .wb-solution-layout--reverse { direction: ltr; }
       .wb-feat-grid { grid-template-columns: 1fr; }
       .wb-compare-table { grid-template-columns: 140px 1fr; }
       .wb-compare-cell:nth-child(4n+2),
       .wb-compare-cell:nth-child(4n+3) { display: none; }
     }
     @media (max-width: 600px) {
-      .wb-mini-stats { grid-template-columns: 1fr 1fr; }
+      .wb-waybill-stat { display: none; }
+      .wb-waybill-tag { top: -10px; right: -6px; font-size: 0.65rem; padding: 6px 12px; }
     }
   </style>
 </head>
@@ -700,7 +806,8 @@
         <img src="storemate_logo.png" alt="Storemate logo" class="logo-img" />
       </a>
       <nav class="site-nav">
-        <a href="index.html#features">Product</a>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
         <a href="why-storemate.html">Why Storemate</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger">
@@ -738,37 +845,22 @@
           <h1>Your brand on<br><strong>every delivery</strong></h1>
           <p class="wb-hero-sub">
             Generic courier waybills. Handwritten labels. Your business becoming invisible on every package you send.
-            Storemate prints professional branded waybills that reinforce who you are — automatically.
+            Storemate prints professional branded waybills that reinforce who you are — automatically, in 30 seconds.
           </p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;">
             <a href="#wb-cta" class="btn btn-primary">Start free — 3 months</a>
-            <a href="#wb-problems" class="btn btn-secondary">See how it works</a>
+            <a href="#wb-transform" class="btn btn-secondary">See the difference</a>
           </div>
           <p class="wb-hero-note">No card needed. Full setup handled. First waybill printed together with our team.</p>
         </div>
 
-        <div class="wb-hero-visual">
-          <div class="wb-stat-card">
-            <div class="wb-stat-big">30 sec</div>
-            <div class="wb-stat-label">Per branded waybill with Storemate</div>
-            <div class="wb-stat-sub">vs 5–10 minutes handwriting each label. Your logo. Your colors. Your brand. Every single time.</div>
-          </div>
-          <div class="wb-mini-stats">
-            <div class="wb-mini-stat">
-              <div class="wb-mini-stat-num">100%</div>
-              <div class="wb-mini-stat-lbl">Data accuracy — auto-populated</div>
-            </div>
-            <div class="wb-mini-stat">
-              <div class="wb-mini-stat-num">0×</div>
-              <div class="wb-mini-stat-lbl">Duplicate prints prevented</div>
-            </div>
-            <div class="wb-mini-stat">
-              <div class="wb-mini-stat-num">5+</div>
-              <div class="wb-mini-stat-lbl">Courier formats supported</div>
-            </div>
-            <div class="wb-mini-stat">
-              <div class="wb-mini-stat-num">∞</div>
-              <div class="wb-mini-stat-lbl">Custom layouts possible</div>
+        <div class="wb-hero-waybill">
+          <div class="wb-waybill-frame">
+            <span class="wb-waybill-tag">Storemate Branded</span>
+            <img src="waybill/new.png" alt="Professional Storemate branded waybill with logo, barcode, and customer details" />
+            <div class="wb-waybill-stat">
+              <div class="wb-waybill-stat-num">30 sec</div>
+              <div class="wb-waybill-stat-lbl">per branded<br>waybill</div>
             </div>
           </div>
         </div>
@@ -799,6 +891,86 @@
     </div>
   </div>
 
+  <!-- ── BEFORE / AFTER TRANSFORM ──────────────────────────── -->
+  <section class="wb-transform" id="wb-transform">
+    <div class="container">
+      <div class="wb-transform-head">
+        <div class="wb-section-label wb-section-label--gold" style="text-align:center;">The Transformation</div>
+        <h2 class="wb-section-h2 wb-section-h2--white" style="text-align:center;">This is what<strong> your waybills</strong> look like today.<br>This is what they could look like.</h2>
+      </div>
+
+      <div class="wb-ba-split">
+
+        <!-- Before -->
+        <div class="wb-ba-panel wb-ba-panel--before">
+          <div class="wb-ba-header wb-ba-header--before">
+            <div class="wb-ba-dot wb-ba-dot--bad"></div>
+            <span class="wb-ba-header-label wb-ba-header-label--bad">Before Storemate</span>
+          </div>
+          <div class="wb-ba-img-wrap">
+            <img src="waybill/old%202.png" alt="Messy handwritten courier waybill with corrections and illegible writing" />
+          </div>
+          <div class="wb-ba-footer">
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--bad">✕</div>
+              Messy handwriting — customers lose confidence
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--bad">✕</div>
+              10 minutes per label — hours wasted daily
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--bad">✕</div>
+              Your brand invisible on every package
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--bad">✕</div>
+              Wrong address errors cause delivery failures
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="wb-ba-arrow-col">
+          <div class="wb-ba-arrow-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+          <div class="wb-ba-arrow-label">with<br>Storemate</div>
+        </div>
+
+        <!-- After -->
+        <div class="wb-ba-panel wb-ba-panel--after">
+          <div class="wb-ba-header wb-ba-header--after">
+            <div class="wb-ba-dot wb-ba-dot--good"></div>
+            <span class="wb-ba-header-label wb-ba-header-label--good">With Storemate</span>
+          </div>
+          <div class="wb-ba-img-wrap">
+            <img src="waybill/new.png" alt="Professional Storemate branded waybill with logo, barcode, and complete order details" />
+          </div>
+          <div class="wb-ba-footer">
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--good">✓</div>
+              Your logo and brand on every single delivery
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--good">✓</div>
+              30 seconds — auto-generated from order data
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--good">✓</div>
+              Barcode, customer details, COD value — all accurate
+            </div>
+            <div class="wb-ba-issue">
+              <div class="wb-ba-issue-dot wb-ba-issue-dot--good">✓</div>
+              Duplicate print prevention built in
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── PROBLEM SECTION ───────────────────────────────────── -->
   <section class="wb-section--dark" id="wb-problems">
     <div class="container">
@@ -808,128 +980,117 @@
         The waybill is the first physical thing your customer sees — before they open the box, before they see the product. It either builds trust or destroys it.
       </p>
 
-      <div class="wb-problem-stat">
-        <div class="wb-problem-stat-num">10 min</div>
-        <div class="wb-problem-stat-text">
-          <strong>Wasted per order on waybill handling.</strong> Writing by hand. Selecting templates manually. Printing the same order twice. Hours lost every day — and your brand invisible throughout.
-        </div>
-      </div>
+      <div class="wb-problem-layout">
 
-      <div class="wb-problems-grid">
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </div>
-          <div class="wb-problem-body">
-            <h3>Manual Handwritten Waybills</h3>
-            <p>Order arrives. Staff member handwrites the waybill. Messy. Unprofessional. Customer sees it and loses confidence before they even open the package.</p>
+        <div class="wb-problem-photo-wrap">
+          <img src="waybill/old%202.png" alt="Real handwritten courier waybill — messy, unprofessional" />
+          <div class="wb-problem-photo-label">What customers see today</div>
+          <div class="wb-problem-photo-stat">
+            <div class="wb-problem-photo-stat-num">10 min</div>
+            <div class="wb-problem-photo-stat-lbl">wasted per<br>waybill</div>
           </div>
         </div>
 
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <div class="wb-problems-list">
+          <div class="wb-problem-item">
+            <div class="wb-problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+            <div class="wb-problem-body">
+              <h3>Manual Handwritten Waybills</h3>
+              <p>Messy. Unprofessional. Customer sees it and loses confidence before they even open the package.</p>
+            </div>
           </div>
-          <div class="wb-problem-body">
-            <h3>Generic Courier Branding</h3>
-            <p>You print default courier waybills. Customer sees the courier's logo, not yours. Your business becomes invisible on every delivery. Missed brand reinforcement on every package.</p>
+
+          <div class="wb-problem-item">
+            <div class="wb-problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <div class="wb-problem-body">
+              <h3>Generic Courier Branding</h3>
+              <p>Customer sees the courier's logo, not yours. Your business becomes invisible on every delivery you pay for.</p>
+            </div>
+          </div>
+
+          <div class="wb-problem-item">
+            <div class="wb-problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="wb-problem-body">
+              <h3>Time Wasted Every Day</h3>
+              <p>Manual handwriting takes 5–10 minutes per waybill. When you ship 50 orders a day, that's hours lost every single day.</p>
+            </div>
+          </div>
+
+          <div class="wb-problem-item">
+            <div class="wb-problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </div>
+            <div class="wb-problem-body">
+              <h3>Duplicate Printing</h3>
+              <p>No tracking of what has been printed. Staff prints the same order twice. Wasted paper, confusion at dispatch.</p>
+            </div>
+          </div>
+
+          <div class="wb-problem-item">
+            <div class="wb-problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="wb-problem-body">
+              <h3>Wrong Data Causes Delivery Failures</h3>
+              <p>Wrong address from messy handwriting. Package delayed or sent to the wrong location. Customer furious.</p>
+            </div>
           </div>
         </div>
 
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="wb-problem-body">
-            <h3>Time Wasting</h3>
-            <p>Manual handwriting takes 5–10 minutes per waybill. Generic printing requires manual template selection. When you ship 50 orders a day, that's hours lost every single day.</p>
-          </div>
-        </div>
-
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          </div>
-          <div class="wb-problem-body">
-            <h3>Duplicate Printing</h3>
-            <p>No tracking of what has been printed. Staff prints the same order twice. Wasted paper. Wasted labels. Confusion at dispatch. Orders shipped with wrong waybills attached.</p>
-          </div>
-        </div>
-
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-          </div>
-          <div class="wb-problem-body">
-            <h3>Zero Customization</h3>
-            <p>Can't customize waybills for different brands or couriers. No seasonal designs. No special occasion formats. Same boring template for every single order — no matter what.</p>
-          </div>
-        </div>
-
-        <div class="wb-problem-item">
-          <div class="wb-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <div class="wb-problem-body">
-            <h3>Wrong Data On Waybills</h3>
-            <p>Manual handwriting leads to wrong details. Wrong address. Wrong item code. Courier confused. Package delayed or sent to the wrong location. Customer furious.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SOLUTIONS ────────────────────────────────────────── -->
+  <!-- ── SOLUTION: BRANDED WAYBILL ─────────────────────────── -->
   <section class="wb-section wb-section--white">
     <div class="container">
       <div class="wb-section-label wb-section-label--blue">The Storemate Solution</div>
-      <h2 class="wb-section-h2"><strong>Professional waybills</strong> that build your brand</h2>
+      <h2 class="wb-section-h2"><strong>Professional branded waybills</strong> that build your business</h2>
       <p class="wb-section-sub wb-section-sub--dark">
-        Four layers of waybill intelligence: branding, flexibility, print control, and data accuracy. Every delivery becomes a brand moment.
+        Every waybill auto-generated from your order data — with your logo, your colors, barcodes, COD value, and complete customer details. In 30 seconds.
       </p>
 
       <!-- Solution 1: Brand Customization -->
-      <div class="wb-sol-item" style="margin-top:60px;">
+      <div class="wb-solution-layout" style="margin-top:60px;">
         <div>
           <div class="wb-sol-tag">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             Brand Customization
           </div>
-          <h3 class="wb-sol-h"><strong>Your logo, your colors</strong> — on every waybill</h3>
-          <p class="wb-sol-desc">Every waybill printed with your logo, your colors, your messaging. Not the courier's branding. YOUR branding. Customers open the package and see a professional business they trust.</p>
+          <h3 class="wb-sol-h"><strong>Your logo, your colors</strong><br>on every waybill</h3>
+          <p class="wb-sol-desc">Every waybill printed with your logo prominently displayed — not the courier's branding. Customers open the package and see a professional business they trust and remember.</p>
           <ul class="wb-sol-list">
             <li>Your logo prominently displayed on every single waybill</li>
             <li>Your company colors and brand elements applied automatically</li>
-            <li>Custom messaging that reflects your brand values</li>
             <li>Professional appearance that builds customer confidence</li>
             <li>Customers remember YOUR brand, not the courier's</li>
+            <li>Barcode and waybill number auto-generated per order</li>
           </ul>
         </div>
-        <div class="wb-sol-visual">
-          <div>
-            <div class="wb-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
-            </div>
-            <div class="wb-sol-visual-result">Your Brand</div>
-            <div class="wb-sol-visual-label">On every package you send</div>
-            <div class="wb-sol-visual-sub">Not the courier's logo. Not a generic template. Your business identity on every delivery — building trust with every package.</div>
-          </div>
-          <div class="wb-sol-visual-outcomes">
-            <div class="wb-sol-visual-outcome">Brand reinforcement on every delivery</div>
-            <div class="wb-sol-visual-outcome">Professional first impression before the box opens</div>
-          </div>
+        <div class="wb-sol-waybill-wrap">
+          <img src="waybill/new.png" alt="Storemate branded waybill showing logo, barcode, customer details and COD value" />
+          <div class="wb-sol-callout wb-sol-callout--1">Your logo here</div>
+          <div class="wb-sol-callout wb-sol-callout--2">Auto barcode</div>
+          <div class="wb-sol-callout wb-sol-callout--3">Complete customer details</div>
+          <div class="wb-sol-callout wb-sol-callout--4">COD value shown</div>
         </div>
       </div>
 
       <!-- Solution 2: Multiple Layouts -->
-      <div class="wb-sol-item wb-sol-item--reverse">
+      <div class="wb-solution-layout wb-solution-layout--reverse" style="margin-top:80px;">
         <div>
           <div class="wb-sol-tag">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             Format Management
           </div>
           <h3 class="wb-sol-h"><strong>Right format</strong> for every situation</h3>
-          <p class="wb-sol-desc">Create different waybill designs for different situations. Different couriers. Different brands. Holiday packaging. Seasonal promotions. Always the right template — applied automatically.</p>
+          <p class="wb-sol-desc">Different couriers. Different brands. Seasonal promotions. Storemate manages every waybill design and applies the right one automatically — no manual switching needed.</p>
           <ul class="wb-sol-list">
             <li>Brand-wise templates — each brand has its own waybill design</li>
             <li>Courier-wise formats — right layout for every carrier, auto-applied</li>
@@ -937,84 +1098,8 @@
             <li>Gift order and fragile item flags shown on waybill automatically</li>
           </ul>
         </div>
-        <div class="wb-sol-visual">
-          <div>
-            <div class="wb-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <div class="wb-sol-visual-result">∞ Layouts</div>
-            <div class="wb-sol-visual-label">Unlimited format flexibility</div>
-            <div class="wb-sol-visual-sub">One system manages every waybill design. Brand-wise. Courier-wise. Seasonal. The right format applied automatically every time.</div>
-          </div>
-          <div class="wb-sol-visual-outcomes">
-            <div class="wb-sol-visual-outcome">Professional flexibility across all situations</div>
-            <div class="wb-sol-visual-outcome">Right design applied automatically per order</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 3: Print Tracking -->
-      <div class="wb-sol-item">
-        <div>
-          <div class="wb-sol-tag">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Duplicate Prevention
-          </div>
-          <h3 class="wb-sol-h"><strong>Zero duplicate prints</strong> — full audit trail</h3>
-          <p class="wb-sol-desc">Waybill automatically records the print date and user who printed it. System prevents accidental duplicate printing before it happens. Saves paper. Saves time. Saves confusion.</p>
-          <ul class="wb-sol-list">
-            <li>Duplicate printing automatically blocked before it happens</li>
-            <li>Print date and user tracked for a complete audit trail</li>
-            <li>No accidental reprints wasting paper and labels</li>
-            <li>Zero confusion about what has already been printed</li>
-            <li>Complete transparency and accountability across your team</li>
-          </ul>
-        </div>
-        <div class="wb-sol-visual">
-          <div>
-            <div class="wb-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-            </div>
-            <div class="wb-sol-visual-result">0×</div>
-            <div class="wb-sol-visual-label">Duplicate prints</div>
-            <div class="wb-sol-visual-sub">Every waybill printed once. No duplicates. No confusion. Complete audit trail of who printed what and when.</div>
-          </div>
-          <div class="wb-sol-visual-outcomes">
-            <div class="wb-sol-visual-outcome">Zero waste from accidental reprints</div>
-            <div class="wb-sol-visual-outcome">Perfect accountability across your whole team</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 4: Smart Data Mapping -->
-      <div class="wb-sol-item wb-sol-item--reverse" style="margin-bottom:0;">
-        <div>
-          <div class="wb-sol-tag">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Data Accuracy
-          </div>
-          <h3 class="wb-sol-h"><strong>Zero errors</strong> — auto-populated every time</h3>
-          <p class="wb-sol-desc">Order details automatically sync to the waybill. No manual entry. No handwriting. No mistakes. Customer address. Item details. Special instructions. All on the waybill perfectly.</p>
-          <ul class="wb-sol-list">
-            <li>Customer address synced directly — no manual typing</li>
-            <li>Item details and quantities always correct</li>
-            <li>Special handling instructions included automatically</li>
-            <li>Fragile item and gift order flags applied without extra steps</li>
-          </ul>
-        </div>
-        <div class="wb-sol-visual">
-          <div>
-            <div class="wb-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <div class="wb-sol-visual-result">100%</div>
-            <div class="wb-sol-visual-label">Data accuracy — always</div>
-            <div class="wb-sol-visual-sub">No handwriting errors. No wrong addresses. Every waybill accurate the first time — automatically.</div>
-          </div>
-          <div class="wb-sol-visual-outcomes">
-            <div class="wb-sol-visual-outcome">Zero delivery failures from wrong data</div>
-            <div class="wb-sol-visual-outcome">Accurate waybills every time, no checks needed</div>
-          </div>
+        <div class="wb-sol-waybill-wrap">
+          <img src="waybill/new.png" alt="Storemate branded waybill with complete professional layout" />
         </div>
       </div>
 
@@ -1063,14 +1148,14 @@
         <div class="wb-feat-card">
           <div class="wb-feat-num">03</div>
           <div class="wb-feat-body">
-            <div class="wb-feat-title">Seasonal Designs</div>
-            <p class="wb-feat-desc">Create holiday waybills. New Year. Avurudu. Valentine's Day. Special promotions. Stand out from competitors and turn every delivery into a memorable brand moment.</p>
+            <div class="wb-feat-title">Duplicate Print Prevention</div>
+            <p class="wb-feat-desc">Waybill automatically records the print date and user. System prevents accidental duplicate printing before it happens. Saves paper, saves time, saves confusion.</p>
             <ul class="wb-feat-list">
-              <li>Seasonal templates ready to activate on demand</li>
-              <li>Holiday designs for all key dates</li>
-              <li>Promotional waybills for sale periods</li>
+              <li>Duplicate printing automatically blocked</li>
+              <li>Print date and user tracked — full audit trail</li>
+              <li>Zero confusion about what has been printed</li>
             </ul>
-            <div class="wb-feat-result">Every delivery a brand moment</div>
+            <div class="wb-feat-result">Zero duplicate waste</div>
           </div>
         </div>
 
@@ -1171,13 +1256,6 @@
             <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--bad">✕</span>Unprofessional. Sketchy. Loses trust before unboxing.</div>
             <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--med">–</span>Generic. Impersonal. Completely forgettable.</div>
             <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--good">✓</span>Premium. Professional. Memorable brand moment.</div>
-          </div>
-
-          <div class="wb-compare-row">
-            <div class="wb-compare-cell">Repeat Orders</div>
-            <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--bad">✕</span>Low. Unprofessional presentation turns customers away.</div>
-            <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--med">–</span>Medium. Generic experience builds no loyalty.</div>
-            <div class="wb-compare-cell"><span class="wb-compare-icon wb-compare-icon--good">✓</span>High. Professional brand builds lasting customer loyalty.</div>
           </div>
 
         </div>
