@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Storemate | Sri Lanka's Order Management Platform</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="home-styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home-styles.css" />
 </head>
 <body>
 
@@ -13,7 +13,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <img src="storemate_logo.png" alt="Storemate" class="logo-img" />
+        <img src="images/brand/storemate_logo.png" alt="Storemate" class="logo-img" />
       </a>
       <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -66,7 +66,7 @@
           <p class="hero-note">No card needed &nbsp;·&nbsp; Full setup by our team &nbsp;·&nbsp; Cancel anytime</p>
         </div>
         <div class="hero-screenshot-wrap">
-          <img src="product.webp" alt="Storemate product overview" class="hero-product-img" />
+          <img src="images/product/product.webp" alt="Storemate product overview" class="hero-product-img" />
         </div>
       </div>
     </section>
@@ -204,7 +204,7 @@
           <p class="origin-text origin-moat">This is Storemate's competitive moat. It cannot be copied by any foreign platform entering this market. It is earned by being here, learning here, and building for here.</p>
           <div class="origin-logo-row">
             <span class="origin-from">Built by the team behind</span>
-            <img src="curfox_logo.png" alt="Curfox" class="curfox-logo" />
+            <img src="images/couriers/curfox_logo.png" alt="Curfox" class="curfox-logo" />
           </div>
         </div>
         <div class="origin-stats">
@@ -282,14 +282,14 @@
         <div class="seller-logos-row">
           <p class="sellers-trusted-label">Alongside thousands of Sri Lankan businesses</p>
           <div class="seller-logo-strip">
-            <img src="customers/Clif-Collagen.jpeg" alt="Clif Collagen" />
-            <img src="customers/Lizas-Closet.jpg" alt="Liza's Closet" />
-            <img src="customers/Navora-Herbals.jpeg" alt="Navora Herbals" />
-            <img src="customers/NK-Online-Super.jpeg" alt="NK Online Super" />
-            <img src="customers/Naturista-Ceylon.jpeg" alt="Naturista Ceylon" />
-            <img src="customers/Shamrock.png" alt="Shamrock" />
-            <img src="customers/F---Gifora.jpeg" alt="Gifora" />
-            <img src="customers/Vishwa-Shakthi-Aayurveda.jpeg" alt="Vishwa Shakthi Ayurveda" />
+            <img src="images/customers/Clif-Collagen.jpeg" alt="Clif Collagen" />
+            <img src="images/customers/Lizas-Closet.jpg" alt="Liza's Closet" />
+            <img src="images/customers/Navora-Herbals.jpeg" alt="Navora Herbals" />
+            <img src="images/customers/NK-Online-Super.jpeg" alt="NK Online Super" />
+            <img src="images/customers/Naturista-Ceylon.jpeg" alt="Naturista Ceylon" />
+            <img src="images/customers/Shamrock.png" alt="Shamrock" />
+            <img src="images/customers/F---Gifora.jpeg" alt="Gifora" />
+            <img src="images/customers/Vishwa-Shakthi-Aayurveda.jpeg" alt="Vishwa Shakthi Ayurveda" />
           </div>
         </div>
       </div>
@@ -359,7 +359,7 @@
           </div>
         </div>
         <div class="awards-visual-new">
-          <img src="awards_trans.png" alt="Storemate awards collection" />
+          <img src="images/awards/awards_trans.png" alt="Storemate awards collection" />
         </div>
       </div>
     </section>
@@ -423,57 +423,93 @@
   </main>
 
   <!-- L11 FOOTER -->
+      <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div>
-          <p class="footer-logo">Storemate</p>
-          <p class="footer-tagline">From seller to Entrepreneur.</p>
-          <p class="footer-mission">Built from the experience of 25M orders and 30,000+ Sri Lankan sellers.</p>
-        </div>
-        <div>
-          <p class="footer-heading">Platform</p>
-          <ul class="footer-list">
-            <li>Order management</li>
-            <li>Inventory</li>
-            <li>Courier integration</li>
-            <li>Branded SMS</li>
-            <li>QR payments</li>
-            <li>Smart Filter Memory</li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-heading">Company</p>
-          <ul class="footer-list">
-            <li><a href="about.html" style="color:inherit;text-decoration:none;">About</a></li>
-            <li>Our story</li>
-            <li>Awards</li>
-            <li>Careers</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-heading">Resources</p>
-          <ul class="footer-list">
-            <li>Seller community</li>
-            <li>YouTube</li>
-            <li>Blog</li>
-            <li>Privacy policy</li>
-            <li>Terms</li>
-          </ul>
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+
+    <!-- Main Grid -->
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="#" class="ft-social-link" aria-label="Facebook">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="YouTube">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="whatsapp-landing.html">WhatsApp Tracking</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Data Security</a></li>
+              <li><a href="#">ISO 27001</a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; 2026 Parallax Technologies (Pvt) Ltd</p>
-        <div class="footer-badges">
-          <span class="footer-badge">NBQSA</span>
-          <span class="footer-badge">APICTA</span>
-          <span class="footer-badge">ISO 27001</span>
+
+    <!-- Bottom Bar -->
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
         </div>
       </div>
     </div>
+
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
   </footer>
 
   <script>

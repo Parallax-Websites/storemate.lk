@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Storemate OMS</title>
+  <meta name="description" content="Get in touch with StoreMate OMS. Our team is ready to help you streamline your order management. Contact us for demos, support, or partnership opportunities." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── HERO ─────────────────────────────────────────────── */
+    .ct-hero {
+      position: relative;
+      padding: 110px 0 90px;
+      background: linear-gradient(135deg, #07112b 0%, #0d1f3c 60%, #112248 100%);
+      overflow: hidden;
+    }
+    .ct-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(0,180,216,0.07), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212,175,55,0.08), transparent 45%);
+      pointer-events: none;
+    }
+    /* decorative grid dots */
+    .ct-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .ct-hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .ct-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.1);
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 999px;
+      padding: 7px 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 28px;
+    }
+    .ct-hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00b4d8;
+      animation: ct-pulse 2s ease-in-out infinite;
+    }
+    @keyframes ct-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+    .ct-hero h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      letter-spacing: -0.02em;
+    }
+    .ct-hero h1 strong {
+      font-weight: 800;
+      color: #00b4d8;
+    }
+    .ct-hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── CARDS SECTION ────────────────────────────────────── */
+    .ct-cards {
+      padding: 80px 0 100px;
+      background: #f3f5f9;
+    }
+    .ct-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* ── CARD BASE ────────────────────────────────────────── */
+    .ct-card {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 8px 32px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ct-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 16px 48px rgba(0,0,0,0.1);
+    }
+    .ct-card-accent {
+      height: 5px;
+    }
+    .ct-card-accent--email {
+      background: linear-gradient(90deg, #e74c3c, #c0392b);
+    }
+    .ct-card-accent--call {
+      background: linear-gradient(90deg, #27ae60, #16a085);
+    }
+    .ct-card-body {
+      padding: 40px 40px 36px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .ct-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+    .ct-card-icon--email {
+      background: linear-gradient(135deg, #fde8e6, #fce4e1);
+      color: #c0392b;
+    }
+    .ct-card-icon--call {
+      background: linear-gradient(135deg, #d5f5e3, #ccf2e4);
+      color: #1e8449;
+    }
+    .ct-card-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #111e35;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .ct-card-desc {
+      font-size: 0.95rem;
+      color: #697285;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+    .ct-card-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #697285;
+    }
+    .ct-card-detail-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: #697285;
+    }
+
+    /* Email specifics */
+    .ct-email-address {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #c0392b;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .ct-reply-note {
+      font-size: 0.85rem;
+      color: #697285;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .ct-reply-note strong {
+      color: #111e35;
+      font-weight: 600;
+    }
+
+    /* Call specifics */
+    .ct-phone-number {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #111e35;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    .ct-hours {
+      font-size: 0.85rem;
+      color: #697285;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .ct-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .ct-status--available {
+      background: #d5f5e3;
+      color: #1e8449;
+    }
+    .ct-status--unavailable {
+      background: #fde8e6;
+      color: #c0392b;
+    }
+    .ct-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ct-status--available .ct-status-dot {
+      background: #27ae60;
+      animation: ct-blink 1.8s ease-in-out infinite;
+    }
+    .ct-status--unavailable .ct-status-dot {
+      background: #e74c3c;
+    }
+    @keyframes ct-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    /* Buttons */
+    .ct-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+      width: 100%;
+      text-align: center;
+    }
+    .ct-btn:hover {
+      transform: translateY(-2px);
+    }
+    .ct-btn--email {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+    }
+    .ct-btn--email:hover {
+      box-shadow: 0 8px 24px rgba(192,57,43,0.4);
+    }
+    .ct-btn--call {
+      background: linear-gradient(135deg, #27ae60, #16a085);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(39,174,96,0.3);
+    }
+    .ct-btn--call:hover {
+      box-shadow: 0 8px 24px rgba(39,174,96,0.4);
+    }
+    .ct-btn--call:disabled,
+    .ct-btn--call[aria-disabled="true"] {
+      opacity: 0.5;
+      pointer-events: none;
+      box-shadow: none;
+    }
+
+    /* ── INFO STRIP ───────────────────────────────────────── */
+    .ct-info-strip {
+      padding: 56px 0;
+      background: #ffffff;
+      border-top: 1px solid #e7ecf4;
+    }
+    .ct-info-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .ct-info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ct-info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #f3f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #2153c0;
+    }
+    .ct-info-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #697285;
+      margin-bottom: 3px;
+    }
+    .ct-info-value {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #111e35;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .ct-cards-grid { grid-template-columns: 1fr; }
+      .ct-card-body { padding: 32px 28px 28px; }
+      .ct-hero { padding: 80px 0 70px; }
+      .ct-info-strip-inner { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="why-storemate.html">Why Storemate</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger">
+            Features
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="whatsapp-landing.html">WhatsApp Tracking</a>
+            <a href="returns-landing.html">Reduce Returns</a>
+            <a href="courier-sync.html">Courier Sync</a>
+            <a href="waybill-landing.html">Waybill Printing</a>
+            <a href="storemate-vs-excel.html">Storemate vs Excel</a>
+          </div>
+        </div>
+        <a href="implementation.html">Implementation</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <a href="#ct-cards" class="nav-cta-btn">Contact Us</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <section class="ct-hero">
+      <div class="container">
+        <div class="ct-hero-inner">
+          <div class="ct-hero-badge">Get in touch with us</div>
+          <h1>Contact <strong>Us</strong></h1>
+          <p class="ct-hero-sub">We're here to help you grow your business. Reach out to us and let's discuss how Storemate OMS can transform your operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT CARDS ──────────────────────────────────────── -->
+    <section class="ct-cards" id="ct-cards">
+      <div class="container">
+        <div class="ct-cards-grid">
+
+          <!-- Email Card -->
+          <div class="ct-card">
+            <div class="ct-card-accent ct-card-accent--email"></div>
+            <div class="ct-card-body">
+              <div class="ct-card-icon ct-card-icon--email">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="ct-card-title">Email Us</div>
+              <p class="ct-card-desc">Simple drop us an email at</p>
+              <div class="ct-email-address">sales@storemate.lk</div>
+              <p class="ct-reply-note">and you'll receive a reply within <strong>24 hours</strong></p>
+              <a href="mailto:sales@storemate.lk" class="ct-btn ct-btn--email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Email
+              </a>
+            </div>
+          </div>
+
+          <!-- Call Card -->
+          <div class="ct-card">
+            <div class="ct-card-accent ct-card-accent--call"></div>
+            <div class="ct-card-body">
+              <div class="ct-card-icon ct-card-icon--call">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.26 10.86 19.79 19.79 0 01.22 2.22 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div class="ct-card-title">Give us a call</div>
+              <p class="ct-card-desc">Give us a ring. Our experts are standing by.</p>
+              <div class="ct-phone-number">011 422 6911</div>
+              <div class="ct-hours">
+                <svg class="ct-card-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Monday to Friday &nbsp;·&nbsp; 9:00 am – 5:00 pm
+              </div>
+              <div id="ct-status" class="ct-status ct-status--available">
+                <span class="ct-status-dot"></span>
+                <span id="ct-status-text">Available Now</span>
+              </div>
+              <a href="tel:0114226911" id="ct-call-btn" class="ct-btn ct-btn--call">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.26 10.86 19.79 19.79 0 01.22 2.22 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+                Call Now
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INFO STRIP ─────────────────────────────────────────── -->
+    <div class="ct-info-strip">
+      <div class="container">
+        <div class="ct-info-strip-inner">
+
+          <div class="ct-info-item">
+            <div class="ct-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Email</div>
+              <div class="ct-info-value">sales@storemate.lk</div>
+            </div>
+          </div>
+
+          <div class="ct-info-item">
+            <div class="ct-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.26 10.86 19.79 19.79 0 01.22 2.22 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Phone</div>
+              <div class="ct-info-value">011 422 6911</div>
+            </div>
+          </div>
+
+          <div class="ct-info-item">
+            <div class="ct-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Office Hours</div>
+              <div class="ct-info-value">Mon – Fri &nbsp;9am – 5pm</div>
+            </div>
+          </div>
+
+          <div class="ct-info-item">
+            <div class="ct-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Time Zone</div>
+              <div class="ct-info-value">Asia / Colombo (IST +5:30)</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+      <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+
+    <!-- Main Grid -->
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="#" class="ft-social-link" aria-label="Facebook">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="YouTube">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+              <a href="#" class="ft-social-link" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="whatsapp-landing.html">WhatsApp Tracking</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Data Security</a></li>
+              <li><a href="#">ISO 27001</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script>
+    /* Real-time availability check — Colombo timezone, Mon-Fri 9am–5pm */
+    function updateAvailability() {
+      const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
+      const day  = now.getDay();   // 0=Sun, 6=Sat
+      const hour = now.getHours();
+      const isOpen = day >= 1 && day <= 5 && hour >= 9 && hour < 17;
+
+      const statusEl  = document.getElementById('ct-status');
+      const statusTxt = document.getElementById('ct-status-text');
+      const callBtn   = document.getElementById('ct-call-btn');
+
+      if (isOpen) {
+        statusEl.className  = 'ct-status ct-status--available';
+        statusTxt.textContent = 'Available Now';
+        callBtn.removeAttribute('aria-disabled');
+      } else {
+        statusEl.className  = 'ct-status ct-status--unavailable';
+        statusTxt.textContent = 'Not Available';
+        callBtn.setAttribute('aria-disabled', 'true');
+      }
+    }
+
+    updateAvailability();
+    setInterval(updateAvailability, 60000);
+  </script>
+
+</body>
+</html>
