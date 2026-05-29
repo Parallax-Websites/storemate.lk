@@ -15,36 +15,40 @@
 
     /* ── HERO ─────────────────────────────────────────────── */
     .ma-hero {
-      background: linear-gradient(145deg, #07112b 0%, #0d1f3c 55%, #112248 100%);
-      padding: 96px 0 80px;
+      background: url('images/screenshots/mobile/hero.png') 75% 40% / cover no-repeat;
+      padding: 112px 0 96px;
       overflow: hidden;
       position: relative;
     }
+    /* dark gradient — heavy on left for text, fades right to show photo */
     .ma-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 15% 60%, rgba(0,180,216,0.1) 0%, transparent 45%),
-        radial-gradient(circle at 85% 20%, rgba(33,83,192,0.12) 0%, transparent 40%);
+      background: linear-gradient(
+        105deg,
+        rgba(7,17,43,0.95) 0%,
+        rgba(7,17,43,0.90) 35%,
+        rgba(7,17,43,0.65) 58%,
+        rgba(7,17,43,0.30) 80%,
+        rgba(7,17,43,0.15) 100%
+      );
       pointer-events: none;
     }
-    /* dot grid texture */
+    /* subtle dot grid texture over the photo */
     .ma-hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 36px 36px;
       pointer-events: none;
     }
     .ma-hero-inner {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
+      max-width: 680px;
+      padding: 20px 0 10px;
     }
     .ma-hero-copy {
       color: #fff;
@@ -600,16 +604,6 @@
             <p class="ma-hero-note">Free for all Storemate subscribers &nbsp;·&nbsp; iOS &amp; Android</p>
           </div>
 
-          <!-- Visual: marketing image -->
-          <div class="ma-hero-visual">
-            <div class="ma-hero-img-wrap">
-              <div class="ma-hero-chip">
-                <div class="ma-hero-chip-num">Anywhere</div>
-                <div class="ma-hero-chip-lbl">Manage orders<br>on the go</div>
-              </div>
-              <img src="images/screenshots/mobile/Mobile app.jpg" alt="Storemate mobile app — manage your business from anywhere" />
-            </div>
-          </div>
 
         </div>
       </div>
