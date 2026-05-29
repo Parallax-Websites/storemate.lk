@@ -29,7 +29,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
-      align-items: center;
+      align-items: start;
     }
     .rr-hero-eyebrow {
       display: inline-flex;
@@ -754,6 +754,33 @@
     }
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
+    /* ── PRODUCT SCREENSHOT ───────────────────────────────── */
+    .rr-screenshot-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rr-screenshot-wrap img {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 24px 52px rgba(0,0,0,0.25));
+      border-radius: 4px;
+      transition: transform 0.35s ease;
+    }
+    .rr-screenshot-wrap:hover img {
+      transform: translateY(-6px);
+    }
+    /* subtle blue glow behind the screenshot */
+    .rr-screenshot-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(ellipse at center, rgba(0,62,122,0.12), transparent 70%);
+      border-radius: 30px;
+      pointer-events: none;
+    }
+
     @media (max-width: 900px) {
       .rr-hero-inner { grid-template-columns: 1fr; gap: 48px; }
       .rr-problems-grid { grid-template-columns: 1fr; }
@@ -894,10 +921,8 @@
         </div>
 
         <div class="rr-hero-visual">
-          <div class="rr-stat-card">
-            <div class="rr-stat-big">20%</div>
-            <div class="rr-stat-label">Average return rate for Sri Lankan sellers</div>
-            <div class="rr-stat-sub">Mostly from preventable causes — duplicates, fakes, wrong items, missed orders.</div>
+          <div class="rr-screenshot-wrap">
+            <img src="images/returns/Return.png" alt="Storemate — customer order history and follow-up tracking" />
           </div>
           <div class="rr-mini-stats">
             <div class="rr-mini-stat">
@@ -1178,19 +1203,8 @@
             <li>Make informed decisions — not guesses</li>
           </ul>
         </div>
-        <div class="rr-sol-visual">
-          <div>
-            <div class="rr-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <div class="rr-sol-visual-result">Full</div>
-            <div class="rr-sol-visual-label">Customer context before every order</div>
-            <div class="rr-sol-visual-sub">History, returns, complaints — all visible in one place.</div>
-          </div>
-          <div class="rr-sol-visual-outcomes">
-            <div class="rr-sol-visual-outcome">Informed decisions — no surprises</div>
-            <div class="rr-sol-visual-outcome">High-risk orders identified before shipping</div>
-          </div>
+        <div class="rr-screenshot-wrap">
+          <img src="images/returns/Return.png" alt="Storemate customer history — Follow Up screen showing order history, return rate and previous interactions" />
         </div>
       </div>
 
