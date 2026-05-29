@@ -681,6 +681,126 @@
       background: rgba(255,255,255,0.06);
     }
 
+    /* ── COURIER PARTNERS STRIP ──────────────────────────── */
+    .cs-partners {
+      background: #f8fafc;
+      border-top: 1px solid #e7ecf4;
+      border-bottom: 1px solid #e7ecf4;
+      padding: 36px 0;
+    }
+    .cs-partners-label {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .cs-partners-label::before,
+    .cs-partners-label::after {
+      content: '';
+      flex: 1; max-width: 80px;
+      height: 1px;
+      background: #e7ecf4;
+    }
+    .cs-partners-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .cs-partner-card {
+      flex: 1;
+      max-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-right: 1px solid #e7ecf4;
+      min-height: 72px;
+    }
+    .cs-partner-card:last-child { border-right: none; }
+    .cs-partner-logo {
+      height: 36px;
+      width: auto;
+      max-width: 130px;
+      object-fit: contain;
+      filter: grayscale(0.2);
+      opacity: 0.85;
+      transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+    }
+    .cs-partner-card:hover .cs-partner-logo {
+      filter: grayscale(0);
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    /* ── SCREENSHOT VISUALS ───────────────────────────────── */
+    .cs-screenshot-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-screenshot-wrap img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      filter: drop-shadow(0 20px 48px rgba(0,62,122,0.18));
+      border-radius: 8px;
+      transition: transform 0.35s ease;
+    }
+    .cs-screenshot-wrap:hover img { transform: translateY(-6px); }
+    /* glow ring */
+    .cs-screenshot-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      background: radial-gradient(ellipse at center, rgba(0,180,216,0.12), transparent 65%);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    /* ── COURIER LOGO GRID VISUAL ─────────────────────────── */
+    .cs-courier-grid-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .cs-courier-logo-card {
+      background: #ffffff;
+      border: 1px solid #e7ecf4;
+      border-radius: 16px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+    .cs-courier-logo-card:hover {
+      box-shadow: 0 8px 24px rgba(0,62,122,0.12);
+      transform: translateY(-2px);
+      border-color: rgba(0,62,122,0.15);
+    }
+    .cs-courier-logo-card img {
+      height: 32px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+    }
+    /* 5th card spans full width */
+    .cs-courier-logo-card--wide {
+      grid-column: 1 / -1;
+    }
+    .cs-courier-logo-card--wide img { height: 36px; }
+
     @keyframes marquee-left {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
@@ -776,6 +896,14 @@
                   <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
                   <span class="nav-mega-text"><strong>Implementation</strong><span>How we set you up</span></span>
                 </a>
+                <a href="free-course.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Course <span class="nav-free-badge">FREE</span></strong><span>16 video lessons</span></span>
+                </a>
+                <a href="cod-business-guide.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span>
+                </a>
                 <a href="index.html#faq" class="nav-mega-link">
                   <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
                   <span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span>
@@ -846,6 +974,30 @@
       </div>
     </div>
   </section>
+
+  <!-- ── COURIER PARTNERS ─────────────────────────────────── -->
+  <div class="cs-partners">
+    <div class="container">
+      <div class="cs-partners-label">Connected courier partners</div>
+      <div class="cs-partners-grid">
+        <div class="cs-partner-card">
+          <img src="images/sync/royalelogo-1.webp" alt="Royal Express" class="cs-partner-logo" />
+        </div>
+        <div class="cs-partner-card">
+          <img src="images/sync/332708073_3811654199061580_3846048282845902556_n-Photoroom-e1758020748705.webp" alt="FDE Express" class="cs-partner-logo" />
+        </div>
+        <div class="cs-partner-card">
+          <img src="images/sync/images-2-1.webp" alt="DomEx" class="cs-partner-logo" />
+        </div>
+        <div class="cs-partner-card">
+          <img src="images/sync/logo-5.webp" alt="TransEx" class="cs-partner-logo" />
+        </div>
+        <div class="cs-partner-card">
+          <img src="images/sync/logo-1-e1758031524438.webp" alt="Koombiyo" class="cs-partner-logo" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ── PAIN STRIP ──────────────────────────────────────── -->
   <div class="cs-pain-strip">
@@ -971,19 +1123,8 @@
             <li>Courier receives complete, accurate information on the first attempt</li>
           </ul>
         </div>
-        <div class="cs-sol-visual">
-          <div>
-            <div class="cs-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            </div>
-            <div class="cs-sol-visual-result">4–6 hrs</div>
-            <div class="cs-sol-visual-label">Saved daily per staff member</div>
-            <div class="cs-sol-visual-sub">Your team stops doing data entry and starts doing real work.</div>
-          </div>
-          <div class="cs-sol-visual-outcomes">
-            <div class="cs-sol-visual-outcome">Zero manual courier entry — ever</div>
-            <div class="cs-sol-visual-outcome">100% accurate data, first attempt</div>
-          </div>
+        <div class="cs-screenshot-wrap">
+          <img src="images/sync/Sync2.png" alt="Storemate Shipping List — orders synced across couriers" />
         </div>
       </div>
 
@@ -997,24 +1138,27 @@
           <h3 class="cs-sol-h">One platform.<br><strong>Every courier in Sri Lanka</strong></h3>
           <p class="cs-sol-desc">Send the same order to multiple courier companies simultaneously. Compare delivery speeds and costs in real time. Choose the best option. Change at the last moment — no re-uploading needed.</p>
           <ul class="cs-sol-list">
-            <li>Sync to Curfox, TransEx, Royal Express, and more from one screen</li>
+            <li>Sync to Royal Express, TransEx, FDE, DomEx, Koombiyo and more from one screen</li>
             <li>Compare carrier speed and cost before committing</li>
             <li>Switch couriers at the last moment without re-entering data</li>
             <li>One platform replaces three separate portals</li>
           </ul>
         </div>
-        <div class="cs-sol-visual">
-          <div>
-            <div class="cs-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <div class="cs-sol-visual-result">1</div>
-            <div class="cs-sol-visual-label">Platform for all couriers</div>
-            <div class="cs-sol-visual-sub">All Sri Lankan courier companies integrated in one place.</div>
+        <div class="cs-courier-grid-visual">
+          <div class="cs-courier-logo-card">
+            <img src="images/sync/royalelogo-1.webp" alt="Royal Express" />
           </div>
-          <div class="cs-sol-visual-outcomes">
-            <div class="cs-sol-visual-outcome">3 portals replaced by one screen</div>
-            <div class="cs-sol-visual-outcome">Best courier chosen per order, in real time</div>
+          <div class="cs-courier-logo-card">
+            <img src="images/sync/332708073_3811654199061580_3846048282845902556_n-Photoroom-e1758020748705.webp" alt="FDE Express" />
+          </div>
+          <div class="cs-courier-logo-card">
+            <img src="images/sync/images-2-1.webp" alt="DomEx" />
+          </div>
+          <div class="cs-courier-logo-card">
+            <img src="images/sync/logo-5.webp" alt="TransEx" />
+          </div>
+          <div class="cs-courier-logo-card cs-courier-logo-card--wide">
+            <img src="images/sync/logo-1-e1758031524438.webp" alt="Koombiyo" />
           </div>
         </div>
       </div>
@@ -1035,19 +1179,8 @@
             <li>One-click resync to fix any failure immediately</li>
           </ul>
         </div>
-        <div class="cs-sol-visual">
-          <div>
-            <div class="cs-sol-visual-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-            </div>
-            <div class="cs-sol-visual-result">Live</div>
-            <div class="cs-sol-visual-label">Complete sync visibility</div>
-            <div class="cs-sol-visual-sub">Every order tracked from Storemate to courier, in real time.</div>
-          </div>
-          <div class="cs-sol-visual-outcomes">
-            <div class="cs-sol-visual-outcome">Zero orders lost in transit between systems</div>
-            <div class="cs-sol-visual-outcome">Failures fixed before customers are affected</div>
-          </div>
+        <div class="cs-screenshot-wrap">
+          <img src="images/sync/Sync 1.png" alt="Storemate Sync History — live courier sync dashboard" />
         </div>
       </div>
 
@@ -1234,7 +1367,7 @@
         <a href="#" class="btn-white-cs">Start your free setup</a>
         <a href="why-storemate.html" class="btn-outline-cs">Why Storemate →</a>
       </div>
-      <p class="cs-cta-note">Already trusted by 30,000+ Sri Lankan sellers across Curfox, TransEx, Royal Express and more.</p>
+      <p class="cs-cta-note">Already trusted by 30,000+ Sri Lankan sellers across Royal Express, TransEx, FDE, DomEx, Koombiyo and more.</p>
     </div>
   </section>
 
