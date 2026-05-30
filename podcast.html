@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>Storemate Podcast — Online Business Sri Lanka</title>
+  <meta name="description" content="Real conversations about building and growing an online business in Sri Lanka. The Storemate Podcast — practical insights for Sri Lankan sellers." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root {
+      --pod-dark:   #07112b;
+      --pod-dark2:  #0c1117;
+      --pod-amber:  #00b4d8;
+      --pod-amber2: #003e7a;
+      --pod-blue:   #2153c0;
+    }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .pod-hero {
+      padding: 96px 0 80px;
+      background: var(--pod-dark);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .pod-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 60%, rgba(0,180,216,0.07), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(33,83,192,0.08), transparent 45%);
+      pointer-events: none;
+    }
+    /* mic icon pattern */
+    .pod-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+    .pod-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .pod-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.28);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pod-amber);
+      margin-bottom: 22px;
+    }
+    .pod-hero-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--pod-amber);
+      animation: pod-blink 2s ease-in-out infinite;
+    }
+    @keyframes pod-blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .pod-series-logo {
+      height: 72px;
+      width: auto;
+      display: block;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+    }
+    .pod-hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .pod-hero h1 em { font-style: normal; color: var(--pod-amber); }
+    .pod-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 460px;
+      margin-bottom: 36px;
+    }
+    .pod-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .btn-pod {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-pod:hover { transform: translateY(-2px); }
+    .btn-pod--amber {
+      background: linear-gradient(135deg, var(--pod-amber), var(--pod-amber2));
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(0,180,216,0.35);
+    }
+    .btn-pod--amber:hover { box-shadow: 0 10px 28px rgba(0,180,216,0.45); }
+    .btn-pod--outline {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .btn-pod--outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .pod-hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
+
+    /* Hero visual — featured episode */
+    .pod-hero-visual { position: relative; }
+    .pod-featured-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(0,180,216,0.15), 0 24px 64px rgba(0,0,0,0.6);
+    }
+    .pod-featured-card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .pod-featured-card:hover img { transform: scale(1.03); }
+    .pod-featured-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .pod-featured-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(0,180,216,0.85);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .pod-featured-card:hover .pod-featured-play {
+      background: var(--pod-amber);
+      transform: translate(-50%,-50%) scale(1.1);
+    }
+    .pod-ep-label {
+      position: absolute;
+      bottom: 14px; left: 14px;
+      z-index: 2;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--pod-amber);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .pod-ep-num {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    /* ── EPISODES GRID ────────────────────────────────────── */
+    .pod-episodes {
+      padding: 88px 0;
+      background: var(--pod-dark2);
+    }
+    .pod-section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pod-amber);
+      margin-bottom: 10px;
+    }
+    .pod-section-h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .pod-section-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 52px;
+      max-width: 560px;
+    }
+    .pod-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .pod-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .pod-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,180,216,0.12);
+      border-color: rgba(0,180,216,0.2);
+    }
+    .pod-card-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .pod-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+    .pod-card:hover .pod-card-thumb img { transform: scale(1.04); }
+    .pod-card-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .pod-card-play {
+      position: absolute;
+      bottom: 14px; right: 14px;
+      z-index: 2;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: rgba(0,180,216,0.85);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .pod-card:hover .pod-card-play {
+      background: var(--pod-amber);
+      transform: scale(1.1);
+    }
+    .pod-card-ep {
+      position: absolute;
+      top: 12px; left: 12px;
+      z-index: 2;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(0,180,216,0.3);
+      color: var(--pod-amber);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .pod-card-body {
+      padding: 20px 22px 22px;
+    }
+    .pod-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .pod-card-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .pod-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--pod-amber);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .pod-card-action:hover { gap: 10px; }
+
+    /* ── SUBSCRIBE STRIP ──────────────────────────────────── */
+    .pod-subscribe {
+      padding: 80px 0;
+      background: var(--pod-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pod-subscribe::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,180,216,0.08), transparent 65%);
+    }
+    .pod-subscribe > .container { position: relative; }
+    .pod-subscribe h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+    .pod-subscribe h2 em { font-style: normal; color: var(--pod-amber); }
+    .pod-subscribe p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    /* Video modal */
+    .pod-modal {
+      position: fixed; inset: 0; z-index: 9990;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .pod-modal.pod-open { opacity: 1; pointer-events: auto; }
+    .pod-modal-inner {
+      position: relative;
+      width: min(1000px, 94vw);
+      aspect-ratio: 16/9;
+      border-radius: 16px; overflow: hidden;
+      background: #000;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+    }
+    .pod-modal-inner iframe { width:100%; height:100%; border:none; }
+    .pod-modal-close {
+      position: absolute; top: -48px; right: 0;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%; width: 38px; height: 38px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: #fff; transition: background 0.2s;
+    }
+    .pod-modal-close:hover { background: rgba(255,255,255,0.22); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .pod-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pod-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .pod-hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span></a>
+                <a href="returns-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span><span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span></a>
+                <a href="courier-sync.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span></a>
+                <a href="waybill-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span></a>
+                <a href="free-waybill-generator.html" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><span class="nav-mega-text"><strong>Free Waybill Generator <span class="nav-free-badge">FREE</span></strong><span>Bulk print waybills — no signup</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link"><span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span></a>
+                <a href="trackmate.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span></a>
+                <a href="free-course.html" class="nav-mega-link"><span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><span class="nav-mega-text"><strong>Free Course <span class="nav-free-badge">FREE</span></strong><span>16 video lessons</span></span></a>
+                <a href="podcast.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span><span class="nav-mega-text"><strong>Podcast</strong><span>Online business conversations</span></span></a>
+                <a href="cod-business-guide.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span></a>
+                <a href="index.html#faq" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://oms.storemate.cloud/register" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <section class="pod-hero">
+      <div class="container">
+        <div class="pod-hero-inner">
+
+          <div>
+            <img src="images/podcast_logo.png" alt="StoreMate OMS Podcast" class="pod-series-logo" />
+            <h1>Real talk about<br>building <em>online business</em><br>in Sri Lanka.</h1>
+            <p class="pod-hero-sub">Honest conversations about what it really takes to grow an online business in Sri Lanka — mistakes, failures, courier nightmares, and what actually works.</p>
+            <div class="pod-hero-actions">
+              <a href="https://www.youtube.com/@Storemate" target="_blank" rel="noopener noreferrer" class="btn-pod btn-pod--amber">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                Watch on YouTube
+              </a>
+              <a href="#pod-episodes" class="btn-pod btn-pod--outline">See all episodes</a>
+            </div>
+            <p class="pod-hero-note">4 episodes &nbsp;·&nbsp; In Sinhala &nbsp;·&nbsp; Free to watch</p>
+          </div>
+
+          <!-- Featured episode -->
+          <div class="pod-hero-visual">
+            <div class="pod-featured-card" onclick="podPlay('NgxSu1HqEvA')">
+              <img src="images/podcast/NgxSu1HqEvA.jpg" alt="Storemate Podcast — 3 mistakes online business sellers make" />
+              <div class="pod-featured-play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#1a0a00"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <div style="position:absolute;bottom:14px;left:14px;z-index:2;">
+                <div class="pod-ep-label">Latest Episode</div>
+                <div class="pod-ep-num">EP 01 · Storemate Podcast</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ALL EPISODES ───────────────────────────────────────── -->
+    <section class="pod-episodes" id="pod-episodes">
+      <div class="container">
+        <div class="pod-section-eyebrow">All Episodes</div>
+        <h2 class="pod-section-h2">Every conversation,<br>ready to watch.</h2>
+
+        <p class="pod-section-sub">4 episodes covering the real challenges Sri Lankan online sellers face — from couriers to competition to cash flow.</p>
+
+        <div class="pod-grid">
+
+          <div class="pod-card" onclick="podPlay('NgxSu1HqEvA')">
+            <div class="pod-card-thumb">
+              <img src="images/podcast/NgxSu1HqEvA.jpg" alt="3 mistakes if doing online business" />
+              <div class="pod-card-ep">EP 01</div>
+              <div class="pod-card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a0a00"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pod-card-body">
+              <div class="pod-card-title">Online Business කරනවා නම් මේ 3 පටලවගන්න එපා</div>
+              <p class="pod-card-desc">If you're running an online business, avoid these 3 critical mistakes that trip up most sellers — before they cost you.</p>
+              <a href="https://youtu.be/NgxSu1HqEvA" target="_blank" rel="noopener noreferrer" class="pod-card-action" onclick="event.stopPropagation()">
+                Watch on YouTube <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pod-card" onclick="podPlay('GZ2FDKim9PY')">
+            <div class="pod-card-thumb">
+              <img src="images/podcast/GZ2FDKim9PY.jpg" alt="Why online business fails suddenly" />
+              <div class="pod-card-ep">EP 02</div>
+              <div class="pod-card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a0a00"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pod-card-body">
+              <div class="pod-card-title">Online Business එකපාරටම Fail වෙන්නේ ඇයි?</div>
+              <p class="pod-card-desc">Why do online businesses suddenly collapse? A raw conversation about what goes wrong — and what founders miss before it's too late.</p>
+              <a href="https://youtu.be/GZ2FDKim9PY" target="_blank" rel="noopener noreferrer" class="pod-card-action" onclick="event.stopPropagation()">
+                Watch on YouTube <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pod-card" onclick="podPlay('5EE0qlEBe5Q')">
+            <div class="pod-card-thumb">
+              <img src="images/podcast/5EE0qlEBe5Q.jpg" alt="Courier company guide for new online sellers" />
+              <div class="pod-card-ep">EP 03</div>
+              <div class="pod-card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a0a00"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pod-card-body">
+              <div class="pod-card-title">අලුතින් Online Business පටන් ගන්න අයට Courier Company Guide</div>
+              <p class="pod-card-desc">Everything a new online seller needs to know about courier companies in Sri Lanka — how to choose, register, and ship with confidence.</p>
+              <a href="https://youtu.be/5EE0qlEBe5Q" target="_blank" rel="noopener noreferrer" class="pod-card-action" onclick="event.stopPropagation()">
+                Watch on YouTube <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pod-card" onclick="podPlay('82dOuZyYMKE')">
+            <div class="pod-card-thumb">
+              <img src="images/podcast/82dOuZyYMKE.jpg" alt="Does war affect online business in Sri Lanka" />
+              <div class="pod-card-ep">EP 04</div>
+              <div class="pod-card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1a0a00"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pod-card-body">
+              <div class="pod-card-title">Online Business වලට යුද්ධය බලපායිද?</div>
+              <p class="pod-card-desc">Does geopolitical conflict affect Sri Lankan online sellers? An honest discussion about economic pressure, resilience, and keeping your business moving.</p>
+              <a href="https://youtu.be/82dOuZyYMKE" target="_blank" rel="noopener noreferrer" class="pod-card-action" onclick="event.stopPropagation()">
+                Watch on YouTube <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SUBSCRIBE ──────────────────────────────────────────── -->
+    <section class="pod-subscribe">
+      <div class="container">
+        <h2>New episodes drop on<br><em>Storemate YouTube.</em></h2>
+        <p>Subscribe to the channel so you never miss a conversation about online business, couriers, returns, and what it takes to grow in Sri Lanka.</p>
+        <a href="https://www.youtube.com/@Storemate" target="_blank" rel="noopener noreferrer" class="btn-pod btn-pod--amber" style="display:inline-flex;margin:0 auto;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          Subscribe on YouTube
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Video Modal -->
+  <div class="pod-modal" id="podModal" onclick="podClose(event)">
+    <div class="pod-modal-inner">
+      <button class="pod-modal-close" onclick="podClose({target:document.getElementById('podModal')})" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <iframe id="podIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Storemate Podcast"></iframe>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="#" class="ft-social-link" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="#" class="ft-social-link" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" target="_blank" rel="noopener noreferrer" class="ft-social-link" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="#" class="ft-social-link" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="mobile-app.html">Mobile App</a></li>
+              <li><a href="trackmate.html">Trackmate</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Learn</h4>
+            <ul class="ft-link-list">
+              <li><a href="free-course.html">Free Course</a></li>
+              <li><a href="podcast.html">Podcast</a></li>
+              <li><a href="cod-business-guide.html">COD Business Guide</a></li>
+              <li><a href="storemate-vs-excel.html">Storemate vs Excel</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script>
+    function podPlay(id) {
+      var modal  = document.getElementById('podModal');
+      var iframe = document.getElementById('podIframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      modal.classList.add('pod-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function podClose(e) {
+      if (e && e.target !== document.getElementById('podModal')) return;
+      var modal  = document.getElementById('podModal');
+      var iframe = document.getElementById('podIframe');
+      modal.classList.remove('pod-open');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') podClose({ target: document.getElementById('podModal') });
+    });
+  </script>
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html>
