@@ -1076,54 +1076,72 @@
 
 /* ── COMMERCIAL VIDEO SECTION ─────────────────── */
 .commercial-section {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+  background: #ffffff;
+  padding: 80px 0 88px;
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
-/* thumbnail as full-bleed background */
-.commercial-bg {
-  position: absolute;
-  inset: 0;
-  background: url('../images/vid/commercial-thumb.jpg') center center / cover no-repeat;
-  transition: transform 0.6s ease;
-}
-.commercial-section:hover .commercial-bg {
-  transform: scale(1.03);
-}
-
-/* dark overlay */
-.commercial-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(7,17,43,0.55) 0%,
-    rgba(7,17,43,0.45) 50%,
-    rgba(7,17,43,0.65) 100%
-  );
-}
-
-/* content */
-.commercial-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 96px 24px;
+.commercial-header {
   text-align: center;
-  color: #fff;
+  max-width: 620px;
+  margin: 0 auto 44px;
 }
 
 .commercial-eyebrow {
+  display: block;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-cyan);
-  margin-bottom: 20px;
+  color: var(--color-blue);
+  margin-bottom: 16px;
+}
+
+.commercial-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin-bottom: 14px;
+}
+
+.commercial-sub {
+  font-size: 1rem;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+}
+
+/* video card */
+.commercial-player {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 16px 56px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid var(--color-gray-200);
+}
+
+.commercial-thumb {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.commercial-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7,17,43,0.22);
+  transition: background 0.25s;
+}
+.commercial-player:hover .commercial-play-overlay {
+  background: rgba(7,17,43,0.35);
 }
 
 /* play button */
@@ -1131,36 +1149,19 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.35);
+  border: 2px solid rgba(255,255,255,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
   transition: background 0.25s, transform 0.25s, border-color 0.25s;
   flex-shrink: 0;
 }
-.commercial-section:hover .commercial-play {
+.commercial-player:hover .commercial-play {
   background: var(--color-blue);
   border-color: transparent;
   transform: scale(1.1);
-}
-
-.commercial-title {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
-  max-width: 640px;
-}
-
-.commercial-sub {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  max-width: 480px;
 }
 
 /* Modal — reuse existing hiw modal styles */
