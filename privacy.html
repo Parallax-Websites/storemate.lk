@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>Privacy Policy | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── HERO ─────────────────────────────────────── */
+    .pp-hero {
+      background: linear-gradient(135deg, #07112b 0%, #0a1e3d 60%, #003e7a 100%);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 50%, rgba(0,180,216,0.1), transparent 55%);
+      pointer-events: none;
+    }
+    .pp-hero-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00b4d8 40%, var(--color-blue) 100%);
+    }
+    .pp-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+    .pp-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.3);
+      border-radius: 999px;
+      padding: 5px 16px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 20px;
+    }
+    .pp-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .pp-hero h1 strong { font-weight: 800; display: block; }
+    .pp-hero-meta {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 16px;
+      margin-bottom: 28px;
+    }
+    .pp-hero-meta span { color: #00b4d8; font-weight: 600; }
+    .pp-hero-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .pp-hero-quote::before {
+      content: '';
+      width: 3px;
+      height: 36px;
+      background: #00b4d8;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── LAYOUT ───────────────────────────────────── */
+    .pp-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: 72px 0 96px;
+    }
+
+    /* ── STICKY TOC ───────────────────────────────── */
+    .pp-toc {
+      position: sticky;
+      top: 88px;
+    }
+    .pp-toc-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+      margin-bottom: 14px;
+    }
+    .pp-toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pp-toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-gray-500);
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+      line-height: 1.3;
+    }
+    .pp-toc-list a:hover {
+      color: var(--color-blue);
+      background: var(--color-gray-100);
+    }
+    .pp-toc-num {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #00b4d8;
+      min-width: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTENT ──────────────────────────────────── */
+    .pp-content {
+      min-width: 0;
+    }
+
+    .pp-section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pp-section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .pp-section-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pp-section-heading h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+      line-height: 1;
+    }
+    .pp-section-rule {
+      height: 1px;
+      background: var(--color-gray-200);
+      margin-bottom: 24px;
+    }
+
+    .pp-body {
+      font-size: 0.95rem;
+      color: var(--color-gray-700);
+      line-height: 1.8;
+    }
+    .pp-body p { margin-bottom: 14px; }
+    .pp-body p:last-child { margin-bottom: 0; }
+    .pp-body strong { color: var(--color-charcoal); }
+
+    /* data grid (section 2) */
+    .pp-data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .pp-data-card {
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--color-blue);
+    }
+    .pp-data-card-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+    .pp-data-card p {
+      font-size: 0.88rem;
+      color: var(--color-gray-700);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* numbered use list (section 3) */
+    .pp-use-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .pp-use-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .pp-use-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pp-use-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: 4px;
+    }
+    .pp-use-desc {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
+    }
+
+    /* callout boxes */
+    .pp-callout {
+      background: #e8f4fc;
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-top: 24px;
+    }
+    .pp-callout--red {
+      background: #fff2f2;
+      border-color: rgba(231,76,60,0.2);
+    }
+    .pp-callout--dark {
+      background: var(--color-charcoal);
+      border-color: transparent;
+    }
+    .pp-callout-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+    .pp-callout--red .pp-callout-label { color: #c0392b; }
+    .pp-callout--dark .pp-callout-label { color: #00b4d8; }
+    .pp-callout h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: 8px;
+    }
+    .pp-callout--dark h3 { color: #ffffff; }
+    .pp-callout p {
+      font-size: 0.88rem;
+      color: var(--color-gray-700);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .pp-callout--dark p { color: rgba(255,255,255,0.65); }
+
+    /* bullet list */
+    .pp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .pp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--color-gray-700);
+      line-height: 1.65;
+    }
+    .pp-bullets li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* third parties (section 4) */
+    .pp-third-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-third-item {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-third-item:last-child { border-bottom: none; }
+    .pp-third-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-blue);
+      margin-bottom: 5px;
+    }
+    .pp-third-desc {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      line-height: 1.65;
+    }
+
+    /* retention rows (section 6) */
+    .pp-retention {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-retention-row {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-retention-row:last-child { border-bottom: none; }
+    .pp-retention-key {
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-blue);
+      background: var(--color-gray-100);
+      border-right: 1px solid var(--color-gray-200);
+    }
+    .pp-retention-val {
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: var(--color-gray-700);
+      line-height: 1.6;
+    }
+
+    /* rights (section 7) */
+    .pp-rights {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .pp-right-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 18px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 12px;
+      transition: border-color 0.15s;
+    }
+    .pp-right-item:hover { border-color: var(--color-blue); }
+    .pp-right-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(33,83,192,0.1);
+      color: var(--color-blue);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pp-right-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: 4px;
+    }
+    .pp-right-desc {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
+    }
+
+    /* cookies (section 8) */
+    .pp-cookies {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .pp-cookie-row {
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--color-blue);
+    }
+    .pp-cookie-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: 5px;
+    }
+    .pp-cookie-desc {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      line-height: 1.65;
+    }
+
+    /* contact table (section 11) */
+    .pp-contact-card {
+      background: var(--color-charcoal);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-contact-label {
+      background: rgba(0,180,216,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 24px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+    }
+    .pp-contact-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .pp-contact-row {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: center;
+    }
+    .pp-contact-row:last-child { border-bottom: none; }
+    .pp-contact-key {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+    }
+    .pp-contact-val {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .pp-contact-val a { color: #00b4d8; text-decoration: none; }
+    .pp-contact-val a:hover { text-decoration: underline; }
+    .pp-contact-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      text-align: right;
+    }
+
+    /* at-a-glance table */
+    .pp-glance {
+      margin-top: 20px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .pp-glance-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-glance-row:last-child { border-bottom: none; }
+    .pp-glance-row:nth-child(even) { background: #fafafa; }
+    .pp-glance-q {
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-blue);
+      border-right: 1px solid var(--color-gray-200);
+      background: var(--color-gray-100);
+    }
+    .pp-glance-row:nth-child(even) .pp-glance-q { background: #f0f4f8; }
+    .pp-glance-a {
+      padding: 16px 20px;
+      font-size: 0.88rem;
+      color: var(--color-gray-700);
+      line-height: 1.6;
+    }
+
+    /* company info (section 1) */
+    .pp-company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-company-cell {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--color-gray-200);
+      border-right: 1px solid var(--color-gray-200);
+    }
+    .pp-company-cell:nth-child(even) { border-right: none; }
+    .pp-company-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .pp-company-key {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 4px;
+    }
+    .pp-company-val {
+      font-size: 0.9rem;
+      color: var(--color-charcoal);
+      font-weight: 500;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .pp-layout { grid-template-columns: 1fr; gap: 0; padding: 52px 0 80px; }
+      .pp-toc { position: static; display: none; }
+      .pp-data-grid { grid-template-columns: 1fr; }
+      .pp-retention-row { grid-template-columns: 1fr; }
+      .pp-retention-key { border-right: none; border-bottom: 1px solid var(--color-gray-200); }
+      .pp-contact-row { grid-template-columns: 120px 1fr; }
+      .pp-contact-note { display: none; }
+      .pp-glance-row { grid-template-columns: 160px 1fr; }
+      .pp-company-grid { grid-template-columns: 1fr; }
+      .pp-company-cell { border-right: none; }
+      .pp-company-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--color-gray-200); }
+      .pp-company-cell:last-child { border-bottom: none; }
+    }
+    @media (max-width: 600px) {
+      .pp-hero { padding: 64px 0 56px; }
+      .pp-glance-row { grid-template-columns: 1fr; }
+      .pp-glance-q { border-right: none; border-bottom: 1px solid var(--color-gray-200); }
+      .pp-contact-row { grid-template-columns: 1fr; gap: 4px; }
+      .pp-contact-key { font-size: 0.72rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span></a>
+                <a href="returns-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span><span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span></a>
+                <a href="courier-sync.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span></a>
+                <a href="waybill-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span></a>
+                <a href="personalization.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span><span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link"><span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span></a>
+                <a href="trackmate.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span></a>
+                <a href="pricing.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span><span class="nav-mega-text"><strong>Pricing</strong><span>Simple, honest pricing</span></span></a>
+                <a href="contact.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><span class="nav-mega-text"><strong>Contact</strong><span>Talk to the team</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://oms.storemate.cloud/register" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pp-hero">
+      <div class="pp-hero-line"></div>
+      <div class="container">
+        <div class="pp-hero-inner">
+          <div class="pp-hero-eyebrow">Legal</div>
+          <h1>Privacy<br><strong>Policy</strong></h1>
+          <p class="pp-hero-meta">Storemate — storemate.lk &nbsp;·&nbsp; Effective date: <span>June 2026</span> &nbsp;·&nbsp; Version 1.0</p>
+          <div class="pp-hero-quote">"Your data is sacred to us."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="pp-layout">
+
+        <!-- Sticky TOC -->
+        <aside class="pp-toc">
+          <p class="pp-toc-label">Contents</p>
+          <ul class="pp-toc-list">
+            <li><a href="#s1"><span class="pp-toc-num">01</span>Who we are</a></li>
+            <li><a href="#s2"><span class="pp-toc-num">02</span>What data we collect</a></li>
+            <li><a href="#s3"><span class="pp-toc-num">03</span>How we use your data</a></li>
+            <li><a href="#s4"><span class="pp-toc-num">04</span>Data sharing &amp; third parties</a></li>
+            <li><a href="#s5"><span class="pp-toc-num">05</span>Data security &amp; ISO 27001</a></li>
+            <li><a href="#s6"><span class="pp-toc-num">06</span>Data retention</a></li>
+            <li><a href="#s7"><span class="pp-toc-num">07</span>Your rights</a></li>
+            <li><a href="#s8"><span class="pp-toc-num">08</span>Cookies</a></li>
+            <li><a href="#s9"><span class="pp-toc-num">09</span>Children's privacy</a></li>
+            <li><a href="#s10"><span class="pp-toc-num">10</span>Changes to this policy</a></li>
+            <li><a href="#s11"><span class="pp-toc-num">11</span>Contact us</a></li>
+            <li><a href="#glance"><span class="pp-toc-num">—</span>At a glance</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main content -->
+        <div class="pp-content">
+
+          <!-- Commitment -->
+          <div class="pp-callout" style="margin-bottom:48px;">
+            <div class="pp-callout-label">Our Commitment to You</div>
+            <h3>Your data belongs to you. We are trusted with it — not entitled to it.</h3>
+            <p>This Privacy Policy explains what data Storemate collects, how we use it, how we protect it, and the rights you have over it. We have written it in plain language — not legal jargon. If you have any questions after reading this, contact us at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);font-weight:600;">hello@storemate.lk</a>.</p>
+          </div>
+
+          <!-- 01 Who We Are -->
+          <section class="pp-section" id="s1">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">01</div>
+              <h2>Who We Are</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate is an order and inventory management platform for Sri Lankan online sellers, operated by <strong>Parallax Technologies (Pvt) Ltd</strong>, a company registered in Sri Lanka.</p>
+            </div>
+            <div class="pp-company-grid">
+              <div class="pp-company-cell"><div class="pp-company-key">Company</div><div class="pp-company-val">Parallax Technologies (Pvt) Ltd</div></div>
+              <div class="pp-company-cell"><div class="pp-company-key">Platform</div><div class="pp-company-val">Storemate — storemate.lk</div></div>
+              <div class="pp-company-cell"><div class="pp-company-key">Address</div><div class="pp-company-val">Kottawa, Pannipitiya, Sri Lanka</div></div>
+              <div class="pp-company-cell"><div class="pp-company-key">Email</div><div class="pp-company-val"><a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a></div></div>
+              <div class="pp-company-cell" style="grid-column:1/-1;border-right:none;"><div class="pp-company-key">Website</div><div class="pp-company-val"><a href="https://storemate.lk" style="color:var(--color-blue);">https://storemate.lk</a></div></div>
+            </div>
+          </section>
+
+          <!-- 02 What Data We Collect -->
+          <section class="pp-section" id="s2">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">02</div>
+              <h2>What Data We Collect</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We collect only the data necessary to provide the Storemate service. We do not collect data we do not need.</p>
+            </div>
+            <div class="pp-data-grid">
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Account Data</div>
+                <p>Name, email address, phone number, and business name provided when you register.</p>
+              </div>
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Order Data</div>
+                <p>Order details, customer names, delivery addresses, product information, and payment method records that you enter into the platform to manage your business.</p>
+              </div>
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Customer Data</div>
+                <p>The names, phone numbers, and delivery addresses of your buyers — entered by you or collected through the Self-Order Form feature. This data belongs to you and your customers.</p>
+              </div>
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Usage Data</div>
+                <p>How you interact with the platform — pages visited, features used, session times. Used to improve the product. Never sold.</p>
+              </div>
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Device Data</div>
+                <p>Browser type, operating system, IP address, and device type — collected automatically for security and performance purposes.</p>
+              </div>
+              <div class="pp-data-card">
+                <div class="pp-data-card-title">Payment Data</div>
+                <p>If you are on a paid plan, payment is processed by a third-party payment provider. Storemate does not store card numbers or full payment details.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 How We Use Your Data -->
+          <section class="pp-section" id="s3">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">03</div>
+              <h2>How We Use Your Data</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We use your data only for the purposes listed below. We do not use your data for advertising, profiling, or any purpose unrelated to operating Storemate.</p>
+            </div>
+            <div class="pp-use-list">
+              <div class="pp-use-item"><div class="pp-use-num">1</div><div><div class="pp-use-title">To provide the Storemate service</div><div class="pp-use-desc">Processing orders, managing inventory, syncing with courier networks, generating waybills, and all core platform functions.</div></div></div>
+              <div class="pp-use-item"><div class="pp-use-num">2</div><div><div class="pp-use-title">To set up and support your account</div><div class="pp-use-desc">Onboarding, implementation sessions, technical support, and responding to your questions and requests.</div></div></div>
+              <div class="pp-use-item"><div class="pp-use-num">3</div><div><div class="pp-use-title">To send service communications</div><div class="pp-use-desc">Order confirmations, delivery updates, platform notifications, and important changes to the service. Not marketing unless you opt in.</div></div></div>
+              <div class="pp-use-item"><div class="pp-use-num">4</div><div><div class="pp-use-title">To improve the product</div><div class="pp-use-desc">Analysing how features are used to make Storemate better. This analysis is aggregated and never tied to individual sellers.</div></div></div>
+              <div class="pp-use-item"><div class="pp-use-num">5</div><div><div class="pp-use-title">To ensure security</div><div class="pp-use-desc">Detecting fraud, preventing unauthorised access, and protecting the platform and your data from threats.</div></div></div>
+              <div class="pp-use-item"><div class="pp-use-num">6</div><div><div class="pp-use-title">To comply with legal obligations</div><div class="pp-use-desc">Where Sri Lankan law or a valid legal process requires us to retain or disclose data, we will do so — and inform you where possible.</div></div></div>
+            </div>
+            <div class="pp-callout pp-callout--red" style="margin-top:24px;">
+              <div class="pp-callout-label">Important — What We Never Do</div>
+              <p>We never sell your data to third parties. We never use your order data, customer data, or business data for advertising purposes — ours or anyone else's. We never share your business data with competitors. We never use your data to build profiles for external advertising networks.</p>
+            </div>
+          </section>
+
+          <!-- 04 Data Sharing -->
+          <section class="pp-section" id="s4">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">04</div>
+              <h2>Data Sharing and Third Parties</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We share your data only when necessary to provide the service — with your knowledge, or where legally required. <strong>We do not sell data. Ever.</strong></p>
+            </div>
+            <div class="pp-third-list">
+              <div class="pp-third-item"><div class="pp-third-title">Courier networks</div><div class="pp-third-desc">Royal Express, TransEx, FDE, DomEx, Koombiyo. Order and delivery data is shared to process shipments. This is core to the service you signed up for.</div></div>
+              <div class="pp-third-item"><div class="pp-third-title">Cloud infrastructure</div><div class="pp-third-desc">Storemate runs on secure cloud servers. Your data is stored on servers with appropriate security controls and data processing agreements in place.</div></div>
+              <div class="pp-third-item"><div class="pp-third-title">Payment processors</div><div class="pp-third-desc">If you pay for a Storemate subscription, payment data is handled by a third-party payment processor. We do not store full card details.</div></div>
+              <div class="pp-third-item"><div class="pp-third-title">Legal authorities</div><div class="pp-third-desc">Where required by Sri Lankan law or a valid legal process, we may be required to disclose data. We will inform you where we are legally permitted to do so.</div></div>
+            </div>
+          </section>
+
+          <!-- 05 Data Security -->
+          <section class="pp-section" id="s5">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">05</div>
+              <h2>Data Security and ISO 27001</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-callout" style="margin-bottom:24px;">
+              <div class="pp-callout-label">Our Security Commitment</div>
+              <h3>We are working toward ISO 27001 certification — the world's most recognised information security standard.</h3>
+              <p>Not because we have to. Because your business data deserves it. Security is not a checkbox at Storemate. It is a brand value. Every seller who trusts us with their order data, customer details, and business trends is placing real trust in us.</p>
+            </div>
+            <div class="pp-body"><p>Our current security measures include:</p></div>
+            <ul class="pp-bullets">
+              <li>HTTPS encryption on all data transmission between your browser and our servers.</li>
+              <li>Encrypted data storage — your data is not stored in plain text.</li>
+              <li>Access controls — our team members can only access data necessary for their role.</li>
+              <li>Regular security reviews and vulnerability assessments.</li>
+              <li>Secure backup systems to prevent data loss.</li>
+              <li>Incident response procedures — we have a process for identifying, containing, and communicating any data security incidents.</li>
+            </ul>
+            <div class="pp-callout" style="margin-top:24px;">
+              <div class="pp-callout-label">Data Correction Commitment</div>
+              <p>If there is ever a data error in your account — we correct it manually if needed. No "the system cannot do that." No deflection. We own it and we fix it.</p>
+            </div>
+            <div class="pp-body" style="margin-top:20px;">
+              <p>Despite our best efforts, no system is 100% immune to security risks. If a security incident occurs that affects your data, we will notify you as quickly as possible and take all steps to contain and resolve it.</p>
+            </div>
+          </section>
+
+          <!-- 06 Data Retention -->
+          <section class="pp-section" id="s6">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">06</div>
+              <h2>Data Retention</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We keep your data only as long as necessary to provide the service or as required by law.</p>
+            </div>
+            <div class="pp-retention">
+              <div class="pp-retention-row"><div class="pp-retention-key">Active account data</div><div class="pp-retention-val">Kept for as long as your account is active and you are using Storemate.</div></div>
+              <div class="pp-retention-row"><div class="pp-retention-key">Order &amp; transaction data</div><div class="pp-retention-val">Retained for a minimum of 3 years to support your business records and comply with Sri Lankan commercial regulations.</div></div>
+              <div class="pp-retention-row"><div class="pp-retention-key">Account data after closure</div><div class="pp-retention-val">When you close your account, we delete or anonymise your personal data within 90 days, unless legal retention is required.</div></div>
+              <div class="pp-retention-row"><div class="pp-retention-key">Backup data</div><div class="pp-retention-val">Backups are retained for up to 90 days before being permanently deleted.</div></div>
+              <div class="pp-retention-row"><div class="pp-retention-key">Legal hold</div><div class="pp-retention-val">Where required by law or legal process, data may be retained beyond the above periods until the matter is resolved.</div></div>
+            </div>
+          </section>
+
+          <!-- 07 Your Rights -->
+          <section class="pp-section" id="s7">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">07</div>
+              <h2>Your Rights</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>You have rights over your data. We take these seriously. To exercise any of the rights below, contact us at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a> and we will respond within 14 days.</p>
+            </div>
+            <div class="pp-rights">
+              <div class="pp-right-item"><div class="pp-right-num">1</div><div><div class="pp-right-title">Right to access</div><div class="pp-right-desc">You can request a copy of all personal data we hold about you and your business account.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">2</div><div><div class="pp-right-title">Right to correction</div><div class="pp-right-desc">If any data we hold is inaccurate or incomplete, you have the right to have it corrected. You can update most data directly in the platform or contact us for assistance.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">3</div><div><div class="pp-right-title">Right to deletion</div><div class="pp-right-desc">You can request deletion of your personal data. We will delete it within 30 days unless legal retention requirements apply. Note: deleted order data cannot be recovered.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">4</div><div><div class="pp-right-title">Right to data portability</div><div class="pp-right-desc">You can request your data in a structured, machine-readable format so you can transfer it to another service. Contact us at hello@storemate.lk.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">5</div><div><div class="pp-right-title">Right to restrict processing</div><div class="pp-right-desc">In certain circumstances, you can request that we limit how we process your data while a concern is being resolved.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">6</div><div><div class="pp-right-title">Right to object</div><div class="pp-right-desc">You have the right to object to certain types of data processing, including any processing for marketing purposes.</div></div></div>
+              <div class="pp-right-item"><div class="pp-right-num">7</div><div><div class="pp-right-title">Right to withdraw consent</div><div class="pp-right-desc">Where we process data based on your consent, you can withdraw that consent at any time. This does not affect processing carried out before withdrawal.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 08 Cookies -->
+          <section class="pp-section" id="s8">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">08</div>
+              <h2>Cookies</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate uses cookies — small text files stored on your device — to make the platform work correctly and improve your experience.</p>
+            </div>
+            <div class="pp-cookies">
+              <div class="pp-cookie-row"><div class="pp-cookie-title">Essential cookies</div><div class="pp-cookie-desc">Required for the platform to function. Session management, security tokens, login state. Cannot be disabled without breaking the platform.</div></div>
+              <div class="pp-cookie-row"><div class="pp-cookie-title">Functional cookies</div><div class="pp-cookie-desc">Remember your preferences, saved filters, and settings so you do not have to reset them every session. This includes Smart Filter Memory.</div></div>
+              <div class="pp-cookie-row"><div class="pp-cookie-title">Analytics cookies</div><div class="pp-cookie-desc">Anonymised data about how the platform is used — which features are popular, where sellers get stuck. Used to improve the product. No personal data.</div></div>
+            </div>
+            <div class="pp-body" style="margin-top:18px;">
+              <p>We do not use advertising or tracking cookies. We do not share cookie data with advertising networks.</p>
+            </div>
+          </section>
+
+          <!-- 09 Children's Privacy -->
+          <section class="pp-section" id="s9">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">09</div>
+              <h2>Children's Privacy</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate is a business platform intended for use by adults operating online businesses. We do not knowingly collect personal data from anyone under the age of 18.</p>
+              <p>If you believe a person under 18 has provided us with personal data, please contact us immediately at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a> and we will delete it promptly.</p>
+            </div>
+          </section>
+
+          <!-- 10 Changes -->
+          <section class="pp-section" id="s10">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">10</div>
+              <h2>Changes to This Policy</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We may update this Privacy Policy from time to time. When we do:</p>
+            </div>
+            <ul class="pp-bullets">
+              <li>We will update the effective date at the top of this document.</li>
+              <li>We will notify you by email if the changes are material — changes that meaningfully affect how we collect, use, or share your data.</li>
+              <li>For minor changes (clarifications, formatting), we will update the policy without individual notification.</li>
+              <li>Continued use of Storemate after notification of changes constitutes acceptance of the updated policy.</li>
+              <li>Previous versions of this policy are available on request at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a>.</li>
+            </ul>
+          </section>
+
+          <!-- 11 Contact -->
+          <section class="pp-section" id="s11">
+            <div class="pp-section-heading">
+              <div class="pp-section-num">11</div>
+              <h2>Contact Us</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>If you have any questions about this Privacy Policy, want to exercise your data rights, or have a concern about how your data is handled — contact us. We will respond within 14 days.</p>
+            </div>
+            <div class="pp-contact-card">
+              <div class="pp-contact-label">Privacy &amp; Data Contact — Parallax Technologies (Pvt) Ltd</div>
+              <div class="pp-contact-rows">
+                <div class="pp-contact-row"><div class="pp-contact-key">Email</div><div class="pp-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="pp-contact-note">For all privacy and data requests</div></div>
+                <div class="pp-contact-row"><div class="pp-contact-key">Subject line</div><div class="pp-contact-val">Privacy Request — [your name]</div><div class="pp-contact-note">Use this for faster routing</div></div>
+                <div class="pp-contact-row"><div class="pp-contact-key">Website</div><div class="pp-contact-val"><a href="https://storemate.lk/privacy">storemate.lk/privacy</a></div><div class="pp-contact-note">This policy and related documents</div></div>
+                <div class="pp-contact-row"><div class="pp-contact-key">Address</div><div class="pp-contact-val">Kottawa, Pannipitiya, Sri Lanka</div><div class="pp-contact-note">Parallax Technologies (Pvt) Ltd</div></div>
+              </div>
+            </div>
+            <div class="pp-body" style="margin-top:20px;">
+              <p>We are committed to responding to all privacy requests promptly and honestly. No question is too small. Your data rights are real rights — not a formality.</p>
+            </div>
+          </section>
+
+          <!-- At a Glance -->
+          <section class="pp-section" id="glance">
+            <div class="pp-section-heading">
+              <div class="pp-section-num" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c);">—</div>
+              <h2>Privacy at a Glance</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>A plain-language summary of this Privacy Policy for quick reference.</p>
+            </div>
+            <div class="pp-glance">
+              <div class="pp-glance-row"><div class="pp-glance-q">What data we collect</div><div class="pp-glance-a">Account details, order data, customer addresses, usage analytics, device info.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Why we collect it</div><div class="pp-glance-a">To operate Storemate, support your account, improve the product, and ensure security.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Do we sell your data?</div><div class="pp-glance-a"><strong>No. Never. To anyone. Under any circumstances.</strong></div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Who sees your data?</div><div class="pp-glance-a">Our team (on a need-to-know basis), courier partners, and cloud infrastructure. Nobody else.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">How long we keep it</div><div class="pp-glance-a">As long as your account is active + 3 years for order records. 90 days after account closure.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Is it secure?</div><div class="pp-glance-a">Yes. HTTPS, encrypted storage, access controls, ISO 27001 in progress.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Can you delete it?</div><div class="pp-glance-a">Yes. Contact hello@storemate.lk and we will delete within 30 days.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Can you export it?</div><div class="pp-glance-a">Yes. Contact hello@storemate.lk and we will provide a portable copy.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Cookies?</div><div class="pp-glance-a">Essential (required), functional (preferences), and anonymised analytics. No ad tracking.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Changes to this policy?</div><div class="pp-glance-a">We email you for material changes. Effective date always shown at top.</div></div>
+            </div>
+            <div class="pp-callout pp-callout--dark" style="margin-top:32px;">
+              <div class="pp-callout-label">Our Data Commitment — Parallax Technologies (Pvt) Ltd</div>
+              <h3>"Your data belongs to you. We are trusted with it — not entitled to it."</h3>
+              <p>We will always be transparent about what we collect, why we collect it, and what we do with it. We will never sell it, never misuse it, and always protect it to the highest standard.</p>
+              <p style="margin-top:14px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Namal Attanayake · CEO &amp; Founder · Parallax Technologies (Pvt) Ltd · Effective: June 2026 · Version 1.0</p>
+            </div>
+          </section>
+
+        </div><!-- /.pp-content -->
+      </div><!-- /.pp-layout -->
+    </div><!-- /.container -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></a>
+            </div>
+          </div>
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+</body>
+</html>

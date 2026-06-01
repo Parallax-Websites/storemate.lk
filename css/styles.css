@@ -1470,6 +1470,76 @@ button,
   .hero-actions {
     align-items: stretch;
   }
-
 }
+
+/* ── MOBILE MEGA MENU ─────────────────────────── */
+@media (max-width: 760px) {
+
+  /* Drop the floating panel — become inline accordion */
+  .nav-dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    display: none !important;
+  }
+
+  /* Show when trigger is clicked (JS adds .is-open) */
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    display: block !important;
+  }
+
+  /* Chevron rotates when open */
+  .nav-dropdown.is-open .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  /* Flatten the 3-column mega grid into a single column */
+  .nav-mega-wrap .nav-dropdown-menu {
+    padding: 0 0 8px !important;
+  }
+
+  .nav-mega-cols {
+    display: block !important;
+  }
+
+  .nav-mega-col {
+    padding: 0 !important;
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .nav-mega-col:last-child {
+    border-bottom: none !important;
+    display: block !important;
+    grid-template-columns: unset !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-mega-label {
+    padding: 10px 16px 6px !important;
+    margin-bottom: 2px !important;
+    border-bottom: none !important;
+  }
+
+  .nav-mega-link {
+    padding: 9px 16px !important;
+    border-radius: 8px !important;
+    margin: 0 6px 2px !important;
+  }
+
+  .nav-mega-icon {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 7px !important;
+  }
 }

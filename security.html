@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>ISO 27001 Information Security | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── HERO ─────────────────────────────────────── */
+    .sec-hero {
+      background: linear-gradient(150deg, #04091a 0%, #07112b 50%, #002a5e 100%);
+      padding: 80px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 40%, rgba(0,180,216,0.12), transparent 50%),
+                  radial-gradient(circle at 20% 80%, rgba(0,62,122,0.3), transparent 50%);
+      pointer-events: none;
+    }
+    .sec-hero-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00b4d8 40%, var(--color-blue) 100%);
+    }
+    .sec-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .sec-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.3);
+      border-radius: 999px;
+      padding: 5px 16px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 20px;
+    }
+    .sec-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+    .sec-hero-sub {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+    .sec-hero-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: #ffffff;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    .sec-hero-quote::before {
+      content: '';
+      width: 3px; height: 32px;
+      background: #00b4d8;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    /* Status badge panel */
+    .sec-status-panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 20px;
+      padding: 28px 32px;
+      text-align: center;
+      flex-shrink: 0;
+      min-width: 200px;
+    }
+    .sec-status-label {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 12px;
+    }
+    .sec-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.15);
+      border: 1px solid rgba(0,180,216,0.4);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #00b4d8;
+      margin-bottom: 10px;
+    }
+    .sec-status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #00b4d8;
+      animation: sec-blink 2s ease-in-out infinite;
+    }
+    @keyframes sec-blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .sec-status-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .sec-status-iso {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.08);
+      letter-spacing: -2px;
+      margin-top: 16px;
+      line-height: 1;
+    }
+
+    /* ── LAYOUT ───────────────────────────────────── */
+    .sec-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 52px;
+      align-items: start;
+      padding: 72px 0 96px;
+    }
+    .sec-toc { position: sticky; top: 88px; }
+    .sec-toc-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+      margin-bottom: 14px;
+    }
+    .sec-toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .sec-toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-gray-500);
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+      line-height: 1.3;
+    }
+    .sec-toc-list a:hover { color: var(--color-blue); background: var(--color-gray-100); }
+    .sec-toc-num { font-size: 0.68rem; font-weight: 800; color: #00b4d8; min-width: 18px; flex-shrink: 0; }
+
+    /* ── SECTIONS ─────────────────────────────────── */
+    .sec-content { min-width: 0; }
+    .sec-section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-gray-200); }
+    .sec-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .sec-section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .sec-section-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-blue), #00b4d8);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .sec-section-heading h2 { font-size: 1.35rem; font-weight: 800; color: var(--color-charcoal); line-height: 1; }
+    .sec-rule { height: 1px; background: var(--color-gray-200); margin-bottom: 24px; }
+    .sec-body { font-size: 0.95rem; color: var(--color-gray-700); line-height: 1.8; }
+    .sec-body p { margin-bottom: 14px; }
+    .sec-body p:last-child { margin-bottom: 0; }
+    .sec-body strong { color: var(--color-charcoal); }
+
+    /* callout */
+    .sec-callout {
+      background: #e8f4fc;
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+    .sec-callout--dark { background: var(--color-charcoal); border-color: transparent; }
+    .sec-callout-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+    .sec-callout--dark .sec-callout-label { color: #00b4d8; }
+    .sec-callout h3 { font-size: 1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 6px; }
+    .sec-callout--dark h3 { color: #ffffff; }
+    .sec-callout p { font-size: 0.88rem; color: var(--color-gray-700); line-height: 1.7; margin: 0; }
+    .sec-callout--dark p { color: rgba(255,255,255,0.65); }
+    .sec-callout p + p { margin-top: 8px; }
+
+    /* CIA triad */
+    .sec-cia {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .sec-cia-card {
+      background: var(--color-charcoal);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .sec-cia-letter {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #00b4d8;
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -2px;
+    }
+    .sec-cia-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .sec-cia-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    /* numbered items */
+    .sec-items { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .sec-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .sec-item-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .sec-item-title { font-size: 0.88rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 4px; }
+    .sec-item-desc { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.65; }
+
+    /* security measures grid */
+    .sec-measures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .sec-measure {
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--color-blue);
+    }
+    .sec-measure-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+    .sec-measure-title { font-size: 0.85rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 5px; }
+    .sec-measure-desc { font-size: 0.82rem; color: var(--color-gray-500); line-height: 1.6; }
+
+    /* 14 domains grid */
+    .sec-domains {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .sec-domain {
+      border: 1px solid var(--color-gray-200);
+      border-radius: 12px;
+      padding: 16px 18px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .sec-domain:hover { border-color: var(--color-blue); box-shadow: 0 4px 16px rgba(33,83,192,0.08); }
+    .sec-domain-code {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #00b4d8;
+      margin-bottom: 4px;
+    }
+    .sec-domain-title { font-size: 0.88rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 6px; }
+    .sec-domain-desc { font-size: 0.78rem; color: var(--color-gray-500); line-height: 1.55; margin-bottom: 10px; }
+    .sec-domain-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sec-domain-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--color-blue);
+      background: rgba(33,83,192,0.08);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+    .sec-domain-tag::before { content: '✓'; font-size: 0.6rem; }
+
+    /* compliance status strip */
+    .sec-compliance-strip {
+      background: var(--color-charcoal);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .sec-compliance-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(0,180,216,0.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: #00b4d8;
+    }
+    .sec-compliance-text-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 5px;
+    }
+    .sec-compliance-text p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
+
+    /* roadmap phases */
+    .sec-roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 24px;
+    }
+    .sec-phase {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0;
+    }
+    .sec-phase-left {
+      padding: 24px 24px 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+    }
+    .sec-phase-left::after {
+      content: '';
+      position: absolute;
+      right: -1px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--color-gray-200);
+    }
+    .sec-phase:first-child .sec-phase-left::after { top: 50%; }
+    .sec-phase:last-child  .sec-phase-left::after { bottom: 50%; }
+    .sec-phase-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--color-gray-300);
+      background: #fff;
+      position: absolute;
+      right: -7px; top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    .sec-phase--done  .sec-phase-dot { background: #22c55e; border-color: #22c55e; }
+    .sec-phase--active .sec-phase-dot { background: #00b4d8; border-color: #00b4d8; box-shadow: 0 0 0 4px rgba(0,180,216,0.2); }
+    .sec-phase--sched  .sec-phase-dot { background: #f59e0b; border-color: #f59e0b; }
+    .sec-phase--target .sec-phase-dot { background: #fff; border-color: var(--color-gray-300); }
+
+    .sec-phase-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: right;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .sec-phase--done  .sec-phase-label { color: #22c55e; }
+    .sec-phase--active .sec-phase-label { color: #00b4d8; }
+    .sec-phase--sched  .sec-phase-label { color: #f59e0b; }
+    .sec-phase--target .sec-phase-label { color: var(--color-gray-500); }
+
+    .sec-phase-name { font-size: 0.82rem; font-weight: 700; color: var(--color-charcoal); text-align: right; }
+    .sec-phase-status {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-align: right;
+      margin-top: 2px;
+    }
+    .sec-phase--done  .sec-phase-status { color: #22c55e; }
+    .sec-phase--active .sec-phase-status { color: #00b4d8; }
+    .sec-phase--sched  .sec-phase-status { color: #f59e0b; }
+    .sec-phase--target .sec-phase-status { color: var(--color-gray-500); }
+
+    .sec-phase-right {
+      padding: 20px 0 20px 32px;
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+    .sec-phase:last-child .sec-phase-right { border-bottom: none; }
+    .sec-phase-desc { font-size: 0.88rem; color: var(--color-gray-700); line-height: 1.7; margin-bottom: 12px; }
+    .sec-phase-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sec-phase-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .sec-phase--done  .sec-phase-tag { background: rgba(34,197,94,0.1); color: #16a34a; }
+    .sec-phase--active .sec-phase-tag { background: rgba(0,180,216,0.1); color: #0097b2; }
+    .sec-phase--sched  .sec-phase-tag { background: rgba(245,158,11,0.1); color: #b45309; }
+    .sec-phase--target .sec-phase-tag { background: var(--color-gray-100); color: var(--color-gray-500); }
+
+    /* bullet list */
+    .sec-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .sec-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--color-gray-700);
+      line-height: 1.7;
+    }
+    .sec-bullets li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .sec-bullets li strong { color: var(--color-charcoal); }
+
+    /* FAQ */
+    .sec-faq { margin-top: 20px; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--color-gray-200); border-radius: 14px; overflow: hidden; }
+    .sec-faq-item { border-bottom: 1px solid var(--color-gray-200); }
+    .sec-faq-item:last-child { border-bottom: none; }
+    .sec-faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .sec-faq-q:hover { background: var(--color-gray-100); }
+    .sec-faq-q-text { font-size: 0.9rem; font-weight: 700; color: var(--color-charcoal); font-style: italic; }
+    .sec-faq-chevron {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--color-gray-100);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      color: var(--color-gray-500);
+    }
+    .sec-faq-item.open .sec-faq-chevron { transform: rotate(180deg); }
+    .sec-faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.88rem;
+      color: var(--color-gray-700);
+      line-height: 1.75;
+    }
+    .sec-faq-item.open .sec-faq-a { display: block; }
+
+    /* contact card */
+    .sec-contact-card {
+      background: var(--color-charcoal);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .sec-contact-label {
+      background: rgba(0,180,216,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 24px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+    }
+    .sec-contact-row {
+      display: grid;
+      grid-template-columns: 200px 1fr auto;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: center;
+    }
+    .sec-contact-row:last-child { border-bottom: none; }
+    .sec-contact-key { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.5); }
+    .sec-contact-val { font-size: 0.88rem; font-weight: 600; color: #ffffff; }
+    .sec-contact-val a { color: #00b4d8; text-decoration: none; }
+    .sec-contact-val a:hover { text-decoration: underline; }
+    .sec-contact-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-align: right; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .sec-hero-inner { grid-template-columns: 1fr; }
+      .sec-status-panel { display: none; }
+      .sec-layout { grid-template-columns: 1fr; gap: 0; padding: 52px 0 80px; }
+      .sec-toc { position: static; display: none; }
+      .sec-measures { grid-template-columns: 1fr; }
+      .sec-domains { grid-template-columns: 1fr; }
+      .sec-cia { grid-template-columns: 1fr; }
+      .sec-contact-row { grid-template-columns: 160px 1fr; }
+      .sec-contact-note { display: none; }
+      .sec-phase { grid-template-columns: 120px 1fr; }
+    }
+    @media (max-width: 600px) {
+      .sec-hero { padding: 60px 0 60px; }
+      .sec-phase-right { padding-left: 20px; }
+      .sec-contact-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span></a>
+                <a href="returns-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span><span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span></a>
+                <a href="courier-sync.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span></a>
+                <a href="waybill-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span></a>
+                <a href="personalization.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span><span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link"><span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span></a>
+                <a href="trackmate.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span></a>
+                <a href="pricing.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span><span class="nav-mega-text"><strong>Pricing</strong><span>Simple, honest pricing</span></span></a>
+                <a href="contact.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><span class="nav-mega-text"><strong>Contact</strong><span>Talk to the team</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://oms.storemate.cloud/register" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="sec-hero">
+      <div class="sec-hero-line"></div>
+      <div class="container">
+        <div class="sec-hero-inner">
+          <div>
+            <div class="sec-hero-eyebrow">Information Security</div>
+            <h1>ISO 27001</h1>
+            <p class="sec-hero-sub">Information Security Commitment Statement</p>
+            <div class="sec-hero-quote">"Your business data is treated like it is our own."</div>
+          </div>
+          <div class="sec-status-panel">
+            <div class="sec-status-label">Certification Status</div>
+            <div class="sec-status-badge">
+              <span class="sec-status-dot"></span>
+              In Progress
+            </div>
+            <div class="sec-status-desc">Active pursuit — 2026</div>
+            <div class="sec-status-iso">ISO<br>27001</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="sec-layout">
+
+        <!-- TOC -->
+        <aside class="sec-toc">
+          <p class="sec-toc-label">Contents</p>
+          <ul class="sec-toc-list">
+            <li><a href="#s1"><span class="sec-toc-num">01</span>What ISO 27001 is</a></li>
+            <li><a href="#s2"><span class="sec-toc-num">02</span>Why we are pursuing it</a></li>
+            <li><a href="#s3"><span class="sec-toc-num">03</span>Current security posture</a></li>
+            <li><a href="#s4"><span class="sec-toc-num">04</span>The 14 control domains</a></li>
+            <li><a href="#s5"><span class="sec-toc-num">05</span>Our commitments to you</a></li>
+            <li><a href="#s6"><span class="sec-toc-num">06</span>Certification roadmap</a></li>
+            <li><a href="#s7"><span class="sec-toc-num">07</span>What this means for you</a></li>
+            <li><a href="#s8"><span class="sec-toc-num">08</span>Contact &amp; questions</a></li>
+          </ul>
+        </aside>
+
+        <!-- Content -->
+        <div class="sec-content">
+
+          <!-- Commitment callout -->
+          <div class="sec-callout" style="margin-bottom:48px;">
+            <div class="sec-callout-label">Our Security Commitment</div>
+            <h3>We treat every seller's data as if it were our own business on the line.</h3>
+            <p>ISO 27001 is not a marketing credential for Storemate. It is a structured commitment to doing security properly — with independent verification that we are. This document explains exactly what that means.</p>
+          </div>
+
+          <!-- 01 What ISO 27001 Is -->
+          <section class="sec-section" id="s1">
+            <div class="sec-section-heading"><div class="sec-section-num">01</div><h2>What ISO 27001 Is</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>ISO/IEC 27001 is the international standard for Information Security Management Systems (ISMS). Published by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC), it defines a systematic approach to managing sensitive information so that it remains secure.</p>
+              <p>Certification to ISO 27001 means an independent, accredited body has audited an organisation's information security practices and verified they meet the standard's requirements. It is the most widely recognised information security certification in the world — trusted by enterprises, governments, and regulators across every industry.</p>
+            </div>
+            <div class="sec-cia">
+              <div class="sec-cia-card">
+                <div class="sec-cia-letter">C</div>
+                <div class="sec-cia-title">Confidentiality</div>
+                <div class="sec-cia-desc">Information is accessible only to those authorised to access it.</div>
+              </div>
+              <div class="sec-cia-card">
+                <div class="sec-cia-letter">I</div>
+                <div class="sec-cia-title">Integrity</div>
+                <div class="sec-cia-desc">Information is accurate and complete — protected from unauthorised modification.</div>
+              </div>
+              <div class="sec-cia-card">
+                <div class="sec-cia-letter">A</div>
+                <div class="sec-cia-title">Availability</div>
+                <div class="sec-cia-desc">Authorised users have reliable access to information when they need it.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 02 Why We Are Pursuing -->
+          <section class="sec-section" id="s2">
+            <div class="sec-section-heading"><div class="sec-section-num">02</div><h2>Why We Are Pursuing ISO 27001</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>Our sellers trust us with some of the most sensitive data their businesses hold — customer names, delivery addresses, order histories, transaction records, and business performance data. That trust is not given lightly. We do not take it lightly.</p>
+            </div>
+            <div class="sec-items">
+              <div class="sec-item"><div class="sec-item-num">1</div><div><div class="sec-item-title">Because our sellers deserve it</div><div class="sec-item-desc">Every Sri Lankan entrepreneur using Storemate has built something real. Their customer data, their order history, their business trends — these deserve bank-level protection. ISO 27001 is the structured way to deliver that.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">2</div><div><div class="sec-item-title">Because we are built from operational experience</div><div class="sec-item-desc">We spent five years processing 25 million orders through Curfox alongside Sri Lankan sellers. We have seen firsthand what is at stake when business data is not protected. ISO 27001 formalises the standards we were already building toward.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">3</div><div><div class="sec-item-title">Because it cannot be self-declared</div><div class="sec-item-desc">Anyone can say they take security seriously. ISO 27001 requires an independent accredited auditor to verify it. We want our commitment to be verifiable — not just stated.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">4</div><div><div class="sec-item-title">Because the market requires it</div><div class="sec-item-desc">As Storemate expands regionally, enterprise customers and government-adjacent organisations require ISO 27001 certification as a baseline for data handling. This investment is both a commitment to our sellers and a strategic necessity.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 03 Current Security Posture -->
+          <section class="sec-section" id="s3">
+            <div class="sec-section-heading"><div class="sec-section-num">03</div><h2>Our Current Security Posture</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>While we work toward formal ISO 27001 certification, the following security measures are already in place and operational. <strong>This is not a future promise — it is current practice.</strong></p>
+            </div>
+            <div class="sec-measures">
+              <div class="sec-measure"><div class="sec-measure-num">1</div><div class="sec-measure-title">HTTPS everywhere</div><div class="sec-measure-desc">All data transmitted between users and Storemate is encrypted using TLS. There is no unencrypted data transmission on our platform.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">2</div><div class="sec-measure-title">Encrypted data storage</div><div class="sec-measure-desc">Data at rest is encrypted. Your orders, customer details, and business records are not stored in plain text under any circumstances.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">3</div><div class="sec-measure-title">Role-based access control</div><div class="sec-measure-desc">Our team members can only access the data and systems necessary for their specific role. No one person has access to everything.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">4</div><div class="sec-measure-title">Multi-factor authentication</div><div class="sec-measure-desc">Internal systems require MFA. We enforce this for all team members with access to production systems.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">5</div><div class="sec-measure-title">Security patch management</div><div class="sec-measure-desc">We maintain a regular schedule for applying security patches and updates to all systems. Known vulnerabilities are addressed promptly.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">6</div><div class="sec-measure-title">Secure backup systems</div><div class="sec-measure-desc">Data is backed up regularly with encrypted backups stored separately from primary systems. Backup integrity is verified periodically.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">7</div><div class="sec-measure-title">Incident response procedures</div><div class="sec-measure-desc">We have documented procedures for identifying, containing, and communicating security incidents, including seller notification requirements.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">8</div><div class="sec-measure-title">Vendor security assessment</div><div class="sec-measure-desc">Third-party services and integrations are assessed for security standards before integration. Courier APIs and payment processors are evaluated regularly.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">9</div><div class="sec-measure-title">Access review</div><div class="sec-measure-desc">We conduct periodic reviews of who has access to what within our systems. Access is revoked immediately when team members change roles or leave.</div></div>
+              <div class="sec-measure"><div class="sec-measure-num">10</div><div class="sec-measure-title">Security awareness training</div><div class="sec-measure-desc">All team members receive security awareness training. Phishing simulation and secure coding practices are part of our ongoing programme.</div></div>
+            </div>
+          </section>
+
+          <!-- 04 The 14 Control Domains -->
+          <section class="sec-section" id="s4">
+            <div class="sec-section-heading"><div class="sec-section-num">04</div><h2>The 14 ISO 27001 Control Domains</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>ISO 27001:2013 defines 114 security controls across 14 domains. ISO 27001:2022 (the current version) reorganises these into 93 controls across 4 themes. The following outlines our approach to each domain area.</p>
+            </div>
+            <div class="sec-domains">
+              <div class="sec-domain"><div class="sec-domain-code">A.5</div><div class="sec-domain-title">Information security policies</div><div class="sec-domain-desc">Documented security policy approved by management. Reviewed annually.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Written ISMS policy</span><span class="sec-domain-tag">Management sign-off</span><span class="sec-domain-tag">Annual review</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.6</div><div class="sec-domain-title">Organisation of information security</div><div class="sec-domain-desc">Defined security roles and responsibilities across the team.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Roles assigned</span><span class="sec-domain-tag">Remote work policies</span><span class="sec-domain-tag">Separation of duties</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.7</div><div class="sec-domain-title">Human resource security</div><div class="sec-domain-desc">Security screening, training, and offboarding procedures.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Background checks</span><span class="sec-domain-tag">Security training</span><span class="sec-domain-tag">Access revocation on exit</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.8</div><div class="sec-domain-title">Asset management</div><div class="sec-domain-desc">Inventory of information assets with assigned ownership and classification.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Asset register</span><span class="sec-domain-tag">Data classification</span><span class="sec-domain-tag">Acceptable use policy</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.9</div><div class="sec-domain-title">Access control</div><div class="sec-domain-desc">Role-based access to systems and data. Least privilege principle applied.</div><div class="sec-domain-tags"><span class="sec-domain-tag">MFA enforced</span><span class="sec-domain-tag">Least privilege</span><span class="sec-domain-tag">Quarterly access review</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.10</div><div class="sec-domain-title">Cryptography</div><div class="sec-domain-desc">Encryption standards for data in transit and at rest.</div><div class="sec-domain-tags"><span class="sec-domain-tag">TLS everywhere</span><span class="sec-domain-tag">Encrypted backups</span><span class="sec-domain-tag">Key management policy</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.11</div><div class="sec-domain-title">Physical &amp; environmental security</div><div class="sec-domain-desc">Physical access controls for office and infrastructure environments.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Office access control</span><span class="sec-domain-tag">Clean desk policy</span><span class="sec-domain-tag">Equipment disposal</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.12</div><div class="sec-domain-title">Operations security</div><div class="sec-domain-desc">Documented procedures for secure IT operations and change management.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Change management</span><span class="sec-domain-tag">Vulnerability scanning</span><span class="sec-domain-tag">Logging &amp; monitoring</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.13</div><div class="sec-domain-title">Communications security</div><div class="sec-domain-desc">Controls on network security and information transfer between systems.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Network segregation</span><span class="sec-domain-tag">Secure transfer agreements</span><span class="sec-domain-tag">Monitoring</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.14</div><div class="sec-domain-title">System acquisition &amp; development</div><div class="sec-domain-desc">Security requirements built into the development lifecycle.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Secure SDLC</span><span class="sec-domain-tag">Code review</span><span class="sec-domain-tag">Test environment separation</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.15</div><div class="sec-domain-title">Supplier relationships</div><div class="sec-domain-desc">Security requirements applied to third-party suppliers and couriers.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Supplier contracts</span><span class="sec-domain-tag">Security assessment</span><span class="sec-domain-tag">Service monitoring</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.16</div><div class="sec-domain-title">Incident management</div><div class="sec-domain-desc">Documented procedures for managing and communicating security incidents.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Incident response plan</span><span class="sec-domain-tag">Seller notification</span><span class="sec-domain-tag">Post-incident review</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.17</div><div class="sec-domain-title">Business continuity</div><div class="sec-domain-desc">Plans for maintaining operations and data availability during disruptions.</div><div class="sec-domain-tags"><span class="sec-domain-tag">BCP documented</span><span class="sec-domain-tag">Recovery testing</span><span class="sec-domain-tag">Backup verification</span></div></div>
+              <div class="sec-domain"><div class="sec-domain-code">A.18</div><div class="sec-domain-title">Compliance</div><div class="sec-domain-desc">Ensuring adherence to legal, regulatory, and contractual requirements.</div><div class="sec-domain-tags"><span class="sec-domain-tag">Legal review</span><span class="sec-domain-tag">Sri Lankan law compliance</span><span class="sec-domain-tag">Audit schedule</span></div></div>
+            </div>
+            <div class="sec-compliance-strip">
+              <div class="sec-compliance-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="sec-compliance-text">
+                <div class="sec-compliance-text-label">Current Compliance Status</div>
+                <p>We have assessed our current position against all 14 control domains. The majority of technical controls are already implemented. Active work is underway on formal documentation, risk assessment, and independent audit preparation.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05 Our Commitments -->
+          <section class="sec-section" id="s5">
+            <div class="sec-section-heading"><div class="sec-section-num">05</div><h2>Our Specific Security Commitments to Sellers</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>These are not aspirational statements. They are the specific commitments Parallax Technologies makes to every seller using Storemate — today, before certification, and after.</p>
+            </div>
+            <div class="sec-items">
+              <div class="sec-item"><div class="sec-item-num">1</div><div><div class="sec-item-title">Your data will never be sold</div><div class="sec-item-desc">Under any circumstances. To anyone. Ever. Your business data, your customer data, and your order history are yours. We handle them to provide the service. No other commercial use. No exceptions.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">2</div><div><div class="sec-item-title">Your data will never be used for advertising</div><div class="sec-item-desc">We do not use your data to build advertising profiles, target you or your customers with ads, or share data with advertising networks of any kind.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">3</div><div><div class="sec-item-title">Data errors will be corrected manually if needed</div><div class="sec-item-desc">If there is ever an error in your account data, we correct it — manually if required. "The system cannot do that" is not an answer we give. We own the problem and fix it.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">4</div><div><div class="sec-item-title">Security incidents will be disclosed promptly</div><div class="sec-item-desc">If a security incident occurs that affects your data, we will notify you as quickly as possible — within 72 hours where feasible — with a clear explanation of what happened and what we are doing about it.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">5</div><div><div class="sec-item-title">Access will be controlled and audited</div><div class="sec-item-desc">Only the team members who need access to your data for their specific role will have it. Access is reviewed and audited. Former team members have access revoked immediately upon departure.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">6</div><div><div class="sec-item-title">Security improvements will be ongoing</div><div class="sec-item-desc">ISO 27001 certification is not a one-time achievement. It requires annual surveillance audits and continuous improvement. We commit to maintaining the standard — not just achieving it once.</div></div></div>
+              <div class="sec-item"><div class="sec-item-num">7</div><div><div class="sec-item-title">You can ask us anything about your data security</div><div class="sec-item-desc">If you have a question about how your data is protected, email us at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a>. You will receive a direct, honest answer — not a reference to this document.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 06 Certification Roadmap -->
+          <section class="sec-section" id="s6">
+            <div class="sec-section-heading"><div class="sec-section-num">06</div><h2>Certification Roadmap</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>ISO 27001 certification is a structured process that cannot be rushed without compromising its integrity. We are pursuing it systematically — building the foundations properly rather than racing for a badge.</p>
+            </div>
+            <div class="sec-roadmap">
+              <div class="sec-phase sec-phase--done">
+                <div class="sec-phase-left">
+                  <div class="sec-phase-label">Phase 1</div>
+                  <div class="sec-phase-name">Foundation</div>
+                  <div class="sec-phase-status">Complete</div>
+                  <div class="sec-phase-dot"></div>
+                </div>
+                <div class="sec-phase-right">
+                  <div class="sec-phase-desc">Gap analysis against ISO 27001:2022 requirements. Identification of all information assets. Assignment of asset ownership. Initial risk assessment framework established.</div>
+                  <div class="sec-phase-tags"><span class="sec-phase-tag">Gap analysis completed</span><span class="sec-phase-tag">Asset register created</span><span class="sec-phase-tag">Ownership assigned</span></div>
+                </div>
+              </div>
+              <div class="sec-phase sec-phase--active">
+                <div class="sec-phase-left">
+                  <div class="sec-phase-label">Phase 2</div>
+                  <div class="sec-phase-name">Documentation</div>
+                  <div class="sec-phase-status">In Progress</div>
+                  <div class="sec-phase-dot"></div>
+                </div>
+                <div class="sec-phase-right">
+                  <div class="sec-phase-desc">Formal ISMS documentation including policies, procedures, and standards. Risk treatment plan. Statement of Applicability (SoA). Business continuity and incident response documentation.</div>
+                  <div class="sec-phase-tags"><span class="sec-phase-tag">ISMS policy written</span><span class="sec-phase-tag">SoA in development</span><span class="sec-phase-tag">Risk register active</span></div>
+                </div>
+              </div>
+              <div class="sec-phase sec-phase--active">
+                <div class="sec-phase-left">
+                  <div class="sec-phase-label">Phase 3</div>
+                  <div class="sec-phase-name">Implementation</div>
+                  <div class="sec-phase-status">Active</div>
+                  <div class="sec-phase-dot"></div>
+                </div>
+                <div class="sec-phase-right">
+                  <div class="sec-phase-desc">Rolling out formal controls across all domains. Security awareness training programme. Internal audit programme established. Management review process implemented.</div>
+                  <div class="sec-phase-tags"><span class="sec-phase-tag">Controls being implemented</span><span class="sec-phase-tag">Training programme active</span><span class="sec-phase-tag">Internal audits running</span></div>
+                </div>
+              </div>
+              <div class="sec-phase sec-phase--sched">
+                <div class="sec-phase-left">
+                  <div class="sec-phase-label">Phase 4</div>
+                  <div class="sec-phase-name">Pre-audit</div>
+                  <div class="sec-phase-status">Scheduled</div>
+                  <div class="sec-phase-dot"></div>
+                </div>
+                <div class="sec-phase-right">
+                  <div class="sec-phase-desc">Internal audit against all control domains. Management review. Remediation of identified gaps. Engagement of accredited certification body. Stage 1 documentation review.</div>
+                  <div class="sec-phase-tags"><span class="sec-phase-tag">Internal audit scheduled</span><span class="sec-phase-tag">Certifier selected</span><span class="sec-phase-tag">Stage 1 review pending</span></div>
+                </div>
+              </div>
+              <div class="sec-phase sec-phase--target">
+                <div class="sec-phase-left">
+                  <div class="sec-phase-label">Phase 5</div>
+                  <div class="sec-phase-name">Certification</div>
+                  <div class="sec-phase-status">Target</div>
+                  <div class="sec-phase-dot"></div>
+                </div>
+                <div class="sec-phase-right">
+                  <div class="sec-phase-desc">Stage 2 audit by accredited certification body. Full on-site assessment of ISMS implementation. Award of ISO 27001:2022 certification. Surveillance audits annually to maintain certification.</div>
+                  <div class="sec-phase-tags"><span class="sec-phase-tag">Stage 2 audit</span><span class="sec-phase-tag">Certification awarded</span><span class="sec-phase-tag">Annual surveillance programme</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 07 What This Means For You -->
+          <section class="sec-section" id="s7">
+            <div class="sec-section-heading"><div class="sec-section-num">07</div><h2>What This Means for You as a Seller</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>ISO 27001 certification is not about Storemate. It is about the protection of your business — your orders, your customers, your revenue data.</p>
+            </div>
+            <ul class="sec-bullets">
+              <li><strong>Your customer data is protected to an international standard.</strong> The names, addresses, and contact details of every buyer who orders from you through Storemate are handled under the controls of an internationally recognised information security management system.</li>
+              <li><strong>You can show your buyers you take data seriously.</strong> When Storemate holds ISO 27001 certification, you can truthfully tell your buyers that your order management platform is certified to the international information security standard. That trust transfers to your business.</li>
+              <li><strong>Enterprise and institutional buyers will trust you more.</strong> If your business sells to corporate buyers, government-adjacent organisations, or international customers, ISO 27001 certification on your order management platform removes a common barrier to doing business with you.</li>
+              <li><strong>Your data is recoverable.</strong> The business continuity and backup requirements of ISO 27001 mean your order data is backed up, tested, and recoverable. If something goes wrong, your business records are not permanently lost.</li>
+            </ul>
+          </section>
+
+          <!-- 08 Contact & Questions -->
+          <section class="sec-section" id="s8">
+            <div class="sec-section-heading"><div class="sec-section-num">08</div><h2>Contact and Questions</h2></div>
+            <div class="sec-rule"></div>
+            <div class="sec-body">
+              <p>Questions about our information security practices? Want to understand a specific control or commitment? Contact us directly. We will give you a straight answer — not a reference to legal documentation.</p>
+            </div>
+            <div class="sec-contact-card">
+              <div class="sec-contact-label">Information Security Contact — Parallax Technologies (Pvt) Ltd</div>
+              <div class="sec-contact-row"><div class="sec-contact-key">General security questions</div><div class="sec-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="sec-contact-note">Subject: Security Question — [your name]</div></div>
+              <div class="sec-contact-row"><div class="sec-contact-key">Data incident reporting</div><div class="sec-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="sec-contact-note">Subject: Security Incident — [your name]</div></div>
+              <div class="sec-contact-row"><div class="sec-contact-key">ISO 27001 status enquiries</div><div class="sec-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="sec-contact-note">Subject: ISO 27001 — [your name]</div></div>
+              <div class="sec-contact-row"><div class="sec-contact-key">Data access requests</div><div class="sec-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="sec-contact-note">Subject: Data Request — [your name]</div></div>
+              <div class="sec-contact-row"><div class="sec-contact-key">Postal address</div><div class="sec-contact-val">Kottawa, Pannipitiya, Sri Lanka</div><div class="sec-contact-note">Parallax Technologies (Pvt) Ltd</div></div>
+            </div>
+
+            <!-- FAQ -->
+            <h3 style="font-size:1rem;font-weight:800;color:var(--color-charcoal);margin-top:32px;margin-bottom:4px;">Common questions about our ISO 27001 pursuit</h3>
+            <div class="sec-faq">
+              <div class="sec-faq-item open">
+                <div class="sec-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                  <span class="sec-faq-q-text">"Are you ISO 27001 certified right now?"</span>
+                  <span class="sec-faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="sec-faq-a">No — not yet. We are actively pursuing certification. The controls and commitments in this document reflect our current security posture, which is substantial. Certification requires independent audit verification, which is scheduled.</div>
+              </div>
+              <div class="sec-faq-item">
+                <div class="sec-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                  <span class="sec-faq-q-text">"When will you be certified?"</span>
+                  <span class="sec-faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="sec-faq-a">We do not publish a specific certification date because the timeline depends on the audit schedule of our chosen certification body. We are committed to completing the process — and will announce certification publicly when achieved.</div>
+              </div>
+              <div class="sec-faq-item">
+                <div class="sec-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                  <span class="sec-faq-q-text">"Why does it take so long?"</span>
+                  <span class="sec-faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="sec-faq-a">ISO 27001 certification requires implementing, documenting, and operating controls for a period before an auditor can verify them. Rushing the process produces weak certification. We are doing it properly.</div>
+              </div>
+              <div class="sec-faq-item">
+                <div class="sec-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                  <span class="sec-faq-q-text">"Can I trust Storemate with my data before certification?"</span>
+                  <span class="sec-faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="sec-faq-a">Yes. The technical controls protecting your data — encryption, access control, secure backups, incident response — are operational now. Certification is the independent verification of what is already in place.</div>
+              </div>
+              <div class="sec-faq-item">
+                <div class="sec-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                  <span class="sec-faq-q-text">"Will you tell me when you achieve certification?"</span>
+                  <span class="sec-faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="sec-faq-a">Yes. We will announce ISO 27001 certification on our website and notify all active sellers by email when the certificate is awarded.</div>
+              </div>
+            </div>
+
+            <!-- Final commitment -->
+            <div class="sec-callout sec-callout--dark" style="margin-top:32px;">
+              <div class="sec-callout-label">The Storemate Security Commitment</div>
+              <h3>"Your business data is treated like it is our own."</h3>
+              <p>ISO 27001 is the formal structure around a commitment we were already keeping. Certification makes it independently verifiable. The commitment itself is unconditional.</p>
+              <p style="margin-top:14px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Namal Attanayake · CEO &amp; Founder · Parallax Technologies (Pvt) Ltd · Version 1.0 · June 2026</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></a>
+            </div>
+          </div>
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+</body>
+</html>

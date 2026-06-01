@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>Terms of Service | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    .pp-hero {
+      background: linear-gradient(135deg, #07112b 0%, #0a1e3d 60%, #003e7a 100%);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 50%, rgba(0,180,216,0.1), transparent 55%);
+      pointer-events: none;
+    }
+    .pp-hero-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00b4d8 40%, var(--color-blue) 100%);
+    }
+    .pp-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+    .pp-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.3);
+      border-radius: 999px;
+      padding: 5px 16px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin-bottom: 20px;
+    }
+    .pp-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .pp-hero h1 strong { font-weight: 800; display: block; }
+    .pp-hero-meta {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 16px;
+      margin-bottom: 28px;
+    }
+    .pp-hero-meta span { color: #00b4d8; font-weight: 600; }
+    .pp-hero-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .pp-hero-quote::before {
+      content: '';
+      width: 3px; height: 36px;
+      background: #00b4d8;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .pp-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: 72px 0 96px;
+    }
+
+    .pp-toc { position: sticky; top: 88px; }
+    .pp-toc-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+      margin-bottom: 14px;
+    }
+    .pp-toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .pp-toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-gray-500);
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+      line-height: 1.3;
+    }
+    .pp-toc-list a:hover { color: var(--color-blue); background: var(--color-gray-100); }
+    .pp-toc-num { font-size: 0.68rem; font-weight: 800; color: #00b4d8; min-width: 18px; flex-shrink: 0; }
+
+    .pp-content { min-width: 0; }
+
+    .pp-section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .pp-section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .pp-section-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pp-section-heading h2 { font-size: 1.35rem; font-weight: 800; color: var(--color-charcoal); line-height: 1; }
+    .pp-section-rule { height: 1px; background: var(--color-gray-200); margin-bottom: 24px; }
+
+    .pp-body { font-size: 0.95rem; color: var(--color-gray-700); line-height: 1.8; }
+    .pp-body p { margin-bottom: 14px; }
+    .pp-body p:last-child { margin-bottom: 0; }
+    .pp-body strong { color: var(--color-charcoal); }
+
+    /* numbered item list (used across many sections) */
+    .pp-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .pp-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: var(--color-gray-100);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .pp-item-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pp-item-title { font-size: 0.88rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 4px; }
+    .pp-item-desc { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.65; }
+
+    /* bullet list */
+    .pp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .pp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--color-gray-700);
+      line-height: 1.65;
+    }
+    .pp-bullets li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* callout boxes */
+    .pp-callout {
+      background: #e8f4fc;
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-top: 24px;
+    }
+    .pp-callout--dark { background: var(--color-charcoal); border-color: transparent; }
+    .pp-callout--warn { background: #fff9e6; border-color: rgba(212,175,55,0.3); }
+    .pp-callout-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+    .pp-callout--dark .pp-callout-label { color: #00b4d8; }
+    .pp-callout--warn .pp-callout-label { color: #b8922a; }
+    .pp-callout h3 { font-size: 1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 8px; }
+    .pp-callout--dark h3 { color: #ffffff; }
+    .pp-callout p { font-size: 0.88rem; color: var(--color-gray-700); line-height: 1.7; margin: 0; }
+    .pp-callout--dark p { color: rgba(255,255,255,0.65); }
+    .pp-callout p + p { margin-top: 10px; }
+
+    /* contact card */
+    .pp-contact-card {
+      background: var(--color-charcoal);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-contact-label {
+      background: rgba(0,180,216,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 24px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00b4d8;
+    }
+    .pp-contact-row {
+      display: grid;
+      grid-template-columns: 160px 1fr auto;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: center;
+    }
+    .pp-contact-row:last-child { border-bottom: none; }
+    .pp-contact-key { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.5); }
+    .pp-contact-val { font-size: 0.88rem; font-weight: 600; color: #ffffff; }
+    .pp-contact-val a { color: #00b4d8; text-decoration: none; }
+    .pp-contact-val a:hover { text-decoration: underline; }
+    .pp-contact-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-align: right; }
+
+    /* at-a-glance table */
+    .pp-glance {
+      margin-top: 20px;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .pp-glance-row { display: grid; grid-template-columns: 240px 1fr; border-bottom: 1px solid var(--color-gray-200); }
+    .pp-glance-row:last-child { border-bottom: none; }
+    .pp-glance-row:nth-child(even) { background: #fafafa; }
+    .pp-glance-q {
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-blue);
+      border-right: 1px solid var(--color-gray-200);
+      background: var(--color-gray-100);
+    }
+    .pp-glance-row:nth-child(even) .pp-glance-q { background: #f0f4f8; }
+    .pp-glance-a { padding: 16px 20px; font-size: 0.88rem; color: var(--color-gray-700); line-height: 1.6; }
+
+    /* additional provisions grid */
+    .pp-provisions {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .pp-provision-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .pp-provision-row:last-child { border-bottom: none; }
+    .pp-provision-key {
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-blue);
+      background: var(--color-gray-100);
+      border-right: 1px solid var(--color-gray-200);
+    }
+    .pp-provision-val { padding: 16px 20px; font-size: 0.85rem; color: var(--color-gray-700); line-height: 1.65; }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .pp-layout { grid-template-columns: 1fr; gap: 0; padding: 52px 0 80px; }
+      .pp-toc { position: static; display: none; }
+      .pp-contact-row { grid-template-columns: 120px 1fr; }
+      .pp-contact-note { display: none; }
+      .pp-glance-row { grid-template-columns: 180px 1fr; }
+      .pp-provision-row { grid-template-columns: 1fr; }
+      .pp-provision-key { border-right: none; border-bottom: 1px solid var(--color-gray-200); }
+    }
+    @media (max-width: 600px) {
+      .pp-hero { padding: 64px 0 56px; }
+      .pp-glance-row { grid-template-columns: 1fr; }
+      .pp-glance-q { border-right: none; border-bottom: 1px solid var(--color-gray-200); }
+      .pp-contact-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span></a>
+                <a href="returns-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span><span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span></a>
+                <a href="courier-sync.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span></a>
+                <a href="waybill-landing.html" class="nav-mega-link"><span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span></a>
+                <a href="personalization.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span><span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link"><span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span></a>
+                <a href="trackmate.html" class="nav-mega-link"><span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span></a>
+              </div>
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link"><span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span></a>
+                <a href="pricing.html" class="nav-mega-link"><span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span><span class="nav-mega-text"><strong>Pricing</strong><span>Simple, honest pricing</span></span></a>
+                <a href="contact.html" class="nav-mega-link"><span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><span class="nav-mega-text"><strong>Contact</strong><span>Talk to the team</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://oms.storemate.cloud/register" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pp-hero">
+      <div class="pp-hero-line"></div>
+      <div class="container">
+        <div class="pp-hero-inner">
+          <div class="pp-hero-eyebrow">Legal</div>
+          <h1>Terms of<br><strong>Service</strong></h1>
+          <p class="pp-hero-meta">Storemate — storemate.lk &nbsp;·&nbsp; Effective date: <span>June 2026</span> &nbsp;·&nbsp; Version 1.0</p>
+          <div class="pp-hero-quote">"Plain language. No surprises. No fine print."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="pp-layout">
+
+        <!-- TOC -->
+        <aside class="pp-toc">
+          <p class="pp-toc-label">Contents</p>
+          <ul class="pp-toc-list">
+            <li><a href="#s1"><span class="pp-toc-num">01</span>Acceptance of terms</a></li>
+            <li><a href="#s2"><span class="pp-toc-num">02</span>Who can use Storemate</a></li>
+            <li><a href="#s3"><span class="pp-toc-num">03</span>Your account</a></li>
+            <li><a href="#s4"><span class="pp-toc-num">04</span>The service we provide</a></li>
+            <li><a href="#s5"><span class="pp-toc-num">05</span>Your data and content</a></li>
+            <li><a href="#s6"><span class="pp-toc-num">06</span>Subscription and payment</a></li>
+            <li><a href="#s7"><span class="pp-toc-num">07</span>Free trial</a></li>
+            <li><a href="#s8"><span class="pp-toc-num">08</span>Free version</a></li>
+            <li><a href="#s9"><span class="pp-toc-num">09</span>Acceptable use</a></li>
+            <li><a href="#s10"><span class="pp-toc-num">10</span>Intellectual property</a></li>
+            <li><a href="#s11"><span class="pp-toc-num">11</span>Service availability</a></li>
+            <li><a href="#s12"><span class="pp-toc-num">12</span>Limitation of liability</a></li>
+            <li><a href="#s13"><span class="pp-toc-num">13</span>Termination</a></li>
+            <li><a href="#s14"><span class="pp-toc-num">14</span>Governing law</a></li>
+            <li><a href="#s15"><span class="pp-toc-num">15</span>Changes to these terms</a></li>
+            <li><a href="#s16"><span class="pp-toc-num">16</span>Contact us</a></li>
+            <li><a href="#glance"><span class="pp-toc-num">—</span>At a glance</a></li>
+          </ul>
+        </aside>
+
+        <!-- Content -->
+        <div class="pp-content">
+
+          <!-- Note before you read -->
+          <div class="pp-callout" style="margin-bottom:48px;">
+            <div class="pp-callout-label">A note from us before you read</div>
+            <h3>These terms are written in plain language. No legal jargon. No hidden clauses.</h3>
+            <p>We want you to understand exactly what you are agreeing to. If anything is unclear, email us at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);font-weight:600;">hello@storemate.lk</a> before you accept. We will explain it directly.</p>
+            <p>These terms form the agreement between you and Parallax Technologies (Pvt) Ltd.</p>
+          </div>
+
+          <!-- 01 Acceptance -->
+          <section class="pp-section" id="s1">
+            <div class="pp-section-heading"><div class="pp-section-num">01</div><h2>Acceptance of Terms</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>By registering for, accessing, or using the Storemate platform at storemate.lk or through the Storemate mobile application, you agree to be bound by these Terms of Service and our <a href="privacy.html" style="color:var(--color-blue);">Privacy Policy</a>. If you do not agree to these terms, do not use Storemate.</p>
+              <p>These terms apply to all users of the platform, including sellers, team members, and anyone accessing Storemate on behalf of a business. If you are accepting these terms on behalf of a business, you represent that you have authority to bind that business.</p>
+            </div>
+          </section>
+
+          <!-- 02 Who can use -->
+          <section class="pp-section" id="s2">
+            <div class="pp-section-heading"><div class="pp-section-num">02</div><h2>Who Can Use Storemate</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body"><p>To use Storemate, you must meet the following requirements:</p></div>
+            <ul class="pp-bullets">
+              <li>You must be at least 18 years of age.</li>
+              <li>You must be operating a legitimate business or commercial activity in Sri Lanka or conducting business with Sri Lankan sellers.</li>
+              <li>You must provide accurate, complete, and current information when registering.</li>
+              <li>You must not be prohibited from using online services under Sri Lankan law or the laws of your jurisdiction.</li>
+              <li>If registering on behalf of a business, you must have the authority to do so.</li>
+            </ul>
+          </section>
+
+          <!-- 03 Your Account -->
+          <section class="pp-section" id="s3">
+            <div class="pp-section-heading"><div class="pp-section-num">03</div><h2>Your Account</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Account responsibility</div><div class="pp-item-desc">You are responsible for all activity that occurs under your account. Keep your login credentials secure. Do not share your password with anyone outside your business.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Accurate information</div><div class="pp-item-desc">You must provide accurate business information during registration and keep it up to date. False or misleading information may result in account suspension.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Team access</div><div class="pp-item-desc">You may add team members to your account. You are responsible for their use of the platform and ensuring they comply with these terms.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Account security</div><div class="pp-item-desc">If you believe your account has been compromised, contact us immediately at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a>. We will help you secure it promptly.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 04 The service -->
+          <section class="pp-section" id="s4">
+            <div class="pp-section-heading"><div class="pp-section-num">04</div><h2>The Service We Provide</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate provides an order and inventory management platform for Sri Lankan online sellers, including features for order tracking, courier integration, waybill generation, inventory management, and related business tools.</p>
+              <p>We are continuously improving Storemate. We may add, modify, or remove features from time to time. Where a change materially affects your use of the platform, we will notify you in advance.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Implementation support</div><div class="pp-item-desc">We provide a full setup session to get your account operational. Our team handles the configuration — you do not set it up alone.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Courier integration</div><div class="pp-item-desc">We integrate with Royal Express, TransEx, FDE, DomEx, Koombiyo, and other Sri Lankan courier networks. Courier service terms are governed by each courier.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Mobile application</div><div class="pp-item-desc">The Storemate mobile app is available on Android and iOS. App store terms of the respective platform also apply.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Free tools</div><div class="pp-item-desc">Certain tools such as the Free Waybill Generator and Free Course are available without a paid subscription. These remain subject to these terms.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 05 Your Data -->
+          <section class="pp-section" id="s5">
+            <div class="pp-section-heading"><div class="pp-section-num">05</div><h2>Your Data and Content</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p><strong>You own your data.</strong> Everything you enter into Storemate — your orders, your customer details, your product information, your business records — belongs to you. We are trusted with it to provide the service. Nothing more.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Your ownership</div><div class="pp-item-desc">All data you enter into Storemate remains yours at all times. We do not claim ownership over your business data or your customers' information.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Licence to operate</div><div class="pp-item-desc">By using Storemate, you grant us a limited licence to process your data as necessary to provide the service — syncing with couriers, generating reports, displaying your dashboard. No broader use.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Data export</div><div class="pp-item-desc">You can export your data at any time. Contact <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a> and we will provide a full export in a usable format within 14 days.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Data accuracy</div><div class="pp-item-desc">You are responsible for the accuracy of data you enter. We process what you provide. Errors in input produce errors in output.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">5</div><div><div class="pp-item-title">Customer data responsibility</div><div class="pp-item-desc">Your customers' data that you enter into Storemate is your responsibility. You must have a lawful basis to collect and process it under applicable law.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 06 Subscription and Payment -->
+          <section class="pp-section" id="s6">
+            <div class="pp-section-heading"><div class="pp-section-num">06</div><h2>Subscription and Payment</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate offers both a free tier and paid subscription plans. Paid plans unlock additional features, higher order volumes, and priority support. Current plan details and pricing are displayed at <a href="pricing.html" style="color:var(--color-blue);">storemate.lk/pricing</a>.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Billing cycle</div><div class="pp-item-desc">Paid subscriptions are billed on a monthly or annual basis as selected at the time of purchase. Billing begins at the end of your free trial, or immediately for upgrades from a Free account.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Payment methods</div><div class="pp-item-desc">Payment is processed through our secure third-party payment provider. We do not store your full card details. Accepted payment methods are displayed at checkout.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Price changes</div><div class="pp-item-desc">We may change subscription prices with 30 days' notice. If you do not accept a price change, you may cancel before the new price takes effect. Your current pricing is honoured until the end of your billing period.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Cancellation</div><div class="pp-item-desc">You may cancel your paid subscription at any time. Access continues until the end of the paid billing period. We do not offer partial refunds for unused time, except where required by law or as stated in our refund policy.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">5</div><div><div class="pp-item-title">Refunds</div><div class="pp-item-desc">If you experience a billing error or are charged incorrectly, contact us within 14 days at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a>. We will review and resolve it promptly.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">6</div><div><div class="pp-item-title">Failed payment</div><div class="pp-item-desc">If a payment fails, we will notify you and attempt to retry. If payment cannot be collected after reasonable attempts, your account may be moved to limited access. Your data is retained.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 07 Free Trial -->
+          <section class="pp-section" id="s7">
+            <div class="pp-section-heading"><div class="pp-section-num">07</div><h2>Free Trial</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate offers a free trial period so you can experience the platform before committing to a subscription. The trial is designed to give you a genuine experience of the full platform.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Trial duration</div><div class="pp-item-desc">The current free trial period is displayed on the pricing page and may vary by promotion or offer. Check <a href="pricing.html" style="color:var(--color-blue);">storemate.lk/pricing</a> for current terms.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Full access</div><div class="pp-item-desc">During the trial, you have access to the full Storemate feature set. No artificially limited version.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">No card required</div><div class="pp-item-desc">We do not require payment details to start a free trial. You will never be charged without your explicit confirmation.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Implementation included</div><div class="pp-item-desc">The full setup session with our team is included during the trial. You set up properly from day one — not after you pay.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">5</div><div><div class="pp-item-title">After the trial</div><div class="pp-item-desc">At the end of the trial, you may choose a paid plan to continue. If you do not, your account will move to limited access. Your data is retained for 90 days.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">6</div><div><div class="pp-item-title">One trial per business</div><div class="pp-item-desc">Free trials are available once per business. Creating multiple accounts to access additional trials is a violation of these terms.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 08 Free Version -->
+          <section class="pp-section" id="s8">
+            <div class="pp-section-heading"><div class="pp-section-num">08</div><h2>Free Version</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate offers a Free version of the platform — a permanently available tier that allows sellers to use core features without a paid subscription. The Free version is designed to help early-stage sellers get started with professional order management at no cost.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">What is included</div><div class="pp-item-desc">The Free version includes a defined set of core features as displayed on storemate.lk/pricing. Included features may change over time. We will notify Free version users before removing or restricting any currently available feature.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Feature limitations</div><div class="pp-item-desc">The Free version has limits on order volume, the number of active integrations, and access to advanced features. Current limits are shown at storemate.lk/pricing. These limits exist to ensure a sustainable service for all users.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">No expiry</div><div class="pp-item-desc">The Free version does not expire. Unlike the free trial, there is no time limit on Free version access. You may use the Free version for as long as you choose.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">No card required</div><div class="pp-item-desc">The Free version requires no payment details. You will never be charged for Free version use. Upgrading to a paid plan is always your choice.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 09 Acceptable Use -->
+          <section class="pp-section" id="s9">
+            <div class="pp-section-heading"><div class="pp-section-num">09</div><h2>Acceptable Use</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Storemate is built for legitimate Sri Lankan online sellers. You agree to use the platform only for lawful purposes and in accordance with these terms.</p>
+              <p>You must not use Storemate to:</p>
+            </div>
+            <ul class="pp-bullets">
+              <li>Conduct fraudulent transactions, process fake orders, or deceive buyers or couriers.</li>
+              <li>Collect or store customer data beyond what is necessary for legitimate order fulfilment.</li>
+              <li>Attempt to gain unauthorised access to any part of the platform, other accounts, or connected systems.</li>
+              <li>Interfere with or disrupt the platform's infrastructure, servers, or networks.</li>
+              <li>Use automated tools, scrapers, or bots to extract data from the platform without our written permission.</li>
+              <li>Resell, sublicence, or provide access to Storemate to third parties without our written consent.</li>
+              <li>Use the platform in a way that violates Sri Lankan law or the laws of any applicable jurisdiction.</li>
+              <li>Impersonate another person or business or misrepresent your identity or affiliation.</li>
+            </ul>
+            <div class="pp-callout pp-callout--warn" style="margin-top:24px;">
+              <div class="pp-callout-label">Violations</div>
+              <p>Violations of this acceptable use policy may result in immediate account suspension or termination without refund. We will always investigate before taking action and notify you of the reason.</p>
+            </div>
+          </section>
+
+          <!-- 10 Intellectual Property -->
+          <section class="pp-section" id="s10">
+            <div class="pp-section-heading"><div class="pp-section-num">10</div><h2>Intellectual Property</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>The Storemate platform — including its software, design, code, features, branding, and content — is owned by Parallax Technologies (Pvt) Ltd and protected under applicable Sri Lankan and international intellectual property laws.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Our property</div><div class="pp-item-desc">The Storemate name, logo, platform design, and all software code are the intellectual property of Parallax Technologies (Pvt) Ltd. You may not copy, reproduce, or distribute any part of the platform without our written consent.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Your property</div><div class="pp-item-desc">Your business data, brand assets, and content remain entirely yours. We make no claim over anything you upload or create within the platform. See Section 5 for full details.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Licence to use</div><div class="pp-item-desc">We grant you a limited, non-exclusive, non-transferable licence to use the Storemate platform for the purpose of managing your business. This licence does not include the right to sublicence or resell access to the platform.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Feedback</div><div class="pp-item-desc">If you share suggestions or feedback about the platform, we may use it to improve Storemate. We will not compensate you for feedback, but we are genuinely grateful for it.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 11 Service Availability -->
+          <section class="pp-section" id="s11">
+            <div class="pp-section-heading"><div class="pp-section-num">11</div><h2>Service Availability</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We work hard to keep Storemate available and reliable. Our target is maximum uptime. However, no service can guarantee 100% availability at all times.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Planned maintenance</div><div class="pp-item-desc">We may take the platform offline for maintenance. We will notify you in advance where possible and schedule maintenance during low-traffic periods.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Unplanned outages</div><div class="pp-item-desc">In the event of an unplanned outage, we will communicate status updates through our website and notify affected sellers as quickly as possible.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Third-party dependencies</div><div class="pp-item-desc">Some features depend on third-party services such as courier APIs. Disruptions to those services may affect Storemate functionality temporarily.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">No uptime guarantee</div><div class="pp-item-desc">While we strive for high availability, we do not provide a formal uptime guarantee or service level agreement on standard subscription plans.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">5</div><div><div class="pp-item-title">Our commitment</div><div class="pp-item-desc">When something goes wrong, we fix it — working beyond office hours when necessary. Accountability is a core value, not a marketing line.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 12 Limitation of Liability -->
+          <section class="pp-section" id="s12">
+            <div class="pp-section-heading"><div class="pp-section-num">12</div><h2>Limitation of Liability</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-callout" style="margin-bottom:24px;">
+              <div class="pp-callout-label">Plain language summary</div>
+              <h3>We take our responsibility to your business seriously. However, like all software providers, we must limit liability for events outside our reasonable control.</h3>
+              <p>We will always tell you what happened and work to make it right.</p>
+            </div>
+            <div class="pp-body">
+              <p>To the maximum extent permitted by Sri Lankan law, Parallax Technologies (Pvt) Ltd shall not be liable for:</p>
+            </div>
+            <ul class="pp-bullets">
+              <li>Loss of revenue, profit, or business opportunity resulting from platform downtime or service interruption, except where caused by our gross negligence.</li>
+              <li>Loss or corruption of data resulting from events outside our reasonable control, including but not limited to third-party infrastructure failures.</li>
+              <li>Indirect, incidental, special, or consequential damages arising from use of the platform.</li>
+              <li>Actions of courier partners, payment processors, or other third-party services integrated with Storemate.</li>
+              <li>Loss resulting from your failure to maintain secure account credentials.</li>
+            </ul>
+            <div class="pp-body" style="margin-top:20px;">
+              <p>Our total liability to you for any claim arising from these terms or your use of Storemate shall not exceed the total subscription fees paid by you in the three months immediately preceding the event giving rise to the claim.</p>
+            </div>
+          </section>
+
+          <!-- 13 Termination -->
+          <section class="pp-section" id="s13">
+            <div class="pp-section-heading"><div class="pp-section-num">13</div><h2>Termination</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Either party may terminate the agreement at any time. We will always be transparent about why, and act fairly.</p>
+            </div>
+            <div class="pp-items">
+              <div class="pp-item"><div class="pp-item-num">1</div><div><div class="pp-item-title">Your right to cancel</div><div class="pp-item-desc">You may cancel your Storemate account at any time from within the platform or by contacting us at hello@storemate.lk. Cancellation takes effect at the end of your current billing period.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">2</div><div><div class="pp-item-title">Termination by us — for cause</div><div class="pp-item-desc">We may suspend or terminate your account immediately for serious violations: fraud, illegal activity, severe breach of acceptable use, or persistent non-payment after notice. We will notify you of the reason.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">3</div><div><div class="pp-item-title">Termination by us — other</div><div class="pp-item-desc">We may terminate your account with 30 days' notice if we discontinue the service or are required to do so for legal reasons. In this case, you will receive a prorated refund for any unused paid period.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">4</div><div><div class="pp-item-title">Data after termination</div><div class="pp-item-desc">Following account closure, your data is retained for 90 days and then permanently deleted. You may request a data export at any point during this period at hello@storemate.lk.</div></div></div>
+              <div class="pp-item"><div class="pp-item-num">5</div><div><div class="pp-item-title">Effect of termination</div><div class="pp-item-desc">Upon termination, your right to use the platform ceases. Sections relating to data ownership, intellectual property, limitation of liability, and governing law survive termination.</div></div></div>
+            </div>
+          </section>
+
+          <!-- 14 Governing Law -->
+          <section class="pp-section" id="s14">
+            <div class="pp-section-heading"><div class="pp-section-num">14</div><h2>Governing Law and Disputes</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>These terms are governed by and construed in accordance with the laws of Sri Lanka. Any disputes arising from these terms or your use of Storemate shall be subject to the jurisdiction of the Sri Lankan courts.</p>
+              <p>Before initiating any formal legal proceedings, we ask that you first contact us at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a> and give us a reasonable opportunity to resolve the dispute directly. Most issues can be resolved through honest conversation.</p>
+            </div>
+          </section>
+
+          <!-- 15 Changes to Terms -->
+          <section class="pp-section" id="s15">
+            <div class="pp-section-heading"><div class="pp-section-num">15</div><h2>Changes to These Terms</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>We may update these Terms of Service from time to time as the platform evolves and as legal requirements change. We will always be transparent about what changed and why.</p>
+            </div>
+            <ul class="pp-bullets">
+              <li>We will update the effective date at the top of this document.</li>
+              <li>For material changes — changes that significantly affect your rights or obligations — we will email you at least 30 days before they take effect.</li>
+              <li>For minor clarifications or formatting changes, we will update the document without individual notification.</li>
+              <li>If you continue to use Storemate after a notified change takes effect, you are considered to have accepted the updated terms.</li>
+              <li>If you do not agree to the updated terms, you may cancel your account before the change takes effect. We will provide a prorated refund for the unused portion of any paid period in this case.</li>
+              <li>Previous versions of these terms are available on request at <a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a>.</li>
+            </ul>
+          </section>
+
+          <!-- 16 Contact -->
+          <section class="pp-section" id="s16">
+            <div class="pp-section-heading"><div class="pp-section-num">16</div><h2>Contact Us</h2></div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body">
+              <p>Questions about these terms? Something unclear? Contact us. We will respond within 5 business days with a plain-language explanation.</p>
+            </div>
+            <div class="pp-contact-card">
+              <div class="pp-contact-label">Contact — Parallax Technologies (Pvt) Ltd</div>
+              <div class="pp-contact-row"><div class="pp-contact-key">General enquiries</div><div class="pp-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="pp-contact-note">Billing, account, general questions</div></div>
+              <div class="pp-contact-row"><div class="pp-contact-key">Terms questions</div><div class="pp-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="pp-contact-note">Subject: Terms Question — [your name]</div></div>
+              <div class="pp-contact-row"><div class="pp-contact-key">Legal &amp; compliance</div><div class="pp-contact-val"><a href="mailto:hello@storemate.lk">hello@storemate.lk</a></div><div class="pp-contact-note">Subject: Legal — [your name]</div></div>
+              <div class="pp-contact-row"><div class="pp-contact-key">Website</div><div class="pp-contact-val"><a href="https://storemate.lk">https://storemate.lk</a></div><div class="pp-contact-note">Full terms and policy documents</div></div>
+              <div class="pp-contact-row"><div class="pp-contact-key">Address</div><div class="pp-contact-val">Kottawa, Pannipitiya, Sri Lanka</div><div class="pp-contact-note">Parallax Technologies (Pvt) Ltd</div></div>
+            </div>
+            <div class="pp-body" style="margin-top:20px;">
+              <p>We are a small, passionate team that takes responsibility seriously. When you contact us about these terms, you will speak to a real person who knows the platform — not a support ticket system.</p>
+            </div>
+          </section>
+
+          <!-- Additional Provisions -->
+          <section class="pp-section" id="s-additional">
+            <div class="pp-section-heading">
+              <div class="pp-section-num" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c);font-size:0.6rem;">+</div>
+              <h2>Additional Provisions</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-provisions">
+              <div class="pp-provision-row"><div class="pp-provision-key">Entire agreement</div><div class="pp-provision-val">These Terms of Service, together with our Privacy Policy, constitute the entire agreement between you and Parallax Technologies (Pvt) Ltd regarding your use of Storemate. They supersede all prior agreements or understandings.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Severability</div><div class="pp-provision-val">If any provision of these terms is found to be unenforceable under Sri Lankan law, that provision will be modified to the minimum extent necessary to make it enforceable. All other provisions remain in full force.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">No waiver</div><div class="pp-provision-val">Our failure to enforce any provision of these terms at any time does not constitute a waiver of our right to enforce it in the future.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Assignment</div><div class="pp-provision-val">You may not assign or transfer your account or rights under these terms to another party without our written consent. We may assign these terms in connection with a merger, acquisition, or sale of assets.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Force majeure</div><div class="pp-provision-val">We will not be liable for failure to perform obligations where performance is prevented by circumstances beyond our reasonable control, including natural disasters, government actions, internet infrastructure failures, or pandemic conditions.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Relationship of parties</div><div class="pp-provision-val">These terms do not create any partnership, joint venture, employment, or agency relationship between you and Parallax Technologies (Pvt) Ltd.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Language</div><div class="pp-provision-val">These terms are written in English. In the event of any inconsistency between an English version and a translated version, the English version prevails.</div></div>
+              <div class="pp-provision-row"><div class="pp-provision-key">Notices</div><div class="pp-provision-val">We may send notices to the email address associated with your account. You are responsible for keeping your email address current. Notices are effective from the time they are sent to your registered email.</div></div>
+            </div>
+          </section>
+
+          <!-- At a Glance -->
+          <section class="pp-section" id="glance">
+            <div class="pp-section-heading">
+              <div class="pp-section-num" style="background:linear-gradient(135deg,#0d1b2a,#1a3a5c);">—</div>
+              <h2>Terms at a Glance</h2>
+            </div>
+            <div class="pp-section-rule"></div>
+            <div class="pp-body"><p>A plain-language summary of these Terms of Service for quick reference.</p></div>
+            <div class="pp-glance">
+              <div class="pp-glance-row"><div class="pp-glance-q">Who operates Storemate?</div><div class="pp-glance-a">Parallax Technologies (Pvt) Ltd, registered in Sri Lanka.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Who can use it?</div><div class="pp-glance-a">Adults (18+) operating legitimate businesses in Sri Lanka or working with Sri Lankan sellers.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Do you own your data?</div><div class="pp-glance-a"><strong>Yes.</strong> All your order data, customer data, and business records belong to you. Always.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Is there a Free version?</div><div class="pp-glance-a">Yes. A permanently available free tier with core features. No expiry. No card required.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Is there a free trial?</div><div class="pp-glance-a">Yes. Full platform access. No card required. Full setup session included.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">What happens when you cancel?</div><div class="pp-glance-a">Access continues to end of paid period. Data retained 90 days. Then deleted.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Can we change the terms?</div><div class="pp-glance-a">Yes, with 30 days notice for material changes. You can cancel before changes take effect.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">Can Storemate terminate your account?</div><div class="pp-glance-a">Yes, for terms violations, non-payment, or fraud. We will always notify you.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">What law governs?</div><div class="pp-glance-a">Sri Lankan law. Sri Lankan courts have jurisdiction over disputes.</div></div>
+              <div class="pp-glance-row"><div class="pp-glance-q">How to contact us?</div><div class="pp-glance-a"><a href="mailto:hello@storemate.lk" style="color:var(--color-blue);">hello@storemate.lk</a> — we respond within 5 business days.</div></div>
+            </div>
+            <div class="pp-callout pp-callout--dark" style="margin-top:32px;">
+              <div class="pp-callout-label">Our Commitment to You</div>
+              <h3>"Plain language. No surprises. No fine print."</h3>
+              <p>We built Storemate to empower Sri Lankan entrepreneurs. These terms exist to protect both parties — not to trap sellers in legal complexity. If anything here is unclear, ask us. We will explain it. That is the standard we hold ourselves to.</p>
+              <p style="margin-top:14px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Namal Attanayake · CEO &amp; Founder · Parallax Technologies (Pvt) Ltd · Effective: June 2026 · Version 1.0</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">Sri Lanka's #1 Seller Order Management System</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></a>
+            </div>
+          </div>
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+</body>
+</html>
