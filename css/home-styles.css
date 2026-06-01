@@ -1960,3 +1960,134 @@
 @media (max-width: 600px) {
   .home-podcast-grid { grid-template-columns: 1fr; }
 }
+
+/* =============================================
+   MOBILE FIXES — comprehensive 600px and below
+   ============================================= */
+
+/* ── Container: tighter side padding on small screens ── */
+@media (max-width: 480px) {
+  .container { width: min(1280px, calc(100% - 24px)); }
+}
+
+/* ── Hero ── */
+@media (max-width: 600px) {
+  .hero-section { padding: 64px 0 56px !important; }
+  .hero-center  { padding-bottom: 0 !important; }
+  .hero-h1-light { font-size: 2rem !important; }
+  .hero-h1-bold  { font-size: 2.2rem !important; }
+  .hero-text     { font-size: 0.95rem; }
+  .hero-note     { font-size: 0.78rem; }
+}
+
+/* ── Proof strip ── */
+@media (max-width: 480px) {
+  .proof-item { padding: 12px 8px; }
+  .proof-number { font-size: 1.4rem; }
+}
+
+/* ── Courier logo strip ── */
+@media (max-width: 600px) {
+  .courier-strip { padding: 16px 0; }
+  .courier-strip-logos { gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .courier-logo { height: 22px; }
+}
+@media (max-width: 400px) {
+  .courier-strip-logos { gap: 14px; }
+  .courier-logo { height: 18px; }
+}
+
+/* ── Commercial video section ── */
+@media (max-width: 600px) {
+  .commercial-section { padding: 52px 0 60px; }
+  .commercial-header { margin-bottom: 28px; }
+  .commercial-play { width: 60px; height: 60px; }
+}
+
+/* ── Pain cards ── */
+@media (max-width: 600px) {
+  .pain-section { padding: 64px 0; }
+  .pain-header  { margin-bottom: 36px; }
+  .pain-card    { padding: 24px 20px; }
+}
+
+/* ── Key feature alternating rows ── */
+@media (max-width: 600px) {
+  .home-features-section { padding: 64px 0; }
+  .home-feature-row { gap: 28px; }
+  .hf-title  { font-size: 1.4rem; }
+  .hf-desc   { font-size: 0.9rem; }
+  .hf-list li { font-size: 0.85rem; }
+  .hf-sync-arrow-circle { width: 30px; height: 30px; }
+}
+
+/* ── Mobile app section ── */
+@media (max-width: 600px) {
+  .mobile-app-copy { padding: 40px 0 28px !important; }
+  .mobile-app-copy h2 { font-size: 1.8rem !important; }
+  .mobile-app-photo { min-height: 260px !important; }
+  .mobile-app-shots { gap: 6px; margin-top: 20px; }
+  .mobile-app-shot  { width: 52px; }
+  .mobile-app-stores { gap: 8px; }
+}
+
+/* ── Origin section ── */
+@media (max-width: 600px) {
+  .origin-section { padding: 64px 0; }
+  .origin-copy h2 { font-size: 1.8rem; }
+  .origin-text    { font-size: 0.93rem; }
+  .curfox-logo    { height: 24px !important; }
+  .origin-logo-row { margin-top: 20px; }
+}
+
+/* ── Seller story ── */
+@media (max-width: 600px) {
+  .seller-story-section { padding: 64px 0; }
+  .seller-quote  { font-size: 1rem; }
+  .ba-result-stat { font-size: 2rem; }
+}
+
+/* ── Seller customer logo strip ── */
+@media (max-width: 600px) {
+  .seller-logo-strip { gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .seller-logo-strip img { height: 44px; padding: 8px 10px; }
+}
+
+/* ── Reviews ── */
+@media (max-width: 600px) {
+  .reviews-section { padding: 64px 0; }
+  .reviews-header h2 { font-size: 1.5rem; }
+}
+
+/* ── Community (Beyond the platform) ── */
+@media (max-width: 600px) {
+  .community-section { padding: 64px 0; }
+  .community-grid { grid-template-columns: 1fr !important; }
+  .community-card { padding: 28px 20px; }
+  .community-header h2 { font-size: 1.8rem; }
+}
+
+/* ── Awards ── */
+@media (max-width: 720px) {
+  .awards-stage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .awards-section-new { padding: 64px 0; }
+  .awards-stage-grid  { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
+  .awards-stats-row   { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .awards-stat-pill   { padding: 12px 16px; }
+  .awards-stat-pill-num { font-size: 1.1rem; }
+  .awards-trophy-wrap { margin-bottom: 28px; }
+}
+
+/* ── CTA section ── */
+@media (max-width: 600px) {
+  .home-cta-section { padding: 72px 0; }
+  .home-cta-inner h2 { font-size: 1.9rem; }
+}
+
+/* ── General section heading sizes on mobile ── */
+@media (max-width: 600px) {
+  .section-header h2 { font-size: 1.7rem; }
+  .section-copy      { font-size: 0.93rem; }
+}
