@@ -267,6 +267,27 @@ button,
   transform: translateY(-1px);
 }
 
+/* ── LOGIN DROPDOWN ─────────────────────────────────────── */
+/* Right-align the panel so it doesn't overflow the viewport */
+.nav-login .nav-dropdown-menu {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(-6px);
+  min-width: 200px;
+}
+
+.nav-login:hover .nav-dropdown-menu,
+.nav-login:focus-within .nav-dropdown-menu {
+  transform: translateX(0) translateY(0);
+}
+
+/* Subtle divider between items */
+.nav-login .nav-dropdown-menu a + a {
+  border-top: 1px solid var(--color-gray-200);
+  margin-top: 2px;
+  padding-top: 10px;
+}
+
 /* ── HERO ───────────────────────────────────────────────── */
 .hero-section {
   padding: 80px 0 0;
