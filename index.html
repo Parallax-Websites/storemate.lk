@@ -151,22 +151,22 @@
     <section class="proof-strip">
       <div class="container proof-grid">
         <div class="proof-item">
-          <p class="proof-number">25M+</p>
+          <p class="proof-number" data-target="25" data-suffix="M+">25M+</p>
           <p class="proof-label">Orders via Curfox</p>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <p class="proof-number">30,000+</p>
+          <p class="proof-number" data-target="30000" data-suffix="+">30,000+</p>
           <p class="proof-label">Sellers via Curfox</p>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <p class="proof-number">8</p>
+          <p class="proof-number" data-target="8">8</p>
           <p class="proof-label">Industry awards</p>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <p class="proof-number">5+</p>
+          <p class="proof-number" data-target="5" data-suffix="+">5+</p>
           <p class="proof-label">Years in operation</p>
         </div>
         <div class="proof-divider"></div>
@@ -191,7 +191,36 @@
       </div>
     </div>
 
-    <!-- L02b COMMERCIAL VIDEO -->
+    <!-- L02b PRODUCT SHOWCASE -->
+    <section class="product-showcase" id="product-preview">
+      <div class="container">
+        <div class="ps-header">
+          <p class="section-label">The platform</p>
+          <h2>See your entire business,<br />on one screen.</h2>
+          <p class="ps-sub">Orders, inventory, delivery status, sales analytics — all live. Here's what your account looks like from day one.</p>
+        </div>
+        <div class="ps-frame-wrap">
+          <div class="ps-tabs" role="tablist">
+            <button class="ps-tab ps-tab-active" role="tab" aria-selected="true">Dashboard</button>
+            <button class="ps-tab" role="tab" aria-selected="false">Order List</button>
+            <button class="ps-tab" role="tab" aria-selected="false">Order Detail</button>
+            <button class="ps-tab" role="tab" aria-selected="false">Dark Mode</button>
+          </div>
+          <div class="ps-screen">
+            <div class="ps-glow" aria-hidden="true"></div>
+            <img
+              src="images/screenshots/software/1.png"
+              alt="Storemate OMS — Dashboard overview with order summaries and analytics"
+              class="ps-img"
+              id="psMainImg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L02c COMMERCIAL VIDEO -->
     <section class="commercial-section">
       <div class="container">
         <div class="commercial-header">
@@ -235,7 +264,7 @@
 
           <div class="pain-screenshot-col">
             <div class="pain-screenshot-badge">Without Storemate</div>
-            <img src="images/screenshots/software/2 4.png" alt="Order management without Storemate — scattered and manual" />
+            <img src="images/screenshots/software/2.png" alt="Order management without Storemate — scattered and manual" />
           </div>
 
           <div class="pain-cards-col">
@@ -366,9 +395,7 @@
     <!-- L04d MOBILE APP -->
     <section class="mobile-app-section">
       <div class="container">
-        <div class="mobile-app-inner">
-
-          <!-- Copy -->
+        <div class="mobile-app-bg">
           <div class="mobile-app-copy">
             <div class="mobile-app-eyebrow">Storemate Mobile App</div>
             <h2>Download Storemate<br><span>Mobile App</span></h2>
@@ -395,21 +422,7 @@
               Learn more about the app
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-
-            <!-- Mini screenshot row -->
-            <div class="mobile-app-shots">
-              <div class="mobile-app-shot"><img src="images/screenshots/mobile/mobile 4.png" alt="Dashboard" /></div>
-              <div class="mobile-app-shot"><img src="images/screenshots/mobile/mobile 2.png" alt="Orders" /></div>
-              <div class="mobile-app-shot"><img src="images/screenshots/mobile/mobile 5.png" alt="Create order" /></div>
-              <div class="mobile-app-shot"><img src="images/screenshots/mobile/mobile 3.png" alt="Sync history" /></div>
-            </div>
           </div>
-
-          <!-- Lifestyle photo -->
-          <div class="mobile-app-photo">
-            <img src="images/screenshots/mobile/hero.png" alt="Storemate mobile app — manage your business from anywhere" />
-          </div>
-
         </div>
       </div>
     </section>
@@ -650,16 +663,47 @@
       </div>
     </section>
 
-    <!-- L10 CTA -->
+    <!-- L10 CTA + NEWSLETTER -->
     <section class="home-cta-section" id="get-started">
       <div class="home-cta-orb home-cta-orb-1"></div>
       <div class="home-cta-orb home-cta-orb-2"></div>
-      <div class="container home-cta-inner">
-        <p class="eyebrow">Ready to start</p>
-        <h2>Start for free.<br />Full setup by our team.<br />No card needed.</h2>
-        <p class="home-cta-sub">Built from the experience of 25M orders and 30,000+ Sri Lankan sellers.</p>
-        <a target="_blank" rel="noopener noreferrer" href="https://oms.storemate.cloud/register" class="btn btn-white home-cta-btn">Start for free</a>
-        <p class="home-cta-note">Cancel anytime &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Setup included</p>
+      <div class="container">
+        <div class="cta-nl-grid">
+
+          <!-- CTA column -->
+          <div class="cta-nl-cta">
+            <p class="eyebrow">Ready to start</p>
+            <h2>Start for free.<br />Full setup by our team.<br />No card needed.</h2>
+            <p class="home-cta-sub">Built from the experience of 25M orders and 30,000+ Sri Lankan sellers.</p>
+            <a target="_blank" rel="noopener noreferrer" href="https://oms.storemate.cloud/register" class="btn btn-white home-cta-btn">Start for free</a>
+            <p class="home-cta-note">Cancel anytime &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Setup included</p>
+          </div>
+
+          <!-- Divider -->
+          <div class="cta-nl-divider" aria-hidden="true"></div>
+
+          <!-- Newsletter column -->
+          <div class="cta-nl-newsletter">
+            <div class="newsletter-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <p class="eyebrow">For sellers</p>
+            <h3 class="cta-nl-heading">Tips worth reading.<br />Straight to your inbox.</h3>
+            <p class="newsletter-copy">Practical guides, seller stories, and product updates — free. No spam. Unsubscribe anytime.</p>
+            <form class="newsletter-form" id="newsletterForm" novalidate>
+              <div class="newsletter-field-row">
+                <input type="email" class="newsletter-input" name="email" placeholder="your@email.com" required aria-label="Your email address" />
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+              </div>
+              <p class="newsletter-privacy">We respect your privacy. No spam, ever.</p>
+            </form>
+            <div class="newsletter-success" id="newsletterSuccess" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>You're in. We'll be in touch with tips worth reading.</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -871,6 +915,96 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && document.getElementById('cmModal').style.display === 'flex') cmClose();
     });
+  </script>
+  <script>
+    (function () {
+      var form    = document.getElementById('newsletterForm');
+      var success = document.getElementById('newsletterSuccess');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = form.querySelector('.newsletter-input');
+        if (!input.value || !input.validity.valid) {
+          input.focus();
+          return;
+        }
+        // TODO: replace with real endpoint (e.g. Mailchimp, ConvertKit, Formspree)
+        // fetch('/your-newsletter-endpoint', { method: 'POST', body: new FormData(form) })
+        form.style.display = 'none';
+        success.hidden = false;
+      });
+    })();
+  </script>
+  <script>
+    /* ── Product showcase tab switcher ── */
+    (function () {
+      var tabs   = document.querySelectorAll('.ps-tab');
+      var mainImg = document.getElementById('psMainImg');
+      if (!mainImg) return;
+      var srcs = [
+        'images/screenshots/software/1.png',
+        'images/screenshots/software/2.png',
+        'images/screenshots/software/3.png',
+        'images/screenshots/software/5.png'
+      ];
+      var alts = [
+        'Storemate OMS — Dashboard overview',
+        'Storemate OMS — Order management list',
+        'Storemate OMS — Order detail view',
+        'Storemate OMS — Dark mode dashboard'
+      ];
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.classList.remove('ps-tab-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('ps-tab-active');
+          tab.setAttribute('aria-selected', 'true');
+          mainImg.style.opacity = '0';
+          setTimeout(function () {
+            mainImg.src = srcs[i];
+            mainImg.alt = alts[i];
+            mainImg.style.opacity = '1';
+          }, 200);
+        });
+      });
+    })();
+
+    /* ── Proof strip count-up ── */
+    (function () {
+      var els = document.querySelectorAll('.proof-number[data-target]');
+      if (!els.length || !window.IntersectionObserver) return;
+
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function runCount(el) {
+        var target  = parseInt(el.dataset.target, 10);
+        var suffix  = el.dataset.suffix || '';
+        var duration = 1600;
+        var start   = null;
+
+        function fmt(val) {
+          return val >= 1000 ? val.toLocaleString('en-US') : String(val);
+        }
+
+        function step(ts) {
+          if (!start) start = ts;
+          var pct = Math.min((ts - start) / duration, 1);
+          el.textContent = fmt(Math.round(easeOut(pct) * target)) + suffix;
+          if (pct < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { runCount(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.6 });
+
+      els.forEach(function (el) { obs.observe(el); });
+    })();
   </script>
   <script src="js/cookie-consent.js"></script>
   <script src="js/whatsapp-widget.js"></script>
