@@ -539,76 +539,115 @@
       line-height: 1.7;
     }
 
-    /* ── COMPARISON TABLE ─────────────────────────────────── */
-    .cs-compare-table {
+    /* ── COMPARISON ──────────────────────────────────────────── */
+    .cs-vs-wrap {
       display: grid;
-      grid-template-columns: 200px 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
       margin-top: 56px;
+      align-items: start;
+    }
+    .cs-vs-panel {
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.2);
     }
-    .cs-compare-row { display: contents; }
-    .cs-compare-cell {
-      padding: 20px 28px;
-      font-size: 0.93rem;
+    .cs-vs-panel--bad {
+      background: #141920;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .cs-vs-panel--good {
+      background: linear-gradient(160deg, #002f5e 0%, #004f96 60%, #006daf 100%);
+      border: 1px solid rgba(0,180,216,0.25);
+      box-shadow: 0 0 80px rgba(0,100,200,0.25), 0 32px 64px rgba(0,0,0,0.3);
+    }
+    .cs-vs-head {
+      padding: 28px 32px 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      line-height: 1.5;
+      gap: 14px;
     }
-    .cs-compare-cell:nth-child(3n+1) {
-      background: #141e2e;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .cs-compare-cell:nth-child(3n+2) {
-      background: #1a1a1a;
-      color: rgba(255,255,255,0.65);
-      border-bottom-color: rgba(255,255,255,0.04);
-    }
-    .cs-compare-cell:nth-child(3n+3) {
-      background: linear-gradient(135deg, #003e7a, #006daf);
-      color: #ffffff;
-      font-weight: 600;
-      border-bottom-color: rgba(255,255,255,0.07);
-    }
-    .cs-compare-row--head .cs-compare-cell:nth-child(3n+1) {
-      background: #0c1117;
-      border-bottom: 2px solid rgba(255,255,255,0.08);
-    }
-    .cs-compare-row--head .cs-compare-cell:nth-child(3n+2) {
-      background: #333;
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 26px 28px;
-      border-bottom: none;
-    }
-    .cs-compare-row--head .cs-compare-cell:nth-child(3n+3) {
-      background: linear-gradient(135deg, #00bce7, #2153c0);
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 26px 28px;
-      border-bottom: none;
-    }
-    .cs-compare-icon {
-      width: 24px; height: 24px;
+    .cs-vs-head--bad { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .cs-vs-head--good { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .cs-vs-badge {
+      width: 38px; height: 38px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900;
       flex-shrink: 0;
     }
-    .cs-compare-icon--bad { background: rgba(231,76,60,0.2); color: #ff7b6b; }
-    .cs-compare-icon--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .cs-vs-badge--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .cs-vs-badge--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .cs-vs-head-info { flex: 1; }
+    .cs-vs-head-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .cs-vs-head-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.38);
+      margin-top: 3px;
+    }
+    .cs-vs-head-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+    .cs-vs-head-pill--bad {
+      background: rgba(231,76,60,0.12);
+      color: #ff6b5b;
+      border: 1px solid rgba(231,76,60,0.2);
+    }
+    .cs-vs-head-pill--good {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .cs-vs-list { padding: 8px 0 4px; }
+    .cs-vs-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.18s;
+    }
+    .cs-vs-panel--bad .cs-vs-row:hover { background: rgba(231,76,60,0.04); }
+    .cs-vs-panel--good .cs-vs-row:hover { background: rgba(255,255,255,0.05); }
+    .cs-vs-row:last-child { border-bottom: none; }
+    .cs-vs-row-icon {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cs-vs-row-icon--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .cs-vs-row-icon--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .cs-vs-row-body { flex: 1; }
+    .cs-vs-row-topic {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 4px;
+    }
+    .cs-vs-row-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.65);
+    }
+    .cs-vs-panel--good .cs-vs-row-text { color: rgba(255,255,255,0.88); }
+    @media (max-width: 900px) {
+      .cs-vs-wrap { grid-template-columns: 1fr; }
+    }
 
     /* ── FINAL CTA ────────────────────────────────────────── */
     .cs-cta {
@@ -746,27 +785,19 @@
     /* ── SCREENSHOT VISUALS ───────────────────────────────── */
     .cs-screenshot-wrap {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 24px 60px rgba(0,62,122,0.22);
     }
     .cs-screenshot-wrap img {
       width: 100%;
-      max-width: 500px;
       display: block;
-      filter: drop-shadow(0 20px 48px rgba(0,62,122,0.18));
-      border-radius: 8px;
-      transition: transform 0.35s ease;
+      transform: scale(1);
+      transform-origin: top center;
+      transition: transform 0.5s ease;
     }
-    .cs-screenshot-wrap:hover img { transform: translateY(-6px); }
-    /* glow ring */
-    .cs-screenshot-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -16px;
-      background: radial-gradient(ellipse at center, rgba(0,180,216,0.12), transparent 65%);
-      border-radius: 24px;
-      pointer-events: none;
+    .cs-screenshot-wrap:hover img {
+      transform: scale(1.55);
     }
 
     /* ── COURIER LOGO GRID VISUAL ─────────────────────────── */
@@ -807,6 +838,112 @@
     @keyframes marquee-left {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
+    }
+
+    /* ── FAQ ─────────────────────────────────────────────────── */
+    .cs-faq {
+      padding: 96px 0;
+      background: #f3f5f9;
+    }
+    .cs-faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .cs-faq-list {
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cs-faq-item {
+      background: #ffffff;
+      border: 1px solid #e7ecf4;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .cs-faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      gap: 16px;
+      user-select: none;
+    }
+    .cs-faq-q-text {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--color-charcoal);
+      line-height: 1.4;
+    }
+    .cs-faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(0,62,122,0.07);
+      border: 1px solid rgba(0,62,122,0.15);
+      color: var(--color-blue-dark);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cs-faq-item.open .cs-faq-icon {
+      background: var(--color-blue-dark);
+      color: #ffffff;
+      transform: rotate(45deg);
+    }
+    .cs-faq-a {
+      display: none;
+      padding: 16px 24px 20px;
+      font-size: 0.9rem;
+      color: var(--color-gray-700);
+      line-height: 1.75;
+      border-top: 1px solid #f0f2f8;
+    }
+    .cs-faq-item.open .cs-faq-a { display: block; }
+    .cs-faq-support {
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--color-blue-dark) 0%, #006daf 100%);
+      border-radius: 20px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #ffffff;
+    }
+    .cs-faq-support-icon {
+      width: 52px; height: 52px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cs-faq-support-body h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .cs-faq-support-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .cs-faq-support-body a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: #ffffff;
+      color: var(--color-blue-dark);
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .cs-faq-support-body a:hover { transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .cs-faq-support { flex-direction: column; gap: 16px; }
     }
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
@@ -1204,6 +1341,27 @@
         </div>
       </div>
 
+      <!-- Solution 4: Sync status -->
+      <div class="cs-sol-item cs-sol-item--reverse">
+        <div>
+          <div class="cs-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Order-Level Status
+          </div>
+          <h3 class="cs-sol-h"><strong>Know exactly</strong> what happened to every order — instantly</h3>
+          <p class="cs-sol-desc">Storemate tracks the sync status of each individual order. See what's pending, what's confirmed by the courier, and what needs attention — all in one view, without chasing courier portals.</p>
+          <ul class="cs-sol-list">
+            <li>Per-order sync status shown at a glance</li>
+            <li>Pending, synced, and failed states clearly visible</li>
+            <li>No logging into multiple courier portals to check</li>
+            <li>Full audit trail of every sync event per order</li>
+          </ul>
+        </div>
+        <div class="cs-screenshot-wrap">
+          <img src="images/sync/sync_status.png" alt="Storemate order-level sync status — see every order's courier sync state" />
+        </div>
+      </div>
+
       <!-- Mini grid: remaining 3 sync features -->
       <div class="cs-mini-sol-grid">
 
@@ -1238,75 +1396,6 @@
     </div>
   </section>
 
-  <!-- ── WAYBILL FEATURES ────────────────────────────────────── -->
-  <section class="cs-section--navy">
-    <div class="container">
-      <div class="cs-phase-badge cs-phase-badge--cyan">
-        <div class="cs-phase-badge-num">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <div class="cs-phase-badge-text">Waybill Features <span>— branded, professional, automated</span></div>
-      </div>
-
-      <h2 class="cs-h2 cs-h2--white" style="margin-bottom:12px;">Every waybill is <strong>branded and professional</strong></h2>
-      <p class="cs-sub cs-sub--muted" style="margin-bottom:0;">
-        Waybills customized with your logo, your colors, your messaging. Customers see a real business from the moment the package arrives.
-      </p>
-
-      <div class="cs-waybill-grid">
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          </div>
-          <div class="cs-waybill-title">Multiple Layouts</div>
-          <p class="cs-waybill-desc">Create different waybill designs for different situations — holiday promotions, seasonal packaging, brand variants. Each layout ready to apply in one click.</p>
-        </div>
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
-          </div>
-          <div class="cs-waybill-title">Brand-Wise Management</div>
-          <p class="cs-waybill-desc">Run multiple brands? Each gets its own waybill template — separate logos, separate colors, complete brand separation across all your courier shipments.</p>
-        </div>
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-          </div>
-          <div class="cs-waybill-title">Courier-Wise Options</div>
-          <p class="cs-waybill-desc">Different couriers need different waybill formats. Storemate handles it automatically — the right format goes to the right courier, every time, without manual selection.</p>
-        </div>
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <div class="cs-waybill-title">Print Date Tracking</div>
-          <p class="cs-waybill-desc">Waybill automatically records the print date and the team member who printed it. Prevents accidental duplicate printing. Saves paper. Saves time. Creates accountability.</p>
-        </div>
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          <div class="cs-waybill-title">Order-Wise Print Options</div>
-          <p class="cs-waybill-desc">Sync order-specific waybill options — fragile items, gift orders, special packaging instructions. Everything reflected in the customized waybill automatically.</p>
-        </div>
-
-        <div class="cs-waybill-card">
-          <div class="cs-waybill-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div class="cs-waybill-title">Professional Appearance</div>
-          <p class="cs-waybill-desc">Branded waybills signal a real, professional business. Customers trust what looks professional. Fewer complaints, fewer disputes, stronger long-term reputation.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ── COMPARISON ─────────────────────────────────────────── -->
   <section class="cs-section--dark">
     <div class="container">
@@ -1314,64 +1403,214 @@
       <h2 class="cs-h2 cs-h2--white">Manual spreadsheets <strong>vs</strong> Storemate automatic sync</h2>
       <p class="cs-sub cs-sub--muted">Seven factors. One clear winner every time.</p>
 
-      <div class="cs-compare-table">
+      <div class="cs-vs-wrap">
 
-        <div class="cs-compare-row cs-compare-row--head">
-          <div class="cs-compare-cell"></div>
-          <div class="cs-compare-cell">
-            <span style="display:flex;align-items:center;gap:10px;">
-              <span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">✕</span>
-              Manual Google Sheets / Excel
-            </span>
+        <!-- BAD panel -->
+        <div class="cs-vs-panel cs-vs-panel--bad">
+          <div class="cs-vs-head cs-vs-head--bad">
+            <div class="cs-vs-badge cs-vs-badge--bad">✕</div>
+            <div class="cs-vs-head-info">
+              <div class="cs-vs-head-title">Manual Google Sheets / Excel</div>
+              <div class="cs-vs-head-sub">How most Sri Lankan sellers operate today</div>
+            </div>
+            <div class="cs-vs-head-pill cs-vs-head-pill--bad">Before</div>
           </div>
-          <div class="cs-compare-cell">
-            <span style="display:flex;align-items:center;gap:10px;">
-              <span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">✓</span>
-              Storemate Automatic Sync
-            </span>
+          <div class="cs-vs-list">
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Data Entry</div>
+                <div class="cs-vs-row-text">Manual copy &amp; paste. Every order. Every day. No exceptions.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Entry Errors</div>
+                <div class="cs-vs-row-text">High. Wrong addresses. Wrong items. Wrong phone numbers.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Time Saved Daily</div>
+                <div class="cs-vs-row-text">0 hours saved. 4–6 hours wasted on data entry per person.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Multiple Couriers</div>
+                <div class="cs-vs-row-text">Multiple spreadsheets. Manual entries in each portal. Chaos at scale.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Real-Time Visibility</div>
+                <div class="cs-vs-row-text">No idea what the courier received. Orders disappear into black holes.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Sync Failures</div>
+                <div class="cs-vs-row-text">Silent failures. Orders disappear. No alert. Customer never receives.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Delivery Accuracy</div>
+                <div class="cs-vs-row-text">5–10% wrong address or item rates from manual errors. High returns.</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Data Entry</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>Manual copy &amp; paste. Every order. Every day. No exceptions.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>Automatic. Zero manual work from day one.</div>
+        <!-- GOOD panel -->
+        <div class="cs-vs-panel cs-vs-panel--good">
+          <div class="cs-vs-head cs-vs-head--good">
+            <div class="cs-vs-badge cs-vs-badge--good">✓</div>
+            <div class="cs-vs-head-info">
+              <div class="cs-vs-head-title">Storemate Automatic Sync</div>
+              <div class="cs-vs-head-sub">Built for Sri Lankan sellers who are scaling</div>
+            </div>
+            <div class="cs-vs-head-pill cs-vs-head-pill--good">After</div>
+          </div>
+          <div class="cs-vs-list">
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Data Entry</div>
+                <div class="cs-vs-row-text">Automatic. Zero manual work from day one.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Entry Errors</div>
+                <div class="cs-vs-row-text">Zero. Accurate data synced directly from the source.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Time Saved Daily</div>
+                <div class="cs-vs-row-text">4–6 hours saved per staff member, every single day.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Multiple Couriers</div>
+                <div class="cs-vs-row-text">One platform. All couriers. All automated in one screen.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Real-Time Visibility</div>
+                <div class="cs-vs-row-text">Live dashboard. Every order tracked from sync to delivery.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Sync Failures</div>
+                <div class="cs-vs-row-text">Instant alert. One-click resync. Fixed immediately.</div>
+              </div>
+            </div>
+            <div class="cs-vs-row">
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
+              <div class="cs-vs-row-body">
+                <div class="cs-vs-row-topic">Delivery Accuracy</div>
+                <div class="cs-vs-row-text">~0% error rate. Near-perfect accuracy from automated sync.</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Entry Errors</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>High. Wrong addresses. Wrong items. Wrong phone numbers.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>Zero. Accurate data synced directly from the source.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────── -->
+  <section class="cs-faq">
+    <div class="container">
+      <div class="cs-faq-inner">
+        <div class="cs-label cs-label--blue" style="text-align:center;">FAQ</div>
+        <h2 class="cs-h2" style="text-align:center;">Common questions about <strong>courier sync</strong></h2>
+
+        <div class="cs-faq-list">
+
+          <div class="cs-faq-item open">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">Which couriers does Storemate sync with?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">Storemate currently syncs with Royal Express, FDE Express, DomEx, TransEx, and Koombiyo — and we're adding more regularly. If your courier isn't on the list, contact our team and we'll check if an integration is possible.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">Do I need to set up the courier connection myself?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">No. Our team handles the full setup. When you sign up, we connect your Storemate account to your courier partner and make sure your first sync goes through correctly. You don't need to deal with API keys, portal settings, or any technical configuration.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">What happens if a sync fails?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">You'll see it immediately on your sync dashboard — failed orders are flagged the moment the sync attempt fails, not hours later. One click re-syncs the order. Nothing is lost silently and no order slips through to the customer as unshipped.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">Can I use multiple couriers for different orders?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">Yes. You choose which courier to sync each order to, or split orders across multiple couriers from a single screen. You can also switch couriers at the last moment without re-entering any data — Storemate transfers everything to the new courier automatically.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">How quickly does an order sync to the courier?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">Syncs happen in seconds. The moment you confirm the sync, the order data is sent directly to the courier's system — no batch delays, no scheduled uploads. The courier receives the full order immediately.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">Do I still need to log in to the courier portal after syncing?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">No. Once the sync is confirmed, the courier has everything they need. Your team manages all orders from Storemate — there's no reason to log in to a separate courier portal. The sync dashboard gives you full visibility of what was sent.</div>
+          </div>
+
+          <div class="cs-faq-item">
+            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cs-faq-q-text">What information gets sent to the courier when an order syncs?</span>
+              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </div>
+            <div class="cs-faq-a">Everything the courier needs — customer name, delivery address, phone number, product description, COD amount, special handling notes, and any packaging instructions. Nothing needs to be re-entered or filled in manually on the courier side.</div>
+          </div>
+
         </div>
 
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Time Saved Daily</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>0 hours saved. 4–6 hours wasted on data entry per person.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>4–6 hours saved per staff member, every single day.</div>
-        </div>
-
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Multiple Couriers</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>Multiple spreadsheets. Manual entries in each portal. Chaos at scale.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>One platform. All couriers. All automated in one screen.</div>
-        </div>
-
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Real-Time Visibility</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>No idea what the courier received. Orders disappear into black holes.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>Live dashboard. Every order tracked from sync to delivery.</div>
-        </div>
-
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Sync Failures</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>Silent failures. Orders disappear. No alert. Customer never receives.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>Instant alert. One-click resync. Fixed immediately.</div>
-        </div>
-
-        <div class="cs-compare-row">
-          <div class="cs-compare-cell">Delivery Accuracy</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--bad">✕</span>5–10% wrong address or item rates from manual errors. High returns.</div>
-          <div class="cs-compare-cell"><span class="cs-compare-icon cs-compare-icon--good">✓</span>~0% error rate. Near-perfect accuracy from automated sync.</div>
+        <div class="cs-faq-support">
+          <div class="cs-faq-support-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="cs-faq-support-body">
+            <h4>Can't connect your courier partner?</h4>
+            <p>If you run into trouble connecting your courier or your courier isn't listed, our support team will handle it directly. Just reach out — we'll get the integration set up for you.</p>
+            <a href="contact.html">Talk to our support team →</a>
+          </div>
         </div>
 
       </div>

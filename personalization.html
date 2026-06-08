@@ -369,89 +369,64 @@
     .ps-split-panel--dark .ps-split-item-text p { color: rgba(255,255,255,0.35); }
     .ps-split-panel--navy .ps-split-item-text p { color: rgba(255,255,255,0.55); }
 
-    /* ── COMPARISON TABLE ─────────────────────────────────── */
-    .ps-compare-wrap {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--color-gray-200);
-    }
-    .ps-compare-head {
+    /* ── COMPARISON ──────────────────────────────────────────── */
+    .ps-vs-wrap {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      background: var(--color-charcoal);
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 48px;
+      align-items: start;
     }
-    .ps-compare-head-cell {
-      padding: 20px 24px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+    .ps-vs-panel { border-radius: 24px; overflow: hidden; }
+    .ps-vs-panel--bad { background: #141920; border: 1px solid rgba(255,255,255,0.06); }
+    .ps-vs-panel--good {
+      background: linear-gradient(160deg, #002f5e 0%, #004f96 60%, #006daf 100%);
+      border: 1px solid rgba(0,180,216,0.25);
+      box-shadow: 0 0 80px rgba(0,100,200,0.25), 0 32px 64px rgba(0,0,0,0.3);
     }
-    .ps-compare-head-cell--ours {
-      color: #00b4d8;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .ps-vs-head { padding: 28px 32px 24px; display: flex; align-items: center; gap: 14px; }
+    .ps-vs-head--bad { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ps-vs-head--good { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .ps-vs-badge {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900; flex-shrink: 0;
     }
-    .ps-compare-head-cell--ours::after { content: '✦'; font-size: 10px; }
-
-    .ps-compare-row {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      border-bottom: 1px solid var(--color-gray-100);
+    .ps-vs-badge--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .ps-vs-badge--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .ps-vs-head-info { flex: 1; }
+    .ps-vs-head-title { font-size: 1rem; font-weight: 700; color: #ffffff; line-height: 1.2; }
+    .ps-vs-head-sub { font-size: 0.75rem; color: rgba(255,255,255,0.38); margin-top: 3px; }
+    .ps-vs-head-pill {
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 999px; flex-shrink: 0;
     }
-    .ps-compare-row:last-child { border-bottom: none; }
-    .ps-compare-row:nth-child(even) { background: #FAFAFA; }
-
-    .ps-compare-cell {
-      padding: 18px 24px;
-      font-size: 0.88rem;
-      line-height: 1.5;
+    .ps-vs-head-pill--bad { background: rgba(231,76,60,0.12); color: #ff6b5b; border: 1px solid rgba(231,76,60,0.2); }
+    .ps-vs-head-pill--good { background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); }
+    .ps-vs-list { padding: 8px 0 4px; }
+    .ps-vs-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 18px 32px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.18s;
     }
-    .ps-compare-cell--cap {
-      font-weight: 700;
-      color: var(--color-charcoal);
+    .ps-vs-panel--bad .ps-vs-row:hover { background: rgba(231,76,60,0.04); }
+    .ps-vs-panel--good .ps-vs-row:hover { background: rgba(255,255,255,0.05); }
+    .ps-vs-row:last-child { border-bottom: none; }
+    .ps-vs-row-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 900; flex-shrink: 0; margin-top: 1px;
     }
-    .ps-compare-cell--bad {
-      color: #e74c3c;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .ps-vs-row-icon--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .ps-vs-row-icon--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .ps-vs-row-body { flex: 1; }
+    .ps-vs-row-topic {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 4px;
     }
-    .ps-compare-cell--bad::before {
-      content: '✕';
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: #fff2f2;
-      color: #e74c3c;
-      font-size: 11px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .ps-compare-cell--good {
-      color: var(--color-blue-dark);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .ps-compare-cell--good::before {
-      content: '✓';
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: #e8f4fc;
-      color: var(--color-blue);
-      font-size: 11px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .ps-vs-row-text { font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.65); }
+    .ps-vs-panel--good .ps-vs-row-text { color: rgba(255,255,255,0.88); }
+    @media (max-width: 900px) { .ps-vs-wrap { grid-template-columns: 1fr; } }
 
     /* ── CTA ──────────────────────────────────────────────── */
     .ps-cta {
@@ -946,53 +921,50 @@
         <p class="ps-sub">The personalization difference at a glance.</p>
       </div>
 
-      <div class="ps-compare-wrap">
-        <div class="ps-compare-head">
-          <div class="ps-compare-head-cell">Capability</div>
-          <div class="ps-compare-head-cell">Generic Software</div>
-          <div class="ps-compare-head-cell ps-compare-head-cell--ours">Storemate</div>
+      <div class="ps-vs-wrap">
+
+        <div class="ps-vs-panel ps-vs-panel--bad">
+          <div class="ps-vs-head ps-vs-head--bad">
+            <div class="ps-vs-badge ps-vs-badge--bad">✕</div>
+            <div class="ps-vs-head-info">
+              <div class="ps-vs-head-title">Generic Software</div>
+              <div class="ps-vs-head-sub">One-size-fits-all, built for everyone</div>
+            </div>
+            <div class="ps-vs-head-pill ps-vs-head-pill--bad">Before</div>
+          </div>
+          <div class="ps-vs-list">
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Filter Preferences</div><div class="ps-vs-row-text">Reset every session</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Table Customization</div><div class="ps-vs-row-text">Fixed columns only</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">User-Specific Views</div><div class="ps-vs-row-text">Everyone sees the same</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Dashboard Options</div><div class="ps-vs-row-text">One fixed dashboard</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Brand Expression</div><div class="ps-vs-row-text">Zero — vendor always visible</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Waybill Design</div><div class="ps-vs-row-text">Generic template</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Invoice Layout</div><div class="ps-vs-row-text">Fixed generic design</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--bad">✕</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Tracking Messages</div><div class="ps-vs-row-text">System notifications</div></div></div>
+          </div>
         </div>
 
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Filter Preferences</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Reset every session</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Saved automatically</div>
+        <div class="ps-vs-panel ps-vs-panel--good">
+          <div class="ps-vs-head ps-vs-head--good">
+            <div class="ps-vs-badge ps-vs-badge--good">✓</div>
+            <div class="ps-vs-head-info">
+              <div class="ps-vs-head-title">Storemate</div>
+              <div class="ps-vs-head-sub">Built around your business, your brand</div>
+            </div>
+            <div class="ps-vs-head-pill ps-vs-head-pill--good">After</div>
+          </div>
+          <div class="ps-vs-list">
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Filter Preferences</div><div class="ps-vs-row-text">Saved automatically</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Table Customization</div><div class="ps-vs-row-text">Fully customizable</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">User-Specific Views</div><div class="ps-vs-row-text">Different per role</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Dashboard Options</div><div class="ps-vs-row-text">Unlimited custom</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Brand Expression</div><div class="ps-vs-row-text">100% — your brand only</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Waybill Design</div><div class="ps-vs-row-text">Fully branded</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Invoice Layout</div><div class="ps-vs-row-text">Completely custom</div></div></div>
+            <div class="ps-vs-row"><div class="ps-vs-row-icon ps-vs-row-icon--good">✓</div><div class="ps-vs-row-body"><div class="ps-vs-row-topic">Tracking Messages</div><div class="ps-vs-row-text">Your brand voice</div></div></div>
+          </div>
         </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Table Customization</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Fixed columns only</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Fully customizable</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">User-Specific Views</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Everyone sees same</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Different per role</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Dashboard Options</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">One fixed dashboard</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Unlimited custom</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Brand Expression</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Zero — vendor visible</div>
-          <div class="ps-compare-cell ps-compare-cell--good">100% — your brand</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Waybill Design</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Generic template</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Fully branded</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Invoice Layout</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">Fixed generic design</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Completely custom</div>
-        </div>
-        <div class="ps-compare-row">
-          <div class="ps-compare-cell ps-compare-cell--cap">Tracking Messages</div>
-          <div class="ps-compare-cell ps-compare-cell--bad">System notifications</div>
-          <div class="ps-compare-cell ps-compare-cell--good">Your brand voice</div>
-        </div>
+
       </div>
     </div>
   </section>

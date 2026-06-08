@@ -258,40 +258,61 @@
 
     /* ── COMPARISON TABLE ─────────────────────────────────── */
     .sve-compare { padding: 96px 0; background: #fff; }
-    .sve-table {
-      display: grid; grid-template-columns: 210px 1fr 1fr;
-      margin-top: 56px; border-radius: 20px; overflow: hidden;
-      border: 1px solid #e7ecf4; box-shadow: 0 8px 40px rgba(0,0,0,.07);
+    .sve-vs-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 20px; margin-top: 56px; align-items: start;
     }
-    .sve-tr { display: contents; }
-    .sve-td {
-      padding: 18px 22px; font-size: .88rem;
-      display: flex; align-items: center; gap: 10px;
-      border-bottom: 1px solid #eef1f7;
+    .sve-vs-panel { border-radius: 24px; overflow: hidden; }
+    .sve-vs-panel--bad { background: #141920; border: 1px solid rgba(255,255,255,0.06); }
+    .sve-vs-panel--good {
+      background: linear-gradient(160deg, #002f5e 0%, #004f96 60%, #006daf 100%);
+      border: 1px solid rgba(0,180,216,0.25);
+      box-shadow: 0 0 80px rgba(0,100,200,0.25), 0 32px 64px rgba(0,0,0,0.3);
     }
-    .sve-td:nth-child(3n+1) {
-      background: #f8fafc; color: #697285;
-      font-size: .75rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: .08em;
+    .sve-vs-head { padding: 28px 32px 24px; display: flex; align-items: center; gap: 14px; }
+    .sve-vs-head--bad { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .sve-vs-head--good { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sve-vs-badge {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 900; flex-shrink: 0;
     }
-    .sve-td:nth-child(3n+2) { background: #fdfaf9; color: #444; line-height: 1.5; }
-    .sve-td:nth-child(3n+3) {
-      background: #f6f8ff; color: #111e35;
-      font-weight: 600; line-height: 1.5;
-      border-left: 1px solid #e3e9f8;
+    .sve-vs-badge--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .sve-vs-badge--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .sve-vs-head-logo { height: 26px; width: auto; border-radius: 6px; flex-shrink: 0; }
+    .sve-vs-head-info { flex: 1; }
+    .sve-vs-head-title { font-size: 1rem; font-weight: 700; color: #ffffff; line-height: 1.2; }
+    .sve-vs-head-sub { font-size: 0.75rem; color: rgba(255,255,255,0.38); margin-top: 3px; }
+    .sve-vs-head-pill {
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 999px; flex-shrink: 0;
     }
-    .sve-tr--head .sve-td:nth-child(3n+1) { background: #f3f5f9; border-bottom: 1px solid #e7ecf4; }
-    .sve-tr--head .sve-td:nth-child(3n+2) {
-      background: linear-gradient(135deg, var(--excel-dark), var(--excel-mid));
-      color: #fff; font-size: .92rem; font-weight: 700; padding: 24px 22px; border-bottom: none; gap: 12px;
+    .sve-vs-head-pill--bad { background: rgba(231,76,60,0.12); color: #ff6b5b; border: 1px solid rgba(231,76,60,0.2); }
+    .sve-vs-head-pill--good { background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); }
+    .sve-vs-list { padding: 8px 0 4px; }
+    .sve-vs-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 18px 32px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.18s;
     }
-    .sve-tr--head .sve-td:nth-child(3n+3) {
-      background: linear-gradient(135deg, var(--sm-blue), var(--sm-dark));
-      color: #fff; font-size: .92rem; font-weight: 700; padding: 24px 22px; border-bottom: none; border-left: none; gap: 12px;
+    .sve-vs-panel--bad .sve-vs-row:hover { background: rgba(231,76,60,0.04); }
+    .sve-vs-panel--good .sve-vs-row:hover { background: rgba(255,255,255,0.05); }
+    .sve-vs-row:last-child { border-bottom: none; }
+    .sve-vs-row-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 900; flex-shrink: 0; margin-top: 1px;
     }
-    .sve-table-logo { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; }
-    .sve-icon-bad { width:22px;height:22px;border-radius:50%;background:rgba(192,57,43,.1);color:#c0392b;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;flex-shrink:0; }
-    .sve-icon-good{ width:22px;height:22px;border-radius:50%;background:rgba(33,83,192,.1);color:var(--sm-blue);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;flex-shrink:0; }
+    .sve-vs-row-icon--bad { background: rgba(231,76,60,0.15); color: #ff6b5b; }
+    .sve-vs-row-icon--good { background: rgba(255,255,255,0.18); color: #ffffff; }
+    .sve-vs-row-body { flex: 1; }
+    .sve-vs-row-topic {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 4px;
+    }
+    .sve-vs-row-text { font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.65); }
+    .sve-vs-panel--good .sve-vs-row-text { color: rgba(255,255,255,0.88); }
+    @media (max-width: 900px) { .sve-vs-wrap { grid-template-columns: 1fr; } }
 
     /* ── IMPACT ───────────────────────────────────────────── */
     .sve-impact { padding: 96px 0; background: var(--page-dark); text-align: center; }
@@ -675,21 +696,52 @@
         <h2 class="sve-section-h2">All 9 features.<br><strong>Side by side.</strong></h2>
         <p class="sve-section-sub sve-section-sub--gray">A clear picture of what each tool actually delivers for your business.</p>
 
-        <div class="sve-table">
-          <div class="sve-tr sve-tr--head">
-            <div class="sve-td"></div>
-            <div class="sve-td"><img src="images/excel/excel.avif" alt="Microsoft Excel logo" class="sve-table-logo" />&nbsp;Microsoft Excel</div>
-            <div class="sve-td"><img src="images/brand/storemate_logo.png" alt="Storemate" class="sve-table-logo" style="filter:brightness(0) invert(1);" />&nbsp;Storemate</div>
+        <div class="sve-vs-wrap">
+
+          <div class="sve-vs-panel sve-vs-panel--bad">
+            <div class="sve-vs-head sve-vs-head--bad">
+              <img src="images/excel/excel.avif" alt="Microsoft Excel logo" class="sve-vs-head-logo" />
+              <div class="sve-vs-head-info">
+                <div class="sve-vs-head-title">Microsoft Excel</div>
+                <div class="sve-vs-head-sub">Built for data, not for running a business</div>
+              </div>
+              <div class="sve-vs-head-pill sve-vs-head-pill--bad">Before</div>
+            </div>
+            <div class="sve-vs-list">
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Duplicate Detection</div><div class="sve-vs-row-text">Manual checking</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Fake Customers</div><div class="sve-vs-row-text">Not possible</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Order Form Sync</div><div class="sve-vs-row-text">Manual copy-paste</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Follow-Up Management</div><div class="sve-vs-row-text">Leads get lost</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Courier Integration</div><div class="sve-vs-row-text">Manual 5–10 min/order</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Delivery Tracking</div><div class="sve-vs-row-text">Manual checking</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Waybill Printing</div><div class="sve-vs-row-text">Generic courier labels</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Packing Control</div><div class="sve-vs-row-text">No system</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--bad">✕</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Dashboard</div><div class="sve-vs-row-text">Manual calculations</div></div></div>
+            </div>
           </div>
-          <div class="sve-tr"><div class="sve-td">Duplicate Detection</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Manual checking</div><div class="sve-td"><span class="sve-icon-good">✓</span>Automatic alert</div></div>
-          <div class="sve-tr"><div class="sve-td">Fake Customers</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Not possible</div><div class="sve-td"><span class="sve-icon-good">✓</span>Auto-identified &amp; blocked</div></div>
-          <div class="sve-tr"><div class="sve-td">Order Form Sync</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Manual copy-paste</div><div class="sve-td"><span class="sve-icon-good">✓</span>Real-time auto-sync</div></div>
-          <div class="sve-tr"><div class="sve-td">Follow-Up Management</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Leads get lost</div><div class="sve-td"><span class="sve-icon-good">✓</span>Smart reminders</div></div>
-          <div class="sve-tr"><div class="sve-td">Courier Integration</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Manual 5–10 min/order</div><div class="sve-td"><span class="sve-icon-good">✓</span>Automatic 30 sec/order</div></div>
-          <div class="sve-tr"><div class="sve-td">Delivery Tracking</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Manual checking</div><div class="sve-td"><span class="sve-icon-good">✓</span>Real-time updates</div></div>
-          <div class="sve-tr"><div class="sve-td">Waybill Printing</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Generic courier labels</div><div class="sve-td"><span class="sve-icon-good">✓</span>Professional branded</div></div>
-          <div class="sve-tr"><div class="sve-td">Packing Control</div><div class="sve-td"><span class="sve-icon-bad">✕</span>No system</div><div class="sve-td"><span class="sve-icon-good">✓</span>Verified tracking</div></div>
-          <div class="sve-tr"><div class="sve-td">Dashboard</div><div class="sve-td"><span class="sve-icon-bad">✕</span>Manual calculations</div><div class="sve-td"><span class="sve-icon-good">✓</span>Live metrics</div></div>
+
+          <div class="sve-vs-panel sve-vs-panel--good">
+            <div class="sve-vs-head sve-vs-head--good">
+              <img src="images/brand/storemate_logo.png" alt="Storemate" class="sve-vs-head-logo" style="filter:brightness(0) invert(1);" />
+              <div class="sve-vs-head-info">
+                <div class="sve-vs-head-title">Storemate</div>
+                <div class="sve-vs-head-sub">Built for Sri Lankan sellers who are scaling</div>
+              </div>
+              <div class="sve-vs-head-pill sve-vs-head-pill--good">After</div>
+            </div>
+            <div class="sve-vs-list">
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Duplicate Detection</div><div class="sve-vs-row-text">Automatic alert</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Fake Customers</div><div class="sve-vs-row-text">Auto-identified &amp; blocked</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Order Form Sync</div><div class="sve-vs-row-text">Real-time auto-sync</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Follow-Up Management</div><div class="sve-vs-row-text">Smart reminders</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Courier Integration</div><div class="sve-vs-row-text">Automatic 30 sec/order</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Delivery Tracking</div><div class="sve-vs-row-text">Real-time updates</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Waybill Printing</div><div class="sve-vs-row-text">Professional branded</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Packing Control</div><div class="sve-vs-row-text">Verified tracking</div></div></div>
+              <div class="sve-vs-row"><div class="sve-vs-row-icon sve-vs-row-icon--good">✓</div><div class="sve-vs-row-body"><div class="sve-vs-row-topic">Dashboard</div><div class="sve-vs-row-text">Live metrics</div></div></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
