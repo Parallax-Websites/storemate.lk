@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W93DZHMG');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="description" content="Storemate OMS FAQ — common questions about order management for Sri Lankan online sellers: getting started, couriers and COD, waybills, pricing, mobile app, support and data security." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>FAQ | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .faq-hero {
+      padding: 80px 0 72px;
+      text-align: center;
+      background: linear-gradient(160deg, #003e7a 0%, #0072b5 48%, #00bce7 100%);
+      color: #ffffff;
+    }
+    .faq-hero .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 14px;
+    }
+    .faq-hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .faq-hero-sub {
+      max-width: 620px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .faq-cat {
+      max-width: 760px;
+      margin: 56px auto 18px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-cat:first-of-type { margin-top: 8px; }
+    .faq-cat svg { color: var(--color-blue); flex-shrink: 0; }
+    .faq-still {
+      max-width: 760px;
+      margin: 56px auto 0;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 20px;
+      padding: 40px 28px;
+      box-shadow: 0 4px 16px rgba(33, 83, 192, 0.05);
+    }
+    .faq-still h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+    .faq-still p { color: var(--color-gray-700); line-height: 1.8; margin-bottom: 22px; }
+    .faq-still .hero-actions { justify-content: center; }
+    .faq-still .btn-ghost {
+      background: #ffffff;
+      color: var(--color-blue);
+      border: 1px solid var(--color-gray-200);
+      backdrop-filter: none;
+    }
+    .faq-still .btn-ghost:hover { background: #f4f7fb; }
+    /* Allow longer answers to open fully, including on narrow screens */
+    .faq-section .faq-item.faq-open .faq-answer { max-height: 460px; }
+
+    /* Two-column layout with a sticky section menu */
+    html { scroll-behavior: smooth; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 232px 1fr;
+      gap: 56px;
+      align-items: start;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .faq-nav { position: sticky; top: 96px; align-self: start; }
+    .faq-nav-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: var(--color-gray-500);
+      margin: 0 0 12px 14px;
+    }
+    .faq-nav-list { display: flex; flex-direction: column; gap: 2px; list-style: none; margin: 0; padding: 0; }
+    .faq-nav a {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--color-gray-700);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-left: 3px solid transparent;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .faq-nav a svg { width: 17px; height: 17px; flex-shrink: 0; color: var(--color-gray-500); transition: color .2s ease; }
+    .faq-nav a:hover { background: #f4f7fb; color: var(--color-blue); }
+    .faq-nav a:hover svg { color: var(--color-blue); }
+    .faq-nav a.is-active { background: #eef4fd; color: var(--color-blue); border-left-color: var(--color-blue); }
+    .faq-nav a.is-active svg { color: var(--color-blue); }
+    /* Right column fills its track instead of the centred 760px */
+    .faq-main .faq-cat,
+    .faq-main .faq-list,
+    .faq-main .faq-still { max-width: none; margin-left: 0; margin-right: 0; }
+    .faq-main .faq-cat { scroll-margin-top: 96px; }
+    .faq-main .faq-cat:first-of-type { margin-top: 0; }
+
+    @media (max-width: 900px) {
+      .faq-layout { grid-template-columns: 1fr; gap: 24px; }
+      .faq-nav { position: static; top: auto; }
+      .faq-nav-title { display: none; }
+      .faq-nav-list { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+      .faq-nav a {
+        border-left: none;
+        border: 1px solid var(--color-gray-200);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+      .faq-nav a svg { display: none; }
+      .faq-nav a.is-active { border-color: var(--color-blue); }
+    }
+    @media (max-width: 520px) {
+      .faq-hero { padding: 60px 0 52px; }
+      .faq-hero h1 { font-size: 2rem; }
+      .faq-cat { font-size: 1.2rem; }
+    }
+  </style>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "s7fumshjhl");
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W93DZHMG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span>
+                </a>
+                <a href="returns-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span>
+                  <span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span>
+                </a>
+                <a href="courier-sync.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span>
+                </a>
+                <a href="free-waybill-generator.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Waybill Generator <span class="nav-free-badge">FREE</span></strong><span>Bulk print waybills — no signup</span></span>
+                </a>
+                <a href="waybill-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span>
+                </a>
+                <a href="personalization.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span>
+                  <span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+                  <span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span>
+                </a>
+                <a href="trackmate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                  <span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span>
+                </a>
+                <a href="storemate-vs-excel.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span>
+                  <span class="nav-mega-text"><strong>vs Excel</strong><span>9 things Excel can't do</span></span>
+                </a>
+                <a href="implementation.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+                  <span class="nav-mega-text"><strong>Implementation</strong><span>How we set you up</span></span>
+                </a>
+                <a href="podcast.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+                  <span class="nav-mega-text"><strong>Podcast</strong><span>Online business conversations</span></span>
+                </a>
+                <a href="free-course.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Course <span class="nav-free-badge">FREE</span></strong><span>16 video lessons</span></span>
+                </a>
+                <a href="cod-business-guide.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span>
+                </a>
+                <a href="faq.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                  <span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-dropdown nav-login">
+        <button class="nav-dropdown-trigger">
+          Login
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="https://oms.storemate.cloud/login" target="_blank" rel="noopener noreferrer">Login to OMS</a>
+          <a href="https://app.storemate.cloud/login" target="_blank" rel="noopener noreferrer">POS Lite Login</a>
+          <a href="https://app.storematepro.lk/login" target="_blank" rel="noopener noreferrer">POS Pro Login</a>
+        </div>
+      </div>
+      <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="faq-hero">
+      <div class="container">
+        <p class="section-label">FAQ</p>
+        <h1>Common questions, answered.</h1>
+        <p class="faq-hero-sub">Everything you need to know about Storemate OMS — from your first order to growing across multiple brands. Can't find your answer? We're one message away.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+
+        <div class="faq-layout">
+
+          <!-- Section menu -->
+          <aside class="faq-nav">
+            <p class="faq-nav-title">On this page</p>
+            <ul class="faq-nav-list">
+              <li><a href="#getting-started"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg> Getting Started</a></li>
+              <li><a href="#orders-couriers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Orders &amp; Couriers</a></li>
+              <li><a href="#features-usage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Features &amp; Usage</a></li>
+              <li><a href="#pricing-plans"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Pricing &amp; Plans</a></li>
+              <li><a href="#support-security"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Support &amp; Security</a></li>
+            </ul>
+          </aside>
+
+          <div class="faq-main">
+
+        <!-- Getting Started -->
+        <h2 class="faq-cat" id="getting-started">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Getting Started
+        </h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What is Storemate OMS?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Storemate OMS is an order management system built for Sri Lankan online sellers. It brings all your orders — from Facebook, WhatsApp, Instagram and phone — into one place, then helps you confirm them, sync to your courier, and print branded waybills. No more juggling spreadsheets and screenshots.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Who is Storemate for?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>It's for anyone selling online in Sri Lanka and shipping by cash on delivery — whether you're handling your first few orders a day or thousands a month. From solo sellers to growing teams with multiple brands, Storemate scales with you.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Do I need a credit card to get started?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. You can start on our free plan with no card and no commitment. You only pay when you choose to upgrade for more orders, users or features.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              How long does setup take?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Most sellers are up and running the same day. And you're not on your own — our team handles your full setup, including products, courier connections and team training, so you start with everything ready to go.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders &amp; Couriers -->
+        <h2 class="faq-cat" id="orders-couriers">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Orders &amp; Couriers
+        </h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What counts as an order?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>An order is any customer purchase request that comes in through Facebook, WhatsApp, Instagram or a phone call. In Storemate, each order is tracked from the moment it's placed all the way through to delivery.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Which couriers does Storemate work with?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Storemate connects with the major couriers across Sri Lanka, including Royal Express, TransEx, FDE, DomEx and Koombiyo. You can pick a courier per order. If your preferred partner isn't listed yet, contact us — we add new ones regularly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What is COD Sync?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>COD (Cash on Delivery) Sync means that when you add orders to Storemate, the system automatically sends those details to your courier — no manual copying and pasting into courier portals every morning.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I print branded waybills?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Every waybill prints with your logo and brand, filled in automatically from the order — about 30 seconds instead of 10 minutes. Built-in duplicate-print protection keeps things clean.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can customers place their own orders?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Share your Self-Order Form link and customers fill in their own details. The order drops straight into Storemate — fewer back-and-forth messages and fewer typing mistakes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features &amp; Usage -->
+        <h2 class="faq-cat" id="features-usage">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Features &amp; Usage
+        </h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I use Storemate on my phone?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The Storemate mobile app lets you manage orders, sync couriers and check status from anywhere — handy when you're away from your desk but the orders keep coming.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can my team use it together?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can add team members, and the number of users grows with your plan. Everyone works from the same up-to-date order list, so nothing falls through the cracks.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I manage more than one brand or business?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you run multiple brands or warehouses, you can set up separate businesses and locations to keep inventory, orders and shipping organised for each one.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Does Storemate help reduce returns?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Storemate flags risky and repeat problem orders so you can confirm them before shipping — helping you cut down on failed deliveries and the cost of returns.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I move my data over from Excel?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our team helps you bring your products and existing details into Storemate during setup, so you don't have to start from scratch or retype everything.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing &amp; Plans -->
+        <h2 class="faq-cat" id="pricing-plans">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          Pricing &amp; Plans
+        </h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Is there really a free plan?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — free forever. The free plan covers 100 orders a month, 1 user and unlimited products, so you can run real orders before deciding to upgrade.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              How much does Storemate cost?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Paid plans start at LKR 5,000/month and scale up with your order volume and team size. See the full breakdown on our <a href="pricing.html" style="color:var(--color-blue);font-weight:600;">pricing page</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What happens if I go over my order limit?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Your orders keep flowing. On paid plans, extra orders beyond your monthly allowance are simply charged at a small per-order rate — so a busy month never stops you from selling.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I upgrade, downgrade or cancel anytime?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You're never locked in. Change your plan up or down as your business changes, or cancel whenever you need to — no penalties.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Are customisations available?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Customisations are available on paid plans, with more scope as you move up the tiers. Enterprise customers get fully bespoke development and implementation support.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support &amp; Security -->
+        <h2 class="faq-cat" id="support-security">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Support &amp; Security
+        </h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What support do I get?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Every seller gets help. Free and starter plans include knowledge base, video tutorials and email support, while Premium and Enterprise plans add WhatsApp support for faster answers when you need them.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Is my data safe?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Your data is protected with industry-standard security practices, and we follow an ISO 27001-aligned approach to keeping it safe. Read more on our <a href="security.html" style="color:var(--color-blue);font-weight:600;">data security page</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Can I set up a dedicated server?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Dedicated server options are available on our Enterprise plan. Talk to our team about your scale and infrastructure needs and we'll design a setup to match.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Still have questions -->
+        <div class="faq-still">
+          <h2>Still have a question?</h2>
+          <p>We'd love to help. Reach out and a real person from our team will get back to you.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Contact us</a>
+            <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Start for free &rarr;</a>
+          </div>
+        </div>
+
+          </div><!-- /.faq-main -->
+        </div><!-- /.faq-layout -->
+
+      </div>
+    </section>
+
+  </main>
+
+      <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+
+    <!-- Main Grid -->
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">From seller to Entrepreneur.</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="whatsapp-landing.html">Self-Order Form</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a>
+        <a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('faq-open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('faq-open'));
+        if (!isOpen) item.classList.add('faq-open');
+      });
+    });
+
+    // FAQ section menu — highlight the section in view
+    (function () {
+      const links = Array.from(document.querySelectorAll('.faq-nav a'));
+      if (!links.length) return;
+      const byId = {};
+      links.forEach(l => { byId[l.getAttribute('href').slice(1)] = l; });
+      const setActive = id => {
+        links.forEach(l => l.classList.remove('is-active'));
+        if (byId[id]) byId[id].classList.add('is-active');
+      };
+      const cats = document.querySelectorAll('.faq-cat[id]');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      }, { rootMargin: '-96px 0px -70% 0px', threshold: 0 });
+      cats.forEach(c => obs.observe(c));
+      if (cats.length) setActive(cats[0].id);
+    })();
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        toggle.classList.toggle('toggle-active');
+      });
+    }
+  </script>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Storemate OMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Storemate OMS is an order management system built for Sri Lankan online sellers. It brings all your orders — from Facebook, WhatsApp, Instagram and phone — into one place, then helps you confirm them, sync to your courier, and print branded waybills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Storemate for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's for anyone selling online in Sri Lanka and shipping by cash on delivery — whether you're handling your first few orders a day or thousands a month. From solo sellers to growing teams with multiple brands, Storemate scales with you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a credit card to get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You can start on our free plan with no card and no commitment. You only pay when you choose to upgrade for more orders, users or features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most sellers are up and running the same day. Our team handles your full setup, including products, courier connections and team training, so you start with everything ready to go."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as an order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An order is any customer purchase request that comes in through Facebook, WhatsApp, Instagram or a phone call. In Storemate, each order is tracked from the moment it's placed all the way through to delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which couriers does Storemate work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Storemate connects with the major couriers across Sri Lanka, including Royal Express, TransEx, FDE, DomEx and Koombiyo. You can pick a courier per order, and we add new partners regularly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is COD Sync?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "COD (Cash on Delivery) Sync means that when you add orders to Storemate, the system automatically sends those details to your courier — no manual copying and pasting into courier portals every morning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print branded waybills?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every waybill prints with your logo and brand, filled in automatically from the order — about 30 seconds instead of 10 minutes. Built-in duplicate-print protection keeps things clean."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can customers place their own orders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Share your Self-Order Form link and customers fill in their own details. The order drops straight into Storemate — fewer back-and-forth messages and fewer typing mistakes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Storemate on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Storemate mobile app lets you manage orders, sync couriers and check status from anywhere — handy when you're away from your desk but the orders keep coming."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my team use it together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can add team members, and the number of users grows with your plan. Everyone works from the same up-to-date order list, so nothing falls through the cracks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I manage more than one brand or business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If you run multiple brands or warehouses, you can set up separate businesses and locations to keep inventory, orders and shipping organised for each one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Storemate help reduce returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Storemate flags risky and repeat problem orders so you can confirm them before shipping — helping you cut down on failed deliveries and the cost of returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I move my data over from Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our team helps you bring your products and existing details into Storemate during setup, so you don't have to start from scratch or retype everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there really a free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — free forever. The free plan covers 100 orders a month, 1 user and unlimited products, so you can run real orders before deciding to upgrade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Storemate cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paid plans start at LKR 5,000/month and scale up with your order volume and team size. See the full breakdown on our pricing page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I go over my order limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your orders keep flowing. On paid plans, extra orders beyond your monthly allowance are simply charged at a small per-order rate — so a busy month never stops you from selling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upgrade, downgrade or cancel anytime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You're never locked in. Change your plan up or down as your business changes, or cancel whenever you need to — no penalties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are customisations available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Customisations are available on paid plans, with more scope as you move up the tiers. Enterprise customers get fully bespoke development and implementation support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What support do I get?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every seller gets help. Free and starter plans include knowledge base, video tutorials and email support, while Premium and Enterprise plans add WhatsApp support for faster answers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your data is protected with industry-standard security practices, and we follow an ISO 27001-aligned approach to keeping it safe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set up a dedicated server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dedicated server options are available on our Enterprise plan. Talk to our team about your scale and infrastructure needs and we'll design a setup to match."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://storemate.lk"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FAQ",
+      "item": "https://storemate.lk/faq"
+    }
+  ]
+}
+  </script>
+</body>
+</html>
