@@ -1,0 +1,23 @@
+name: Deploy to storemate.lk
+
+on:
+  push:
+    branches:
+      - v2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/storemate
+            git fetch origin
+            git reset --hard origin/v2
+            chown -R www-data:www-data /var/www/storemate
+            echo "✅ Deployed at $(date)" >> /var/log/storemate-deploy.log
