@@ -50,7 +50,7 @@
     /* ── HERO ─────────────────────────────────────────────── */
     .tm-hero {
       background: #ffffff;
-      padding: 80px 0 0;
+      padding: 80px 0 88px;
       overflow: hidden;
       position: relative;
     }
@@ -79,10 +79,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 48px;
-      align-items: flex-end;
+      align-items: center;
     }
     .tm-hero-copy {
-      padding-bottom: 64px;
+      padding-bottom: 0;
     }
     .tm-hero-brand {
       display: flex;
@@ -91,7 +91,7 @@
       margin-bottom: 36px;
     }
     .tm-hero-brand img {
-      height: 52px;
+      height: 84px;
       width: auto;
     }
     .tm-tagline-pill {
@@ -175,20 +175,21 @@
       color: #aaa;
     }
 
-    /* Hero visual */
+    /* Hero visual — floating phone mockup */
     .tm-hero-visual {
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
     }
-    .tm-hero-ad {
+    .tm-hero-mockup {
       width: 100%;
-      max-width: 520px;
+      max-width: 460px;
       display: block;
-      border-radius: 20px 20px 0 0;
-      filter: drop-shadow(0 -8px 40px rgba(249,115,22,0.15));
+      filter: drop-shadow(0 24px 56px rgba(249,115,22,0.18)) drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+      transition: transform 0.4s ease;
     }
+    .tm-hero-mockup:hover { transform: translateY(-8px); }
 
     /* ── TRACKING SEARCH BAR ──────────────────────────────── */
     .tm-search-wrap {
@@ -610,7 +611,7 @@
     }
     .tm-download > .container { position: relative; z-index: 1; }
     .tm-download-logo {
-      height: 56px; width: auto;
+      height: 76px; width: auto;
       margin: 0 auto 32px;
       display: block;
       /* invert to white since background is dark */
@@ -679,8 +680,8 @@
     @media (max-width: 960px) {
       .tm-hero-inner { grid-template-columns: 1fr; }
       .tm-hero-copy  { padding-bottom: 0; }
-      .tm-hero-visual { justify-content: flex-start; }
-      .tm-hero-ad { max-width: 420px; border-radius: 20px; }
+      .tm-hero-visual { justify-content: center; margin-top: 8px; }
+      .tm-hero-mockup { max-width: 320px; }
       .tm-steps { grid-template-columns: 1fr; }
       .tm-feature-inner { grid-template-columns: 1fr; gap: 40px; }
       .tm-feature-inner--rev { direction: ltr; }
@@ -819,11 +820,11 @@
           <!-- Copy -->
           <div class="tm-hero-copy">
             <div class="tm-hero-brand">
-              <img src="images/trackmate/logo.jpg" alt="Trackmate courier tracking Sri Lanka — real-time updates for all major couriers" />
+              <img src="images/trackmate/logo-mark.png" alt="Trackmate courier tracking Sri Lanka — real-time updates for all major couriers" />
               <span class="tm-tagline-pill">Track your online orders</span>
             </div>
 
-            <h1>Courier tracking Sri Lanka —<br>all packages,<br><em>one place.</em></h1>
+            <h1>Track all your online orders<br>in <em>one place.</em></h1>
             <p class="tm-hero-sub">
               Free courier tracking Sri Lanka. Enter any tracking number for real-time updates — Domex, TransExpress, Koombiyo, Royal Express and more, all in one place.
             </p>
@@ -852,7 +853,7 @@
 
           <!-- Visual -->
           <div class="tm-hero-visual">
-            <img src="images/trackmate/ad.jpg" alt="Trackmate app — track all packages in one place" class="tm-hero-ad" />
+            <img src="images/trackmate/app-mockup.png" alt="Trackmate mobile app — track all your packages in one place" class="tm-hero-mockup" />
           </div>
 
         </div>
@@ -1072,8 +1073,8 @@
 
     <section class="tm-download" id="tm-download">
       <div class="container">
-        <img src="images/trackmate/logo.jpg" alt="Trackmate" class="tm-download-logo" />
-        <h2>Stop guessing.<br>Start <em>tracking.</em></h2>
+        <img src="images/trackmate/logo-mark.png" alt="Trackmate" class="tm-download-logo" />
+        <h2>Stop using multiple platforms<br>to <em>track your orders.</em></h2>
         <p>Free to download. All Sri Lankan couriers supported. Know where every package is — in one place.</p>
         <div class="tm-dl-row">
           <a href="https://play.google.com/store/apps/details?id=com.parallaxTechnologies.storemateOMS" target="_blank" rel="noopener noreferrer" class="app-store-badge">
