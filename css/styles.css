@@ -1163,7 +1163,7 @@ button,
 
   /* top bar: logo left, menu icon right */
   .brand { margin-right: auto; }
-  .logo-img { height: 13px; }
+  .logo-img { height: 24px; }
   .nav-login { display: none; }
   .mobile-menu-toggle { order: 2; }
 
