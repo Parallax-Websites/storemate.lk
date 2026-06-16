@@ -118,7 +118,7 @@
 
 .pain-label {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -130,10 +130,10 @@
 }
 
 .pain-section h2 {
-  font-size: clamp(2rem, 3.8vw, 3.2rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.14;
   letter-spacing: -0.02em;
-  color: #013387;
+  color: var(--color-charcoal);
   margin-bottom: 16px;
 }
 
@@ -214,18 +214,18 @@
 
 .origin-copy .section-label {
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   font-weight: 700;
   font-size: 0.78rem;
   color: var(--color-blue);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   display: block;
 }
 
 .origin-copy h2 {
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.14;
   margin-bottom: 28px;
   color: var(--color-charcoal);
 }
@@ -509,20 +509,20 @@
 
 .section-label-light {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cyan);
   margin-bottom: 14px;
 }
 
 .community-header h2 {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 300;
   color: #ffffff;
   margin-bottom: 14px;
-  line-height: 1.1;
+  line-height: 1.14;
 }
 
 .section-copy-light {
@@ -605,7 +605,7 @@
 }
 .awards-header-block .section-label {
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   font-weight: 700;
   font-size: 0.78rem;
   color: var(--color-cyan);
@@ -613,9 +613,9 @@
   display: block;
 }
 .awards-header-block h2 {
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.14;
   margin-bottom: 18px;
   color: #ffffff;
 }
@@ -876,19 +876,19 @@
 
 .home-cta-section .eyebrow {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 20px;
   display: block;
 }
 
 .home-cta-section h2 {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.14;
   margin-bottom: 18px;
 }
 
@@ -1272,23 +1272,55 @@
 
 /* ── PRODUCT SHOWCASE ─────────────────────────── */
 
+/* ── ALL-IN-ONE infographic (inside features section) ── */
+.aio-visual {
+  max-width: 1180px;
+  margin: 0 auto 80px;
+}
+.aio-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(33, 83, 192, 0.12);
+}
+@media (max-width: 640px) {
+  .aio-visual { margin-bottom: 56px; }
+}
+
 .product-showcase {
   padding: 96px 0 88px;
   background: var(--color-gray-100);
   overflow: hidden;
 }
 
-.ps-header {
-  max-width: 600px;
-  margin: 0 auto 44px;
-  text-align: center;
+.ps-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
-.ps-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+.ps-copy {
+  max-width: 500px;
+}
+
+.ps-copy .section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--color-blue);
+  margin-bottom: 14px;
+}
+
+.ps-copy h2 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
   color: var(--color-charcoal);
-  line-height: 1.2;
+  line-height: 1.14;
   margin-bottom: 16px;
 }
 
@@ -1296,18 +1328,16 @@
   font-size: 1rem;
   color: var(--color-gray-500);
   line-height: 1.7;
+  margin-bottom: 28px;
 }
 
-.ps-frame-wrap {
-  max-width: 980px;
-  margin: 0 auto;
+.ps-visual {
+  position: relative;
 }
 
 .ps-tabs {
   display: flex;
-  justify-content: center;
   gap: 8px;
-  margin-bottom: 32px;
   flex-wrap: wrap;
 }
 
@@ -1363,6 +1393,12 @@
   filter: drop-shadow(0 20px 60px rgba(33, 83, 192, 0.16));
 }
 
+@media (max-width: 900px) {
+  .ps-inner { grid-template-columns: 1fr; gap: 40px; }
+  .ps-copy { max-width: 620px; margin: 0 auto; text-align: center; }
+  .ps-tabs { justify-content: center; }
+}
+
 @media (max-width: 640px) {
   .product-showcase { padding: 64px 0 56px; }
   .ps-tab { padding: 8px 16px; font-size: 0.8rem; }
@@ -1383,18 +1419,18 @@
 
 .commercial-eyebrow {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-blue);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .commercial-title {
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-  font-weight: 800;
-  line-height: 1.15;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--color-charcoal);
   margin-bottom: 14px;
@@ -1498,9 +1534,9 @@
   z-index: 1;
 }
 .mobile-app-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cyan);
   margin-bottom: 14px;
@@ -1520,10 +1556,10 @@
   0%,100% { opacity:1; } 50% { opacity:0.3; }
 }
 .mobile-app-copy h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
   margin-bottom: 14px;
   color: #ffffff;
 }
@@ -1593,17 +1629,17 @@
   margin-bottom: 52px;
 }
 .platform-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-blue);
   margin-bottom: 12px;
 }
 .platform-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--color-charcoal);
   margin-bottom: 12px;
 }
@@ -1824,16 +1860,17 @@
 }
 
 .hf-eyebrow {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--color-blue); margin-bottom: 10px;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-blue); margin-bottom: 12px;
 }
 .hf-title {
   font-size: clamp(1.6rem,2.8vw,2.2rem);
-  font-weight: 800; letter-spacing: -0.02em;
+  font-weight: 300; letter-spacing: -0.02em;
   color: var(--color-charcoal); line-height: 1.15;
   margin-bottom: 14px;
 }
+.hf-title strong { font-weight: 800; color: inherit; }
 .hf-desc {
   font-size: 0.97rem; color: var(--color-gray-500);
   line-height: 1.8; margin-bottom: 20px; max-width: 440px;
@@ -1873,13 +1910,13 @@
   margin-bottom: 48px;
 }
 .reviews-eyebrow {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--color-blue); margin-bottom: 10px;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-blue); margin-bottom: 12px;
 }
 .reviews-header h2 {
-  font-size: clamp(1.8rem,3vw,2.4rem);
-  font-weight: 800; letter-spacing: -0.03em;
+  font-size: clamp(2rem,3.4vw,3rem);
+  font-weight: 300; letter-spacing: -0.02em;
   color: var(--color-charcoal); margin-bottom: 10px;
 }
 .reviews-header p { font-size: 0.97rem; color: var(--color-gray-500); }
@@ -2063,9 +2100,9 @@
 }
 .home-podcast-copy { color: #fff; }
 .home-podcast-eyebrow {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cyan);
   margin-bottom: 12px;
@@ -2083,11 +2120,11 @@
 }
 @keyframes pod-home-blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 .home-podcast-copy h2 {
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: #fff;
-  line-height: 1.12;
+  line-height: 1.14;
   margin-bottom: 14px;
 }
 .home-podcast-copy h2 em { font-style: normal; color: var(--color-cyan); }
@@ -2301,3 +2338,63 @@
   .section-header h2 { font-size: 1.7rem; }
   .section-copy      { font-size: 0.93rem; }
 }
+
+/* ── THE DIFFERENCE — seller vs Entrepreneur teaser ── */
+.diff-section {
+  padding: 104px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.diff-section::before {
+  content: '';
+  position: absolute;
+  width: 620px; height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(33,83,192,0.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.diff-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.diff-headline {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin-bottom: 18px;
+}
+.diff-headline strong { font-weight: 800; }
+.diff-body {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-gray-700);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.diff-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 32px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.diff-cta svg { flex-shrink: 0; }
+.diff-cta:hover { gap: 14px; }
+@media (max-width: 600px) {
+  .diff-section { padding: 72px 0; }
+}
+
+/* Section headings: two parts — light-weight body + bold accent, same colour (no brand colour) */
+main h2 strong { font-weight: 800; color: inherit; }

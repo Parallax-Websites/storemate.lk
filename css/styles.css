@@ -708,16 +708,17 @@ button,
 
 .section-header .section-label {
   text-transform: uppercase;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.2em;
   font-weight: 700;
+  font-size: 0.78rem;
   color: var(--color-blue);
   margin-bottom: 14px;
 }
 
 .section-header h2 {
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.14;
   margin-bottom: 16px;
 }
 
