@@ -46,6 +46,18 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(249,115,22,0.4);
     }
+    /* mobile: CTA moves to the bottom of the open menu, not the top bar */
+    @media (max-width: 760px) {
+      .tm-nav-cta {
+        display: none;
+        order: 4;
+        flex-basis: 100%;
+        width: auto;
+        justify-content: center;
+        margin: 8px 16px 2px;
+      }
+      .header-inner:has(.site-nav.nav-open) .tm-nav-cta { display: inline-flex; }
+    }
 
     /* ── HERO ─────────────────────────────────────────────── */
     .tm-hero {
@@ -717,7 +729,10 @@
       <a href="index.html" class="brand">
         <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
       </a>
-      <nav class="site-nav">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown nav-mega-wrap">
           <button class="nav-dropdown-trigger">
