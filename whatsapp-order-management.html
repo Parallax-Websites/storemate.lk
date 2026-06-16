@@ -353,7 +353,7 @@
     }
 
     /* ── WHATSAPP BAN, two-column advantages ─────────────── */
-    .wo-ban { padding: 88px 0; background: #fff; }
+    .wo-ban { padding: 88px 0; background: var(--color-gray-100); }
     .wo-ban-inner {
       display: grid;
       grid-template-columns: 0.9fr 1fr;
@@ -362,36 +362,24 @@
       max-width: 1080px;
       margin: 0 auto;
     }
-    .wo-ban-visual {
-      background: linear-gradient(150deg, #0d1f3d 0%, #07112b 100%);
-      border: 1px solid rgba(37,211,102,0.3);
-      border-radius: 22px;
-      padding: 50px 36px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .wo-ban-visual { text-align: center; }
+    .wo-ban-shot {
+      max-width: 268px;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+      border-radius: 24px;
+      border: 1px solid var(--color-gray-200);
+      box-shadow: 0 26px 60px rgba(192,57,43,0.22);
     }
-    .wo-ban-visual::before {
-      content: '';
-      position: absolute;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(37,211,102,0.2) 0%, transparent 70%);
-      top: -110px; right: -80px;
-      pointer-events: none;
+    .wo-ban-caption {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c0392b;
     }
-    .wo-ban-shield {
-      position: relative; z-index: 1;
-      width: 96px; height: 96px;
-      margin: 0 auto 22px;
-      border-radius: 26px;
-      background: rgba(37,211,102,0.14);
-      border: 1px solid rgba(37,211,102,0.32);
-      color: #5fe08c;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .wo-ban-visual h3 { position: relative; z-index: 1; color: #fff; font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
-    .wo-ban-visual p { position: relative; z-index: 1; color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; }
     .wo-ban-copy .wo-label { margin-bottom: 14px; }
     .wo-ban-copy h2 {
       font-size: clamp(2rem, 3.4vw, 3rem);
@@ -631,16 +619,35 @@
       </div>
     </section>
 
+    <!-- WHAT IS IT -->
+    <section class="wo-section">
+      <div class="container">
+        <div class="wo-what-inner">
+          <div class="wo-what-visual">
+            <img src="images/product/whatsapp.png" alt="Storemate Self-Order Form with live product catalogue, quantity selector and customer details on mobile" />
+          </div>
+          <div class="wo-what-copy">
+            <p class="wo-label">How it works</p>
+            <h2>What is the<br><strong>Self-Order Form?</strong></h2>
+            <p>It is one link, just for your shop. Your customer opens it, picks what they want, types their name and address, and clicks save. The order comes straight to you. You do nothing.</p>
+            <ul class="wo-what-steps">
+              <li>You share your link on ads, your page, or your bio.</li>
+              <li>Your customer picks the item and how many they want.</li>
+              <li>They type their name and address, then click save.</li>
+              <li>The order shows up in Storemate. You typed nothing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WHATSAPP BAN HIGHLIGHT -->
     <section class="wo-ban">
       <div class="container">
         <div class="wo-ban-inner">
           <div class="wo-ban-visual">
-            <div class="wo-ban-shield">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <h3>Your number stays safe</h3>
-            <p>Customers order through your link, not your chat. No spam flags. No ban.</p>
+            <img src="images/whatsapp/whatspp-ban.jpg" alt="WhatsApp ban screen that reads: This account cannot use WhatsApp" class="wo-ban-shot" loading="lazy" />
+            <p class="wo-ban-caption">This is what a ban looks like</p>
           </div>
           <div class="wo-ban-copy">
             <p class="wo-label">The fix</p>
@@ -659,7 +666,7 @@
     </section>
 
     <!-- PAIN -->
-    <section class="wo-section wo-section--gray">
+    <section class="wo-section">
       <div class="container">
         <div class="wo-head">
           <p class="wo-label">Sound familiar?</p>
@@ -686,28 +693,6 @@
             <div class="wo-pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
             <h3>Lost data</h3>
             <p>You worry your chats and orders might one day just disappear.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT IS IT -->
-    <section class="wo-section">
-      <div class="container">
-        <div class="wo-what-inner">
-          <div class="wo-what-visual">
-            <img src="images/product/whatsapp.png" alt="Storemate Self-Order Form with live product catalogue, quantity selector and customer details on mobile" />
-          </div>
-          <div class="wo-what-copy">
-            <p class="wo-label">How it works</p>
-            <h2>What is the<br><strong>Self-Order Form?</strong></h2>
-            <p>It is one link, just for your shop. Your customer opens it, picks what they want, types their name and address, and clicks save. The order comes straight to you. You do nothing.</p>
-            <ul class="wo-what-steps">
-              <li>You share your link on ads, your page, or your bio.</li>
-              <li>Your customer picks the item and how many they want.</li>
-              <li>They type their name and address, then click save.</li>
-              <li>The order shows up in Storemate. You typed nothing.</li>
-            </ul>
           </div>
         </div>
       </div>

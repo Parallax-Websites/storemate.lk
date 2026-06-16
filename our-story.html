@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W93DZHMG');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="description" content="Our story: why Storemate was built for Sri Lankan online sellers. A multi-channel order and delivery platform that cuts returns, saves time, and turns sellers into entrepreneurs." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>Our Story | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .os-hero {
+      padding: 96px 0;
+      background: linear-gradient(150deg, #07112b 0%, #0d1f3c 55%, #112248 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: #fff;
+    }
+    .os-hero::before {
+      content: '';
+      position: absolute;
+      width: 640px; height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,180,216,0.14) 0%, transparent 70%);
+      top: -200px; right: -160px;
+      pointer-events: none;
+    }
+    .os-hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .os-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--color-cyan);
+      margin-bottom: 18px;
+    }
+    .os-hero h1 {
+      font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+    .os-hero h1 strong { font-weight: 800; }
+    .os-hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.66);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+    .os-hero .btn-cyan, .os-cta .btn-white { text-decoration: none; }
+
+    /* Sections */
+    .os-section { padding: 88px 0; background: #fff; }
+    .os-section--gray { background: var(--color-gray-100); }
+    .os-section--dark {
+      background: linear-gradient(150deg, #07112b 0%, #0d1f3c 55%, #112248 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .os-head { max-width: 760px; margin: 0 auto 44px; text-align: center; }
+    .os-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--color-blue);
+      margin-bottom: 14px;
+    }
+    .os-section--dark .os-label { color: var(--color-cyan); }
+    .os-head h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--color-charcoal);
+      margin-bottom: 18px;
+    }
+    .os-section--dark .os-head h2 { color: #fff; }
+    .os-head h2 strong { font-weight: 800; }
+    .os-lead { font-size: 1.05rem; line-height: 1.85; color: var(--color-gray-700); }
+    .os-section--dark .os-lead { color: rgba(255,255,255,0.7); }
+
+    /* Narrative prose */
+    .os-prose { max-width: 720px; margin: 0 auto; }
+    .os-prose p { font-size: 1.02rem; line-height: 1.9; color: var(--color-gray-700); margin-bottom: 18px; }
+    .os-prose p:last-child { margin-bottom: 0; }
+    .os-section--dark .os-prose p { color: rgba(255,255,255,0.7); }
+    .os-prose strong { color: var(--color-charcoal); font-weight: 700; }
+    .os-section--dark .os-prose strong { color: #fff; }
+
+    /* Stat strips / cards */
+    .os-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1080px;
+      margin: 48px auto 0;
+    }
+    .os-stat {
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 18px;
+      padding: 30px 22px;
+      text-align: center;
+      box-shadow: 0 14px 36px rgba(33,83,192,0.05);
+    }
+    .os-section--gray .os-stat { background: #fff; }
+    .os-section--dark .os-stat { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); box-shadow: none; }
+    .os-stat-num {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--color-blue);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+    .os-section--dark .os-stat-num { color: var(--color-cyan); }
+    .os-stat-label { font-size: 0.88rem; color: var(--color-gray-500); line-height: 1.5; }
+    .os-section--dark .os-stat-label { color: rgba(255,255,255,0.6); }
+
+    /* Highlight band */
+    .os-highlight {
+      max-width: 880px;
+      margin: 48px auto 0;
+      background: linear-gradient(135deg, var(--color-blue-dark), var(--color-blue));
+      border-radius: 22px;
+      padding: 44px 40px;
+      text-align: center;
+      color: #fff;
+    }
+    .os-highlight-num { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 12px; }
+    .os-highlight p { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+    /* Feature grid */
+    .os-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .os-feature {
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 14px 36px rgba(33,83,192,0.05);
+    }
+    .os-feature-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: rgba(33,83,192,0.1);
+      color: var(--color-blue);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .os-feature h3 { font-size: 1.02rem; color: var(--color-charcoal); margin-bottom: 8px; }
+    .os-feature p { font-size: 0.92rem; color: var(--color-gray-500); line-height: 1.7; }
+    .os-features-note { text-align: center; margin-top: 28px; font-size: 0.98rem; color: var(--color-gray-700); }
+
+    /* Awards pills */
+    .os-awards { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .os-award {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.9rem; font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+    .os-award svg { color: var(--color-cyan); }
+
+    /* CTA */
+    .os-cta {
+      padding: 96px 0;
+      background: linear-gradient(135deg, #0a1628 0%, #0f2040 100%);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .os-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,180,216,0.1), transparent 65%); }
+    .os-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .os-cta h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .os-cta h2 strong { font-weight: 800; color: var(--color-cyan); }
+    .os-cta p { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 34px; }
+
+    /* Scroll reveal */
+    .os-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .os-reveal.in { opacity: 1; transform: none; }
+
+    /* Card hover lifts */
+    .os-stat, .os-feature { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .os-stat:hover, .os-feature:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(33,83,192,0.12); }
+    .os-section--dark .os-stat:hover { box-shadow: 0 22px 50px rgba(0,0,0,0.35); }
+
+    /* Two-column split layouts (alternating) */
+    .os-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1080px; margin: 0 auto 48px; }
+    .os-split .os-prose { max-width: none; margin: 0; }
+    .os-figure img { width: 100%; display: block; border-radius: 20px; border: 1px solid var(--color-gray-200); box-shadow: 0 24px 60px rgba(33,83,192,0.16); }
+    .os-section--dark .os-figure img { border-color: rgba(255,255,255,0.1); box-shadow: 0 30px 70px rgba(0,0,0,0.4); }
+    .os-figure--float img { animation: os-float 6s ease-in-out infinite; }
+    @keyframes os-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .os-figure-wide { max-width: 1060px; margin: 48px auto 0; }
+    .os-figure-wide img { width: 100%; display: block; border-radius: 20px; border: 1px solid var(--color-gray-200); box-shadow: 0 28px 64px rgba(33,83,192,0.16); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .os-reveal { opacity: 1; transform: none; transition: none; }
+      .os-figure--float img { animation: none; }
+    }
+
+    @media (max-width: 900px) {
+      .os-stats { grid-template-columns: 1fr 1fr; }
+      .os-features { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .os-split { grid-template-columns: 1fr; gap: 34px; }
+      .os-split--rev .os-figure { order: -1; }
+    }
+    @media (max-width: 560px) {
+      .os-section, .os-hero, .os-cta { padding: 64px 0; }
+      .os-stats, .os-features { grid-template-columns: 1fr; }
+    }
+  </style>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "s7fumshjhl");
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W93DZHMG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span>
+                </a>
+                <a href="returns-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span>
+                  <span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span>
+                </a>
+                <a href="courier-sync.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span>
+                </a>
+                <a href="free-waybill-generator.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Waybill Generator <span class="nav-free-badge">FREE</span></strong><span>Bulk print waybills, no signup</span></span>
+                </a>
+                <a href="waybill-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span>
+                </a>
+                <a href="personalization.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span>
+                  <span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+                  <span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span>
+                </a>
+                <a href="trackmate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                  <span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span>
+                </a>
+                <a href="our-story.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span>
+                  <span class="nav-mega-text"><strong>Our Story</strong><span>Why we built Storemate</span></span>
+                </a>
+                <a href="storemate-vs-excel.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span>
+                  <span class="nav-mega-text"><strong>vs Excel</strong><span>9 things Excel can't do</span></span>
+                </a>
+                <a href="implementation.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+                  <span class="nav-mega-text"><strong>Implementation</strong><span>How we set you up</span></span>
+                </a>
+                <a href="podcast.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+                  <span class="nav-mega-text"><strong>Podcast</strong><span>Online business conversations</span></span>
+                </a>
+                <a href="cod-business-guide.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span>
+                </a>
+                <a href="faq.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                  <span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-dropdown nav-login">
+        <button class="nav-dropdown-trigger">
+          Login
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="https://oms.storemate.cloud/login" target="_blank" rel="noopener noreferrer">Login to OMS</a>
+          <a href="https://app.storemate.cloud/login" target="_blank" rel="noopener noreferrer">POS Lite Login</a>
+          <a href="https://app.storematepro.lk/login" target="_blank" rel="noopener noreferrer">POS Pro Login</a>
+        </div>
+      </div>
+      <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="os-hero">
+      <div class="container">
+        <div class="os-hero-inner">
+          <p class="os-eyebrow">Our Story</p>
+          <h1>Built for the way<br><strong>Sri Lanka really sells.</strong></h1>
+          <p class="os-hero-sub">Storemate is a multi-channel order and delivery platform made specifically for Sri Lankan online sellers. This is the problem we set out to solve, and why it matters.</p>
+          <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="btn-cyan">Start for free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPPORTUNITY -->
+    <section class="os-section">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">The opportunity</p>
+          <h2>Sri Lanka's e-commerce<br><strong>is booming.</strong></h2>
+        </div>
+        <div class="os-prose os-reveal">
+          <p>Sri Lanka's e-commerce sector generated USD 4.18 billion in 2025 and is growing 20 to 25% year on year. More than 8 million Sri Lankans now shop online, served by an estimated 150,000 to 250,000 active sellers across Facebook, Instagram, WhatsApp, and Daraz.</p>
+          <p>Yet over <strong>90% of these sellers</strong> still manage orders, inventory, customer chats, and deliveries through fragmented, manual processes: messaging apps, spreadsheets, paper records, and several courier portals that do not talk to each other. These methods work at low volumes, but they break down as a business grows.</p>
+        </div>
+        <div class="os-stats os-reveal">
+          <div class="os-stat"><div class="os-stat-num">USD 4.18B</div><div class="os-stat-label">E-commerce sales in 2025</div></div>
+          <div class="os-stat"><div class="os-stat-num">8M+</div><div class="os-stat-label">Sri Lankans shopping online</div></div>
+          <div class="os-stat"><div class="os-stat-num">150k&ndash;250k</div><div class="os-stat-label">Active online sellers</div></div>
+          <div class="os-stat"><div class="os-stat-num">90%+</div><div class="os-stat-label">Still fully manual</div></div>
+        </div>
+        <div class="os-figure-wide os-reveal">
+          <img src="images/all-in-one.jpg" alt="Orders from WhatsApp, Facebook, Instagram and phone calls flowing into one Storemate dashboard" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="os-section os-section--gray">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">The problem</p>
+          <h2>Manual operations quietly<br><strong>drain profit.</strong></h2>
+        </div>
+        <div class="os-split os-reveal">
+          <div class="os-prose">
+            <p>The cost is direct and measurable. Sri Lankan sellers face return and failed-delivery rates of 15 to 25% of all orders, driven mainly by COD refusal at the doorstep, a problem DHL Sri Lanka calls "increasingly unsustainable" for growing businesses.</p>
+            <p>For a seller doing 200 orders a month, a 20% return rate alone erodes 6.4% of gross monthly revenue. Manual work eats over 60% of a staff member's day on waybills, COD reconciliation, and tracking orders across disconnected platforms, and sellers running three or more channels lose track of 5 to 15% of orders every week.</p>
+          </div>
+          <div class="os-figure os-figure--float">
+            <img src="images/excel/chaos.png" alt="A cluttered spreadsheet used to track orders manually, error-prone and hard to manage" loading="lazy" />
+          </div>
+        </div>
+        <div class="os-stats os-reveal">
+          <div class="os-stat"><div class="os-stat-num">15&ndash;25%</div><div class="os-stat-label">Returns &amp; failed deliveries</div></div>
+          <div class="os-stat"><div class="os-stat-num">60%+</div><div class="os-stat-label">Of the staff day lost to manual work</div></div>
+          <div class="os-stat"><div class="os-stat-num">5&ndash;15%</div><div class="os-stat-label">Of orders lost every week</div></div>
+          <div class="os-stat"><div class="os-stat-num">25&ndash;40%</div><div class="os-stat-label">Drop in repeat purchases</div></div>
+        </div>
+        <div class="os-highlight os-reveal">
+          <div class="os-highlight-num">Rs. 1.87M</div>
+          <p>Total operational losses for a medium-volume seller reach Rs. 1.87 million per year, up to 31% of annual gross revenue. An entirely preventable cost.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE GAP -->
+    <section class="os-section">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">The gap</p>
+          <h2>No existing tool was<br><strong>built for Sri Lanka.</strong></h2>
+        </div>
+        <div class="os-prose os-reveal">
+          <p>International platforms like Shopify and WooCommerce were built for markets with integrated payments and standardised logistics. They do not support Sri Lanka's COD-dominant, multi-courier, social-commerce reality. Local alternatives solve only isolated pieces of the problem.</p>
+          <p>The result: fewer than <strong>10% of Sri Lankan online sellers</strong> use any dedicated order management software, leaving over 90% without the tools they need to scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="os-section os-section--gray">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">The solution</p>
+          <h2>One platform that<br><strong>connects it all.</strong></h2>
+          <p class="os-lead">Storemate connects sellers, inventory, couriers, and customers in a single platform. Affordable, scalable, and easy to use.</p>
+        </div>
+        <div class="os-figure-wide os-reveal">
+          <img src="images/screenshots/software/1.png" alt="The Storemate dashboard showing orders, delivery status, and sales analytics on one screen" loading="lazy" />
+        </div>
+        <div class="os-features os-reveal" style="margin-top:48px;">
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <h3>Unified order dashboard</h3>
+            <p>Orders from Facebook, Instagram, WhatsApp, and Daraz, all in one place.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+            <h3>Automated waybills</h3>
+            <p>Generated instantly from order data, with no manual typing.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+            <h3>Smart courier routing</h3>
+            <p>Direct API links to every major courier, auto-picking the best one per order by zone, COD success rate, and cost.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3>Real-time tracking</h3>
+            <p>Live shipment status with instant SMS and WhatsApp updates for customers.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <h3>Automated COD reconciliation</h3>
+            <p>Cash collected on delivery is matched to orders automatically.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1120.77 15"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+            <h3>Fake-buyer blacklist</h3>
+            <p>Block serial returners and fake buyers before they cost you.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></div>
+            <h3>Live inventory</h3>
+            <p>Real-time stock levels across every sales channel.</p>
+          </div>
+          <div class="os-feature">
+            <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
+            <h3>Returns management</h3>
+            <p>A complete module to handle and reduce returns.</p>
+          </div>
+        </div>
+        <p class="os-features-note os-reveal">All from a single merchant portal and a mobile app.</p>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="os-section">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">Real outcomes</p>
+          <h2>What changes<br><strong>for sellers.</strong></h2>
+          <p class="os-lead">Real customers using Storemate see results that recover roughly 40% of total operational losses, freeing the business to focus on growth instead of admin.</p>
+        </div>
+        <div class="os-stats os-reveal">
+          <div class="os-stat"><div class="os-stat-num">20% &rarr; &lt;5%</div><div class="os-stat-label">Return rate</div></div>
+          <div class="os-stat"><div class="os-stat-num">60% &rarr; &lt;13%</div><div class="os-stat-label">Of the day on admin work</div></div>
+          <div class="os-stat"><div class="os-stat-num">~0</div><div class="os-stat-label">Missed orders</div></div>
+          <div class="os-stat"><div class="os-stat-num">~40%</div><div class="os-stat-label">Of operational losses recovered</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section class="os-section os-section--gray">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">Sustainability</p>
+          <h2>Fewer failed deliveries,<br><strong>lower emissions.</strong></h2>
+        </div>
+        <div class="os-prose os-reveal">
+          <p>Storemate is good for more than the bottom line. By reducing failed deliveries and unnecessary redelivery attempts, it lowers fuel consumption, vehicle use, and carbon emissions across Sri Lanka's last-mile network. Even small drops in the national return rate add up to thousands of avoided delivery trips, creating a cleaner, more efficient e-commerce supply chain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO BUILT IT -->
+    <section class="os-section os-section--dark">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">Who built it</p>
+          <h2>Built from ground truth,<br><strong>not assumptions.</strong></h2>
+        </div>
+        <div class="os-split os-split--rev os-reveal">
+          <div class="os-figure">
+            <img src="images/team/team.jpg" alt="The team behind Storemate at Parallax Technologies" loading="lazy" />
+          </div>
+          <div class="os-prose">
+            <p>Parallax Technologies is uniquely placed to deliver this. Through Curfox, a leading AI-driven delivery management platform, Storemate was built on real operational data and five years of direct experience inside Sri Lanka's e-commerce ecosystem, not market guesses.</p>
+          </div>
+        </div>
+        <div class="os-stats os-reveal">
+          <div class="os-stat"><div class="os-stat-num">25M</div><div class="os-stat-label">Orders processed</div></div>
+          <div class="os-stat"><div class="os-stat-num">30,000+</div><div class="os-stat-label">Sellers served</div></div>
+          <div class="os-stat"><div class="os-stat-num">45%</div><div class="os-stat-label">Market share</div></div>
+          <div class="os-stat"><div class="os-stat-num">5 years</div><div class="os-stat-label">Inside the ecosystem</div></div>
+        </div>
+        <div class="os-awards os-reveal">
+          <span class="os-award"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Gold Award, NBQSA 2024</span>
+          <span class="os-award"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Merit Award, APICTA 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="os-section">
+      <div class="container">
+        <div class="os-head os-reveal">
+          <p class="os-label">The vision</p>
+          <h2>From seller<br><strong>to Entrepreneur.</strong></h2>
+        </div>
+        <div class="os-prose os-reveal">
+          <p>Our bigger goal is to turn Sri Lankan online sellers into entrepreneurs. A seller processes orders. An entrepreneur builds a brand, understands customer behaviour, manages performance through data, and makes informed decisions that drive long-term growth. Storemate is the infrastructure for that change, giving SMEs the tools, data, and professional credibility to compete and scale sustainably.</p>
+          <p>Storemate is more than a commercial platform. It is a nationally relevant intervention for an underserved part of Sri Lanka's digital economy. By cutting operational waste, improving delivery success, strengthening SME resilience, and enabling data-driven entrepreneurship, it supports digital transformation, inclusive economic growth, and logistics sustainability. With support from the National Science Foundation, this locally built product can be further developed, validated, and scaled, generating measurable economic and social impact nationwide.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="os-cta">
+      <div class="container">
+        <div class="os-cta-inner">
+          <h2>Be part of the<br><strong>transformation.</strong></h2>
+          <p>Join 30,000+ Sri Lankan sellers building real businesses with Storemate. Start free, with full setup by our team.</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="btn btn-white">Start for free</a>
+            <a href="contact.html" class="btn btn-ghost">Talk to our team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">From seller to Entrepreneur.</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></a>
+            </div>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="whatsapp-landing.html">Self-Order Form</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="our-story.html">Our Story</a></li>
+              <li><a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+  <script>
+    /* Scroll-reveal animations */
+    (function () {
+      var els = document.querySelectorAll('.os-reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (e) { e.classList.add('in'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { obs.observe(e); });
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Our Story | Storemate OMS",
+  "url": "https://storemate.lk/our-story",
+  "description": "Why Storemate was built for Sri Lankan online sellers: a multi-channel order and delivery platform that reduces returns, saves time, and turns sellers into entrepreneurs.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Storemate",
+    "url": "https://storemate.lk"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://storemate.lk" },
+    { "@type": "ListItem", "position": 2, "name": "Our Story", "item": "https://storemate.lk/our-story" }
+  ]
+}
+  </script>
+</body>
+</html>
