@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W93DZHMG');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="description" content="End WhatsApp order chaos in Sri Lanka. The Storemate Self-Order Form turns messy chat orders into clean, automatic entries. No copy-paste, fewer returns, no WhatsApp ban risk, and secure backups." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <title>Fix WhatsApp Order Chaos with the Storemate Self-Order Form | Storemate OMS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root {
+      --wa: #25D366;
+      --wa-dark: #1aab52;
+    }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .wo-hero {
+      padding: 76px 0;
+      background: linear-gradient(150deg, #07112b 0%, #0d1f3c 55%, #112248 100%);
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+    .wo-hero::before {
+      content: '';
+      position: absolute;
+      width: 620px; height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,211,102,0.14) 0%, transparent 70%);
+      top: -180px; right: -160px;
+      pointer-events: none;
+    }
+    .wo-hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .wo-hero .wo-actions { justify-content: flex-start; }
+    .wo-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.32);
+      color: #5fe08c;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 26px;
+    }
+    .wo-hero h1 {
+      font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+    .wo-hero h1 strong { font-weight: 800; }
+    .wo-hero-sub {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.66);
+      max-width: 540px;
+      margin: 0 0 32px;
+    }
+    .wo-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .wo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 30px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .wo-btn-primary {
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(37,211,102,0.34);
+    }
+    .wo-btn-primary:hover { transform: translateY(-2px); }
+    .wo-btn-ghost {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .wo-btn-ghost:hover { background: rgba(255,255,255,0.16); }
+    .wo-hero-note { margin-top: 22px; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+    /* ── SHARED SECTION ───────────────────────────────────── */
+    .wo-section { padding: 88px 0; }
+    .wo-section--gray { background: var(--color-gray-100); }
+    .wo-head { text-align: center; max-width: 720px; margin: 0 auto 52px; }
+    .wo-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--color-blue);
+      margin-bottom: 14px;
+    }
+    .wo-head h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--color-charcoal);
+      margin-bottom: 16px;
+    }
+    .wo-head h2 strong { font-weight: 800; }
+    .wo-head p { font-size: 1.05rem; line-height: 1.8; color: var(--color-gray-700); }
+
+    /* ── PAIN GRID ────────────────────────────────────────── */
+    .wo-pain-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .wo-pain-card {
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 18px;
+      padding: 30px 26px;
+      box-shadow: 0 18px 44px rgba(33,83,192,0.06);
+    }
+    .wo-pain-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: rgba(192,57,43,0.1);
+      color: #c0392b;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .wo-pain-card h3 { font-size: 1.05rem; color: var(--color-charcoal); margin-bottom: 10px; }
+    .wo-pain-card p { font-size: 0.94rem; color: var(--color-gray-500); line-height: 1.75; }
+
+    /* ── WHAT IS IT (steps) ───────────────────────────────── */
+    .wo-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 1060px;
+      margin: 0 auto;
+      counter-reset: step;
+    }
+    .wo-step {
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 16px;
+      padding: 28px 22px;
+      position: relative;
+    }
+    .wo-step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: #fff; font-weight: 800; font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .wo-step p { font-size: 0.95rem; color: var(--color-gray-700); line-height: 1.65; }
+
+    /* ── WHY (numbered rows) ──────────────────────────────── */
+    .wo-why-list { max-width: 880px; margin: 0 auto; display: grid; gap: 20px; }
+    .wo-why-row {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 22px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 18px;
+      padding: 28px 30px;
+      box-shadow: 0 14px 36px rgba(33,83,192,0.05);
+    }
+    .wo-why-num {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--color-blue), var(--color-blue-dark));
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 800;
+      flex-shrink: 0;
+    }
+    .wo-why-row h3 { font-size: 1.2rem; color: var(--color-charcoal); margin-bottom: 8px; }
+    .wo-why-row p { font-size: 0.97rem; color: var(--color-gray-700); line-height: 1.8; }
+
+    /* ── EXTRA BENEFITS ───────────────────────────────────── */
+    .wo-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .wo-extra-card {
+      background: #fff;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .wo-extra-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: rgba(37,211,102,0.12);
+      color: var(--wa-dark);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .wo-extra-card h3 { font-size: 1.08rem; color: var(--color-charcoal); margin-bottom: 10px; }
+    .wo-extra-card p { font-size: 0.95rem; color: var(--color-gray-500); line-height: 1.75; }
+
+    /* ── FINAL CTA ────────────────────────────────────────── */
+    .wo-final {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #0a1628 0%, #0f2040 100%);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .wo-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(37,211,102,0.09), transparent 65%);
+      pointer-events: none;
+    }
+    .wo-final-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .wo-final h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .wo-final h2 strong { font-weight: 800; color: var(--wa); }
+    .wo-final p { color: rgba(255,255,255,0.66); font-size: 1.08rem; line-height: 1.75; margin-bottom: 34px; }
+    .wo-contact {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .wo-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .wo-contact a:hover { background: rgba(255,255,255,0.16); }
+    .wo-tags { margin-top: 34px; font-size: 0.8rem; color: rgba(255,255,255,0.34); line-height: 1.9; }
+
+    /* ── HERO VISUAL ──────────────────────────────────────── */
+    .wo-hero-visual { margin-top: 0; }
+    .wo-hero-visual img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));
+    }
+
+    /* ── WHAT IS IT (two-column with screenshot) ──────────── */
+    .wo-what-inner {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .wo-what-visual img {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 24px 50px rgba(33,83,192,0.18));
+    }
+    .wo-what-copy .wo-label { margin-bottom: 14px; }
+    .wo-what-copy h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--color-charcoal);
+      margin-bottom: 16px;
+    }
+    .wo-what-copy h2 strong { font-weight: 800; }
+    .wo-what-copy > p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-gray-700);
+      margin-bottom: 26px;
+    }
+    .wo-what-steps { list-style: none; display: grid; gap: 15px; counter-reset: wstep; }
+    .wo-what-steps li {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      font-size: 0.98rem;
+      color: var(--color-gray-700);
+      line-height: 1.6;
+      counter-increment: wstep;
+    }
+    .wo-what-steps li::before {
+      content: counter(wstep);
+      flex-shrink: 0;
+      width: 27px; height: 27px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--wa), var(--wa-dark));
+      color: #fff; font-weight: 800; font-size: 0.82rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ── WHATSAPP BAN, two-column advantages ─────────────── */
+    .wo-ban { padding: 88px 0; background: #fff; }
+    .wo-ban-inner {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr;
+      gap: 52px;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .wo-ban-visual {
+      background: linear-gradient(150deg, #0d1f3d 0%, #07112b 100%);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 22px;
+      padding: 50px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .wo-ban-visual::before {
+      content: '';
+      position: absolute;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,211,102,0.2) 0%, transparent 70%);
+      top: -110px; right: -80px;
+      pointer-events: none;
+    }
+    .wo-ban-shield {
+      position: relative; z-index: 1;
+      width: 96px; height: 96px;
+      margin: 0 auto 22px;
+      border-radius: 26px;
+      background: rgba(37,211,102,0.14);
+      border: 1px solid rgba(37,211,102,0.32);
+      color: #5fe08c;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wo-ban-visual h3 { position: relative; z-index: 1; color: #fff; font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+    .wo-ban-visual p { position: relative; z-index: 1; color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; }
+    .wo-ban-copy .wo-label { margin-bottom: 14px; }
+    .wo-ban-copy h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--color-charcoal);
+      margin-bottom: 16px;
+    }
+    .wo-ban-copy h2 strong { font-weight: 800; }
+    .wo-ban-copy > p { font-size: 1.05rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 24px; }
+    .wo-ban-list { list-style: none; display: grid; gap: 14px; }
+    .wo-ban-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.98rem; color: var(--color-gray-700); line-height: 1.6; }
+    .wo-ban-list svg { flex-shrink: 0; color: var(--wa-dark); margin-top: 2px; }
+    @media (max-width: 860px) {
+      .wo-ban-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── EDUCATIONAL VIDEOS (YouTube Shorts) ──────────────── */
+    .wo-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .wo-video {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border: none;
+      padding: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #000;
+      box-shadow: 0 14px 36px rgba(33,83,192,0.12);
+    }
+    .wo-video img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .wo-video:hover img { transform: scale(1.05); }
+    .wo-video-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .wo-video-play span {
+      width: 54px; height: 54px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); color: var(--wa-dark);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      padding-left: 3px;
+    }
+    .wo-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .wo-video-title {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--color-charcoal);
+    }
+    @media (max-width: 720px) { .wo-video-grid { grid-template-columns: repeat(2, 1fr); max-width: 460px; } }
+    @media (max-width: 420px) { .wo-video-grid { grid-template-columns: 1fr; max-width: 280px; } }
+
+    @media (max-width: 900px) {
+      .wo-hero-grid { grid-template-columns: 1fr; gap: 38px; text-align: center; }
+      .wo-hero .wo-actions { justify-content: center; }
+      .wo-hero-sub { margin-left: auto; margin-right: auto; }
+      .wo-hero-visual img { max-width: 300px; }
+      .wo-pain-grid { grid-template-columns: 1fr 1fr; }
+      .wo-steps { grid-template-columns: 1fr 1fr; }
+      .wo-extra-grid { grid-template-columns: 1fr; max-width: 460px; }
+      .wo-what-inner { grid-template-columns: 1fr; gap: 36px; }
+      .wo-what-copy { text-align: center; }
+      .wo-what-steps li { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .wo-hero { padding: 72px 0 68px; }
+      .wo-section { padding: 60px 0; }
+      .wo-pain-grid, .wo-steps { grid-template-columns: 1fr; }
+      .wo-why-row { grid-template-columns: 1fr; gap: 14px; padding: 24px; }
+      .wo-actions { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "s7fumshjhl");
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W93DZHMG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown nav-mega-wrap">
+          <button class="nav-dropdown-trigger">
+            Product
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-mega-cols">
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Features</span>
+                <a href="whatsapp-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span>
+                </a>
+                <a href="returns-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span>
+                  <span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span>
+                </a>
+                <a href="courier-sync.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span>
+                </a>
+                <a href="free-waybill-generator.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Waybill Generator <span class="nav-free-badge">FREE</span></strong><span>Bulk print waybills, no signup</span></span>
+                </a>
+                <a href="waybill-landing.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+                  <span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span>
+                </a>
+                <a href="personalization.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span>
+                  <span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Apps</span>
+                <a href="mobile-app.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+                  <span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span>
+                </a>
+                <a href="trackmate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span>
+                </a>
+              </div>
+
+              <div class="nav-mega-col">
+                <span class="nav-mega-label">Resources</span>
+                <a href="why-storemate.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                  <span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span>
+                </a>
+                <a href="storemate-vs-excel.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span>
+                  <span class="nav-mega-text"><strong>vs Excel</strong><span>9 things Excel can't do</span></span>
+                </a>
+                <a href="implementation.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+                  <span class="nav-mega-text"><strong>Implementation</strong><span>How we set you up</span></span>
+                </a>
+                <a href="podcast.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+                  <span class="nav-mega-text"><strong>Podcast</strong><span>Online business conversations</span></span>
+                </a>
+                <a href="free-course.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                  <span class="nav-mega-text"><strong>Free Course <span class="nav-free-badge">FREE</span></strong><span>16 video lessons</span></span>
+                </a>
+                <a href="cod-business-guide.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                  <span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span>
+                </a>
+                <a href="faq.html" class="nav-mega-link">
+                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                  <span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-dropdown nav-login">
+        <button class="nav-dropdown-trigger">
+          Login
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="https://oms.storemate.cloud/login" target="_blank" rel="noopener noreferrer">Login to OMS</a>
+          <a href="https://app.storemate.cloud/login" target="_blank" rel="noopener noreferrer">POS Lite Login</a>
+          <a href="https://app.storematepro.lk/login" target="_blank" rel="noopener noreferrer">POS Pro Login</a>
+        </div>
+      </div>
+      <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="wo-hero">
+      <div class="container">
+        <div class="wo-hero-grid">
+          <div class="wo-hero-copy">
+            <span class="wo-eyebrow">Easy WhatsApp Orders</span>
+            <h1>Take WhatsApp orders<br><strong>the easy way.</strong></h1>
+            <p class="wo-hero-sub">Selling online is hard work. Storemate gives your customers one link to order from. Their details come straight to you, with no copy and paste, fewer mistakes, and nothing lost.</p>
+            <div class="wo-actions">
+              <a href="https://storemate.lk/whatsapp-landing.html?utm_source=facebook&utm_medium=ads&utm_campaign=funnel_campaign&utm_content=whatsapp+ban" class="wo-btn wo-btn-primary">
+                Register now
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="https://wa.me/94777672155" target="_blank" rel="noopener noreferrer" class="wo-btn wo-btn-ghost">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97s.74-2.11 1-2.4c.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.24.59.81 2.02.88 2.17.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.69-.8.87-1.08.18-.28.36-.23.6-.14.24.09 1.55.73 1.81.86.26.14.44.21.5.32.07.11.07.64-.17 1.32z"/></svg>
+                WhatsApp us
+              </a>
+            </div>
+            <p class="wo-hero-note">Free package available &nbsp;·&nbsp; No card needed &nbsp;·&nbsp; Setup by our team</p>
+          </div>
+          <div class="wo-hero-visual">
+            <img src="images/product/whatsapp.png" alt="Storemate Self-Order Form on mobile, where customers pick products and enter their own delivery details" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHATSAPP BAN HIGHLIGHT -->
+    <section class="wo-ban">
+      <div class="container">
+        <div class="wo-ban-inner">
+          <div class="wo-ban-visual">
+            <div class="wo-ban-shield">
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Your number stays safe</h3>
+            <p>Customers order through your link, not your chat. No spam flags. No ban.</p>
+          </div>
+          <div class="wo-ban-copy">
+            <p class="wo-label">The fix</p>
+            <h2>Too many unknown chats can<br><strong>get your number banned.</strong></h2>
+            <p>WhatsApp bans numbers that get too many messages from people they don't know. It looks like spam, and it breaks WhatsApp's rules. The Self-Order Form stops that from ever happening.</p>
+            <ul class="wo-ban-list">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Customers order from your link, so they never message your number.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>No pile of unknown chats, so nothing looks like spam.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Put your link on your ads and reach thousands, with no ban risk.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>No risky bulk messages or broadcasts that get numbers blocked.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Even if your number is ever banned, your orders stay safe in Storemate.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN -->
+    <section class="wo-section wo-section--gray">
+      <div class="container">
+        <div class="wo-head">
+          <p class="wo-label">Sound familiar?</p>
+          <h2>Tired of these<br><strong>every day?</strong></h2>
+          <p>If you sell online, you face these problems all day long.</p>
+        </div>
+        <div class="wo-pain-grid">
+          <div class="wo-pain-card">
+            <div class="wo-pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <h3>Lost addresses</h3>
+            <p>You scroll up and down the chat just to find one delivery address.</p>
+          </div>
+          <div class="wo-pain-card">
+            <div class="wo-pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></div>
+            <h3>Too much typing</h3>
+            <p>You copy every name and address by hand. It takes hours.</p>
+          </div>
+          <div class="wo-pain-card">
+            <div class="wo-pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
+            <h3>Parcels come back</h3>
+            <p>Type one wrong number, and the parcel comes back to you.</p>
+          </div>
+          <div class="wo-pain-card">
+            <div class="wo-pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Lost data</h3>
+            <p>You worry your chats and orders might one day just disappear.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS IT -->
+    <section class="wo-section">
+      <div class="container">
+        <div class="wo-what-inner">
+          <div class="wo-what-visual">
+            <img src="images/product/whatsapp.png" alt="Storemate Self-Order Form with live product catalogue, quantity selector and customer details on mobile" />
+          </div>
+          <div class="wo-what-copy">
+            <p class="wo-label">How it works</p>
+            <h2>What is the<br><strong>Self-Order Form?</strong></h2>
+            <p>It is one link, just for your shop. Your customer opens it, picks what they want, types their name and address, and clicks save. The order comes straight to you. You do nothing.</p>
+            <ul class="wo-what-steps">
+              <li>You share your link on ads, your page, or your bio.</li>
+              <li>Your customer picks the item and how many they want.</li>
+              <li>They type their name and address, then click save.</li>
+              <li>The order shows up in Storemate. You typed nothing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ESSENTIAL -->
+    <section class="wo-section wo-section--gray">
+      <div class="container">
+        <div class="wo-head">
+          <p class="wo-label">Why it helps</p>
+          <h2>Why you<br><strong>need this.</strong></h2>
+        </div>
+        <div class="wo-why-list">
+          <div class="wo-why-row">
+            <div class="wo-why-num">1</div>
+            <div>
+              <h3>No more copy and paste</h3>
+              <p>Customers type their own details. So there are no spelling mistakes and no wrong addresses. That means fewer parcels come back.</p>
+            </div>
+          </div>
+          <div class="wo-why-row">
+            <div class="wo-why-num">2</div>
+            <div>
+              <h3>Waybills made for you</h3>
+              <p>When an order comes in, the delivery slip is ready right away. It goes to your courier too. You never type it again.</p>
+            </div>
+          </div>
+          <div class="wo-why-row">
+            <div class="wo-why-num">3</div>
+            <div>
+              <h3>Your data stays safe</h3>
+              <p>Lose your phone? WhatsApp stops working? No worry. All your orders and customers are saved in Storemate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA BENEFITS -->
+    <section class="wo-section">
+      <div class="container">
+        <div class="wo-head">
+          <p class="wo-label">And more</p>
+          <h2>A few<br><strong>more wins.</strong></h2>
+        </div>
+        <div class="wo-extra-grid">
+          <div class="wo-extra-card">
+            <div class="wo-extra-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+            <h3>Your own catalog</h3>
+            <p>A neat list of your products. Customers can look and pick what they like.</p>
+          </div>
+          <div class="wo-extra-card">
+            <div class="wo-extra-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Look professional</h3>
+            <p>A clean, smart way to buy. Your customers will trust you more.</p>
+          </div>
+          <div class="wo-extra-card">
+            <div class="wo-extra-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h3>Save lots of time</h3>
+            <p>Stop typing all day. Use that time to grow your shop instead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL VIDEOS -->
+    <section class="wo-section wo-section--gray">
+      <div class="container">
+        <div class="wo-head">
+          <p class="wo-label">Watch &amp; learn</p>
+          <h2>See it<br><strong>in action.</strong></h2>
+          <p>Short, simple videos that show you exactly how the Self-Order Form works.</p>
+        </div>
+        <div class="wo-video-grid">
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="h6otioSo3bo" aria-label="Play: WhatsApp Ban වෙලා Orders නැති වුනාද?"><img src="https://i.ytimg.com/vi/h6otioSo3bo/hqdefault.jpg" alt="WhatsApp Ban වෙලා Orders නැති වුනාද?" loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">WhatsApp Ban වෙලා Orders නැති වුනාද?</p>
+          </div>
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="63PKAoAOVjw" aria-label="Play: WhatsApp Orders යවන්න පරක්කු වෙනවද?"><img src="https://i.ytimg.com/vi/63PKAoAOVjw/hqdefault.jpg" alt="WhatsApp Orders යවන්න පරක්කු වෙනවද?" loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">WhatsApp Orders යවන්න පරක්කු වෙනවද?</p>
+          </div>
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="q2s6Gd_5J7k" aria-label="Play: Storemate Self Order Form එක WhatsApp වලට විතරද?"><img src="https://i.ytimg.com/vi/q2s6Gd_5J7k/hqdefault.jpg" alt="Storemate Self Order Form එක WhatsApp වලට විතරද?" loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">Storemate Self Order Form එක WhatsApp වලට විතරද?</p>
+          </div>
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="-uaIR7ujjyo" aria-label="Play: Self Order Form එකෙන් වැඩ කරන්නෙ මෙහෙමයි."><img src="https://i.ytimg.com/vi/-uaIR7ujjyo/hqdefault.jpg" alt="Self Order Form එකෙන් වැඩ කරන්නෙ මෙහෙමයි." loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">Self Order Form එකෙන් වැඩ කරන්නෙ මෙහෙමයි.</p>
+          </div>
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="TgJoMhiN3Ew" aria-label="Play: WhatsApp වලින් order එනවා නම් මේක බලන්න!"><img src="https://i.ytimg.com/vi/TgJoMhiN3Ew/hqdefault.jpg" alt="WhatsApp වලින් order එනවා නම් මේක බලන්න!" loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">WhatsApp වලින් order එනවා නම් මේක බලන්න!</p>
+          </div>
+          <div class="wo-video-item">
+            <button class="wo-video" data-id="eRrsAH3g2Ow" aria-label="Play: Storemate Customer Feedback"><img src="https://i.ytimg.com/vi/eRrsAH3g2Ow/hqdefault.jpg" alt="Storemate Customer Feedback" loading="lazy" /><span class="wo-video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></span></button>
+            <p class="wo-video-title">Storemate Customer Feedback</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="wo-final">
+      <div class="container">
+        <div class="wo-final-inner">
+          <h2>Stop writing orders<br><strong>by hand.</strong></h2>
+          <p>Let Storemate do the boring work for you. It is the smart, easy way to run your online shop.</p>
+          <div class="wo-actions">
+            <a href="https://storemate.lk/whatsapp-landing.html?utm_source=facebook&utm_medium=ads&utm_campaign=funnel_campaign&utm_content=whatsapp+ban" class="wo-btn wo-btn-primary">
+              Register now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="wo-contact">
+            <a href="tel:+94114226911">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +94 114 226 911
+            </a>
+            <a href="https://wa.me/94777672155" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97s.74-2.11 1-2.4c.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.24.59.81 2.02.88 2.17.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.69-.8.87-1.08.18-.28.36-.23.6-.14.24.09 1.55.73 1.81.86.26.14.44.21.5.32.07.11.07.64-.17 1.32z"/></svg>
+              +94 77 767 2155
+            </a>
+          </div>
+          <p class="wo-tags">#StoreMate · #FreePackage · #OnlineBusinessSL · #WhatsAppBan · #Automation · #SriLankaBusiness · #ScaleUp · #SmartBusiness · #SME</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
+    <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
+
+    <div class="ft-main">
+      <div class="container">
+        <div class="ft-grid">
+
+          <div class="ft-brand-col ft-reveal ft-reveal-d1">
+            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
+            <p class="ft-tagline">From seller to Entrepreneur.</p>
+            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
+            <div class="ft-social">
+              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></a>
+            </div>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d2">
+            <h4 class="ft-col-heading">Product</h4>
+            <ul class="ft-link-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="why-storemate.html">Why Storemate</a></li>
+              <li><a href="whatsapp-landing.html">Self-Order Form</a></li>
+              <li><a href="returns-landing.html">Reduce Returns</a></li>
+              <li><a href="waybill-landing.html">Waybill Printing</a></li>
+              <li><a href="courier-sync.html">Courier Sync</a></li>
+              <li><a href="personalization.html">Personalization</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d3">
+            <h4 class="ft-col-heading">Company</h4>
+            <ul class="ft-link-list">
+              <li><a href="about.html">About Us</a>
+        <a href="trackmate.html">Trackmate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="ft-reveal ft-reveal-d4">
+            <h4 class="ft-col-heading">Legal</h4>
+            <ul class="ft-link-list">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="security.html">Data Security</a></li>
+              <li><a href="security.html">ISO 27001</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <div class="container">
+        <div class="ft-bottom-inner">
+          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        document.querySelector('.ft-year').textContent = new Date().getFullYear();
+        var footer = document.querySelector('.site-footer');
+        if (!footer) return;
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
+        }, { threshold: 0.08 });
+        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/whatsapp-widget.js"></script>
+  <script>
+    /* Click-to-play YouTube Shorts (loads the iframe only on demand) */
+    document.querySelectorAll('.wo-video').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var id = el.getAttribute('data-id');
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1" title="Storemate Self-Order Form" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Storemate Self-Order Form for WhatsApp Order Management",
+  "url": "https://storemate.lk/whatsapp-order-management",
+  "description": "End WhatsApp order chaos. The Storemate Self-Order Form turns messy chat orders into clean, automatic entries. No copy-paste, fewer returns, no WhatsApp ban risk, and secure backups.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Storemate",
+    "url": "https://storemate.lk"
+  },
+  "serviceType": "Self-Order Management Software"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://storemate.lk"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "WhatsApp Order Management",
+      "item": "https://storemate.lk/whatsapp-order-management"
+    }
+  ]
+}
+  </script>
+</body>
+</html>
