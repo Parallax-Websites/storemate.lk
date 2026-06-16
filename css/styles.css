@@ -1158,6 +1158,9 @@ button,
 }
 
 @media (max-width: 760px) {
+  /* non-sticky on mobile so the expanded menu pushes the page and scrolls naturally */
+  .site-header { position: static; }
+
   .header-inner {
     align-items: center;
     flex-wrap: wrap;
