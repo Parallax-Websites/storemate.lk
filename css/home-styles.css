@@ -473,23 +473,50 @@
   margin-bottom: 24px;
 }
 
-.seller-logo-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
+/* Trusted-by logo band — auto-scrolling marquee */
+.logo-band {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  box-shadow: 0 18px 44px rgba(33, 83, 192, 0.08);
+  padding: 28px 0;
+  overflow: hidden;
 }
-
-.seller-logo-strip img {
-  height: 68px;
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+.logo-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: logo-scroll 40s linear infinite;
+}
+.logo-band:hover .logo-marquee-track { animation-play-state: paused; }
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.logo-marquee-track img {
+  height: 56px;
   width: auto;
   object-fit: contain;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 12px 18px;
-  border: 1px solid var(--color-gray-200);
-  filter: grayscale(0.3);
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    gap: 40px 48px;
+  }
+  .logo-marquee { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* ── L07 COMMUNITY ───────────────────────────── */
@@ -1275,7 +1302,7 @@
 /* ── ALL-IN-ONE infographic (inside features section) ── */
 .aio-visual {
   max-width: 1180px;
-  margin: 0 auto 80px;
+  margin: 0 auto 120px;
 }
 .aio-visual img {
   width: 100%;
@@ -1829,9 +1856,9 @@
 .home-feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 88px;
   align-items: center;
-  margin-bottom: 88px;
+  margin-bottom: 140px;
 }
 .home-feature-row:last-child { margin-bottom: 0; }
 .home-feature-row--rev { direction: rtl; }
@@ -2296,8 +2323,9 @@
 
 /* ── Seller customer logo strip ── */
 @media (max-width: 600px) {
-  .seller-logo-strip { gap: 8px; flex-wrap: wrap; justify-content: center; }
-  .seller-logo-strip img { height: 44px; padding: 8px 10px; }
+  .logo-band { padding: 20px 0; border-radius: 16px; }
+  .logo-marquee-track { gap: 40px; }
+  .logo-marquee-track img { height: 42px; }
 }
 
 /* ── Reviews ── */
