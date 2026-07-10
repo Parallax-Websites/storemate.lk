@@ -9,11 +9,11 @@
     })(window,document,'script','dataLayer','GTM-W93DZHMG');</script>
     <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <meta name="description" content="Storemate courier sync for Sri Lanka, automatically push orders to Curfox, TransExpress, Royal Express, Koombiyo and all major couriers. No manual entry. Free to start." />
+  <meta name="description" content="Storemate POS: fast barcode billing with real-time inventory management for Sri Lankan shops. Scan, bill and print receipts while stock, sales and profit update automatically. Start free." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/favicon.png" />
-  <title>Courier Sync | Storemate OMS</title>
+  <title>POS &amp; Inventory Management | Storemate</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
 
@@ -973,6 +973,122 @@
     @media (max-width: 600px) {
       .cs-waybill-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── POS EDITIONS ─────────────────────────────────────── */
+    .cs-editions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 56px;
+      align-items: start;
+    }
+    .cs-edition {
+      background: #ffffff;
+      border: 1px solid rgba(0,62,122,0.1);
+      border-radius: 24px;
+      padding: 36px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cs-edition--pro {
+      background: linear-gradient(160deg, #002f5e 0%, #004f96 60%, #006daf 100%);
+      border: 1px solid rgba(0,180,216,0.25);
+      box-shadow: 0 24px 60px rgba(0,62,122,0.25);
+      color: #ffffff;
+    }
+    .cs-edition-badge {
+      position: absolute;
+      top: 22px; right: 22px;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+    }
+    .cs-edition-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-charcoal);
+      margin-bottom: 6px;
+    }
+    .cs-edition--pro .cs-edition-name { color: #ffffff; }
+    .cs-edition-tagline {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-blue-dark);
+      margin-bottom: 20px;
+    }
+    .cs-edition--pro .cs-edition-tagline { color: #00d4ff; }
+    .cs-edition-desc {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--color-gray-700);
+      margin-bottom: 22px;
+    }
+    .cs-edition--pro .cs-edition-desc { color: rgba(255,255,255,0.8); }
+    .cs-edition-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .cs-edition-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--color-gray-700);
+    }
+    .cs-edition--pro .cs-edition-list li { color: rgba(255,255,255,0.9); }
+    .cs-edition-list li::before {
+      content: '\2713';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(0,62,122,0.08);
+      color: var(--color-blue-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+    .cs-edition--pro .cs-edition-list li::before {
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+    }
+    .cs-edition-login {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 9px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cs-edition .cs-edition-login { background: var(--color-blue-dark); color: #ffffff; }
+    .cs-edition--pro .cs-edition-login { background: #ffffff; color: var(--color-blue-dark); }
+    .cs-edition-login:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.15); }
+    .cs-editions-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.92rem;
+      color: var(--color-gray-700);
+    }
+    .cs-editions-note a { color: var(--color-blue-dark); font-weight: 700; text-decoration: none; }
+    @media (max-width: 900px) {
+      .cs-editions { grid-template-columns: 1fr; }
+    }
   </style>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -1115,41 +1231,41 @@
 
         <div>
           <div class="cs-hero-eyebrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            Courier Sync Sri Lanka
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            POS &amp; Inventory Management
           </div>
-          <h1>Orders sync to couriers<br><strong>automatically</strong></h1>
+          <h1>Sell faster. Track every item.<br><strong>Know your numbers.</strong></h1>
           <p class="cs-hero-sub">
-            The courier sync Sri Lanka sellers switched to. Stop copying order data, typing courier details, or managing spreadsheets, every order flows directly from Storemate to your courier network.</p>
+            Storemate POS turns any counter, shop or warehouse into a fast billing station with real-time inventory built in. Scan, bill and print a receipt in seconds, while stock, sales and profit update automatically.</p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;">
             <a target="_blank" rel="noopener noreferrer" href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" class="btn btn-primary">Start for free</a>
-            <a href="#cs-problems" class="btn btn-secondary">See how it works</a>
+            <a href="#pos-features" class="btn btn-secondary">See the features</a>
           </div>
           <p class="cs-hero-note">Free to start. Full setup handled by our team. No card needed.</p>
         </div>
 
         <div class="cs-hero-visual">
           <div class="cs-stat-card">
-            <div class="cs-stat-big">4–6 hrs</div>
-            <div class="cs-stat-label">Saved per staff member, every day</div>
-            <div class="cs-stat-sub">Hours that used to disappear into copy-paste and manual courier entry.</div>
+            <div class="cs-stat-big">&lt;10 sec</div>
+            <div class="cs-stat-label">From scan to printed receipt</div>
+            <div class="cs-stat-sub">Barcode checkout that keeps the queue moving, even on your busiest day.</div>
           </div>
           <div class="cs-mini-stats">
             <div class="cs-mini-stat">
-              <div class="cs-mini-stat-num">0%</div>
-              <div class="cs-mini-stat-lbl">Data entry error rate</div>
-            </div>
-            <div class="cs-mini-stat">
-              <div class="cs-mini-stat-num">All</div>
-              <div class="cs-mini-stat-lbl">Sri Lankan couriers supported</div>
-            </div>
-            <div class="cs-mini-stat">
               <div class="cs-mini-stat-num">Live</div>
-              <div class="cs-mini-stat-lbl">Real-time sync dashboard</div>
+              <div class="cs-mini-stat-lbl">Stock updates on every sale</div>
             </div>
             <div class="cs-mini-stat">
-              <div class="cs-mini-stat-num">1-click</div>
-              <div class="cs-mini-stat-lbl">Resync on failure</div>
+              <div class="cs-mini-stat-num">Multi</div>
+              <div class="cs-mini-stat-lbl">Outlets from one login</div>
+            </div>
+            <div class="cs-mini-stat">
+              <div class="cs-mini-stat-num">0</div>
+              <div class="cs-mini-stat-lbl">Overselling from stale stock</div>
+            </div>
+            <div class="cs-mini-stat">
+              <div class="cs-mini-stat-num">Cloud</div>
+              <div class="cs-mini-stat-lbl">Access from any device</div>
             </div>
           </div>
         </div>
@@ -1158,405 +1274,399 @@
     </div>
   </section>
 
-  <!-- ── COURIER PARTNERS ─────────────────────────────────── -->
-  <div class="cs-partners">
-    <div class="container">
-      <div class="cs-partners-label">Connected courier partners</div>
-      <div class="cs-partners-grid">
-        <div class="cs-partner-card">
-          <img src="images/sync/royalelogo-1.webp" alt="Storemate courier sync Sri Lanka, Royal Express integration" class="cs-partner-logo" />
-        </div>
-        <div class="cs-partner-card">
-          <img src="images/sync/332708073_3811654199061580_3846048282845902556_n-Photoroom-e1758020748705.webp" alt="FDE Express" class="cs-partner-logo" />
-        </div>
-        <div class="cs-partner-card">
-          <img src="images/sync/images-2-1.webp" alt="DomEx" class="cs-partner-logo" />
-        </div>
-        <div class="cs-partner-card">
-          <img src="images/sync/logo-5.webp" alt="TransEx" class="cs-partner-logo" />
-        </div>
-        <div class="cs-partner-card">
-          <img src="images/sync/logo-1-e1758031524438.webp" alt="Koombiyo" class="cs-partner-logo" />
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ── PAIN STRIP ──────────────────────────────────────── -->
   <div class="cs-pain-strip">
     <div class="cs-pain-track">
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Copy order from Facebook. Paste into Curfox. Repeat 80 times.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Wrong address typed. Wrong courier. Customer never receives.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Three courier portals. Three separate spreadsheets. One exhausted team.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Order entered twice by accident. Two packages shipped. One returned.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Special instructions never reached the courier. Wrong item packed.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Sync failed silently. Customer never received. Automatic return filed.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Sold an item you ran out of an hour ago. Refund and apology.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Counted stock by hand at midnight. Numbers still don't match.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>No idea which products actually make money.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Prices in your head, discounts on paper, totals on a calculator.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Best-seller out of stock again. Nobody reordered in time.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Cash drawer says one thing. The notebook says another.</div>
       <!-- duplicate set -->
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Copy order from Facebook. Paste into Curfox. Repeat 80 times.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Wrong address typed. Wrong courier. Customer never receives.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Three courier portals. Three separate spreadsheets. One exhausted team.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Order entered twice by accident. Two packages shipped. One returned.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Special instructions never reached the courier. Wrong item packed.</div>
-      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Sync failed silently. Customer never received. Automatic return filed.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Sold an item you ran out of an hour ago. Refund and apology.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Counted stock by hand at midnight. Numbers still don't match.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>No idea which products actually make money.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Prices in your head, discounts on paper, totals on a calculator.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Best-seller out of stock again. Nobody reordered in time.</div>
+      <div class="cs-pain-item"><span class="cs-pain-dot"></span>Cash drawer says one thing. The notebook says another.</div>
     </div>
   </div>
 
   <!-- ── PROBLEM SECTION ───────────────────────────────────── -->
   <section class="cs-section--dark" id="cs-problems">
     <div class="container">
-      <div class="cs-label cs-label--red">The Manual Sync Problem</div>
-      <h2 class="cs-h2 cs-h2--white">Hours lost daily to <strong>manual data entry</strong></h2>
-      <p class="cs-sub cs-sub--muted">Every order manually typed into every courier portal. Every day. The mistakes, the time, the chaos, all preventable.</p>
+      <div class="cs-label cs-label--red">The Manual Counter Problem</div>
+      <h2 class="cs-h2 cs-h2--white">Selling blind with <strong>guesswork inventory</strong></h2>
+      <p class="cs-sub cs-sub--muted">Prices from memory, stock counted after closing, profit worked out at month-end. It slows the queue, loses sales, and quietly leaks money.</p>
 
       <div class="cs-problem-stat">
-        <div class="cs-problem-stat-num">4–6 hrs</div>
+        <div class="cs-problem-stat-num">2&times; work</div>
         <div class="cs-problem-stat-text">
-          <strong>Lost every single day</strong> per staff member, just copying order data between systems. That's 120+ hours per month that produces zero value.
+          <strong>Every product handled twice</strong> once when it sells, and again when you reconcile the shelf, the notebook and the cash drawer at night. And the numbers still rarely agree.
         </div>
       </div>
 
       <div class="cs-problems-grid">
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Copy &amp; Paste Hell</h3>
-            <p>Order arrives in Google Sheets or Excel. You copy it. Paste it into courier system. Every order. Every day. Hours disappear into zero-value work.</p>
+            <h3>Stockouts &amp; Lost Sales</h3>
+            <p>Your best-seller runs out mid-day and nobody notices until a customer asks. The sale, and often the customer, walks out the door.</p>
           </div>
         </div>
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Data Entry Errors</h3>
-            <p>Wrong address typed. Wrong item code entered. Wrong phone number pasted. Courier ships to wrong place. Customer returns. Margin gone entirely.</p>
+            <h3>Overselling &amp; Refunds</h3>
+            <p>You promise a product you no longer have because the count was wrong. Now it is refunds, apologies and a broken promise to the customer.</p>
           </div>
         </div>
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Multiple Couriers = Multiple Systems</h3>
-            <p>Three courier companies. Three different portals. Three separate data entry processes. The same order typed three times. Chaos multiplied by three.</p>
+            <h3>Slow Manual Billing</h3>
+            <p>Prices looked up by memory, totals on a calculator, discounts scribbled on paper. The queue builds and small mistakes creep into every bill.</p>
           </div>
         </div>
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Duplicate &amp; Lost Orders</h3>
-            <p>Orders get entered twice by accident. Or forgotten entirely in the chaos between systems. Customer never receives. Return filed automatically.</p>
+            <h3>No Real-Time Stock</h3>
+            <p>Stock is only known after a manual count. Between counts you are guessing, over-ordering some items while quietly running dry on others.</p>
           </div>
         </div>
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Courier Communication Gaps</h3>
-            <p>Special instructions don't reach the courier. Product descriptions missing. Waybills don't match the order. Courier confused. Wrong item packed. Return inevitable.</p>
+            <h3>Blind On Profit</h3>
+            <p>You know what came in, not what actually made money. No clear view of margins, top sellers, or dead stock sitting on the shelf.</p>
           </div>
         </div>
         <div class="cs-problem-item">
           <div class="cs-problem-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <div class="cs-problem-body">
-            <h3>Team Coordination Nightmare</h3>
-            <p>Multiple people entering the same order into different systems. Conflicts. Duplicates. Nobody knows what is synced and what is not. Confusion daily.</p>
+            <h3>Shrinkage &amp; Mismatches</h3>
+            <p>Cash drawer, notebook and shelf never quite agree. Losses from theft, miscounts and untracked returns disappear quietly, month after month.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SOLUTIONS: SYNC FEATURES ───────────────────────────── -->
-  <section class="cs-section cs-section--white">
+  <!-- ── POS FEATURES ───────────────────────────────────────── -->
+  <section class="cs-section cs-section--white" id="pos-features">
     <div class="container">
-      <div class="cs-label cs-label--blue">The Storemate Solution</div>
-      <h2 class="cs-h2"><strong>Automatic sync</strong> that actually works</h2>
+      <div class="cs-label cs-label--blue">Point of Sale</div>
+      <h2 class="cs-h2"><strong>Fast billing</strong> your counter will love</h2>
       <p class="cs-sub cs-sub--dark" style="margin-bottom:60px;">
-        Orders flow from Storemate to your couriers without anyone touching them. Zero manual work, zero errors, complete visibility.
+        Scan, bill and print in seconds on any device. Simple enough for a new cashier to learn in minutes, powerful enough for a busy shop.
       </p>
 
       <div class="cs-phase-badge">
         <div class="cs-phase-badge-num">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
         </div>
-        <div class="cs-phase-badge-text">Sync Features <span>, automatic order flow to couriers</span></div>
+        <div class="cs-phase-badge-text">POS Features <span>, bill, scan and print in seconds</span></div>
       </div>
 
-      <!-- Solution 1: Auto sync -->
+      <!-- Feature 1: Barcode billing -->
       <div class="cs-sol-item">
         <div>
           <div class="cs-sol-tag">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Automatic Sync
+            Barcode Billing
           </div>
-          <h3 class="cs-sol-h"><strong>Zero manual entry.</strong> Orders reach couriers automatically</h3>
-          <p class="cs-sol-desc">Order processed in Storemate. It syncs to your courier instantly. No copy. No paste. No spreadsheet. No human in between. Clean, accurate data arrives at the courier every time.</p>
+          <h3 class="cs-sol-h"><strong>Scan, bill, done.</strong> Checkout in seconds</h3>
+          <p class="cs-sol-desc">Scan a barcode or search by name and the item drops into the bill with the right price. Apply discounts, take part-payments, split the tender, then print or share the receipt, all from one clean screen your staff can learn in minutes.</p>
           <ul class="cs-sol-list">
-            <li>Orders sync directly to courier portal the moment they're processed</li>
-            <li>No manual data entry required, ever</li>
-            <li>No typing errors causing wrong shipments</li>
-            <li>Courier receives complete, accurate information on the first attempt</li>
+            <li>Barcode scanning and instant product search</li>
+            <li>Automatic pricing, taxes and discounts on every line</li>
+            <li>Cash, card and split multi-payment checkout</li>
+            <li>Print a receipt or share a digital bill in one tap</li>
           </ul>
         </div>
         <div class="cs-screenshot-wrap">
-          <img src="images/sync/Sync2.png" alt="Storemate Shipping List, orders synced across couriers" />
+          <img src="images/screenshots/software/3.png" alt="Storemate POS billing screen with products, quantities and pricing" />
         </div>
       </div>
 
-      <!-- Solution 2: Multi-courier (reversed) -->
+      <!-- Feature 2: Live inventory on sale -->
       <div class="cs-sol-item cs-sol-item--reverse">
         <div>
           <div class="cs-sol-tag">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Multi-Courier
+            Live Inventory
           </div>
-          <h3 class="cs-sol-h">One platform.<br><strong>Every courier in Sri Lanka</strong></h3>
-          <p class="cs-sol-desc">Send the same order to multiple courier companies simultaneously. Compare delivery speeds and costs in real time. Choose the best option. Change at the last moment, no re-uploading needed.</p>
+          <h3 class="cs-sol-h"><strong>Every sale updates stock</strong> instantly</h3>
+          <p class="cs-sol-desc">The moment a bill is saved, stock drops in real time across every outlet and device. No end-of-day reconciliation, no overselling, no guessing what is on the shelf, your numbers are always current.</p>
           <ul class="cs-sol-list">
-            <li>Sync to Royal Express, TransEx, FDE, DomEx, Koombiyo and more from one screen</li>
-            <li>Compare carrier speed and cost before committing</li>
-            <li>Switch couriers at the last moment without re-entering data</li>
-            <li>One platform replaces three separate portals</li>
-          </ul>
-        </div>
-        <div class="cs-courier-grid-visual">
-          <div class="cs-courier-logo-card">
-            <img src="images/sync/royalelogo-1.webp" alt="Royal Express" />
-          </div>
-          <div class="cs-courier-logo-card">
-            <img src="images/sync/332708073_3811654199061580_3846048282845902556_n-Photoroom-e1758020748705.webp" alt="FDE Express" />
-          </div>
-          <div class="cs-courier-logo-card">
-            <img src="images/sync/images-2-1.webp" alt="DomEx" />
-          </div>
-          <div class="cs-courier-logo-card">
-            <img src="images/sync/logo-5.webp" alt="TransEx" />
-          </div>
-          <div class="cs-courier-logo-card cs-courier-logo-card--wide">
-            <img src="images/sync/logo-1-e1758031524438.webp" alt="Koombiyo" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 3: Real-time dashboard -->
-      <div class="cs-sol-item">
-        <div>
-          <div class="cs-sol-tag">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Live Dashboard
-          </div>
-          <h3 class="cs-sol-h"><strong>See every order syncing</strong> in real time, no black holes</h3>
-          <p class="cs-sol-desc">Dashboard shows exactly what is syncing right now, what completed successfully, and what failed. Complete visibility into your courier pipeline. No mysteries, no lost orders.</p>
-          <ul class="cs-sol-list">
-            <li>Live view of all syncing orders at any moment</li>
-            <li>Successful syncs confirmed the moment they complete</li>
-            <li>Failed syncs flagged instantly, never missed</li>
-            <li>One-click resync to fix any failure immediately</li>
+            <li>Stock adjusts automatically on every sale, return and transfer</li>
+            <li>One accurate stock figure across all outlets and users</li>
+            <li>Low-stock and out-of-stock flags before you run dry</li>
+            <li>Full movement history for every single product</li>
           </ul>
         </div>
         <div class="cs-screenshot-wrap">
-          <img src="images/sync/Sync 1.png" alt="Storemate Sync History, live courier sync dashboard" />
+          <img src="images/screenshots/software/1.png" alt="Storemate live sales and stock dashboard" />
         </div>
       </div>
 
-      <!-- Solution 4: Sync status -->
-      <div class="cs-sol-item cs-sol-item--reverse">
-        <div>
-          <div class="cs-sol-tag">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Order-Level Status
-          </div>
-          <h3 class="cs-sol-h"><strong>Know exactly</strong> what happened to every order, instantly</h3>
-          <p class="cs-sol-desc">Storemate tracks the sync status of each individual order. See what's pending, what's confirmed by the courier, and what needs attention, all in one view, without chasing courier portals.</p>
-          <ul class="cs-sol-list">
-            <li>Per-order sync status shown at a glance</li>
-            <li>Pending, synced, and failed states clearly visible</li>
-            <li>No logging into multiple courier portals to check</li>
-            <li>Full audit trail of every sync event per order</li>
-          </ul>
-        </div>
-        <div class="cs-screenshot-wrap">
-          <img src="images/sync/sync_status.png" alt="Storemate order-level sync status, see every order's courier sync state" />
-        </div>
-      </div>
-
-      <!-- Mini grid: remaining 3 sync features -->
+      <!-- Mini grid: more POS features -->
       <div class="cs-mini-sol-grid">
-
         <div class="cs-mini-sol-card">
           <div class="cs-mini-sol-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           </div>
-          <div class="cs-mini-sol-title">Smart Data Mapping</div>
-          <p class="cs-mini-sol-desc">Product descriptions, special instructions, branding notes, packaging details, everything syncs to the courier automatically. Nothing lost, nothing retyped wrong.</p>
-          <div class="cs-mini-sol-result">Zero information loss in the courier handoff</div>
+          <div class="cs-mini-sol-title">Receipts &amp; Printing</div>
+          <div class="cs-mini-sol-desc">Branded thermal or A4 receipts, printed at the counter or shared as a digital bill your customer keeps.</div>
+          <div class="cs-mini-sol-result">Professional at the counter</div>
         </div>
-
         <div class="cs-mini-sol-card">
           <div class="cs-mini-sol-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
           </div>
-          <div class="cs-mini-sol-title">Instant Failure Alerts</div>
-          <p class="cs-mini-sol-desc">Sync fails? You see it the moment it happens. System shows exactly what failed. One-click resync. Problem solved before the customer is affected.</p>
-          <div class="cs-mini-sol-result">Zero failed deliveries reaching customers</div>
+          <div class="cs-mini-sol-title">Multiple Outlets</div>
+          <div class="cs-mini-sol-desc">Run several shops or counters from one login, each with its own stock, staff and daily takings.</div>
+          <div class="cs-mini-sol-result">One system, every location</div>
         </div>
-
         <div class="cs-mini-sol-card">
           <div class="cs-mini-sol-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <div class="cs-mini-sol-title">Last-Minute Courier Changes</div>
-          <p class="cs-mini-sol-desc">Courier delayed? Switch providers at the last moment. System transfers all data to the new courier instantly, no re-entry, no re-upload, order ships on time.</p>
-          <div class="cs-mini-sol-result">On-time deliveries regardless of courier issues</div>
+          <div class="cs-mini-sol-title">Roles &amp; Permissions</div>
+          <div class="cs-mini-sol-desc">Give cashiers, managers and owners exactly the access they need, and nothing they do not.</div>
+          <div class="cs-mini-sol-result">Control who sees what</div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── COMPARISON ─────────────────────────────────────────── -->
-  <section class="cs-section--dark">
+  <!-- ── INVENTORY FEATURES ─────────────────────────────────── -->
+  <section class="cs-section cs-section--light">
     <div class="container">
-      <div class="cs-label cs-label--cyan">The Difference</div>
-      <h2 class="cs-h2 cs-h2--white">Manual spreadsheets <strong>vs</strong> Storemate automatic sync</h2>
-      <p class="cs-sub cs-sub--muted">Seven factors. One clear winner every time.</p>
+      <div class="cs-label cs-label--blue">Inventory Management</div>
+      <h2 class="cs-h2"><strong>Inventory</strong> that manages itself</h2>
+      <p class="cs-sub cs-sub--dark" style="margin-bottom:8px;">
+        From a single shelf to multiple warehouses, Storemate keeps stock, purchases and suppliers in one place, and keeps every number current without a manual count.
+      </p>
+
+      <div class="cs-mini-sol-grid" style="margin-top:52px;">
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Real-Time Stock Control</div>
+          <div class="cs-mini-sol-desc">See exactly what is in stock, by outlet, in real time. Every sale, return and transfer updates instantly.</div>
+          <div class="cs-mini-sol-result">Always know your stock</div>
+        </div>
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Low-Stock Alerts</div>
+          <div class="cs-mini-sol-desc">Set reorder levels and get flagged before a product runs out, so best-sellers are never off the shelf.</div>
+          <div class="cs-mini-sol-result">Never run dry</div>
+        </div>
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Purchases &amp; Suppliers</div>
+          <div class="cs-mini-sol-desc">Record purchases, receive goods, and track what you owe each supplier, all connected to your live stock.</div>
+          <div class="cs-mini-sol-result">Buying under control</div>
+        </div>
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Variants &amp; Units</div>
+          <div class="cs-mini-sol-desc">Handle sizes, colours and multiple units of measure, each with its own barcode and price.</div>
+          <div class="cs-mini-sol-result">Every SKU covered</div>
+        </div>
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Batches &amp; Expiry</div>
+          <div class="cs-mini-sol-desc">Track batch numbers and expiry dates and sell oldest stock first, ideal for groceries, pharmacy and FMCG.</div>
+          <div class="cs-mini-sol-result">No expired stock</div>
+        </div>
+        <div class="cs-mini-sol-card">
+          <div class="cs-mini-sol-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          </div>
+          <div class="cs-mini-sol-title">Transfers &amp; Adjustments</div>
+          <div class="cs-mini-sol-desc">Move stock between outlets and correct counts with a full audit trail of who changed what, and when.</div>
+          <div class="cs-mini-sol-result">Accurate across locations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REPORTS SPOTLIGHT ──────────────────────────────────── -->
+  <section class="cs-section cs-section--white">
+    <div class="container">
+      <div class="cs-sol-item">
+        <div>
+          <div class="cs-sol-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Reports &amp; Insights
+          </div>
+          <h3 class="cs-sol-h"><strong>Know your numbers</strong> without adding them up</h3>
+          <p class="cs-sol-desc">Sales, profit, best sellers and slow movers, ready in real time. See how each outlet, product and staff member is performing, so you buy smarter and stop guessing where the money goes.</p>
+          <ul class="cs-sol-list">
+            <li>Daily sales and cash summaries at a glance</li>
+            <li>Profit and margin by product and category</li>
+            <li>Best sellers, slow movers and dead stock</li>
+            <li>Outlet and staff performance side by side</li>
+          </ul>
+        </div>
+        <div class="cs-screenshot-wrap">
+          <img src="images/screenshots/software/6.png" alt="Storemate POS reporting dashboard with sales and profit summaries" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDITIONS: POS LITE vs POS PRO ──────────────────────── -->
+  <section class="cs-section cs-section--light">
+    <div class="container">
+      <div class="cs-label cs-label--blue">Two Editions</div>
+      <h2 class="cs-h2">Choose the POS that <strong>fits your business</strong></h2>
+      <p class="cs-sub cs-sub--dark">Start light and grow, or go full-scale from day one. Both run in the cloud and connect to the same Storemate ecosystem.</p>
+
+      <div class="cs-editions">
+        <div class="cs-edition">
+          <div class="cs-edition-name">POS Lite</div>
+          <div class="cs-edition-tagline">For shops getting started</div>
+          <p class="cs-edition-desc">Everything you need to bill fast and keep stock accurate, without the overhead. Perfect for a single outlet or a growing store.</p>
+          <ul class="cs-edition-list">
+            <li>Fast barcode billing and receipts</li>
+            <li>Real-time stock control</li>
+            <li>Products, purchases &amp; suppliers</li>
+            <li>Daily sales &amp; stock reports</li>
+            <li>Cloud access from any device</li>
+          </ul>
+          <a href="https://app.storemate.cloud/login" target="_blank" rel="noopener noreferrer" class="cs-edition-login">POS Lite Login</a>
+        </div>
+
+        <div class="cs-edition cs-edition--pro">
+          <span class="cs-edition-badge">Most Powerful</span>
+          <div class="cs-edition-name">POS Pro</div>
+          <div class="cs-edition-tagline">For multi-outlet &amp; scaling retail</div>
+          <p class="cs-edition-desc">Advanced retail power for businesses running multiple outlets, larger catalogues and teams, with deeper inventory and reporting.</p>
+          <ul class="cs-edition-list">
+            <li>Everything in POS Lite</li>
+            <li>Multi-outlet &amp; stock transfers</li>
+            <li>Batches, expiry &amp; product variants</li>
+            <li>Advanced reports &amp; analytics</li>
+            <li>Roles, permissions &amp; multi-user</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="https://app.storematepro.lk/login" target="_blank" rel="noopener noreferrer" class="cs-edition-login">POS Pro Login</a>
+        </div>
+      </div>
+
+      <p class="cs-editions-note">Not sure which fits? <a href="contact.html">Talk to our team</a> and we will set you up on the right one, free.</p>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON ─────────────────────────────────────────── -->
+  <section class="cs-section--navy">
+    <div class="container">
+      <div class="cs-label cs-label--cyan">Before &amp; After</div>
+      <h2 class="cs-h2 cs-h2--white">The counter, <strong>before and after</strong></h2>
+      <p class="cs-sub cs-sub--muted">The same shop, run two very different ways.</p>
 
       <div class="cs-vs-wrap">
-
-        <!-- BAD panel -->
+        <!-- BAD -->
         <div class="cs-vs-panel cs-vs-panel--bad">
           <div class="cs-vs-head cs-vs-head--bad">
-            <div class="cs-vs-badge cs-vs-badge--bad">✕</div>
+            <div class="cs-vs-badge cs-vs-badge--bad">&times;</div>
             <div class="cs-vs-head-info">
-              <div class="cs-vs-head-title">Manual Google Sheets / Excel</div>
-              <div class="cs-vs-head-sub">How most Sri Lankan sellers operate today</div>
+              <div class="cs-vs-head-title">Calculator &amp; notebook</div>
+              <div class="cs-vs-head-sub">The manual counter</div>
             </div>
-            <div class="cs-vs-head-pill cs-vs-head-pill--bad">Before</div>
+            <div class="cs-vs-head-pill cs-vs-head-pill--bad">Guesswork</div>
           </div>
           <div class="cs-vs-list">
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Data Entry</div>
-                <div class="cs-vs-row-text">Manual copy &amp; paste. Every order. Every day. No exceptions.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Billing</div><div class="cs-vs-row-text">Prices from memory, totals on a calculator, hand-written bills.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Entry Errors</div>
-                <div class="cs-vs-row-text">High. Wrong addresses. Wrong items. Wrong phone numbers.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Stock</div><div class="cs-vs-row-text">Counted by hand after closing, and the numbers rarely match.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Time Saved Daily</div>
-                <div class="cs-vs-row-text">0 hours saved. 4–6 hours wasted on data entry per person.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Stockouts</div><div class="cs-vs-row-text">You find out a product is finished when a customer asks for it.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Multiple Couriers</div>
-                <div class="cs-vs-row-text">Multiple spreadsheets. Manual entries in each portal. Chaos at scale.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Reports</div><div class="cs-vs-row-text">Add up the notebook at month-end and hope it is right.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Real-Time Visibility</div>
-                <div class="cs-vs-row-text">No idea what the courier received. Orders disappear into black holes.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Multiple shops</div><div class="cs-vs-row-text">A separate book per shop, and no single view of the business.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Sync Failures</div>
-                <div class="cs-vs-row-text">Silent failures. Orders disappear. No alert. Customer never receives.</div>
-              </div>
-            </div>
-            <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--bad">✕</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Delivery Accuracy</div>
-                <div class="cs-vs-row-text">5–10% wrong address or item rates from manual errors. High returns.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--bad">&times;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Losses</div><div class="cs-vs-row-text">Shrinkage and miscounts disappear silently, month after month.</div></div>
             </div>
           </div>
         </div>
 
-        <!-- GOOD panel -->
+        <!-- GOOD -->
         <div class="cs-vs-panel cs-vs-panel--good">
           <div class="cs-vs-head cs-vs-head--good">
-            <div class="cs-vs-badge cs-vs-badge--good">✓</div>
+            <div class="cs-vs-badge cs-vs-badge--good">&#10003;</div>
             <div class="cs-vs-head-info">
-              <div class="cs-vs-head-title">Storemate Automatic Sync</div>
-              <div class="cs-vs-head-sub">Built for Sri Lankan sellers who are scaling</div>
+              <div class="cs-vs-head-title">Storemate POS</div>
+              <div class="cs-vs-head-sub">Billing + inventory in one</div>
             </div>
-            <div class="cs-vs-head-pill cs-vs-head-pill--good">After</div>
+            <div class="cs-vs-head-pill cs-vs-head-pill--good">In control</div>
           </div>
           <div class="cs-vs-list">
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Data Entry</div>
-                <div class="cs-vs-row-text">Automatic. Zero manual work from day one.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Billing</div><div class="cs-vs-row-text">Scan, bill and print in seconds, with pricing and tax applied automatically.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Entry Errors</div>
-                <div class="cs-vs-row-text">Zero. Accurate data synced directly from the source.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Stock</div><div class="cs-vs-row-text">Updates live on every sale, one accurate figure everywhere.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Time Saved Daily</div>
-                <div class="cs-vs-row-text">4–6 hours saved per staff member, every single day.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Stockouts</div><div class="cs-vs-row-text">Low-stock alerts warn you before a best-seller ever runs out.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Multiple Couriers</div>
-                <div class="cs-vs-row-text">One platform. All couriers. All automated in one screen.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Reports</div><div class="cs-vs-row-text">Sales, profit and top sellers ready in real time, no adding up.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Real-Time Visibility</div>
-                <div class="cs-vs-row-text">Live dashboard. Every order tracked from sync to delivery.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Multiple shops</div><div class="cs-vs-row-text">Every outlet in one login, with stock transfers between them.</div></div>
             </div>
             <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Sync Failures</div>
-                <div class="cs-vs-row-text">Instant alert. One-click resync. Fixed immediately.</div>
-              </div>
-            </div>
-            <div class="cs-vs-row">
-              <div class="cs-vs-row-icon cs-vs-row-icon--good">✓</div>
-              <div class="cs-vs-row-body">
-                <div class="cs-vs-row-topic">Delivery Accuracy</div>
-                <div class="cs-vs-row-text">~0% error rate. Near-perfect accuracy from automated sync.</div>
-              </div>
+              <div class="cs-vs-row-icon cs-vs-row-icon--good">&#10003;</div>
+              <div class="cs-vs-row-body"><div class="cs-vs-row-topic">Losses</div><div class="cs-vs-row-text">A full audit trail on every movement, so nothing hides.</div></div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1565,94 +1675,81 @@
   <section class="cs-faq">
     <div class="container">
       <div class="cs-faq-inner">
-        <div class="cs-label cs-label--blue" style="text-align:center;">FAQ</div>
-        <h2 class="cs-h2" style="text-align:center;">Common questions about <strong>courier sync</strong></h2>
-
+        <div style="text-align:center;">
+          <div class="cs-label cs-label--blue" style="text-align:center;">Questions</div>
+          <h2 class="cs-h2">POS &amp; inventory, <strong>answered</strong></h2>
+        </div>
         <div class="cs-faq-list">
-
-          <div class="cs-faq-item open">
-            <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">Which couriers does Storemate sync with?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </div>
-            <div class="cs-faq-a">Storemate currently syncs with Royal Express, FDE Express, DomEx, TransEx, and Koombiyo, and we're adding more regularly. If your courier isn't on the list, contact our team and we'll check if an integration is possible.</div>
-          </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">Do I need to set up the courier connection myself?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">What is Storemate POS?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">No. Our team handles the full setup. When you sign up, we connect your Storemate account to your courier partner and make sure your first sync goes through correctly. You don't need to deal with API keys, portal settings, or any technical configuration.</div>
+            <div class="cs-faq-a">Storemate POS is a cloud point of sale and inventory management system for shops and retailers. It lets you bill customers with barcode scanning, print or share receipts, and keeps your stock, sales and profit updated automatically in real time.</div>
           </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">What happens if a sync fails?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">Does stock update automatically when I sell?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">You'll see it immediately on your sync dashboard, failed orders are flagged the moment the sync attempt fails, not hours later. One click re-syncs the order. Nothing is lost silently and no order slips through to the customer as unshipped.</div>
+            <div class="cs-faq-a">Yes. The moment a bill is saved, stock is reduced in real time across every outlet and device, so you never oversell and never rely on end-of-day manual counts. Returns and stock transfers update the same way.</div>
           </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">Can I use multiple couriers for different orders?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">Do I need special hardware?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">Yes. You choose which courier to sync each order to, or split orders across multiple couriers from a single screen. You can also switch couriers at the last moment without re-entering any data, Storemate transfers everything to the new courier automatically.</div>
+            <div class="cs-faq-a">No special hardware is required. Storemate POS runs in a web browser on any Windows PC, laptop or Android device. You can add a barcode scanner and a thermal or A4 receipt printer if you want them, but they are optional.</div>
           </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">How quickly does an order sync to the courier?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">What is the difference between POS Lite and POS Pro?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">Syncs happen in seconds. The moment you confirm the sync, the order data is sent directly to the courier's system, no batch delays, no scheduled uploads. The courier receives the full order immediately.</div>
+            <div class="cs-faq-a">POS Lite covers fast billing, real-time stock, products, purchases and daily reports for a single growing store. POS Pro adds multi-outlet management, stock transfers, batches and expiry, product variants, advanced reports, and multi-user roles for scaling retail businesses. If you are unsure, our team will recommend the right fit.</div>
           </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">Do I still need to log in to the courier portal after syncing?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">Can I track suppliers and purchases?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">No. Once the sync is confirmed, the courier has everything they need. Your team manages all orders from Storemate, there's no reason to log in to a separate courier portal. The sync dashboard gives you full visibility of what was sent.</div>
+            <div class="cs-faq-a">Yes. You can record purchases, receive goods into stock, and track balances owed to each supplier, all connected to your live inventory so your buying and stock stay in sync.</div>
           </div>
-
           <div class="cs-faq-item">
             <div class="cs-faq-q" onclick="this.parentElement.classList.toggle('open')">
-              <span class="cs-faq-q-text">What information gets sent to the courier when an order syncs?</span>
-              <span class="cs-faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="cs-faq-q-text">Does it connect with my online orders?</span>
+              <span class="cs-faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
             </div>
-            <div class="cs-faq-a">Everything the courier needs, customer name, delivery address, phone number, product description, COD amount, special handling notes, and any packaging instructions. Nothing needs to be re-entered or filled in manually on the courier side.</div>
+            <div class="cs-faq-a">Storemate POS is part of the same ecosystem as Storemate OMS, so your counter sales and online orders live under one roof. If you sell both in-store and online, our team will help you set it up to match how your business runs.</div>
           </div>
-
         </div>
 
         <div class="cs-faq-support">
           <div class="cs-faq-support-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
           </div>
           <div class="cs-faq-support-body">
-            <h4>Can't connect your courier partner?</h4>
-            <p>If you run into trouble connecting your courier or your courier isn't listed, our support team will handle it directly. Just reach out, we'll get the integration set up for you.</p>
-            <a href="contact.html">Talk to our support team →</a>
+            <h4>Still have a question?</h4>
+            <p>Our team helps you pick the right edition, set up your products, and get your counter running, all free.</p>
+            <a href="contact.html">Talk to our team
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ───────────────────────────────────────────── -->
-  <section class="cs-cta" id="cs-cta">
+  <!-- ── FINAL CTA ────────────────────────────────────────── -->
+  <section class="cs-cta">
     <div class="container">
-      <h2>Ready to automate<br><strong>your courier sync?</strong></h2>
-      <p>Start for free. Full setup handled by our team. Your first order synced together with us. No card needed.</p>
+      <h2>Sell faster and <strong>stop guessing your stock</strong></h2>
+      <p>Set up your products, plug in a scanner, and start billing with live inventory today. Free to start, with full setup handled by our team.</p>
       <div class="cs-cta-actions">
-        <a target="_blank" rel="noopener noreferrer" href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" class="btn-white-cs">Start your free setup</a>
-        <a href="why-storemate.html" class="btn-outline-cs">Why Storemate →</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" class="btn-white-cs">Start for free</a>
+        <a href="contact.html" class="btn-outline-cs">Talk to us</a>
       </div>
-      <p class="cs-cta-note">Built from the experience of 25M orders and 30,000+ Sri Lankan sellers.</p>
+      <p class="cs-cta-note">Free to start. No card needed. Cancel anytime.</p>
     </div>
   </section>
 
@@ -1756,16 +1853,60 @@
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Storemate Courier Sync",
-  "url": "https://storemate.lk/courier-sync",
-  "description": "Auto-sync orders to your courier with one click. Storemate integrates with all major Sri Lankan courier networks, no manual data entry.",
+  "@type": "SoftwareApplication",
+  "name": "Storemate POS & Inventory Management",
+  "url": "https://storemate.lk/pos",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Windows, Android",
+  "description": "Storemate POS is a point of sale and inventory management system for Sri Lankan shops. Fast barcode billing, real-time stock control, purchases, suppliers, multi-outlet and reports.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "LKR"
+  },
   "provider": {
     "@type": "Organization",
     "name": "Storemate",
     "url": "https://storemate.lk"
-  },
-  "serviceType": "Courier Integration Software"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Storemate POS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Storemate POS is a cloud point of sale and inventory management system. It lets you bill customers with barcode scanning, print or share receipts, and keeps your stock, sales and profit updated automatically in real time." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does stock update automatically when I sell?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The moment a bill is saved, stock is reduced in real time across every outlet and device, so you never oversell and never rely on end-of-day manual counts." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need special hardware to run Storemate POS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No special hardware is required. Storemate POS runs in a web browser on any Windows PC, laptop or Android device. You can add a barcode scanner and a thermal or A4 receipt printer if you want, but they are optional." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between POS Lite and POS Pro?",
+      "acceptedAnswer": { "@type": "Answer", "text": "POS Lite covers fast billing, real-time stock, products, purchases and daily reports for a single growing store. POS Pro adds multi-outlet management, stock transfers, batches and expiry, product variants, advanced reports, and multi-user roles for scaling retail businesses." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track suppliers and purchases?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can record purchases, receive goods, and track balances owed to each supplier, so your buying and stock stay in sync." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run more than one shop or outlet?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. With POS Pro you can run multiple outlets from one login, each with its own stock and staff, and move inventory between them with stock transfers." }
+    }
+  ]
 }
   </script>
   <script type="application/ld+json">
@@ -1782,8 +1923,8 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Courier Sync",
-      "item": "https://storemate.lk/courier-sync"
+      "name": "POS & Inventory",
+      "item": "https://storemate.lk/pos"
     }
   ]
 }
