@@ -39,9 +39,9 @@
 
  REAL ASSETS ALREADY WIRED IN
    logo            images/brand/storemate_logo.png
-   billing shot    images/screenshots/software/3.png
-   stock shot      images/screenshots/software/1.png
-   reports shot    images/screenshots/software/6.png
+   billing shot    images/screenshots/software/pos-devices.webp
+   stock shot      images/screenshots/software/inventory-devices.webp
+   reports shot    images/screenshots/software/reports-devices.webp
    featured video  YouTube liTCGGwUtLA  (click-to-load, real thumbnail)
    implementation  YouTube r5KdUrjLgE0  (click-to-load, real thumbnail)
    TikTok reels    7343497454240681218 · 7343584463269399809
@@ -49,13 +49,16 @@
    All CTAs, nav and footer links point at real pages.
 
  PLACEHOLDERS TO REPLACE  (search "TODO")
-   · site-visit / implementation photos on picsum.photos → your own images
-   · reviewer names, businesses and towns on the six review cards
-   · reviewer avatar photos (currently picsum)
-   · shop names on TikTok cards 3 and 4
-   · phone / WhatsApp numbers and support hours
+   · business name and town on four of the five review cards (Google shows
+     only the personal name; SFC Restaurant is the one exception)
+   · reviewer photos, if wanted — the cards use initials, because Google
+     profile images are hotlink-protected and belong to the reviewers
+   · WhatsApp number (the tel: link and support hours are now real)
    · the "14 years" wording — see the note at section 3
    · Tamil receipt support and data-export formats in the FAQ
+   · the contact form posts nowhere — needs an endpoint wired up
+   · step 2 of implementation uses a generated spreadsheet image, not a
+     photo of a real data load
 
  Photo briefs are shown on each image tile while <body class="preview">.
  Delete "preview" from the body tag to hide them.
@@ -159,11 +162,15 @@
 .btn--go:hover{transform:translateY(-2px);opacity:.92;color:var(--pri)}
 .btn--out{border-color:var(--line-2);color:var(--pri);background:var(--paper)}
 .btn--out:hover{border-color:var(--pri);transform:translateY(-2px);opacity:.92}
-/* Outlined on navy. The site's own .btn-ghost uses a .12 white fill with a
-   .28 border, which disappears against the #013387 hero — so this variant
-   uses a solid white border and no fill for a readable secondary action. */
-.btn--ghost{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
-.btn--ghost:hover{background:#fff;border-color:#fff;color:var(--pri);transform:translateY(-2px)}
+/* Outlined on navy. Two things to keep in mind here:
+   1. The site's own .btn-ghost uses a .12 white fill with a .28 border,
+      which washes out against the saturated #013387 hero.
+   2. .pos-page .btn sets `border:1px solid transparent` and outranks a bare
+      .btn--ghost, so this must be scoped the same way and must set the full
+      border shorthand — border-color alone loses to that transparent border. */
+.pos-page .btn--ghost{background:#fff;border:2px solid #fff;color:var(--pri)}
+.pos-page .btn--ghost:hover{background:transparent;border-color:#fff;color:#fff;
+  transform:translateY(-2px);opacity:1}
 .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
 .fine{margin-top:1.1rem;font-size:.9rem;color:var(--soft)}
 .sec--dark .fine,.pos-hero .fine{color:#93a9c8}
@@ -214,8 +221,19 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .hero-stats span{display:block;margin-top:.2rem;font-size:.83rem;color:#9db3d0;line-height:1.4}
 /* The hero artwork is a transparent-background device mockup, so it gets no
    frame, border or panel — just a soft drop shadow so it lifts off the navy. */
-.pos-hero-shot{filter:drop-shadow(0 26px 46px rgba(0,0,0,.42));justify-self:end;width:100%}
+/* Right column: device mockup above, wordmark below, read as one unit. */
+.pos-hero-media{justify-self:end;width:100%;display:flex;flex-direction:column;
+  align-items:center}
+.pos-hero-shot{filter:drop-shadow(0 26px 46px rgba(0,0,0,.42));width:100%}
 .pos-hero-shot img{width:100%;height:auto;display:block}
+/* The device PNG carries transparent padding below the phone, so the artwork
+   ends well above the element's own edge. The negative margin closes that gap
+   and sits the wordmark directly under the devices.
+   brightness(0) invert(1) is the same treatment the footer uses for this logo
+   on dark (css/styles.css) — the source art is a cyan-to-blue gradient that
+   would otherwise sink into the navy. */
+.pos-hero-logo{width:min(78%,400px);height:auto;margin-top:2%;
+  filter:brightness(0) invert(1);opacity:.92}
 
 /* ══ 2 · STORY ═════════════════════════════════════════════════════ */
 .story{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(2rem,5vw,3.5rem);
@@ -518,11 +536,13 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .faq summary{list-style:none;cursor:pointer;padding:1.05rem 3rem 1.05rem 1.25rem;
   position:relative;font-weight:700;font-size:1rem;line-height:1.4;display:block}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:1.25rem;top:1.35rem;
-  width:11px;height:2px;background:var(--pri)}
-.faq summary::before{content:"";position:absolute;right:1.7rem;top:1rem;width:2px;height:11px;
-  background:var(--pri);transition:transform .2s,opacity .2s}
-.faq details[open] summary::before{transform:rotate(90deg);opacity:0}
+/* Chevron, drawn from two arms of a square rotated 45deg. The centre sits on
+   the first line of the question, so it holds still as the panel opens. */
+.faq summary::after{content:"";position:absolute;right:1.4rem;top:1.35rem;
+  width:9px;height:9px;border-right:2px solid var(--pri);border-bottom:2px solid var(--pri);
+  transform:translateY(-3px) rotate(45deg);transform-origin:center;
+  transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(1px) rotate(225deg)}
 .faq summary:hover{color:var(--pri)}
 .faq-a{padding:0 1.25rem 1.25rem;color:var(--soft);font-size:.99rem}
 .faq-cta{margin-top:2rem;padding:1.6rem 1.8rem;background:var(--paper);border:1px solid var(--line);
@@ -578,20 +598,51 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 @media (max-width:980px){
   .pos-hero-in,.story,.fgrid,.iwrap,.cgrid{grid-template-columns:1fr}
   /* Stacked hero: keep the tall device mockup from dominating the fold */
-  .pos-hero-shot{max-width:460px;margin-inline:auto}
+  .pos-hero-media{max-width:460px;margin-inline:auto;justify-self:center}
   .tik{margin-inline:auto}
   .state,.tgrid,.vgrid{grid-template-columns:1fr 1fr}
   .gal{grid-template-columns:repeat(3,1fr)}
-  #inav{flex-direction:row;overflow-x:auto;padding-bottom:.4rem}
-  #inav button{flex:none}
 }
+
+/* Narrow screens: the five-step rail becomes a horizontal strip of numbers,
+   so the panel below it starts near the top of the screen instead of after
+   five stacked rows. */
+@media (max-width:920px){
+  .inav{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;margin:0 0 1.4rem;padding:0 0 .55rem}
+  .inav::before{display:none}
+  .inav::-webkit-scrollbar{height:3px}
+  .inav::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:3px}
+  .inav li{flex:none;padding:0;scroll-snap-align:start}
+  .inav button{display:flex;align-items:center;gap:.55rem;white-space:nowrap;
+    padding:.5rem .95rem .5rem .55rem;border:1.5px solid var(--line-2);
+    border-radius:100px;background:var(--paper)}
+  .inav button::before{position:static;width:26px;height:26px;flex:none}
+  .inav button[aria-selected="true"]{border-color:var(--pri);background:var(--cyan-l)}
+  .inav small{display:none}
+}
+
 @media (max-width:640px){
   .pos-page{font-size:1rem}
   .hero-stats{grid-template-columns:1fr;gap:.9rem;text-align:left}
   .state,.tgrid,.vgrid{grid-template-columns:1fr}
-  .gal{grid-template-columns:1fr 1fr}
   .btns .btn{width:100%}
   .pos-page .close .btns .btn{width:100%}
+
+  /* Feature tabs: one scrollable row beats four wrapped ones. */
+  .tabs{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;margin-inline:calc(clamp(1.15rem,4vw,2.5rem) * -1);
+    padding:0 clamp(1.15rem,4vw,2.5rem) .55rem;margin-bottom:1.5rem}
+  .tabs::-webkit-scrollbar{height:3px}
+  .tabs::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:3px}
+  .tab{flex:none;scroll-snap-align:start}
+
+  /* Gallery: two 150px letterboxes per row crop every photo to a slit.
+     One column at a readable height instead. */
+  .gal{grid-template-columns:1fr;grid-auto-rows:auto}
+  .gal .ph{aspect-ratio:4/3;height:auto}
+  .g-w{grid-column:span 1}
+  .g-t{grid-row:span 1}
 }
 </style>
 </head>
@@ -741,9 +792,13 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       </div>
     </div>
 
-    <div class="pos-hero-shot rv">
-      <img src="images/screenshots/pos-devices-hero.png" width="1080" height="1120" fetchpriority="high"
-           alt="Storemate POS running on a desktop, laptop and mobile — billing screen, dashboard and mobile POS">
+    <div class="pos-hero-media rv">
+      <div class="pos-hero-shot">
+        <img src="images/screenshots/pos-devices-hero.png" width="1080" height="1120" fetchpriority="high"
+             alt="Storemate POS running on a desktop, laptop and mobile — billing screen, dashboard and mobile POS">
+      </div>
+      <img class="pos-hero-logo" src="images/brand/storemate_logo.png" width="2607" height="334"
+           alt="Storemate" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -830,7 +885,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead rv">
       <span class="eyebrow"><i></i>Feature list</span>
       <h2>Everything the shop needs, <strong>in the order you'll need it</strong></h2>
-      <p>Five areas, plain language, no jargon. Pick the one that's giving you trouble.</p>
+      <p>Selling at the counter, knowing what is in stock, running more than one shop, deciding who
+        can see what, and reading the numbers at the end of the day. Five areas, in the order a
+        growing shop tends to meet them — open the one that is giving you trouble.</p>
     </div>
 
     <div class="tabs rv" role="tablist" aria-label="Feature areas">
@@ -863,8 +920,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
-        <img src="images/screenshots/software/3.png" width="1200" height="800" loading="lazy"
-             alt="Storemate POS billing screen showing barcode scanning, quantities and automatic pricing">
+        <img src="images/screenshots/software/pos-devices.webp" width="1065" height="689" loading="lazy" decoding="async"
+             alt="Storemate POS billing screen on desktop, laptop and mobile, with scanned items, quantities, automatic pricing and the payment panel">
       </figure>
     </div>
 
@@ -885,8 +942,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
-        <img src="images/screenshots/software/1.png" width="1200" height="800" loading="lazy"
-             alt="Storemate live sales and stock dashboard showing real-time inventory across outlets">
+        <img src="images/screenshots/software/inventory-devices.webp" width="1536" height="1024" loading="lazy" decoding="async"
+             alt="Storemate product and stock management on desktop, laptop and mobile: filterable product list with SKU, purchase price, selling price and current stock per outlet">
       </figure>
     </div>
 
@@ -905,10 +962,10 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Open a new branch without starting a second system</li>
         </ul>
       </div>
-      <div class="ph rv r4x3" data-brief="TODO 1200×900 — A customer's multi-branch setup: two counters in frame, or a second-branch opening with the owner. Real shop, signboard visible.">
-        <img src="https://picsum.photos/seed/sm-outlets/1200/900" width="1200" height="900" loading="lazy"
-             alt="A Storemate customer running two counters from one login">
-      </div>
+      <figure class="shot rv" style="margin:0">
+        <img src="images/screenshots/software/outlets-devices.webp" width="1448" height="1086" loading="lazy" decoding="async"
+             alt="Storemate Business Locations screen on desktop, laptop and mobile, listing every outlet with its location ID, city, price group and invoice layout">
+      </figure>
     </div>
 
     <!-- ROLES -->
@@ -926,10 +983,10 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ISO 27001 certified data security behind it</li>
         </ul>
       </div>
-      <div class="ph rv r4x3" data-brief="TODO 1200×900 — Cashier logging in at the counter with the manager beside them, or a screenshot of the user-roles screen. Real staff.">
-        <img src="https://picsum.photos/seed/sm-roles/1200/900" width="1200" height="900" loading="lazy"
-             alt="Cashier and manager at a Storemate POS counter with role-based access">
-      </div>
+      <figure class="shot rv" style="margin:0">
+        <img src="images/screenshots/software/roles-devices.webp" width="1536" height="1024" loading="lazy" decoding="async"
+             alt="Storemate user role management on desktop, laptop and mobile, showing each role with its permissions for sales, stock, reports and settings">
+      </figure>
     </div>
 
     <!-- REPORTS -->
@@ -948,8 +1005,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
-        <img src="images/screenshots/software/6.png" width="1200" height="800" loading="lazy"
-             alt="Storemate POS reporting dashboard with sales and profit summaries">
+        <img src="images/screenshots/software/reports-devices.webp" width="1448" height="1086" loading="lazy" decoding="async"
+             alt="Storemate sales and profit reports on desktop, laptop and mobile, with daily totals, best-selling products and outlet comparisons">
       </figure>
     </div>
 
@@ -969,32 +1026,32 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 </section>
 
 <!-- ══════════ 5 · WRITTEN TESTIMONIALS ══════════
-     SOURCING NOTE — read before publishing.
+     Five verbatim five-star Google reviews, transcribed from the Google
+     Business listing. The text is unedited — do not paraphrase these.
 
-     Google Maps reviews cannot be read programmatically, so these are NOT
-     pulled from your Google Business listing. They are drawn from customer
-     feedback already published on your own properties:
-       · help.storemate.cloud (client feedback page)
-       · parallaxtec.com/storemate (testimonial block)
-       · linkedin.com/showcase/storemate-pos-system (customer announcements)
+     Avatars are initials, not photos. Google reviewer profile images are
+     hotlink-protected and belong to the reviewers, so we do not serve them.
+     TODO — if you want faces here, ask those five customers directly.
 
-     Each quote below is SHORTENED. You own those pages, so paste the full
-     verbatim text back in from the source, and add the reviewer's name,
-     business and town — an unattributed review converts far worse than a
-     named one.
+     TODO — business name and town are unknown for four of the five, because
+     Google shows only the personal name. Akila harshana is the exception and
+     names SFC Restaurant. Adding "business · town" to the rest makes this
+     section noticeably stronger, so it is worth one message to each.
 
-     THE PATTERN WORTH NOTICING: every real review you have praises SUPPORT
-     before it praises features. That is also the loudest complaint Sri
-     Lankan buyers have about every other POS vendor. So this section is
-     angled on support rather than on features — your most defensible ground.
+     One review was shown as a relative date on Google ("29 weeks ago") and
+     is rendered here as an approximate month.
+
+     THE PATTERN WORTH NOTICING: four of the five praise SUPPORT before any
+     feature. That is also the loudest complaint Sri Lankan buyers have about
+     every other POS vendor, so this section is angled on support.
 ═════════════════════════════════════════════════════ -->
 <section class="sec sec--mist" id="testimonials">
   <div class="pos-wrap">
     <div class="lead rv">
       <span class="eyebrow"><i></i>Written reviews</span>
       <h2>What shop owners <strong>put in writing</strong></h2>
-      <p>Read your own reviews and one thing comes up before anything else — not a feature, but
-        whether someone picks up the phone. That is the part we compete on.</p>
+      <p>Read the Google reviews and one thing comes up before anything else — not a feature,
+        but whether someone picks up the phone. That is the part we compete on.</p>
     </div>
 
     <div class="tgrid">
@@ -1007,12 +1064,15 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
         </div>
-        <blockquote>Support is excellent, with prompt responses. The POS has greatly improved our
-          operational workflow — a dependable point-of-sale solution.</blockquote>
+        <blockquote>The customer support from the Storemate POS team has been outstanding. Their
+          responses are always prompt, professional, and solution-oriented. The POS system itself has
+          significantly streamlined our daily operations and improved overall efficiency. I highly
+          recommend Storemate to any business looking for a reliable and dependable point-of-sale
+          solution.</blockquote>
         <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support first, features second</span>
         <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t1/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town · published on help.storemate.cloud</span></span>
+          <span class="av" aria-hidden="true">AA</span>
+          <span><b>Ahamed Aazim</b><span>Google review · Feb 2026</span></span>
         </div>
       </figure>
 
@@ -1024,12 +1084,12 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
         </div>
-        <blockquote>The best point-of-sale system available in Sri Lanka. They also have a
-          competent customer service staff.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Used it in their own venture</span>
+        <blockquote>Highly recommend POS system .Easy to use , Good supporting team, Reasonable
+          Price Thank you team From SFC Restaurant team</blockquote>
+        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Running a restaurant on it</span>
         <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t2/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town</span></span>
+          <span class="av" aria-hidden="true">AH</span>
+          <span><b>Akila harshana</b><span>SFC Restaurant · Google review · 17 Aug 2022</span></span>
         </div>
       </figure>
 
@@ -1041,12 +1101,14 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
         </div>
-        <blockquote>More than worth the money I paid. The most convenient inventory I have ever
-          seen.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Would give 10 stars if it were possible</span>
+        <blockquote>Storemate is a versatile solution tailored for trading and any kind of business
+          in local. Its intuitive interface and customizable options make it easy for staff to learn
+          and use effectively. From robust inventory management to seamless payment processing,
+          Storemate offers a comprehensive suite of features.</blockquote>
+        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Staff learned it quickly</span>
         <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t3/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town · published on parallaxtec.com</span></span>
+          <span class="av" aria-hidden="true">SR</span>
+          <span><b>Sandesh Randula</b><span>Google review · 31 Mar 2024</span></span>
         </div>
       </figure>
 
@@ -1058,12 +1120,13 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
         </div>
-        <blockquote>TODO — paste the verbatim review from your Google Business listing here. Pick
-          one that names a number.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TODO — the result in one line</span>
+        <blockquote>I have been using StoreMate system for last three months. The product is fantastic
+          and their service also supplements the product. All staff are very professional and
+          knowledgeable. Highly recommended !</blockquote>
+        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Three months in, still recommending</span>
         <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t4/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town · Google review</span></span>
+          <span class="av" aria-hidden="true">VK</span>
+          <span><b>Veranga Karunaratne</b><span>Google review · 12 Mar 2023</span></span>
         </div>
       </figure>
 
@@ -1075,39 +1138,17 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
         </div>
-        <blockquote>TODO — a second Google review. Prioritise one that mentions setup, training or
-          how quickly staff picked it up.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TODO — the result in one line</span>
+        <blockquote>Easy Online POS System and Absolutely right pos system for my business. Quick
+          responding staff always be with customer to help anytime.Thank you Storemate Staff. 100%
+          recommend for any small businesses.</blockquote>
+        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Built for small businesses</span>
         <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t5/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town · Google review</span></span>
-        </div>
-      </figure>
-
-      <figure class="tw rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>TODO — a review from a multi-branch or multi-outlet customer, if you have one.
-          It is the hardest objection to answer.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TODO — the result in one line</span>
-        <div class="tw-who">
-          <span class="av"><img src="https://picsum.photos/seed/sm-t6/120/120" width="120" height="120" alt=""></span>
-          <span><b>TODO — reviewer name</b><span>TODO — business · town</span></span>
+          <span class="av" aria-hidden="true">IR</span>
+          <span><b>Indrajith Rathnayake</b><span>Google Local Guide · 23 Feb 2023</span></span>
         </div>
       </figure>
 
     </div>
-
-    <p class="note">Named customers already public on your own channels, ready to be turned into
-      full reviews: <b>Enex Fabric Shop, Moratuwa</b> — a clothing store under Enex Group (Pvt) Ltd,
-      announced on your LinkedIn showcase. Ask them for a written line and a photo, and this card
-      becomes your strongest one, because a named business a reader can look up beats six anonymous
-      five-star quotes.</p>
   </div>
 </section>
 
@@ -1137,10 +1178,10 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div class="vfeat-body">
         <span class="itag">Full story</span>
         <h3>The long version, start to finish</h3>
-        <p>How the shop ran before, what changed at the counter, and what the owner would tell
-          another shop owner thinking about it. TODO — replace this paragraph with the actual
-          substance of the interview once you have the transcript.</p>
-        <p class="vfeat-who"><b>TODO — owner name</b>TODO — business type · town · on Storemate since [year]</p>
+        <p>Jayanath runs Rainbow Kids from Australia. No other system would keep the shop counter
+          and the website in step — Storemate does it automatically, with cash-on-delivery and gift
+          cards on the same screen, and support one call away.</p>
+        <p class="vfeat-who"><b>Jayanath</b>Rainbow Kids, Thalawathugoda · Kids &amp; baby store · Managed from Australia</p>
       </div>
     </div>
 
@@ -1154,7 +1195,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </div>
         <div class="rc-body">
           <h3>Apple Asia</h3>
-          <p>TODO — one line on what changed for them</p>
+          <p>A system the whole counter picked up quickly.</p>
           <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
         </div>
       </article>
@@ -1167,7 +1208,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </div>
         <div class="rc-body">
           <h3>Mr Cricket</h3>
-          <p>TODO — one line on what changed for them</p>
+          <p>Millions of stock items, handled without strain.</p>
           <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
         </div>
       </article>
@@ -1175,12 +1216,12 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <article class="rc rv">
         <div class="rc-vid">
           <iframe src="https://www.tiktok.com/embed/v2/7363899260061879553"
-                  title="Customer review of Storemate POS" loading="lazy"
+                  title="Macklens Bathware on Storemate POS" loading="lazy"
                   allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="rc-body">
-          <h3>TODO — shop name</h3>
-          <p>TODO — one line on what changed for them</p>
+          <h3>Macklens Bathware</h3>
+          <p>Newer technology than what they ran before.</p>
           <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
         </div>
       </article>
@@ -1188,12 +1229,12 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <article class="rc rv">
         <div class="rc-vid">
           <iframe src="https://www.tiktok.com/embed/v2/7363902107369344273"
-                  title="Customer review of Storemate POS" loading="lazy"
+                  title="Shadow Mobile on Storemate POS" loading="lazy"
                   allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="rc-body">
-          <h3>TODO — shop name</h3>
-          <p>TODO — one line on what changed for them</p>
+          <h3>Shadow Mobile</h3>
+          <p>Day-to-day work got easier to manage.</p>
           <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
         </div>
       </article>
@@ -1212,8 +1253,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead rv">
       <span class="eyebrow"><i></i>Implementation</span>
       <h2>How we get you running — <strong>at your counter</strong></h2>
-      <p>Setup is handled by our team and included. Watch the walkthrough, then click through the
-        steps. Every photo here is from a real installation.</p>
+      <p>You are not handed a login and left to it. Our team loads your products, sets up the
+        counter, trains your staff on your own stock and stays close through the first week —
+        included, not an extra line on the invoice. Here is what each of those days looks like.</p>
     </div>
 
     <!-- implementation walkthrough video -->
@@ -1229,7 +1271,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <p>Our team walks through exactly what happens from the first call to your first bill — the
           product load, the hardware, the training, and the first week. No surprises on the invoice
           and no surprises at the counter.</p>
-        <p class="vfeat-who"><b>Implementation walkthrough</b>TODO — confirm the video runtime and add it here</p>
+        <p class="vfeat-who"><b>Implementation walkthrough</b>“How Storemate Process Works” · Discovery call through to your first week live</p>
       </div>
     </div>
 
@@ -1252,9 +1294,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
               business, this is where we say so.</p>
             <p>You leave the call knowing exactly what setup you need and what it will cost.</p>
           </div>
-          <div class="ph" data-brief="TODO 1200×900 — Discovery visit: Storemate consultant sitting with a shop owner, notebook or tablet out, in the owner's shop.">
-            <img src="https://picsum.photos/seed/sm-i1/1200/900" width="1200" height="900" loading="lazy"
-                 alt="Storemate consultant on a discovery visit with a Sri Lankan shop owner"></div>
+          <div class="ph">
+            <img src="images/implementation/discovery-call.webp" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Storemate team reviewing a shop’s requirements on laptops during a discovery call"></div>
         </div>
 
         <div class="ipanel" id="i2" role="tabpanel">
@@ -1265,9 +1307,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
               worked from all three. Barcodes, prices, categories, variants, units and opening stock
               go in — and we check them with you before you bill a single customer.</p>
           </div>
-          <div class="ph" data-brief="TODO 1200×900 — Product data being loaded from the shop's own handwritten price list or old system. Laptop and paper both in frame.">
-            <img src="https://picsum.photos/seed/sm-i2/1200/900" width="1200" height="900" loading="lazy"
-                 alt="Products being loaded into Storemate POS from a shop's own price list"></div>
+          <div class="ph">
+            <img src="images/implementation/product-data-load.webp" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="A product list open in a spreadsheet on a laptop, ready to be imported into Storemate POS"></div>
         </div>
 
         <div class="ipanel" id="i3" role="tabpanel">
@@ -1279,9 +1321,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
               pair and test them at your counter. Most equipment already in Sri Lankan shops works;
               send us the model and we'll confirm before you buy anything.</p>
           </div>
-          <div class="ph" data-brief="TODO 1200×900 — Hardware pairing: receipt printer, barcode scanner and cash drawer being tested on the counter.">
-            <img src="https://picsum.photos/seed/sm-i3/1200/900" width="1200" height="900" loading="lazy"
-                 alt="Receipt printer, barcode scanner and cash drawer being tested during Storemate setup"></div>
+          <div class="ph">
+            <img src="images/implementation/counter-hardware.webp" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Storemate POS running on a cafe counter terminal with receipt printer and cash drawer connected"></div>
         </div>
 
         <div class="ipanel" id="i4" role="tabpanel">
@@ -1295,9 +1337,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
             <p>Most cashiers are running the till unaided by the second day, because they learned on
               the products they actually sell.</p>
           </div>
-          <div class="ph" data-brief="TODO 1200×900 — Training session: two or three cashiers around the screen with a Storemate trainer, at their own counter.">
-            <img src="https://picsum.photos/seed/sm-i4/1200/900" width="1200" height="900" loading="lazy"
-                 alt="Cashiers being trained on Storemate POS at their own shop counter"></div>
+          <div class="ph">
+            <img src="images/implementation/staff-training.webp" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Storemate trainer taking shop staff through the system on a laptop at their own desk"></div>
         </div>
 
         <div class="ipanel" id="i5" role="tabpanel">
@@ -1308,9 +1350,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
               with you, and fix what surfaces before it becomes a habit. Then you have a named person
               to call — not a ticket queue.</p>
           </div>
-          <div class="ph" data-brief="TODO 1200×900 — First-week follow-up: engineer standing back while the shop's own staff run the counter unaided.">
-            <img src="https://picsum.photos/seed/sm-i5/1200/900" width="1200" height="900" loading="lazy"
-                 alt="Follow-up visit during a shop's first week running Storemate POS"></div>
+          <div class="ph">
+            <img src="images/implementation/go-live-first-week.webp" width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Shop staff billing on Storemate POS during the first week live, with the product grid open on screen"></div>
         </div>
       </div>
     </div>
@@ -1327,38 +1369,35 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead rv">
       <span class="eyebrow"><i></i>On the ground</span>
       <h2>300+ counters, <strong>and we've stood at most of them</strong></h2>
-      <p>Site visits, installations, training days and support calls, across the island. Click any
-        photo to open it.</p>
+      <p>Every counter here is a real one. Retail shops, cafes, furniture showrooms and herbal
+        product stores — photographed on the days we installed the system, trained the staff and
+        handed the shop over. Click any photo to see it full size.</p>
     </div>
 
     <div class="gal rv" id="gal">
-      <div class="ph g-w g-t" data-brief="TODO 1200×760 — Hero credibility shot: engineer and shop staff at the counter during installation, POS terminal and laptop both open.">
-        <img src="https://picsum.photos/seed/sm-g1/1200/760" width="1200" height="760" loading="lazy" alt="Storemate engineer installing the POS at a customer's counter"></div>
-      <div class="ph" data-brief="TODO 620×400 — Training session in progress, staff around the screen.">
-        <img src="https://picsum.photos/seed/sm-g2/620/400" width="620" height="400" loading="lazy" alt="Cashier training session at a Sri Lankan shop"></div>
-      <div class="ph" data-brief="TODO 620×400 — Barcode label printing / shelf labelling during setup.">
-        <img src="https://picsum.photos/seed/sm-g3/620/400" width="620" height="400" loading="lazy" alt="Barcode labels being printed and applied during Storemate setup"></div>
-      <div class="ph" data-brief="TODO 620×400 — Team photo with the shop owner outside the shop, signboard visible.">
-        <img src="https://picsum.photos/seed/sm-g4/620/400" width="620" height="400" loading="lazy" alt="Storemate team with a shop owner outside their shop"></div>
-      <div class="ph" data-brief="TODO 620×400 — Supermarket counter with two registers running Storemate.">
-        <img src="https://picsum.photos/seed/sm-g5/620/400" width="620" height="400" loading="lazy" alt="Two Storemate POS registers running at a supermarket counter"></div>
-      <div class="ph g-w" data-brief="TODO 1200×400 — Wide shot of a shop floor after go-live, counter in normal use.">
-        <img src="https://picsum.photos/seed/sm-g6/1200/400" width="1200" height="400" loading="lazy" alt="Shop floor with the Storemate POS counter in daily use"></div>
-      <div class="ph" data-brief="TODO 620×400 — Award night or team receiving an award on stage.">
-        <img src="https://picsum.photos/seed/sm-g7/620/400" width="620" height="400" loading="lazy" alt="The Storemate team receiving an industry award"></div>
-      <div class="ph" data-brief="TODO 620×400 — Support desk at the Galle Road office. Real people, real desks.">
-        <img src="https://picsum.photos/seed/sm-g8/620/400" width="620" height="400" loading="lazy" alt="Storemate support engineers at the Galle Road office"></div>
-      <div class="ph" data-brief="TODO 620×400 — Pharmacy or grocery counter mid-transaction.">
-        <img src="https://picsum.photos/seed/sm-g9/620/400" width="620" height="400" loading="lazy" alt="Pharmacy counter billing on Storemate POS"></div>
-      <div class="ph g-w" data-brief="TODO 1200×400 — Outstation visit: the team travelling, or a shop in a smaller town.">
-        <img src="https://picsum.photos/seed/sm-g10/1200/400" width="1200" height="400" loading="lazy" alt="Storemate team on an outstation installation visit"></div>
-      <div class="ph" data-brief="TODO 620×400 — Owner and staff group photo at go-live, everyone in frame.">
-        <img src="https://picsum.photos/seed/sm-g11/620/400" width="620" height="400" loading="lazy" alt="Shop owner and staff on Storemate POS go-live day"></div>
+      <div class="ph g-w g-t">
+        <img src="images/gallery/pos-counter-screen.webp" width="1200" height="760" loading="lazy" decoding="async" alt="Storemate POS billing screen open at a shop counter, beside the weighing scale and receipt printer"></div>
+      <div class="ph">
+        <img src="images/gallery/staff-training-dashboard.webp" width="620" height="400" loading="lazy" decoding="async" alt="Shop staff being trained on the Storemate dashboard during a site visit"></div>
+      <div class="ph">
+        <img src="images/gallery/billing-at-counter.webp" width="620" height="400" loading="lazy" decoding="async" alt="Cashier billing a customer on Storemate POS at a retail counter"></div>
+      <div class="ph">
+        <img src="images/gallery/ru-furniture-handover.webp" width="620" height="400" loading="lazy" decoding="async" alt="The Storemate team with the owners of RU Furniture (Pvt) Ltd on handover day"></div>
+      <div class="ph">
+        <img src="images/gallery/naturista-team.webp" width="620" height="400" loading="lazy" decoding="async" alt="The Storemate team with the Naturista Ceylon team after go-live"></div>
+      <div class="ph g-w">
+        <img src="images/gallery/cafe-team-counter.webp" width="1200" height="400" loading="lazy" decoding="async" alt="Cafe owner and the full counter team at a Storemate customer site"></div>
+      <div class="ph">
+        <img src="images/gallery/barista-handover.webp" width="620" height="400" loading="lazy" decoding="async" alt="Storemate handover to a cafe owner"></div>
+      <div class="ph">
+        <img src="images/gallery/training-session-desk.webp" width="620" height="400" loading="lazy" decoding="async" alt="Training session with shop staff around a laptop"></div>
+      <div class="ph">
+        <img src="images/gallery/voucher-handover.webp" width="620" height="400" loading="lazy" decoding="async" alt="A Storemate gift voucher being handed to a customer at their office"></div>
+      <div class="ph g-w">
+        <img src="images/gallery/team-meeting-cafe.webp" width="1200" height="400" loading="lazy" decoding="async" alt="The Storemate team meeting a customer over coffee"></div>
+      <div class="ph">
+        <img src="images/gallery/cafe-pos-terminal.webp" width="620" height="400" loading="lazy" decoding="async" alt="Storemate POS terminal, cash drawer and receipt printer at a cafe counter"></div>
     </div>
-
-    <p class="note">Paste more <code>.ph</code> blocks to extend the grid row by row; add
-      <code>g-w</code> or <code>g-t</code> to any tile to vary the rhythm. Get written permission
-      from each shop before publishing photos showing their staff, customers or signage.</p>
   </div>
 </section>
 
@@ -1449,9 +1488,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         disappears. Call during the hours below and someone who knows the product answers.</p>
 
       <div class="ways">
-        <a class="way" href="tel:+94XXXXXXXXX">
+        <a class="way" href="tel:+94114226911">
           <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg></i>
-          <span><b>TODO — phone number</b><span>Phone — a person answers</span></span></a>
+          <span><b>011 422 6911</b><span>Phone — a person answers</span></span></a>
         <a class="way" href="https://wa.me/94XXXXXXXXX">
           <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-4.2-2.6 11 11 0 0 1-2.2-3.2c-.3-.7-.2-1.4.1-1.9.2-.3.5-.6.8-.7.2-.1.5-.1.7 0 .2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6.4.7 1 1.3 1.6 1.8.4.3.7.5 1 .6.2.1.4 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5s0 .5-.1.8z"/></svg></i>
           <span><b>WhatsApp us</b><span>Send a photo of your shop or your price list</span></span></a>
@@ -1463,11 +1502,11 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <span><b>Parallax Technologies (Pvt) Ltd</b><span>No. 15, Galle Road — visit us</span></span></a>
       </div>
 
-      <p class="hours"><b>Support hours:</b> TODO — fill in real hours.</p>
+      <p class="hours"><b>Support hours:</b> Monday to Friday · 9:00 am – 5:00 pm</p>
 
-      <div class="ph r16x9" style="margin-top:1.7rem" data-brief="TODO 1200×675 — The real Galle Road office or the support desk with real people at it. A map embed can replace this.">
-        <img src="https://picsum.photos/seed/sm-office/1200/675" width="1200" height="675" loading="lazy"
-             alt="The Storemate support desk at the Parallax Technologies office on Galle Road"></div>
+      <div class="ph r16x9" style="margin-top:1.7rem">
+        <img src="images/implementation/office-team.webp" width="1200" height="675" loading="lazy" decoding="async"
+             alt="The Storemate support team at work in the Parallax Technologies office"></div>
     </div>
 
     <!-- TODO · wire this form to your real endpoint / CRM. It currently does nothing. -->
