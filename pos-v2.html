@@ -159,8 +159,11 @@
 .btn--go:hover{transform:translateY(-2px);opacity:.92;color:var(--pri)}
 .btn--out{border-color:var(--line-2);color:var(--pri);background:var(--paper)}
 .btn--out:hover{border-color:var(--pri);transform:translateY(-2px);opacity:.92}
-.btn--ghost{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:#fff}
-.btn--ghost:hover{background:rgba(255,255,255,.22);color:#fff;transform:translateY(-2px)}
+/* Outlined on navy. The site's own .btn-ghost uses a .12 white fill with a
+   .28 border, which disappears against the #013387 hero — so this variant
+   uses a solid white border and no fill for a readable secondary action. */
+.btn--ghost{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
+.btn--ghost:hover{background:#fff;border-color:#fff;color:var(--pri);transform:translateY(-2px)}
 .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
 .fine{margin-top:1.1rem;font-size:.9rem;color:var(--soft)}
 .sec--dark .fine,.pos-hero .fine{color:#93a9c8}
@@ -197,21 +200,21 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   background:linear-gradient(rgba(1,51,135,.72),rgba(1,51,135,.72)),
              #013387 center center / cover no-repeat;
   color:#fff;padding-block:clamp(3rem,7vw,5.5rem);overflow:hidden;position:relative}
-.pos-hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.5rem);
+.pos-hero-in{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(1.5rem,4vw,3rem);
   align-items:center;position:relative;z-index:1}
-.pos-hero h1{font-size:clamp(2.05rem,4.4vw,3.35rem)}
+.pos-hero h1{font-size:clamp(1.95rem,3.6vw,2.9rem);max-width:15ch}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.82rem;
   color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);
   padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem}
 .hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex:none}
-.hero-sub{margin-top:1.15rem;font-size:1.09rem;color:#cadaee;max-width:56ch}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem;
-  padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.15)}
-.hero-stats b{display:block;font-size:1.4rem;font-weight:800;color:var(--cyan);letter-spacing:-.02em}
+.hero-sub{margin-top:1.15rem;font-size:1.02rem;color:#cadaee;max-width:46ch}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:2rem;
+  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15)}
+.hero-stats b{display:block;font-size:1.3rem;font-weight:800;color:var(--cyan);letter-spacing:-.02em}
 .hero-stats span{display:block;margin-top:.2rem;font-size:.83rem;color:#9db3d0;line-height:1.4}
 /* The hero artwork is a transparent-background device mockup, so it gets no
    frame, border or panel — just a soft drop shadow so it lifts off the navy. */
-.pos-hero-shot{filter:drop-shadow(0 26px 46px rgba(0,0,0,.42))}
+.pos-hero-shot{filter:drop-shadow(0 26px 46px rgba(0,0,0,.42));justify-self:end;width:100%}
 .pos-hero-shot img{width:100%;height:auto;display:block}
 
 /* ══ 2 · STORY ═════════════════════════════════════════════════════ */
