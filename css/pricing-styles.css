@@ -40,7 +40,7 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Base card */
@@ -67,11 +67,10 @@
   border-color: transparent;
   color: #ffffff;
   box-shadow: 0 28px 70px rgba(0, 62, 122, 0.32);
-  transform: translateY(-8px);
 }
 
 .pricing-card-featured:hover {
-  transform: translateY(-12px);
+  transform: translateY(-3px);
   box-shadow: 0 36px 80px rgba(0, 62, 122, 0.38);
 }
 
@@ -82,9 +81,15 @@
 }
 
 /* Popular badge */
+/* Sits outside the flex flow, so it adds no height and the five cards
+   stay level with each other. */
 .plan-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.22);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background: #00aad4;
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -92,8 +97,9 @@
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 999px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 62, 122, 0.28);
+  z-index: 2;
 }
 
 /* Plan header */
