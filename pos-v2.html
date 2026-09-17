@@ -209,16 +209,28 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   color:#fff;padding-block:clamp(3rem,7vw,5.5rem);overflow:hidden;position:relative}
 .pos-hero-in{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(1.5rem,4vw,3rem);
   align-items:center;position:relative;z-index:1}
-.pos-hero h1{font-size:clamp(1.95rem,3.6vw,2.9rem);max-width:15ch}
+.pos-hero h1{display:flex;flex-direction:column;max-width:19ch;
+  letter-spacing:-.02em;line-height:1.08}
+.pos-hero h1 .h1-light{font-size:clamp(2rem,4vw,3.1rem);font-weight:300;color:#fff}
+.pos-hero h1 .h1-bold{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:900;color:#fff}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.82rem;
   color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);
   padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem}
 .hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex:none}
 .hero-sub{margin-top:1.15rem;font-size:1.02rem;color:#cadaee;max-width:46ch}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:2rem;
-  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15)}
-.hero-stats b{display:block;font-size:1.3rem;font-weight:800;color:var(--cyan);letter-spacing:-.02em}
-.hero-stats span{display:block;margin-top:.2rem;font-size:.83rem;color:#9db3d0;line-height:1.4}
+/* No card — the badge sits straight on the hero, so its type is light. */
+.grating{display:inline-flex;align-items:center;gap:.95rem;margin-top:2rem;
+  text-decoration:none;transition:opacity .18s}
+.grating:hover{opacity:.85}
+.grating:hover .grating-more{text-decoration:underline}
+.grating-g{width:38px;height:38px;flex:none}
+.grating-body{display:block}
+.grating-label{display:block;font-size:.95rem;font-weight:700;color:#fff;line-height:1.2}
+.grating-row{display:flex;align-items:center;gap:.5rem;margin-top:.15rem}
+.grating-row b{font-size:1.45rem;font-weight:800;color:#F5A623;letter-spacing:-.02em;line-height:1}
+.grating-stars{display:inline-flex;gap:.1rem;color:#F5A623}
+.grating-stars svg{width:17px;height:17px}
+.grating-more{display:block;margin-top:.15rem;font-size:.82rem;color:#cadaee}
 /* The hero artwork is a transparent-background device mockup, so it gets no
    frame, border or panel — just a soft drop shadow so it lifts off the navy. */
 /* Right column: device mockup above, wordmark below, read as one unit. */
@@ -239,6 +251,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .story{display:grid;grid-template-columns:minmax(0,1fr) 1fr;gap:clamp(2rem,5vw,3.5rem);
   align-items:center}
 .story-vid{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh3)}
+/* Scales with the viewport instead of the browser's flat 2em default. */
+.story h2{font-size:clamp(1.55rem,2.9vw,2.25rem);line-height:1.18}
 .story-pts{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:.75rem}
 .story-pts li{display:flex;gap:.7rem;align-items:flex-start;font-size:.98rem;color:var(--ink)}
 .story-pts svg{width:18px;height:18px;color:var(--cyan);flex:none;margin-top:.22rem}
@@ -299,22 +313,6 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .vmeta b{display:block;font-size:.95rem;color:var(--ink)}
 .vmeta span{display:block;margin-top:.2rem;font-size:.85rem;color:var(--soft)}
 
-/* ══ 7 · IMPLEMENTATION ════════════════════════════════════════════ */
-.iwrap{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(1.6rem,4vw,3rem)}
-#inav{display:flex;flex-direction:column;gap:.4rem}
-#inav button{text-align:left;background:transparent;border:1.5px solid transparent;
-  border-radius:12px;padding:.85rem 1rem;cursor:pointer;transition:all .15s;
-  display:flex;gap:.75rem;align-items:center;color:var(--soft);font-weight:600;font-size:.94rem}
-#inav button:hover{background:var(--paper);color:var(--pri)}
-#inav button[aria-selected="true"]{background:var(--paper);border-color:var(--line-2);
-  color:var(--pri);box-shadow:var(--sh1)}
-#inav .inum{width:26px;height:26px;border-radius:8px;background:var(--cyan-l);color:var(--pri);
-  display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;flex:none}
-#inav button[aria-selected="true"] .inum{background:var(--pri);color:#fff}
-.ipanel{display:none}
-.ipanel.on{display:block}
-.ipanel h3{font-size:clamp(1.2rem,2.4vw,1.6rem)}
-.ipanel p{margin-top:.8rem;color:var(--soft)}
 .ilist{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.6rem}
 .ilist li{display:flex;gap:.6rem;align-items:flex-start;font-size:.94rem}
 .ilist svg{width:17px;height:17px;color:var(--cyan);flex:none;margin-top:.2rem}
@@ -486,21 +484,29 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .rc-src svg{width:13px;height:13px}
 
 /* ══ 7 · IMPLEMENTATION — numbered rail ══════════════════════════ */
-.impl{display:grid;grid-template-columns:300px 1fr;gap:clamp(1.5rem,3vw,3rem);align-items:start}
+.impl{display:grid;grid-template-columns:minmax(260px,300px) minmax(0,1fr);gap:clamp(1.8rem,3.5vw,3.2rem);align-items:start}
 @media (max-width:920px){.impl{grid-template-columns:1fr}}
-.inav{list-style:none;margin:0;padding:0;position:relative;counter-reset:s}
-.inav::before{content:"";position:absolute;left:15px;top:18px;bottom:18px;width:2px;background:var(--line-2)}
-.inav li{position:relative;padding:0 0 .25rem 3rem;counter-increment:s}
-.inav button{background:none;border:0;padding:.62rem 0;text-align:left;cursor:pointer;
-  color:var(--soft);font-weight:600;font-size:1rem;transition:color .15s;width:100%}
-.inav button::before{content:counter(s);position:absolute;left:0;top:.9rem;width:32px;height:32px;
-  border-radius:50%;background:var(--paper);border:2px solid var(--line-2);color:var(--soft);
-  display:grid;place-items:center;font-size:.86rem;font-weight:700;transition:all .2s}
-.inav button:hover{color:var(--ink)}
-.inav button[aria-selected="true"]{color:var(--pri)}
+.inav{list-style:none;margin:0;padding:0;counter-reset:s}
+.inav li{position:relative;counter-increment:s}
+.inav li:not(:last-child)::after{content:"";position:absolute;left:16px;top:44px;bottom:2px;
+  width:2px;background:var(--line-2)}
+/* Two rows: title above, description beneath. The circle spans both and
+   stays level with the title. */
+.inav button{background:none;border:0;cursor:pointer;width:100%;
+  display:grid;grid-template-columns:34px minmax(0,1fr);align-items:start;
+  gap:0 1.1rem;padding:.7rem 0;text-align:left}
+.inav button::before{content:counter(s);grid-column:1;grid-row:1 / span 2;align-self:start;
+  width:34px;height:34px;border-radius:50%;background:var(--paper);
+  border:1.5px solid var(--line-2);color:var(--soft);
+  display:grid;place-items:center;font-size:.88rem;font-weight:600;transition:all .2s}
+.inav b{grid-column:2;grid-row:1;font-weight:700;font-size:1.02rem;line-height:1.35;
+  color:var(--ink);letter-spacing:-.01em;transition:color .15s}
+.inav small{grid-column:2;grid-row:2;font-weight:400;font-size:.89rem;color:var(--soft);
+  line-height:1.4;margin-top:.2rem}
+.inav button:hover b{color:var(--pri)}
+.inav button[aria-selected="true"] b{color:var(--pri)}
 .inav button[aria-selected="true"]::before{background:var(--grad);border-color:transparent;
-  color:#fff;box-shadow:0 0 0 4px var(--cyan-l)}
-.inav small{display:block;font-weight:400;font-size:.84rem;color:var(--soft);margin-top:.05rem}
+  color:#fff;font-weight:700;box-shadow:0 2px 10px rgba(0,120,190,.35)}
 .ipanel{display:none}
 .ipanel.on{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,2rem);
   align-items:center;animation:posfade .42s cubic-bezier(.2,.8,.3,1)}
@@ -523,6 +529,20 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 @media (max-width:520px){.g-t{grid-row:span 1}}
 .note{margin-top:1.5rem;color:var(--soft);font-size:.95rem;max-width:64ch}
 .note code{background:var(--mist);padding:.1rem .35rem;border-radius:4px;font-size:.9em}
+
+/* ══ 9b · RECOGNITION — awards ═══════════════════════════════════ */
+.awards-hero{margin:0 auto clamp(1.6rem,3vw,2.4rem);max-width:760px}
+.awards-hero img{width:100%;height:auto}
+.awd{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.7rem,1.6vw,1.1rem)}
+@media (max-width:900px){.awd{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:460px){.awd{grid-template-columns:1fr}}
+.awd figure{margin:0;background:var(--paper);border:1px solid var(--line-2);
+  border-radius:14px;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.awd figure:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.awd img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.awd figcaption{padding:.75rem .85rem .9rem}
+.awd b{display:block;font-size:.88rem;font-weight:700;line-height:1.3;color:var(--ink)}
+.awd span{display:block;margin-top:.2rem;font-size:.79rem;color:var(--soft)}
 
 /* ══ 9 · FAQ — two columns ═══════════════════════════════════════ */
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(1.5rem,3vw,3rem);
@@ -580,6 +600,14 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 @media (max-width:520px){.f2{grid-template-columns:1fr}}
 .pos-form .btn{width:100%;margin-top:1.5rem}
 .form-fine{margin-top:.85rem;font-size:.87rem;color:var(--soft);text-align:center}
+/* Off-screen rather than display:none, so bots that skip hidden fields still fill it. */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fld input.bad,.fld select.bad,.fld textarea.bad{border-color:#d92d20;background:#fff5f4}
+.form-msg{margin-top:.9rem;padding:.75rem .9rem;border-radius:10px;font-size:.9rem;
+  line-height:1.45;text-align:center}
+.form-msg.ok{background:#e7f7ed;color:#05603a;border:1px solid #a9ddc0}
+.form-msg.err{background:#fff0ef;color:#912018;border:1px solid #f3b9b4}
+.pos-form button[disabled]{opacity:.65;cursor:not-allowed}
 
 /* ══ CLOSE ═══════════════════════════════════════════════════════ */
 .pos-page .close{background:var(--nav);color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -594,7 +622,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
 /* ══ RESPONSIVE ════════════════════════════════════════════════════ */
 @media (max-width:980px){
-  .pos-hero-in,.story,.fgrid,.iwrap,.cgrid{grid-template-columns:1fr}
+  .pos-hero-in,.story,.fgrid,.cgrid{grid-template-columns:1fr}
   /* Stacked hero: keep the tall device mockup from dominating the fold */
   .pos-hero-media{max-width:460px;margin-inline:auto;justify-self:center}
   .state,.tgrid,.vgrid{grid-template-columns:1fr 1fr}
@@ -605,23 +633,23 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
    so the panel below it starts near the top of the screen instead of after
    five stacked rows. */
 @media (max-width:920px){
-  .inav{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;
+  .inav{display:flex;grid-template-columns:none;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;
     -webkit-overflow-scrolling:touch;margin:0 0 1.4rem;padding:0 0 .55rem}
-  .inav::before{display:none}
+  .inav li:not(:last-child)::after{display:none}
   .inav::-webkit-scrollbar{height:3px}
   .inav::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:3px}
-  .inav li{flex:none;padding:0;scroll-snap-align:start}
-  .inav button{display:flex;align-items:center;gap:.55rem;white-space:nowrap;
-    padding:.5rem .95rem .5rem .55rem;border:1.5px solid var(--line-2);
+  .inav li{display:block;flex:none;padding:0;scroll-snap-align:start}
+  .inav button{display:flex;grid-template-columns:none;align-items:center;gap:.55rem;
+    white-space:nowrap;padding:.5rem .95rem .5rem .55rem;border:1.5px solid var(--line-2);
     border-radius:100px;background:var(--paper)}
-  .inav button::before{position:static;width:26px;height:26px;flex:none}
+  .inav button::before{width:26px;height:26px;flex:none;align-self:center}
   .inav button[aria-selected="true"]{border-color:var(--pri);background:var(--cyan-l)}
+  .inav b{display:inline;font-size:.93rem}
   .inav small{display:none}
 }
 
 @media (max-width:640px){
   .pos-page{font-size:1rem}
-  .hero-stats{grid-template-columns:1fr;gap:.9rem;text-align:left}
   .state,.tgrid,.vgrid{grid-template-columns:1fr}
   .btns .btn{width:100%}
   .pos-page .close .btns .btn{width:100%}
@@ -640,6 +668,28 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   .gal .ph{aspect-ratio:4/3;height:auto}
   .g-w{grid-column:span 1}
   .g-t{grid-row:span 1}
+}
+
+/* ══ CUSTOMER LOGOS ════════════════════════════════════════════════ */
+.logos{padding-block:clamp(2.4rem,4.5vw,3.6rem)}
+.logos-head{text-align:center;margin-bottom:clamp(1.8rem,3.2vw,2.6rem)}
+.logos-eyebrow{display:inline-block;color:var(--cyan);font-weight:700;font-size:.82rem;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.logos-head h2{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.15;margin:0}
+/* Centred wrap, like a printed client sheet: each row centres itself and
+   the last row sits in the middle rather than trailing off to the left. */
+.logo-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:clamp(1.6rem,3.4vw,2.8rem) clamp(1.8rem,4vw,3.4rem)}
+.logo-grid img{height:52px;width:auto;max-width:150px;object-fit:contain;
+  transition:transform .25s}
+.logo-grid img:hover{transform:translateY(-3px)}
+@media (max-width:640px){
+  .logo-grid{gap:1.3rem 1.6rem}
+  .logo-grid img{height:38px;max-width:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  .logo-grid img{transition:none}
+  .logo-grid img:hover{transform:none}
 }
 </style>
 </head>
@@ -769,11 +819,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   <div class="pos-wrap pos-hero-in">
     <div>
       <span class="hero-badge"><i></i>POS System Sri Lanka</span>
-      <h1>The POS system <strong>Sri Lanka sellers</strong> run to bill faster and track every item.</h1>
-      <p class="hero-sub">The point of sale (POS) system Sri Lanka sellers run inside Storemate OMS.
-        Turn any counter into a fast billing station with real-time inventory — scan, bill and print a
-        receipt in seconds, while stock, sales and profit stay updated automatically, all in the
-        system you already run.</p>
+      <h1><span class="h1-light">The POS system</span><span class="h1-bold">for modern Sri Lankan sellers.</span></h1>
+      <p class="hero-sub">Bill faster, manage stock, and keep every sale connected. Run your counter,
+        products, customers and outlets from one simple system.</p>
 
       <div class="btns">
         <a class="btn btn--go" href="https://welcome.oms.storemate.cloud/register?utm_source=website&amp;utm_medium=direct&amp;utm_campaign=free_trial&amp;utm_content=start_for_free">Start for free
@@ -782,11 +830,26 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       </div>
       <p class="fine">Free to start. Full setup handled by our team. No card needed.</p>
 
-      <div class="hero-stats">
-        <div><b>&lt;10 sec</b><span>From scan to printed receipt</span></div>
-        <div><b>Live</b><span>Stock updates on every sale</span></div>
-        <div><b>Zero</b><span>Overselling from stale stock</span></div>
-      </div>
+      <!-- TODO — point href at your Google Business profile's review link -->
+      <a class="grating" href="https://www.google.com/search?q=Storemate+POS+reviews"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="grating-g" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"/>
+          <path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"/>
+          <path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/>
+          <path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.5-3.5A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"/>
+        </svg>
+        <span class="grating-body">
+          <span class="grating-label">Google Rating</span>
+          <span class="grating-row">
+            <b>4.9</b>
+            <span class="grating-stars" role="img" aria-label="4.9 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
+            </span>
+          </span>
+          <span class="grating-more">From 65+ Google reviews</span>
+        </span>
+      </a>
     </div>
 
     <div class="pos-hero-media rv">
@@ -796,6 +859,80 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       </div>
       <img class="pos-hero-logo" src="images/brand/storemate_logo.png" width="2607" height="334"
            alt="Storemate" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 1b · CUSTOMER LOGOS ══════════ -->
+<section class="sec logos">
+  <div class="pos-wrap">
+    <div class="logos-head rv">
+      <span class="logos-eyebrow">Our customers</span>
+      <h2>Shops that <strong>run on Storemate</strong></h2>
+    </div>
+    <div class="logo-grid rv">
+      <img src="images/customers/coffee-bean-tea-leaf.webp" loading="lazy" decoding="async"
+           alt="The Coffee Bean &amp; Tea Leaf">
+      <img src="images/customers/apple-asia.webp" loading="lazy" decoding="async"
+           alt="Apple Asia">
+      <img src="images/customers/nawaloka-hardware.webp" loading="lazy" decoding="async"
+           alt="Nawaloka Hardware">
+      <img src="images/customers/rs-restaurant.webp" loading="lazy" decoding="async"
+           alt="R.S. Restaurant">
+      <img src="images/customers/naturista-ceylon.webp" loading="lazy" decoding="async"
+           alt="Naturista Ceylon">
+      <img src="images/customers/navora-herbals.webp" loading="lazy" decoding="async"
+           alt="Navora Herbals">
+      <img src="images/customers/nk-online-super.webp" loading="lazy" decoding="async"
+           alt="NK Online Super">
+      <img src="images/customers/vishwa-shakthi-aayurveda.webp" loading="lazy" decoding="async"
+           alt="Vishwa Shakthi Ayurveda">
+      <img src="images/customers/vishwa-karma-aayurveda.webp" loading="lazy" decoding="async"
+           alt="Vishwa Karma Ayurveda">
+      <img src="images/customers/ayu-herbal.webp" loading="lazy" decoding="async"
+           alt="Ayu Herbal">
+      <img src="images/customers/sahasra-products.webp" loading="lazy" decoding="async"
+           alt="Sahasra Products">
+      <img src="images/customers/i-grid-holdings.webp" loading="lazy" decoding="async"
+           alt="I Grid Holdings">
+      <img src="images/customers/craft-choice.webp" loading="lazy" decoding="async"
+           alt="Craft Choice">
+      <img src="images/customers/redora.webp" loading="lazy" decoding="async"
+           alt="Redora">
+      <img src="images/customers/ezgi.webp" loading="lazy" decoding="async"
+           alt="EZGI">
+      <img src="images/customers/gifora.webp" loading="lazy" decoding="async"
+           alt="Gifora">
+      <img src="images/customers/clif-collagen.webp" loading="lazy" decoding="async"
+           alt="Clif Collagen">
+      <img src="images/customers/lizas-closet.webp" loading="lazy" decoding="async"
+           alt="Liza's Closet">
+      <img src="images/customers/shamrock.webp" loading="lazy" decoding="async"
+           alt="Shamrock">
+      <img src="images/customers/the-one-shop-cmb.webp" loading="lazy" decoding="async"
+           alt="The One Shop CMB">
+      <img src="images/customers/daisy-bloom.webp" loading="lazy" decoding="async"
+           alt="Daisy Bloom">
+      <img src="images/customers/carnage.webp" loading="lazy" decoding="async"
+           alt="Carnage">
+      <img src="images/customers/pepper-st.webp" loading="lazy" decoding="async"
+           alt="Pepper St.">
+      <img src="images/customers/eliana-lk.webp" loading="lazy" decoding="async"
+           alt="Eliana.lk">
+      <img src="images/customers/gunawardhana.webp" loading="lazy" decoding="async"
+           alt="Gunawardhana">
+      <img src="images/customers/asd-camera-rent.webp" loading="lazy" decoding="async"
+           alt="ASD Camera Rent">
+      <img src="images/customers/wellness-by-dr-cherry.webp" loading="lazy" decoding="async"
+           alt="Wellness by Dr. Cherry">
+      <img src="images/customers/thuba.webp" loading="lazy" decoding="async"
+           alt="Thuba">
+      <img src="images/customers/tnuva-natural.webp" loading="lazy" decoding="async"
+           alt="Tnuva Natural">
+      <img src="images/customers/quikr-quick.webp" loading="lazy" decoding="async"
+           alt="Quikr Quick">
+      <img src="images/customers/jadon-and-aiden.webp" loading="lazy" decoding="async"
+           alt="Jadon &amp; Aiden Marketing">
     </div>
   </div>
 </section>
@@ -811,21 +948,22 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
     <div class="rv">
       <span class="eyebrow"><i></i>Our story</span>
-      <h2>We didn't start with software. <strong>We started with shops.</strong></h2>
-      <p style="margin-top:1rem;color:var(--soft)">Storemate comes out of Curfox. Before a line of
-        POS code was written, we spent years processing real orders alongside Sri Lankan sellers —
-        watching them work from notebooks, juggle courier portals, and lose orders in chat threads.
-        This POS is the answer to what we saw at the counter.</p>
+      <h2>We didn't build another POS. <strong>We built one around real retail.</strong></h2>
+      <p style="margin-top:1rem;color:var(--soft)">Storemate POS was shaped around the way Sri Lankan
+        retailers actually work every day — billing customers, managing stock, handling multiple
+        outlets, controlling staff access, and keeping track of what is really happening in the
+        business.</p>
+      <p style="margin-top:.9rem;color:var(--soft)">Instead of adding features just because every POS
+        has them, we focused on making the daily work at the counter faster, simpler, and easier to
+        control.</p>
 
       <ul class="story-pts">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          Built from the experience of 25M orders and 30,000+ sellers</li>
+          Built for real Sri Lankan retail operations, not generic overseas workflows</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          Designed for Sri Lankan retail — Sinhala and English receipts, COD, courier sync</li>
+          Connects billing, inventory, customers, outlets, and online orders in one system</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          Not a separate app — the POS lives inside the OMS you already run</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          ISO 27001 certified data security</li>
+          Designed to stay simple at the counter while giving owners better visibility and control</li>
       </ul>
 
       <div class="btns">
@@ -842,36 +980,26 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead lead--mid rv">
       <span class="eyebrow"><i></i>Storemate state</span>
       <h2>Where we stand, <strong>in numbers</strong></h2>
-      <p>Not self-declared rankings. Figures and third-party verdicts you can check.</p>
+      <p>Built on real businesses, real experience, and recognition earned over the years.</p>
     </div>
 
     <div class="state">
       <div class="st rv">
-        <b data-to="300" data-suffix="+">0</b>
-        <h3>POS businesses</h3>
-        <p>Sri Lankan shops billing on Storemate POS across the island.</p>
+        <b data-to="1200" data-suffix="+">0</b>
+        <h3>Businesses</h3>
+        <p>Businesses using Storemate to manage their daily operations.</p>
       </div>
       <div class="st rv">
-        <b data-to="8" data-suffix="">0</b>
-        <h3>NBQSA &amp; industry awards</h3>
-        <p>National Best Quality ICT Awards, APICTA Hong Kong and SLASSCOM — judged by other people.</p>
+        <b data-to="4.9" data-suffix=" ★">0.0</b>
+        <h3>Google Rating</h3>
+        <p>From 65+ Google reviews.</p>
       </div>
       <div class="st rv">
-        <b data-to="14" data-suffix="yrs">0</b>
+        <b data-to="12" data-suffix=" yrs">0</b>
         <h3>Years in the industry</h3>
-        <p>TODO — confirm exact wording before launch. See the note below.</p>
+        <p>Building and supporting business software since 2012.</p>
       </div>
     </div>
-    <!--
-      TODO · "14 years" needs precise wording before launch.
-      Your own site describes Parallax Technologies as operating since 2019,
-      which is 7 years as of 2026. If the 14 years refers to the founders'
-      or leadership team's time in the industry, say that explicitly:
-      "14 years of founder experience in Sri Lankan retail and logistics".
-      An unqualified "14 years experience" beside a 2019 founding date is
-      the kind of mismatch a competitor will point at — and this page is
-      built on claims a buyer can verify.
-    -->
   </div>
 </section>
 
@@ -883,7 +1011,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <h2>Everything the shop needs, <strong>in the order you'll need it</strong></h2>
       <p>Selling at the counter, knowing what is in stock, running more than one shop, deciding who
         can see what, and reading the numbers at the end of the day. Five areas, in the order a
-        growing shop tends to meet them — open the one that is giving you trouble.</p>
+        growing shop tends to meet them. Open the one that is giving you trouble.</p>
     </div>
 
     <div class="tabs rv" role="tablist" aria-label="Feature areas">
@@ -905,7 +1033,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <span class="itag">Barcode billing</span>
         <h3><strong>Scan, bill, done.</strong> Checkout in seconds</h3>
         <p>Scan a barcode or search by name and the item drops into the bill with the right price.
-          Apply discounts, take part-payments, split the tender, then print or share the receipt —
+          Apply discounts, take part-payments, split the tender, then print or share the receipt,
           all from one clean screen your staff can learn in minutes.</p>
         <ul class="flist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Barcode scanning and instant product search</li>
@@ -929,12 +1057,12 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <p>From a single shelf to multiple warehouses, Storemate keeps stock, purchases and suppliers
           in one place, and keeps every number current without a manual count.</p>
         <ul class="flist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Real-time stock control</b> — see what's in stock, by outlet, right now</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Low-stock alerts</b> — reorder levels flag you before a best-seller runs dry</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Purchases &amp; suppliers</b> — receive goods and track what you owe each supplier</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Variants &amp; units</b> — sizes, colours and units of measure, each with its own barcode and price</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Batches &amp; expiry</b> — sell oldest stock first; ideal for groceries, pharmacy and FMCG</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Transfers &amp; adjustments</b> — move stock between outlets with a full audit trail</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Real-time stock control</b> See what's in stock, by outlet, right now</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Low-stock alerts</b> Reorder levels flag you before a best-seller runs dry</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Purchases &amp; suppliers</b> Receive goods and track what you owe each supplier</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Variants &amp; units</b> Sizes, colours and units of measure, each with its own barcode and price</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Batches &amp; expiry</b> Sell oldest stock first; ideal for groceries, pharmacy and FMCG</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Transfers &amp; adjustments</b> Move stock between outlets with a full audit trail</span></li>
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
@@ -949,7 +1077,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <span class="itag">Multiple outlets</span>
         <h3><strong>One login,</strong> every location</h3>
         <p>Run several shops or counters from one login, each with its own stock, staff and daily
-          takings — and one consolidated view of the whole business.</p>
+          takings, plus one consolidated view of the whole business.</p>
         <ul class="flist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Separate stock, staff and takings per outlet</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Stock transfers between branches, fully logged</li>
@@ -997,7 +1125,6 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Daily sales and cash summaries at a glance</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Profit and margin by product and category</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best sellers, slow movers and dead stock</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Outlet and staff performance side by side</li>
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
@@ -1046,7 +1173,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead rv">
       <span class="eyebrow"><i></i>Written reviews</span>
       <h2>What shop owners <strong>put in writing</strong></h2>
-      <p>Read the Google reviews and one thing comes up before anything else — not a feature,
+      <p>Read the Google reviews and one thing comes up before anything else. Not a feature,
         but whether someone picks up the phone. That is the part we compete on.</p>
     </div>
 
@@ -1161,7 +1288,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="lead rv">
       <span class="eyebrow"><i></i>Video reviews</span>
       <h2>Hear it <strong>from the counter</strong></h2>
-      <p>Shop owners in their own shops, in their own words. Filmed on site — nothing scripted.</p>
+      <p>Shop owners in their own shops, in their own words. Filmed on site, nothing scripted.</p>
     </div>
 
     <!-- featured full review -->
@@ -1175,7 +1302,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <span class="itag">Full story</span>
         <h3>The long version, start to finish</h3>
         <p>Jayanath runs Rainbow Kids from Australia. No other system would keep the shop counter
-          and the website in step — Storemate does it automatically, with cash-on-delivery and gift
+          and the website in step. Storemate does it automatically, with cash-on-delivery and gift
           cards on the same screen, and support one call away.</p>
         <p class="vfeat-who"><b>Jayanath</b>Rainbow Kids, Thalawathugoda · Kids &amp; baby store · Managed from Australia</p>
       </div>
@@ -1248,10 +1375,10 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   <div class="pos-wrap">
     <div class="lead rv">
       <span class="eyebrow"><i></i>Implementation</span>
-      <h2>How we get you running — <strong>at your counter</strong></h2>
+      <h2>How we get you running <strong>at your counter</strong></h2>
       <p>You are not handed a login and left to it. Our team loads your products, sets up the
-        counter, trains your staff on your own stock and stays close through the first week —
-        included, not an extra line on the invoice. Here is what each of those days looks like.</p>
+        counter, trains your staff on your own stock and stays close through the first week. All of
+        it is included, not an extra line on the invoice. Here is what each of those days looks like.</p>
     </div>
 
     <!-- implementation walkthrough video -->
@@ -1264,7 +1391,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div class="vfeat-body">
         <span class="itag">Watch first</span>
         <h3>See the whole setup before you commit to it</h3>
-        <p>Our team walks through exactly what happens from the first call to your first bill — the
+        <p>Our team walks through exactly what happens from the first call to your first bill: the
           product load, the hardware, the training, and the first week. No surprises on the invoice
           and no surprises at the counter.</p>
         <p class="vfeat-who"><b>Implementation walkthrough</b>“How Storemate Process Works” · Discovery call through to your first week live</p>
@@ -1273,11 +1400,11 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
     <div class="impl rv">
       <ul class="inav" id="inav" role="tablist" aria-label="Implementation steps">
-        <li><button role="tab" aria-selected="true" data-i="i1">Discovery call<small>What your shop actually needs</small></button></li>
-        <li><button role="tab" aria-selected="false" data-i="i2">Product data load<small>Spreadsheet, price list or notebook</small></button></li>
-        <li><button role="tab" aria-selected="false" data-i="i3">Counter &amp; hardware<small>Scanner, printer, drawer, scale</small></button></li>
-        <li><button role="tab" aria-selected="false" data-i="i4">On site / online training<small>Whichever suits your team</small></button></li>
-        <li><button role="tab" aria-selected="false" data-i="i5">Go live &amp; first week<small>We watch it closely</small></button></li>
+        <li><button role="tab" aria-selected="true" data-i="i1"><b>Discovery call</b><small>What your shop actually needs</small></button></li>
+        <li><button role="tab" aria-selected="false" data-i="i2"><b>Product data load</b><small>Spreadsheet, price list or notebook</small></button></li>
+        <li><button role="tab" aria-selected="false" data-i="i3"><b>Counter &amp; hardware</b><small>Scanner, printer, drawer, scale</small></button></li>
+        <li><button role="tab" aria-selected="false" data-i="i4"><b>On site / online training</b><small>Whichever suits your team</small></button></li>
+        <li><button role="tab" aria-selected="false" data-i="i5"><b>Go live &amp; first week</b><small>We watch it closely</small></button></li>
       </ul>
 
       <div>
@@ -1285,7 +1412,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <div>
             <span class="itag">Day 1 · free</span>
             <h3>We start by asking, not selling</h3>
-            <p>A call or a visit to understand how your shop runs today — how many counters, how many
+            <p>A call or a visit to understand how your shop runs today: how many counters, how many
               SKUs, who works the till, what breaks. If Storemate isn't the right fit for your
               business, this is where we say so.</p>
             <p>You leave the call knowing exactly what setup you need and what it will cost.</p>
@@ -1301,7 +1428,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
             <h3>Your products, loaded by us</h3>
             <p>Bring a spreadsheet, a printed price list, or the notebook under the counter. We've
               worked from all three. Barcodes, prices, categories, variants, units and opening stock
-              go in — and we check them with you before you bill a single customer.</p>
+              go in, and we check them with you before you bill a single customer.</p>
           </div>
           <div class="ph">
             <img src="images/implementation/product-data-load.webp" width="1200" height="900" loading="lazy" decoding="async"
@@ -1312,7 +1439,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <div>
             <span class="itag">Day 2</span>
             <h3>The counter, set up and tested</h3>
-            <p>No special hardware is required — Storemate POS runs in a browser on any Windows PC,
+            <p>No special hardware is required. Storemate POS runs in a browser on any Windows PC,
               laptop or Android device. If you want a barcode scanner and a thermal or A4 printer, we
               pair and test them at your counter. Most equipment already in Sri Lankan shops works;
               send us the model and we'll confirm before you buy anything.</p>
@@ -1325,7 +1452,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <div class="ipanel" id="i4" role="tabpanel">
           <div>
             <span class="itag">Day 3</span>
-            <h3>On site or online — we train your staff, not just you</h3>
+            <h3>On site or online, we train your staff, not just you</h3>
             <p>If you want us at the counter, we come to the shop. If a screen-share suits your team
               better, we do it online and you skip the wait for a visit. Either way it's on your own
               stock, and cashiers learn billing, returns and cash-up while managers learn approvals
@@ -1344,7 +1471,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
             <h3>Go live, with us watching</h3>
             <p>Your first week is the week that matters. We stay close, check the first days' figures
               with you, and fix what surfaces before it becomes a habit. Then you have a named person
-              to call — not a ticket queue.</p>
+              to call, not a ticket queue.</p>
           </div>
           <div class="ph">
             <img src="images/implementation/go-live-first-week.webp" width="1200" height="900" loading="lazy" decoding="async"
@@ -1364,9 +1491,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   <div class="pos-wrap">
     <div class="lead rv">
       <span class="eyebrow"><i></i>On the ground</span>
-      <h2>300+ counters, <strong>and we've stood at most of them</strong></h2>
+      <h2>1,200+ counters, <strong>and we've stood at most of them</strong></h2>
       <p>Every counter here is a real one. Retail shops, cafes, furniture showrooms and herbal
-        product stores — photographed on the days we installed the system, trained the staff and
+        product stores, photographed on the days we installed the system, trained the staff and
         handed the shop over. Click any photo to see it full size.</p>
     </div>
 
@@ -1411,14 +1538,14 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <details open><summary>What is the best POS system in Sri Lanka?</summary>
           <div class="faq-a"><p>The best POS system in Sri Lanka for retail and wholesale businesses
             combines fast barcode billing with real-time inventory control. Storemate POS is built for
-            Sri Lanka sellers — it runs in any browser on Windows PCs or Android tablets, supports
+            Sri Lanka sellers. It runs in any browser on Windows PCs or Android tablets, supports
             Sinhala and English receipts, and connects counter sales with online orders in one system.
             It is free to start with no monthly contract.</p></div></details>
 
         <details><summary>What is Storemate POS?</summary>
           <div class="faq-a"><p>Storemate POS is a point of sale built right into Storemate OMS. It
             lets you bill customers with barcode scanning, print or share receipts, and keeps your
-            stock, sales and profit updated automatically — all inside the same system you use to
+            stock, sales and profit updated automatically, all inside the same system you use to
             manage orders.</p></div></details>
 
         <details><summary>Does stock update automatically when I sell?</summary>
@@ -1440,7 +1567,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div>
         <details><summary>Can I track suppliers and purchases?</summary>
           <div class="faq-a"><p>Yes. You can record purchases, receive goods into stock, and track
-            balances owed to each supplier — all connected to your live inventory so your buying and
+            balances owed to each supplier, all connected to your live inventory so your buying and
             stock stay in sync.</p></div></details>
 
         <details><summary>Does it connect with my online orders?</summary>
@@ -1460,7 +1587,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
         <details><summary>How much does it cost?</summary>
           <div class="faq-a"><p>It's free to start with no card needed, and every plan and add-on is
-            published — you don't have to give us your phone number to see a price.
+            published, so you don't have to give us your phone number to see a price.
             <a href="pricing.html">See pricing</a></p></div></details>
       </div>
     </div>
@@ -1468,8 +1595,48 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="faq-cta rv">
       <div><h4>Still have a question?</h4>
         <p>Our team helps you pick the right edition, set up your products, and get your counter
-          running — all free.</p></div>
+          running, all free.</p></div>
       <a class="btn btn--go" href="contact.html">Talk to our team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 9b · RECOGNITION ══════════ -->
+<section class="sec" id="recognition">
+  <div class="pos-wrap">
+    <div class="lead lead--mid rv">
+      <span class="eyebrow"><i></i>Recognition</span>
+      <h2>Has anyone else <strong>recognised this?</strong></h2>
+      <p>Eight awards across three consecutive years. NBQSA. APICTA Hong Kong. SLASSCOM. Not
+        self-declared quality, third-party verdicts from the most credible ICT bodies in the region.</p>
+    </div>
+
+    <div class="awards-hero rv">
+      <img src="images/awards/awards_trans.png" loading="lazy" decoding="async"
+           alt="Storemate award trophies and certificates collection">
+    </div>
+
+    <div class="awd">
+        <figure class="rv">
+          <img src="images/awards/apicta.jpg" loading="lazy" decoding="async" alt="APICTA 2023 Hong Kong">
+          <figcaption><b>Asia Pacific ICT Alliance</b><span>APICTA 2023 · Hong Kong</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="images/awards/ict.jpg" loading="lazy" decoding="async" alt="NBQSA 2024 ICT Entrepreneur of the Year">
+          <figcaption><b>ICT Entrepreneur of the Year</b><span>NBQSA 2024 · Winner</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="images/awards/silver.jpg" loading="lazy" decoding="async" alt="NBQSA 2024 Overall Silver Winner">
+          <figcaption><b>National ICT Awards Overall</b><span>NBQSA 2024 · Silver Winner</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="images/awards/slasscom.jpg" loading="lazy" decoding="async" alt="SLASSCOM Ingenuity Awards 2024">
+          <figcaption><b>Ingenuity Awards</b><span>SLASSCOM 2024</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="images/awards/supply_chain.jpg" loading="lazy" decoding="async" alt="NBQSA 2024 Supply Chain Logistics Winner">
+          <figcaption><b>Supply Chain &amp; Logistics</b><span>NBQSA 2024 · Winner</span></figcaption>
+        </figure>
     </div>
   </div>
 </section>
@@ -1486,7 +1653,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div class="ways">
         <a class="way" href="tel:+94114226911">
           <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg></i>
-          <span><b>011 422 6911</b><span>Phone — a person answers</span></span></a>
+          <span><b>011 422 6911</b><span>Phone · a person answers</span></span></a>
         <a class="way" href="https://wa.me/94XXXXXXXXX">
           <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-4.2-2.6 11 11 0 0 1-2.2-3.2c-.3-.7-.2-1.4.1-1.9.2-.3.5-.6.8-.7.2-.1.5-.1.7 0 .2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6.4.7 1 1.3 1.6 1.8.4.3.7.5 1 .6.2.1.4 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5s0 .5-.1.8z"/></svg></i>
           <span><b>WhatsApp us</b><span>Send a photo of your shop or your price list</span></span></a>
@@ -1495,7 +1662,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <span><b>Contact form</b><span>We reply within one working day</span></span></a>
         <a class="way" href="about.html">
           <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></i>
-          <span><b>Parallax Technologies (Pvt) Ltd</b><span>No. 15, Galle Road — visit us</span></span></a>
+          <span><b>Parallax Technologies (Pvt) Ltd</b><span>No. 81/A, High Level Road, Kottawa, Sri Lanka</span></span></a>
       </div>
 
       <p class="hours"><b>Support hours:</b> Monday to Friday · 9:00 am – 5:00 pm</p>
@@ -1506,33 +1673,36 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     </div>
 
     <!-- TODO · wire this form to your real endpoint / CRM. It currently does nothing. -->
-    <div class="pos-form rv">
+    <form class="pos-form rv" id="demo-form" novalidate>
       <h3>See a demo with your own products</h3>
-      <p>Send us twenty of your items and we'll show you your own counter — not a canned demo of
+      <p>Send us twenty of your items and we'll show you your own counter, not a canned demo of
         someone else's shop.</p>
       <div class="f2">
-        <div class="fld"><label for="f-name">Your name</label><input id="f-name" type="text" autocomplete="name"></div>
-        <div class="fld"><label for="f-shop">Business name</label><input id="f-shop" type="text" autocomplete="organization"></div>
+        <div class="fld"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="fld"><label for="f-shop">Business name</label><input id="f-shop" name="business" type="text" autocomplete="organization"></div>
       </div>
       <div class="f2">
-        <div class="fld"><label for="f-phone">Phone or WhatsApp</label><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel"></div>
-        <div class="fld"><label for="f-town">Town</label><input id="f-town" type="text"></div>
+        <div class="fld"><label for="f-phone">Phone or WhatsApp</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div class="fld"><label for="f-town">Town</label><input id="f-town" name="town" type="text"></div>
       </div>
       <div class="f2">
         <div class="fld"><label for="f-type">Type of business</label>
-          <select id="f-type"><option>Retail shop</option><option>Supermarket / grocery</option>
+          <select id="f-type" name="business_type"><option>Retail shop</option><option>Supermarket / grocery</option>
             <option>Restaurant / cafe / bakery</option><option>Pharmacy</option><option>Hardware shop</option>
             <option>Clothing / textile</option><option>Mobile phone shop</option><option>Wholesale</option>
             <option>Other</option></select></div>
         <div class="fld"><label for="f-out">Outlets</label>
-          <select id="f-out"><option>1</option><option>2</option><option>3–5</option><option>6 or more</option></select></div>
+          <select id="f-out" name="outlets"><option>1</option><option>2</option><option>3–5</option><option>6 or more</option></select></div>
       </div>
       <div class="fld"><label for="f-msg">What's the main thing you want to fix?</label>
-        <textarea id="f-msg" placeholder="Stock never matches, billing is slow at the counter, no idea which products make money, two shops and no single view…"></textarea></div>
-      <button class="btn btn--go" type="button">Request a demo
+        <textarea id="f-msg" name="message" placeholder="Stock never matches, billing is slow at the counter, no idea which products make money, two shops and no single view…"></textarea></div>
+      <!-- Honeypot: bots fill it, people never see it. -->
+      <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn--go" type="submit">Request a demo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="form-msg" id="demo-msg" role="status" aria-live="polite" hidden></p>
       <p class="form-fine">We'll reply within one working day. No mailing list, no repeat calls.</p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -1681,14 +1851,18 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
   /* ── animated counters ── */
   function runNum(el){
-    var to  = parseFloat(el.getAttribute("data-to"));
+    var raw = el.getAttribute("data-to");
+    var to  = parseFloat(raw);
     var suf = el.getAttribute("data-suffix") || "";
-    if (reduce) { el.textContent = to + suf; return; }
+    /* Keep the same number of decimals the attribute was written with, so
+       4.9 counts up as 4.9 rather than rounding to 5. */
+    var dp  = (raw.split(".")[1] || "").length;
+    if (reduce) { el.textContent = to.toFixed(dp) + suf; return; }
     var t0 = null, dur = 1400;
     function step(ts){
       if (!t0) { t0 = ts; }
       var p = Math.min((ts - t0) / dur, 1);
-      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))) + suf;
+      el.textContent = (to * (1 - Math.pow(1 - p, 3))).toFixed(dp) + suf;
       if (p < 1) { requestAnimationFrame(step); }
     }
     requestAnimationFrame(step);
@@ -1788,6 +1962,68 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     if (e.key === "ArrowLeft")  { openLb(li - 1); }
     if (e.key === "ArrowRight") { openLb(li + 1); }
   });
+
+  /* ── demo request form → n8n webhook ── */
+  var form = document.getElementById("demo-form");
+  if (form) {
+    var out  = document.getElementById("demo-msg");
+    var btn  = form.querySelector("button[type=submit]");
+    var HOOK = "https://n8n.parallaxtec.dev/webhook/7be4bdb0-d8b4-4737-812c-876e876467ab";
+
+    function say(text, kind){
+      out.textContent = text;
+      out.className   = "form-msg " + kind;
+      out.hidden      = false;
+    }
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      /* Silently accept the bot, so it does not retry with a new strategy. */
+      if (form.elements.website.value) { say("Thank you. We'll be in touch.", "ok"); form.reset(); return; }
+
+      var required = [form.elements.name, form.elements.phone];
+      var bad = null;
+      required.forEach(function(el){
+        var empty = !el.value.trim();
+        el.classList.toggle("bad", empty);
+        if (empty && !bad) { bad = el; }
+      });
+      if (bad) { say("Please add your name and a phone number so we can reach you.", "err"); bad.focus(); return; }
+
+      var label = btn.innerHTML;
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      out.hidden = true;
+
+      var data = {};
+      new FormData(form).forEach(function(v, k){ data[k] = v; });
+      delete data.website;
+      data.page      = "pos-v2";
+      data.submitted = new Date().toISOString();
+
+      fetch(HOOK, {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(data)
+      })
+      .then(function(r){
+        if (!r.ok) { throw new Error("HTTP " + r.status); }
+        form.reset();
+        say("Thank you. We'll reply within one working day.", "ok");
+      })
+      .catch(function(){
+        say("That didn't send. Please call 011 422 6911 or message us on WhatsApp.", "err");
+      })
+      .then(function(){
+        btn.disabled = false;
+        btn.innerHTML = label;
+      });
+    });
+
+    /* Clear the error outline as soon as the visitor starts fixing it. */
+    form.addEventListener("input", function(e){ e.target.classList.remove("bad"); });
+  }
 })();
 </script>
 
