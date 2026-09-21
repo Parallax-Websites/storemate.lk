@@ -73,7 +73,16 @@
    what the site paints, so it sits beside index/why-storemate/pricing
    without looking like a different brand.
    ══════════════════════════════════════════════════════════════════════ */
-.pos-page{
+/* Mobile sticky bar height: 24px logo + 14px padding x2, with the
+   34px toggle setting the floor. On :root because html carries
+   scroll-padding-top and is outside the block below. */
+:root{--hdr-m:62px}
+
+/* The header, the mobile panel and its scrim sit OUTSIDE .pos-page
+   (the header carries a backdrop-filter, which would trap the fixed
+   panel), so they must be named here or every token resolves to
+   nothing and the panel paints transparent. */
+.pos-page,.pos-page-header,.secnav,.secnav-scrim,.totop{
   /* surfaces */
   --nav:#0a1628;                    /* home-styles dark band */
   --nav-2:#0a1f52;                  /* why-storemate deep navy */
@@ -654,6 +663,159 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .pos-page .ft-social-link:hover{background:rgba(255,255,255,.05);
   border-color:rgba(255,255,255,.09);color:rgba(255,255,255,.55);transform:none}
 
+/* ══ SECTION NAV ═════════════════════════════════════════════════
+   In-page anchors only. The header is sticky, so scroll-padding-top
+   keeps a heading from landing underneath it when you jump.
+════════════════════════════════════════════════════════════════ */
+html{scroll-padding-top:92px}
+/* Desktop rail: an ordinary flex item in the header row.
+   The mobile panel (.secnav) is a separate element outside the header,
+   because that element's backdrop-filter would trap a fixed child. */
+.deskrail ul{list-style:none;display:flex;align-items:center;
+  gap:clamp(.5rem,1.6vw,1.6rem);margin:0;padding:0}
+.secnav{display:none}
+.deskrail ul a,
+.secnav ul a{position:relative;display:block;padding:.45rem .15rem;font-size:.93rem;
+  font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap;
+  transition:color .18s}
+.deskrail ul a:hover,
+.secnav ul a:hover{color:var(--pri)}
+/* Underline grows from the centre; transform animates, width would reflow.
+   Desktop rail only: the mobile panel uses a plain bottom border. */
+.deskrail ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--pri);border-radius:2px;transform:scaleX(0);transition:transform .2s}
+.deskrail ul a:hover::after{transform:scaleX(1)}
+.deskrail ul a.on,
+.secnav ul a.on{color:var(--pri)}
+.deskrail ul a.on::after{transform:scaleX(1)}
+
+.secnav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem;
+  flex-direction:column;gap:5px;width:42px}
+.secnav-toggle span{display:block;height:2px;border-radius:2px;background:var(--ink);
+  transition:transform .22s,opacity .18s}
+.secnav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.secnav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.secnav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── mobile ──────────────────────────────────────────────────────
+   A slide-in panel from the right. The off-canvas panel is clipped by
+   overflow-x on the root: a translated fixed element still counts
+   towards document width and would shift the whole page sideways.
+────────────────────────────────────────────────────────────────── */
+/* Scoped to the nav so the link rules above cannot revive it. */
+.secnav .secnav-cta{display:none}
+
+@media (max-width:900px){
+  /* Clear the ~62px sticky bar when jumping to a section. */
+  html{scroll-padding-top:calc(var(--hdr-m) + 12px)}
+
+  /* Beat css/styles.css, which owns .nav-cta-btn and the header layout.
+     It also sets position:static under 760px, because the SITE's nav
+     expands inside the header. This page's menu is a fixed overlay
+     outside it, so sticky costs nothing here. */
+  /* Above the panel (101) so the toggle, which lives inside this
+     stacking context, stays tappable to close the menu. */
+  .pos-page-header{position:sticky;top:0;z-index:110}
+  .pos-page-header .header-inner{flex-wrap:nowrap;gap:12px;padding:14px 0}
+  .pos-page-header .brand{margin-right:auto}
+  .pos-page-header .nav-cta-btn{display:none}
+  .deskrail{display:none}
+
+  .pos-page-header .secnav-toggle{display:flex;order:2;position:relative;
+    z-index:102;margin:0;padding:.45rem;width:40px;height:34px;flex:0 0 auto;
+    align-items:center;justify-content:center}
+  .pos-page-header .secnav-toggle span{width:22px;background:var(--ink)}
+
+  /* Fixed to the viewport: this element is outside the header, whose
+     backdrop-filter would otherwise be its containing block. */
+  /* Starts below the sticky bar: the header stays visible, so the
+     toggle remains the obvious way to close the menu. */
+  .secnav{display:block;position:fixed;top:var(--hdr-m);right:0;bottom:0;
+    width:min(82vw,320px);z-index:101;background:var(--paper);
+    box-shadow:-18px 0 50px rgba(8,20,40,.18);
+    padding:1.1rem 1.3rem 2rem;overflow-y:auto;overscroll-behavior:contain;
+    transform:translateX(100%);transition:transform .28s ease;visibility:hidden}
+  .secnav.open{transform:translateX(0);visibility:visible}
+
+  .secnav ul{list-style:none;display:flex;flex-direction:column;align-items:stretch;
+    gap:0;margin:0;padding:0}
+  .secnav ul a{display:block;padding:.92rem .2rem;font-size:1rem;font-weight:600;
+    color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .secnav ul a::after{display:none}
+  .secnav ul a.on{color:var(--pri)}
+
+  /* The CTA lives at the foot of the panel on mobile. */
+  .secnav .secnav-cta{display:block;margin-top:1.3rem;padding:.92rem 1rem;
+    border-radius:999px;background:linear-gradient(135deg,var(--pri),var(--cyan));
+    color:#fff;font-weight:700;font-size:.98rem;text-align:center;text-decoration:none}
+
+  .secnav-scrim{position:fixed;top:var(--hdr-m);left:0;right:0;bottom:0;z-index:100;background:rgba(8,20,40,.42);
+    opacity:0;transition:opacity .28s ease}
+  .secnav-scrim.show{opacity:1}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .secnav,.secnav-scrim{transition:none}
+}
+
+/* ── footer section links ────────────────────────────────────────
+   Desktop only, per the brief. In-page anchors, so the page keeps its
+   single exit: the contact form.
+────────────────────────────────────────────────────────────────── */
+.pos-page-footer .ft-grid--pos{grid-template-columns:1.6fr .8fr .8fr 1.3fr;
+  gap:clamp(1.6rem,3.5vw,3rem)}
+.pos-page-footer .ft-sections .ft-link-list{gap:.6rem}
+.pos-page-footer .ft-sections a{color:rgba(255,255,255,.62);text-decoration:none;
+  font-size:.92rem;transition:color .18s}
+.pos-page-footer .ft-sections a:hover{color:#fff}
+/* Legal links in the bottom bar at every width: the conventional spot,
+   and the only copy mobile gets, since the More column is desktop only. */
+.pos-page-footer .ft-legal-bottom{display:flex;flex-wrap:wrap;gap:.45rem}
+.pos-page-footer .ft-legal-bottom a{color:inherit;text-decoration:none;
+  transition:color .18s}
+.pos-page-footer .ft-legal-bottom a:hover{color:#fff;text-decoration:underline}
+
+/* The legal pair: the only links on this page that leave it, so they
+   open in a new tab and the landing page stays behind them. */
+.pos-page-footer .ft-legal{margin-top:1.4rem;gap:.6rem}
+
+/* Contact column: one value per line, matching the link lists beside it. */
+.pos-page-footer .ft-contact-list{list-style:none;margin:0;padding:0;
+  display:flex;flex-direction:column;gap:.6rem;
+  color:rgba(255,255,255,.62);font-size:.92rem;line-height:1.5}
+.pos-page-footer .ft-contact-list a{color:rgba(255,255,255,.62);text-decoration:none;
+  transition:color .18s}
+.pos-page-footer .ft-contact-list a:hover{color:#fff}
+
+@media (max-width:900px){
+  .pos-page-footer .ft-sections{display:none}
+  .pos-page-footer .ft-grid--pos{grid-template-columns:1fr}
+}
+
+/* ── back to top ─────────────────────────────────────────────────
+   Stacked above the WhatsApp widget, which owns bottom:24px/right:24px
+   (56px wide, and bottom:16px/50px under 600px).
+────────────────────────────────────────────────────────────────── */
+.totop{position:fixed;right:24px;bottom:92px;z-index:9989;
+  width:46px;height:46px;border-radius:50%;cursor:pointer;
+  border:1px solid rgba(255,255,255,.14);background:var(--nav);color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 8px 26px rgba(8,20,40,.28);
+  opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s,background .18s}
+.totop svg{width:19px;height:19px}
+.totop.show{opacity:1;transform:translateY(0)}
+.totop:hover{background:var(--pri)}
+/* hidden is removed before .show so the fade has something to animate. */
+.totop[hidden]{display:none}
+
+@media (max-width:600px){
+  .totop{right:16px;bottom:76px;width:42px;height:42px}
+  .totop svg{width:17px;height:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  .totop{transition:none}
+}
+
 /* ══ CLOSE ═══════════════════════════════════════════════════════ */
 .pos-page .close{background:var(--nav);color:#fff;text-align:center;position:relative;overflow:hidden}
 .pos-page .close::before{content:"";position:absolute;inset:0;
@@ -745,14 +907,55 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-  <header class="site-header">
+  <header class="site-header pos-page-header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Storemate POS">
         <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
       </a>
+
+      <nav class="deskrail" aria-label="Page sections">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#story">Our story</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#implementation">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="secnav-toggle" aria-expanded="false" aria-controls="secnav"
+              aria-label="Open the section menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <a href="#contact" class="nav-cta-btn">Get started</a>
     </div>
   </header>
+
+  <!-- Panel and scrim live outside the header: its backdrop-filter would
+       otherwise become the containing block for these fixed elements. -->
+  <nav class="secnav" id="secnav" aria-label="Page sections, mobile">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#implementation">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="secnav-cta">Get started</a>
+  </nav>
+  <div class="secnav-scrim" hidden></div>
+
+  <button class="totop" type="button" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
 <main class="pos-page">
 
@@ -916,7 +1119,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 </section>
 
 <!-- ══════════ 2 · STORY VIDEO ══════════ -->
-<section class="sec sec--mist">
+<section class="sec sec--mist" id="story">
   <div class="pos-wrap story">
     <button class="vwrap story-vid rv" data-yt="Rp4R1GLyvRM" aria-label="Play the Storemate story">
       <img src="https://i.ytimg.com/vi/Rp4R1GLyvRM/maxresdefault.jpg" width="1280" height="720" loading="lazy" decoding="async"
@@ -1189,7 +1392,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
      · TikTok cards embed lazily and show TikTok's own cover frame, so they
        need no poster image from you.
 ═════════════════════════════════════════════════════ -->
-<section class="sec">
+<section class="sec" id="videos">
   <div class="pos-wrap">
     <div class="lead rv">
       <span class="eyebrow"><i></i>Video reviews</span>
@@ -1906,14 +2109,15 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   <div><img id="lbImg" src="" alt=""><p class="lb-cap" id="lbCap"></p></div>
 </div>
 
-  <footer class="site-footer">
+  <footer class="site-footer pos-page-footer">
     <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
     <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
     <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
 
     <div class="ft-main">
       <div class="container">
-        <div class="ft-brand-col">
+        <div class="ft-grid ft-grid--pos">
+          <div class="ft-brand-col">
           <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img"
                width="112" height="34" loading="lazy" decoding="async" />
           <p class="ft-tagline">From seller to Entrepreneur.</p>
@@ -1926,6 +2130,40 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
             <span class="ft-social-link" role="img" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
             <span class="ft-social-link" role="img" aria-label="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></span>
           </div>
+          </div>
+
+          <nav class="ft-sections" aria-label="Page sections, footer">
+            <p class="ft-col-heading">On this page</p>
+            <ul class="ft-link-list">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#story">Our story</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+              <li><a href="#implementation">How it works</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </nav>
+
+          <nav class="ft-sections ft-sections--more" aria-label="More">
+            <p class="ft-col-heading">More</p>
+            <ul class="ft-link-list">
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="ft-link-list ft-legal">
+              <li><a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></li>
+              <li><a href="terms.html" target="_blank" rel="noopener">Terms of Service</a></li>
+            </ul>
+          </nav>
+
+          <div class="ft-sections ft-contact">
+            <p class="ft-col-heading">Talk to us</p>
+            <ul class="ft-contact-list">
+              <li><a href="tel:+94114226911">011 422 6911</a></li>
+              <li><a href="https://wa.me/94777672155">077 767 2155</a></li>
+              <li>No. 81/A, High Level Road, Kottawa, Sri Lanka</li>
+              <li>Monday to Friday &middot; 9:00 am &ndash; 5:00 pm</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -1933,7 +2171,11 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="ft-bottom">
       <div class="container ft-bottom-inner">
         <p class="ft-copyright">&copy; 2026 Parallax Technologies (Pvt) Ltd &middot; Kottawa, Sri Lanka</p>
-        <p class="ft-copyright">Privacy Policy &middot; Terms of Service</p>
+        <p class="ft-copyright ft-legal-bottom">
+          <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        </p>
       </div>
     </div>
   </footer>
@@ -2141,6 +2383,114 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     form.addEventListener("input", function(e){ e.target.classList.remove("bad"); });
   }
 })();
+
+/* ── section nav ─────────────────────────────────────────────────
+   A slide-in panel on narrow screens, plus a scroll spy that marks the
+   section currently in view. */
+(function () {
+  var nav  = document.getElementById("secnav");
+  var tog  = document.querySelector(".secnav-toggle");
+  var scrim = document.querySelector(".secnav-scrim");
+  if (!nav || !tog) return;
+
+  function setOpen(open) {
+    nav.classList.toggle("open", open);
+    tog.setAttribute("aria-expanded", open ? "true" : "false");
+    tog.setAttribute("aria-label", open ? "Close the section menu" : "Open the section menu");
+    if (scrim) {
+      /* hidden must come off before the class, or the fade has nothing
+         laid out to animate from. */
+      if (open) { scrim.hidden = false; requestAnimationFrame(function () { scrim.classList.add("show"); }); }
+      else { scrim.classList.remove("show"); setTimeout(function () { scrim.hidden = true; }, 280); }
+    }
+    /* Stop the page behind the panel from scrolling with it. Only the
+       vertical axis: overflow-x stays hidden to clip the off-canvas panel. */
+    document.body.style.overflowY = open ? "hidden" : "";
+  }
+
+  tog.addEventListener("click", function () {
+    setOpen(!nav.classList.contains("open"));
+  });
+
+  /* Collapse after a jump, or the panel covers what you jumped to. */
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) setOpen(false);
+  });
+
+  if (scrim) scrim.addEventListener("click", function () { setOpen(false); });
+
+  addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("open")) { setOpen(false); tog.focus(); }
+  });
+
+  /* Back at desktop width the panel rules no longer apply; clear the
+     state so a resize cannot strand the page with scrolling locked. */
+  addEventListener("resize", function () {
+    if (innerWidth > 900 && nav.classList.contains("open")) setOpen(false);
+  });
+
+  /* Links live in two places now: the desktop rail inside the header
+     and the mobile panel outside it. Spy on both. */
+  var links = [].slice.call(document.querySelectorAll(".deskrail a, .secnav a"));
+  var pairs = links.map(function (a) {
+    return { a: a, el: document.querySelector(a.getAttribute("href")) };
+  }).filter(function (p) { return p.el; });
+  if (!pairs.length) return;
+
+  /* rAF-throttled: scroll fires far more often than the paint we need. */
+  var ticking = false;
+  function mark() {
+    ticking = false;
+    var line = window.scrollY + 140, cur = null;
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].el.offsetTop <= line) cur = pairs[i];
+    }
+    /* At the very bottom the last section may never cross the line. */
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+      cur = pairs[pairs.length - 1];
+    }
+    for (var j = 0; j < pairs.length; j++) {
+      pairs[j].a.classList.toggle("on", pairs[j] === cur);
+    }
+  }
+  addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(mark); }
+  }, { passive: true });
+  mark();
+})();
+
+/* ── back to top ─────────────────────────────────────────────────
+   Appears once you are a screen or so down, which is also the point
+   the sticky header stops being the quickest way back. */
+(function () {
+  var btn = document.querySelector(".totop");
+  if (!btn) return;
+
+  var shown = false, ticking = false;
+  function sync() {
+    ticking = false;
+    var want = window.scrollY > window.innerHeight * 0.9;
+    if (want === shown) return;
+    shown = want;
+    if (want) {
+      btn.hidden = false;
+      requestAnimationFrame(function () { btn.classList.add("show"); });
+    } else {
+      btn.classList.remove("show");
+      setTimeout(function () { if (!shown) btn.hidden = true; }, 240);
+    }
+  }
+  addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+  }, { passive: true });
+
+  btn.addEventListener("click", function () {
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  sync();
+})();
 </script>
 
 <!-- ══════════ STRUCTURED DATA ══════════ -->
@@ -2176,6 +2526,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     { "@type": "ListItem", "position": 2, "name": "POS & Inventory", "item": "https://storemate.lk/pos-system-in-srilanka" }
   ]
 }
+
 </script>
 
 <!--
