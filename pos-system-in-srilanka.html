@@ -930,7 +930,7 @@ html{scroll-padding-top:92px}
         <span></span><span></span><span></span>
       </button>
 
-      <a href="#contact" class="nav-cta-btn">Get started</a>
+      <a href="tel:+94114226911" class="nav-cta-btn">Call to Us</a>
     </div>
   </header>
 
@@ -946,7 +946,7 @@ html{scroll-padding-top:92px}
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="secnav-cta">Get started</a>
+    <a href="tel:+94114226911" class="secnav-cta">Call to Us</a>
   </nav>
   <div class="secnav-scrim" hidden></div>
 
@@ -2433,8 +2433,12 @@ html{scroll-padding-top:92px}
      and the mobile panel outside it. Spy on both. */
   var links = [].slice.call(document.querySelectorAll(".deskrail a, .secnav a"));
   var pairs = links.map(function (a) {
-    return { a: a, el: document.querySelector(a.getAttribute("href")) };
-  }).filter(function (p) { return p.el; });
+    var h = a.getAttribute("href") || "";
+    /* Only in-page anchors are spy targets. tel: and mailto: would
+       throw in querySelector, taking the rest of this block with them. */
+    if (h.charAt(0) !== "#" || h.length < 2) return null;
+    return { a: a, el: document.querySelector(h) };
+  }).filter(function (p) { return p && p.el; });
   if (!pairs.length) return;
 
   /* rAF-throttled: scroll fires far more often than the paint we need. */
