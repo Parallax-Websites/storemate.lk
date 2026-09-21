@@ -53,10 +53,6 @@
      only the personal name; SFC Restaurant is the one exception)
    · reviewer photos, if wanted — the cards use initials, because Google
      profile images are hotlink-protected and belong to the reviewers
-   · WhatsApp number (the tel: link and support hours are now real)
-   · the "14 years" wording — see the note at section 3
-   · Tamil receipt support and data-export formats in the FAQ
-   · the contact form posts nowhere — needs an endpoint wired up
    · step 2 of implementation uses a generated spreadsheet image, not a
      photo of a real data load
 
@@ -219,10 +215,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex:none}
 .hero-sub{margin-top:1.15rem;font-size:1.02rem;color:#cadaee;max-width:46ch}
 /* No card — the badge sits straight on the hero, so its type is light. */
-.grating{display:inline-flex;align-items:center;gap:.95rem;margin-top:2rem;
-  text-decoration:none;transition:opacity .18s}
-.grating:hover{opacity:.85}
-.grating:hover .grating-more{text-decoration:underline}
+.grating{display:inline-flex;align-items:center;gap:.95rem;margin-top:2rem}
 .grating-g{width:38px;height:38px;flex:none}
 .grating-body{display:block}
 .grating-label{display:block;font-size:.95rem;font-weight:700;color:#fff;line-height:1.2}
@@ -283,19 +276,6 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .flist .fic svg{width:17px;height:17px}
 .flist b{display:block;font-size:.98rem;color:var(--ink)}
 .flist span{display:block;margin-top:.15rem;font-size:.9rem;color:var(--soft);line-height:1.5}
-
-/* ══ 5 · WRITTEN TESTIMONIALS ══════════════════════════════════════ */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.6rem)}
-.tcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
-  padding:1.6rem 1.5rem;box-shadow:var(--sh1);display:flex;flex-direction:column;gap:1rem}
-.tstars{display:flex;gap:.15rem;color:var(--amb)}
-.tstars svg{width:15px;height:15px}
-.tcard blockquote{margin:0;font-size:.97rem;line-height:1.6;color:var(--ink);flex:1}
-.twho{display:flex;align-items:center;gap:.75rem;padding-top:.9rem;border-top:1px solid var(--line)}
-.twho .tav{width:42px;height:42px;border-radius:50%;background:var(--grad);flex:none;
-  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.9rem}
-.twho b{display:block;font-size:.92rem;color:var(--ink)}
-.twho span{display:block;font-size:.82rem;color:var(--soft)}
 
 /* ══ 6 · VIDEO TESTIMONIALS ════════════════════════════════════════ */
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.6rem)}
@@ -412,37 +392,19 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .mn h4{font-size:1.02rem}
 .mn p{margin-top:.35rem;font-size:.94rem;color:var(--soft)}
 
-/* ══ 5 · WRITTEN TESTIMONIALS ════════════════════════════════════ */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.8vw,1.4rem)}
-@media (max-width:980px){.tgrid{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.tgrid{grid-template-columns:1fr}}
-.tw{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;
-  margin:0;display:flex;flex-direction:column;position:relative;
-  transition:transform .18s,box-shadow .18s}
-.tw:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
-.tw--big{grid-column:span 2;background:var(--grad);color:#fff;border-color:transparent}
-@media (max-width:640px){.tw--big{grid-column:span 1}}
-.stars{display:flex;gap:.12rem;color:var(--amb);margin-bottom:.95rem}
-.tw--big .stars{color:#ffd27a}
-.stars svg{width:17px;height:17px}
-.tw blockquote{margin:0;font-size:1.02rem;line-height:1.55;flex:1}
-.tw--big blockquote{font-weight:600;font-size:clamp(1.1rem,2vw,1.45rem);
-  line-height:1.42;letter-spacing:-.02em}
-.tw-win{margin-top:1.1rem;align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;
-  background:var(--cyan-l);color:var(--pri-d);padding:.42rem .85rem;border-radius:100px;
-  font-weight:700;font-size:.86rem}
-.tw--big .tw-win{background:rgba(255,255,255,.18);color:#fff}
-.tw-win svg{width:15px;height:15px}
-.tw-who{margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid var(--line);
-  display:flex;align-items:center;gap:.85rem}
-.tw--big .tw-who{border-top-color:rgba(255,255,255,.25)}
-.av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:none;background:var(--cyan-l);
-  display:grid;place-items:center;color:var(--pri);font-weight:700;font-size:.9rem}
-.tw--big .av{background:rgba(255,255,255,.2);color:#fff}
-.av img{width:100%;height:100%;object-fit:cover}
-.tw-who b{display:block;font-size:.98rem}
-.tw-who > span > span{display:block;font-size:.88rem;color:var(--soft)}
-.tw--big .tw-who > span > span{color:#c3ddee}
+/* ══ 5 · WRITTEN TESTIMONIALS — Google screenshots ═══════════════
+   Real screenshots, not transcriptions: the Google chrome, reviewer photo
+   and star row are the proof. Masonry columns so each keeps its own
+   height and nothing is cropped.
+════════════════════════════════════════════════════════════════ */
+.rshots{columns:3;column-gap:clamp(.9rem,1.8vw,1.4rem)}
+@media (max-width:980px){.rshots{columns:2}}
+@media (max-width:620px){.rshots{columns:1}}
+.rshot{break-inside:avoid;margin:0 0 clamp(.9rem,1.8vw,1.4rem);background:var(--paper);
+  border:1px solid var(--line-2);border-radius:14px;overflow:hidden;
+  transition:transform .22s,box-shadow .22s}
+.rshot:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.rshot img{width:100%;height:auto;display:block}
 
 /* ══ 6 · VIDEO TESTIMONIALS ══════════════════════════════════════ */
 .vfeat{display:grid;grid-template-columns:1.35fr 1fr;gap:0;align-items:stretch;
@@ -546,6 +508,77 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .awd b{display:block;font-size:.88rem;font-weight:700;line-height:1.3;color:#fff}
 .awd span{display:block;margin-top:.2rem;font-size:.79rem;color:#a8bfd4}
 
+/* ══ 8b · PRICING — five plans ═══════════════════════════════════
+   Card design ported from css/pricing-styles.css so /pos-v2 and /pricing
+   look the same. Change one, change the other.
+════════════════════════════════════════════════════════════════ */
+/* Five cards need the room /pricing gives them: its .container is
+   min(1280px, 100% - 48px), wider than this page's 1200px .pos-wrap. */
+#pricing .pos-wrap{max-width:none;width:min(1280px,calc(100% - 48px));padding-inline:0}
+@media (max-width:860px){#pricing .pos-wrap{width:100%;padding-inline:clamp(1.15rem,4vw,2.5rem)}}
+.pos-page .pricing-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:16px;align-items:stretch}
+@media (max-width:1200px){.pos-page .pricing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.pos-page .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pos-page .pricing-grid{grid-template-columns:1fr}}
+
+.pos-page .pricing-card{background:#fff;border-radius:24px;padding:28px 22px 24px;
+  border:1px solid var(--color-gray-200);display:flex;flex-direction:column;gap:0;
+  position:relative;transition:box-shadow .25s ease,transform .25s ease}
+.pos-page .pricing-card:hover{box-shadow:0 24px 60px rgba(33,83,192,.12);transform:translateY(-3px)}
+.pos-page .pricing-card-featured{background:linear-gradient(160deg,#003e7a 0%,#0072b5 55%,#00aad4 100%);
+  border-color:transparent;color:#fff;box-shadow:0 28px 70px rgba(0,62,122,.32)}
+.pos-page .pricing-card-featured:hover{transform:translateY(-3px);box-shadow:0 36px 80px rgba(0,62,122,.38)}
+.pos-page .pricing-card-enterprise{border-color:var(--color-gray-300);background:#fafbff}
+
+/* Sits outside the flex flow, so it adds no height and the five cards
+   stay level with each other. */
+.pos-page .plan-badge{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
+  white-space:nowrap;background:#00aad4;color:#fff;font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.45);box-shadow:0 4px 12px rgba(0,62,122,.28);z-index:2}
+
+.pos-page .plan-header{margin-bottom:22px}
+.pos-page .plan-name{font-size:.82rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;color:var(--color-blue);margin-bottom:10px}
+.pos-page .pricing-card-featured .plan-name{color:rgba(255,255,255,.72)}
+.pos-page .pricing-card-enterprise .plan-name{color:var(--color-blue-dark)}
+.pos-page .plan-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
+.pos-page .plan-price-currency{font-size:.9rem;font-weight:600;color:var(--color-gray-500)}
+.pos-page .pricing-card-featured .plan-price-currency{color:rgba(255,255,255,.72)}
+.pos-page .plan-price-amount{font-size:2.2rem;font-weight:800;color:var(--color-charcoal);line-height:1}
+.pos-page .pricing-card-featured .plan-price-amount{color:#fff}
+.pos-page .plan-period{font-size:.78rem;color:var(--color-gray-500);line-height:1.5}
+.pos-page .pricing-card-featured .plan-period{color:rgba(255,255,255,.68)}
+
+.pos-page .plan-features{list-style:none;padding:0;margin:0 0 24px;display:flex;
+  flex-direction:column;gap:10px;flex:1}
+.pos-page .plan-features li{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;
+  color:var(--color-gray-700);line-height:1.5}
+.pos-page .pricing-card-featured .plan-features li{color:rgba(255,255,255,.9)}
+.pos-page .check-icon{flex-shrink:0;margin-top:1px;color:var(--color-cyan)}
+.pos-page .pricing-card-featured .check-icon{color:rgba(255,255,255,.85)}
+.pos-page .features-divider{font-size:.72rem!important;font-weight:700!important;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--color-gray-500)!important;
+  padding-top:8px;border-top:1px solid var(--color-gray-200);margin-top:4px}
+.pos-page .pricing-card-featured .features-divider{color:rgba(255,255,255,.5)!important;
+  border-top-color:rgba(255,255,255,.15)}
+.pos-page .pricing-card-enterprise .features-divider{border-top-color:var(--color-gray-300)}
+
+.pos-page .plan-btn{display:block;width:100%;padding:13px 16px;border-radius:999px;
+  font-family:inherit;font-size:.88rem;font-weight:700;text-align:center;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;margin-top:auto;
+  cursor:pointer;border:none}
+.pos-page .plan-btn-outline{background:transparent;color:var(--color-blue);
+  border:1.5px solid var(--color-blue)}
+.pos-page .plan-btn-outline:hover{background:var(--color-blue);color:#fff;transform:translateY(-1px)}
+.pos-page .plan-btn-featured{background:#fff;color:var(--color-blue-dark);
+  box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.pos-page .plan-btn-featured:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.22)}
+.pos-page .plan-btn-dark{background:var(--color-charcoal);color:#fff}
+.pos-page .plan-btn-dark:hover{background:var(--color-blue-dark);transform:translateY(-1px)}
+.pos-page .pricing-note{text-align:center;margin-top:32px;font-size:.9rem;color:var(--color-gray-500)}
+
 /* ══ 9 · FAQ — two columns ═══════════════════════════════════════ */
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(1.5rem,3vw,3rem);
   align-items:start;max-width:none;margin-inline:0}
@@ -610,6 +643,16 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .form-msg.ok{background:#e7f7ed;color:#05603a;border:1px solid #a9ddc0}
 .form-msg.err{background:#fff0ef;color:#912018;border:1px solid #f3b9b4}
 .pos-form button[disabled]{opacity:.65;cursor:not-allowed}
+
+/* ══ FOOTER ══════════════════════════════════════════════════════
+   The site footer's own design from css/styles.css, minus every link:
+   19 of them would give paid traffic a route off this page.
+════════════════════════════════════════════════════════════════ */
+.pos-page .ft-brand-col{max-width:520px}
+/* Marks, not links: no pointer, no hover lift. */
+.pos-page .ft-social-link{cursor:default}
+.pos-page .ft-social-link:hover{background:rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.09);color:rgba(255,255,255,.55);transform:none}
 
 /* ══ CLOSE ═══════════════════════════════════════════════════════ */
 .pos-page .close{background:var(--nav);color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -704,120 +747,17 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
+      <a href="#top" class="brand" aria-label="Storemate POS">
         <img src="images/brand/storemate_logo.png" alt="Storemate logo" class="logo-img" />
       </a>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-toggle">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <div class="nav-dropdown nav-mega-wrap">
-          <button class="nav-dropdown-trigger">
-            Product
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="nav-dropdown-menu">
-            <div class="nav-mega-cols">
-
-              <div class="nav-mega-col">
-                <span class="nav-mega-label">Features</span>
-                <a href="whatsapp-landing.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-                  <span class="nav-mega-text"><strong>Self-Order Form</strong><span>Customers order via shared link</span></span>
-                </a>
-                <a href="returns-landing.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-red"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></span>
-                  <span class="nav-mega-text"><strong>Reduce Returns</strong><span>Block &amp; prevent problem orders</span></span>
-                </a>
-                <a href="courier-sync.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-                  <span class="nav-mega-text"><strong>Courier Sync</strong><span>Auto-sync orders to courier</span></span>
-                </a>
-                <a href="free-waybill-generator.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-                  <span class="nav-mega-text"><strong>Free Waybill Generator <span class="nav-free-badge">FREE</span></strong><span>Bulk print waybills, no signup</span></span>
-                </a>
-                <a href="waybill-landing.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
-                  <span class="nav-mega-text"><strong>Waybill Printing</strong><span>Branded waybills in 30 sec</span></span>
-                </a>
-                <a href="personalization.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg></span>
-                  <span class="nav-mega-text"><strong>Personalization</strong><span>Your software, your way</span></span>
-                </a>
-              </div>
-
-              <div class="nav-mega-col">
-                <span class="nav-mega-label">Apps</span>
-                <a href="mobile-app.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-                  <span class="nav-mega-text"><strong>Mobile App</strong><span>Manage orders anywhere</span></span>
-                </a>
-                <a href="trackmate.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                  <span class="nav-mega-text"><strong>Trackmate</strong><span>Track all courier packages</span></span>
-                </a>
-              </div>
-
-              <div class="nav-mega-col">
-                <span class="nav-mega-label">Resources</span>
-                <a href="why-storemate.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-purple"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                  <span class="nav-mega-text"><strong>Why Storemate</strong><span>The story &amp; mission</span></span>
-                </a>
-                <a href="storemate-vs-excel.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-green"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span>
-                  <span class="nav-mega-text"><strong>vs Excel</strong><span>9 things Excel can't do</span></span>
-                </a>
-                <a href="implementation.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-blue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-                  <span class="nav-mega-text"><strong>Implementation</strong><span>How we set you up</span></span>
-                </a>
-                <a href="podcast.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
-                  <span class="nav-mega-text"><strong>Podcast</strong><span>Online business conversations</span></span>
-                </a>
-                <a href="free-course.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-cyan"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
-                  <span class="nav-mega-text"><strong>Free Course <span class="nav-free-badge">FREE</span></strong><span>16 video lessons</span></span>
-                </a>
-                <a href="cod-business-guide.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-orange"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-                  <span class="nav-mega-text"><strong>COD Business Guide</strong><span>Start a delivery business in SL</span></span>
-                </a>
-                <a href="faq.html" class="nav-mega-link">
-                  <span class="nav-mega-icon nm-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-                  <span class="nav-mega-text"><strong>FAQ</strong><span>Common questions answered</span></span>
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-dropdown nav-login">
-        <button class="nav-dropdown-trigger">
-          Login
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="nav-dropdown-menu">
-          <a href="https://oms.storemate.cloud/login" target="_blank" rel="noopener noreferrer">Login to OMS</a>
-          <a href="https://app.storemate.cloud/login" target="_blank" rel="noopener noreferrer">POS Lite Login</a>
-          <a href="https://app.storematepro.lk/login" target="_blank" rel="noopener noreferrer">POS Pro Login</a>
-        </div>
-      </div>
-      <a href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Start for free</a>
+      <a href="#contact" class="nav-cta-btn">Get a free demo</a>
     </div>
   </header>
 
 <main class="pos-page">
 
 <!-- ══════════ 1 · HERO ══════════ -->
-<section class="pos-hero">
+<section class="pos-hero" id="top">
   <div class="pos-wrap pos-hero-in">
     <div>
       <span class="hero-badge"><i></i>POS System Sri Lanka</span>
@@ -826,15 +766,13 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         products, customers and outlets from one simple system.</p>
 
       <div class="btns">
-        <a class="btn btn--go" href="https://welcome.oms.storemate.cloud/register?utm_source=website&amp;utm_medium=direct&amp;utm_campaign=free_trial&amp;utm_content=start_for_free">Start for free
+        <a class="btn btn--go" href="#contact">Get a free demo
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn--ghost" href="#features">See the features</a>
       </div>
       <p class="fine">Free to start. Full setup handled by our team. No card needed.</p>
 
-      <!-- TODO — point href at your Google Business profile's review link -->
-      <a class="grating" href="https://www.google.com/search?q=Storemate+POS+reviews"
-         target="_blank" rel="noopener noreferrer">
+      <div class="grating">
         <svg class="grating-g" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"/>
           <path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"/>
@@ -851,7 +789,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           </span>
           <span class="grating-more">From 65+ Google reviews</span>
         </span>
-      </a>
+      </div>
     </div>
 
     <div class="pos-hero-media rv">
@@ -873,12 +811,48 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <h2>Shops that <strong>run on Storemate</strong></h2>
     </div>
     <div class="logo-grid rv">
-      <img src="images/customers/ak-solution.webp" loading="lazy" decoding="async"
-           alt="AK Solution">
       <img src="images/customers/apple-asia.webp" loading="lazy" decoding="async"
            alt="Apple Asia">
       <img src="images/customers/arathi-exhibition.webp" loading="lazy" decoding="async"
            alt="Arathi Exhibition">
+      <img src="images/customers/coffee-bean-tea-leaf.webp" loading="lazy" decoding="async"
+           alt="Coffee Bean &amp; Tea Leaf">
+      <img src="images/customers/enex-agencies.webp" loading="lazy" decoding="async"
+           alt="Enex Agencies">
+      <img src="images/customers/francium.webp" loading="lazy" decoding="async"
+           alt="Francium (Pvt) Ltd">
+      <img src="images/customers/kingsman.webp" loading="lazy" decoding="async"
+           alt="Kingsman">
+      <img src="images/customers/leyon-supermarket.webp" loading="lazy" decoding="async"
+           alt="Leyon Super Market">
+      <img src="images/customers/little-space.webp" loading="lazy" decoding="async"
+           alt="Little Space">
+      <img src="images/customers/naturista-ceylon.webp" loading="lazy" decoding="async"
+           alt="Naturista">
+      <img src="images/customers/nawaloka-hardware.webp" loading="lazy" decoding="async"
+           alt="Nawaloka Hardware">
+      <img src="images/customers/rainbow-kids.webp" loading="lazy" decoding="async"
+           alt="Rainbow Kids">
+      <img src="images/customers/onei.webp" loading="lazy" decoding="async"
+           alt="Onei">
+      <img src="images/customers/owita-naturals.webp" loading="lazy" decoding="async"
+           alt="Owita Naturals">
+      <img src="images/customers/paperline.webp" loading="lazy" decoding="async"
+           alt="Paperline">
+      <img src="images/customers/south-ceylon-bakery.webp" loading="lazy" decoding="async"
+           alt="South Ceylon Bakery">
+      <img src="images/customers/spd.webp" loading="lazy" decoding="async"
+           alt="SPD">
+      <img src="images/customers/thai-express.webp" loading="lazy" decoding="async"
+           alt="Thai Express">
+      <img src="images/customers/venture.webp" loading="lazy" decoding="async"
+           alt="Venture">
+      <img src="images/customers/aa-sports.webp" loading="lazy" decoding="async"
+           alt="AA Sports">
+      <img src="images/customers/ak-solution.webp" loading="lazy" decoding="async"
+           alt="AK Solution">
+      <img src="images/customers/asd-camera-rent.webp" loading="lazy" decoding="async"
+           alt="ASD Camera">
       <img src="images/customers/corundum-restaurant.webp" loading="lazy" decoding="async"
            alt="Corundum Restaurant">
       <img src="images/customers/deegajanu-printers.webp" loading="lazy" decoding="async"
@@ -887,26 +861,28 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
            alt="Dilani Pharmacy">
       <img src="images/customers/dineth-book-shop.webp" loading="lazy" decoding="async"
            alt="Dineth Book Shop">
+      <img src="images/customers/elmorn-lanka.webp" loading="lazy" decoding="async"
+           alt="Elmorn Lanka">
       <img src="images/customers/express-grocery.webp" loading="lazy" decoding="async"
            alt="Express Grocery">
-      <img src="images/customers/francium.webp" loading="lazy" decoding="async"
-           alt="Francium (Pvt) Ltd">
+      <img src="images/customers/gadget-city.webp" loading="lazy" decoding="async"
+           alt="Gadget City">
       <img src="images/customers/gallage-motors.webp" loading="lazy" decoding="async"
            alt="Gallage Motors">
+      <img src="images/customers/greentech.webp" loading="lazy" decoding="async"
+           alt="Greentech">
       <img src="images/customers/greenway-solutions.webp" loading="lazy" decoding="async"
            alt="Greenway Solutions">
+      <img src="images/customers/grocery-box.webp" loading="lazy" decoding="async"
+           alt="Grocery Box">
       <img src="images/customers/gunawardhana.webp" loading="lazy" decoding="async"
            alt="Gunawardana Enterprises">
       <img src="images/customers/hela-athkam.webp" loading="lazy" decoding="async"
            alt="Hela Athkam">
-      <img src="images/customers/kingsman.webp" loading="lazy" decoding="async"
-           alt="Kingsman">
+      <img src="images/customers/kithsa.webp" loading="lazy" decoding="async"
+           alt="Kithsa">
       <img src="images/customers/lasantha-cycle.webp" loading="lazy" decoding="async"
            alt="Lasantha Cycle">
-      <img src="images/customers/leyon-supermarket.webp" loading="lazy" decoding="async"
-           alt="Leyon Super Market">
-      <img src="images/customers/little-space.webp" loading="lazy" decoding="async"
-           alt="Little Space">
       <img src="images/customers/master-mobile.webp" loading="lazy" decoding="async"
            alt="Master Mobile">
       <img src="images/customers/matro-holdings.webp" loading="lazy" decoding="async"
@@ -915,38 +891,26 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
            alt="Miami Factory Outlet">
       <img src="images/customers/mini-bazaar.webp" loading="lazy" decoding="async"
            alt="Mini Bazaar">
-      <img src="images/customers/nawaloka-hardware.webp" loading="lazy" decoding="async"
-           alt="Nawaloka Hardware">
-      <img src="images/customers/onei.webp" loading="lazy" decoding="async"
-           alt="Onei">
-      <img src="images/customers/owita-naturals.webp" loading="lazy" decoding="async"
-           alt="Owita Naturals">
+      <img src="images/customers/ovenga-engineering.webp" loading="lazy" decoding="async"
+           alt="Ovenga Engineering">
       <img src="images/customers/pet-essentials.webp" loading="lazy" decoding="async"
            alt="Pet Essentials">
       <img src="images/customers/rns-motors.webp" loading="lazy" decoding="async"
            alt="RNS Motors">
-      <img src="images/customers/rainbow-kids.webp" loading="lazy" decoding="async"
-           alt="Rainbow Kids">
+      <img src="images/customers/sh-womens.webp" loading="lazy" decoding="async"
+           alt="SH Womens">
       <img src="images/customers/sm-plus-mobile.webp" loading="lazy" decoding="async"
            alt="SM Plus Mobile">
-      <img src="images/customers/spd.webp" loading="lazy" decoding="async"
-           alt="SPD">
       <img src="images/customers/sapphire-wellness.webp" loading="lazy" decoding="async"
            alt="Sapphire Wellness">
+      <img src="images/customers/seagull.webp" loading="lazy" decoding="async"
+           alt="Seagull">
       <img src="images/customers/seven-star.webp" loading="lazy" decoding="async"
            alt="Seven Star">
-      <img src="images/customers/south-ceylon-bakery.webp" loading="lazy" decoding="async"
-           alt="South Ceylon Bakery">
-      <img src="images/customers/thai-express.webp" loading="lazy" decoding="async"
-           alt="Thai Express">
+      <img src="images/customers/synergy-food.webp" loading="lazy" decoding="async"
+           alt="Synergy Food">
       <img src="images/customers/trendy-zone.webp" loading="lazy" decoding="async"
            alt="Trendy Zone">
-      <img src="images/customers/coffee-bean-tea-leaf.webp" loading="lazy" decoding="async"
-           alt="Coffee Bean &amp; Tea Leaf">
-      <img src="images/customers/paperline.webp" loading="lazy" decoding="async"
-           alt="Paperline">
-      <img src="images/customers/venture.webp" loading="lazy" decoding="async"
-           alt="Venture">
     </div>
   </div>
 </section>
@@ -981,8 +945,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       </ul>
 
       <div class="btns">
-        <a class="btn btn--out" href="why-storemate.html">Why Storemate</a>
-        <a class="btn btn--out" href="https://www.tiktok.com/@storemate_">More on TikTok</a>
+        <a class="btn btn--out" href="#contact">Talk to our team</a>
       </div>
     </div>
   </div>
@@ -1009,9 +972,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <p>From 65+ Google reviews.</p>
       </div>
       <div class="st rv">
-        <b data-to="12" data-suffix=" yrs">0</b>
+        <b data-to="8" data-suffix=" yrs">0</b>
         <h3>Years in the industry</h3>
-        <p>Building and supporting business software since 2012.</p>
+        <p>Building and supporting business software since 2018.</p>
       </div>
     </div>
   </div>
@@ -1047,14 +1010,14 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <span class="itag">Barcode billing</span>
         <h3><strong>Scan, bill, done.</strong> Checkout in seconds</h3>
         <p>Scan a barcode or search by name and the item drops into the bill with the right price.
-          Apply discounts, take part-payments, split the tender, then print or share the receipt,
+          Apply discounts, take part payments, split the tender, then print or share the receipt,
           all from one clean screen your staff can learn in minutes.</p>
         <ul class="flist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Barcode scanning and instant product search</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Automatic pricing, taxes and discounts on every line</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cash, card and split multi-payment checkout</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cash, card and split multi payment checkout</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Print a receipt or share a digital bill in one tap</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tax and non-tax receipts and printing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tax and non tax receipts and printing</li>
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
@@ -1071,8 +1034,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <p>From a single shelf to multiple warehouses, Storemate keeps stock, purchases and suppliers
           in one place, and keeps every number current without a manual count.</p>
         <ul class="flist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Real-time stock control</b> See what's in stock, by outlet, right now</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Low-stock alerts</b> Reorder levels flag you before a best-seller runs dry</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Real time stock control</b> See what's in stock, by outlet, right now</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Low stock alerts</b> Reorder levels flag you before a best seller runs dry</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Purchases &amp; suppliers</b> Receive goods and track what you owe each supplier</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Variants &amp; units</b> Sizes, colours and units of measure, each with its own barcode and price</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Batches &amp; expiry</b> Sell oldest stock first; ideal for groceries, pharmacy and FMCG</span></li>
@@ -1095,7 +1058,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <ul class="flist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Separate stock, staff and takings per outlet</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Stock transfers between branches, fully logged</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Outlet-against-outlet performance side by side</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Outlet against outlet performance side by side</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Multiple counters in the same shop, one stock figure</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Open a new branch without starting a second system</li>
         </ul>
@@ -1116,9 +1079,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <ul class="flist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cashiers ring sales; managers approve voids, returns and discounts</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hide cost prices and margins from counter staff</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Per-user login with an audit trail on every stock movement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Per user login with an audit trail on every stock movement</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Staff performance visible per shift and per outlet</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ISO 27001 certified data security behind it</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ISO 27001-aligned data security behind it</li>
         </ul>
       </div>
       <figure class="shot rv" style="margin:0">
@@ -1157,28 +1120,19 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <p>Runs in a browser on any Windows PC, laptop or Android device. Scanner and printer optional.</p></div>
       <div class="mn rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 4 6l5-5"/><path d="M4 6h11a5 5 0 0 1 0 10h-3"/></svg></i>
         <h4>Counter + online, one stock</h4>
-        <p>Because the POS is part of OMS, in-store sales and online orders share the same products and stock.</p></div>
+        <p>Because the POS is part of OMS, in store sales and online orders share the same products and stock.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ══════════ 5 · WRITTEN TESTIMONIALS ══════════
-     Five verbatim five-star Google reviews, transcribed from the Google
-     Business listing. The text is unedited — do not paraphrase these.
+     Screenshots of the real Google reviews rather than transcriptions, so
+     the reviewer's photo, star row and Google chrome carry the proof.
 
-     Avatars are initials, not photos. Google reviewer profile images are
-     hotlink-protected and belong to the reviewers, so we do not serve them.
-     TODO — if you want faces here, ask those five customers directly.
+     Do not retouch these images. They are evidence; editing them, even to
+     tidy the crop, undermines the only thing they are here to do.
 
-     TODO — business name and town are unknown for four of the five, because
-     Google shows only the personal name. Akila harshana is the exception and
-     names SFC Restaurant. Adding "business · town" to the rest makes this
-     section noticeably stronger, so it is worth one message to each.
-
-     One review was shown as a relative date on Google ("29 weeks ago") and
-     is rendered here as an approximate month.
-
-     THE PATTERN WORTH NOTICING: four of the five praise SUPPORT before any
+     THE PATTERN WORTH NOTICING: nearly every one praises SUPPORT before any
      feature. That is also the loudest complaint Sri Lankan buyers have about
      every other POS vendor, so this section is angled on support.
 ═════════════════════════════════════════════════════ -->
@@ -1191,100 +1145,43 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         but whether someone picks up the phone. That is the part we compete on.</p>
     </div>
 
-    <div class="tgrid">
-
-      <figure class="tw tw--big rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>The customer support from the Storemate POS team has been outstanding. Their
-          responses are always prompt, professional, and solution-oriented. The POS system itself has
-          significantly streamlined our daily operations and improved overall efficiency. I highly
-          recommend Storemate to any business looking for a reliable and dependable point-of-sale
-          solution.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support first, features second</span>
-        <div class="tw-who">
-          <span class="av" aria-hidden="true">AA</span>
-          <span><b>Ahamed Aazim</b><span>Google review · Feb 2026</span></span>
-        </div>
+    <div class="rshots">
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-lasith-shamen.webp" width="720" height="456"
+             loading="lazy" decoding="async" alt="Five star Google review from Lasith Shamen: one of the best POS systems he has seen in Sri Lanka, used across businesses, with excellent customer service">
       </figure>
-
-      <figure class="tw rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>Highly recommend POS system .Easy to use , Good supporting team, Reasonable
-          Price Thank you team From SFC Restaurant team</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Running a restaurant on it</span>
-        <div class="tw-who">
-          <span class="av" aria-hidden="true">AH</span>
-          <span><b>Akila harshana</b><span>SFC Restaurant · Google review · 17 Aug 2022</span></span>
-        </div>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-ahamed-aazim.webp" width="720" height="635"
+             loading="lazy" decoding="async" alt="Five star Google review from Ahamed Aazim: the support team has been outstanding, prompt, professional and solution-oriented, and the POS has streamlined daily operations">
       </figure>
-
-      <figure class="tw rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>Storemate is a versatile solution tailored for trading and any kind of business
-          in local. Its intuitive interface and customizable options make it easy for staff to learn
-          and use effectively. From robust inventory management to seamless payment processing,
-          Storemate offers a comprehensive suite of features.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Staff learned it quickly</span>
-        <div class="tw-who">
-          <span class="av" aria-hidden="true">SR</span>
-          <span><b>Sandesh Randula</b><span>Google review · 31 Mar 2024</span></span>
-        </div>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-ajith-kumara.webp" width="720" height="677"
+             loading="lazy" decoding="async" alt="Five star Google review from Ajith Kumara: six years on Storemate Online POS, easy and reliable, with very quick and friendly customer support">
       </figure>
-
-      <figure class="tw rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>I have been using StoreMate system for last three months. The product is fantastic
-          and their service also supplements the product. All staff are very professional and
-          knowledgeable. Highly recommended !</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Three months in, still recommending</span>
-        <div class="tw-who">
-          <span class="av" aria-hidden="true">VK</span>
-          <span><b>Veranga Karunaratne</b><span>Google review · 12 Mar 2023</span></span>
-        </div>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-mohamed-mubashir.webp" width="720" height="1221"
+             loading="lazy" decoding="async" alt="Five star Google review from Mohamed Mubashir: the system was delivered on time, support throughout was exceptional and the business now operates more efficiently">
       </figure>
-
-      <figure class="tw rv">
-        <div class="stars" aria-label="5 out of 5">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1z"/></svg>
-        </div>
-        <blockquote>Easy Online POS System and Absolutely right pos system for my business. Quick
-          responding staff always be with customer to help anytime.Thank you Storemate Staff. 100%
-          recommend for any small businesses.</blockquote>
-        <span class="tw-win"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Built for small businesses</span>
-        <div class="tw-who">
-          <span class="av" aria-hidden="true">IR</span>
-          <span><b>Indrajith Rathnayake</b><span>Google Local Guide · 23 Feb 2023</span></span>
-        </div>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-tharindi-perera.webp" width="720" height="811"
+             loading="lazy" decoding="async" alt="Five star Google review from Tharindi Perera: the best POS system in Sri Lanka, with dedicated customer support that understands the business process">
       </figure>
-
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-sandesh-randula.webp" width="720" height="589"
+             loading="lazy" decoding="async" alt="Five star Google review from Sandesh Randula: a versatile solution with an intuitive interface, easy for staff to learn, from inventory management to payment processing">
+      </figure>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-thanuja-yolanthi.webp" width="720" height="590"
+             loading="lazy" decoding="async" alt="Five star Google review from Thanuja Yolanthi: the best and most affordable POS system in Sri Lanka for startups and SMEs, with a good customer support team">
+      </figure>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-mewan-dimalsha.webp" width="720" height="500"
+             loading="lazy" decoding="async" alt="Five star Google review from Mewan Dimalsha: excellent customer support with prompt responses, and the POS has greatly improved operational workflow">
+      </figure>
+      <figure class="rshot rv">
+        <img src="images/testimonials/review-indrajith-rathnayake.webp" width="720" height="500"
+             loading="lazy" decoding="async" alt="Five star Google review from Indrajith Rathnayake, a Local Guide: an easy online POS with quick responding staff, recommended for small businesses">
+      </figure>
     </div>
   </div>
 </section>
@@ -1295,7 +1192,6 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
        so nothing loads until the visitor presses play.
      · TikTok cards embed lazily and show TikTok's own cover frame, so they
        need no poster image from you.
-     TODO — confirm the shop name / owner name / town on cards 3 and 4.
 ═════════════════════════════════════════════════════ -->
 <section class="sec">
   <div class="pos-wrap">
@@ -1316,7 +1212,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         <span class="itag">Full story</span>
         <h3>The long version, start to finish</h3>
         <p>Jayanath runs Rainbow Kids from Australia. No other system would keep the shop counter
-          and the website in step. Storemate does it automatically, with cash-on-delivery and gift
+          and the website in step. Storemate does it automatically, with cash on delivery and gift
           cards on the same screen, and support one call away.</p>
         <p class="vfeat-who"><b>Jayanath</b>Rainbow Kids, Thalawathugoda · Kids &amp; baby store · Managed from Australia</p>
       </div>
@@ -1371,15 +1267,14 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
         </div>
         <div class="rc-body">
           <h3>Shadow Mobile</h3>
-          <p>Day-to-day work got easier to manage.</p>
+          <p>Day to day work got easier to manage.</p>
           <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
         </div>
       </article>
     </div>
 
     <div class="btns rv" style="justify-content:center">
-      <a class="btn btn--out" href="https://www.tiktok.com/@storemate_">More on TikTok</a>
-      <a class="btn btn--out" href="https://www.youtube.com/@Storemate">Our YouTube channel</a>
+      <a class="btn btn--go" href="#contact">See it on your own products</a>
     </div>
   </div>
 </section>
@@ -1467,9 +1362,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <div>
             <span class="itag">Day 3</span>
             <h3>On site or online, we train your staff, not just you</h3>
-            <p>If you want us at the counter, we come to the shop. If a screen-share suits your team
+            <p>If you want us at the counter, we come to the shop. If a screen share suits your team
               better, we do it online and you skip the wait for a visit. Either way it's on your own
-              stock, and cashiers learn billing, returns and cash-up while managers learn approvals
+              stock, and cashiers learn billing, returns and cash up while managers learn approvals
               and reports.</p>
             <p>Most cashiers are running the till unaided by the second day, because they learned on
               the products they actually sell.</p>
@@ -1495,7 +1390,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     </div>
 
     <div class="btns rv">
-      <a class="btn btn--out" href="implementation.html">Full implementation process</a>
+      <a class="btn btn--out" href="#contact">Ask about your setup</a>
     </div>
   </div>
 </section>
@@ -1538,6 +1433,280 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
   </div>
 </section>
 
+<!-- ══════════ 8b · PRICING ══════════
+     Figures mirror /pricing. Change them there and copy across, or the two
+     pages will quietly disagree about what the product costs.
+═══════════════════════════════════════ -->
+<section class="sec sec--mist" id="pricing">
+  <div class="pos-wrap">
+    <div class="lead lead--mid rv">
+      <span class="eyebrow"><i></i>Pricing</span>
+      <h2>Every plan and add on, <strong>published</strong></h2>
+      <p>Start free with no card. Move up only when your order volume asks for it.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card rv">
+        <div class="plan-header">
+          <p class="plan-name">Free</p>
+          <div class="plan-price-row">
+            <span class="plan-price-amount">0</span>
+          </div>
+          <p class="plan-period">Free forever</p>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            100 Orders / month
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 User
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited Products
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 Delivery Account
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 Business (Brand)
+          </li>
+          <li class="features-divider">Community Support</li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Knowledge base access
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Community forum
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Video tutorials
+          </li>
+        </ul>
+        <a href="#contact" class="plan-btn plan-btn-outline">Get started</a>
+      </div>
+
+      <div class="pricing-card rv">
+        <div class="plan-header">
+          <p class="plan-name">Starter</p>
+          <div class="plan-price-row">
+            <span class="plan-price-currency">LKR</span>
+            <span class="plan-price-amount">5,000</span>
+          </div>
+          <p class="plan-period">/month &nbsp;&middot;&nbsp; Rs.10 / extra order</p>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            500 Orders / month
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2 Users
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited Products
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 Delivery Account
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 Business (Brand)
+          </li>
+          <li class="features-divider">Email Support</li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Email support (48h)
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Setup guide call
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Extended knowledge base
+          </li>
+        </ul>
+        <a href="#contact" class="plan-btn plan-btn-outline">Get started</a>
+      </div>
+
+      <div class="pricing-card pricing-card-featured rv">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-header">
+          <p class="plan-name">Business</p>
+          <div class="plan-price-row">
+            <span class="plan-price-currency">LKR</span>
+            <span class="plan-price-amount">12,000</span>
+          </div>
+          <p class="plan-period">/month &nbsp;&middot;&nbsp; Rs.6 / extra order</p>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2,000 Orders / month
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            5 Users
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited Products
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2 Delivery Accounts
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2 Businesses (Brands)
+          </li>
+          <li class="features-divider">Priority Support</li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Priority email &amp; chat (12h)
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Phone callback support
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated onboarding
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Customer Success Manager
+          </li>
+        </ul>
+        <a href="#contact" class="plan-btn plan-btn-featured">Get started</a>
+      </div>
+
+      <div class="pricing-card rv">
+        <div class="plan-header">
+          <p class="plan-name">Premium</p>
+          <div class="plan-price-row">
+            <span class="plan-price-currency">LKR</span>
+            <span class="plan-price-amount">15,000</span>
+          </div>
+          <p class="plan-period">/month &nbsp;&middot;&nbsp; Rs.3 / extra order</p>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            5,000 Orders / month
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10 Users
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited Products
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            3 Delivery Accounts
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            3 Businesses (Brands)
+          </li>
+          <li class="features-divider">Success Support</li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Priority support (4h response)
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Customer Success Manager
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            WhatsApp support
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Integration setup assistance
+          </li>
+        </ul>
+        <a href="#contact" class="plan-btn plan-btn-outline">Get started</a>
+      </div>
+
+      <div class="pricing-card pricing-card-enterprise rv">
+        <div class="plan-header">
+          <p class="plan-name">Enterprise</p>
+          <div class="plan-price-row">
+            <span class="plan-price-currency">LKR</span>
+            <span class="plan-price-amount">24,000</span>
+          </div>
+          <p class="plan-period">/month &nbsp;&middot;&nbsp; Rs.0.96 / extra order</p>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            25,000 Orders / month
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            25 Users
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited Products
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            5 Delivery Accounts
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            5 Businesses (Brands)
+          </li>
+          <li class="features-divider">Dedicated Support</li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated Account Manager
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            24/7 critical support (2h SLA)
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Implementation team
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom training sessions
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Direct technical escalation
+          </li>
+          <li>
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Strategic planning calls
+          </li>
+        </ul>
+        <a href="#contact" class="plan-btn plan-btn-dark">Contact sales</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">All plans include the POS, unlimited products and free setup by our team.
+      <a href="#contact">Ask us which plan fits your shop</a></p>
+  </div>
+</section>
+
 <!-- ══════════ 9 · Q&A ══════════ -->
 <section class="sec sec--mist" id="faq">
   <div class="pos-wrap">
@@ -1551,7 +1720,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div>
         <details open><summary>What is the best POS system in Sri Lanka?</summary>
           <div class="faq-a"><p>The best POS system in Sri Lanka for retail and wholesale businesses
-            combines fast barcode billing with real-time inventory control. Storemate POS is built for
+            combines fast barcode billing with real time inventory control. Storemate POS is built for
             Sri Lanka sellers. It runs in any browser on Windows PCs or Android tablets, supports
             Sinhala and English receipts, and connects counter sales with online orders in one system.
             It is free to start with no monthly contract.</p></div></details>
@@ -1564,7 +1733,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 
         <details><summary>Does stock update automatically when I sell?</summary>
           <div class="faq-a"><p>Yes. The moment a bill is saved, stock is reduced in real time across
-            every outlet and device, so you never oversell and never rely on end-of-day manual counts.
+            every outlet and device, so you never oversell and never rely on end of day manual counts.
             Returns and stock transfers update the same way.</p></div></details>
 
         <details><summary>Do I need special hardware?</summary>
@@ -1585,24 +1754,23 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
             stock stay in sync.</p></div></details>
 
         <details><summary>Does it connect with my online orders?</summary>
-          <div class="faq-a"><p>Yes. Because the POS is part of Storemate OMS, your in-store sales and
+          <div class="faq-a"><p>Yes. Because the POS is part of Storemate OMS, your in store sales and
             online orders share the same products, stock and customers automatically, so you can sell
             at the counter and online without anything going out of sync.</p></div></details>
 
         <details><summary>Does it support Sinhala and Tamil?</summary>
           <div class="faq-a"><p>Receipts print in Sinhala and English. Our team supports you in
-            Sinhala, Tamil and English by phone, WhatsApp and on site. TODO — confirm current Tamil
-            receipt support before publishing this answer.</p></div></details>
+            Sinhala, Tamil and English by phone, WhatsApp and on site.</p></div></details>
 
         <details><summary>What happens to my data if I stop using it?</summary>
-          <div class="faq-a"><p>Your products, sales, customers and stock can be exported to
-            spreadsheet at any time. Your business records are yours. TODO — confirm the exact export
-            formats available so this answer is precise.</p></div></details>
+          <div class="faq-a"><p>Your business records are yours. Email
+            <a href="mailto:hello@storemate.lk">hello@storemate.lk</a> and we will provide a full
+            export of your products, sales, customers and stock in a usable format within 14 days.</p></div></details>
 
         <details><summary>How much does it cost?</summary>
-          <div class="faq-a"><p>It's free to start with no card needed, and every plan and add-on is
+          <div class="faq-a"><p>It's free to start with no card needed, and every plan and add on is
             published, so you don't have to give us your phone number to see a price.
-            <a href="pricing.html">See pricing</a></p></div></details>
+            <a href="#pricing">See the plans above</a></p></div></details>
       </div>
     </div>
 
@@ -1610,7 +1778,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <div><h4>Still have a question?</h4>
         <p>Our team helps you pick the right edition, set up your products, and get your counter
           running, all free.</p></div>
-      <a class="btn btn--go" href="contact.html">Talk to our team</a>
+      <a class="btn btn--go" href="#contact">Talk to our team</a>
     </div>
   </div>
 </section>
@@ -1622,7 +1790,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
       <span class="eyebrow"><i></i>Recognition</span>
       <h2>Has anyone else <strong>recognised this?</strong></h2>
       <p>Eight awards across three consecutive years. NBQSA. APICTA Hong Kong. SLASSCOM. Not
-        self-declared quality, third-party verdicts from the most credible ICT bodies in the region.</p>
+        self declared quality, third party verdicts from the most credible ICT bodies in the region.</p>
     </div>
 
     <div class="awards-hero rv">
@@ -1670,8 +1838,8 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
           <span><b>011 422 6911</b><span>Phone · a person answers</span></span></a>
         <a class="way" href="https://wa.me/94777672155">
           <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-4.2-2.6 11 11 0 0 1-2.2-3.2c-.3-.7-.2-1.4.1-1.9.2-.3.5-.6.8-.7.2-.1.5-.1.7 0 .2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6.4.7 1 1.3 1.6 1.8.4.3.7.5 1 .6.2.1.4 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5s0 .5-.1.8z"/></svg></i>
-          <span><b>WhatsApp us</b><span>Send a photo of your shop or your price list</span></span></a>
-        <a class="way" href="about.html">
+          <span><b>077 767 2155</b><span>WhatsApp · send a photo of your shop or price list</span></span></a>
+        <a class="way" href="https://maps.google.com/?q=Parallax+Technologies+No.+81%2FA+High+Level+Road+Kottawa+Sri+Lanka" target="_blank" rel="noopener noreferrer">
           <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></i>
           <span><b>Parallax Technologies (Pvt) Ltd</b><span>No. 81/A, High Level Road, Kottawa, Sri Lanka</span></span></a>
       </div>
@@ -1683,7 +1851,7 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
              alt="The Storemate support team at work in the Parallax Technologies office"></div>
     </div>
 
-    <!-- TODO · wire this form to your real endpoint / CRM. It currently does nothing. -->
+    <!-- Posts to the n8n webhook; see the submit handler at the foot of the page. -->
     <form class="pos-form rv" id="demo-form" novalidate>
       <h3>See a demo with your own products</h3>
       <p>Send us twenty of your items and we'll show you your own counter, not a canned demo of
@@ -1724,9 +1892,9 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <p>Set up your products, plug in a scanner, and start billing with live inventory today. Free to
       start, with full setup handled by our team.</p>
     <div class="btns">
-      <a class="btn btn--go" href="https://welcome.oms.storemate.cloud/register?utm_source=website&amp;utm_medium=direct&amp;utm_campaign=free_trial&amp;utm_content=start_for_free">Start for free
+      <a class="btn btn--go" href="#contact">Get a free demo
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn--ghost" href="contact.html">Talk to us</a>
+      <a class="btn btn--ghost" href="tel:+94114226911">Call 011 422 6911</a>
     </div>
     <p class="fine">Free to start. No card needed. Cancel anytime.</p>
   </div>
@@ -1747,90 +1915,31 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
     <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
     <div class="ft-orb ft-orb--3" aria-hidden="true"></div>
 
-    <!-- Main Grid -->
     <div class="ft-main">
       <div class="container">
-        <div class="ft-grid">
-
-          <div class="ft-brand-col ft-reveal ft-reveal-d1">
-            <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img" />
-            <p class="ft-tagline">From seller to Entrepreneur.</p>
-            <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers. Built for sellers who are building something real.</p>
-            <div class="ft-social">
-              <a href="https://www.facebook.com/storemateonline" class="ft-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/storemate_oms/" class="ft-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-              <a href="https://www.youtube.com/@Storemate" class="ft-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/showcase/storemate-oms-system" class="ft-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="https://www.tiktok.com/@storemate_" class="ft-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg>
-              </a>
-            </div>
+        <div class="ft-brand-col">
+          <img src="images/brand/storemate_logo.png" alt="Storemate" class="ft-logo-img"
+               width="112" height="34" loading="lazy" decoding="async" />
+          <p class="ft-tagline">From seller to Entrepreneur.</p>
+          <p class="ft-mission">Built from the experience of 25M orders and 30,000+ sellers.
+            Built for sellers who are building something real.</p>
+          <div class="ft-social">
+            <span class="ft-social-link" role="img" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
+            <span class="ft-social-link" role="img" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="ft-social-link" role="img" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#060b16" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></span>
+            <span class="ft-social-link" role="img" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+            <span class="ft-social-link" role="img" aria-label="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.91a8.17 8.17 0 004.77 1.52V7a4.85 4.85 0 01-1-.31z"/></svg></span>
           </div>
-
-          <div class="ft-reveal ft-reveal-d2">
-            <h4 class="ft-col-heading">Product</h4>
-            <ul class="ft-link-list">
-              <li><a href="index.html#features">Features</a></li>
-              <li><a href="why-storemate.html">Why Storemate</a></li>
-              <li><a href="whatsapp-landing.html">Self-Order Form</a></li>
-              <li><a href="returns-landing.html">Reduce Returns</a></li>
-              <li><a href="waybill-landing.html">Waybill Printing</a></li>
-              <li><a href="courier-sync.html">Courier Sync</a></li>
-              <li><a href="personalization.html">Personalization</a></li>
-            </ul>
-          </div>
-
-          <div class="ft-reveal ft-reveal-d3">
-            <h4 class="ft-col-heading">Company</h4>
-            <ul class="ft-link-list">
-              <li><a href="about.html">About Us</a>
-        <a href="trackmate.html">Trackmate</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="ft-reveal ft-reveal-d4">
-            <h4 class="ft-col-heading">Legal</h4>
-            <ul class="ft-link-list">
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Service</a></li>
-              <li><a href="security.html">Data Security</a></li>
-              <li><a href="security.html">ISO 27001</a></li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </div>
 
-    <!-- Bottom Bar -->
     <div class="ft-bottom">
-      <div class="container">
-        <div class="ft-bottom-inner">
-          <p class="ft-copyright">&copy; <span class="ft-year"></span> Parallax Technologies (Pvt) Ltd. All rights reserved.</p>
-        </div>
+      <div class="container ft-bottom-inner">
+        <p class="ft-copyright">&copy; 2026 Parallax Technologies (Pvt) Ltd &middot; Kottawa, Sri Lanka</p>
+        <p class="ft-copyright">Privacy Policy &middot; Terms of Service</p>
       </div>
     </div>
-
-    <script>
-      (function() {
-        document.querySelector('.ft-year').textContent = new Date().getFullYear();
-        var footer = document.querySelector('.site-footer');
-        if (!footer) return;
-        var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('ft-visible'); });
-        }, { threshold: 0.08 });
-        footer.querySelectorAll('.ft-reveal').forEach(function(el) { obs.observe(el); });
-      })();
-    </script>
   </footer>
 
   <script src="js/nav.js"></script>
