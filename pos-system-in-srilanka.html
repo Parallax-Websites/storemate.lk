@@ -295,6 +295,16 @@ body.preview .ph::after{content:attr(data-brief);position:absolute;inset:auto 0 
 .flist b{display:block;font-size:.98rem;color:var(--ink)}
 .flist span{display:block;margin-top:.15rem;font-size:.9rem;color:var(--soft);line-height:1.5}
 
+/* Sends people to verify the screenshots above on Google itself. */
+.rmore{display:flex;justify-content:center;margin-top:clamp(1.6rem,3vw,2.4rem)}
+/* .btn--ghost is built for the dark hero: its hover goes transparent with
+   white text, which disappears on this light section. Give it a light
+   background treatment instead. */
+.pos-page .rmore .btn--ghost{background:var(--paper);border:1.5px solid var(--line-2);
+  color:var(--ink);gap:.6rem}
+.pos-page .rmore .btn--ghost:hover{background:var(--paper);border-color:var(--pri);
+  color:var(--pri);transform:translateY(-2px)}
+
 /* ══ 6 · VIDEO TESTIMONIALS ════════════════════════════════════════ */
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.6rem)}
 .vcard{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
@@ -1410,6 +1420,17 @@ html{scroll-padding-top:92px}
              loading="lazy" decoding="async" alt="Five star Google review from Mewan Dimalsha: excellent customer support with prompt responses, and the POS has greatly improved operational workflow">
       </figure>
     </div>
+
+    <div class="rmore rv">
+      <a class="btn btn--ghost" href="https://www.google.com/maps/place/StoreMate+Digital/@6.8406044,79.9648202,17z/data=!4m8!3m7!1s0x3ae25b114fb85631:0x5f824421b70f1758!8m2!3d6.8406044!4d79.9673951!9m1!1b1!16s%2Fg%2F11n5vd6r9_?entry=ttu&amp;g_ep=EgoyMDI2MDkyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"/>
+          <path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1A12 12 0 0 0 12 24z"/>
+          <path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 0 1 0-4.6V6.7H1.4a12 12 0 0 0 0 10.8l4-3.1z"/>
+          <path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.4 6.7l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/>
+        </svg>
+        View all Google reviews</a>
+    </div>
   </div>
 </section>
 
@@ -1438,10 +1459,10 @@ html{scroll-padding-top:92px}
       <div class="vfeat-body">
         <span class="itag">Full story</span>
         <h3>The long version, start to finish</h3>
-        <p>Jayanath runs Rainbow Kids from Australia. No other system would keep the shop counter
+        <p>Mr. Jayanath De Alwis runs Rainbow Kids from Australia. No other system would keep the shop counter
           and the website in step. Storemate does it automatically, with cash on delivery and gift
           cards on the same screen, and support one call away.</p>
-        <p class="vfeat-who"><b>Jayanath</b>Rainbow Kids, Thalawathugoda · Kids &amp; baby store · Managed from Australia</p>
+        <p class="vfeat-who"><b>Mr. Jayanath De Alwis</b>Rainbow Kids, Thalawathugoda · Kids &amp; baby store · Managed from Australia</p>
       </div>
     </div>
 
