@@ -2085,6 +2085,39 @@
   .hvids .reel { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; }
 }
 
+/* ── INSTALL GALLERY ──────────────────────────────
+   The POS page's gallery grid, value for value, scoped under .hgal.
+   Photos of real installs, trainings and handovers. */
+.hgal-head { text-align: center; max-width: 720px; margin: 0 auto clamp(1.8rem, 3.5vw, 2.6rem); }
+.hgal {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 172px; gap: clamp(.6rem, 1.2vw, .9rem);
+}
+.hgal .ph {
+  position: relative; overflow: hidden; height: 100%;
+  border-radius: 11px; background: #0a1628;
+}
+.hgal .ph img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s cubic-bezier(.2,.8,.3,1);
+}
+.hgal .ph:hover img { transform: scale(1.07); }
+.hgal .g-w { grid-column: span 2; }
+.hgal .g-t { grid-row: span 2; }
+
+@media (max-width: 900px) {
+  .hgal { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+}
+/* Two 150px letterboxes per row crop every photo to a slit, so phones
+   get one column at a readable height. */
+@media (max-width: 640px) {
+  .hgal { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .hgal .ph { aspect-ratio: 4/3; height: auto; }
+  .hgal .g-w { grid-column: span 1; }
+  .hgal .g-t { grid-row: span 1; }
+}
+
 /* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 960px) {
   .home-feature-row { grid-template-columns: 1fr; gap: 36px; }
