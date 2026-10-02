@@ -1971,7 +1971,10 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(33,83,192,0.1);
 }
-.review-card img { width: 100%; display: block; }
+/* height:auto is load-bearing: the img tags carry width/height
+   attributes for layout stability, and without this the browser renders
+   them at their full pixel height instead of scaling to the column. */
+.review-card img { width: 100%; height: auto; display: block; }
 .review-card-label {
   padding: 10px 14px;
   font-size: 0.72rem; font-weight: 700;
