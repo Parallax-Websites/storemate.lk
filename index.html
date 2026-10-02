@@ -34,7 +34,7 @@
   <meta name="twitter:description" content="Sri Lanka's order and inventory management platform. Built from the experience of 25M orders and 30,000+ sellers." />
   <meta name="twitter:image" content="https://storemate.lk/images/home-hero.jpg" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/home-styles.css?v=20261006" />
+  <link rel="stylesheet" href="css/home-styles.css?v=20261007" />
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -653,9 +653,12 @@
       <div class="container">
         <div class="origin-copy hgal-head">
           <p class="section-label">Why we built this</p>
-          <h2>We did not build this<br /><strong>from a meeting room.</strong></h2>
+          <h2>1,200+ counters, <strong>and we've stood at most of them</strong></h2>
+          <p class="hgal-intro">Every counter here is a real one. Retail shops, cafes, furniture showrooms and herbal
+            product stores, photographed on the days we installed the system, trained the staff and
+            handed the shop over. Click any photo to see it full size.</p>
         </div>
-        <div class="hgal">
+        <div class="hgal" id="hgal">
           <div class="ph g-w g-t">
             <img src="images/gallery/pos-counter-screen.webp" width="1200" height="760" loading="lazy" decoding="async" alt="Storemate POS billing screen open at a shop counter, beside the weighing scale and receipt printer"></div>
           <div class="ph">
@@ -849,6 +852,15 @@
 
   <!-- L11 FOOTER -->
       <!-- FOOTER -->
+
+    <!-- photo viewer for the install gallery -->
+    <div class="hlb" id="hlb" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+      <button class="hlb-btn hlb-x" id="hlbX" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <button class="hlb-btn hlb-prev" id="hlbP" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="hlb-btn hlb-next" id="hlbN" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      <figure class="hlb-in"><img id="hlbImg" src="" alt="" /><figcaption id="hlbCap"></figcaption></figure>
+    </div>
+
   <footer class="site-footer">
     <div class="ft-orb ft-orb--1" aria-hidden="true"></div>
     <div class="ft-orb ft-orb--2" aria-hidden="true"></div>
@@ -1227,6 +1239,60 @@
         w.appendChild(f);
       });
     });
+  </script>
+
+  <script>
+    /* Install gallery viewer: click or Enter on a photo opens it full size;
+       arrows and the on-screen buttons step through, Escape or the backdrop
+       closes. */
+    (function () {
+      var tiles = [].slice.call(document.querySelectorAll("#hgal .ph"));
+      var lb = document.getElementById("hlb");
+      if (!lb || !tiles.length) return;
+      var img = document.getElementById("hlbImg"),
+          cap = document.getElementById("hlbCap"),
+          cur = 0, opener = null;
+
+      function show(i) {
+        cur = (i + tiles.length) % tiles.length;
+        var t = tiles[cur].querySelector("img");
+        img.src = t.currentSrc || t.src;
+        img.alt = t.alt || "";
+        cap.textContent = t.alt || "";
+      }
+      function open(i) {
+        opener = document.activeElement;
+        show(i);
+        lb.hidden = false;
+        document.body.style.overflow = "hidden";
+        document.getElementById("hlbX").focus();
+      }
+      function close() {
+        lb.hidden = true;
+        document.body.style.overflow = "";
+        if (opener) opener.focus();
+      }
+
+      tiles.forEach(function (t, i) {
+        t.tabIndex = 0;
+        t.setAttribute("role", "button");
+        t.setAttribute("aria-label", "View photo full size");
+        t.addEventListener("click", function () { open(i); });
+        t.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); }
+        });
+      });
+      document.getElementById("hlbX").addEventListener("click", close);
+      document.getElementById("hlbP").addEventListener("click", function () { show(cur - 1); });
+      document.getElementById("hlbN").addEventListener("click", function () { show(cur + 1); });
+      lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+      document.addEventListener("keydown", function (e) {
+        if (lb.hidden) return;
+        if (e.key === "Escape") close();
+        if (e.key === "ArrowLeft") show(cur - 1);
+        if (e.key === "ArrowRight") show(cur + 1);
+      });
+    })();
   </script>
 </body>
 </html>

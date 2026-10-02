@@ -2121,6 +2121,43 @@
   .hgal .g-t { grid-row: span 1; }
 }
 
+.hgal-intro {
+  max-width: 640px; margin: -12px 0 clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: 0.98rem; line-height: 1.7; color: var(--color-gray-700);
+}
+.hgal .ph { cursor: zoom-in; }
+.hgal .ph:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 3px; }
+
+/* Full-size viewer for the install gallery. */
+.hlb {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(7,14,26,.94);
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+.hlb[hidden] { display: none; }
+.hlb-in { margin: 0; max-width: 1000px; width: 100%; }
+.hlb-in img {
+  width: 100%; max-height: 78vh; object-fit: contain;
+  border-radius: 14px; display: block;
+}
+.hlb-in figcaption {
+  margin-top: .9rem; text-align: center; color: #cadaee; font-size: .9rem;
+}
+.hlb-btn {
+  position: absolute; width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25);
+  color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.hlb-btn:hover { background: rgba(255,255,255,.26); }
+.hlb-btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.hlb-btn svg { width: 20px; height: 20px; }
+.hlb-x { top: 1.3rem; right: 1.3rem; }
+.hlb-prev { left: 1.3rem; top: 50%; transform: translateY(-50%); }
+.hlb-next { right: 1.3rem; top: 50%; transform: translateY(-50%); }
+
 /* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 960px) {
   .home-feature-row { grid-template-columns: 1fr; gap: 36px; }
