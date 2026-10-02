@@ -1948,31 +1948,16 @@
 }
 .reviews-header p { font-size: 0.97rem; color: var(--color-gray-500); }
 
-/* Masonry, not grid: these screenshots run from 456px to 1221px tall,
-   and equal-height grid rows would crop the longer reviews. Columns fill
-   top-to-bottom, so source order decides placement. */
+/* Same treatment as the POS landing page: three masonry columns, each
+   card at its natural height. Four columns squeezed the screenshots too
+   narrow to read; three gives them the width they were cut for. */
 .reviews-grid {
-  columns: 4;
-  column-gap: 16px;
+  columns: 3;
+  column-gap: clamp(.9rem, 1.8vw, 1.4rem);
 }
 .reviews-grid .review-card {
   break-inside: avoid;
-  margin: 0 0 16px;
-  /* These shots were cut for the POS landing page, where reviews are the
-     whole section. Here they are one block among many, so cap the height
-     and crop from the bottom: the reviewer, stars and opening lines carry
-     the proof, and a fade signals there is more rather than hiding it. */
-  position: relative;
-  max-height: 340px;
-  overflow: hidden;
-}
-.reviews-grid .review-card::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 64px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
-  pointer-events: none;
+  margin: 0 0 clamp(.9rem, 1.8vw, 1.4rem);
 }
 .review-card {
   background: #fff;
@@ -2005,12 +1990,9 @@
   .home-feature-row { grid-template-columns: 1fr; gap: 36px; }
   .home-feature-row--rev { direction: ltr; }
   .reviews-grid { columns: 2; }
-  /* Wider columns mean the cap crops more aggressively; give them room. */
-  .reviews-grid .review-card { max-height: 420px; }
 }
 @media (max-width: 600px) {
   .reviews-grid { columns: 1; }
-  .reviews-grid .review-card { max-height: 480px; }
 }
 
 /* ── WAYBILL BEFORE/AFTER COMPARISON ──────────── */
