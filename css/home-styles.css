@@ -1988,6 +1988,26 @@
   font-size: 0.75rem;
 }
 
+/* Sends people to verify the screenshots above at the source.
+   .btn-ghost and .btn-secondary are both white-on-dark for the hero;
+   this section is #f3f5f9, so the button gets its own light treatment. */
+.reviews-more {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+.reviews-more-btn {
+  gap: 10px;
+  background: #fff;
+  color: var(--color-charcoal);
+  border: 1.5px solid #c6d1e0;
+}
+.reviews-more-btn:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+  transform: translateY(-2px);
+}
+
 /* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 960px) {
   .home-feature-row { grid-template-columns: 1fr; gap: 36px; }
