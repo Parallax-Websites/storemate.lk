@@ -1948,10 +1948,16 @@
 }
 .reviews-header p { font-size: 0.97rem; color: var(--color-gray-500); }
 
+/* Masonry, not grid: these screenshots run from 456px to 1221px tall,
+   and equal-height grid rows would crop the longer reviews. Columns fill
+   top-to-bottom, so source order decides placement. */
 .reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 16px;
+  columns: 4;
+  column-gap: 16px;
+}
+.reviews-grid .review-card {
+  break-inside: avoid;
+  margin: 0 0 16px;
 }
 .review-card {
   background: #fff;
@@ -1983,10 +1989,10 @@
 @media (max-width: 960px) {
   .home-feature-row { grid-template-columns: 1fr; gap: 36px; }
   .home-feature-row--rev { direction: ltr; }
-  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { columns: 2; }
 }
 @media (max-width: 600px) {
-  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid { columns: 1; }
 }
 
 /* ── WAYBILL BEFORE/AFTER COMPARISON ──────────── */
