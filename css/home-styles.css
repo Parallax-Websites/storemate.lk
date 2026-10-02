@@ -1948,63 +1948,59 @@
 }
 .reviews-header p { font-size: 0.97rem; color: var(--color-gray-500); }
 
-/* Same treatment as the POS landing page: three masonry columns, each
-   card at its natural height. Four columns squeezed the screenshots too
-   narrow to read; three gives them the width they were cut for. */
+/* Same treatment as the POS landing page, value for value: a 1200px
+   column (the POS page's --wrap), three masonry columns at natural
+   height, 14px cards with a #c6d1e0 border. */
 .reviews-grid {
+  max-width: 1200px;
+  margin: 0 auto;
   columns: 3;
   column-gap: clamp(.9rem, 1.8vw, 1.4rem);
 }
 .reviews-grid .review-card {
   break-inside: avoid;
   margin: 0 0 clamp(.9rem, 1.8vw, 1.4rem);
-}
-.review-card {
   background: #fff;
-  border: 1px solid #e7ecf4;
-  border-radius: 16px;
+  border: 1px solid #c6d1e0;
+  border-radius: 14px;
+  box-shadow: none;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(33,83,192,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform .22s, box-shadow .22s;
 }
-.review-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(33,83,192,0.1);
+.reviews-grid .review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(1,51,135,.05), 0 14px 30px -14px rgba(1,51,135,.18);
 }
 /* height:auto is load-bearing: the img tags carry width/height
-   attributes for layout stability, and without this the browser renders
-   them at their full pixel height instead of scaling to the column. */
+   attributes, and without it the browser draws them at full pixel height
+   instead of scaling to the column. */
 .review-card img { width: 100%; height: auto; display: block; }
-.review-card-label {
-  padding: 10px 14px;
-  font-size: 0.72rem; font-weight: 700;
-  color: var(--color-gray-500); letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-top: 1px solid #f0f2f8;
-  display: flex; align-items: center; gap: 6px;
-}
-.review-card-label::before {
-  content: '⭐';
-  font-size: 0.75rem;
-}
 
-/* Sends people to verify the screenshots above at the source.
-   .btn-ghost and .btn-secondary are both white-on-dark for the hero;
-   this section is #f3f5f9, so the button gets its own light treatment. */
+/* The POS page's button, value for value. Deliberately not .btn: the
+   site-wide .btn is a 999px pill, and the POS button is an 8px rectangle. */
 .reviews-more {
   display: flex;
   justify-content: center;
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
 }
 .reviews-more-btn {
-  gap: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 14px 32px;
+  border-radius: 8px;
   background: #fff;
-  color: var(--color-charcoal);
   border: 1.5px solid #c6d1e0;
+  color: #111e35;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 280ms cubic-bezier(.4,0,.2,1), color 280ms, border-color 280ms;
 }
 .reviews-more-btn:hover {
-  border-color: var(--color-blue);
-  color: var(--color-blue);
+  border-color: #013387;
+  color: #013387;
   transform: translateY(-2px);
 }
 
