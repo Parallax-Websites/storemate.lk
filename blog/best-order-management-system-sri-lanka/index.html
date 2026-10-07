@@ -34,8 +34,54 @@
   <link rel="apple-touch-icon" href="../../images/favicon.png" />
   <link rel="stylesheet" href="../../css/styles.css" />
   <style>
-    .bp { background: #fff; padding: clamp(2.5rem, 6vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem); }
-    .bp-wrap { max-width: 720px; margin: 0 auto; }
+    .bp { background: #fff; padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem); }
+    /* Site width (.container), article on the left, other articles on the
+       right. The sidebar sticks while the article scrolls past it. */
+    /* The article keeps its 720px reading measure; the sidebar sits at the
+       container's right edge, so both line up with the header. */
+    .bp-layout { display: grid; grid-template-columns: minmax(0, 720px) 380px;
+      justify-content: space-between; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; }
+    .bp-wrap { min-width: 0; }
+
+    .bp-side { position: sticky; top: 110px; }
+    .bp-side-in { padding: 1.5rem 1.4rem; border: 1px solid var(--color-gray-200); border-radius: 16px; background: #fbfcfe; }
+    .bp-side-title { margin: 0 0 1.1rem; font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--color-gray-500); }
+    .bp-side-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.1rem; }
+    .bp-side-list a { display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: .95rem; align-items: start;
+      text-decoration: none; }
+    .bp-side-list img { width: 124px; aspect-ratio: 1200 / 560; height: auto; object-fit: cover; display: block;
+      border-radius: 8px; border: 1px solid var(--color-gray-200); }
+    .bp-side-body { display: flex; flex-direction: column; gap: .3rem; }
+    .bp-side-name { font-size: .95rem; font-weight: 600; line-height: 1.38; color: var(--color-charcoal);
+      transition: color .15s; }
+    .bp-side-list a:hover .bp-side-name { color: var(--color-blue); }
+    .bp-side-meta { font-size: .8rem; color: var(--color-gray-500); }
+    .bp-side-all { display: inline-flex; align-items: center; gap: .35rem; margin-top: 1.1rem; padding-top: 1rem;
+      width: 100%; border-top: 1px solid var(--color-gray-200); font-size: .86rem; font-weight: 600;
+      color: var(--color-blue); text-decoration: none; }
+    .bp-side-all svg { width: 15px; height: 15px; transition: transform .15s; }
+    .bp-side-all:hover svg { transform: translateX(3px); }
+
+    /* Below desktop the sidebar drops under the article. The side-by-side
+       thumbnail row squeezes long titles into a narrow strip there, so each
+       article becomes a card: full-width image, title underneath. */
+    @media (max-width: 980px) {
+      .bp-layout { grid-template-columns: 1fr; }
+      .bp-side { position: static; margin-top: 1rem; }
+      .bp-side-in { padding: 1.3rem; }
+      .bp-side-list { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+      .bp-side-list a { grid-template-columns: 1fr; gap: 0; height: 100%;
+        border: 1px solid var(--color-gray-200); border-radius: 12px; overflow: hidden; background: #fff; }
+      .bp-side-list img { width: 100%; border: 0; border-radius: 0;
+        border-bottom: 1px solid var(--color-gray-200); }
+      .bp-side-body { padding: .85rem .95rem 1rem; }
+      .bp-side-name { font-size: 1rem; line-height: 1.4; }
+    }
+    @media (max-width: 520px) {
+      .bp-side-in { padding: 1.1rem; border-radius: 14px; }
+      .bp-side-list { grid-template-columns: 1fr; }
+    }
     .bp-back { display: inline-flex; align-items: center; gap: .45rem; font-size: .88rem;
       color: var(--color-gray-500); text-decoration: none; transition: color .15s; }
     .bp-back:hover { color: var(--color-blue); }
@@ -418,6 +464,7 @@
   </header>
 
   <main class="bp">
+    <div class="container bp-layout">
       <div class="bp-wrap">
         <a class="bp-back" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Back to Blog</a>
 
@@ -578,6 +625,42 @@
           <a href="../online-vs-offline-order-management-system/"><small>Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></small><span>Online vs. Offline Order Management System: Which Does Your Sri Lankan Business Need?</span></a>
         </nav>
       </div>
+      <aside class="bp-side" aria-label="Other articles">
+        <div class="bp-side-in">
+          <p class="bp-side-title">Other articles</p>
+          <ul class="bp-side-list">
+            <li>
+              <a href="../free-order-management-system-sri-lanka/">
+                <img src="../../images/blog/free-oms-sri-lanka.webp" width="1200" height="560" loading="lazy" decoding="async" alt="" />
+                <span class="bp-side-body">
+                  <span class="bp-side-name">Is There a Free Order Management System in Sri Lanka? Here's What You Actually Get</span>
+                  <span class="bp-side-meta">October 7, 2026 · 4 min read</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="../order-management-system-free-download-sri-lanka/">
+                <img src="../../images/blog/oms-free-download-sri-lanka.webp" width="1200" height="628" loading="lazy" decoding="async" alt="" />
+                <span class="bp-side-body">
+                  <span class="bp-side-name">Order Management System in Sri Lanka Free Download: What You Actually Get (2026)</span>
+                  <span class="bp-side-meta">October 7, 2026 · 4 min read</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="../online-vs-offline-order-management-system/">
+                <img src="../../images/blog/online-vs-offline-oms.webp" width="1200" height="560" loading="lazy" decoding="async" alt="" />
+                <span class="bp-side-body">
+                  <span class="bp-side-name">Online vs. Offline Order Management System: Which Does Your Sri Lankan Business Need?</span>
+                  <span class="bp-side-meta">October 7, 2026 · 4 min read</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <a class="bp-side-all" href="../">View all articles<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="site-footer">
