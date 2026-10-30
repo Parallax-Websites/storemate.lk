@@ -43,6 +43,35 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "s7fumshjhl");
     </script>
+
+  <style>
+    /* Reel cards: landscape thumbnails, no crop. */
+    .reel .rc-play { position: relative; display: block; width: 100%; aspect-ratio: 16/9;
+      overflow: hidden; border: 0; padding: 0; margin: 0; cursor: pointer; background: #0a1628; }
+    .reel .rc-play img { width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .4s cubic-bezier(.2,.8,.3,1); }
+    .reel .rc-play:hover img { transform: scale(1.05); }
+    .reel .rc-play .play { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+      background: linear-gradient(to top, rgba(6,18,32,.45), rgba(6,18,32,.05)); }
+    .reel .rc-play .play > span { width: 54px; height: 54px; border-radius: 50%;
+      background: rgba(255,255,255,.95); display: grid; place-items: center;
+      box-shadow: 0 8px 24px -6px rgba(6,18,32,.5); transition: transform .18s; }
+    .reel .rc-play:hover .play > span { transform: scale(1.1); }
+    .reel .rc-play .play svg { width: 20px; height: 20px; color: #013387; margin-left: 2px; }
+
+    /* In-page video player. */
+    .vmodal { position: fixed; inset: 0; z-index: 3000; display: grid; place-items: center;
+      padding: clamp(1rem, 4vw, 3rem); background: rgba(7,14,26,.9); }
+    .vmodal[hidden] { display: none; }
+    .vmodal-frame { width: 100%; max-width: 980px; aspect-ratio: 16/9; background: #000;
+      border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); }
+    .vmodal-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .vmodal-x { position: absolute; top: clamp(.8rem,3vw,1.6rem); right: clamp(.8rem,3vw,1.6rem);
+      width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.12); color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+      display: grid; place-items: center; transition: background .15s; }
+    .vmodal-x:hover { background: rgba(255,255,255,.25); }
+  </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -141,6 +170,7 @@
           </div>
         </div>
         <a href="pricing.html">Pricing</a>
+        <a href="/blog/">Blog</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -170,13 +200,13 @@
 
       <div class="container">
         <div class="hero-center">
-          <p class="hero-eyebrow">The system behind Sri Lanka's Entrepreneurs</p>
+          <p class="hero-eyebrow">The order management system in Sri Lanka for online sellers</p>
           <p class="hero-arrival">You are in the right place.</p>
           <h1 class="hero-headline">
-            <span class="hero-h1-light">From seller to</span>
-            <span class="hero-h1-bold">Entrepreneur.</span>
+            <span class="hero-h1-light">Smarter Order Management</span>
+            <span class="hero-h1-bold">for Online Businesses</span>
           </h1>
-          <p class="hero-text">You were never just a seller.<br>Storemate makes that visible.</p>
+          <p class="hero-text">From order management to courier deliveries, Storemate makes selling easier.</p>
           <div class="hero-actions">
             <a target="_blank" rel="noopener noreferrer" href="https://welcome.oms.storemate.cloud/register?utm_source=website&utm_medium=direct&utm_campaign=free_trial&utm_content=start_for_free" class="btn-cyan">Start for free</a>
             <a href="#seller-story" class="btn-hero-ghost">See how it works</a>
@@ -509,59 +539,55 @@
         </div>
 
         <!-- vertical reel -->
-        <div class="reel">
-          <article class="rc">
-            <div class="rc-vid">
-              <iframe src="https://www.tiktok.com/embed/v2/7343497454240681218"
-                      title="Apple Asia on Storemate POS" loading="lazy"
-                      allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="rc-body">
-              <h3>Apple Asia</h3>
-              <p>A system the whole counter picked up quickly.</p>
-              <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
-            </div>
-          </article>
-
-          <article class="rc">
-            <div class="rc-vid">
-              <iframe src="https://www.tiktok.com/embed/v2/7343584463269399809"
-                      title="Mr Cricket on Storemate POS" loading="lazy"
-                      allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="rc-body">
-              <h3>Mr Cricket</h3>
-              <p>Millions of stock items, handled without strain.</p>
-              <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
-            </div>
-          </article>
-
-          <article class="rc">
-            <div class="rc-vid">
-              <iframe src="https://www.tiktok.com/embed/v2/7363899260061879553"
-                      title="Macklens Bathware on Storemate POS" loading="lazy"
-                      allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="rc-body">
-              <h3>Macklens Bathware</h3>
-              <p>Newer technology than what they ran before.</p>
-              <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
-            </div>
-          </article>
-
-          <article class="rc">
-            <div class="rc-vid">
-              <iframe src="https://www.tiktok.com/embed/v2/7363902107369344273"
-                      title="Shadow Mobile on Storemate POS" loading="lazy"
-                      allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="rc-body">
-              <h3>Shadow Mobile</h3>
-              <p>Day to day work got easier to manage.</p>
-              <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2h-3v12.5a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9a5.5 5.5 0 1 0 5 5.5V8.4A6 6 0 0 0 20 9.5V6.4A3.5 3.5 0 0 1 16 3z"/></svg>TikTok</span>
-            </div>
-          </article>
+    <div class="reel">
+      <article class="rc rv">
+        <button class="rc-play" data-yt="GlQD8aKfYD8" data-title="Four years of trust" aria-label="Play: Four years of trust">
+          <img src="images/vid/reel-GlQD8aKfYD8.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Four years of trust on Storemate" />
+          <span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="rc-body">
+          <h3>Four years of trust</h3>
+          <p>What four years with Storemate has meant.</p>
+          <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 16.5 31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>YouTube</span>
         </div>
+      </article>
+
+      <article class="rc rv">
+        <button class="rc-play" data-yt="jiF1iUW1N_4" data-title="Mr Cricket" aria-label="Play: Mr Cricket">
+          <img src="images/vid/reel-jiF1iUW1N_4.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Mr Cricket on Storemate" />
+          <span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="rc-body">
+          <h3>Mr Cricket</h3>
+          <p>Why Mr Cricket chose Storemate.</p>
+          <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 16.5 31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>YouTube</span>
+        </div>
+      </article>
+
+      <article class="rc rv">
+        <button class="rc-play" data-yt="liTCGGwUtLA" data-title="Rainbow Kids" aria-label="Play: Rainbow Kids">
+          <img src="images/vid/reel-liTCGGwUtLA.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Rainbow Kids on Storemate" />
+          <span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="rc-body">
+          <h3>Rainbow Kids</h3>
+          <p>Running a Sri Lankan shop from Australia.</p>
+          <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 16.5 31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>YouTube</span>
+        </div>
+      </article>
+
+      <article class="rc rv">
+        <button class="rc-play" data-yt="DJ-Fug5bBEc" data-title="Macklens Bathware" aria-label="Play: Macklens Bathware">
+          <img src="images/vid/reel-DJ-Fug5bBEc.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Macklens Bathware on Storemate" />
+          <span class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="rc-body">
+          <h3>Macklens Bathware</h3>
+          <p>A full success story from a growing retailer.</p>
+          <span class="rc-src"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 16.5 31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>YouTube</span>
+        </div>
+      </article>
+    </div>
         </div>
 
         <div class="seller-logos-row">
@@ -848,7 +874,12 @@
       </div>
     </section>
 
-  </main>
+  
+  <div class="vmodal" id="vmodal" hidden>
+    <button class="vmodal-x" id="vmodalX" type="button" aria-label="Close video">&times;</button>
+    <div class="vmodal-frame" id="vmodalFrame"></div>
+  </div>
+</main>
 
   <!-- L11 FOOTER -->
       <!-- FOOTER -->
@@ -912,6 +943,7 @@
             <ul class="ft-link-list">
               <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact</a></li>
+              <li><a href="/blog/">Blog</a></li>
             </ul>
           </div>
 
@@ -1292,6 +1324,35 @@
         if (e.key === "ArrowLeft") show(cur - 1);
         if (e.key === "ArrowRight") show(cur + 1);
       });
+    })();
+  </script>
+
+  <script>
+    /* Reel: open the clicked video in a centred in-page player. */
+    (function () {
+      var modal = document.getElementById("vmodal");
+      var frame = document.getElementById("vmodalFrame");
+      var closeBtn = document.getElementById("vmodalX");
+      if (!modal || !frame) return;
+      function open(id, title) {
+        frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+          '?autoplay=1&rel=0" title="' + (title || "Video") +
+          '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+      function close() {
+        modal.hidden = true;
+        frame.innerHTML = "";
+        document.body.style.overflow = "";
+      }
+      document.querySelectorAll(".reel .rc-play").forEach(function (b) {
+        b.addEventListener("click", function () { open(b.getAttribute("data-yt"), b.getAttribute("data-title")); });
+      });
+      closeBtn.addEventListener("click", close);
+      modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) close(); });
     })();
   </script>
 </body>

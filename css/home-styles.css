@@ -1758,7 +1758,7 @@
   padding: 80px 0 0 !important;
   background:
     linear-gradient(rgba(1,51,135,0.72), rgba(1,51,135,0.72)),
-    url('../images/home-hero.jpg') center center / cover no-repeat !important;
+    url('../images/screenshots/home-hero-cover.webp') center center / cover no-repeat !important;
 }
 .hero-section .container {
   display: block !important;
