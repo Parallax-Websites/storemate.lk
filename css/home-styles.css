@@ -1754,23 +1754,50 @@
 
 /* ── HERO: photo background, centered copy ─────── */
 .hero-section {
-  text-align: center !important;
-  padding: 80px 0 0 !important;
+  text-align: left !important;
+  padding: 80px 0 90px !important;
+  /* No overlay: the image is light with its subject on the right, so the
+     left-aligned dark text sits over the empty left area. */
   background:
-    linear-gradient(rgba(1,51,135,0.72), rgba(1,51,135,0.72)),
-    url('../images/screenshots/home-hero-cover.webp') center center / cover no-repeat !important;
+    #f3f4ef url('../images/screenshots/home-hero-cover.webp') right center / cover no-repeat !important;
 }
 .hero-section .container {
   display: block !important;
 }
 .hero-center {
-  max-width: 700px !important;
-  margin: 0 auto !important;
-  padding-bottom: 64px !important;
+  max-width: 560px !important;
+  margin: 0 !important;
 }
-.hero-headline { align-items: center !important; }
-.hero-actions   { justify-content: center !important; }
+/* Dark text, since there is no dark overlay now. */
+.hero-section .hero-eyebrow { color: var(--color-blue) !important; }
+.hero-section .hero-arrival { color: #334155 !important; }
+.hero-section .hero-h1-light,
+.hero-section .hero-h1-bold { color: var(--color-charcoal) !important; }
+.hero-section .hero-text { color: #334155 !important; }
+.hero-section .hero-note { color: #5b6b82 !important; }
+.hero-section .btn-hero-ghost { color: var(--color-charcoal) !important;
+  border-color: rgba(1,51,135,0.3) !important; }
+.hero-section .btn-hero-ghost:hover { border-color: rgba(1,51,135,0.6) !important; }
+/* Left-aligned headline and buttons. */
+.hero-headline { align-items: flex-start !important; white-space: nowrap !important; }
+.hero-actions  { justify-content: flex-start !important; }
 .hero-screenshot-wrap { display: none !important; }
+/* Decorations from the old dark hero: the blue corner glow, cyan top line,
+   grain and particles. They do not belong over the light image. */
+.hero-section .hero-glow,
+.hero-section .hero-grain,
+.hero-section .hero-particles,
+.hero-section .hero-top-line { display: none !important; }
+
+/* Narrow screens: center the text; just the image, no overlay. */
+@media (max-width: 820px) {
+  .hero-section { text-align: center !important;
+    background:
+      #f3f4ef url('../images/screenshots/home-hero-cover.webp') center / cover no-repeat !important; }
+  .hero-center { max-width: 640px !important; margin: 0 auto !important; }
+  .hero-headline { align-items: center !important; white-space: normal !important; }
+  .hero-actions  { justify-content: center !important; }
+}
 
 /* ── PAIN SECTION: dark + screenshot split ───── */
 .pain-layout { display: block; }
