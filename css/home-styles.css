@@ -1780,6 +1780,8 @@
 .hero-section .btn-hero-ghost:hover { border-color: rgba(1,51,135,0.6) !important; }
 /* Left-aligned headline and buttons. */
 .hero-headline { align-items: flex-start !important; white-space: nowrap !important; }
+/* A little air between the light and bold lines. */
+.hero-section .hero-headline { gap: 8px; }
 .hero-actions  { justify-content: flex-start !important; }
 /* The box in the photo starts at about 55% of the width, so the one-line
    headline is sized in vw to end before it at every desktop width. */
