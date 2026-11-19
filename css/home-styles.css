@@ -1781,6 +1781,12 @@
 /* Left-aligned headline and buttons. */
 .hero-headline { align-items: flex-start !important; white-space: nowrap !important; }
 .hero-actions  { justify-content: flex-start !important; }
+/* The box in the photo starts at about 55% of the width, so the one-line
+   headline is sized in vw to end before it at every desktop width. */
+@media (min-width: 821px) {
+  .hero-section .hero-h1-light { font-size: clamp(1.7rem, 2.9vw, 2.75rem); }
+  .hero-section .hero-h1-bold  { font-size: clamp(2.1rem, 3.6vw, 3.4rem); }
+}
 .hero-screenshot-wrap { display: none !important; }
 /* Decorations from the old dark hero: the blue corner glow, cyan top line,
    grain and particles. They do not belong over the light image. */
